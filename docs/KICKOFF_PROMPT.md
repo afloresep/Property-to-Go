@@ -7,48 +7,28 @@ hardware. No compute work is to continue on the original laptop.
 
 ## 1. Getting the project across
 
-The project directory is ~1.8 GB, and 871 MB of that is `outputs/`, dominated by one file:
-`outputs/pilot_50k/hidden.npy` (584 MB — the extracted hidden states).
-
-**This is not currently a git repository.** Two options.
-
-### Option A — git (recommended)
+**Already done.** The repository is pushed to `git@github.com:afloresep/Property-to-Go.git`
+(branch `main`). On the RTX machine:
 
 ```bash
-cd /Users/afloresep/work/property-to-go
-git init
-printf '%s\n' '.venv/' '__pycache__/' '*.pyc' 'outputs/**/hidden.npy' \
-  'outputs/**/features.npy' 'outputs/**/trajectories.json' \
-  'outputs/**/prefix_token_ids.json' 'outputs/**/prefix_meta.csv' > .gitignore
-git add -A && git commit -m "Property-to-Go CPU pilot: complete, reported"
-# then push to a private remote and clone on the RTX box
+git clone git@github.com:afloresep/Property-to-Go.git
+cd Property-to-Go
 ```
 
-Everything needed to *rerun* is small: code, configs, and the JSON metrics. The large
-arrays are all **regenerable** — `scripts/02_generate_trajectories.py` recreates them
-deterministically from the pinned model and seeds. Do not spend time moving 584 MB of
-hidden states you can rebuild in an hour on a GPU.
+That clone is ~31 MB and contains everything the pipeline cannot regenerate: all code,
+configs, tests, docs, reports, every `*_metrics.json`, the frozen `windows.json` and
+`target_intervals.json`, `molecules.json`, `rollout_bank.json`, and the trained head
+checkpoints.
 
-### Option B — direct copy, code only
+**What is deliberately not in the clone**, because it is regenerated deterministically from
+the pinned model revision and recorded seeds (~700 MB): `hidden.npy`, `features.npy`,
+`trajectories.json`, `prefix_token_ids.json`, `prefix_meta.csv`, and the prediction `.npz`
+files. `.gitignore` explains this inline so nobody later assumes it was an accident.
 
-```bash
-rsync -av --exclude '.venv' --exclude '__pycache__' \
-      --exclude 'outputs/pilot_50k/hidden.npy' \
-      --exclude 'outputs/pilot_50k/features.npy' \
-      --exclude 'outputs/pilot_10k' \
-      /Users/afloresep/work/property-to-go/ user@rtx-box:~/property-to-go/
-```
-
-**Do carry across** all `*_metrics.json`, `windows.json`, `target_intervals.json`,
-`molecules.json`, `provenance.json` and `configs_used.json`. They are small and they are
-what the report is bound to — `tests/test_report_matches_artifacts.py` needs them, and
-without them you cannot tell whether a new number contradicts an old one.
-
-### Option C — regenerate from scratch on the RTX box
-
-Also fine, and arguably cleanest, since it independently reproduces the pilot on new
-hardware. Follow `docs/REPRODUCE.md` from step 1. Expect the numbers to match; if they do
-not, **that is a finding and it goes in the report** before any new work starts.
+Rebuild them with step 2 of `docs/REPRODUCE.md`, then **diff the regenerated
+`windows.json` and `target_intervals.json` against the tracked ones**. They were frozen
+before any guided result was inspected; if regenerating on different hardware moves them,
+that is a finding to write up, not something to silently accept.
 
 ---
 
@@ -57,9 +37,9 @@ not, **that is a finding and it goes in the report** before any new work starts.
 Do these in order. Do not skip to the experiments.
 
 ```bash
-cd ~/property-to-go
+cd Property-to-Go
 uv venv && uv pip install -e .        # transformers 4.44.2 will be pinned for you
-.venv/bin/python -m pytest            # expect 177 passed
+.venv/bin/python -m pytest            # expect 183 passed
 ```
 
 Then, before any long run:
@@ -98,9 +78,10 @@ READ FIRST, IN THIS ORDER, COMPLETELY, BEFORE TOUCHING ANYTHING:
   3. reports/ABSTRACT.md        - every claim we make, the strongest objection to each,
                                   and a reviewer's verdict on the draft
   4. docs/LEXICAL_LOCALITY.md   - the hypothesis this phase is designed to test, with
-                                  pre-registered predictions P1-P5
+                                  pre-registered predictions P1-P6
   5. docs/LITERATURE.md         - prior art, and which citations are still unverified
-  6. docs/REPRODUCE.md          - exact commands for everything already run
+  6. docs/TODO.md               - the dependency-ordered checklist this prompt implements
+  7. docs/REPRODUCE.md          - exact commands for everything already run
 
 Treat reports/pilot_report.md as the authoritative record of what has been executed. Do
 not restate it; extend it.
@@ -110,7 +91,7 @@ took about one day of compute, so your budget is large relative to what has been
 
 BEFORE ANY NEW GENERATION, in this order:
   a. Set device: cuda in configs/model.yaml. Keep dtype: float32 until step (c) passes.
-  b. Run the full test suite. Expect 177 passed. Then run tests/test_model_contracts.py
+  b. Run the full test suite. Expect 183 passed. Then run tests/test_model_contracts.py
      specifically and confirm test_forward_pass_is_deterministic and
      test_candidate_backends_agree both pass on GPU. These two underwrite reproducibility
      and the compute accounting respectively.
@@ -124,7 +105,7 @@ BEFORE ANY NEW GENERATION, in this order:
 THE SCIENTIFIC GOAL OF THIS PHASE
 Test whether steerability tracks the LEXICAL LOCALITY of a property rather than its
 predictability from the frozen model's hidden state. docs/LEXICAL_LOCALITY.md states the
-hypothesis, the operationalisation, and predictions P1-P5. Those predictions are
+hypothesis, the operationalisation, and predictions P1-P6. Those predictions are
 pre-registered: do not revise them after seeing data. If the data falsifies them, report
 that.
 
@@ -134,6 +115,12 @@ base-policy rollouts, and take the spread across candidates. It is head-free and
 lambda-free, so it is an upper bound on what ANY decoding rule could achieve at that
 position. It separates "there is no lever to pull" from "our head is bad" - the question
 the pilot could not answer.
+
+STOP AND REPORT after item 2 below (the locality-vs-steerability scatter). That result
+determines what the paper IS: if the thesis holds, the paper becomes mechanistic and the
+negative result becomes supporting evidence; if it fails, the paper reverts to the
+better-scoped negative result. Do not start the lambda sweep before that decision is made.
+Everything after item 2 is listed in docs/TODO.md sections C10 onward.
 
 WORK TO DO, in priority order. Read docs/HANDOFF.md section 6 for the full list; this
 phase is E-headroom (new), E1, E4, E3, E5, E5b.
@@ -271,9 +258,12 @@ DELIVERABLES
   - A concise final response listing changed files, executed commands, test results, and
     the most important empirical result.
 
-Target venue is a NeurIPS 2026 workshop with a deadline reported as 2026-08-29
-(ICBINB-BIO or ML4Molecules) - verify that date yourself early, since it came from a web
-scan. Work so the paper could be written from the artifacts in the final week.
+There is NO BINDING DEADLINE. A 2026-08-29 workshop deadline exists and has been
+confirmed, but the project owner has decided not to optimise for it - the work can wait for
+a later cycle or go to TMLR, which has rolling submission and does not list novelty or
+significance as acceptance criteria. Do not rush a result to fit a date, and do not let the
+absence of a date turn into open-ended scope growth either: the do-not list above still
+applies.
 
 Ask me nothing that you can decide reasonably yourself. Do ask before anything
 destructive, before deleting or overwriting existing outputs, and before changing a claim
@@ -286,13 +276,10 @@ in reports/pilot_report.md that the current artifacts still support.
 
 Three places you may want to edit before pasting:
 
-- **If you decide to drop cLogP** rather than demote it, change item 2 and say so
-  explicitly, because every existing number in the report is for cLogP and aromatic rings.
-  The recommendation is to *demote, not drop* — keeping it preserves continuity with the
-  executed pilot and lets the interval-targeting defence be made with data rather than
-  argument.
+- **cLogP: decided 2026-07-30 — demote, do not drop.** Item 2 already reflects this. No
+  edit needed.
 - **SLIM is verified to exist** (arXiv:2605.10831) and does *not* contradict the pilot —
   see `LITERATURE.md` §5 for why the apparent conflict was a metric confusion on our side.
   Keep the HBD-count item as written.
-- **If four weeks turns out to be tighter than expected**, cut items 4, 5 and 6 in that
-  order. Items 1, 2 and 3 are the paper.
+- **The deadline is confirmed but not binding** (decided 2026-07-30), so items 4, 5 and 6
+  are in scope rather than optional. Items 1, 2 and 3 are still the paper.

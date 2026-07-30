@@ -1,7 +1,20 @@
 # Next steps
 
-Written 2026-07-30. Target: a NeurIPS 2026 workshop, deadline reported as **2026-08-29**
-(unverified — item A1). That is about four weeks out.
+Written 2026-07-30, updated after decisions A1 and A7.
+
+**Deadline status: confirmed, and deliberately not binding.** The 2026-08-29 workshop
+deadline is real, but the project owner has decided not to optimise for it — the work can
+wait for a later workshop cycle or go to a journal. TMLR is the natural target: rolling
+submission, no page limit, and its two stated acceptance criteria are *"are the claims
+supported by accurate, convincing and clear evidence"* and *"would at least some
+individuals in TMLR's audience be interested"* — novelty and significance are explicitly
+**not** acceptance criteria, which fits a careful negative-or-mechanistic result well.
+
+What this changes: nothing about the priority order, which is dependency-driven and still
+correct. What it does change is that items previously marked "cut if time is tight" are
+now in scope, and **no result should be rushed to fit a date**. It does *not* license
+open-ended scope growth — section E still applies, because unbounded time is its own
+failure mode.
 
 Ordering is by dependency, not importance. Items marked **[you]** need a human decision or
 an account only you have; everything else an agent can do.
@@ -12,15 +25,15 @@ an account only you have; everything else an agent can do.
 
 These are cheap and they gate everything downstream.
 
-- [ ] **A1 [you]** Verify the submission deadline and page limit directly at the venue.
-      Both candidates came from an automated web scan: **ICBINB-BIO** at NeurIPS 2026
-      (icbinb-bio.github.io, reported 8pp full / 4pp tiny, explicitly solicits negative
-      results and failure analyses) and **ML4Molecules 2026** (moleculediscovery.github.io,
-      reported 5pp, explicitly solicits "negative results, careful ablations, and rigorous
-      baselines"). Do not plan four weeks around a date nobody confirmed.
-- [ ] **A2 [you]** Decide: submit to one venue or both. They reportedly share a deadline,
-      and both are non-archival, so both is plausible. Page limits differ (8 vs 5), which
-      changes how much goes in an appendix.
+- [x] **A1 [you]** ~~Verify the submission deadline~~ **Done 2026-07-30.** Confirmed, and
+      deliberately not treated as binding. Candidates remain **ICBINB-BIO** at NeurIPS 2026
+      (8pp full / 4pp tiny, explicitly solicits negative results and failure analyses) and
+      **ML4Molecules 2026** (5pp, explicitly solicits "negative results, careful ablations,
+      and rigorous baselines"), with **TMLR** as the no-deadline archival target.
+- [ ] **A2 [you]** Decide the venue once the phase-2 data exists, not before. The choice
+      now depends on the result: if the locality thesis holds it is a mechanistic paper and
+      TMLR or ML4Molecules fit; if it fails it is a careful negative result and ICBINB-BIO
+      is the better home. Deferring this is correct rather than lazy.
 - [ ] **A3** Verify the PMO logP-exclusion quote against the published PDF
       (Gao, Fu, Sun & Coley, NeurIPS 2022 D&B, arXiv:2206.12411). It is load-bearing for
       the cLogP defence in `LITERATURE.md` §2 and will appear in the paper verbatim.
@@ -37,10 +50,12 @@ These are cheap and they gate everything downstream.
 - [ ] **A6** Fresh arXiv sweep of cs.LG and q-bio.BM in the week before submitting.
       Q-Steer was posted one day before our literature scan ran. This subfield moves in
       weeks.
-- [ ] **A7 [you]** Confirm the property decision. The plan as written **demotes** cLogP
-      rather than dropping it: keep it as one of six, out of the title, not carrying the
-      headline number. Dropping it entirely discards continuity with the executed pilot,
-      since every existing number is cLogP or aromatic rings.
+- [x] **A7 [you]** ~~Confirm the property decision~~ **Decided 2026-07-30: DEMOTE cLogP,
+      do not drop it.** It stays as one of six properties, out of the title, and does not
+      carry the headline number. It is retained for continuity with the executed pilot and
+      because it is a clean stress test of the bounded-interval defence against PMO. QED
+      (an actual PMO task) and TPSA / HBD / rotatable bonds (standard MPO components) carry
+      credibility with a drug-discovery reader instead.
 
 ---
 
@@ -134,7 +149,7 @@ cases are.
 - [ ] **C16** Real buffer for RDKit surprises (QED raising on odd intermediates, HBD and
       rotatable-bond definition mismatches). Budget days, not hours.
 
-### Lower priority — do these only if weeks 1–3 finish early
+### Now in scope, since the deadline is not binding (previously "cut if tight")
 
 - [ ] **C17** Probe-layer sweep, all 12 layers. The pilot used only the final layer
       (`hidden_layer: -1`), so the aromatic-ring negative result may be about the readout
@@ -174,8 +189,15 @@ cases are.
 
 Each would either weaken the paper or eat the four weeks.
 
-- [ ] Second generator or second molecular serialization. Out of scope; the original
-      specification excludes alternative serializations. SELFIES goes in future work.
+- [ ] Second generator. Out of scope: new checkpoint sourcing, new tokenizer quirks, new
+      confounds, and it does not serve the locality thesis.
+- [ ] **SELFIES — ask the owner first, do not just start.** The original specification
+      excludes alternative molecular serializations, so this needs an explicit decision to
+      lift. But note the tension honestly: lexical locality is a claim *about SMILES
+      tokenization*, so SELFIES — where ring closures and branches are encoded completely
+      differently, and locality would therefore rank properties differently — is the
+      sharpest available test of the thesis rather than a tangent. With no binding deadline
+      it is a genuine candidate for a phase 3. Raise it; do not decide it unilaterally.
 - [ ] Full λ×N grid on all six properties. Depth on 2–3 anchors, breadth at one λ elsewhere.
 - [ ] New guidance algorithms (lookahead beam search, classifier-free-guidance analogues).
       Different research question.
