@@ -1,0 +1,983 @@
+{
+  "dataset": "pilot_50k",
+  "n_prefixes": 800,
+  "n_rollouts_per_prefix": 32,
+  "seed": 4242,
+  "compute": {
+    "processed_tokens_actual": 1164211,
+    "processed_tokens_full_recompute": 1164211,
+    "forward_calls": 25600,
+    "wall_seconds": 1601.0784898750717,
+    "molecules_returned": 25600,
+    "tokens_per_molecule_actual": 45.4769921875,
+    "tokens_per_molecule_full_recompute": 45.4769921875
+  },
+  "mean_rollout_validity": 0.996484375,
+  "properties": {
+    "clogp": {
+      "target_interval": {
+        "lo": 4.172676000000004,
+        "hi": 5.038300000000004,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09999397868454328
+      },
+      "empirical_target_rate_mean": 0.10342693759527044,
+      "heads": {
+        "frozen_state": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 0.5013964672190686,
+            "spearman_vs_empirical_mean": 0.8198620308491962,
+            "spearman_vs_empirical_rate": 0.6523895504887837,
+            "brier_vs_rollouts": 0.08825427270124728,
+            "mean_predicted_target_prob": 0.05086807906627655,
+            "mean_empirical_target_rate": 0.10342693759527044
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.3412810305730305,
+              "spearman_vs_empirical_mean": 0.7756080171011046,
+              "spearman_vs_empirical_rate": 0.5344172508599474,
+              "brier_vs_rollouts": 0.09249326121293408,
+              "mean_predicted_target_prob": 0.055540647357702255,
+              "mean_empirical_target_rate": 0.10232985364396655
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.45199518987216736,
+              "spearman_vs_empirical_mean": 0.8414790369759245,
+              "spearman_vs_empirical_rate": 0.718652079448344,
+              "brier_vs_rollouts": 0.08179366356203262,
+              "mean_predicted_target_prob": 0.049032021313905716,
+              "mean_empirical_target_rate": 0.09286559139784945
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.5527429680170851,
+              "spearman_vs_empirical_mean": 0.8187324683117079,
+              "spearman_vs_empirical_rate": 0.709111333269919,
+              "brier_vs_rollouts": 0.09116706139932838,
+              "mean_predicted_target_prob": 0.04864830896258354,
+              "mean_empirical_target_rate": 0.10693468437152392
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.6595666804139916,
+              "spearman_vs_empirical_mean": 0.844924623115578,
+              "spearman_vs_empirical_rate": 0.5492962486800451,
+              "brier_vs_rollouts": 0.08757934989635062,
+              "mean_predicted_target_prob": 0.05025134235620499,
+              "mean_empirical_target_rate": 0.11157762096774194
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.03840992599725723,
+              0.1293608397245407,
+              0.22560450434684753,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN
+            ],
+            "observed": [
+              0.07574460415446312,
+              0.2679759265125119,
+              0.6625,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN
+            ],
+            "count": [
+              22193,
+              3157,
+              160,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "trivial": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 0.6093966698222425,
+            "spearman_vs_empirical_mean": 0.7207630583909274,
+            "spearman_vs_empirical_rate": 0.4843758932356345,
+            "brier_vs_rollouts": 0.09043801860884106,
+            "mean_predicted_target_prob": 0.049184903502464294,
+            "mean_empirical_target_rate": 0.10342693759527044
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.4511059676721031,
+              "spearman_vs_empirical_mean": 0.6013092362727352,
+              "spearman_vs_empirical_rate": 0.3874212911447619,
+              "brier_vs_rollouts": 0.09389929009487345,
+              "mean_predicted_target_prob": 0.04874110221862793,
+              "mean_empirical_target_rate": 0.10232985364396655
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.5453092891533201,
+              "spearman_vs_empirical_mean": 0.7423266432840255,
+              "spearman_vs_empirical_rate": 0.6014781411873171,
+              "brier_vs_rollouts": 0.08388114211411767,
+              "mean_predicted_target_prob": 0.04385825991630554,
+              "mean_empirical_target_rate": 0.09286559139784945
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.6693332219342116,
+              "spearman_vs_empirical_mean": 0.7443576089402236,
+              "spearman_vs_empirical_rate": 0.5483737214191667,
+              "brier_vs_rollouts": 0.09257012355899807,
+              "mean_predicted_target_prob": 0.04674699902534485,
+              "mean_empirical_target_rate": 0.10693468437152392
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.7718382005293349,
+              "spearman_vs_empirical_mean": 0.7951308782719569,
+              "spearman_vs_empirical_rate": 0.41048724341636605,
+              "brier_vs_rollouts": 0.09141252376273433,
+              "mean_predicted_target_prob": 0.05739326775074005,
+              "mean_empirical_target_rate": 0.11157762096774194
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.03898131847381592,
+              0.13419894874095917,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN
+            ],
+            "observed": [
+              0.07918313570487484,
+              0.3029197080291971,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN
+            ],
+            "count": [
+              22770,
+              2740,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "combined": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 0.444710092253106,
+            "spearman_vs_empirical_mean": 0.8589924848674981,
+            "spearman_vs_empirical_rate": 0.6862896490810507,
+            "brier_vs_rollouts": 0.09022849605586844,
+            "mean_predicted_target_prob": 0.041377488523721695,
+            "mean_empirical_target_rate": 0.10342693759527044
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.35116713348272705,
+              "spearman_vs_empirical_mean": 0.7719909254163345,
+              "spearman_vs_empirical_rate": 0.55450671897518,
+              "brier_vs_rollouts": 0.09346182684566627,
+              "mean_predicted_target_prob": 0.04779447242617607,
+              "mean_empirical_target_rate": 0.10232985364396655
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.3988056221308088,
+              "spearman_vs_empirical_mean": 0.8662026550663768,
+              "spearman_vs_empirical_rate": 0.7476549029219305,
+              "brier_vs_rollouts": 0.08318336460054486,
+              "mean_predicted_target_prob": 0.03861100971698761,
+              "mean_empirical_target_rate": 0.09286559139784945
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.46909963584585396,
+              "spearman_vs_empirical_mean": 0.8763354083852098,
+              "spearman_vs_empirical_rate": 0.7395438894348869,
+              "brier_vs_rollouts": 0.09233838177546416,
+              "mean_predicted_target_prob": 0.03810248523950577,
+              "mean_empirical_target_rate": 0.10693468437152392
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.5597679775530342,
+              "spearman_vs_empirical_mean": 0.8960594014850372,
+              "spearman_vs_empirical_rate": 0.5421066304238047,
+              "brier_vs_rollouts": 0.0919398539243863,
+              "mean_predicted_target_prob": 0.04100198671221733,
+              "mean_empirical_target_rate": 0.11157762096774194
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.033091574907302856,
+              0.12818042933940887,
+              0.2050451636314392,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN
+            ],
+            "observed": [
+              0.08258451005562688,
+              0.2984344422700587,
+              0.96875,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN,
+              NaN
+            ],
+            "count": [
+              23370,
+              2044,
+              96,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "conditional_spread": {
+        "1": 1.5088386314342508,
+        "2": 1.1600577570244919,
+        "3": 0.8177680454606511,
+        "4": 0.32445398340527914
+      },
+      "marginal_spread": 1.8783946112722762
+    },
+    "aromatic_rings": {
+      "target_interval": {
+        "lo": 3.0,
+        "hi": 4.0,
+        "rule": {
+          "kind": "exact_value",
+          "value": 3
+        },
+        "base_rate": 0.1713867089496819
+      },
+      "empirical_target_rate_mean": 0.19271081963498538,
+      "heads": {
+        "frozen_state": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 0.34150420946404947,
+            "spearman_vs_empirical_mean": 0.8354800601588601,
+            "spearman_vs_empirical_rate": 0.6603737856807778,
+            "brier_vs_rollouts": 0.12998435168759934,
+            "mean_predicted_target_prob": 0.1752903312444687,
+            "mean_empirical_target_rate": 0.19271081963498538
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.21576807129693673,
+              "spearman_vs_empirical_mean": 0.8509523692686027,
+              "spearman_vs_empirical_rate": 0.6918330887399236,
+              "brier_vs_rollouts": 0.14357937425879785,
+              "mean_predicted_target_prob": 0.16710667312145233,
+              "mean_empirical_target_rate": 0.18628640979689365
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.28610209951291765,
+              "spearman_vs_empirical_mean": 0.8658991425714692,
+              "spearman_vs_empirical_rate": 0.7981813229521146,
+              "brier_vs_rollouts": 0.12748733245451033,
+              "mean_predicted_target_prob": 0.17435689270496368,
+              "mean_empirical_target_rate": 0.1820584677419355
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.36672492571983173,
+              "spearman_vs_empirical_mean": 0.8481288103638052,
+              "spearman_vs_empirical_rate": 0.7006900127862686,
+              "brier_vs_rollouts": 0.12105854469333747,
+              "mean_predicted_target_prob": 0.1719357818365097,
+              "mean_empirical_target_rate": 0.19455693826473863
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.49742174132651173,
+              "spearman_vs_empirical_mean": 0.799475439838736,
+              "spearman_vs_empirical_rate": 0.48856801632670765,
+              "brier_vs_rollouts": 0.12783847157090542,
+              "mean_predicted_target_prob": 0.1877620667219162,
+              "mean_empirical_target_rate": 0.20794146273637373
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.03343833237886429,
+              0.15165205299854279,
+              0.23401330411434174,
+              0.3460807800292969,
+              0.44619011878967285,
+              0.5416988134384155,
+              0.6421120166778564,
+              0.720233678817749,
+              0.8267108201980591,
+              NaN
+            ],
+            "observed": [
+              0.034329906630199,
+              0.21037868162692847,
+              0.26065839179708583,
+              0.3702074167190446,
+              0.4763231197771588,
+              0.5691906005221932,
+              0.44113263785394935,
+              0.62890625,
+              0.921875,
+              NaN
+            ],
+            "count": [
+              10603,
+              6417,
+              3706,
+              1591,
+              1436,
+              766,
+              671,
+              256,
+              64,
+              0
+            ]
+          }
+        },
+        "trivial": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 0.26173051850671236,
+            "spearman_vs_empirical_mean": 0.8877720510151946,
+            "spearman_vs_empirical_rate": 0.7617498954625871,
+            "brier_vs_rollouts": 0.10792693624574179,
+            "mean_predicted_target_prob": 0.19180813431739807,
+            "mean_empirical_target_rate": 0.19271081963498538
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.21372904088529127,
+              "spearman_vs_empirical_mean": 0.8204326605324993,
+              "spearman_vs_empirical_rate": 0.6471835640473513,
+              "brier_vs_rollouts": 0.14538502704179485,
+              "mean_predicted_target_prob": 0.18100379407405853,
+              "mean_empirical_target_rate": 0.18628640979689365
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.31074828613067657,
+              "spearman_vs_empirical_mean": 0.8456559411895884,
+              "spearman_vs_empirical_rate": 0.7455897469892007,
+              "brier_vs_rollouts": 0.13040217460338605,
+              "mean_predicted_target_prob": 0.1683371365070343,
+              "mean_empirical_target_rate": 0.1820584677419355
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.2721373237791084,
+              "spearman_vs_empirical_mean": 0.9146056246891806,
+              "spearman_vs_empirical_rate": 0.7134123578910013,
+              "brier_vs_rollouts": 0.10610505901912495,
+              "mean_predicted_target_prob": 0.19051764905452728,
+              "mean_empirical_target_rate": 0.19455693826473863
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.2503074232317733,
+              "spearman_vs_empirical_mean": 0.9207366989173613,
+              "spearman_vs_empirical_rate": 0.6852320034510968,
+              "brier_vs_rollouts": 0.049985325048537636,
+              "mean_predicted_target_prob": 0.22737395763397217,
+              "mean_empirical_target_rate": 0.20794146273637373
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.03508417680859566,
+              0.15012964606285095,
+              0.240958571434021,
+              0.3423369228839874,
+              0.4444832503795624,
+              0.5519688725471497,
+              0.6759921312332153,
+              0.7587124705314636,
+              0.8566609025001526,
+              0.9556174278259277
+            ],
+            "observed": [
+              0.03707251652457132,
+              0.1342358505953352,
+              0.22716475923126755,
+              0.4316446911866759,
+              0.5103373231773667,
+              0.465625,
+              0.70625,
+              0.8375,
+              0.8087167070217918,
+              0.9347826086956522
+            ],
+            "count": [
+              10439,
+              6131,
+              4631,
+              1441,
+              919,
+              320,
+              160,
+              320,
+              413,
+              736
+            ]
+          }
+        },
+        "combined": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 0.2058664544506523,
+            "spearman_vs_empirical_mean": 0.9278966854371046,
+            "spearman_vs_empirical_rate": 0.8521362166802807,
+            "brier_vs_rollouts": 0.10331849603911654,
+            "mean_predicted_target_prob": 0.17489680647850037,
+            "mean_empirical_target_rate": 0.19271081963498538
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.21737332801764503,
+              "spearman_vs_empirical_mean": 0.8548564437409127,
+              "spearman_vs_empirical_rate": 0.6940002582209744,
+              "brier_vs_rollouts": 0.1442384281564425,
+              "mean_predicted_target_prob": 0.16173531115055084,
+              "mean_empirical_target_rate": 0.18628640979689365
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.23591693040247402,
+              "spearman_vs_empirical_mean": 0.9080219829456411,
+              "spearman_vs_empirical_rate": 0.846717707230728,
+              "brier_vs_rollouts": 0.1238678192242331,
+              "mean_predicted_target_prob": 0.1774883270263672,
+              "mean_empirical_target_rate": 0.1820584677419355
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.19213901668914396,
+              "spearman_vs_empirical_mean": 0.9523051072784801,
+              "spearman_vs_empirical_rate": 0.8122056688335624,
+              "brier_vs_rollouts": 0.10065120127833325,
+              "mean_predicted_target_prob": 0.17145958542823792,
+              "mean_empirical_target_rate": 0.19455693826473863
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 0.17803654269334623,
+              "spearman_vs_empirical_mean": 0.9461836963969057,
+              "spearman_vs_empirical_rate": 0.7334444831836588,
+              "brier_vs_rollouts": 0.04469525989142935,
+              "mean_predicted_target_prob": 0.18890400230884552,
+              "mean_empirical_target_rate": 0.20794146273637373
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.0267897080630064,
+              0.1496041864156723,
+              0.23247723281383514,
+              0.3528144061565399,
+              0.43968576192855835,
+              0.5415382385253906,
+              0.6520626544952393,
+              0.7471050024032593,
+              0.8477760553359985,
+              0.9630564451217651
+            ],
+            "observed": [
+              0.036765851378719426,
+              0.17487266553480477,
+              0.2604233483001924,
+              0.4283185840707965,
+              0.5348101265822784,
+              0.5269461077844312,
+              0.584375,
+              0.7770034843205574,
+              0.75,
+              0.9709821428571429
+            ],
+            "count": [
+              12838,
+              5301,
+              3118,
+              1130,
+              632,
+              668,
+              320,
+              287,
+              320,
+              896
+            ]
+          }
+        }
+      },
+      "conditional_spread": {
+        "1": 0.9236298441453442,
+        "2": 0.700709326745274,
+        "3": 0.45096160116804174,
+        "4": 0.13060458815525092
+      },
+      "marginal_spread": 1.1305377381851875
+    },
+    "mol_weight": {
+      "target_interval": {
+        "lo": 435.4494000000001,
+        "hi": 486.9970000000001,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09999397868454328
+      },
+      "empirical_target_rate_mean": 0.1124619543374914,
+      "heads": {
+        "frozen_state": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 25.838837736325864,
+            "spearman_vs_empirical_mean": 0.7787935101777005,
+            "spearman_vs_empirical_rate": 0.6747888937148762,
+            "brier_vs_rollouts": 0.08178297852070106,
+            "mean_predicted_target_prob": 0.10057765990495682,
+            "mean_empirical_target_rate": 0.1124619543374914
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 24.88009446359215,
+              "spearman_vs_empirical_mean": 0.5717263668154726,
+              "spearman_vs_empirical_rate": 0.45046433868724006,
+              "brier_vs_rollouts": 0.09649386099956342,
+              "mean_predicted_target_prob": 0.08616126328706741,
+              "mean_empirical_target_rate": 0.11228541666666667
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 26.385670214975573,
+              "spearman_vs_empirical_mean": 0.7855426385659643,
+              "spearman_vs_empirical_rate": 0.7300054970669382,
+              "brier_vs_rollouts": 0.08833644925477833,
+              "mean_predicted_target_prob": 0.1004335805773735,
+              "mean_empirical_target_rate": 0.11342151497695852
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 26.642828917475253,
+              "spearman_vs_empirical_mean": 0.7856236405910149,
+              "spearman_vs_empirical_rate": 0.6790922065293967,
+              "brier_vs_rollouts": 0.07003357480414947,
+              "mean_predicted_target_prob": 0.09357943385839462,
+              "mean_empirical_target_rate": 0.10174395161290323
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 25.446757349260473,
+              "spearman_vs_empirical_mean": 0.8836255906397661,
+              "spearman_vs_empirical_rate": 0.5632378210097743,
+              "brier_vs_rollouts": 0.07230252980125552,
+              "mean_predicted_target_prob": 0.12213634699583054,
+              "mean_empirical_target_rate": 0.12239693409343716
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.039157405495643616,
+              0.13197726011276245,
+              0.246795654296875,
+              0.3589708209037781,
+              0.4405641555786133,
+              0.5599151849746704,
+              0.6349195241928101,
+              0.7590926289558411,
+              0.8653376698493958,
+              NaN
+            ],
+            "observed": [
+              0.049961985445856415,
+              0.15352077631251554,
+              0.3415929203539823,
+              0.34057971014492755,
+              0.41846758349705304,
+              0.346875,
+              0.576171875,
+              1.0,
+              0.96875,
+              NaN
+            ],
+            "count": [
+              18414,
+              4019,
+              1130,
+              414,
+              509,
+              320,
+              512,
+              96,
+              96,
+              0
+            ]
+          }
+        },
+        "trivial": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 34.024000618376654,
+            "spearman_vs_empirical_mean": 0.5236217727243578,
+            "spearman_vs_empirical_rate": 0.3557683338966277,
+            "brier_vs_rollouts": 0.09052049213060516,
+            "mean_predicted_target_prob": 0.09782251715660095,
+            "mean_empirical_target_rate": 0.1124619543374914
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 27.879351619242197,
+              "spearman_vs_empirical_mean": 0.39883838244197933,
+              "spearman_vs_empirical_rate": 0.3794343720749906,
+              "brier_vs_rollouts": 0.1000138611720951,
+              "mean_predicted_target_prob": 0.07939228415489197,
+              "mean_empirical_target_rate": 0.11228541666666667
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 39.05336011047368,
+              "spearman_vs_empirical_mean": 0.4319617850019066,
+              "spearman_vs_empirical_rate": 0.3362889080411388,
+              "brier_vs_rollouts": 0.09966444268152753,
+              "mean_predicted_target_prob": 0.07937958836555481,
+              "mean_empirical_target_rate": 0.11342151497695852
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 35.723402729160874,
+              "spearman_vs_empirical_mean": 0.5833285832145805,
+              "spearman_vs_empirical_rate": 0.35312287347735394,
+              "brier_vs_rollouts": 0.08415677184105133,
+              "mean_predicted_target_prob": 0.08860864490270615,
+              "mean_empirical_target_rate": 0.10174395161290323
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 33.43988801462986,
+              "spearman_vs_empirical_mean": 0.8171619290482264,
+              "spearman_vs_empirical_rate": 0.42110073480025834,
+              "brier_vs_rollouts": 0.0782785520743073,
+              "mean_predicted_target_prob": 0.1439095288515091,
+              "mean_empirical_target_rate": 0.12239693409343716
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.05806178227066994,
+              0.13073626160621643,
+              0.2535194158554077,
+              0.34317007660865784,
+              0.4536665380001068,
+              0.5280141830444336,
+              0.662544846534729,
+              0.7235234975814819,
+              0.8376853466033936,
+              NaN
+            ],
+            "observed": [
+              0.07559490868843387,
+              0.13655462184873948,
+              0.36019736842105265,
+              0.296875,
+              0.14285714285714285,
+              0.8046875,
+              0.8,
+              0.6171875,
+              1.0,
+              NaN
+            ],
+            "count": [
+              18070,
+              5712,
+              608,
+              448,
+              224,
+              128,
+              160,
+              128,
+              32,
+              0
+            ]
+          }
+        },
+        "combined": {
+          "overall": {
+            "n": 800,
+            "mae_vs_empirical_mean": 23.456312921631522,
+            "spearman_vs_empirical_mean": 0.8113191624182375,
+            "spearman_vs_empirical_rate": 0.7039536040897972,
+            "brier_vs_rollouts": 0.08064411561323717,
+            "mean_predicted_target_prob": 0.099909208714962,
+            "mean_empirical_target_rate": 0.1124619543374914
+          },
+          "by_quartile": {
+            "1": {
+              "n": 200,
+              "mae_vs_empirical_mean": 24.749671451234565,
+              "spearman_vs_empirical_mean": 0.5989160900359265,
+              "spearman_vs_empirical_rate": 0.49474163883816014,
+              "brier_vs_rollouts": 0.097428464725032,
+              "mean_predicted_target_prob": 0.08095405250787735,
+              "mean_empirical_target_rate": 0.11228541666666667
+            },
+            "2": {
+              "n": 200,
+              "mae_vs_empirical_mean": 25.647456424131178,
+              "spearman_vs_empirical_mean": 0.7804635115877898,
+              "spearman_vs_empirical_rate": 0.7071437508956623,
+              "brier_vs_rollouts": 0.09095065366502364,
+              "mean_predicted_target_prob": 0.10029472410678864,
+              "mean_empirical_target_rate": 0.11342151497695852
+            },
+            "3": {
+              "n": 200,
+              "mae_vs_empirical_mean": 23.744964519831456,
+              "spearman_vs_empirical_mean": 0.8667711692792321,
+              "spearman_vs_empirical_rate": 0.7530760703935284,
+              "brier_vs_rollouts": 0.06887860993227504,
+              "mean_predicted_target_prob": 0.09110793471336365,
+              "mean_empirical_target_rate": 0.10174395161290323
+            },
+            "4": {
+              "n": 200,
+              "mae_vs_empirical_mean": 19.683159291328877,
+              "spearman_vs_empirical_mean": 0.9378159453986351,
+              "spearman_vs_empirical_rate": 0.5977939412907002,
+              "brier_vs_rollouts": 0.06536600289988767,
+              "mean_predicted_target_prob": 0.12728016078472137,
+              "mean_empirical_target_rate": 0.12239693409343716
+            }
+          },
+          "reliability": {
+            "bin_edges": [
+              0.0,
+              0.1,
+              0.2,
+              0.30000000000000004,
+              0.4,
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0
+            ],
+            "mean_predicted": [
+              0.03683292865753174,
+              0.13139723241329193,
+              0.24452731013298035,
+              0.3448014557361603,
+              0.44224703311920166,
+              0.5489490628242493,
+              0.6435001492500305,
+              0.7299438714981079,
+              0.8511012196540833,
+              0.9307962656021118
+            ],
+            "observed": [
+              0.049058233040099306,
+              0.16279069767441862,
+              0.27232142857142855,
+              0.4106583072100313,
+              0.2847222222222222,
+              0.5793269230769231,
+              0.5572916666666666,
+              0.708994708994709,
+              0.6796875,
+              0.953125
+            ],
+            "count": [
+              18529,
+              4042,
+              896,
+              638,
+              288,
+              416,
+              192,
+              189,
+              256,
+              64
+            ]
+          }
+        }
+      },
+      "conditional_spread": {
+        "1": 78.11004462496315,
+        "2": 57.12065565504954,
+        "3": 37.317578390297406,
+        "4": 17.638417108021216
+      },
+      "marginal_spread": 95.53020658932367
+    }
+  }
+}

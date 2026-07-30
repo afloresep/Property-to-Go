@@ -1,0 +1,10 @@
+# The single fixed base sampling policy pi_0.  Used for every unconditional
+# trajectory, every rollout, every best-of-N candidate, and every un-guided step
+# inside a windowed guidance run.  Matches the policy in the official model card.
+do_sample: true
+temperature: 1.0
+top_k: null # full-vocabulary sampling
+top_p: null
+max_length: 202 # == config.max_position_embeddings
+batch_size: 256
+seed: 20260729

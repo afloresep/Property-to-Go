@@ -1,0 +1,187 @@
+{
+  "n_requested": 50000,
+  "n_generated": 50000,
+  "n_valid_kept": 49823,
+  "n_invalid": 171,
+  "n_too_short": 6,
+  "validity": 0.99658,
+  "uniqueness": 0.9999598627305385,
+  "n_prefix_examples": 199292,
+  "n_unique_canonical": 49821,
+  "feature_names": [
+    "prefix_len",
+    "n_atom_tokens",
+    "n_aromatic_atom_tokens",
+    "n_ring_markers",
+    "n_open_rings",
+    "n_branch_open",
+    "n_branch_close",
+    "branch_depth",
+    "n_bond_tokens",
+    "n_dot",
+    "n_bracket_atoms",
+    "n_element_C",
+    "n_element_N",
+    "n_element_O",
+    "n_element_S",
+    "n_element_F",
+    "n_element_Cl",
+    "n_element_Br",
+    "n_element_I",
+    "n_element_P",
+    "n_element_other",
+    "frac_atom_tokens",
+    "frac_aromatic_atoms",
+    "atoms_per_ring_marker"
+  ],
+  "hidden_dim": 768,
+  "split_row_counts": {
+    "train": 158588,
+    "val": 20752,
+    "test": 19952
+  },
+  "split_group_counts": {
+    "train": 39647,
+    "val": 5187,
+    "test": 4987
+  },
+  "base_distribution": {
+    "clogp": {
+      "mean": 2.725612788471189,
+      "std": 1.7525131988043552,
+      "quantiles": {
+        "0.05": 0.2678200000000013,
+        "0.25": 1.6932,
+        "0.33": 2.0401407999999996,
+        "0.5": 2.684800000000001,
+        "0.67": 3.3134148000000017,
+        "0.75": 3.6549000000000023,
+        "0.95": 5.038300000000004
+      }
+    },
+    "aromatic_rings": {
+      "mean": 1.814944904963571,
+      "std": 1.0896416610779496,
+      "quantiles": {
+        "0.05": 0.0,
+        "0.25": 1.0,
+        "0.33": 1.0,
+        "0.5": 2.0,
+        "0.67": 2.0,
+        "0.75": 2.0,
+        "0.95": 3.0
+      }
+    },
+    "mol_weight": {
+      "mean": 366.45065206183904,
+      "std": 87.45004344046764,
+      "quantiles": {
+        "0.05": 256.4945,
+        "0.25": 320.43600000000015,
+        "0.33": 332.4630000000001,
+        "0.5": 353.42600000000004,
+        "0.67": 384.358,
+        "0.75": 403.56700000000023,
+        "0.95": 486.9970000000001
+      }
+    },
+    "content_length": {
+      "mean": 42.252373401842526,
+      "std": 10.963603571476362,
+      "quantiles": {
+        "0.05": 28.0,
+        "0.25": 36.0,
+        "0.33": 38.0,
+        "0.5": 41.0,
+        "0.67": 45.0,
+        "0.75": 47.0,
+        "0.95": 58.0
+      }
+    },
+    "aromatic_rings_histogram": {
+      "0": 4001,
+      "1": 15812,
+      "2": 19065,
+      "3": 8539,
+      "4": 1909,
+      "5": 282,
+      "6": 62,
+      "7": 37,
+      "8": 27,
+      "9": 24,
+      "10": 21,
+      "11": 17,
+      "12": 8,
+      "13": 11,
+      "14": 3,
+      "15": 2,
+      "16": 1,
+      "17": 2
+    }
+  },
+  "target_intervals": {
+    "clogp": {
+      "lo": 4.172676000000004,
+      "hi": 5.038300000000004,
+      "rule": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "base_rate": 0.09999397868454328
+    },
+    "aromatic_rings": {
+      "lo": 3.0,
+      "hi": 4.0,
+      "rule": {
+        "kind": "exact_value",
+        "value": 3
+      },
+      "base_rate": 0.1713867089496819
+    },
+    "mol_weight": {
+      "lo": 435.4494000000001,
+      "hi": 486.9970000000001,
+      "rule": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "base_rate": 0.09999397868454328
+    }
+  },
+  "windows": {
+    "t33": 15,
+    "t67": 29,
+    "source": "pooled generated-position distribution of the base model",
+    "early": [
+      1,
+      15
+    ],
+    "middle": [
+      15,
+      29
+    ],
+    "late": [
+      29,
+      null
+    ]
+  },
+  "compute_generation": {
+    "processed_tokens_actual": 2221109,
+    "processed_tokens_full_recompute": 2221109,
+    "forward_calls": 50000,
+    "wall_seconds": 2743.974337749998,
+    "molecules_returned": 50000,
+    "tokens_per_molecule_actual": 44.42218,
+    "tokens_per_molecule_full_recompute": 44.42218
+  },
+  "compute_hidden_states": {
+    "processed_tokens_actual": 2204786,
+    "processed_tokens_full_recompute": 2204786,
+    "forward_calls": 519,
+    "wall_seconds": 1300.8525652079843,
+    "molecules_returned": 0
+  },
+  "wall_seconds_total": 4069.325285542058
+}

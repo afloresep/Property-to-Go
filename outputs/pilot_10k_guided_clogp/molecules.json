@@ -1,0 +1,1222 @@
+{
+  "unguided": {
+    "101": [
+      {
+        "smiles": "CCC(CNC(=O)CCC(F)(F)F)NC(=O)CS(=O)(=O)NC",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "CCC(CNC(=O)CCC(F)(F)F)NC(=O)CS(=O)(=O)NC",
+        "clogp": -0.11089999999999883,
+        "aromatic_rings": 0,
+        "mol_weight": 347.359,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "CC(OC(=O)c1c[nH]c(C(=O)O)c1)C(=O)O",
+        "n_content_tokens": 31,
+        "valid": true,
+        "canonical_smiles": "CC(OC(=O)c1c[nH]c(C(=O)O)c1)C(=O)O",
+        "clogp": 0.34279999999999994,
+        "aromatic_rings": 1,
+        "mol_weight": 227.17199999999997,
+        "n_heavy_atoms": 16
+      },
+      {
+        "smiles": "CCOC(=O)C(C)(C)C(=O)CN1C(=O)NC(C)(c2ccc(F)cc2Cl)C1=O",
+        "n_content_tokens": 51,
+        "valid": true,
+        "canonical_smiles": "CCOC(=O)C(C)(C)C(=O)CN1C(=O)NC(C)(c2ccc(F)cc2Cl)C1=O",
+        "clogp": 2.4045000000000005,
+        "aromatic_rings": 1,
+        "mol_weight": 398.81800000000004,
+        "n_heavy_atoms": 27
+      },
+      {
+        "smiles": "COc1cncc(NC(=O)OC(C)(C)C)c1C(=O)Nc1ccnc(Cl)c1OC(F)(F)F",
+        "n_content_tokens": 53,
+        "valid": true,
+        "canonical_smiles": "COc1cncc(NC(=O)OC(C)(C)C)c1C(=O)Nc1ccnc(Cl)c1OC(F)(F)F",
+        "clogp": 4.6365000000000025,
+        "aromatic_rings": 2,
+        "mol_weight": 462.81200000000007,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "CC(C(=O)NCC1(O)CCSC1)N(C(=O)OC(C)(C)C)c1cccnc1",
+        "n_content_tokens": 46,
+        "valid": true,
+        "canonical_smiles": "CC(C(=O)NCC1(O)CCSC1)N(C(=O)OC(C)(C)C)c1cccnc1",
+        "clogp": 2.1958,
+        "aromatic_rings": 1,
+        "mol_weight": 381.4980000000001,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "CC(c1ccccc1)C(O)CNC1CC(C(=O)OC(C)(C)C)N(C(=O)OC(C)(C)C)C1",
+        "n_content_tokens": 57,
+        "valid": true,
+        "canonical_smiles": "CC(c1ccccc1)C(O)CNC1CC(C(=O)OC(C)(C)C)N(C(=O)OC(C)(C)C)C1",
+        "clogp": 3.460300000000002,
+        "aromatic_rings": 1,
+        "mol_weight": 434.5770000000003,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "CCNC(=O)NC(=O)CNCC(O)CNC(=O)c1coc(CC)n1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "CCNC(=O)NC(=O)CNCC(O)CNC(=O)c1coc(CC)n1",
+        "clogp": -1.2369999999999979,
+        "aromatic_rings": 1,
+        "mol_weight": 341.3680000000001,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CC1C(CCO)C(=O)N1C(C)C(C)(CCCCCCC(=O)O)C(=O)C(CCCCCCC(=O)O)C(CC(=O)O)C(F)(F)F",
+        "n_content_tokens": 76,
+        "valid": true,
+        "canonical_smiles": "CC1C(CCO)C(=O)N1C(C)C(C)(CCCCCCC(=O)O)C(=O)C(CCCCCCC(=O)O)C(CC(=O)O)C(F)(F)F",
+        "clogp": 5.299400000000003,
+        "aromatic_rings": 0,
+        "mol_weight": 623.7060000000006,
+        "n_heavy_atoms": 43
+      },
+      {
+        "smiles": "CSC(C)C(=O)N1CCCC(CO)(NC(=O)C(C)C)C1",
+        "n_content_tokens": 36,
+        "valid": true,
+        "canonical_smiles": "CSC(C)C(=O)N1CCCC(CO)(NC(=O)C(C)C)C1",
+        "clogp": 0.8636,
+        "aromatic_rings": 0,
+        "mol_weight": 302.44000000000005,
+        "n_heavy_atoms": 20
+      },
+      {
+        "smiles": "CC(NC(=O)C1CCC1)C1CN(C(=O)c2cc3cnccc3[nH]2)C1",
+        "n_content_tokens": 42,
+        "valid": true,
+        "canonical_smiles": "CC(NC(=O)C1CCC1)C1CN(C(=O)c2cc3cnccc3[nH]2)C1",
+        "clogp": 1.9397,
+        "aromatic_rings": 2,
+        "mol_weight": 326.40000000000003,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CCOC1CC(CCn2c(-c3ccc(C)o3)nnc2N2CCC(CNC(=O)OC(C)(C)C)C2)C1",
+        "n_content_tokens": 58,
+        "valid": true,
+        "canonical_smiles": "CCOC1CC(CCn2c(-c3ccc(C)o3)nnc2N2CCC(CNC(=O)OC(C)(C)C)C2)C1",
+        "clogp": 4.402720000000004,
+        "aromatic_rings": 2,
+        "mol_weight": 473.6180000000004,
+        "n_heavy_atoms": 34
+      },
+      {
+        "smiles": "Cc1ccc(CN2CCC(c3cccc4nc(CC5=CCC(F)=CC5)oc34)CC2)o1",
+        "n_content_tokens": 50,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(CN2CCC(c3cccc4nc(CC5=CCC(F)=CC5)oc34)CC2)o1",
+        "clogp": 6.224920000000006,
+        "aromatic_rings": 3,
+        "mol_weight": 406.50100000000026,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "Cc1nc2ccc(Br)cn2c1C(=O)NCC1N(C)CCCC1(C)C",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "Cc1nc2ccc(Br)cn2c1C(=O)NCC1N(C)CCCC1(C)C",
+        "clogp": 3.2554200000000018,
+        "aromatic_rings": 2,
+        "mol_weight": 393.32900000000024,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CCCCc1oc2ccccc2c1CNC(C)(C)CO",
+        "n_content_tokens": 28,
+        "valid": true,
+        "canonical_smiles": "CCCCc1oc2ccccc2c1CNC(C)(C)CO",
+        "clogp": 3.6359000000000026,
+        "aromatic_rings": 2,
+        "mol_weight": 275.392,
+        "n_heavy_atoms": 20
+      },
+      {
+        "smiles": "Cc1nc(C2CC2)oc1C(=O)N1CCC(NCc2nnnn2C)CC1",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "Cc1nc(C2CC2)oc1C(=O)N1CCC(NCc2nnnn2C)CC1",
+        "clogp": 0.7783199999999997,
+        "aromatic_rings": 2,
+        "mol_weight": 345.4070000000001,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "O=C(NC1CC(c2ccccc2F)C1)NC1(Cc2ccc(F)cc2)CCOCC1",
+        "n_content_tokens": 46,
+        "valid": true,
+        "canonical_smiles": "O=C(NC1CC(c2ccccc2F)C1)NC1(Cc2ccc(F)cc2)CCOCC1",
+        "clogp": 4.301900000000003,
+        "aromatic_rings": 2,
+        "mol_weight": 400.46900000000016,
+        "n_heavy_atoms": 29
+      },
+      {
+        "smiles": "CCOC(CC(=O)N1CCC(CNC(=O)C(C)Sc2cccs2)C1c1cccnc1)OCC",
+        "n_content_tokens": 51,
+        "valid": true,
+        "canonical_smiles": "CCOC(CC(=O)N1CCC(CNC(=O)C(C)Sc2cccs2)C1c1cccnc1)OCC",
+        "clogp": 4.118900000000004,
+        "aromatic_rings": 2,
+        "mol_weight": 491.6790000000002,
+        "n_heavy_atoms": 33
+      },
+      {
+        "smiles": "O=C(Nc1ccc(OC2CCCC2)cc1)N1CCOCC1c1ccc(F)cc1",
+        "n_content_tokens": 43,
+        "valid": true,
+        "canonical_smiles": "O=C(Nc1ccc(OC2CCCC2)cc1)N1CCOCC1c1ccc(F)cc1",
+        "clogp": 4.752500000000005,
+        "aromatic_rings": 2,
+        "mol_weight": 384.451,
+        "n_heavy_atoms": 28
+      },
+      {
+        "smiles": "CC(NC(=O)CSc1ccc(O)cc1)c1nncn1C",
+        "n_content_tokens": 31,
+        "valid": true,
+        "canonical_smiles": "CC(NC(=O)CSc1ccc(O)cc1)c1nncn1C",
+        "clogp": 1.4901999999999997,
+        "aromatic_rings": 2,
+        "mol_weight": 292.36400000000003,
+        "n_heavy_atoms": 20
+      },
+      {
+        "smiles": "CCNC(=O)N1CCN(c2nnc(CC3CCCC3)n2Cc2ccc(C)cc2OCC(F)(F)F)CC1",
+        "n_content_tokens": 57,
+        "valid": true,
+        "canonical_smiles": "CCNC(=O)N1CCN(c2nnc(CC3CCCC3)n2Cc2ccc(C)cc2OCC(F)(F)F)CC1",
+        "clogp": 4.160120000000003,
+        "aromatic_rings": 2,
+        "mol_weight": 508.5890000000003,
+        "n_heavy_atoms": 36
+      },
+      {
+        "smiles": "Cc1ncc(NC(=O)c2[nH]c3ccccc3c2Cl)cn1",
+        "n_content_tokens": 31,
+        "valid": true,
+        "canonical_smiles": "Cc1ncc(NC(=O)c2[nH]c3ccccc3c2Cl)cn1",
+        "clogp": 3.1720200000000007,
+        "aromatic_rings": 3,
+        "mol_weight": 286.72200000000004,
+        "n_heavy_atoms": 20
+      },
+      {
+        "smiles": "CCS(=O)(=O)N(CC#N)c1ccc2ccccc2c1",
+        "n_content_tokens": 32,
+        "valid": true,
+        "canonical_smiles": "CCS(=O)(=O)N(CC#N)c1ccc2ccccc2c1",
+        "clogp": 2.5194800000000006,
+        "aromatic_rings": 2,
+        "mol_weight": 274.345,
+        "n_heavy_atoms": 19
+      },
+      {
+        "smiles": "CC(CCO)NC(=O)CSCc1ccc(-c2nn[nH]n2)cc1",
+        "n_content_tokens": 34,
+        "valid": true,
+        "canonical_smiles": "CC(CCO)NC(=O)CSCc1ccc(-c2nn[nH]n2)cc1",
+        "clogp": 0.9869999999999997,
+        "aromatic_rings": 2,
+        "mol_weight": 321.40599999999995,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "C=CCOC(C)C(=O)N1CCC(OC2CCN(C(=O)CCNc3ccc(C)cc3C)CC2)CC1",
+        "n_content_tokens": 55,
+        "valid": true,
+        "canonical_smiles": "C=CCOC(C)C(=O)N1CCC(OC2CCN(C(=O)CCNc3ccc(C)cc3C)CC2)CC1",
+        "clogp": 3.695140000000002,
+        "aromatic_rings": 1,
+        "mol_weight": 471.64200000000034,
+        "n_heavy_atoms": 34
+      }
+    ]
+  },
+  "throughout": {
+    "101": [
+      {
+        "smiles": "CCC(CC)(CNC(=O)NC(CO)c1cccc(Br)c1)c1ccc(OC)c(OC)c1",
+        "n_content_tokens": 49,
+        "valid": true,
+        "canonical_smiles": "CCC(CC)(CNC(=O)NC(CO)c1cccc(Br)c1)c1ccc(OC)c(OC)c1",
+        "clogp": 4.556900000000003,
+        "aromatic_rings": 2,
+        "mol_weight": 479.4150000000002,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "COC(=O)c1sc2[nH]c(CSc3nc4ccc([N+](=O)[O-])cc4s3)nc(=O)c2c1C",
+        "n_content_tokens": 50,
+        "valid": true,
+        "canonical_smiles": "COC(=O)c1sc2[nH]c(CSc3nc4ccc([N+](=O)[O-])cc4s3)nc(=O)c2c1C",
+        "clogp": 3.889820000000002,
+        "aromatic_rings": 4,
+        "mol_weight": 448.50700000000023,
+        "n_heavy_atoms": 29
+      },
+      {
+        "smiles": "Cc1ccc(-c2nc3cc(F)ccc3n2C)cc1NC(=O)NC1CCc2ccccc21",
+        "n_content_tokens": 49,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(-c2nc3cc(F)ccc3n2C)cc1NC(=O)NC1CCc2ccccc21",
+        "clogp": 5.496820000000004,
+        "aromatic_rings": 4,
+        "mol_weight": 414.4840000000002,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "Cc1cc(OCCCSCC(NC(=O)CN)C(=O)O)ccc1Cl.Cl",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "Cc1cc(OCCCSCC(NC(=O)CN)C(=O)O)ccc1Cl.Cl",
+        "clogp": 2.10042,
+        "aromatic_rings": 1,
+        "mol_weight": 397.324,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CCSC1(CNC(=O)Nc2cc(Br)ccc2C2=NCCO2)CC1",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "CCSC1(CNC(=O)Nc2cc(Br)ccc2C2=NCCO2)CC1",
+        "clogp": 3.6331000000000024,
+        "aromatic_rings": 1,
+        "mol_weight": 398.3260000000003,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "Cc1nc(CCC(=O)Nc2c(C#N)c(C)c(C)n2C2CCCC2)cs1",
+        "n_content_tokens": 43,
+        "valid": true,
+        "canonical_smiles": "Cc1nc(CCC(=O)Nc2c(C#N)c(C)c(C)n2C2CCCC2)cs1",
+        "clogp": 4.427940000000003,
+        "aromatic_rings": 2,
+        "mol_weight": 356.4950000000002,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "CC(C)Oc1cc(-c2cccc3c2CCN3)ncn1",
+        "n_content_tokens": 30,
+        "valid": true,
+        "canonical_smiles": "CC(C)Oc1cc(-c2cccc3c2CCN3)ncn1",
+        "clogp": 2.8987999999999996,
+        "aromatic_rings": 2,
+        "mol_weight": 255.321,
+        "n_heavy_atoms": 19
+      },
+      {
+        "smiles": "CCOc1cccc(C2CC2NC(=O)CC(C(=O)O)c2ccccc2)c1",
+        "n_content_tokens": 42,
+        "valid": true,
+        "canonical_smiles": "CCOc1cccc(C2CC2NC(=O)CC(C(=O)O)c2ccccc2)c1",
+        "clogp": 3.315900000000001,
+        "aromatic_rings": 2,
+        "mol_weight": 353.418,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "CC(C)c1ccccc1OCc1nnc(SCc2ncccc2Cl)n1-c1ccccc1",
+        "n_content_tokens": 44,
+        "valid": true,
+        "canonical_smiles": "CC(C)c1ccccc1OCc1nnc(SCc2ncccc2Cl)n1-c1ccccc1",
+        "clogp": 6.310400000000005,
+        "aromatic_rings": 4,
+        "mol_weight": 450.995,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "CCOC(=O)c1cc(S(=O)(=O)N(Cc2ccc3ccccc3c2)C2CC2)ccc1C",
+        "n_content_tokens": 51,
+        "valid": true,
+        "canonical_smiles": "CCOC(=O)c1cc(S(=O)(=O)N(Cc2ccc3ccccc3c2)C2CC2)ccc1C",
+        "clogp": 4.678220000000004,
+        "aromatic_rings": 3,
+        "mol_weight": 423.53400000000016,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "CCC(=CC(=O)Nc1ccc2c(c1)CC(OC)C2)c1ccc(OC)cc1",
+        "n_content_tokens": 44,
+        "valid": true,
+        "canonical_smiles": "CCC(=CC(=O)Nc1ccc2c(c1)CC(OC)C2)c1ccc(OC)cc1",
+        "clogp": 4.2409000000000034,
+        "aromatic_rings": 2,
+        "mol_weight": 351.4460000000001,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "CCC(NC(=O)COc1ccc(C#N)c(Br)c1)(C(=O)O)c1ccccc1",
+        "n_content_tokens": 45,
+        "valid": true,
+        "canonical_smiles": "CCC(NC(=O)COc1ccc(C#N)c(Br)c1)(C(=O)O)c1ccccc1",
+        "clogp": 3.2058800000000014,
+        "aromatic_rings": 2,
+        "mol_weight": 417.25900000000007,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "Cc1[nH]c2ccccc2c1-c1csc(NC(=O)c2csc(Cc3ccccc3F)n2)n1",
+        "n_content_tokens": 49,
+        "valid": true,
+        "canonical_smiles": "Cc1[nH]c2ccccc2c1-c1csc(NC(=O)c2csc(Cc3ccccc3F)n2)n1",
+        "clogp": 6.038520000000004,
+        "aromatic_rings": 5,
+        "mol_weight": 448.5480000000001,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "Cc1ccc(F)c(CCNC(=O)C2CCCN(C(=O)c3ccncc3)C2)c1",
+        "n_content_tokens": 45,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(F)c(CCNC(=O)C2CCCN(C(=O)c3ccncc3)C2)c1",
+        "clogp": 2.7402200000000008,
+        "aromatic_rings": 2,
+        "mol_weight": 369.4400000000001,
+        "n_heavy_atoms": 27
+      },
+      {
+        "smiles": "CC(CC(=O)N1CCCCC1CN(C)Cc1cscn1)C1CC1",
+        "n_content_tokens": 36,
+        "valid": true,
+        "canonical_smiles": "CC(CC(=O)N1CCCCC1CN(C)Cc1cscn1)C1CC1",
+        "clogp": 3.3922000000000025,
+        "aromatic_rings": 1,
+        "mol_weight": 335.51700000000005,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "Cc1cc(C(F)(F)F)n2nc(-c3nc(CC4CCCCC4)no3)cc2n1",
+        "n_content_tokens": 45,
+        "valid": true,
+        "canonical_smiles": "Cc1cc(C(F)(F)F)n2nc(-c3nc(CC4CCCCC4)no3)cc2n1",
+        "clogp": 4.229320000000003,
+        "aromatic_rings": 3,
+        "mol_weight": 365.35900000000015,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "Cc1ccc(C#N)c(-c2ccc(C(F)(F)F)n3ncnc23)c1",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(C#N)c(-c2ccc(C(F)(F)F)n3ncnc23)c1",
+        "clogp": 3.595200000000002,
+        "aromatic_rings": 3,
+        "mol_weight": 302.259,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "O=C1Cc2c(cccc2OC2Cc3ccc([N+](=O)[O-])cc3C2)N1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "O=C1Cc2c(cccc2OC2Cc3ccc([N+](=O)[O-])cc3C2)N1",
+        "clogp": 2.6356,
+        "aromatic_rings": 2,
+        "mol_weight": 310.309,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "O=C(Cc1ccc(F)c(C(F)(F)F)c1)N1CC2(CCCN2C(=O)C=Cc2cc3ccccc3o2)C1",
+        "n_content_tokens": 62,
+        "valid": true,
+        "canonical_smiles": "O=C(Cc1ccc(F)c(C(F)(F)F)c1)N1CC2(CCCN2C(=O)C=Cc2cc3ccccc3o2)C1",
+        "clogp": 5.050000000000004,
+        "aromatic_rings": 3,
+        "mol_weight": 486.4650000000003,
+        "n_heavy_atoms": 35
+      },
+      {
+        "smiles": "COc1cc(N(C)c2nnc(-c3cccnc3)n2CC2CC2)cc(OC)c1OC",
+        "n_content_tokens": 46,
+        "valid": true,
+        "canonical_smiles": "COc1cc(N(C)c2nnc(-c3cccnc3)n2CC2CC2)cc(OC)c1OC",
+        "clogp": 3.543800000000002,
+        "aromatic_rings": 3,
+        "mol_weight": 395.46300000000025,
+        "n_heavy_atoms": 29
+      },
+      {
+        "smiles": "CCc1nc2n(n1)C(C(=O)Nc1ccc(F)c(F)c1F)CC(=O)N2C",
+        "n_content_tokens": 45,
+        "valid": true,
+        "canonical_smiles": "CCc1nc2n(n1)C(C(=O)Nc1ccc(F)c(F)c1F)CC(=O)N2C",
+        "clogp": 1.8040999999999998,
+        "aromatic_rings": 2,
+        "mol_weight": 353.3040000000001,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "CCCCC(CC)CC1(CNC(C)(C)C)COC1",
+        "n_content_tokens": 28,
+        "valid": true,
+        "canonical_smiles": "CCCCC(CC)CC1(CNC(C)(C)C)COC1",
+        "clogp": 3.997600000000003,
+        "aromatic_rings": 0,
+        "mol_weight": 255.44599999999994,
+        "n_heavy_atoms": 18
+      },
+      {
+        "smiles": "Cc1ccc(C(=O)NCCNC(=O)N2CCC(CCCn3ccnc3)CC2)cc1F",
+        "n_content_tokens": 46,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(C(=O)NCCNC(=O)N2CCC(CCCn3ccnc3)CC2)cc1F",
+        "clogp": 2.9624200000000007,
+        "aromatic_rings": 2,
+        "mol_weight": 415.5130000000002,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "Cc1ccccc1-c1cnc(COC(=O)c2ccc(Br)cc2)o1",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "Cc1ccccc1-c1cnc(COC(=O)c2ccc(Br)cc2)o1",
+        "clogp": 4.769520000000003,
+        "aromatic_rings": 3,
+        "mol_weight": 372.21799999999996,
+        "n_heavy_atoms": 23
+      }
+    ]
+  },
+  "early": {
+    "101": [
+      {
+        "smiles": "CCC(CC)(CNC(=O)C(C)SCC(=O)Nc1ccc(C)cc1)NC(=O)OC(C)(C)C",
+        "n_content_tokens": 54,
+        "valid": true,
+        "canonical_smiles": "CCC(CC)(CNC(=O)C(C)SCC(=O)Nc1ccc(C)cc1)NC(=O)OC(C)(C)C",
+        "clogp": 4.254920000000004,
+        "aromatic_rings": 1,
+        "mol_weight": 451.6330000000002,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "COC(=O)c1sc2[nH]c(C=Cc3cccs3)nc(=O)c2c1C",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "COC(=O)c1sc2[nH]c(C=Cc3cccs3)nc(=O)c2c1C",
+        "clogp": 3.3115200000000016,
+        "aromatic_rings": 3,
+        "mol_weight": 332.4060000000002,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "Cc1ccc(-c2nc3cc(F)ccc3n2C(C)C)cc1NC(=O)NC1CCOC(C)C1",
+        "n_content_tokens": 51,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(-c2nc3cc(F)ccc3n2C(C)C)cc1NC(=O)NC1CCOC(C)C1",
+        "clogp": 5.420720000000005,
+        "aromatic_rings": 3,
+        "mol_weight": 424.5200000000002,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "Cc1cc(OCCCSCC(N)=O)ccc1Br",
+        "n_content_tokens": 24,
+        "valid": true,
+        "canonical_smiles": "Cc1cc(OCCCSCC(N)=O)ccc1Br",
+        "clogp": 2.7449200000000005,
+        "aromatic_rings": 1,
+        "mol_weight": 318.236,
+        "n_heavy_atoms": 17
+      },
+      {
+        "smiles": "CCSC1(CNC(=O)Nc2ccccc2C(F)(F)F)CC1",
+        "n_content_tokens": 34,
+        "valid": true,
+        "canonical_smiles": "CCSC1(CNC(=O)Nc2ccccc2C(F)(F)F)CC1",
+        "clogp": 4.112600000000002,
+        "aromatic_rings": 1,
+        "mol_weight": 318.3640000000001,
+        "n_heavy_atoms": 21
+      },
+      {
+        "smiles": "Cc1nc(CCC(=O)Nc2cc(Br)nn2C)cs1",
+        "n_content_tokens": 29,
+        "valid": true,
+        "canonical_smiles": "Cc1nc(CCC(=O)Nc2cc(Br)nn2C)cs1",
+        "clogp": 2.5188200000000007,
+        "aromatic_rings": 2,
+        "mol_weight": 329.223,
+        "n_heavy_atoms": 18
+      },
+      {
+        "smiles": "CC(C)Oc1cc(-c2cccc(C(C)N3CCOCC3)c2)ccc1Cl",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "CC(C)Oc1cc(-c2cccc(C(C)N3CCOCC3)c2)ccc1Cl",
+        "clogp": 5.187400000000005,
+        "aromatic_rings": 2,
+        "mol_weight": 359.89700000000005,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "CCOc1cccc(C2CC2NC(=O)C(=O)N(C)CCC(C)O)c1",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "CCOc1cccc(C2CC2NC(=O)C(=O)N(C)CCC(C)O)c1",
+        "clogp": 1.2866999999999995,
+        "aromatic_rings": 1,
+        "mol_weight": 334.41600000000005,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CC(C)c1ccccc1OCC(O)CNC1CCOC(C(C)(C)C)C1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "CC(C)c1ccccc1OCC(O)CNC1CCOC(C(C)(C)C)C1",
+        "clogp": 3.7330000000000023,
+        "aromatic_rings": 1,
+        "mol_weight": 349.5150000000001,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "CCOC(=O)c1cc(S(=O)(=O)NCc2cc3cccc(OC)c3o2)cc([N+](=O)[O-])c1C",
+        "n_content_tokens": 55,
+        "valid": true,
+        "canonical_smiles": "CCOC(=O)c1cc(S(=O)(=O)NCc2cc3cccc(OC)c3o2)cc([N+](=O)[O-])c1C",
+        "clogp": 3.313220000000002,
+        "aromatic_rings": 3,
+        "mol_weight": 448.4530000000002,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "CCC(=CC(=O)Nc1cccc(S(=O)(=O)NCCOC)c1)c1ccc(OC)cc1",
+        "n_content_tokens": 49,
+        "valid": true,
+        "canonical_smiles": "CCC(=CC(=O)Nc1cccc(S(=O)(=O)NCCOC)c1)c1ccc(OC)cc1",
+        "clogp": 3.0520000000000014,
+        "aromatic_rings": 2,
+        "mol_weight": 418.5150000000002,
+        "n_heavy_atoms": 29
+      },
+      {
+        "smiles": "CCC(NC(=O)COc1ccc(Cl)cc1C1CCCCC1)C(=O)O",
+        "n_content_tokens": 38,
+        "valid": true,
+        "canonical_smiles": "CCC(NC(=O)COc1ccc(Cl)cc1C1CCCCC1)C(=O)O",
+        "clogp": 3.7459000000000016,
+        "aromatic_rings": 1,
+        "mol_weight": 353.84600000000023,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "Cc1[nH]c2ccccc2c1-c1nc(-c2ccc3cnccc3c2)no1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "Cc1[nH]c2ccccc2c1-c1nc(-c2ccc3cnccc3c2)no1",
+        "clogp": 4.741520000000004,
+        "aromatic_rings": 5,
+        "mol_weight": 326.35900000000004,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "Cc1ccc(F)c(CCNC(=O)N(Cc2ccccc2F)C2CCCCC2)c1",
+        "n_content_tokens": 43,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(F)c(CCNC(=O)N(Cc2ccccc2F)C2CCCCC2)c1",
+        "clogp": 5.360220000000004,
+        "aromatic_rings": 2,
+        "mol_weight": 386.4860000000003,
+        "n_heavy_atoms": 28
+      },
+      {
+        "smiles": "CC(CC(=O)N1CCCC1C)(C(=O)NN)N1CCCCC1",
+        "n_content_tokens": 35,
+        "valid": true,
+        "canonical_smiles": "CC1CCCN1C(=O)CC(C)(C(=O)NN)N1CCCCC1",
+        "clogp": 0.6219000000000017,
+        "aromatic_rings": 0,
+        "mol_weight": 296.41500000000013,
+        "n_heavy_atoms": 21
+      },
+      {
+        "smiles": "Cc1cc(C(F)(F)F)ccc1CNC(=O)c1csc(COC(=O)C(C)(C)C)n1",
+        "n_content_tokens": 50,
+        "valid": true,
+        "canonical_smiles": "Cc1cc(C(F)(F)F)ccc1CNC(=O)c1csc(COC(=O)C(C)(C)C)n1",
+        "clogp": 4.489620000000003,
+        "aromatic_rings": 2,
+        "mol_weight": 414.44900000000024,
+        "n_heavy_atoms": 28
+      },
+      {
+        "smiles": "Cc1ccc(C#N)c(-c2ccc(OCC3CCNCC3)cn2)c1",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(C#N)c(-c2ccc(OCC3CCNCC3)cn2)c1",
+        "clogp": 3.307100000000001,
+        "aromatic_rings": 2,
+        "mol_weight": 307.397,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "O=C1Cc2c(cccc2OC2CCC23CCNCC3)CN1",
+        "n_content_tokens": 32,
+        "valid": true,
+        "canonical_smiles": "O=C1Cc2c(cccc2OC2CCC23CCNCC3)CN1",
+        "clogp": 1.7698999999999998,
+        "aromatic_rings": 1,
+        "mol_weight": 286.37499999999994,
+        "n_heavy_atoms": 21
+      },
+      {
+        "smiles": "O=C(Cc1ccc(F)c(Br)c1)NC1CCN(C2CCOCC2)CC1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "O=C(Cc1ccc(F)c(Br)c1)NC1CCN(C2CCOCC2)CC1",
+        "clogp": 2.8903000000000016,
+        "aromatic_rings": 1,
+        "mol_weight": 399.30400000000037,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "COc1cc(N(C)c2nnc(C(C)NS(C)(=O)=O)n2CCc2csc(C)n2)cc(OC)c1OC",
+        "n_content_tokens": 58,
+        "valid": true,
+        "canonical_smiles": "COc1cc(N(C)c2nnc(C(C)NS(C)(=O)=O)n2CCc2csc(C)n2)cc(OC)c1OC",
+        "clogp": 2.6896200000000006,
+        "aromatic_rings": 3,
+        "mol_weight": 510.64200000000034,
+        "n_heavy_atoms": 34
+      },
+      {
+        "smiles": "CCc1nc2n(n1)C(C(=O)Nc1cc(C(F)(F)F)ccc1Cl)C(c1ccc(OC)c(OC)c1)N2",
+        "n_content_tokens": 61,
+        "valid": true,
+        "canonical_smiles": "CCc1nc2n(n1)C(C(=O)Nc1cc(C(F)(F)F)ccc1Cl)C(c1ccc(OC)c(OC)c1)N2",
+        "clogp": 4.876500000000004,
+        "aromatic_rings": 3,
+        "mol_weight": 495.8890000000002,
+        "n_heavy_atoms": 34
+      },
+      {
+        "smiles": "CCCCC(CC)CC1(CNCC)CCOCC1",
+        "n_content_tokens": 24,
+        "valid": true,
+        "canonical_smiles": "CCCCC(CC)CC1(CNCC)CCOCC1",
+        "clogp": 3.9992000000000028,
+        "aromatic_rings": 0,
+        "mol_weight": 255.4459999999999,
+        "n_heavy_atoms": 18
+      },
+      {
+        "smiles": "Cc1ccc(C(=O)NCC2(CO)CCCCC2)c(O)c1C",
+        "n_content_tokens": 34,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(C(=O)NCC2(CO)CCCCC2)c(O)c1C",
+        "clogp": 2.6816400000000007,
+        "aromatic_rings": 1,
+        "mol_weight": 291.39099999999996,
+        "n_heavy_atoms": 21
+      },
+      {
+        "smiles": "Cc1ccccc1-c1cnc(CNCCNC(=O)COC(C)(C)C)o1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "Cc1ccccc1-c1cnc(CNCCNC(=O)COC(C)(C)C)o1",
+        "clogp": 2.6709199999999997,
+        "aromatic_rings": 2,
+        "mol_weight": 345.4430000000001,
+        "n_heavy_atoms": 25
+      }
+    ]
+  },
+  "late": {
+    "101": [
+      {
+        "smiles": "CCC(CNC(=O)CCC(F)(F)F)NC(=O)C1Cc2ccccc21",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "CCC(CNC(=O)CCC(F)(F)F)NC(=O)C1Cc2ccccc21",
+        "clogp": 2.679800000000001,
+        "aromatic_rings": 1,
+        "mol_weight": 342.36100000000005,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CC(OC(=O)c1c[nH]c(C(=O)O)c1)C(=O)Nc1ccccc1-c1ccccc1",
+        "n_content_tokens": 48,
+        "valid": true,
+        "canonical_smiles": "CC(OC(=O)c1c[nH]c(C(=O)O)c1)C(=O)Nc1ccccc1-c1ccccc1",
+        "clogp": 3.563900000000002,
+        "aromatic_rings": 3,
+        "mol_weight": 378.38400000000007,
+        "n_heavy_atoms": 28
+      },
+      {
+        "smiles": "CCOC(=O)C(C)(C)C(=O)CN1C(=O)Nc2cccnc2S1(=O)=O",
+        "n_content_tokens": 45,
+        "valid": true,
+        "canonical_smiles": "CCOC(=O)C(C)(C)C(=O)CN1C(=O)Nc2cccnc2S1(=O)=O",
+        "clogp": 0.7762000000000002,
+        "aromatic_rings": 1,
+        "mol_weight": 355.37200000000007,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "COc1cncc(NC(=O)OC(C)(C)C)c1C(=O)NC1CC(C)(C)N(O)C(C)(C)C1",
+        "n_content_tokens": 56,
+        "valid": true,
+        "canonical_smiles": "COc1cncc(NC(=O)OC(C)(C)C)c1C(=O)NC1CC(C)(C)N(O)C(C)(C)C1",
+        "clogp": 3.5778000000000025,
+        "aromatic_rings": 1,
+        "mol_weight": 422.5260000000002,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "CC(C(=O)NCC1(O)CCSC1)N(C(=O)OC(C)(C)C)C1CC1",
+        "n_content_tokens": 43,
+        "valid": true,
+        "canonical_smiles": "CC(C(=O)NCC1(O)CCSC1)N(C(=O)OC(C)(C)C)C1CC1",
+        "clogp": 1.7585999999999995,
+        "aromatic_rings": 0,
+        "mol_weight": 344.47700000000015,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "CC(c1ccccc1)C(O)CNC1CC(C(=O)O)c2ccccc21",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "CC(c1ccccc1)C(O)CNC1CC(C(=O)O)c2ccccc21",
+        "clogp": 3.0538000000000007,
+        "aromatic_rings": 2,
+        "mol_weight": 325.408,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CCNC(=O)NC(=O)CNCC(O)CNC(=O)c1ccccc1F",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "CCNC(=O)NC(=O)CNCC(O)CNC(=O)c1ccccc1F",
+        "clogp": -0.648299999999999,
+        "aromatic_rings": 1,
+        "mol_weight": 340.355,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CC1C(CCO)C(=O)N1C(C)C(C)(CCCC(=O)OC(C)(C)C)c1nc(=O)on1-c1ccc(-c2cccs2)cc1",
+        "n_content_tokens": 73,
+        "valid": true,
+        "canonical_smiles": "CC1C(CCO)C(=O)N1C(C)C(C)(CCCC(=O)OC(C)(C)C)c1nc(=O)on1-c1ccc(-c2cccs2)cc1",
+        "clogp": 4.941500000000005,
+        "aromatic_rings": 3,
+        "mol_weight": 569.7240000000003,
+        "n_heavy_atoms": 40
+      },
+      {
+        "smiles": "CSC(C)C(=O)N1CCCC(CO)(NC(=O)Cn2cccn2)C1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "CSC(C)C(=O)N1CCCC(CO)(NC(=O)Cn2cccn2)C1",
+        "clogp": 0.10430000000000117,
+        "aromatic_rings": 1,
+        "mol_weight": 340.44900000000007,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "CC(NC(=O)C1CCC1)C1CN(C(=O)c2ccoc2Br)C1",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "CC(NC(=O)C1CCC1)C1CN(C(=O)c2ccoc2Br)C1",
+        "clogp": 2.4189000000000007,
+        "aromatic_rings": 1,
+        "mol_weight": 355.232,
+        "n_heavy_atoms": 21
+      },
+      {
+        "smiles": "CCOC1CC(CCn2c(-c3ccc(C)o3)nnc2N(C)Cc2ncc(Cl)n2C)C1",
+        "n_content_tokens": 49,
+        "valid": true,
+        "canonical_smiles": "CCOC1CC(CCn2c(-c3ccc(C)o3)nnc2N(C)Cc2ncc(Cl)n2C)C1",
+        "clogp": 4.075020000000003,
+        "aromatic_rings": 3,
+        "mol_weight": 432.95600000000024,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "Cc1ccc(CN2CCC(c3cccc4nc(CC5=CCC(C)C=C5)cn34)CC2)cc1.O=C(O)C(F)(F)F",
+        "n_content_tokens": 66,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(CN2CCC(c3cccc4nc(CC5=CCC(C)C=C5)cn34)CC2)cc1.O=C(O)C(F)(F)F",
+        "clogp": 6.720520000000007,
+        "aromatic_rings": 3,
+        "mol_weight": 525.6150000000002,
+        "n_heavy_atoms": 38
+      },
+      {
+        "smiles": "Cc1nc2ccc(Br)cn2c1C(=O)NCC1N(C)CCCC1(C)C",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "Cc1nc2ccc(Br)cn2c1C(=O)NCC1N(C)CCCC1(C)C",
+        "clogp": 3.2554200000000018,
+        "aromatic_rings": 2,
+        "mol_weight": 393.32900000000024,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CCCCc1oc2ccccc2c1CNC(C)(C)CO",
+        "n_content_tokens": 28,
+        "valid": true,
+        "canonical_smiles": "CCCCc1oc2ccccc2c1CNC(C)(C)CO",
+        "clogp": 3.6359000000000026,
+        "aromatic_rings": 2,
+        "mol_weight": 275.392,
+        "n_heavy_atoms": 20
+      },
+      {
+        "smiles": "Cc1nc(C2CC2)oc1C(=O)N1CCC(NCc2ccccc2)C1C",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "Cc1nc(C2CC2)oc1C(=O)N1CCC(NCc2ccccc2)C1C",
+        "clogp": 3.2532200000000024,
+        "aromatic_rings": 2,
+        "mol_weight": 339.439,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "O=C(NC1CC(c2ccccc2F)C1)NC1(Cc2ccc(C(F)(F)F)cc2)CCOC1",
+        "n_content_tokens": 52,
+        "valid": true,
+        "canonical_smiles": "O=C(NC1CC(c2ccccc2F)C1)NC1(Cc2ccc(C(F)(F)F)cc2)CCOC1",
+        "clogp": 4.791500000000004,
+        "aromatic_rings": 2,
+        "mol_weight": 436.4490000000001,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "CCOC(CC(=O)N1CCC(CNC(=O)C(C)Sc2ccccn2)C1c1cccnc1)OCC",
+        "n_content_tokens": 52,
+        "valid": true,
+        "canonical_smiles": "CCOC(CC(=O)N1CCC(CNC(=O)C(C)Sc2ccccn2)C1c1cccnc1)OCC",
+        "clogp": 3.4524000000000026,
+        "aromatic_rings": 2,
+        "mol_weight": 486.6380000000002,
+        "n_heavy_atoms": 34
+      },
+      {
+        "smiles": "O=C(Nc1ccc(OC2CCCC2)cc1)N1CCOC2(CCCCCC2)C1",
+        "n_content_tokens": 42,
+        "valid": true,
+        "canonical_smiles": "O=C(Nc1ccc(OC2CCCC2)cc1)N1CCOC2(CCCCCC2)C1",
+        "clogp": 4.965100000000005,
+        "aromatic_rings": 1,
+        "mol_weight": 372.50900000000024,
+        "n_heavy_atoms": 27
+      },
+      {
+        "smiles": "CC(NC(=O)CSc1ccc(O)cc1)c1nncn1C",
+        "n_content_tokens": 31,
+        "valid": true,
+        "canonical_smiles": "CC(NC(=O)CSc1ccc(O)cc1)c1nncn1C",
+        "clogp": 1.4901999999999997,
+        "aromatic_rings": 2,
+        "mol_weight": 292.36400000000003,
+        "n_heavy_atoms": 20
+      },
+      {
+        "smiles": "CCNC(=O)N1CCN(c2nnc(CC3CCCC3)n2CCc2cccc(C)n2)CC1",
+        "n_content_tokens": 48,
+        "valid": true,
+        "canonical_smiles": "CCNC(=O)N1CCN(c2nnc(CC3CCCC3)n2CCc2cccc(C)n2)CC1",
+        "clogp": 2.80842,
+        "aromatic_rings": 2,
+        "mol_weight": 425.58100000000024,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "Cc1ncc(NC(=O)c2[nH]c3ccccc3c2Cl)cc1C(=O)O",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "Cc1ncc(NC(=O)c2[nH]c3ccccc3c2Cl)cc1C(=O)O",
+        "clogp": 3.475220000000001,
+        "aromatic_rings": 3,
+        "mol_weight": 329.7430000000001,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "CCS(=O)(=O)N(CC#N)c1ccc2ccccc2n1",
+        "n_content_tokens": 32,
+        "valid": true,
+        "canonical_smiles": "CCS(=O)(=O)N(CC#N)c1ccc2ccccc2n1",
+        "clogp": 1.9144800000000002,
+        "aromatic_rings": 2,
+        "mol_weight": 275.333,
+        "n_heavy_atoms": 19
+      },
+      {
+        "smiles": "CC(CCO)NC(=O)CSCc1ccc(-c2nn[nH]n2)cc1",
+        "n_content_tokens": 34,
+        "valid": true,
+        "canonical_smiles": "CC(CCO)NC(=O)CSCc1ccc(-c2nn[nH]n2)cc1",
+        "clogp": 0.9869999999999997,
+        "aromatic_rings": 2,
+        "mol_weight": 321.40599999999995,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "C=CCOC(C)C(=O)N1CCC(OC2CCN(C(=O)c3cc(-c4ccco4)no3)CC2)CC1",
+        "n_content_tokens": 57,
+        "valid": true,
+        "canonical_smiles": "C=CCOC(C)C(=O)N1CCC(OC2CCN(C(=O)c3cc(-c4ccco4)no3)CC2)CC1",
+        "clogp": 3.137900000000002,
+        "aromatic_rings": 2,
+        "mol_weight": 457.52700000000027,
+        "n_heavy_atoms": 33
+      }
+    ]
+  },
+  "truncation_control": {
+    "101": [
+      {
+        "smiles": "CCC(CNC(=O)Cc1ccco1)NC(=O)c1ccc(C)o1",
+        "n_content_tokens": 36,
+        "valid": true,
+        "canonical_smiles": "CCC(CNC(=O)Cc1ccco1)NC(=O)c1ccc(C)o1",
+        "clogp": 2.04832,
+        "aromatic_rings": 2,
+        "mol_weight": 304.34600000000006,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "CCN(C(=O)NCC(C)(C)N1CCCCC1)C(C)Cc1ccsc1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "CCN(C(=O)NCC(C)(C)N1CCCCC1)C(C)Cc1ccsc1",
+        "clogp": 3.975100000000003,
+        "aromatic_rings": 1,
+        "mol_weight": 351.56,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "Cc1ccc(-n2cnnc2)c(C(=O)N2CCCC2c2ccc(Br)cn2)c1",
+        "n_content_tokens": 44,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(-n2cnnc2)c(C(=O)N2CCCC2c2ccc(Br)cn2)c1",
+        "clogp": 3.7105200000000025,
+        "aromatic_rings": 3,
+        "mol_weight": 412.291,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "Cc1cc(OCCCSCC(N)=O)ccc1Cl",
+        "n_content_tokens": 24,
+        "valid": true,
+        "canonical_smiles": "Cc1cc(OCCCSCC(N)=O)ccc1Cl",
+        "clogp": 2.6358200000000007,
+        "aromatic_rings": 1,
+        "mol_weight": 273.78499999999997,
+        "n_heavy_atoms": 17
+      },
+      {
+        "smiles": "CCSC1(CNC(=O)Nc2cc(Br)ccc2C2=NCCO2)CC1",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "CCSC1(CNC(=O)Nc2cc(Br)ccc2C2=NCCO2)CC1",
+        "clogp": 3.6331000000000024,
+        "aromatic_rings": 1,
+        "mol_weight": 398.3260000000003,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "COc1ccc(-c2n[nH]c(CNc3ncc(F)cn3)n2)cc1",
+        "n_content_tokens": 35,
+        "valid": true,
+        "canonical_smiles": "COc1ccc(-c2n[nH]c(CNc3ncc(F)cn3)n2)cc1",
+        "clogp": 2.0214999999999996,
+        "aromatic_rings": 3,
+        "mol_weight": 300.297,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "CC(C)OC(=O)C(C)NC(=O)C=Cc1nc2ccccc2s1",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "CC(C)OC(=O)C(C)NC(=O)C=Cc1nc2ccccc2s1",
+        "clogp": 2.7658000000000014,
+        "aromatic_rings": 2,
+        "mol_weight": 318.398,
+        "n_heavy_atoms": 22
+      },
+      {
+        "smiles": "CCOc1cccc(CN2CC3C(C2)C3NC(=O)c2cnsn2)n1",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "CCOc1cccc(CN2CC3C(C2)C3NC(=O)c2cnsn2)n1",
+        "clogp": 1.192,
+        "aromatic_rings": 2,
+        "mol_weight": 345.428,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CC(C)c1ccccc1OCCC(=O)N1CC2(C)CC1CC(C)(C)C2",
+        "n_content_tokens": 42,
+        "valid": true,
+        "canonical_smiles": "CC(C)c1ccccc1OCCC(=O)N1CC2(C)CC1CC(C)(C)C2",
+        "clogp": 5.006100000000005,
+        "aromatic_rings": 1,
+        "mol_weight": 343.5110000000001,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "CCOC(=O)c1cc(S(=O)(=O)N(C)OC)ccc1Cl",
+        "n_content_tokens": 34,
+        "valid": true,
+        "canonical_smiles": "CCOC(=O)c1cc(S(=O)(=O)N(C)OC)ccc1Cl",
+        "clogp": 1.6985999999999999,
+        "aromatic_rings": 1,
+        "mol_weight": 307.755,
+        "n_heavy_atoms": 19
+      },
+      {
+        "smiles": "CCC(=CC(=O)NC1CCC(CNC(=O)CCn2cccc2)C1)CC",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "CCC(=CC(=O)NC1CCC(CNC(=O)CCn2cccc2)C1)CC",
+        "clogp": 3.0257000000000005,
+        "aromatic_rings": 1,
+        "mol_weight": 345.4870000000001,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "CCC1CC1C(=O)N1CCC(N(C)c2c(C)c(C)nc3ncnn23)C1",
+        "n_content_tokens": 44,
+        "valid": true,
+        "canonical_smiles": "CCC1CC1C(=O)N1CCC(N(C)c2c(C)c(C)nc3ncnn23)C1",
+        "clogp": 1.82434,
+        "aromatic_rings": 2,
+        "mol_weight": 342.44700000000006,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "CCCN(CC(F)(F)F)C(=O)C1CCCN(Cn2[nH]c(-c3cc(Cl)ccc3OC)nc2=S)C1",
+        "n_content_tokens": 56,
+        "valid": true,
+        "canonical_smiles": "CCCN(CC(F)(F)F)C(=O)C1CCCN(Cn2[nH]c(-c3cc(Cl)ccc3OC)nc2=S)C1",
+        "clogp": 4.740090000000004,
+        "aromatic_rings": 2,
+        "mol_weight": 505.99400000000014,
+        "n_heavy_atoms": 33
+      },
+      {
+        "smiles": "Cc1ccc(C#N)c(Oc2ccccc2Cl)n1",
+        "n_content_tokens": 26,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(C#N)c(Oc2ccccc2Cl)n1",
+        "clogp": 3.7074000000000016,
+        "aromatic_rings": 2,
+        "mol_weight": 244.68100000000004,
+        "n_heavy_atoms": 17
+      },
+      {
+        "smiles": "CC1C(NC(=O)c2cn(C)nn2)CCN1CCn1cc(Cl)cn1",
+        "n_content_tokens": 38,
+        "valid": true,
+        "canonical_smiles": "CC1C(NC(=O)c2cn(C)nn2)CCN1CCn1cc(Cl)cn1",
+        "clogp": 0.5577999999999992,
+        "aromatic_rings": 2,
+        "mol_weight": 337.815,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "O=C(c1ccnn1C(F)F)N1Cc2ccc(Br)cc2C1",
+        "n_content_tokens": 33,
+        "valid": true,
+        "canonical_smiles": "O=C(c1ccnn1C(F)F)N1Cc2ccc(Br)cc2C1",
+        "clogp": 3.1967000000000017,
+        "aromatic_rings": 2,
+        "mol_weight": 342.1430000000001,
+        "n_heavy_atoms": 20
+      },
+      {
+        "smiles": "Cc1ccc(C#N)c(N2CCC(NC(=O)CNC(N)=O)CC2)n1",
+        "n_content_tokens": 40,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(C#N)c(N2CCC(NC(=O)CNC(N)=O)CC2)n1",
+        "clogp": 0.015000000000001068,
+        "aromatic_rings": 1,
+        "mol_weight": 316.3650000000001,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "O=C1NC(=S)NC1=Cc1ccc(OCc2ccc(Cl)cc2Cl)c(Cl)c1",
+        "n_content_tokens": 42,
+        "valid": true,
+        "canonical_smiles": "O=C1NC(=S)NC1=Cc1ccc(OCc2ccc(Cl)cc2Cl)c(Cl)c1",
+        "clogp": 4.5710000000000015,
+        "aromatic_rings": 2,
+        "mol_weight": 413.7130000000001,
+        "n_heavy_atoms": 25
+      },
+      {
+        "smiles": "O=C(C1CCc2ccccc2C1O)N1CC2COCC(C1)C2NC(=O)C12CC(F)(C1)C2",
+        "n_content_tokens": 55,
+        "valid": true,
+        "canonical_smiles": "O=C(C1CCc2ccccc2C1O)N1CC2COCC(C1)C2NC(=O)C12CC(F)(C1)C2",
+        "clogp": 1.7641999999999995,
+        "aromatic_rings": 1,
+        "mol_weight": 428.50400000000025,
+        "n_heavy_atoms": 31
+      },
+      {
+        "smiles": "COCC(C)CS(=O)(=O)NCCC(C)N(C)Cc1ccccc1",
+        "n_content_tokens": 37,
+        "valid": true,
+        "canonical_smiles": "COCC(C)CS(=O)(=O)NCCC(C)N(C)Cc1ccccc1",
+        "clogp": 2.0989,
+        "aromatic_rings": 1,
+        "mol_weight": 342.50500000000005,
+        "n_heavy_atoms": 23
+      },
+      {
+        "smiles": "CCCC(CCC)NC(Cc1ccc(O)cc1)C(=O)OC(C)(C)C",
+        "n_content_tokens": 39,
+        "valid": true,
+        "canonical_smiles": "CCCC(CCC)NC(Cc1ccc(O)cc1)C(=O)OC(C)(C)C",
+        "clogp": 4.203400000000003,
+        "aromatic_rings": 1,
+        "mol_weight": 335.4880000000001,
+        "n_heavy_atoms": 24
+      },
+      {
+        "smiles": "CCCCC(=O)NC(C)CN(C)c1ncncc1Cl",
+        "n_content_tokens": 28,
+        "valid": true,
+        "canonical_smiles": "CCCCC(=O)NC(C)CN(C)c1ncncc1Cl",
+        "clogp": 2.2611,
+        "aromatic_rings": 1,
+        "mol_weight": 284.79099999999994,
+        "n_heavy_atoms": 19
+      },
+      {
+        "smiles": "Cc1ccc(C(=O)NCCNC(=O)N2CCC(CCCn3ccnc3)CC2)cc1F",
+        "n_content_tokens": 46,
+        "valid": true,
+        "canonical_smiles": "Cc1ccc(C(=O)NCCNC(=O)N2CCC(CCCn3ccnc3)CC2)cc1F",
+        "clogp": 2.9624200000000007,
+        "aromatic_rings": 2,
+        "mol_weight": 415.5130000000002,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "CCCCCC(=O)NCCC1CCCN1c1ncccc1C#N",
+        "n_content_tokens": 31,
+        "valid": true,
+        "canonical_smiles": "CCCCCC(=O)NCCC1CCCN1c1ncccc1C#N",
+        "clogp": 3.008680000000002,
+        "aromatic_rings": 1,
+        "mol_weight": 314.433,
+        "n_heavy_atoms": 23
+      }
+    ]
+  }
+}

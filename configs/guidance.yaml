@@ -1,0 +1,42 @@
+# Property-to-Go guided decoding.
+#
+# score(a) = log p_base(a | prefix) + lambda * log(P(final in I | prefix + a) + eps)
+top_k_candidates: 8
+lam: 1.0
+eps: 1.0e-6
+
+# Candidate evaluation backend.
+#   full   -- batched full-prefix recomputation of all 8 extended prefixes (the
+#             reference implementation described in the README).
+#   cached -- prefill the shared prefix once through the model's own public
+#             past_key_values API, then take one token step per candidate.
+#             tests/test_candidate_backends.py asserts the two agree.
+# `cached` is used for the runs; `processed_tokens_full_recompute` is still
+# accounted so the compute-matched baseline can be reported both ways.
+candidate_backend: cached
+
+# Position windows are defined from the BASE model's content-length distribution
+# and frozen (written to outputs/<run>/windows.json) before any guided molecule is
+# inspected.  early = [1, t33), middle = [t33, t67), late = [t67, inf).
+window_quantiles: [0.3333333333333333, 0.6666666666666666]
+
+conditions: [unguided, throughout, early, middle, late, truncation_control]
+# truncation_control = top-8 restriction applied throughout with lambda = 0.
+# It separates "guidance moved the property" from "top-8 truncation moved the property".
+
+n_molecules_per_condition: 512
+batch_size: 64
+seeds: [101, 202, 303]
+
+# Target intervals are read from outputs/<dataset>/target_intervals.json, which is
+# written by scripts/02_generate_trajectories.py from the base generator's own
+# empirical distribution, before any guided result exists.
+target_interval_rule:
+  clogp: {kind: quantile_band, lo: 0.85, hi: 0.95} # base rate 0.10 by construction
+  aromatic_rings: {kind: exact_value, value: 3}
+
+best_of_n:
+  # N is solved at run time so that best-of-N processes the same number of
+  # generator tokens as the guided run it is matched against.
+  match_on: processed_tokens_actual
+  also_report: processed_tokens_full_recompute

@@ -1,0 +1,12 @@
+400 held-out prefixes, quartile counts: [100 100 100 100]
+12800 continuations in 902.4s
+clogp           frozen_state  rollout-MAE=0.5469 spearman=0.8121 brier=0.0992
+clogp           trivial       rollout-MAE=0.6409 spearman=0.7053 brier=0.1010
+clogp           combined      rollout-MAE=0.5226 spearman=0.8190 brier=0.0988
+aromatic_rings  frozen_state  rollout-MAE=0.3917 spearman=0.7628 brier=0.1339
+aromatic_rings  trivial       rollout-MAE=0.2882 spearman=0.8506 brier=0.1218
+aromatic_rings  combined      rollout-MAE=0.2706 spearman=0.8860 brier=0.1227
+mol_weight      frozen_state  rollout-MAE=24.7794 spearman=0.7849 brier=0.0850
+mol_weight      trivial       rollout-MAE=34.2450 spearman=0.4918 brier=0.0945
+mol_weight      combined      rollout-MAE=23.6649 spearman=0.7950 brier=0.0844
+-> /Users/afloresep/work/property-to-go/outputs/pilot_10k_rollouts

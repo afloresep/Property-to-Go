@@ -1,0 +1,31 @@
+{
+  "clogp": {
+    "lo": 4.177850000000003,
+    "hi": 5.062750000000004,
+    "rule": {
+      "kind": "quantile_band",
+      "lo": 0.85,
+      "hi": 0.95
+    },
+    "base_rate": 0.0999899709156554
+  },
+  "aromatic_rings": {
+    "lo": 3.0,
+    "hi": 4.0,
+    "rule": {
+      "kind": "exact_value",
+      "value": 3
+    },
+    "base_rate": 0.17179821482298666
+  },
+  "mol_weight": {
+    "lo": 434.57650000000024,
+    "hi": 488.1465000000002,
+    "rule": {
+      "kind": "quantile_band",
+      "lo": 0.85,
+      "hi": 0.95
+    },
+    "base_rate": 0.0999899709156554
+  }
+}

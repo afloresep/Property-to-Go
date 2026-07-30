@@ -1,0 +1,39 @@
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+
+# ---------------------------------------------------------------------------
+# outputs/ is PARTIALLY tracked. This is deliberate.
+#
+# Tracked, because the pipeline cannot regenerate them or because the report is
+# bound to them: every *_metrics.json, the frozen windows.json and
+# target_intervals.json, molecules.json, rollout_bank.json, provenance.json,
+# configs_used.json, and the trained head checkpoints (*.pt).
+#
+# tests/test_report_matches_artifacts.py re-reads those JSON files and asserts the
+# numbers appear in reports/pilot_report.md, so dropping them would silently disable
+# 16 tests.
+#
+# The frozen windows.json and target_intervals.json matter most: they were fixed
+# BEFORE any guided result was inspected, and regenerating them on different hardware
+# could shift them. Carrying them lets the next machine detect that rather than
+# quietly re-derive new ones.
+#
+# Excluded below: the large arrays from scripts/02_generate_trajectories.py, which are
+# reproduced deterministically from the pinned model revision and recorded seeds.
+# Re-running step 2 of docs/REPRODUCE.md rebuilds them. Committing ~700 MB to avoid an
+# hour of GPU time is not a good trade. See docs/KICKOFF_PROMPT.md §1.
+# ---------------------------------------------------------------------------
+outputs/**/hidden.npy
+outputs/**/features.npy
+outputs/**/trajectories.json
+outputs/**/prefix_token_ids.json
+outputs/**/prefix_meta.csv
+outputs/**/predictions_*.npz
+outputs/**/rollout_arrays.npz

@@ -1,0 +1,184 @@
+{
+  "n_requested": 10000,
+  "n_generated": 10000,
+  "n_valid_kept": 9971,
+  "n_invalid": 28,
+  "n_too_short": 1,
+  "validity": 0.9972,
+  "uniqueness": 1.0,
+  "n_prefix_examples": 39884,
+  "n_unique_canonical": 9971,
+  "feature_names": [
+    "prefix_len",
+    "n_atom_tokens",
+    "n_aromatic_atom_tokens",
+    "n_ring_markers",
+    "n_open_rings",
+    "n_branch_open",
+    "n_branch_close",
+    "branch_depth",
+    "n_bond_tokens",
+    "n_dot",
+    "n_bracket_atoms",
+    "n_element_C",
+    "n_element_N",
+    "n_element_O",
+    "n_element_S",
+    "n_element_F",
+    "n_element_Cl",
+    "n_element_Br",
+    "n_element_I",
+    "n_element_P",
+    "n_element_other",
+    "frac_atom_tokens",
+    "frac_aromatic_atoms",
+    "atoms_per_ring_marker"
+  ],
+  "hidden_dim": 768,
+  "split_row_counts": {
+    "train": 31700,
+    "val": 4076,
+    "test": 4108
+  },
+  "split_group_counts": {
+    "train": 7925,
+    "val": 1019,
+    "test": 1027
+  },
+  "base_distribution": {
+    "clogp": {
+      "mean": 2.740097715374587,
+      "std": 1.7352194688862508,
+      "quantiles": {
+        "0.05": 0.26015000000000044,
+        "0.25": 1.7275499999999995,
+        "0.33": 2.0730399999999998,
+        "0.5": 2.6925,
+        "0.67": 3.310910000000001,
+        "0.75": 3.658800000000002,
+        "0.95": 5.062750000000004
+      }
+    },
+    "aromatic_rings": {
+      "mean": 1.8222846254136997,
+      "std": 1.0971781328496288,
+      "quantiles": {
+        "0.05": 0.0,
+        "0.25": 1.0,
+        "0.33": 1.0,
+        "0.5": 2.0,
+        "0.67": 2.0,
+        "0.75": 2.0,
+        "0.95": 4.0
+      }
+    },
+    "mol_weight": {
+      "mean": 366.1556520910642,
+      "std": 85.37703790841341,
+      "quantiles": {
+        "0.05": 257.3759999999999,
+        "0.25": 320.43,
+        "0.33": 332.44800000000004,
+        "0.5": 352.45600000000013,
+        "0.67": 382.82920000000036,
+        "0.75": 403.40750000000014,
+        "0.95": 488.1465000000002
+      }
+    },
+    "content_length": {
+      "mean": 42.23187243004714,
+      "std": 10.803001208738687,
+      "quantiles": {
+        "0.05": 28.0,
+        "0.25": 36.0,
+        "0.33": 38.0,
+        "0.5": 41.0,
+        "0.67": 45.0,
+        "0.75": 47.0,
+        "0.95": 59.0
+      }
+    },
+    "aromatic_rings_histogram": {
+      "0": 778,
+      "1": 3200,
+      "2": 3777,
+      "3": 1713,
+      "4": 402,
+      "5": 53,
+      "6": 13,
+      "7": 5,
+      "8": 11,
+      "9": 4,
+      "10": 8,
+      "11": 1,
+      "12": 4,
+      "13": 1,
+      "15": 1
+    }
+  },
+  "target_intervals": {
+    "clogp": {
+      "lo": 4.177850000000003,
+      "hi": 5.062750000000004,
+      "rule": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "base_rate": 0.0999899709156554
+    },
+    "aromatic_rings": {
+      "lo": 3.0,
+      "hi": 4.0,
+      "rule": {
+        "kind": "exact_value",
+        "value": 3
+      },
+      "base_rate": 0.17179821482298666
+    },
+    "mol_weight": {
+      "lo": 434.57650000000024,
+      "hi": 488.1465000000002,
+      "rule": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "base_rate": 0.0999899709156554
+    }
+  },
+  "windows": {
+    "t33": 15,
+    "t67": 29,
+    "source": "pooled generated-position distribution of the base model",
+    "early": [
+      1,
+      15
+    ],
+    "middle": [
+      15,
+      29
+    ],
+    "late": [
+      29,
+      null
+    ]
+  },
+  "compute_generation": {
+    "processed_tokens_actual": 443892,
+    "processed_tokens_full_recompute": 443892,
+    "forward_calls": 10000,
+    "wall_seconds": 470.224959583953,
+    "molecules_returned": 10000,
+    "tokens_per_molecule_actual": 44.3892,
+    "tokens_per_molecule_full_recompute": 44.3892
+  },
+  "compute_hidden_states": {
+    "processed_tokens_actual": 441036,
+    "processed_tokens_full_recompute": 441036,
+    "forward_calls": 104,
+    "wall_seconds": 257.8935541670071,
+    "molecules_returned": 0
+  },
+  "wall_seconds_total": 737.4840707090916
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "property-to-go"
+version = "0.1.0"
+description = "When does a molecular property become uncontrollable during autoregressive generation?"
+requires-python = "==3.12.*"
+dependencies = [
+    "torch==2.4.1",
+    "transformers==4.44.2",
+    "tokenizers>=0.19,<0.20",
+    "huggingface_hub==0.24.7",
+    "safetensors==0.4.5",
+    "numpy==1.26.4",
+    "rdkit==2024.3.5",
+    "scipy==1.14.1",
+    "scikit-learn==1.5.2",
+    "pandas==2.2.3",
+    "matplotlib==3.9.2",
+    "pyyaml==6.0.2",
+    "tqdm==4.66.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+# NOTE ON THE TRANSFORMERS PIN
+# The released GP-MoLFormer custom modelling code (revision 6eca8795...) was written
+# against transformers 4.32.1.  It imports `transformers.onnx`, which was removed in
+# transformers v5, and it relies on `PreTrainedModel` still carrying `GenerationMixin`,
+# which stopped being true in transformers 4.50.  transformers==4.44.2 is therefore the
+# pin: it is the newest release that runs the checkpoint's own code unmodified.

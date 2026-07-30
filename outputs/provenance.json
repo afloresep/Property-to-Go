@@ -1,0 +1,31 @@
+{
+  "python": "3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 14:19:53) [Clang 18.1.8 ]",
+  "python_executable": "/Users/afloresep/work/property-to-go/.venv/bin/python",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "cpu_count": 12,
+  "torch": "2.4.1",
+  "torch_num_threads": 8,
+  "mps_available": true,
+  "cuda_available": false,
+  "transformers": "4.44.2",
+  "rdkit": "2024.03.5",
+  "numpy": "1.26.4",
+  "git_sha": null,
+  "note": "Session-level record. Every run in this pilot used this single machine and this single virtual environment, so this describes the software stack for all of outputs/. Per-directory provenance.json files are written only by runs executed after write_run_context() was added; the directories listed in dirs_without_own_provenance predate that change and were deliberately NOT back-stamped, because a back-stamped file would falsely imply the script captured it at run time.",
+  "dirs_without_own_provenance": [
+    "pilot_10k_figures",
+    "pilot_10k_guided_clogp",
+    "pilot_10k_heads",
+    "pilot_10k_rollouts",
+    "pilot_50k_bestofn_aromatic_rings",
+    "pilot_50k_bestofn_clogp",
+    "pilot_50k_confound_aromatic_rings",
+    "pilot_50k_confound_clogp",
+    "pilot_50k_guided_aromatic_rings",
+    "pilot_50k_guided_clogp",
+    "pilot_50k_heads",
+    "pilot_50k_rollouts"
+  ]
+}

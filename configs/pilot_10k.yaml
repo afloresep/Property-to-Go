@@ -1,0 +1,25 @@
+name: pilot_10k
+n_trajectories: 10000
+# Quartile prefix selection needs four non-empty quartiles, so a trajectory needs
+# at least 4 content tokens; we require 8 so every quartile has >= 2 candidates.
+min_content_tokens: 8
+prefixes_per_trajectory: 4 # one uniformly sampled position per length quartile
+hidden_layer: -1 # final-layer hidden state at the last prefix position
+split_fractions: {train: 0.8, val: 0.1, test: 0.1}
+split_seed: 11
+prefix_seed: 12
+
+head:
+  hidden_dim: 256
+  dropout: 0.1
+  lr: 0.001
+  weight_decay: 0.01
+  batch_size: 512
+  max_epochs: 60
+  patience: 8
+  seed: 1234
+
+binning:
+  clogp_n_bins: 20 # quantile bins fitted on the TRAIN terminal distribution
+  aromatic_rings_max: 5 # categories 0,1,2,3,4,5+ -> 6 classes
+  mol_weight_n_bins: 20

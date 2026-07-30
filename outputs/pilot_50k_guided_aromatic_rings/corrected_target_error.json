@@ -1,0 +1,52 @@
+{
+ "property": "aromatic_rings",
+ "target": {
+  "lo": 3.0,
+  "hi": 4.0
+ },
+ "note": "Supersedes abs_target_error_* in guidance_metrics.json, which used the pre-fix target_distance (a 4-ring molecule scored 0). Hit rates in that file are unaffected and stand.",
+ "conditions": {
+  "unguided": {
+   "abs_target_error_mean_corrected": 1.337041884816754,
+   "abs_target_error_mean_old": 1.286649214659686,
+   "abs_target_error_median_corrected": 1.0,
+   "hit_rate": 0.17081151832460734,
+   "frac_exactly_one_above": 0.03992146596858639
+  },
+  "throughout": {
+   "abs_target_error_mean_corrected": 0.6,
+   "abs_target_error_mean_old": 0.43475409836065576,
+   "abs_target_error_median_corrected": 1.0,
+   "hit_rate": 0.47081967213114756,
+   "frac_exactly_one_above": 0.14491803278688525
+  },
+  "early": {
+   "abs_target_error_mean_corrected": 0.9640522875816994,
+   "abs_target_error_mean_old": 0.8640522875816994,
+   "abs_target_error_median_corrected": 1.0,
+   "hit_rate": 0.2856209150326797,
+   "frac_exactly_one_above": 0.08169934640522876
+  },
+  "middle": {
+   "abs_target_error_mean_corrected": 0.9145466405740378,
+   "abs_target_error_mean_old": 0.8369210697977821,
+   "abs_target_error_median_corrected": 1.0,
+   "hit_rate": 0.3020221787345075,
+   "frac_exactly_one_above": 0.06327462491846053
+  },
+  "late": {
+   "abs_target_error_mean_corrected": 1.1290956749672345,
+   "abs_target_error_mean_old": 1.0773263433813893,
+   "abs_target_error_median_corrected": 1.0,
+   "hit_rate": 0.23591087811271297,
+   "frac_exactly_one_above": 0.04325032765399738
+  },
+  "truncation_control": {
+   "abs_target_error_mean_corrected": 1.285342019543974,
+   "abs_target_error_mean_old": 1.2429967426710098,
+   "abs_target_error_median_corrected": 1.0,
+   "hit_rate": 0.18241042345276873,
+   "frac_exactly_one_above": 0.035830618892508145
+  }
+ }
+}

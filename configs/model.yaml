@@ -1,0 +1,24 @@
+# Frozen base generator.  Nothing here may change between phases.
+model_repo: ibm-research/GP-MoLFormer-Uniq
+model_revision: 6eca879581e2302b4e1ab07bb02908636bddb4a2
+
+# The GP-MoLFormer-Uniq repository ships no tokenizer.  The official model card
+# directs users to the MoLFormer-XL tokenizer, which is what we pin here.
+tokenizer_repo: ibm-research/MoLFormer-XL-both-10pct
+tokenizer_revision: 361063d0ad524ef77cf39b08469f6be770dc550f
+
+trust_remote_code: true
+
+# The released config sets deterministic_eval=false, which makes MolformerFeatureMap
+# redraw its orthogonal random projections on every un-cached forward pass.  That
+# makes the frozen model's forward pass stochastic, so hidden states would not be
+# reproducible and a stored prefix could not be continued reproducibly.
+# The random projections ARE stored in the checkpoint
+# (molformer.encoder.layer.*.attention.self.feature_map.weight), so setting this
+# flag to true pins the released projections instead of resampling them.
+# This is a config flag the model authors provide; no weight is altered.
+deterministic_eval: true
+
+dtype: float32
+device: cpu # benchmarked faster than mps for this 46.8M linear-attention model
+torch_num_threads: 10

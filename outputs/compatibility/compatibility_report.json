@@ -1,0 +1,293 @@
+{
+  "checks": {
+    "01_load_model_and_tokenizer": {
+      "status": "ok",
+      "seconds": 0.3605887920130044,
+      "model_class": "MolformerForCausalLM",
+      "tokenizer_class": "PreTrainedTokenizerFast",
+      "vocab_size": 2362,
+      "hidden_size": 768,
+      "max_position_embeddings": 202,
+      "special_token_ids": {
+        "bos": 0,
+        "eos": 1,
+        "pad": 2
+      },
+      "fingerprint": {
+        "n_parameters": 46781184,
+        "parameter_sum": 3462.473939670939,
+        "deterministic_eval": true
+      },
+      "device": "cpu"
+    },
+    "02_generate_unconditional": {
+      "status": "ok",
+      "n": 100,
+      "compute": {
+        "processed_tokens_actual": 4277,
+        "processed_tokens_full_recompute": 4277,
+        "forward_calls": 100,
+        "wall_seconds": 3.2941600419580936,
+        "molecules_returned": 100,
+        "tokens_per_molecule_actual": 42.77,
+        "tokens_per_molecule_full_recompute": 42.77
+      },
+      "first_five_smiles": [
+        "CC(=O)NC1CCN(Cc2ccc(C(C)C)cc2C(C)C)CC1",
+        "CC1(CN)CCN(C(=O)Nc2ccc(Cc3nc4ccccc4s3)cc2)C1.Cl.Cl",
+        "CCC(C)(O)Cn1c(-c2ccc3ccccc3n2)nnc1N1CCC(C#N)CC1",
+        "[N-]=[N+]=NCc1cc(-c2ccc(S(N)(=O)=O)cc2)c2ccnc(F)c2c1",
+        "CCCCOCC(=O)N1CCC(NCc2noc(C3CC3)n2)C1"
+      ]
+    },
+    "03_rdkit_diagnostics": {
+      "status": "ok",
+      "validity": 1.0,
+      "uniqueness": 1.0,
+      "sequence_length_tokens": {
+        "mean": 40.77,
+        "std": 8.337691527035526,
+        "min": 18.0,
+        "max": 62.0,
+        "quantiles": {
+          "0.05": 28.0,
+          "0.25": 36.0,
+          "0.5": 40.0,
+          "0.75": 46.0,
+          "0.95": 56.05
+        }
+      },
+      "n_heavy_atoms": {
+        "mean": 24.56,
+        "std": 4.611550715323426,
+        "min": 11.0,
+        "max": 35.0,
+        "quantiles": {
+          "0.05": 18.0,
+          "0.25": 21.75,
+          "0.5": 25.0,
+          "0.75": 27.0,
+          "0.95": 32.05
+        }
+      },
+      "clogp": {
+        "mean": 2.7179502000000015,
+        "std": 1.4056601346064999,
+        "min": -1.2080000000000002,
+        "max": 7.555860000000003,
+        "quantiles": {
+          "0.05": 0.5988049999999997,
+          "0.25": 1.849405,
+          "0.5": 2.7641100000000014,
+          "0.75": 3.7832750000000024,
+          "0.95": 4.805069000000004
+        }
+      },
+      "aromatic_rings": {
+        "mean": 1.78,
+        "std": 0.9335952013587044,
+        "min": 0.0,
+        "max": 4.0,
+        "quantiles": {
+          "0.05": 0.0,
+          "0.25": 1.0,
+          "0.5": 2.0,
+          "0.75": 2.0,
+          "0.95": 3.0
+        }
+      },
+      "mol_weight": {
+        "mean": 360.75919000000016,
+        "std": 67.85393065868703,
+        "min": 151.165,
+        "max": 540.295,
+        "quantiles": {
+          "0.05": 252.97644999999997,
+          "0.25": 326.4375000000001,
+          "0.5": 359.90450000000004,
+          "0.75": 402.0765000000001,
+          "0.95": 476.77660000000014
+        }
+      }
+    },
+    "04_select_prefixes": {
+      "status": "ok",
+      "n_trajectories_used": 100,
+      "n_skipped_too_short": 0,
+      "prefixes_per_trajectory": 4,
+      "example": {
+        "n_content": 38,
+        "picks": [
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            16
+          ],
+          [
+            3,
+            26
+          ],
+          [
+            4,
+            37
+          ]
+        ]
+      }
+    },
+    "05_hidden_states": {
+      "status": "ok",
+      "shape": [
+        100,
+        4,
+        768
+      ],
+      "dtype": "float32",
+      "saved_to": "outputs/compatibility/prefix_hidden_states.npy",
+      "causal_equivalence_max_abs_err": 2.384185791015625e-06,
+      "note": "state at position k from one full-sequence pass == state from a pass over the prefix alone",
+      "compute": {
+        "processed_tokens_actual": 4277,
+        "processed_tokens_full_recompute": 4277,
+        "forward_calls": 2,
+        "wall_seconds": 3.2457341669360176,
+        "molecules_returned": 0
+      }
+    },
+    "06_continue_from_prefix": {
+      "status": "ok",
+      "stored_prefix_ids": [
+        0,
+        4,
+        4,
+        6,
+        12,
+        9,
+        7,
+        10,
+        4,
+        8,
+        4,
+        4,
+        10,
+        6,
+        4,
+        5,
+        11
+      ],
+      "stored_prefix_text": "CC(=O)NC1CCN(Cc2",
+      "n_continuations": 8,
+      "prefix_preserved": true,
+      "reproducible_under_same_seed": true,
+      "continuations": [
+        "CC(=O)NC1CCN(Cc2nc(C)no2)C1",
+        "CC(=O)NC1CCN(Cc2nc(CCC(C)C)cs2)CC1O",
+        "CC(=O)NC1CCN(Cc2ccc3ccc(Br)cc3n2)C1",
+        "CC(=O)NC1CCN(Cc2cnns2)C1Cc1ccccc1",
+        "CC(=O)NC1CCN(Cc2ccc(F)c(C(F)(F)F)c2)C(C)C1",
+        "CC(=O)NC1CCN(Cc2cn(-c3cnccn3)cn2)CC1",
+        "CC(=O)NC1CCN(Cc2ccn(-c3ccc(F)cc3F)n2)C1C",
+        "CC(=O)NC1CCN(Cc2cn3c(Cl)cccc3n2)C1"
+      ],
+      "compute": {
+        "processed_tokens_actual": 296,
+        "processed_tokens_full_recompute": 296,
+        "forward_calls": 8,
+        "wall_seconds": 0.6836018750909716,
+        "molecules_returned": 8,
+        "tokens_per_molecule_actual": 37.0,
+        "tokens_per_molecule_full_recompute": 37.0
+      }
+    },
+    "07_top_eight_candidates": {
+      "status": "ok",
+      "candidate_token_ids": [
+        5,
+        13,
+        23,
+        22,
+        24,
+        52,
+        170,
+        69
+      ],
+      "candidate_tokens": [
+        "c",
+        "n",
+        "s",
+        "o",
+        "[nH]",
+        "[c-]",
+        "[s+]",
+        "[nH+]"
+      ],
+      "base_logprobs": [
+        -0.19911633431911469,
+        -1.8314615488052368,
+        -4.390643119812012,
+        -5.119238376617432,
+        -6.234246253967285,
+        -11.045249938964844,
+        -12.297151565551758,
+        -12.613065719604492
+      ],
+      "top8_probability_mass": 0.9999921321868896
+    },
+    "08_batched_candidate_evaluation": {
+      "status": "ok",
+      "n_candidates": 8,
+      "hidden_state_shape_full_recompute": [
+        1,
+        8,
+        768
+      ],
+      "hidden_state_shape_cached": [
+        1,
+        8,
+        768
+      ],
+      "backend_max_abs_difference": 6.67572021484375e-06,
+      "backends_agree": true,
+      "seconds_full_recompute": 0.08345029200427234,
+      "seconds_cached": 0.022911291103810072
+    },
+    "09_candidate_states_logprobs_shapes": {
+      "status": "ok",
+      "candidate_hidden_states_shape": [
+        8,
+        768
+      ],
+      "candidate_next_token_logprobs_shape": [
+        8,
+        2362
+      ],
+      "candidate_hidden_state_norms": [
+        30.61296272277832,
+        30.45005226135254,
+        30.783933639526367,
+        31.847816467285156,
+        32.210792541503906,
+        30.16365623474121,
+        30.08018684387207,
+        30.770736694335938
+      ],
+      "base_logprobs_of_selected_candidates": [
+        -0.19911633431911469,
+        -1.8314615488052368,
+        -4.390643119812012,
+        -5.119238376617432,
+        -6.234246253967285,
+        -11.045249938964844,
+        -12.297151565551758,
+        -12.613065719604492
+      ],
+      "trivial_prefix_features_dim": 24
+    }
+  },
+  "n_requested": 100,
+  "wall_seconds_total": 8.551125291967764,
+  "all_checks_passed": true,
+  "failed_checks": []
+}

@@ -1,0 +1,103 @@
+=== pilot driver: pilot_50k :: 2026-07-29T10:25:48Z ===
+--- 03 train heads
+{'train': 158588, 'val': 20752, 'test': 19952}
+clogp           frozen_state  test nll=2.6757 mae=0.9258 auroc=0.7973
+clogp           trivial       test nll=2.7484 mae=0.9855 auroc=0.7540
+clogp           combined      test nll=2.6198 mae=0.8807 auroc=0.8131
+clogp           frozen-vs-trivial  nll_gain=+0.0727 [+0.0646,+0.0810]  auroc_gain=+0.0433 [+0.0335,+0.0534]  gate=PASS
+aromatic_rings  frozen_state  test nll=1.0592 mae=0.5933 auroc=0.7875
+aromatic_rings  trivial       test nll=0.9180 mae=0.5267 auroc=0.8252
+aromatic_rings  combined      test nll=0.8396 mae=0.4784 auroc=0.8568
+aromatic_rings  frozen-vs-trivial  nll_gain=-0.1409 [-0.1523,-0.1312]  auroc_gain=-0.0374 [-0.0448,-0.0301]  gate=fail
+mol_weight      frozen_state  test nll=2.5751 mae=41.1443 auroc=0.8318
+mol_weight      trivial       test nll=2.6981 mae=47.5277 auroc=0.7365
+mol_weight      combined      test nll=2.5165 mae=39.8781 auroc=0.8441
+mol_weight      frozen-vs-trivial  nll_gain=+0.1228 [+0.1123,+0.1333]  auroc_gain=+0.0952 [+0.0834,+0.1071]  gate=PASS
+
+SCALING GATE: PASS (primary properties passing: ['clogp'])
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_heads
+--- 05 guided generation: clogp
+property=clogp target=[4.1727,5.0383) base_rate=0.1000
+windows: early<15 middle[15,29) late>=29
+We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+unguided             seed=101 hit=0.1041 err=1.6518 val=0.994 len=42.0 atoms=25.4 tok/mol=44 (37s)
+unguided             seed=202 hit=0.1081 err=1.7931 val=0.994 len=43.4 atoms=26.1 tok/mol=45 (39s)
+unguided             seed=303 hit=0.1078 err=1.6592 val=0.996 len=41.9 atoms=25.3 tok/mol=43 (31s)
+throughout           seed=101 hit=0.2695 err=0.7536 val=1.000 len=44.8 atoms=27.2 tok/mol=412 (199s)
+throughout           seed=202 hit=0.2475 err=0.7040 val=0.994 len=43.7 atoms=26.5 tok/mol=404 (211s)
+throughout           seed=303 hit=0.2765 err=0.6914 val=0.996 len=43.1 atoms=26.2 tok/mol=400 (226s)
+early                seed=101 hit=0.1552 err=1.2768 val=0.994 len=42.4 atoms=25.6 tok/mol=164 (60s)
+early                seed=202 hit=0.1471 err=1.2578 val=0.996 len=42.8 atoms=26.1 tok/mol=164 (59s)
+early                seed=303 hit=0.1781 err=1.2424 val=0.998 len=42.7 atoms=25.8 tok/mol=164 (60s)
+middle               seed=101 hit=0.1543 err=1.3230 val=1.000 len=44.1 atoms=26.8 tok/mol=156 (56s)
+middle               seed=202 hit=0.1831 err=1.2014 val=0.992 len=42.6 atoms=25.8 tok/mol=154 (58s)
+middle               seed=303 hit=0.1549 err=1.1662 val=0.996 len=42.7 atoms=26.0 tok/mol=155 (63s)
+late                 seed=101 hit=0.1096 err=1.3581 val=0.998 len=44.4 atoms=26.6 tok/mol=177 (167s)
+late                 seed=202 hit=0.1039 err=1.4580 val=0.996 len=43.4 atoms=26.2 tok/mol=169 (161s)
+late                 seed=303 hit=0.1523 err=1.3330 val=1.000 len=42.7 atoms=25.9 tok/mol=163 (151s)
+truncation_control   seed=101 hit=0.1113 err=1.6165 val=1.000 len=42.5 atoms=25.6 tok/mol=44 (29s)
+truncation_control   seed=202 hit=0.0898 err=1.7425 val=1.000 len=41.9 atoms=25.3 tok/mol=43 (35s)
+truncation_control   seed=303 hit=0.0685 err=1.6543 val=0.998 len=42.1 atoms=25.3 tok/mol=43 (28s)
+
+length-confound summary (hit rate):
+  unguided             raw=0.1067 length_matched=0.1067 d_raw=+0.0000 d_matched=+0.0000
+  throughout           raw=0.2645 length_matched=0.2600 d_raw=+0.1579 d_matched=+0.1534
+  early                raw=0.1601 length_matched=0.1604 d_raw=+0.0535 d_matched=+0.0538
+  middle               raw=0.1641 length_matched=0.1636 d_raw=+0.0574 d_matched=+0.0569
+  late                 raw=0.1220 length_matched=0.1181 d_raw=+0.0153 d_matched=+0.0114
+  truncation_control   raw=0.0899 length_matched=0.0909 d_raw=-0.0168 d_matched=-0.0158
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_guided_clogp
+--- 06 compute-matched best-of-N: clogp
+guided tokens/molecule: actual=406 full_recompute=9300
+base tokens/molecule:   43.7
+  match on actual          -> N=9, 512 molecules/seed
+  match on full_recompute  -> N=212, 64 molecules/seed
+  [actual] N=9 seed=101 hit=0.6309 err=0.1343 val=1.000 tok/mol=402 (382s)
+  [actual] N=9 seed=202 hit=0.5879 err=0.1416 val=1.000 tok/mol=398 (236s)
+  [actual] N=9 seed=303 hit=0.6211 err=0.1287 val=1.000 tok/mol=399 (216s)
+  [actual] guided=0.2645 vs best-of-9=0.6133 advantage=-0.3488
+  [full_recompute] N=212 seed=101 hit=1.0000 err=0.0000 val=1.000 tok/mol=9420 (657s)
+  [full_recompute] N=212 seed=202 hit=1.0000 err=0.0000 val=1.000 tok/mol=9413 (699s)
+  [full_recompute] N=212 seed=303 hit=1.0000 err=0.0000 val=1.000 tok/mol=9394 (658s)
+  [full_recompute] guided=0.2645 vs best-of-212=1.0000 advantage=-0.7355
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_bestofn_clogp
+--- 05 guided generation: aromatic_rings
+property=aromatic_rings target=[3.0000,4.0000) base_rate=0.1714
+windows: early<15 middle[15,29) late>=29
+We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+unguided             seed=101 hit=0.1670 err=1.2947 val=0.994 len=42.0 atoms=25.4 tok/mol=44 (38s)
+unguided             seed=202 hit=0.1473 err=1.3340 val=0.994 len=43.4 atoms=26.1 tok/mol=45 (40s)
+unguided             seed=303 hit=0.1980 err=1.2314 val=0.996 len=41.9 atoms=25.3 tok/mol=43 (29s)
+throughout           seed=101 hit=0.4676 err=0.4715 val=0.994 len=43.7 atoms=26.6 tok/mol=405 (197s)
+throughout           seed=202 hit=0.4431 err=0.4196 val=0.996 len=44.0 atoms=26.9 tok/mol=405 (146s)
+throughout           seed=303 hit=0.5020 err=0.4130 val=0.988 len=44.9 atoms=27.4 tok/mol=418 (220s)
+early                seed=101 hit=0.3059 err=0.8588 val=0.996 len=44.0 atoms=26.6 tok/mol=165 (63s)
+early                seed=202 hit=0.2793 err=0.8574 val=1.000 len=43.3 atoms=26.2 tok/mol=164 (57s)
+early                seed=303 hit=0.2717 err=0.8760 val=0.992 len=42.4 atoms=25.7 tok/mol=163 (57s)
+middle               seed=101 hit=0.2916 err=0.8493 val=0.998 len=42.9 atoms=26.1 tok/mol=155 (56s)
+middle               seed=202 hit=0.2916 err=0.8611 val=0.998 len=44.2 atoms=26.8 tok/mol=157 (54s)
+middle               seed=303 hit=0.3229 err=0.8004 val=0.998 len=43.8 atoms=26.5 tok/mol=156 (56s)
+late                 seed=101 hit=0.2324 err=1.0957 val=1.000 len=42.9 atoms=26.1 tok/mol=165 (148s)
+late                 seed=202 hit=0.2224 err=1.0748 val=0.992 len=42.8 atoms=26.0 tok/mol=168 (167s)
+late                 seed=303 hit=0.2530 err=1.0613 val=0.988 len=42.7 atoms=25.9 tok/mol=166 (168s)
+truncation_control   seed=101 hit=0.1719 err=1.2305 val=1.000 len=42.5 atoms=25.6 tok/mol=44 (33s)
+truncation_control   seed=202 hit=0.1797 err=1.2793 val=1.000 len=41.9 atoms=25.3 tok/mol=43 (32s)
+truncation_control   seed=303 hit=0.1957 err=1.2192 val=0.998 len=42.1 atoms=25.3 tok/mol=43 (32s)
+
+length-confound summary (hit rate):
+  unguided             raw=0.1708 length_matched=0.1708 d_raw=+0.0000 d_matched=+0.0000
+  throughout           raw=0.4708 length_matched=0.4599 d_raw=+0.3000 d_matched=+0.2891
+  early                raw=0.2856 length_matched=0.2823 d_raw=+0.1148 d_matched=+0.1115
+  middle               raw=0.3020 length_matched=0.2920 d_raw=+0.1312 d_matched=+0.1212
+  late                 raw=0.2359 length_matched=0.2316 d_raw=+0.0651 d_matched=+0.0607
+  truncation_control   raw=0.1824 length_matched=0.1815 d_raw=+0.0116 d_matched=+0.0107
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_guided_aromatic_rings
+--- 06 compute-matched best-of-N: aromatic_rings
+guided tokens/molecule: actual=409 full_recompute=9368
+base tokens/molecule:   43.7
+  match on actual          -> N=9, 512 molecules/seed
+  match on full_recompute  -> N=214, 64 molecules/seed
+  [actual] N=9 seed=101 hit=0.6914 err=0.1230 val=1.000 tok/mol=402 (217s)
+  [actual] N=9 seed=202 hit=0.7305 err=0.1172 val=1.000 tok/mol=398 (230s)
+  [actual] N=9 seed=303 hit=0.7090 err=0.1348 val=1.000 tok/mol=399 (212s)
+  [actual] guided=0.4709 vs best-of-9=0.7103 advantage=-0.2394

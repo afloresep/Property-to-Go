@@ -1,0 +1,110 @@
+=== PTGCHAIN start 2026-07-29T12:50:49Z ===
+--- 06 best-of-N aromatic_rings (bug-fixed selection)
+guided tokens/molecule: actual=409 full_recompute=9368
+base tokens/molecule:   43.7
+  match on actual          -> N=9, 512 molecules/seed
+  match on full_recompute  -> N=214, 64 molecules/seed
+  [actual] N=9 seed=101 hit=0.8027 err=0.1973 val=1.000 tok/mol=402 (224s)
+  [actual] N=9 seed=202 hit=0.8066 err=0.1973 val=1.000 tok/mol=398 (233s)
+  [actual] N=9 seed=303 hit=0.7969 err=0.2090 val=1.000 tok/mol=399 (220s)
+  [actual] guided=0.4709 vs best-of-9=0.8021 advantage=-0.3312
+  [full_recompute] N=214 seed=101 hit=1.0000 err=0.0000 val=1.000 tok/mol=9509 (685s)
+  [full_recompute] N=214 seed=202 hit=1.0000 err=0.0000 val=1.000 tok/mol=9501 (691s)
+  [full_recompute] N=214 seed=303 hit=1.0000 err=0.0000 val=1.000 tok/mol=9480 (729s)
+  [full_recompute] guided=0.4709 vs best-of-214=1.0000 advantage=-0.5291
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_bestofn_aromatic_rings
+--- 04 rollout bank 50k
+800 held-out prefixes, quartile counts: [200 200 200 200]
+25600 continuations in 1601.1s
+clogp           frozen_state  rollout-MAE=0.5014 spearman=0.8199 brier=0.0883
+clogp           trivial       rollout-MAE=0.6094 spearman=0.7208 brier=0.0904
+clogp           combined      rollout-MAE=0.4447 spearman=0.8590 brier=0.0902
+aromatic_rings  frozen_state  rollout-MAE=0.3415 spearman=0.8355 brier=0.1300
+aromatic_rings  trivial       rollout-MAE=0.2617 spearman=0.8878 brier=0.1079
+aromatic_rings  combined      rollout-MAE=0.2059 spearman=0.9279 brier=0.1033
+mol_weight      frozen_state  rollout-MAE=25.8388 spearman=0.7788 brier=0.0818
+mol_weight      trivial       rollout-MAE=34.0240 spearman=0.5236 brier=0.0905
+mol_weight      combined      rollout-MAE=23.4563 spearman=0.8113 brier=0.0806
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_rollouts
+--- 09 confound clogp
+property=clogp target=[4.1727,5.0383) unguided_raw=0.1067
+condition                               raw                 length                   size                  joint
+unguided               0.1067+0.0000(c1.00)   0.1067+0.0000(c1.00)   0.1067+0.0000(c1.00)   0.1067+0.0000(c1.00)
+throughout             0.2645+0.1579(c1.00)   0.2600+0.1534(c0.99)   0.2552+0.1485(c0.99)   0.2598+0.1531(c0.99)
+early                  0.1601+0.0535(c1.00)   0.1604+0.0538(c0.99)   0.1555+0.0489(c0.99)   0.1538+0.0471(c0.98)
+middle                 0.1641+0.0574(c1.00)   0.1636+0.0569(c1.00)   0.1604+0.0537(c0.99)   0.1632+0.0565(c0.98)
+late                   0.1220+0.0153(c1.00)   0.1181+0.0114(c0.99)   0.1153+0.0086(c1.00)   0.1163+0.0096(c0.98)
+truncation_control     0.0899-0.0168(c1.00)   0.0909-0.0158(c1.00)   0.0918-0.0148(c0.99)   0.0934-0.0133(c0.98)
+
+mean length / heavy atoms per condition:
+  unguided             len=42.4 atoms=25.6
+  throughout           len=43.9 atoms=26.6
+  early                len=42.6 atoms=25.8
+  middle               len=43.1 atoms=26.2
+  late                 len=43.5 atoms=26.2
+  truncation_control   len=42.2 atoms=25.4
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_confound_clogp
+--- 09 confound aromatic_rings
+property=aromatic_rings target=[3.0000,4.0000) unguided_raw=0.1708
+condition                               raw                 length                   size                  joint
+unguided               0.1708+0.0000(c1.00)   0.1708+0.0000(c1.00)   0.1708+0.0000(c1.00)   0.1708+0.0000(c1.00)
+throughout             0.4708+0.3000(c1.00)   0.4599+0.2891(c1.00)   0.4520+0.2812(c1.00)   0.4459+0.2751(c0.98)
+early                  0.2856+0.1148(c1.00)   0.2823+0.1115(c0.99)   0.2768+0.1060(c0.99)   0.2801+0.1093(c0.98)
+middle                 0.3020+0.1312(c1.00)   0.2920+0.1212(c0.99)   0.2810+0.1102(c0.99)   0.2801+0.1093(c0.98)
+late                   0.2359+0.0651(c1.00)   0.2316+0.0607(c1.00)   0.2223+0.0515(c1.00)   0.2245+0.0537(c0.99)
+truncation_control     0.1824+0.0116(c1.00)   0.1815+0.0107(c1.00)   0.1835+0.0127(c0.99)   0.1869+0.0161(c0.98)
+
+mean length / heavy atoms per condition:
+  unguided             len=42.4 atoms=25.6
+  throughout           len=44.2 atoms=27.0
+  early                len=43.2 atoms=26.2
+  middle               len=43.6 atoms=26.5
+  late                 len=42.8 atoms=26.0
+  truncation_control   len=42.2 atoms=25.4
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_confound_aromatic_rings
+--- 07 figures
+  wrote predictability_clogp_auroc.png
+  wrote predictability_clogp_nll.png
+  wrote predictability_clogp_mae.png
+  wrote predictability_aromatic_rings_auroc.png
+  wrote predictability_aromatic_rings_nll.png
+  wrote predictability_aromatic_rings_mae.png
+  wrote predictability_mol_weight_auroc.png
+  wrote predictability_mol_weight_nll.png
+  wrote predictability_mol_weight_mae.png
+  wrote rollout_clogp_spearman_vs_empirical_mean.png
+  wrote rollout_clogp_brier_vs_rollouts.png
+  wrote rollout_clogp_mae_vs_empirical_mean.png
+  wrote reliability_clogp.png
+  wrote conditional_spread_clogp.png
+  wrote rollout_aromatic_rings_spearman_vs_empirical_mean.png
+  wrote rollout_aromatic_rings_brier_vs_rollouts.png
+  wrote rollout_aromatic_rings_mae_vs_empirical_mean.png
+  wrote reliability_aromatic_rings.png
+  wrote conditional_spread_aromatic_rings.png
+  wrote rollout_mol_weight_spearman_vs_empirical_mean.png
+  wrote rollout_mol_weight_brier_vs_rollouts.png
+  wrote rollout_mol_weight_mae_vs_empirical_mean.png
+  wrote reliability_mol_weight.png
+  wrote conditional_spread_mol_weight.png
+  wrote intervention_clogp_hit_rate.png
+  wrote intervention_clogp_abs_target_error_mean.png
+  wrote intervention_clogp_validity.png
+  wrote intervention_clogp_content_length_mean.png
+  wrote intervention_clogp_n_heavy_atoms_mean.png
+  wrote length_matched_clogp.png
+  wrote distribution_clogp.png
+  wrote lengths_clogp.png
+  wrote intervention_aromatic_rings_hit_rate.png
+  wrote intervention_aromatic_rings_abs_target_error_mean.png
+  wrote intervention_aromatic_rings_validity.png
+  wrote intervention_aromatic_rings_content_length_mean.png
+  wrote intervention_aromatic_rings_n_heavy_atoms_mean.png
+  wrote length_matched_aromatic_rings.png
+  wrote distribution_aromatic_rings.png
+  wrote lengths_aromatic_rings.png
+  skip: guidance_metrics.json for mol_weight missing
+  wrote compute_matched_clogp.png
+  wrote compute_matched_aromatic_rings.png
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_figures
+=== PTGCHAIN done 2026-07-29T14:04:14Z ===

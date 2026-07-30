@@ -1,0 +1,77 @@
+=== PTGFIX start 2026-07-29T14:05:58Z ===
+property=aromatic_rings target=[3.0000,4.0000) base_rate=0.1714
+windows: early<15 middle[15,29) late>=29
+We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See https://huggingface.co/docs/transformers/troubleshooting#incorrect-output-when-padding-tokens-arent-masked.
+unguided             seed=101 hit=0.1670 err=1.3379 val=0.994 len=42.0 atoms=25.4 tok/mol=44 (46s)
+unguided             seed=202 hit=0.1473 err=1.4008 val=0.994 len=43.4 atoms=26.1 tok/mol=45 (48s)
+unguided             seed=303 hit=0.1980 err=1.2725 val=0.996 len=41.9 atoms=25.3 tok/mol=43 (35s)
+throughout           seed=101 hit=0.4676 err=0.6149 val=0.994 len=43.7 atoms=26.6 tok/mol=405 (246s)
+throughout           seed=202 hit=0.4431 err=0.6098 val=0.996 len=44.0 atoms=26.9 tok/mol=405 (192s)
+throughout           seed=303 hit=0.5020 err=0.5751 val=0.988 len=44.9 atoms=27.4 tok/mol=418 (277s)
+early                seed=101 hit=0.3059 err=0.9647 val=0.996 len=44.0 atoms=26.6 tok/mol=165 (80s)
+early                seed=202 hit=0.2793 err=0.9434 val=1.000 len=43.3 atoms=26.2 tok/mol=164 (72s)
+early                seed=303 hit=0.2717 err=0.9843 val=0.992 len=42.4 atoms=25.7 tok/mol=163 (70s)
+middle               seed=101 hit=0.2916 err=0.9198 val=0.998 len=42.9 atoms=26.1 tok/mol=155 (68s)
+middle               seed=202 hit=0.2916 err=0.9335 val=0.998 len=44.2 atoms=26.8 tok/mol=157 (69s)
+middle               seed=303 hit=0.3229 err=0.8904 val=0.998 len=43.8 atoms=26.5 tok/mol=156 (69s)
+late                 seed=101 hit=0.2324 err=1.1426 val=1.000 len=42.9 atoms=26.1 tok/mol=165 (188s)
+late                 seed=202 hit=0.2224 err=1.1161 val=0.992 len=42.8 atoms=26.0 tok/mol=168 (207s)
+late                 seed=303 hit=0.2530 err=1.1285 val=0.988 len=42.7 atoms=25.9 tok/mol=166 (206s)
+truncation_control   seed=101 hit=0.1719 err=1.2812 val=1.000 len=42.5 atoms=25.6 tok/mol=44 (37s)
+truncation_control   seed=202 hit=0.1797 err=1.3164 val=1.000 len=41.9 atoms=25.3 tok/mol=43 (38s)
+truncation_control   seed=303 hit=0.1957 err=1.2583 val=0.998 len=42.1 atoms=25.3 tok/mol=43 (36s)
+
+length-confound summary (hit rate):
+  unguided             raw=0.1708 length_matched=0.1708 d_raw=+0.0000 d_matched=+0.0000
+  throughout           raw=0.4708 length_matched=0.4599 d_raw=+0.3000 d_matched=+0.2891
+  early                raw=0.2856 length_matched=0.2823 d_raw=+0.1148 d_matched=+0.1115
+  middle               raw=0.3020 length_matched=0.2920 d_raw=+0.1312 d_matched=+0.1212
+  late                 raw=0.2359 length_matched=0.2316 d_raw=+0.0651 d_matched=+0.0607
+  truncation_control   raw=0.1824 length_matched=0.1815 d_raw=+0.0116 d_matched=+0.0107
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_guided_aromatic_rings
+--- regenerate figures
+  wrote predictability_clogp_auroc.png
+  wrote predictability_clogp_nll.png
+  wrote predictability_clogp_mae.png
+  wrote predictability_aromatic_rings_auroc.png
+  wrote predictability_aromatic_rings_nll.png
+  wrote predictability_aromatic_rings_mae.png
+  wrote predictability_mol_weight_auroc.png
+  wrote predictability_mol_weight_nll.png
+  wrote predictability_mol_weight_mae.png
+  wrote rollout_clogp_spearman_vs_empirical_mean.png
+  wrote rollout_clogp_brier_vs_rollouts.png
+  wrote rollout_clogp_mae_vs_empirical_mean.png
+  wrote reliability_clogp.png
+  wrote conditional_spread_clogp.png
+  wrote rollout_aromatic_rings_spearman_vs_empirical_mean.png
+  wrote rollout_aromatic_rings_brier_vs_rollouts.png
+  wrote rollout_aromatic_rings_mae_vs_empirical_mean.png
+  wrote reliability_aromatic_rings.png
+  wrote conditional_spread_aromatic_rings.png
+  wrote rollout_mol_weight_spearman_vs_empirical_mean.png
+  wrote rollout_mol_weight_brier_vs_rollouts.png
+  wrote rollout_mol_weight_mae_vs_empirical_mean.png
+  wrote reliability_mol_weight.png
+  wrote conditional_spread_mol_weight.png
+  wrote intervention_clogp_hit_rate.png
+  wrote intervention_clogp_abs_target_error_mean.png
+  wrote intervention_clogp_validity.png
+  wrote intervention_clogp_content_length_mean.png
+  wrote intervention_clogp_n_heavy_atoms_mean.png
+  wrote length_matched_clogp.png
+  wrote distribution_clogp.png
+  wrote lengths_clogp.png
+  wrote intervention_aromatic_rings_hit_rate.png
+  wrote intervention_aromatic_rings_abs_target_error_mean.png
+  wrote intervention_aromatic_rings_validity.png
+  wrote intervention_aromatic_rings_content_length_mean.png
+  wrote intervention_aromatic_rings_n_heavy_atoms_mean.png
+  wrote length_matched_aromatic_rings.png
+  wrote distribution_aromatic_rings.png
+  wrote lengths_aromatic_rings.png
+  skip: guidance_metrics.json for mol_weight missing
+  wrote compute_matched_clogp.png
+  wrote compute_matched_aromatic_rings.png
+-> /Users/afloresep/work/property-to-go/outputs/pilot_50k_figures
+=== PTGFIX done 2026-07-29T14:39:16Z ===

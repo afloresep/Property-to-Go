@@ -1,0 +1,29 @@
+{
+  "name": "pilot_10k",
+  "n_trajectories": 10000,
+  "min_content_tokens": 8,
+  "prefixes_per_trajectory": 4,
+  "hidden_layer": -1,
+  "split_fractions": {
+    "train": 0.8,
+    "val": 0.1,
+    "test": 0.1
+  },
+  "split_seed": 11,
+  "prefix_seed": 12,
+  "head": {
+    "hidden_dim": 256,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 512,
+    "max_epochs": 60,
+    "patience": 8,
+    "seed": 1234
+  },
+  "binning": {
+    "clogp_n_bins": 20,
+    "aromatic_rings_max": 5,
+    "mol_weight_n_bins": 20
+  }
+}
