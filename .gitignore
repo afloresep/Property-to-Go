@@ -29,11 +29,87 @@ __pycache__/
 # reproduced deterministically from the pinned model revision and recorded seeds.
 # Re-running step 2 of docs/REPRODUCE.md rebuilds them. Committing ~700 MB to avoid an
 # hour of GPU time is not a good trade. See docs/KICKOFF_PROMPT.md §1.
+#
+# REVISED 2026-08-03, after C17/C23-C29 grew outputs/ to 25 GB. The rule above was
+# written when the only bulk arrays were named hidden.npy / features.npy. The layer and
+# window state caches added since (`layer*.npy`, `states*.npy`) are the same kind of
+# object under different names and were not covered, so the two lines were generalised
+# to every .npy / .npz under outputs/. That is 23.7 GB of the 25 GB.
+#
+# The one caveat that must travel with this decision: §11.1 and claim CL11 record that
+# CUDA draws a *different* 50k sample from CPU at the same seed, so these caches are
+# reproducible only on hardware whose RNG stream matches. Dropping them is therefore a
+# real loss of exact reproducibility, accepted because (a) every published number is
+# read from a *_metrics.json that IS tracked, (b) the frozen windows.json and
+# target_intervals.json are tracked so a re-derivation on new hardware can be *detected*
+# rather than silently accepted, and (c) 23.7 GB is not a thing to put in git.
 # ---------------------------------------------------------------------------
-outputs/**/hidden.npy
-outputs/**/features.npy
+outputs/**/*.npy
+outputs/**/*.npz
+outputs/**/*.csv
 outputs/**/trajectories.json
 outputs/**/prefix_token_ids.json
-outputs/**/prefix_meta.csv
-outputs/**/predictions_*.npz
-outputs/**/rollout_arrays.npz
+
+# ---------------------------------------------------------------------------
+# Head checkpoints (*.pt), 538 files / 795 MB as of 2026-08-03.
+#
+# The default is now EXCLUDE, with an allowlist below, reversing the blanket "and the
+# trained head checkpoints (*.pt)" above. The rule applied: a checkpoint is tracked if a
+# test loads it, or if it is the head a *deployed* published configuration was run with.
+# A checkpoint from a sweep whose every published number already lives in a tracked
+# *_metrics.json is not tracked -- the sweep's conclusion survives without it.
+#
+# What this drops, and why each is judged safe:
+#   c25_pooled_heads/       489 MB, 198 files. C25 is a prediction-only sweep; every
+#                           AUROC it reports is in c25_summary/. No steering result
+#                           depends on these, and its headline (the 25x) was retracted
+#                           by C29 anyway.
+#   c29_heads/              55 MB. Eight head seeds x seven arms; C29's numbers are all
+#                           in c29_summary/c29_metrics.json, which is tracked.
+#   c24_probe_layers/heads/ 39 GPT-2 text heads. C24 is the external-validity side
+#                           experiment; c24_summary/ carries it.
+#   pilot_50k_heads_p2_legacymask/  56 MB. These are the *defective* pre-fix heads from
+#                           the §11.5 interval-mask bug. §11.6 already quantified what
+#                           they cost; carrying the broken checkpoints adds nothing.
+#   c18_heads_*/, c29_c27heads_*/   C18's readout variants and C29's C27 replications.
+#
+# What is kept: phase-1 heads (already tracked), the deployed phase-2 heads, and the
+# C17 probe-point heads -- the last because tests/test_pooled_readout.py and
+# tests/test_layer_end_to_end.py load head_aromatic_rings_frozen_state_L12.pt directly,
+# and because C23's reproduction commands in docs/REPRODUCE.md name the L3/L4/L6 files.
+# ---------------------------------------------------------------------------
+outputs/**/*.pt
+!outputs/pilot_10k_heads/*.pt
+!outputs/pilot_50k_heads/*.pt
+!outputs/pilot_50k_heads_p2/*.pt
+!outputs/pilot_50k_dagger_clogp/*.pt
+!outputs/c17_probe_layers/*.pt
+
+# ---------------------------------------------------------------------------
+# Per-run molecule dumps and run logs, added 2026-08-03 when C30-C33 were committed.
+#
+# The header above lists `molecules.json` as tracked. That was written when the project
+# had four of them. C23-C33 produced 309, totalling 303 MB, and committing them would
+# have taken .git from 21 MB to over 500 MB in a single commit -- a decision that cannot
+# be undone without rewriting history.
+#
+# The rule applied is the same one the *.pt allowlist uses: an artefact is tracked if a
+# test reads it, or if it belongs to a *deployed* published configuration. No test in
+# tests/ reads a molecules.json; every published hit rate, validity and token count is
+# read from a tracked *_metrics.json. The four already-tracked dumps (phase 1 and the
+# pilot guided runs) stay tracked -- a .gitignore rule does not untrack a tracked file --
+# so the worked examples a reader needs are still in the repository.
+#
+# What this costs: re-running scripts/09, 10, 18, 23, 24, 26 or the C24/C31 gates on a
+# fresh clone requires regenerating the dumps first, exactly as the .npy caches above do.
+# What it does not cost: any number in reports/, any figure, or any of the 799 tests.
+#
+# Logs are excluded for the same reason and a weaker one -- they are console transcripts,
+# 6 MB of them, and nothing reads them. The 8 already-tracked logs stay tracked.
+#
+# c24_dataset/sequences.json (14.7 MB) is the raw GPT-2 text corpus for C24, regenerable
+# from scripts/19_c24_dataset.py at the recorded seed; c24_summary/ carries every number.
+# ---------------------------------------------------------------------------
+outputs/**/molecules.json
+outputs/**/*.log
+outputs/c24_dataset/sequences.json
