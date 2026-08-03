@@ -1,0 +1,258 @@
+{
+  "experiment": "C31",
+  "stage": "dataset",
+  "prereg": "outputs/c31_prereg/C31.0_preregistration.md",
+  "generator": {
+    "repo": "entropy/gpt2_zinc_87m",
+    "revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+    "fingerprint": {
+      "n_parameters": 87331584,
+      "parameter_sum": 19996.594887717303,
+      "n_layers": 12,
+      "hidden_size": 768,
+      "n_probe_points": 13,
+      "vocab_size": 2707,
+      "repo": "entropy/gpt2_zinc_87m",
+      "revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+      "all_parameters_frozen": true,
+      "training_mode": false
+    }
+  },
+  "n_trajectories_requested": 50000,
+  "n_trajectories_kept": 49896,
+  "n_invalid": 100,
+  "n_too_short": 4,
+  "n_property_unavailable": 0,
+  "validity": 0.998,
+  "uniqueness": 0.9999799583132917,
+  "n_prefix_rows": 199584,
+  "probe_points": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "hidden_size": 768,
+  "trivial_feature_names": [
+    "prefix_len",
+    "n_atom_tokens",
+    "n_aromatic_atom_tokens",
+    "n_ring_markers",
+    "n_open_rings",
+    "n_branch_open",
+    "n_branch_close",
+    "branch_depth",
+    "n_bond_tokens",
+    "n_dot",
+    "n_bracket_atoms",
+    "n_element_C",
+    "n_element_N",
+    "n_element_O",
+    "n_element_S",
+    "n_element_F",
+    "n_element_Cl",
+    "n_element_Br",
+    "n_element_I",
+    "n_element_P",
+    "n_element_other",
+    "frac_atom_tokens",
+    "frac_aromatic_atoms",
+    "atoms_per_ring_marker"
+  ],
+  "split_counts": {
+    "train": 159700,
+    "val": 19808,
+    "test": 20076
+  },
+  "group_counts": {
+    "train": 39924,
+    "val": 4952,
+    "test": 5019
+  },
+  "content_length": {
+    "mean": 34.0609267275934,
+    "std": 7.495499668918596,
+    "min": 8,
+    "max": 73
+  },
+  "target_intervals": {
+    "hbd_count": {
+      "lo": 3.0,
+      "hi": 4.0,
+      "rule": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "base_rate": 0.09006734006734007
+    },
+    "aromatic_rings": {
+      "lo": 3.0,
+      "hi": 4.0,
+      "rule": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "base_rate": 0.12536075036075037
+    },
+    "qed": {
+      "lo": 0.8503003461731068,
+      "hi": 0.8968197023725694,
+      "rule": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "base_rate": 0.10000801667468334
+    }
+  },
+  "windows": {
+    "t33": 12,
+    "t67": 23,
+    "source": "pooled generated-position distribution of the base model",
+    "early": [
+      1,
+      12
+    ],
+    "middle": [
+      12,
+      23
+    ],
+    "late": [
+      23,
+      null
+    ]
+  },
+  "base_property_summary": {
+    "hbd_count": {
+      "n": 49896,
+      "mean": 1.3106060606060606,
+      "std": 0.9396174422631692,
+      "quantiles": {
+        "0.05": 0.0,
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 2.0,
+        "0.9": 3.0,
+        "0.95": 3.0
+      }
+    },
+    "aromatic_rings": {
+      "n": 49896,
+      "mean": 1.5641333974667309,
+      "std": 0.9138887587128957,
+      "quantiles": {
+        "0.05": 0.0,
+        "0.25": 1.0,
+        "0.5": 2.0,
+        "0.75": 2.0,
+        "0.9": 3.0,
+        "0.95": 3.0
+      }
+    },
+    "qed": {
+      "n": 49896,
+      "mean": 0.7195572389682162,
+      "std": 0.12908629363962715,
+      "quantiles": {
+        "0.05": 0.47886313248480566,
+        "0.25": 0.6384964538964666,
+        "0.5": 0.7414614723608972,
+        "0.75": 0.8172412153408101,
+        "0.9": 0.8696729603788491,
+        "0.95": 0.8968197023725694
+      }
+    }
+  },
+  "validity_gates": {
+    "G5": {
+      "gate": "G5",
+      "rule": "the target interval must be an exact union of binner bins, and the binner's top category must sit strictly above the target value (C31.0.3 G5)",
+      "properties": {
+        "hbd_count": {
+          "n_bins": 7,
+          "n_bins_selected": 1,
+          "masked_rate": 0.09006734006734007,
+          "true_rate": 0.09006734006734007,
+          "abs_difference": 0.0,
+          "is_exact": true,
+          "lo": 3.0,
+          "hi": 4.0,
+          "base_rate": 0.09006734006734007,
+          "binner_kind": "categorical",
+          "top_category": 6,
+          "target_below_top_category": true,
+          "passes": true
+        },
+        "aromatic_rings": {
+          "n_bins": 6,
+          "n_bins_selected": 1,
+          "masked_rate": 0.12536075036075037,
+          "true_rate": 0.12536075036075037,
+          "abs_difference": 0.0,
+          "is_exact": true,
+          "lo": 3.0,
+          "hi": 4.0,
+          "base_rate": 0.12536075036075037,
+          "binner_kind": "categorical",
+          "top_category": 5,
+          "target_below_top_category": true,
+          "passes": true
+        },
+        "qed": {
+          "n_bins": 20,
+          "n_bins_selected": 2,
+          "masked_rate": 0.10000801667468334,
+          "true_rate": 0.10000801667468334,
+          "abs_difference": 0.0,
+          "is_exact": true,
+          "lo": 0.8503003461731068,
+          "hi": 0.8968197023725694,
+          "base_rate": 0.10000801667468334,
+          "binner_kind": "quantile",
+          "target_below_top_category": true,
+          "passes": true
+        }
+      },
+      "passes": true
+    },
+    "G6": {
+      "gate": "G6",
+      "rule": "no molecule's prefixes straddle train and test, and the frozen artefacts are hashed at write time (C31.0.3 G6)",
+      "group_counts": {
+        "train": 39924,
+        "val": 4952,
+        "test": 5019
+      },
+      "no_group_leakage": true,
+      "target_intervals_sha256": "221fda9d26aaf09d567dfeeff7ff98f5c0b761defaa3bae1fd5bc4bbc37dd01d",
+      "windows_sha256": "c97a8394953ed18a380ebf999055c7ace3e000e0ec43ab9d0a2ad4243a49d769",
+      "passes": true
+    }
+  },
+  "generation_compute": {
+    "processed_tokens_actual": 1802981,
+    "processed_tokens_full_recompute": 1802981,
+    "forward_calls": 50000,
+    "wall_seconds": 67.88063742406666,
+    "molecules_returned": 50000,
+    "tokens_per_molecule_actual": 36.05962,
+    "tokens_per_molecule_full_recompute": 36.05962
+  },
+  "hidden_state_compute": {
+    "processed_tokens_actual": 1799296,
+    "processed_tokens_full_recompute": 1799296,
+    "forward_calls": 390,
+    "wall_seconds": 43.844078560359776,
+    "molecules_returned": 0
+  },
+  "wall_seconds_total": 179.49400416668504
+}

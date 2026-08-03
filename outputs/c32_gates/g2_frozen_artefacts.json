@@ -1,0 +1,129 @@
+{
+  "gate": "G2",
+  "rule": "the C31 target intervals, windows and head checkpoints C32 steers with are unchanged: file hashes match C31's record and every head tensor is identical to the one C31 used",
+  "files": {
+    "target_intervals.json": {
+      "recorded": "221fda9d26aaf09d567dfeeff7ff98f5c0b761defaa3bae1fd5bc4bbc37dd01d",
+      "measured": "221fda9d26aaf09d567dfeeff7ff98f5c0b761defaa3bae1fd5bc4bbc37dd01d",
+      "matches": true
+    },
+    "windows.json": {
+      "recorded": "c97a8394953ed18a380ebf999055c7ace3e000e0ec43ab9d0a2ad4243a49d769",
+      "measured": "c97a8394953ed18a380ebf999055c7ace3e000e0ec43ab9d0a2ad4243a49d769",
+      "matches": true
+    }
+  },
+  "heads": {
+    "hbd_count_L2": {
+      "file": "c31_heads/head_hbd_count_L2_seed1234.pt",
+      "exists": true,
+      "sha256": "b8a5201d007533ff4e8484518e17aa2a8d1e258b648b4dc7e56d64888d0de137",
+      "head_seed": 1234,
+      "probe_point": 2,
+      "property": "hbd_count",
+      "binner_edges_or_max": 6,
+      "matches_requested_probe_point": true,
+      "matches_requested_property": true
+    },
+    "hbd_count_L12": {
+      "file": "c31_heads/head_hbd_count_L12_seed1234.pt",
+      "exists": true,
+      "sha256": "bb661e32af9becda8a875c207def56dccdb03e25142bdaf6876222e02132571d",
+      "head_seed": 1234,
+      "probe_point": 12,
+      "property": "hbd_count",
+      "binner_edges_or_max": 6,
+      "matches_requested_probe_point": true,
+      "matches_requested_property": true
+    },
+    "aromatic_rings_L2": {
+      "file": "c31_heads/head_aromatic_rings_L2_seed1234.pt",
+      "exists": true,
+      "sha256": "72d2a784520caecedcbe858a92aa8e834af6d918c2724a9b6903efef68640772",
+      "head_seed": 1234,
+      "probe_point": 2,
+      "property": "aromatic_rings",
+      "binner_edges_or_max": 5,
+      "matches_requested_probe_point": true,
+      "matches_requested_property": true
+    },
+    "aromatic_rings_L12": {
+      "file": "c31_heads/head_aromatic_rings_L12_seed1234.pt",
+      "exists": true,
+      "sha256": "6bb5ec17d86019a7e137c8de4e211729b0e2dbc8395c94314e9d5c0e782f0ff4",
+      "head_seed": 1234,
+      "probe_point": 12,
+      "property": "aromatic_rings",
+      "binner_edges_or_max": 5,
+      "matches_requested_probe_point": true,
+      "matches_requested_property": true
+    },
+    "qed_L6": {
+      "file": "c31_heads/head_qed_L6_seed1234.pt",
+      "exists": true,
+      "sha256": "401aacdb0d9ef5b5f4ed000d9247f526bb93ac49e4c6eeb35100aeb4ec553533",
+      "head_seed": 1234,
+      "probe_point": 6,
+      "property": "qed",
+      "binner_edges_or_max": [
+        -Infinity,
+        0.47886313248480566,
+        0.5370116176128198,
+        0.5778520567237301,
+        0.6103191699147279,
+        0.6384964538964666,
+        0.6639934681734301,
+        0.6858206432445809,
+        0.7060553132353276,
+        0.7245297057297232,
+        0.7414614723608972,
+        0.7570580673390813,
+        0.7725280075427873,
+        0.7867368623512799,
+        0.8012068043439944,
+        0.8172412153408101,
+        0.834002414992438,
+        0.8503003461731068,
+        0.8696729603788491,
+        0.8968197023725694,
+        Infinity
+      ],
+      "matches_requested_probe_point": true,
+      "matches_requested_property": true
+    },
+    "qed_L12": {
+      "file": "c31_heads/head_qed_L12_seed1234.pt",
+      "exists": true,
+      "sha256": "290630bf62e84d749cdf9790d01051668f7ed8293d14f9d68b33530eebc57247",
+      "head_seed": 1234,
+      "probe_point": 12,
+      "property": "qed",
+      "binner_edges_or_max": [
+        -Infinity,
+        0.47886313248480566,
+        0.5370116176128198,
+        0.5778520567237301,
+        0.6103191699147279,
+        0.6384964538964666,
+        0.6639934681734301,
+        0.6858206432445809,
+        0.7060553132353276,
+        0.7245297057297232,
+        0.7414614723608972,
+        0.7570580673390813,
+        0.7725280075427873,
+        0.7867368623512799,
+        0.8012068043439944,
+        0.8172412153408101,
+        0.834002414992438,
+        0.8503003461731068,
+        0.8696729603788491,
+        0.8968197023725694,
+        Infinity
+      ],
+      "matches_requested_probe_point": true,
+      "matches_requested_property": true
+    }
+  },
+  "passes": true
+}

@@ -1,0 +1,59 @@
+{
+  "experiment": "C32",
+  "stage": "spread",
+  "prereg": "outputs/c32_prereg/C32.0_preregistration.md",
+  "definition": "mean over prefixes of (max_k q - min_k q) over the base model's top-k candidates; scripts/16_layer_steering_value.py's `mean_head_q_spread_across_candidates`, transcribed",
+  "pairing": "probe point 12 and M are read from the same forward pass over the same prefixes and the same candidate sets, so the ratio is paired",
+  "n_prefixes": 128,
+  "top_k": 8,
+  "properties": {
+    "hbd_count": {
+      "mid_probe_point": 2,
+      "mid_probe_point_source": "TRANSCRIBED from outputs/c31_heads/depth_*.json, selected by C31.0.4's held-out validation AUROC rule before any steering outcome existed",
+      "final_probe_point": 12,
+      "spread": {
+        "2": 0.20156505703926086,
+        "12": 0.16232626140117645
+      },
+      "mean_q": {
+        "2": 0.11227360367774963,
+        "12": 0.09539773315191269
+      },
+      "spread_ratio": 1.2417279576291653,
+      "lambda_effective_at_lam1": 1.2417279576291653,
+      "lambda_effective_at_lam2": 2.4834559152583306
+    },
+    "aromatic_rings": {
+      "mid_probe_point": 2,
+      "mid_probe_point_source": "TRANSCRIBED from outputs/c31_heads/depth_*.json, selected by C31.0.4's held-out validation AUROC rule before any steering outcome existed",
+      "final_probe_point": 12,
+      "spread": {
+        "2": 0.20600393414497375,
+        "12": 0.17254769802093506
+      },
+      "mean_q": {
+        "2": 0.12000646442174911,
+        "12": 0.10917956382036209
+      },
+      "spread_ratio": 1.193895580803283,
+      "lambda_effective_at_lam1": 1.193895580803283,
+      "lambda_effective_at_lam2": 2.387791161606566
+    },
+    "qed": {
+      "mid_probe_point": 6,
+      "mid_probe_point_source": "TRANSCRIBED from outputs/c31_heads/depth_*.json, selected by C31.0.4's held-out validation AUROC rule before any steering outcome existed",
+      "final_probe_point": 12,
+      "spread": {
+        "6": 0.09613887220621109,
+        "12": 0.11186240613460541
+      },
+      "mean_q": {
+        "6": 0.08445891737937927,
+        "12": 0.0879194512963295
+      },
+      "spread_ratio": 0.8594386222170656,
+      "lambda_effective_at_lam1": 0.8594386222170656,
+      "lambda_effective_at_lam2": 1.7188772444341311
+    }
+  }
+}

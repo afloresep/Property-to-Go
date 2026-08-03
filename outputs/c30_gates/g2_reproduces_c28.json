@@ -1,0 +1,211 @@
+{
+  "gate": "G2",
+  "rule": "head seed 1234 reproduces C28 exactly: hit-rate and token residual 0.0 per generation seed, molecules identical",
+  "cells": {
+    "A1_k2": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_hbd_count_L12_lam1_k2",
+      "c30_dir": "c30_hs1234_hbd_count_L12_lam1_k2",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "A1_k4": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_hbd_count_L12_lam1_k4",
+      "c30_dir": "c30_hs1234_hbd_count_L12_lam1_k4",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "A2_k2": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_hbd_count_L4_lam1_k2",
+      "c30_dir": "c30_hs1234_hbd_count_L4_lam1_k2",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "A2_k4": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_hbd_count_L4_lam1_k4",
+      "c30_dir": "c30_hs1234_hbd_count_L4_lam1_k4",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "A3_k2": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_hbd_count_L4_lam2_k2",
+      "c30_dir": "c30_hs1234_hbd_count_L4_lam2_k2",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "A3_k4": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_hbd_count_L4_lam2_k4",
+      "c30_dir": "c30_hs1234_hbd_count_L4_lam2_k4",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "C2_k2": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_aromatic_rings_L3_lam2_k2",
+      "c30_dir": "c30_hs1234_aromatic_rings_L3_lam2_k2",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "C2_k4": {
+      "checked": true,
+      "c28_dir": "c28_ksweep_aromatic_rings_L3_lam2_k4",
+      "c30_dir": "c30_hs1234_aromatic_rings_L3_lam2_k4",
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    }
+  },
+  "n_cells_checked": 8,
+  "n_cells_passing": 8,
+  "max_abs_hit_rate_residual": 0.0,
+  "max_abs_token_residual": 0.0,
+  "passes": true
+}

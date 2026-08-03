@@ -1,0 +1,10 @@
+{
+  "file": "outputs/c30_prereg/C30.0_preregistration.md",
+  "file_sha256": "07858a592e88fbae3a70df1a8f59e803f03b557023bdf67a1595ed9a1abf58ed",
+  "file_bytes": 11038,
+  "prereg_block_sha256": "335837da7a814955371a6d9036eb74316098351424161c7cc6b6654eb478cdb2",
+  "prereg_block_chars": 10703,
+  "file_mtime_utc": "2026-08-03T06:14:39.463756Z",
+  "frozen_at_utc": "2026-08-03T06:14:49.430108Z",
+  "note": "Frozen before any C30 measurement artefact existed. The block from '## C30.0.1 Why this experiment exists' onward is copied verbatim into reports/section_c30_crossing_head_seeds.md; tests/test_crossing_head_seeds.py asserts the copy is byte-identical and that this file's mtime strictly precedes every C30 artefact."
+}

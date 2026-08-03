@@ -1,0 +1,247 @@
+{
+  "experiment": "C28",
+  "prereg": "outputs/c28_prereg/C28.0_preregistration.md",
+  "strand": "C2",
+  "strand_why": "strand C: the strongest aromatic_rings guidance arm on record (0.8159)",
+  "dataset": "pilot_50k_p2",
+  "property": "aromatic_rings",
+  "condition": "throughout",
+  "head_input": "frozen_state",
+  "head_checkpoint": "head_aromatic_rings_last1_L3_seed8901.pt",
+  "head_file": "/home/afloresep/Property-to-Go/outputs/c29_heads/head_aromatic_rings_last1_L3_seed8901.pt",
+  "layer": 3,
+  "target_interval": {
+    "lo": 3.0,
+    "hi": 4.0,
+    "rule": {
+      "kind": "exact_value",
+      "value": 3
+    },
+    "base_rate": 0.1713867089496819
+  },
+  "windows": {
+    "t33": 15,
+    "t67": 29,
+    "source": "pooled generated-position distribution of the base model",
+    "early": [
+      1,
+      15
+    ],
+    "middle": [
+      15,
+      29
+    ],
+    "late": [
+      29,
+      null
+    ]
+  },
+  "lambda": 2.0,
+  "top_k": 4,
+  "eps": 1e-06,
+  "backend": "cached",
+  "batch_size": 64,
+  "n_molecules_per_seed": 512,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "gate_run": "c23_guided_L3_lam2_aromatic_rings",
+  "seeds_detail": {
+    "101": {
+      "n": 512,
+      "n_valid": 419,
+      "n_scored": 419,
+      "validity": 0.818359375,
+      "uniqueness": 1.0,
+      "hit_rate": 0.7804295942720764,
+      "hit_rate_over_all_returned": 0.638671875,
+      "abs_target_error_mean": 0.22911694510739858,
+      "abs_target_error_median": 0.0,
+      "property_mean": 2.8854415274463006,
+      "property_std": 0.4848570719629773,
+      "property_quantiles": {
+        "0.05": 2.0,
+        "0.25": 3.0,
+        "0.5": 3.0,
+        "0.75": 3.0,
+        "0.95": 4.0
+      },
+      "content_length_mean": 54.62291169451074,
+      "content_length_std": 24.389853716543644,
+      "n_heavy_atoms_mean": 32.94510739856802,
+      "n_heavy_atoms_std": 16.424393746883506,
+      "compute": {
+        "processed_tokens_actual": 191630,
+        "processed_tokens_full_recompute": 8684586,
+        "forward_calls": 3216,
+        "wall_seconds": 28.22325182426721,
+        "molecules_returned": 512,
+        "tokens_per_molecule_actual": 374.27734375,
+        "tokens_per_molecule_full_recompute": 16962.08203125
+      },
+      "validity_check": 0.818359375,
+      "uniqueness_check": 1.0,
+      "cost_identity_tokens_mod_k_plus_1": 0,
+      "cost_identity_base_steps": 38326.0
+    },
+    "202": {
+      "n": 512,
+      "n_valid": 434,
+      "n_scored": 434,
+      "validity": 0.84765625,
+      "uniqueness": 1.0,
+      "hit_rate": 0.815668202764977,
+      "hit_rate_over_all_returned": 0.69140625,
+      "abs_target_error_mean": 0.18663594470046083,
+      "abs_target_error_median": 0.0,
+      "property_mean": 2.9193548387096775,
+      "property_std": 0.42981460839738134,
+      "property_quantiles": {
+        "0.05": 2.0,
+        "0.25": 3.0,
+        "0.5": 3.0,
+        "0.75": 3.0,
+        "0.95": 3.349999999999966
+      },
+      "content_length_mean": 55.986175115207374,
+      "content_length_std": 25.86324888667205,
+      "n_heavy_atoms_mean": 33.336405529953915,
+      "n_heavy_atoms_std": 15.652540966012142,
+      "compute": {
+        "processed_tokens_actual": 185370,
+        "processed_tokens_full_recompute": 7946626,
+        "forward_calls": 3216,
+        "wall_seconds": 28.101833476684988,
+        "molecules_returned": 512,
+        "tokens_per_molecule_actual": 362.05078125,
+        "tokens_per_molecule_full_recompute": 15520.75390625
+      },
+      "validity_check": 0.84765625,
+      "uniqueness_check": 1.0,
+      "cost_identity_tokens_mod_k_plus_1": 0,
+      "cost_identity_base_steps": 37074.0
+    },
+    "303": {
+      "n": 512,
+      "n_valid": 422,
+      "n_scored": 422,
+      "validity": 0.82421875,
+      "uniqueness": 1.0,
+      "hit_rate": 0.8151658767772512,
+      "hit_rate_over_all_returned": 0.671875,
+      "abs_target_error_mean": 0.1895734597156398,
+      "abs_target_error_median": 0.0,
+      "property_mean": 2.895734597156398,
+      "property_std": 0.433798177118442,
+      "property_quantiles": {
+        "0.05": 2.0,
+        "0.25": 3.0,
+        "0.5": 3.0,
+        "0.75": 3.0,
+        "0.95": 3.0
+      },
+      "content_length_mean": 57.170616113744074,
+      "content_length_std": 28.444996213271157,
+      "n_heavy_atoms_mean": 34.16824644549763,
+      "n_heavy_atoms_std": 17.694823091051937,
+      "compute": {
+        "processed_tokens_actual": 195250,
+        "processed_tokens_full_recompute": 8987198,
+        "forward_calls": 3216,
+        "wall_seconds": 28.086221064440906,
+        "molecules_returned": 512,
+        "tokens_per_molecule_actual": 381.34765625,
+        "tokens_per_molecule_full_recompute": 17553.12109375
+      },
+      "validity_check": 0.82421875,
+      "uniqueness_check": 1.0,
+      "cost_identity_tokens_mod_k_plus_1": 0,
+      "cost_identity_base_steps": 39050.0
+    }
+  },
+  "aggregate": {
+    "hit_rate": {
+      "mean": 0.8037545579381016,
+      "std": 0.016494514853237944,
+      "sem": 0.009523112590669208,
+      "values": [
+        0.7804295942720764,
+        0.815668202764977,
+        0.8151658767772512
+      ]
+    },
+    "abs_target_error_mean": {
+      "mean": 0.20177544984116638,
+      "std": 0.019370514898700168,
+      "sem": 0.011183571991106199,
+      "values": [
+        0.22911694510739858,
+        0.18663594470046083,
+        0.1895734597156398
+      ]
+    },
+    "validity": {
+      "mean": 0.830078125,
+      "std": 0.012657696676577852,
+      "sem": 0.007307924583542855,
+      "values": [
+        0.818359375,
+        0.84765625,
+        0.82421875
+      ]
+    },
+    "uniqueness": {
+      "mean": 1.0,
+      "std": 0.0,
+      "sem": 0.0,
+      "values": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "property_mean": {
+      "mean": 2.900176987770792,
+      "std": 0.014196931499208166,
+      "sem": 0.008196602222734512,
+      "values": [
+        2.8854415274463006,
+        2.9193548387096775,
+        2.895734597156398
+      ]
+    },
+    "content_length_mean": {
+      "mean": 55.926567641154065,
+      "std": 1.0409496434082124,
+      "sem": 0.6009925568345764,
+      "values": [
+        54.62291169451074,
+        55.986175115207374,
+        57.170616113744074
+      ]
+    },
+    "n_heavy_atoms_mean": {
+      "mean": 33.48325312467319,
+      "std": 0.5100264333588315,
+      "sem": 0.2944638985935461,
+      "values": [
+        32.94510739856802,
+        33.336405529953915,
+        34.16824644549763
+      ]
+    },
+    "compute_total": {
+      "processed_tokens_actual": 572250,
+      "processed_tokens_full_recompute": 25618410,
+      "forward_calls": 9648,
+      "wall_seconds": 84.4113063653931,
+      "molecules_returned": 1536,
+      "tokens_per_molecule_actual": 372.55859375,
+      "tokens_per_molecule_full_recompute": 16678.65234375
+    }
+  },
+  "cost_identity_max_residual": 0,
+  "wall_seconds_total": 86.5089909369126
+}

@@ -1,0 +1,70 @@
+{
+  "gate": "G5",
+  "rule": "the oracle-selected best-of-N curve C32 prices against is byte-identical to C31's, and no C32 stage samples a best-of-N pool",
+  "curves": {
+    "hbd_count": {
+      "file": "c31_bestofn_hbd_count/n_sweep_metrics.json",
+      "exists": true,
+      "sha256": "523725a9a2c8dd1d87e997dfe1691b81d8c92af8c2cb3525cc849c8fc0d6fbf1",
+      "arm": "oracle_selected",
+      "grid": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        16,
+        24,
+        32
+      ],
+      "is_oracle_selected": true
+    },
+    "aromatic_rings": {
+      "file": "c31_bestofn_aromatic_rings/n_sweep_metrics.json",
+      "exists": true,
+      "sha256": "547ff12293e4aa95cc0333c30c1778030331d61e15afdd7e895c0ea8780a0a9a",
+      "arm": "oracle_selected",
+      "grid": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        16,
+        24,
+        32
+      ],
+      "is_oracle_selected": true
+    },
+    "qed": {
+      "file": "c31_bestofn_qed/n_sweep_metrics.json",
+      "exists": true,
+      "sha256": "be1f76e995b6922e925e0b5e7a057390d0229214d365748480b0697ffa29e8a4",
+      "arm": "oracle_selected",
+      "grid": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        16,
+        24,
+        32
+      ],
+      "is_oracle_selected": true
+    }
+  },
+  "no_best_of_n_stage_defined": true,
+  "no_pool_sampler_called": true,
+  "c32_generates_no_best_of_n": true,
+  "passes": true
+}

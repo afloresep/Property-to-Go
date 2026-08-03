@@ -1,0 +1,150 @@
+{
+  "c31": {
+    "name": "c31_zinc50k",
+    "model_repo": "entropy/gpt2_zinc_87m",
+    "model_revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+    "tokenizer_repo": "entropy/gpt2_zinc_87m",
+    "tokenizer_revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+    "trust_remote_code": false,
+    "dtype": "float32",
+    "device": "cuda",
+    "clean_up_tokenization_spaces": false,
+    "base_policy": {
+      "do_sample": true,
+      "temperature": 1.0,
+      "top_k": null,
+      "top_p": null,
+      "max_length": 256,
+      "batch_size": 256,
+      "seed": 20260729
+    },
+    "n_trajectories": 50000,
+    "min_content_tokens": 8,
+    "prefixes_per_trajectory": 4,
+    "split_fractions": {
+      "train": 0.8,
+      "val": 0.1,
+      "test": 0.1
+    },
+    "split_seed": 11,
+    "prefix_seed": 12,
+    "head": {
+      "hidden_dim": 256,
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.01,
+      "batch_size": 512,
+      "max_epochs": 60,
+      "patience": 8,
+      "seed": 1234
+    },
+    "head_seeds": [
+      1234,
+      2345,
+      3456
+    ],
+    "probe_points": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "mid_probe_point_candidates": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "binning": {
+      "aromatic_rings_max": 5,
+      "hbd_count_max": 6,
+      "qed_n_bins": 20
+    },
+    "target_interval_rule": {
+      "aromatic_rings": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "hbd_count": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "qed": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      }
+    },
+    "eps": 1e-06,
+    "candidate_backend": "cached",
+    "window_quantiles": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "guidance_batch_size": 16,
+    "guidance_batch_size_preregistered": 64,
+    "n_molecules_per_condition": 512,
+    "generation_seeds": [
+      101,
+      202,
+      303
+    ],
+    "k_grid": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "arms": {
+      "deployed": {
+        "probe_point": 12,
+        "lam": 1.0
+      },
+      "mid": {
+        "probe_point": null,
+        "lam": 2.0
+      }
+    },
+    "best_of_n_grid": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      12,
+      16,
+      24,
+      32
+    ],
+    "best_of_n_pool_depth": 32,
+    "best_of_n_molecules": 512
+  },
+  "cli": {
+    "property": "aromatic_rings",
+    "arm": "env",
+    "probe_point": 12,
+    "lam": 2.5,
+    "top_k": 4,
+    "head_file": "/home/afloresep/Property-to-Go/outputs/c31_heads/head_aromatic_rings_L12_seed1234.pt",
+    "condition": "throughout"
+  }
+}

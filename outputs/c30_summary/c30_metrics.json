@@ -1,0 +1,4982 @@
+{
+  "experiment": "C30",
+  "prereg": "outputs/c30_prereg/C30.0_preregistration.md",
+  "prereg_lock": {
+    "file": "outputs/c30_prereg/C30.0_preregistration.md",
+    "file_sha256": "07858a592e88fbae3a70df1a8f59e803f03b557023bdf67a1595ed9a1abf58ed",
+    "file_bytes": 11038,
+    "prereg_block_sha256": "335837da7a814955371a6d9036eb74316098351424161c7cc6b6654eb478cdb2",
+    "prereg_block_chars": 10703,
+    "file_mtime_utc": "2026-08-03T06:14:39.463756Z",
+    "frozen_at_utc": "2026-08-03T06:14:49.430108Z",
+    "note": "Frozen before any C30 measurement artefact existed. The block from '## C30.0.1 Why this experiment exists' onward is copied verbatim into reports/section_c30_crossing_head_seeds.md; tests/test_crossing_head_seeds.py asserts the copy is byte-identical and that this file's mtime strictly precedes every C30 artefact."
+  },
+  "question": "does C28's crossing -- guided decoding above the oracle-selected best-of-N frontier at small budgets -- survive the probe-training seed?",
+  "comparator": "C26's oracle-selected best-of-N curve, held FIXED across head seeds because it selects with RDKit and does not depend on the head",
+  "head_seeds": [
+    1234,
+    2345,
+    3456,
+    4567,
+    5678,
+    6789,
+    7890,
+    8901
+  ],
+  "generation_seeds": [
+    101,
+    202,
+    303
+  ],
+  "t_crit_7df": 2.364624,
+  "c28_winning_cells_transcribed": {
+    "A3_k2": 0.2499,
+    "A3_k4": 0.2093,
+    "C2_k4": 0.169,
+    "A2_k2": 0.1325,
+    "A1_k2": 0.0846,
+    "A3_k8": 0.0267,
+    "A2_k4": 0.0218,
+    "C2_k2": 0.0007
+  },
+  "c28_cell_agreement": {
+    "checked": true,
+    "n_derived": 8,
+    "n_transcribed": 8,
+    "same_cells": true,
+    "max_abs_margin_discrepancy": 4.0315103804339225e-05,
+    "derived": {
+      "A1_k2": 0.08463322009243265,
+      "A2_k2": 0.1324779009980076,
+      "A2_k4": 0.02178949033308808,
+      "A3_k2": 0.24993709330662892,
+      "A3_k4": 0.20928629160009482,
+      "A3_k8": 0.026705728278240692,
+      "C2_k2": 0.0007054188566175679,
+      "C2_k4": 0.16904031510380435
+    }
+  },
+  "validity_gates": {
+    "G1": {
+      "gate": "G1",
+      "rule": "C29 seed-1234 checkpoint identical to C28's, tensor by tensor, max abs diff exactly 0.0",
+      "families": {
+        "hbd_count_L12": {
+          "c28_checkpoint": "pilot_50k_heads_p2/head_hbd_count_frozen_state.pt",
+          "c29_checkpoint": "c29_heads/head_hbd_count_last1_L12_seed1234.pt",
+          "checked": true,
+          "n_tensors": 8,
+          "same_keys": true,
+          "max_abs_diff_per_tensor": {
+            "mean": 0.0,
+            "net.0.bias": 0.0,
+            "net.0.weight": 0.0,
+            "net.3.bias": 0.0,
+            "net.3.weight": 0.0,
+            "net.6.bias": 0.0,
+            "net.6.weight": 0.0,
+            "scale": 0.0
+          },
+          "max_abs_diff": 0.0,
+          "binner_edges_identical": true,
+          "passes": true
+        },
+        "hbd_count_L4": {
+          "c28_checkpoint": "c17_probe_layers/head_hbd_count_frozen_state_L4.pt",
+          "c29_checkpoint": "c29_heads/head_hbd_count_last1_L4_seed1234.pt",
+          "checked": true,
+          "n_tensors": 8,
+          "same_keys": true,
+          "max_abs_diff_per_tensor": {
+            "mean": 0.0,
+            "net.0.bias": 0.0,
+            "net.0.weight": 0.0,
+            "net.3.bias": 0.0,
+            "net.3.weight": 0.0,
+            "net.6.bias": 0.0,
+            "net.6.weight": 0.0,
+            "scale": 0.0
+          },
+          "max_abs_diff": 0.0,
+          "binner_edges_identical": true,
+          "passes": true
+        },
+        "aromatic_rings_L3": {
+          "c28_checkpoint": "c17_probe_layers/head_aromatic_rings_frozen_state_L3.pt",
+          "c29_checkpoint": "c29_heads/head_aromatic_rings_last1_L3_seed1234.pt",
+          "checked": true,
+          "n_tensors": 8,
+          "same_keys": true,
+          "max_abs_diff_per_tensor": {
+            "mean": 0.0,
+            "net.0.bias": 0.0,
+            "net.0.weight": 0.0,
+            "net.3.bias": 0.0,
+            "net.3.weight": 0.0,
+            "net.6.bias": 0.0,
+            "net.6.weight": 0.0,
+            "scale": 0.0
+          },
+          "max_abs_diff": 0.0,
+          "binner_edges_identical": true,
+          "passes": true
+        }
+      },
+      "n_families_checked": 3,
+      "max_abs_diff_over_all_families": 0.0,
+      "passes": true
+    },
+    "G2": {
+      "gate": "G2",
+      "rule": "head seed 1234 reproduces C28 exactly: hit-rate and token residual 0.0 per generation seed, molecules identical",
+      "cells": {
+        "A1_k2": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_hbd_count_L12_lam1_k2",
+          "c30_dir": "c30_hs1234_hbd_count_L12_lam1_k2",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        },
+        "A1_k4": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_hbd_count_L12_lam1_k4",
+          "c30_dir": "c30_hs1234_hbd_count_L12_lam1_k4",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        },
+        "A2_k2": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_hbd_count_L4_lam1_k2",
+          "c30_dir": "c30_hs1234_hbd_count_L4_lam1_k2",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        },
+        "A2_k4": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_hbd_count_L4_lam1_k4",
+          "c30_dir": "c30_hs1234_hbd_count_L4_lam1_k4",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        },
+        "A3_k2": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_hbd_count_L4_lam2_k2",
+          "c30_dir": "c30_hs1234_hbd_count_L4_lam2_k2",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        },
+        "A3_k4": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_hbd_count_L4_lam2_k4",
+          "c30_dir": "c30_hs1234_hbd_count_L4_lam2_k4",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        },
+        "C2_k2": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_aromatic_rings_L3_lam2_k2",
+          "c30_dir": "c30_hs1234_aromatic_rings_L3_lam2_k2",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        },
+        "C2_k4": {
+          "checked": true,
+          "c28_dir": "c28_ksweep_aromatic_rings_L3_lam2_k4",
+          "c30_dir": "c30_hs1234_aromatic_rings_L3_lam2_k4",
+          "per_seed": {
+            "101": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "202": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            },
+            "303": {
+              "hit_rate_residual": 0.0,
+              "token_residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "max_abs_token_residual": 0.0,
+          "molecules_identical": 1536,
+          "molecules_total": 1536,
+          "molecules_all_identical": true,
+          "passes": true
+        }
+      },
+      "n_cells_checked": 8,
+      "n_cells_passing": 8,
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "passes": true
+    },
+    "G3": {
+      "gate": "G3",
+      "rule": "processed_tokens_actual mod (k+1) == 0 in every cell",
+      "cells": {
+        "A1_k2_hs1234": 0,
+        "A1_k2_hs2345": 0,
+        "A1_k2_hs3456": 0,
+        "A1_k2_hs4567": 0,
+        "A1_k2_hs5678": 0,
+        "A1_k2_hs6789": 0,
+        "A1_k2_hs7890": 0,
+        "A1_k2_hs8901": 0,
+        "A1_k4_hs1234": 0,
+        "A1_k4_hs2345": 0,
+        "A1_k4_hs3456": 0,
+        "A1_k4_hs4567": 0,
+        "A1_k4_hs5678": 0,
+        "A1_k4_hs6789": 0,
+        "A1_k4_hs7890": 0,
+        "A1_k4_hs8901": 0,
+        "A2_k2_hs1234": 0,
+        "A2_k2_hs2345": 0,
+        "A2_k2_hs3456": 0,
+        "A2_k2_hs4567": 0,
+        "A2_k2_hs5678": 0,
+        "A2_k2_hs6789": 0,
+        "A2_k2_hs7890": 0,
+        "A2_k2_hs8901": 0,
+        "A2_k4_hs1234": 0,
+        "A2_k4_hs2345": 0,
+        "A2_k4_hs3456": 0,
+        "A2_k4_hs4567": 0,
+        "A2_k4_hs5678": 0,
+        "A2_k4_hs6789": 0,
+        "A2_k4_hs7890": 0,
+        "A2_k4_hs8901": 0,
+        "A3_k2_hs1234": 0,
+        "A3_k2_hs2345": 0,
+        "A3_k2_hs3456": 0,
+        "A3_k2_hs4567": 0,
+        "A3_k2_hs5678": 0,
+        "A3_k2_hs6789": 0,
+        "A3_k2_hs7890": 0,
+        "A3_k2_hs8901": 0,
+        "A3_k4_hs1234": 0,
+        "A3_k4_hs2345": 0,
+        "A3_k4_hs3456": 0,
+        "A3_k4_hs4567": 0,
+        "A3_k4_hs5678": 0,
+        "A3_k4_hs6789": 0,
+        "A3_k4_hs7890": 0,
+        "A3_k4_hs8901": 0,
+        "C2_k2_hs1234": 0,
+        "C2_k2_hs2345": 0,
+        "C2_k2_hs3456": 0,
+        "C2_k2_hs4567": 0,
+        "C2_k2_hs5678": 0,
+        "C2_k2_hs6789": 0,
+        "C2_k2_hs7890": 0,
+        "C2_k2_hs8901": 0,
+        "C2_k4_hs1234": 0,
+        "C2_k4_hs2345": 0,
+        "C2_k4_hs3456": 0,
+        "C2_k4_hs4567": 0,
+        "C2_k4_hs5678": 0,
+        "C2_k4_hs6789": 0,
+        "C2_k4_hs7890": 0,
+        "C2_k4_hs8901": 0
+      },
+      "n_cells_checked": 64,
+      "max_residual": 0,
+      "passes": true
+    }
+  },
+  "cells": {
+    "A3_k2": {
+      "strand": "A3",
+      "k": 2,
+      "property": "hbd_count",
+      "probe_point": 4,
+      "lam": 2.0,
+      "is_deployed_configuration": false,
+      "c28_single_seed_margin": 0.2499,
+      "n_head_seeds": 8,
+      "head_seeds_missing": [],
+      "per_head_seed": {
+        "1234": {
+          "dir": "c30_hs1234_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.4872157073050487,
+          "hit_rate_values": [
+            0.4881889763779528,
+            0.4636542239685658,
+            0.5098039215686274
+          ],
+          "validity_mean": 0.994140625,
+          "uniqueness_mean": 0.986901103587638,
+          "tokens_per_molecule_actual": 136.421875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.4881889763779528,
+              "tokens_per_molecule_actual": 136.546875
+            },
+            "202": {
+              "hit_rate": 0.4636542239685658,
+              "tokens_per_molecule_actual": 138.615234375
+            },
+            "303": {
+              "hit_rate": 0.5098039215686274,
+              "tokens_per_molecule_actual": 134.103515625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed1234.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.2372786139984198,
+          "advantage_vs_oracle_selected": 0.24993709330662892,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.24995416688302977,
+            0.22116130729066039,
+            0.27866243333912244
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.24992596917093754,
+            "sd": 0.028750573395038677,
+            "lo": 0.17850558107994668,
+            "hi": 0.3213463572619284,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.18974093633070702,
+          "advantage_vs_head_selected": 0.2974747709743417,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.29445328088585093,
+            0.27047830596273303,
+            0.3273663711339138
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.29743265266083263,
+            "sd": 0.0285608207490663,
+            "lo": 0.2264836363032131,
+            "hi": 0.36838166901845215,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "2345": {
+          "dir": "c30_hs2345_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.5373418057275098,
+          "hit_rate_values": [
+            0.49901768172888017,
+            0.541015625,
+            0.571992110453649
+          ],
+          "validity_mean": 0.9947916666666666,
+          "uniqueness_mean": 0.9941136890507357,
+          "tokens_per_molecule_actual": 136.16015625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.49901768172888017,
+              "tokens_per_molecule_actual": 137.408203125
+            },
+            "202": {
+              "hit_rate": 0.541015625,
+              "tokens_per_molecule_actual": 134.138671875
+            },
+            "303": {
+              "hit_rate": 0.571992110453649,
+              "tokens_per_molecule_actual": 136.93359375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed2345.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.2368970653853822,
+          "advantage_vs_oracle_selected": 0.3004447403421276,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.25951613804581203,
+            0.30505093513536274,
+            0.3367623360957952
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.3004431364256566,
+            "sd": 0.03882869602505579,
+            "lo": 0.20398730227331419,
+            "hi": 0.39689897057799906,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.1895242271568894,
+          "advantage_vs_head_selected": 0.34781757857062034,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3045708601197989,
+            0.3516776106349978,
+            0.38728732563547663
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.34784526546342437,
+            "sd": 0.04149118664231161,
+            "lo": 0.244775437546149,
+            "hi": 0.45091509338069974,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "3456": {
+          "dir": "c30_hs3456_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.46702601701659746,
+          "hit_rate_values": [
+            0.47544204322200395,
+            0.4598825831702544,
+            0.4657534246575342
+          ],
+          "validity_mean": 0.9967447916666666,
+          "uniqueness_mean": 0.9915070799964628,
+          "tokens_per_molecule_actual": 136.9453125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.47544204322200395,
+              "tokens_per_molecule_actual": 138.9375
+            },
+            "202": {
+              "hit_rate": 0.4598825831702544,
+              "tokens_per_molecule_actual": 135.75
+            },
+            "303": {
+              "hit_rate": 0.4657534246575342,
+              "tokens_per_molecule_actual": 136.1484375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed3456.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.23804171122449502,
+          "advantage_vs_oracle_selected": 0.22898430579210244,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.2336914000620251,
+            0.22156807344482035,
+            0.23165787460858053
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.2289724493718087,
+            "sd": 0.006492487473501565,
+            "lo": 0.21284421538279907,
+            "hi": 0.2451006833608183,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.1901743546783422,
+          "advantage_vs_head_selected": 0.27685166233825526,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.2797326099358367,
+            0.2691631244319166,
+            0.2816776448235927
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.276857793063782,
+            "sd": 0.006734369621152904,
+            "lo": 0.26012869047225184,
+            "hi": 0.29358689565531215,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "4567": {
+          "dir": "c30_hs4567_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.4468284495590473,
+          "hit_rate_values": [
+            0.443359375,
+            0.4657534246575342,
+            0.43137254901960786
+          ],
+          "validity_mean": 0.998046875,
+          "uniqueness_mean": 0.9960886487871404,
+          "tokens_per_molecule_actual": 138.67578125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.443359375,
+              "tokens_per_molecule_actual": 138.298828125
+            },
+            "202": {
+              "hit_rate": 0.4657534246575342,
+              "tokens_per_molecule_actual": 136.08984375
+            },
+            "303": {
+              "hit_rate": 0.43137254901960786,
+              "tokens_per_molecule_actual": 141.638671875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed4567.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24056448787487802,
+          "advantage_vs_oracle_selected": 0.2062639616841693,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.20254801093191108,
+            0.2269433165614594,
+            0.18934589316886774
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.2062790735540794,
+            "sd": 0.01907438551194654,
+            "lo": 0.15889567019922737,
+            "hi": 0.25366247690893146,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19160722279776304,
+          "advantage_vs_head_selected": 0.2552212267612843,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.2481772393107767,
+            0.2747426067422747,
+            0.24289842836309727
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.25527275813871625,
+            "sd": 0.01706671364790101,
+            "lo": 0.21287668848741526,
+            "hi": 0.29766882779001724,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "5678": {
+          "dir": "c30_hs5678_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.5179119271852577,
+          "hit_rate_values": [
+            0.512720156555773,
+            0.5234375,
+            0.517578125
+          ],
+          "validity_mean": 0.9993489583333334,
+          "uniqueness_mean": 0.9908815945042401,
+          "tokens_per_molecule_actual": 130.810546875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.512720156555773,
+              "tokens_per_molecule_actual": 132.685546875
+            },
+            "202": {
+              "hit_rate": 0.5234375,
+              "tokens_per_molecule_actual": 128.56640625
+            },
+            "303": {
+              "hit_rate": 0.517578125,
+              "tokens_per_molecule_actual": 131.1796875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed5678.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.22874615667807985,
+          "advantage_vs_oracle_selected": 0.28916577050717784,
+          "bracketing_n_oracle_selected": [
+            2,
+            3
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.28024684478005335,
+            0.2962799629353281,
+            0.290971990395946
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.28916626603710915,
+            "sd": 0.00816766183129069,
+            "lo": 0.26887666799078225,
+            "hi": 0.30945586408343606,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.18473685429806894,
+          "advantage_vs_head_selected": 0.33317507288718873,
+          "bracketing_n_head_selected": [
+            2,
+            3
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.32230197224056145,
+            0.3393536709081457,
+            0.33774138752950045
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3331323435594025,
+            "sd": 0.009413956214113475,
+            "lo": 0.30974677844230464,
+            "hi": 0.3565179086765004,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "6789": {
+          "dir": "c30_hs6789_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.5698566184464653,
+          "hit_rate_values": [
+            0.5557729941291585,
+            0.5901960784313726,
+            0.5636007827788649
+          ],
+          "validity_mean": 0.9973958333333334,
+          "uniqueness_mean": 0.991508384175588,
+          "tokens_per_molecule_actual": 135.12890625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5557729941291585,
+              "tokens_per_molecule_actual": 134.982421875
+            },
+            "202": {
+              "hit_rate": 0.5901960784313726,
+              "tokens_per_molecule_actual": 133.787109375
+            },
+            "303": {
+              "hit_rate": 0.5636007827788649,
+              "tokens_per_molecule_actual": 136.6171875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed6789.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.2353936499549056,
+          "advantage_vs_oracle_selected": 0.33446296849155965,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.31983898754739704,
+            0.35474407653636375,
+            0.3288280838887769
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.33447038265751255,
+            "sd": 0.018123685079990726,
+            "lo": 0.28944865024659633,
+            "hi": 0.3794921150684288,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.18867032832274247,
+          "advantage_vs_head_selected": 0.38118629012372285,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.36332893586993764,
+            0.40115947011146175,
+            0.37914947758120354
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.381212627854201,
+            "sd": 0.018999467677714262,
+            "lo": 0.3340153307283374,
+            "hi": 0.42840992498006464,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "7890": {
+          "dir": "c30_hs7890_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.5186114628499802,
+          "hit_rate_values": [
+            0.5244618395303327,
+            0.5176470588235295,
+            0.5137254901960784
+          ],
+          "validity_mean": 0.9967447916666666,
+          "uniqueness_mean": 0.983666525971119,
+          "tokens_per_molecule_actual": 135.599609375,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5244618395303327,
+              "tokens_per_molecule_actual": 134.5546875
+            },
+            "202": {
+              "hit_rate": 0.5176470588235295,
+              "tokens_per_molecule_actual": 135.861328125
+            },
+            "303": {
+              "hit_rate": 0.5137254901960784,
+              "tokens_per_molecule_actual": 136.3828125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed7890.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.23607986798283148,
+          "advantage_vs_oracle_selected": 0.2825315948671487,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.2891568914229562,
+            0.27917019790771314,
+            0.27929136572655755
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.2825394850190756,
+            "sd": 0.005731162277031646,
+            "lo": 0.2683024877803116,
+            "hi": 0.2967764822578396,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.18906008138908606,
+          "advantage_vs_head_selected": 0.32955138146089413,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3323709255332853,
+            0.3268321548375793,
+            0.3294619476802769
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3295550093503805,
+            "sd": 0.0027705578067845167,
+            "lo": 0.32267256178767484,
+            "hi": 0.3364374569130862,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "8901": {
+          "dir": "c30_hs8901_hbd_count_L4_lam2_k2",
+          "hit_rate_mean": 0.48991076524787996,
+          "hit_rate_values": [
+            0.498046875,
+            0.50293542074364,
+            0.46875
+          ],
+          "validity_mean": 0.9993489583333334,
+          "uniqueness_mean": 0.9902254566210046,
+          "tokens_per_molecule_actual": 130.69140625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.498046875,
+              "tokens_per_molecule_actual": 129.662109375
+            },
+            "202": {
+              "hit_rate": 0.50293542074364,
+              "tokens_per_molecule_actual": 132.720703125
+            },
+            "303": {
+              "hit_rate": 0.46875,
+              "tokens_per_molecule_actual": 129.69140625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed8901.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.22855568760467124,
+          "advantage_vs_oracle_selected": 0.26135507764320876,
+          "bracketing_n_oracle_selected": [
+            2,
+            3
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.2704209522669445,
+            0.26912311970930514,
+            0.24451157788921607
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.2613518832884886,
+            "sd": 0.014598561805619489,
+            "lo": 0.22508704309202898,
+            "hi": 0.29761672348494816,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.18462114605338656,
+          "advantage_vs_head_selected": 0.3052896191944934,
+          "bracketing_n_head_selected": [
+            2,
+            3
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.310752549821624,
+            0.3148722811224577,
+            0.2902861706077106
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3053036671839308,
+            "sd": 0.013167647818056006,
+            "lo": 0.27259341460951314,
+            "hi": 0.3380139197583485,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        }
+      },
+      "advantage_by_head_seed": {
+        "1234": 0.24993709330662892,
+        "2345": 0.3004447403421276,
+        "3456": 0.22898430579210244,
+        "4567": 0.2062639616841693,
+        "5678": 0.28916577050717784,
+        "6789": 0.33446296849155965,
+        "7890": 0.2825315948671487,
+        "8901": 0.26135507764320876
+      },
+      "advantage_mean": 0.26914318907926543,
+      "advantage_sd": 0.04109688172000242,
+      "advantage_t_interval": {
+        "mean": 0.26914318907926543,
+        "sd": 0.04109688172000242,
+        "lo": 0.2347853398032303,
+        "hi": 0.30350103835530057,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      },
+      "n_positive": 8,
+      "all_share_sign": true,
+      "hit_rate_head_seed_sd": 0.03958855222733938,
+      "tokens_head_seed_sd": 2.856857537600918,
+      "validity_min": 0.994140625,
+      "extrapolated_any": false,
+      "d6_not_resolvable_at_one_seed": false,
+      "c28_margin_over_head_seed_sd": 6.080753320959878,
+      "c28_margin_minus_head_seed_mean": -0.01924318907926542,
+      "secondary_advantage_vs_head_selected_mean": 0.31582095028885004,
+      "secondary_advantage_vs_head_selected_t": {
+        "mean": 0.31582095028885004,
+        "sd": 0.04039894855334628,
+        "lo": 0.28204658767995655,
+        "hi": 0.34959531289774354,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      }
+    },
+    "A3_k4": {
+      "strand": "A3",
+      "k": 4,
+      "property": "hbd_count",
+      "probe_point": 4,
+      "lam": 2.0,
+      "is_deployed_configuration": false,
+      "c28_single_seed_margin": 0.2093,
+      "n_head_seeds": 8,
+      "head_seeds_missing": [],
+      "per_head_seed": {
+        "1234": {
+          "dir": "c30_hs1234_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.5562860907795675,
+          "hit_rate_values": [
+            0.5603960396039604,
+            0.5590551181102362,
+            0.549407114624506
+          ],
+          "validity_mean": 0.9889322916666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 216.66666666666666,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5603960396039604,
+              "tokens_per_molecule_actual": 216.025390625
+            },
+            "202": {
+              "hit_rate": 0.5590551181102362,
+              "tokens_per_molecule_actual": 216.46484375
+            },
+            "303": {
+              "hit_rate": 0.549407114624506,
+              "tokens_per_molecule_actual": 217.509765625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed1234.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.34699979917947266,
+          "advantage_vs_oracle_selected": 0.20928629160009482,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.21152437058769075,
+            0.21095093022810052,
+            0.20541910405477226
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.20929813495685448,
+            "sd": 0.003371552908673317,
+            "lo": 0.2009227327031968,
+            "hi": 0.21767353721051216,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24642368676344611,
+          "advantage_vs_head_selected": 0.30986240401612136,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3071816811310844,
+            0.3131774616256615,
+            0.3092724687977342
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.30987720385149337,
+            "sd": 0.0030432916880775117,
+            "lo": 0.30231724772644125,
+            "hi": 0.3174371599765455,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "2345": {
+          "dir": "c30_hs2345_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.5496631803020553,
+          "hit_rate_values": [
+            0.5364891518737672,
+            0.5374015748031497,
+            0.575098814229249
+          ],
+          "validity_mean": 0.990234375,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 221.29557291666666,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5364891518737672,
+              "tokens_per_molecule_actual": 223.1640625
+            },
+            "202": {
+              "hit_rate": 0.5374015748031497,
+              "tokens_per_molecule_actual": 218.232421875
+            },
+            "303": {
+              "hit_rate": 0.575098814229249,
+              "tokens_per_molecule_actual": 222.490234375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed2345.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.35288408872669935,
+          "advantage_vs_oracle_selected": 0.19677909157535595,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.1782844705282579,
+            0.18708118299487775,
+            0.22487316726689138
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.1967462735966757,
+            "sd": 0.024752518017503014,
+            "lo": 0.13525760626650085,
+            "hi": 0.25823494092685056,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.2490954841332167,
+          "advantage_vs_head_selected": 0.3005676961688386,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.27852610016262547,
+            0.2906495541992688,
+            0.3321167320348623
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.30043079546558554,
+            "sd": 0.028102374751056623,
+            "lo": 0.23062062217195384,
+            "hi": 0.37024096875921725,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "3456": {
+          "dir": "c30_hs3456_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.48321647694557396,
+          "hit_rate_values": [
+            0.46548323471400394,
+            0.4901185770750988,
+            0.49404761904761907
+          ],
+          "validity_mean": 0.9876302083333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 220.93098958333334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.46548323471400394,
+              "tokens_per_molecule_actual": 217.87109375
+            },
+            "202": {
+              "hit_rate": 0.4901185770750988,
+              "tokens_per_molecule_actual": 223.80859375
+            },
+            "303": {
+              "hit_rate": 0.49404761904761907,
+              "tokens_per_molecule_actual": 221.11328125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed3456.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.35242062850919625,
+          "advantage_vs_oracle_selected": 0.1307958484363777,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.11419851599838227,
+            0.13280673531199955,
+            0.14554649508792805
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.13085058213276995,
+            "sd": 0.015765273536957978,
+            "lo": 0.09168746914370979,
+            "hi": 0.17001369512183012,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24888504720957794,
+          "advantage_vs_head_selected": 0.23433142973599602,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.2110411019291823,
+            0.24060820336556157,
+            0.2518527692607494
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.23450069151849776,
+            "sd": 0.021080187933629625,
+            "lo": 0.18213459841265883,
+            "hi": 0.2868667846243367,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "4567": {
+          "dir": "c30_hs4567_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.5206984341033003,
+          "hit_rate_values": [
+            0.5029585798816568,
+            0.5088408644400786,
+            0.5502958579881657
+          ],
+          "validity_mean": 0.9915364583333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 221.69270833333334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5029585798816568,
+              "tokens_per_molecule_actual": 223.4765625
+            },
+            "202": {
+              "hit_rate": 0.5088408644400786,
+              "tokens_per_molecule_actual": 217.59765625
+            },
+            "303": {
+              "hit_rate": 0.5502958579881657,
+              "tokens_per_molecule_actual": 224.00390625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed4567.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.3533889293207652,
+          "advantage_vs_oracle_selected": 0.1673095047825351,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.14434533985689213,
+            0.15931634696992192,
+            0.1981744587888341
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.16727871520521606,
+            "sd": 0.027783862081847157,
+            "lo": 0.09825977129453514,
+            "hi": 0.23629765911589698,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24932471006789464,
+          "advantage_vs_head_selected": 0.27137372403540566,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.24478765103833383,
+            0.26240284200058944,
+            0.30644837846636663
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.27121295716842997,
+            "sd": 0.03176043015595821,
+            "lo": 0.1923156699210466,
+            "hi": 0.35011024441581334,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "5678": {
+          "dir": "c30_hs5678_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.5899340099896052,
+          "hit_rate_values": [
+            0.5658153241650294,
+            0.5787401574803149,
+            0.6252465483234714
+          ],
+          "validity_mean": 0.9921875,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 213.98763020833334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5658153241650294,
+              "tokens_per_molecule_actual": 214.08203125
+            },
+            "202": {
+              "hit_rate": 0.5787401574803149,
+              "tokens_per_molecule_actual": 216.71875
+            },
+            "303": {
+              "hit_rate": 0.6252465483234714,
+              "tokens_per_molecule_actual": 211.162109375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed5678.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.34359419418835624,
+          "advantage_vs_oracle_selected": 0.24633981580124897,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.21948437943537902,
+            0.23031761986293314,
+            0.2892084664894348
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.246336821929249,
+            "sd": 0.03752097020349396,
+            "lo": 0.15312955901092146,
+            "hi": 0.33954408484757653,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.2448773511549221,
+          "advantage_vs_head_selected": 0.3450566588346831,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3138937016079056,
+            0.3327369017299835,
+            0.38874098806326757
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3451238638003855,
+            "sd": 0.03893079365274921,
+            "lo": 0.2484144050648794,
+            "hi": 0.4418333225358916,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "6789": {
+          "dir": "c30_hs6789_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.5797109065253535,
+          "hit_rate_values": [
+            0.5928853754940712,
+            0.5734126984126984,
+            0.5728346456692913
+          ],
+          "validity_mean": 0.98828125,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 225.42317708333334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5928853754940712,
+              "tokens_per_molecule_actual": 228.798828125
+            },
+            "202": {
+              "hit_rate": 0.5734126984126984,
+              "tokens_per_molecule_actual": 222.0703125
+            },
+            "303": {
+              "hit_rate": 0.5728346456692913,
+              "tokens_per_molecule_actual": 225.400390625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed6789.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.3581311204748593,
+          "advantage_vs_oracle_selected": 0.22157978605049422,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.22731387046323864,
+            0.2182803279139761,
+            0.21896426214810633
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.2215194868417737,
+            "sd": 0.0050297219280671735,
+            "lo": 0.20902496413586086,
+            "hi": 0.23401400954768653,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.25147793073298397,
+          "advantage_vs_head_selected": 0.32823297579236954,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3311740392432861,
+            0.32476219659949535,
+            0.3281887673228473
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3280416677218762,
+            "sd": 0.0032084513774775754,
+            "lo": 0.3200714321581547,
+            "hi": 0.3360119032855977,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "7890": {
+          "dir": "c30_hs7890_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.5543721236028928,
+          "hit_rate_values": [
+            0.5167652859960552,
+            0.6,
+            0.5463510848126233
+          ],
+          "validity_mean": 0.9889322916666666,
+          "uniqueness_mean": 0.9993425378040763,
+          "tokens_per_molecule_actual": 222.81575520833334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5167652859960552,
+              "tokens_per_molecule_actual": 225.6640625
+            },
+            "202": {
+              "hit_rate": 0.6,
+              "tokens_per_molecule_actual": 220.205078125
+            },
+            "303": {
+              "hit_rate": 0.5463510848126233,
+              "tokens_per_molecule_actual": 222.578125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed7890.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.354816552312181,
+          "advantage_vs_oracle_selected": 0.19955557129071178,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.15529213521650298,
+            0.24720627563327774,
+            0.1960153619139252
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.19950459092123532,
+            "sd": 0.04605630620705201,
+            "lo": 0.08509437662224703,
+            "hi": 0.31391480522022364,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24997293094874612,
+          "advantage_vs_head_selected": 0.30439919265414667,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.25713921722746336,
+            0.3522721697160095,
+            0.303318753741161
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3042433802282113,
+            "sd": 0.047573215814178574,
+            "lo": 0.1860649533321613,
+            "hi": 0.42242180712426125,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "8901": {
+          "dir": "c30_hs8901_hbd_count_L4_lam2_k4",
+          "hit_rate_mean": 0.5657730103163893,
+          "hit_rate_values": [
+            0.5854616895874263,
+            0.5882352941176471,
+            0.5236220472440944
+          ],
+          "validity_mean": 0.994140625,
+          "uniqueness_mean": 0.9993451211525869,
+          "tokens_per_molecule_actual": 209.16015625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5854616895874263,
+              "tokens_per_molecule_actual": 207.16796875
+            },
+            "202": {
+              "hit_rate": 0.5882352941176471,
+              "tokens_per_molecule_actual": 209.326171875
+            },
+            "303": {
+              "hit_rate": 0.5236220472440944,
+              "tokens_per_molecule_actual": 210.986328125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed8901.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.3374574843440966,
+          "advantage_vs_oracle_selected": 0.22831552597229265,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.2481701056363007,
+            0.24908163148416074,
+            0.18780411728273877
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.22835195146773338,
+            "sd": 0.03511841201795995,
+            "lo": 0.1411129743176346,
+            "hi": 0.31559092861783217,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24209094081781254,
+          "advantage_vs_head_selected": 0.3236820694985767,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.33813934857981287,
+            0.3458889092972314,
+            0.2872169847380418
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3237484142050287,
+            "sd": 0.03187354588062516,
+            "lo": 0.24457013190255883,
+            "hi": 0.40292669650749857,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        }
+      },
+      "advantage_by_head_seed": {
+        "1234": 0.20928629160009482,
+        "2345": 0.19677909157535595,
+        "3456": 0.1307958484363777,
+        "4567": 0.1673095047825351,
+        "5678": 0.24633981580124897,
+        "6789": 0.22157978605049422,
+        "7890": 0.19955557129071178,
+        "8901": 0.22831552597229265
+      },
+      "advantage_mean": 0.1999951794386389,
+      "advantage_sd": 0.03658556423061531,
+      "advantage_t_interval": {
+        "mean": 0.1999951794386389,
+        "sd": 0.03658556423061531,
+        "lo": 0.16940888556655703,
+        "hi": 0.23058147331072076,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      },
+      "n_positive": 8,
+      "all_share_sign": true,
+      "hit_rate_head_seed_sd": 0.034024362270953824,
+      "tokens_head_seed_sd": 5.3379633963585755,
+      "validity_min": 0.9876302083333334,
+      "extrapolated_any": false,
+      "d6_not_resolvable_at_one_seed": false,
+      "c28_margin_over_head_seed_sd": 5.720835646559602,
+      "c28_margin_minus_head_seed_mean": 0.009304820561361116,
+      "secondary_advantage_vs_head_selected_mean": 0.3021882688420172,
+      "secondary_advantage_vs_head_selected_t": {
+        "mean": 0.3021882688420172,
+        "sd": 0.03504793179758784,
+        "lo": 0.27288746771694805,
+        "hi": 0.3314890699670864,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      }
+    },
+    "C2_k4": {
+      "strand": "C2",
+      "k": 4,
+      "property": "aromatic_rings",
+      "probe_point": 3,
+      "lam": 2.0,
+      "is_deployed_configuration": false,
+      "c28_single_seed_margin": 0.169,
+      "n_head_seeds": 8,
+      "head_seeds_missing": [],
+      "per_head_seed": {
+        "1234": {
+          "dir": "c30_hs1234_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.822967600615064,
+          "hit_rate_values": [
+            0.8514851485148515,
+            0.8286852589641435,
+            0.7887323943661971
+          ],
+          "validity_mean": 0.9791666666666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 253.525390625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.8514851485148515,
+              "tokens_per_molecule_actual": 247.83203125
+            },
+            "202": {
+              "hit_rate": 0.8286852589641435,
+              "tokens_per_molecule_actual": 253.955078125
+            },
+            "303": {
+              "hit_rate": 0.7887323943661971,
+              "tokens_per_molecule_actual": 258.7890625
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed1234.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.6539272855112597,
+          "advantage_vs_oracle_selected": 0.16904031510380435,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.21860645836403647,
+            0.16432304601380132,
+            0.12413781312196825
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.169022439166602,
+            "sd": 0.047409328781067725,
+            "lo": 0.05125113025554072,
+            "hi": 0.2867937480776633,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.4531776517698134,
+          "advantage_vs_head_selected": 0.3697899488452506,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.40600639985421344,
+            0.3714848177748905,
+            0.3323199597805652
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.36993705913655645,
+            "sd": 0.03686759458228515,
+            "lo": 0.2783528713407577,
+            "hi": 0.4615212469323552,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "2345": {
+          "dir": "c30_hs2345_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.8168807180850527,
+          "hit_rate_values": [
+            0.7934560327198364,
+            0.8293172690763052,
+            0.8278688524590164
+          ],
+          "validity_mean": 0.9602864583333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 269.1731770833333,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.7934560327198364,
+              "tokens_per_molecule_actual": 269.951171875
+            },
+            "202": {
+              "hit_rate": 0.8293172690763052,
+              "tokens_per_molecule_actual": 262.705078125
+            },
+            "303": {
+              "hit_rate": 0.8278688524590164,
+              "tokens_per_molecule_actual": 274.86328125
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed2345.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.6789124085279152,
+          "advantage_vs_oracle_selected": 0.13796830955713746,
+          "bracketing_n_oracle_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.1250443564773398,
+            0.15045619647710284,
+            0.14049875438185455
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.13866643577876572,
+            "sd": 0.012804625985978983,
+            "lo": 0.10685797948424126,
+            "hi": 0.1704748920732902,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.46395999294149065,
+          "advantage_vs_head_selected": 0.35292072514356204,
+          "bracketing_n_head_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.33217346806914877,
+            0.3657969251291334,
+            0.3610547437340424
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.3530083789774415,
+            "sd": 0.018198686917284976,
+            "lo": 0.30780033166234955,
+            "hi": 0.3982164262925334,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "3456": {
+          "dir": "c30_hs3456_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.8178256978278609,
+          "hit_rate_values": [
+            0.8148148148148148,
+            0.8017057569296375,
+            0.8369565217391305
+          ],
+          "validity_mean": 0.9036458333333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 311.03515625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.8148148148148148,
+              "tokens_per_molecule_actual": 309.19921875
+            },
+            "202": {
+              "hit_rate": 0.8017057569296375,
+              "tokens_per_molecule_actual": 306.2109375
+            },
+            "303": {
+              "hit_rate": 0.8369565217391305,
+              "tokens_per_molecule_actual": 317.6953125
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed3456.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.7255414784876918,
+          "advantage_vs_oracle_selected": 0.09228421934016906,
+          "bracketing_n_oracle_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.10426572367920961,
+            0.0714617180065551,
+            0.1010142333347136
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.0922472250068261,
+            "sd": 0.018074042804774582,
+            "lo": 0.04734881085161703,
+            "hi": 0.13714563916203515,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.4844831642176723,
+          "advantage_vs_head_selected": 0.33334253361018856,
+          "bracketing_n_head_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3379020479545593,
+            0.31687661530408306,
+            0.34419779209707163
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.33299215178523794,
+            "sd": 0.014307060691615565,
+            "lo": 0.2974514405445754,
+            "hi": 0.3685328630259005,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "4567": {
+          "dir": "c30_hs4567_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.7978728525983222,
+          "hit_rate_values": [
+            0.7816326530612245,
+            0.8383233532934131,
+            0.7736625514403292
+          ],
+          "validity_mean": 0.9615885416666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 254.31966145833334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.7816326530612245,
+              "tokens_per_molecule_actual": 259.169921875
+            },
+            "202": {
+              "hit_rate": 0.8383233532934131,
+              "tokens_per_molecule_actual": 247.48046875
+            },
+            "303": {
+              "hit_rate": 0.7736625514403292,
+              "tokens_per_molecule_actual": 256.30859375
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed4567.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.6552702926319113,
+          "advantage_vs_oracle_selected": 0.1426025599664109,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.1294692332364784,
+            0.18468964921270747,
+            0.1133211842659897
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.14249335557172518,
+            "sd": 0.03742439403871927,
+            "lo": 0.04952600116143935,
+            "hi": 0.23546070998201102,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.45375574586671014,
+          "advantage_vs_head_selected": 0.34411710673161205,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.32741738894969863,
+            0.3857993580065041,
+            0.318963267668613
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.34406000487493854,
+            "sd": 0.036393656611282875,
+            "lo": 0.2536531443398851,
+            "hi": 0.43446686540999196,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "5678": {
+          "dir": "c30_hs5678_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.7903173110373025,
+          "hit_rate_values": [
+            0.8111332007952287,
+            0.7654075546719682,
+            0.7944111776447106
+          ],
+          "validity_mean": 0.9811197916666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 239.619140625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.8111332007952287,
+              "tokens_per_molecule_actual": 239.90234375
+            },
+            "202": {
+              "hit_rate": 0.7654075546719682,
+              "tokens_per_molecule_actual": 239.55078125
+            },
+            "303": {
+              "hit_rate": 0.7944111776447106,
+              "tokens_per_molecule_actual": 239.404296875
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed5678.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.6304136526447692,
+          "advantage_vs_oracle_selected": 0.1599036583925333,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.19174219410283933,
+            0.12491344214804223,
+            0.16305529690729348
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.15990364438605834,
+            "sd": 0.03352566490272646,
+            "lo": 0.07662127065870769,
+            "hi": 0.24318601811340898,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.4430562665979163,
+          "advantage_vs_head_selected": 0.3472610444393862,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3717647454559696,
+            0.31861097125942306,
+            0.351386949222947
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.34725422197944655,
+            "sd": 0.02681679517925739,
+            "lo": 0.28063760558216516,
+            "hi": 0.41387083837672795,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "6789": {
+          "dir": "c30_hs6789_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.765472254256783,
+          "hit_rate_values": [
+            0.7679324894514767,
+            0.7722342733188721,
+            0.75625
+          ],
+          "validity_mean": 0.9212239583333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 286.943359375,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.7679324894514767,
+              "tokens_per_molecule_actual": 279.3359375
+            },
+            "202": {
+              "hit_rate": 0.7722342733188721,
+              "tokens_per_molecule_actual": 298.291015625
+            },
+            "303": {
+              "hit_rate": 0.75625,
+              "tokens_per_molecule_actual": 283.203125
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed6789.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.6987061949128623,
+          "advantage_vs_oracle_selected": 0.06676605934392066,
+          "bracketing_n_oracle_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.08944515864011293,
+            0.050971389730402605,
+            0.059422389259938924
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.06661297921015148,
+            "sd": 0.020219697361818292,
+            "lo": 0.016384463318616378,
+            "hi": 0.1168414951016866,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.4726719674357889,
+          "advantage_vs_head_selected": 0.2928002868209941,
+          "bracketing_n_head_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.30291252138615987,
+            0.29110217610462,
+            0.28438420266052744
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.2927996333837691,
+            "sd": 0.009380067676224811,
+            "lo": 0.26949825206692407,
+            "hi": 0.3161010147006141,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "7890": {
+          "dir": "c30_hs7890_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.7981032749506077,
+          "hit_rate_values": [
+            0.8061002178649237,
+            0.8,
+            0.7882096069868996
+          ],
+          "validity_mean": 0.9029947916666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 322.6790364583333,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.8061002178649237,
+              "tokens_per_molecule_actual": 326.7578125
+            },
+            "202": {
+              "hit_rate": 0.8,
+              "tokens_per_molecule_actual": 313.779296875
+            },
+            "303": {
+              "hit_rate": 0.7882096069868996,
+              "tokens_per_molecule_actual": 327.5
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed7890.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.7385113216639064,
+          "advantage_vs_oracle_selected": 0.059591953286701305,
+          "bracketing_n_oracle_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.0766999020520831,
+            0.06117347601609757,
+            0.041148650299636436
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.05967400945593904,
+            "sd": 0.01782299568717997,
+            "lo": 0.015399230952143655,
+            "hi": 0.10394878795973442,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.4901916699451141,
+          "advantage_vs_head_selected": 0.30791160500549364,
+          "bracketing_n_head_selected": [
+            6,
+            8
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.3221948897772975,
+            0.3116379244425598,
+            0.2895118897933694
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.30778156800440887,
+            "sd": 0.01667927563537793,
+            "lo": 0.2663479477914337,
+            "hi": 0.349215188217384,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "8901": {
+          "dir": "c30_hs8901_aromatic_rings_L3_lam2_k4",
+          "hit_rate_mean": 0.8037545579381016,
+          "hit_rate_values": [
+            0.7804295942720764,
+            0.815668202764977,
+            0.8151658767772512
+          ],
+          "validity_mean": 0.830078125,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 372.55859375,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.7804295942720764,
+              "tokens_per_molecule_actual": 374.27734375
+            },
+            "202": {
+              "hit_rate": 0.815668202764977,
+              "tokens_per_molecule_actual": 362.05078125
+            },
+            "303": {
+              "hit_rate": 0.8151658767772512,
+              "tokens_per_molecule_actual": 381.34765625
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed8901.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.7904072601244784,
+          "advantage_vs_oracle_selected": 0.013347297813623205,
+          "bracketing_n_oracle_selected": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.004072383173592264,
+            0.023842146194226532,
+            0.01124117636773636
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.013051901911851719,
+            "sd": 0.010008492779639373,
+            "lo": -0.011810574001448667,
+            "hi": 0.037914377825152105,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.5087013863824444,
+          "advantage_vs_head_selected": 0.29505317155565713,
+          "bracketing_n_head_selected": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.28427662510946733,
+            0.30638627498633586,
+            0.29531582707257675
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.29532624238946,
+            "sd": 0.011054828618234997,
+            "lo": 0.2678645239970893,
+            "hi": 0.32278796078183064,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        }
+      },
+      "advantage_by_head_seed": {
+        "1234": 0.16904031510380435,
+        "2345": 0.13796830955713746,
+        "3456": 0.09228421934016906,
+        "4567": 0.1426025599664109,
+        "5678": 0.1599036583925333,
+        "6789": 0.06676605934392066,
+        "7890": 0.059591953286701305,
+        "8901": 0.013347297813623205
+      },
+      "advantage_mean": 0.10518804660053753,
+      "advantage_sd": 0.05567993552776548,
+      "advantage_t_interval": {
+        "mean": 0.10518804660053753,
+        "sd": 0.05567993552776548,
+        "lo": 0.05863846053714491,
+        "hi": 0.15173763266393014,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      },
+      "n_positive": 8,
+      "all_share_sign": true,
+      "hit_rate_head_seed_sd": 0.018580336983146373,
+      "tokens_head_seed_sd": 44.558571429269065,
+      "validity_min": 0.830078125,
+      "extrapolated_any": false,
+      "d6_not_resolvable_at_one_seed": false,
+      "c28_margin_over_head_seed_sd": 3.0352046639085297,
+      "c28_margin_minus_head_seed_mean": 0.06381195339946248,
+      "secondary_advantage_vs_head_selected_mean": 0.33039955276901806,
+      "secondary_advantage_vs_head_selected_t": {
+        "mean": 0.33039955276901806,
+        "sd": 0.028557531135261324,
+        "lo": 0.3065248618100824,
+        "hi": 0.3542742437279537,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      }
+    },
+    "A2_k2": {
+      "strand": "A2",
+      "k": 2,
+      "property": "hbd_count",
+      "probe_point": 4,
+      "lam": 1.0,
+      "is_deployed_configuration": false,
+      "c28_single_seed_margin": 0.1325,
+      "n_head_seeds": 8,
+      "head_seeds_missing": [],
+      "per_head_seed": {
+        "1234": {
+          "dir": "c30_hs1234_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.37492165816098133,
+          "hit_rate_values": [
+            0.3843137254901961,
+            0.3698630136986301,
+            0.37058823529411766
+          ],
+          "validity_mean": 0.9967447916666666,
+          "uniqueness_mean": 0.9986953685583823,
+          "tokens_per_molecule_actual": 139.96484375,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.3843137254901961,
+              "tokens_per_molecule_actual": 140.00390625
+            },
+            "202": {
+              "hit_rate": 0.3698630136986301,
+              "tokens_per_molecule_actual": 138.59765625
+            },
+            "303": {
+              "hit_rate": 0.37058823529411766,
+              "tokens_per_molecule_actual": 141.29296875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed1234.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24244375716297373,
+          "advantage_vs_oracle_selected": 0.1324779009980076,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.14099474476394233,
+            0.1273957314192061,
+            0.12906097671371414
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.13248381763228753,
+            "sd": 0.007417558287804266,
+            "lo": 0.1140575802030909,
+            "hi": 0.15091005506148417,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19267459634044673,
+          "advantage_vs_head_selected": 0.1822470618205346,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.18772385034491146,
+            0.1767021659950519,
+            0.18239106459335047
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1822723603111046,
+            "sd": 0.00551180093136104,
+            "lo": 0.16858028689784804,
+            "hi": 0.19596443372436118,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "2345": {
+          "dir": "c30_hs2345_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.37443777739406264,
+          "hit_rate_values": [
+            0.34375,
+            0.4227005870841487,
+            0.3568627450980392
+          ],
+          "validity_mean": 0.998046875,
+          "uniqueness_mean": 0.9993464052287582,
+          "tokens_per_molecule_actual": 139.9453125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.34375,
+              "tokens_per_molecule_actual": 143.560546875
+            },
+            "202": {
+              "hit_rate": 0.4227005870841487,
+              "tokens_per_molecule_actual": 138.08203125
+            },
+            "303": {
+              "hit_rate": 0.3568627450980392,
+              "tokens_per_molecule_actual": 138.193359375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed2345.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24241528338588136,
+          "advantage_vs_oracle_selected": 0.13202249400818128,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.09520035497303816,
+            0.18098524716017966,
+            0.1198131332296368
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.1319995784542849,
+            "sd": 0.044171755877482205,
+            "lo": 0.02227084699271739,
+            "hi": 0.2417283099158524,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19265842401404243,
+          "advantage_vs_head_selected": 0.18177935338002021,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.14422370612677984,
+            0.2299818015800379,
+            0.17114873586486973
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.18178474785722912,
+            "sd": 0.04385722628334742,
+            "lo": 0.07283735127098917,
+            "hi": 0.29073214444346906,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "3456": {
+          "dir": "c30_hs3456_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.34616560665362034,
+          "hit_rate_values": [
+            0.328125,
+            0.350293542074364,
+            0.36007827788649704
+          ],
+          "validity_mean": 0.9986979166666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 140.869140625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.328125,
+              "tokens_per_molecule_actual": 142.25390625
+            },
+            "202": {
+              "hit_rate": 0.350293542074364,
+              "tokens_per_molecule_actual": 139.775390625
+            },
+            "303": {
+              "hit_rate": 0.36007827788649704,
+              "tokens_per_molecule_actual": 140.578125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed3456.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24376209304234997,
+          "advantage_vs_oracle_selected": 0.10240351361127037,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.08149699935369367,
+            0.10610875509668483,
+            0.11958367128882344
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.10239647524640065,
+            "sd": 0.019312804328700424,
+            "lo": 0.05442080668045909,
+            "hi": 0.1503721438123422,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19342337505296572,
+          "advantage_vs_head_selected": 0.15274223160065462,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.1296774892838303,
+            0.15612298411972955,
+            0.17245378336540268
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.15275141892298752,
+            "sd": 0.021586533365624105,
+            "lo": 0.09912749395535392,
+            "hi": 0.20637534389062112,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "4567": {
+          "dir": "c30_hs4567_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.345075016307893,
+          "hit_rate_values": [
+            0.3424657534246575,
+            0.3405088062622309,
+            0.3522504892367906
+          ],
+          "validity_mean": 0.998046875,
+          "uniqueness_mean": 0.9973907371167646,
+          "tokens_per_molecule_actual": 138.95703125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.3424657534246575,
+              "tokens_per_molecule_actual": 140.068359375
+            },
+            "202": {
+              "hit_rate": 0.3405088062622309,
+              "tokens_per_molecule_actual": 136.359375
+            },
+            "303": {
+              "hit_rate": 0.3522504892367906,
+              "tokens_per_molecule_actual": 140.443359375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed4567.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.240974510265008,
+          "advantage_vs_oracle_selected": 0.10410050604288501,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.09905198306527724,
+            0.10130563738944098,
+            0.11195056293094313
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.10410272779522045,
+            "sd": 0.006889203632591945,
+            "lo": 0.08698899617265436,
+            "hi": 0.12121645941778654,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19184010429798493,
+          "advantage_vs_head_selected": 0.15323491200990808,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.14582266476041522,
+            0.14926691037906797,
+            0.16473395825776568
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1532745111324163,
+            "sd": 0.010072482478734376,
+            "lo": 0.1282530759844462,
+            "hi": 0.1782959462803864,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "5678": {
+          "dir": "c30_hs5678_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.36047028186274516,
+          "hit_rate_values": [
+            0.392578125,
+            0.34765625,
+            0.3411764705882353
+          ],
+          "validity_mean": 0.9986979166666666,
+          "uniqueness_mean": 0.9986928104575163,
+          "tokens_per_molecule_actual": 135.35546875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.392578125,
+              "tokens_per_molecule_actual": 134.42578125
+            },
+            "202": {
+              "hit_rate": 0.34765625,
+              "tokens_per_molecule_actual": 135.5859375
+            },
+            "303": {
+              "hit_rate": 0.3411764705882353,
+              "tokens_per_molecule_actual": 136.0546875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed5678.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.235723945769177,
+          "advantage_vs_oracle_selected": 0.12474633609356817,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.15746275615887653,
+            0.10958099466039256,
+            0.1072163503075085
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.12475336704225921,
+            "sd": 0.02835182512671133,
+            "lo": 0.05432352462433182,
+            "hi": 0.1951832094601866,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.18885792730903234,
+          "advantage_vs_head_selected": 0.17161235455371282,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.20059363804086797,
+            0.15707744741603816,
+            0.15717579582703772
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.17161562709464795,
+            "sd": 0.025095741808161837,
+            "lo": 0.10927434454897467,
+            "hi": 0.23395690964032123,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "6789": {
+          "dir": "c30_hs6789_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.42930146159491195,
+          "hit_rate_values": [
+            0.4453125,
+            0.4070450097847358,
+            0.435546875
+          ],
+          "validity_mean": 0.9993489583333334,
+          "uniqueness_mean": 0.9980456009458578,
+          "tokens_per_molecule_actual": 139.58203125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.4453125,
+              "tokens_per_molecule_actual": 138.890625
+            },
+            "202": {
+              "hit_rate": 0.4070450097847358,
+              "tokens_per_molecule_actual": 140.208984375
+            },
+            "303": {
+              "hit_rate": 0.435546875,
+              "tokens_per_molecule_actual": 139.646484375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed6789.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.2418856711319635,
+          "advantage_vs_oracle_selected": 0.18741579046294846,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.20363079475502224,
+            0.16222790764451497,
+            0.19639810172408098
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.18741893470787274,
+            "sd": 0.02211377049487658,
+            "lo": 0.1324852800221637,
+            "hi": 0.24235258939358179,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19235761874292248,
+          "advantage_vs_head_selected": 0.23694384285198947,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.2496417674548929,
+            0.21250271770782198,
+            0.24866873713929888
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.23693774076733795,
+            "sd": 0.02116694264503197,
+            "lo": 0.18435613699769618,
+            "hi": 0.2895193445369797,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "7890": {
+          "dir": "c30_hs7890_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.3713523829908676,
+          "hit_rate_values": [
+            0.330078125,
+            0.3972602739726027,
+            0.38671875
+          ],
+          "validity_mean": 0.9993489583333334,
+          "uniqueness_mean": 0.9993489583333334,
+          "tokens_per_molecule_actual": 136.91796875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.330078125,
+              "tokens_per_molecule_actual": 134.607421875
+            },
+            "202": {
+              "hit_rate": 0.3972602739726027,
+              "tokens_per_molecule_actual": 136.517578125
+            },
+            "303": {
+              "hit_rate": 0.38671875,
+              "tokens_per_molecule_actual": 139.62890625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed7890.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.2380018479365657,
+          "advantage_vs_oracle_selected": 0.1333505350543019,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.0946956217382473,
+            0.15782639551348002,
+            0.14759536980562354
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.1333724623524503,
+            "sd": 0.03388350589418178,
+            "lo": 0.04920116226758171,
+            "hi": 0.21754376243731888,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19015171342137618,
+          "advantage_vs_head_selected": 0.1812006695694914,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.13794367266926005,
+            0.20588274536914866,
+            0.19985469434043837
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1812270374596157,
+            "sd": 0.037605473012347984,
+            "lo": 0.0878098579138801,
+            "hi": 0.27464421700535124,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "8901": {
+          "dir": "c30_hs8901_hbd_count_L4_lam1_k2",
+          "hit_rate_mean": 0.3815104166666667,
+          "hit_rate_values": [
+            0.361328125,
+            0.400390625,
+            0.3828125
+          ],
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9973958333333334,
+          "tokens_per_molecule_actual": 136.599609375,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.361328125,
+              "tokens_per_molecule_actual": 136.4765625
+            },
+            "202": {
+              "hit_rate": 0.400390625,
+              "tokens_per_molecule_actual": 136.69921875
+            },
+            "303": {
+              "hit_rate": 0.3828125,
+              "tokens_per_molecule_actual": 136.623046875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed8901.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.23753772536996026,
+          "advantage_vs_oracle_selected": 0.14397269129670642,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.12319672237757864,
+            0.1606918577565693,
+            0.14803133674939775
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.14397330562784857,
+            "sd": 0.019074118766270843,
+            "lo": 0.0965905649060306,
+            "hi": 0.19135604634966655,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.18988810450098612,
+          "advantage_vs_head_selected": 0.19162231216568057,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.16765048061948834,
+            0.20885736993991538,
+            0.19835650073529207
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.19162145043156528,
+            "sd": 0.021413141030959912,
+            "lo": 0.1384282559284537,
+            "hi": 0.24481464493467686,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        }
+      },
+      "advantage_by_head_seed": {
+        "1234": 0.1324779009980076,
+        "2345": 0.13202249400818128,
+        "3456": 0.10240351361127037,
+        "4567": 0.10410050604288501,
+        "5678": 0.12474633609356817,
+        "6789": 0.18741579046294846,
+        "7890": 0.1333505350543019,
+        "8901": 0.14397269129670642
+      },
+      "advantage_mean": 0.13256122094598366,
+      "advantage_sd": 0.026513440440339413,
+      "advantage_t_interval": {
+        "mean": 0.13256122094598366,
+        "sd": 0.026513440440339413,
+        "lo": 0.11039543239188647,
+        "hi": 0.15472700950008086,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      },
+      "n_positive": 8,
+      "all_share_sign": true,
+      "hit_rate_head_seed_sd": 0.02647793251810675,
+      "tokens_head_seed_sd": 1.9721270810535099,
+      "validity_min": 0.9967447916666666,
+      "extrapolated_any": false,
+      "d6_not_resolvable_at_one_seed": false,
+      "c28_margin_over_head_seed_sd": 4.997465353398844,
+      "c28_margin_minus_head_seed_mean": -6.122094598365324e-05,
+      "secondary_advantage_vs_head_selected_mean": 0.18142284224399896,
+      "secondary_advantage_vs_head_selected_t": {
+        "mean": 0.18142284224399896,
+        "sd": 0.026459805097197815,
+        "lo": 0.159301893954136,
+        "hi": 0.20354379053386193,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      }
+    },
+    "A1_k2": {
+      "strand": "A1",
+      "k": 2,
+      "property": "hbd_count",
+      "probe_point": 12,
+      "lam": 1.0,
+      "is_deployed_configuration": true,
+      "c28_single_seed_margin": 0.0846,
+      "n_head_seeds": 8,
+      "head_seeds_missing": [],
+      "per_head_seed": {
+        "1234": {
+          "dir": "c30_hs1234_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.3283326708251794,
+          "hit_rate_values": [
+            0.32421875,
+            0.341796875,
+            0.31898238747553814
+          ],
+          "validity_mean": 0.9993489583333334,
+          "uniqueness_mean": 0.9980443268917156,
+          "tokens_per_molecule_actual": 140.826171875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.32421875,
+              "tokens_per_molecule_actual": 139.62890625
+            },
+            "202": {
+              "hit_rate": 0.341796875,
+              "tokens_per_molecule_actual": 139.716796875
+            },
+            "303": {
+              "hit_rate": 0.31898238747553814,
+              "tokens_per_molecule_actual": 143.1328125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed1234.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24369945073274676,
+          "advantage_vs_oracle_selected": 0.08463322009243265,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.08145127259375501,
+            0.09769753601725892,
+            0.07479731969368217
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.0846487094348987,
+            "sd": 0.011780181606472795,
+            "lo": 0.05538511421693949,
+            "hi": 0.11391230465285791,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19338779593487626,
+          "advantage_vs_head_selected": 0.13494487489030316,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.12793848078319622,
+            0.14767655138621416,
+            0.12931127972217044
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1349754372971936,
+            "sd": 0.011020883293023727,
+            "lo": 0.10759804377261437,
+            "hi": 0.16235283082177285,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "2345": {
+          "dir": "c30_hs2345_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.3474494485294118,
+          "hit_rate_values": [
+            0.3411764705882353,
+            0.349609375,
+            0.3515625
+          ],
+          "validity_mean": 0.9986979166666666,
+          "uniqueness_mean": 0.9993489583333334,
+          "tokens_per_molecule_actual": 138.083984375,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.3411764705882353,
+              "tokens_per_molecule_actual": 140.5546875
+            },
+            "202": {
+              "hit_rate": 0.349609375,
+              "tokens_per_molecule_actual": 136.541015625
+            },
+            "303": {
+              "hit_rate": 0.3515625,
+              "tokens_per_molecule_actual": 137.15625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed2345.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.23970173242897955,
+          "advantage_vs_oracle_selected": 0.10774771610043224,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.09704746936071867,
+            0.11014131734290208,
+            0.1160110799426074
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.10773328888207605,
+            "sd": 0.009708428419496722,
+            "lo": 0.08361621420857707,
+            "hi": 0.13185036355557503,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.1911172013077128,
+          "advantage_vs_head_selected": 0.156332247221699,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.14413186173549442,
+            0.1582117526602065,
+            0.16667934063406073
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.15634098500992055,
+            "sd": 0.011389557931339594,
+            "lo": 0.12804775285541092,
+            "hi": 0.18463421716443018,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "3456": {
+          "dir": "c30_hs3456_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.371995780332681,
+          "hit_rate_values": [
+            0.38551859099804303,
+            0.380859375,
+            0.349609375
+          ],
+          "validity_mean": 0.9993489583333334,
+          "uniqueness_mean": 0.9986953685583823,
+          "tokens_per_molecule_actual": 139.236328125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.38551859099804303,
+              "tokens_per_molecule_actual": 138.462890625
+            },
+            "202": {
+              "hit_rate": 0.380859375,
+              "tokens_per_molecule_actual": 139.763671875
+            },
+            "303": {
+              "hit_rate": 0.349609375,
+              "tokens_per_molecule_actual": 139.482421875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed3456.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24138168527742873,
+          "advantage_vs_oracle_selected": 0.13061409505525226,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.14446594422745027,
+            0.1366916776213085,
+            0.11069760381847801
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.13061840855574558,
+            "sd": 0.017684418320971135,
+            "lo": 0.08668787533496672,
+            "hi": 0.17454894177652444,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.1920713685655664,
+          "advantage_vs_head_selected": 0.1799244117671146,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.19020100271510937,
+            0.1866988639135353,
+            0.16286267101660085
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1799208458817485,
+            "sd": 0.014876230750557723,
+            "lo": 0.14296623774446146,
+            "hi": 0.21687545401903555,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "4567": {
+          "dir": "c30_hs4567_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.36350675758317025,
+          "hit_rate_values": [
+            0.400390625,
+            0.34637964774951074,
+            0.34375
+          ],
+          "validity_mean": 0.9993489583333334,
+          "uniqueness_mean": 0.9986966426125244,
+          "tokens_per_molecule_actual": 138.265625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.400390625,
+              "tokens_per_molecule_actual": 140.05078125
+            },
+            "202": {
+              "hit_rate": 0.34637964774951074,
+              "tokens_per_molecule_actual": 138.310546875
+            },
+            "303": {
+              "hit_rate": 0.34375,
+              "tokens_per_molecule_actual": 136.435546875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed4567.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.2399665385559385,
+          "advantage_vs_oracle_selected": 0.12354021902723175,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.15700270635874514,
+            0.10433106064528325,
+            0.1092396962858515
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.12352448776329329,
+            "sd": 0.029096683938322033,
+            "lo": 0.05124431336529449,
+            "hi": 0.1958046621612921,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19126760394327277,
+          "advantage_vs_head_selected": 0.17223915363989747,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.20376204911365525,
+            0.1534649483160905,
+            0.15944421088078004
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1722237361035086,
+            "sd": 0.027476113004733106,
+            "lo": 0.10396928332906091,
+            "hi": 0.2404781888779563,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "5678": {
+          "dir": "c30_hs5678_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.3324657024624918,
+          "hit_rate_values": [
+            0.3287671232876712,
+            0.3385518590998043,
+            0.330078125
+          ],
+          "validity_mean": 0.9986979166666666,
+          "uniqueness_mean": 0.9980456009458578,
+          "tokens_per_molecule_actual": 142.056640625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.3287671232876712,
+              "tokens_per_molecule_actual": 142.5
+            },
+            "202": {
+              "hit_rate": 0.3385518590998043,
+              "tokens_per_molecule_actual": 142.48828125
+            },
+            "303": {
+              "hit_rate": 0.330078125,
+              "tokens_per_molecule_actual": 141.181640625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed5678.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.2454932986895654,
+          "advantage_vs_oracle_selected": 0.0869724037729264,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.08177719858760915,
+            0.09041082995649272,
+            0.0887116892693659
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.08696657260448926,
+            "sd": 0.004573726247160537,
+            "lo": 0.07560480603706052,
+            "hi": 0.098328339171918,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19440665249834707,
+          "advantage_vs_head_selected": 0.13805904996414473,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.13011643368093595,
+            0.14205545116388119,
+            0.1419701415731163
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.13804734213931114,
+            "sd": 0.00686850064882537,
+            "lo": 0.12098503958269562,
+            "hi": 0.15510964469592664,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "6789": {
+          "dir": "c30_hs6789_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.3350455316854657,
+          "hit_rate_values": [
+            0.3248031496062992,
+            0.349609375,
+            0.33072407045009783
+          ],
+          "validity_mean": 0.9967447916666666,
+          "uniqueness_mean": 0.9980366223753281,
+          "tokens_per_molecule_actual": 139.626953125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.3248031496062992,
+              "tokens_per_molecule_actual": 142.01953125
+            },
+            "202": {
+              "hit_rate": 0.349609375,
+              "tokens_per_molecule_actual": 135.884765625
+            },
+            "303": {
+              "hit_rate": 0.33072407045009783,
+              "tokens_per_molecule_actual": 140.9765625
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed6789.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24195116081927592,
+          "advantage_vs_oracle_selected": 0.09309437086618977,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.07851983853499836,
+            0.1110983348862084,
+            0.08965388733746002
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.09309068691955559,
+            "sd": 0.01655893413393721,
+            "lo": 0.051956011587374784,
+            "hi": 0.1342253622517364,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19239481509365236,
+          "advantage_vs_head_selected": 0.14265071659181333,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.12654914259543001,
+            0.15877437727771046,
+            0.14278037936984156
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1427012997476607,
+            "sd": 0.016112762884496125,
+            "lo": 0.10267497531173099,
+            "hi": 0.1827276241835904,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "7890": {
+          "dir": "c30_hs7890_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.363351003215213,
+          "hit_rate_values": [
+            0.35812133072407043,
+            0.357421875,
+            0.37450980392156863
+          ],
+          "validity_mean": 0.998046875,
+          "uniqueness_mean": 0.9986966426125244,
+          "tokens_per_molecule_actual": 142.111328125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.35812133072407043,
+              "tokens_per_molecule_actual": 142.505859375
+            },
+            "202": {
+              "hit_rate": 0.357421875,
+              "tokens_per_molecule_actual": 140.5546875
+            },
+            "303": {
+              "hit_rate": 0.37450980392156863,
+              "tokens_per_molecule_actual": 143.2734375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed7890.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24557302526542402,
+          "advantage_vs_oracle_selected": 0.117777977949789,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.11112278878463322,
+            0.1121006296896446,
+            0.13012159148737235
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.11778166998721673,
+            "sd": 0.010697863813929426,
+            "lo": 0.09120670138268606,
+            "hi": 0.14435663859174738,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.1944519350122791,
+          "advantage_vs_head_selected": 0.16889906820293393,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.15946580352470266,
+            0.16258320031207962,
+            0.18472603855908498
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.16892501413195574,
+            "sd": 0.013772574936900431,
+            "lo": 0.1347120391943698,
+            "hi": 0.20313798906954167,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "8901": {
+          "dir": "c30_hs8901_hbd_count_L12_lam1_k2",
+          "hit_rate_mean": 0.3344175534083496,
+          "hit_rate_values": [
+            0.31702544031311153,
+            0.337890625,
+            0.34833659491193736
+          ],
+          "validity_mean": 0.9986979166666666,
+          "uniqueness_mean": 0.9986966426125244,
+          "tokens_per_molecule_actual": 140.57421875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.31702544031311153,
+              "tokens_per_molecule_actual": 140.91796875
+            },
+            "202": {
+              "hit_rate": 0.337890625,
+              "tokens_per_molecule_actual": 141.052734375
+            },
+            "303": {
+              "hit_rate": 0.34833659491193736,
+              "tokens_per_molecule_actual": 139.751953125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L12_seed8901.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.24333213900825534,
+          "advantage_vs_oracle_selected": 0.09108541440009427,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.07236217024433642,
+            0.09184307173267103,
+            0.1090354631467631
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.09108023504125684,
+            "sd": 0.018348543346547175,
+            "lo": 0.04549992369550447,
+            "hi": 0.1366605463870092,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.19317917292426082,
+          "advantage_vs_head_selected": 0.1412383804840888,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.11968090071715484,
+            0.1426249584148668,
+            0.16137396384439925
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.14122660765880699,
+            "sd": 0.02088167658165471,
+            "lo": 0.08935364411959307,
+            "hi": 0.1930995711980209,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        }
+      },
+      "advantage_by_head_seed": {
+        "1234": 0.08463322009243265,
+        "2345": 0.10774771610043224,
+        "3456": 0.13061409505525226,
+        "4567": 0.12354021902723175,
+        "5678": 0.0869724037729264,
+        "6789": 0.09309437086618977,
+        "7890": 0.117777977949789,
+        "8901": 0.09108541440009427
+      },
+      "advantage_mean": 0.10443317715804354,
+      "advantage_sd": 0.017901466792562028,
+      "advantage_t_interval": {
+        "mean": 0.10443317715804354,
+        "sd": 0.017901466792562028,
+        "lo": 0.08946717798396417,
+        "hi": 0.11939917633212291,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      },
+      "n_positive": 8,
+      "all_share_sign": true,
+      "hit_rate_head_seed_sd": 0.01701143238959168,
+      "tokens_head_seed_sd": 1.5595329669890143,
+      "validity_min": 0.9967447916666666,
+      "extrapolated_any": false,
+      "d6_not_resolvable_at_one_seed": false,
+      "c28_margin_over_head_seed_sd": 4.72586972790134,
+      "c28_margin_minus_head_seed_mean": -0.019833177158043544,
+      "secondary_advantage_vs_head_selected_mean": 0.15428598784524938,
+      "secondary_advantage_vs_head_selected_t": {
+        "mean": 0.15428598784524938,
+        "sd": 0.01748626398286263,
+        "lo": 0.13966710686986525,
+        "hi": 0.16890486882063352,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      }
+    },
+    "A2_k4": {
+      "strand": "A2",
+      "k": 4,
+      "property": "hbd_count",
+      "probe_point": 4,
+      "lam": 1.0,
+      "is_deployed_configuration": false,
+      "c28_single_seed_margin": 0.0218,
+      "n_head_seeds": 8,
+      "head_seeds_missing": [],
+      "per_head_seed": {
+        "1234": {
+          "dir": "c30_hs1234_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.37819091106762337,
+          "hit_rate_values": [
+            0.3686274509803922,
+            0.3679060665362035,
+            0.3980392156862745
+          ],
+          "validity_mean": 0.9967447916666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 224.0625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.3686274509803922,
+              "tokens_per_molecule_actual": 227.470703125
+            },
+            "202": {
+              "hit_rate": 0.3679060665362035,
+              "tokens_per_molecule_actual": 221.298828125
+            },
+            "303": {
+              "hit_rate": 0.3980392156862745,
+              "tokens_per_molecule_actual": 223.41796875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed1234.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.3564014207345353,
+          "advantage_vs_oracle_selected": 0.02178949033308808,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.0047923203363949285,
+            0.013740989463805864,
+            0.04665165606254568
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.021728321954248824,
+            "sd": 0.022043119268681428,
+            "lo": -0.033029825345063796,
+            "hi": 0.07648646925356145,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.2506925500715465,
+          "advantage_vs_head_selected": 0.12749836099607686,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.10779959254137744,
+            0.11963719326126115,
+            0.15452672867831244
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.12732117149365033,
+            "sd": 0.024292775757347847,
+            "lo": 0.06697456732134548,
+            "hi": 0.18766777566595516,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "2345": {
+          "dir": "c30_hs2345_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.3812107491398386,
+          "hit_rate_values": [
+            0.396078431372549,
+            0.3913894324853229,
+            0.3561643835616438
+          ],
+          "validity_mean": 0.9973958333333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 221.85546875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.396078431372549,
+              "tokens_per_molecule_actual": 220.771484375
+            },
+            "202": {
+              "hit_rate": 0.3913894324853229,
+              "tokens_per_molecule_actual": 220.341796875
+            },
+            "303": {
+              "hit_rate": 0.3561643835616438,
+              "tokens_per_molecule_actual": 224.453125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed2345.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.35359583120357907,
+          "advantage_vs_oracle_selected": 0.02761491793625953,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.041001777415088536,
+            0.038424289030391245,
+            0.0034803740210166967
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.027635480155498826,
+            "sd": 0.02095859551280535,
+            "lo": -0.02442856061333553,
+            "hi": 0.07969952092433319,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.2494186551230905,
+          "advantage_vs_head_selected": 0.1317920940167481,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.13970693895467007,
+            0.14359397182746342,
+            0.11206007644590299
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.13178699574267883,
+            "sd": 0.017194207304923194,
+            "lo": 0.08907421427006734,
+            "hi": 0.1744997772152903,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "3456": {
+          "dir": "c30_hs3456_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.32179719300948934,
+          "hit_rate_values": [
+            0.34970530451866405,
+            0.3196078431372549,
+            0.296078431372549
+          ],
+          "validity_mean": 0.9954427083333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 222.63997395833334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.34970530451866405,
+              "tokens_per_molecule_actual": 222.216796875
+            },
+            "202": {
+              "hit_rate": 0.3196078431372549,
+              "tokens_per_molecule_actual": 225.029296875
+            },
+            "303": {
+              "hit_rate": 0.296078431372549,
+              "tokens_per_molecule_actual": 220.673828125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed3456.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.35459309827874197,
+          "advantage_vs_oracle_selected": -0.032795905269252634,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.007260933330352437,
+            -0.03923452619914286,
+            -0.05187231290543992
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.03278925747831174,
+            "sd": 0.022993475456331656,
+            "lo": -0.0899082205712449,
+            "hi": 0.024329705614621423,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.2498714702891346,
+          "advantage_vs_head_selected": 0.07192572272035475,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.09237238036444678,
+            0.06949362680388743,
+            0.05413482597105715
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.07200027771313046,
+            "sd": 0.01924162455673804,
+            "lo": 0.024201429514140574,
+            "hi": 0.11979912591212034,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "4567": {
+          "dir": "c30_hs4567_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.3300935841923869,
+          "hit_rate_values": [
+            0.34448818897637795,
+            0.33072407045009783,
+            0.3150684931506849
+          ],
+          "validity_mean": 0.99609375,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 224.78190104166666,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.34448818897637795,
+              "tokens_per_molecule_actual": 225.146484375
+            },
+            "202": {
+              "hit_rate": 0.33072407045009783,
+              "tokens_per_molecule_actual": 223.65234375
+            },
+            "303": {
+              "hit_rate": 0.3150684931506849,
+              "tokens_per_molecule_actual": 225.546875
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed4567.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.3573159270565726,
+          "advantage_vs_oracle_selected": -0.027222342864185733,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.016308286490657575,
+            -0.02639186378361924,
+            -0.03898535026440075
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.02722850017955919,
+            "sd": 0.011361658140159927,
+            "lo": -0.05545242540629625,
+            "hi": 0.0009954250471778739,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.25110778721551225,
+          "advantage_vs_head_selected": 0.07898579697687463,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.08520641670796136,
+            0.08129098859641087,
+            0.0703388666757816
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.07894542399338461,
+            "sd": 0.007706313383847652,
+            "lo": 0.059801879095592286,
+            "hi": 0.09808896889117694,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "5678": {
+          "dir": "c30_hs5678_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.382657065394651,
+          "hit_rate_values": [
+            0.38671875,
+            0.3796477495107632,
+            0.3816046966731898
+          ],
+          "validity_mean": 0.9986979166666666,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 218.28125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.38671875,
+              "tokens_per_molecule_actual": 220.556640625
+            },
+            "202": {
+              "hit_rate": 0.3796477495107632,
+              "tokens_per_molecule_actual": 214.94140625
+            },
+            "303": {
+              "hit_rate": 0.3816046966731898,
+              "tokens_per_molecule_actual": 219.345703125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed5678.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.34905226585698634,
+          "advantage_vs_oracle_selected": 0.033604799537664654,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.0319229801345276,
+            0.033453660040103916,
+            0.03531732209990057
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.033564654091510694,
+            "sd": 0.001699890909458245,
+            "lo": 0.02934189071223125,
+            "hi": 0.03778741747079014,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24735562171098915,
+          "advantage_vs_head_selected": 0.13530144368366184,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.13049017311049566,
+            0.13452368862072855,
+            0.14042040763639524
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.13514475645587315,
+            "sd": 0.0049941649328722046,
+            "lo": 0.12273856222818859,
+            "hi": 0.14755095068355772,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "6789": {
+          "dir": "c30_hs6789_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.39921722113502933,
+          "hit_rate_values": [
+            0.4090019569471624,
+            0.3835616438356164,
+            0.4050880626223092
+          ],
+          "validity_mean": 0.998046875,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 221.43880208333334,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.4090019569471624,
+              "tokens_per_molecule_actual": 219.404296875
+            },
+            "202": {
+              "hit_rate": 0.3835616438356164,
+              "tokens_per_molecule_actual": 217.041015625
+            },
+            "303": {
+              "hit_rate": 0.4050880626223092,
+              "tokens_per_molecule_actual": 227.87109375
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed6789.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.3530661623835756,
+          "advantage_vs_oracle_selected": 0.046151058751453755,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.05571274721144415,
+            0.034735046938883796,
+            0.048123322223998954
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.046190372124775635,
+            "sd": 0.010621591182394013,
+            "lo": 0.01980487525251729,
+            "hi": 0.07257586899703397,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24917815578178906,
+          "advantage_vs_head_selected": 0.15003906535324027,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.15353992698257646,
+            0.13739897363259382,
+            0.1590296325091856
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.14998951104145195,
+            "sd": 0.011243906833263642,
+            "lo": 0.12205809629515647,
+            "hi": 0.1779209257877474,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "7890": {
+          "dir": "c30_hs7890_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.3961979565768892,
+          "hit_rate_values": [
+            0.4165029469548134,
+            0.38747553816046965,
+            0.38461538461538464
+          ],
+          "validity_mean": 0.994140625,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 227.15494791666666,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.4165029469548134,
+              "tokens_per_molecule_actual": 227.890625
+            },
+            "202": {
+              "hit_rate": 0.38747553816046965,
+              "tokens_per_molecule_actual": 222.79296875
+            },
+            "303": {
+              "hit_rate": 0.38461538461538464,
+              "tokens_per_molecule_actual": 230.78125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed7890.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.36033255650799895,
+          "advantage_vs_oracle_selected": 0.035865400068890274,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.05211881558556675,
+            0.031437095338354704,
+            0.024005907658247116
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.03585393952738952,
+            "sd": 0.01456761073323782,
+            "lo": -0.0003340139381183757,
+            "hi": 0.07204189299289743,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.25247750612026804,
+          "advantage_vs_head_selected": 0.14372045045662118,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.1553957536194301,
+            0.13846756151395914,
+            0.13689315835020371
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.14358549116119765,
+            "sd": 0.010258236243612334,
+            "lo": 0.11810261805181159,
+            "hi": 0.1690683642705837,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "8901": {
+          "dir": "c30_hs8901_hbd_count_L4_lam1_k4",
+          "hit_rate_mean": 0.40795036764705883,
+          "hit_rate_values": [
+            0.41796875,
+            0.41568627450980394,
+            0.39019607843137255
+          ],
+          "validity_mean": 0.9973958333333334,
+          "uniqueness_mean": 1.0,
+          "tokens_per_molecule_actual": 217.216796875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.41796875,
+              "tokens_per_molecule_actual": 215.869140625
+            },
+            "202": {
+              "hit_rate": 0.41568627450980394,
+              "tokens_per_molecule_actual": 216.748046875
+            },
+            "303": {
+              "hit_rate": 0.39019607843137255,
+              "tokens_per_molecule_actual": 219.033203125
+            }
+          },
+          "head_checkpoint": "head_hbd_count_last1_L4_seed8901.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.34769912754338356,
+          "advantage_vs_oracle_selected": 0.060251240103675274,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.06930136032335799,
+            0.06722700423066297,
+            0.044300084965071485
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.06027614983969748,
+            "sd": 0.013874499088562408,
+            "lo": 0.025809981257326732,
+            "hi": 0.09474231842206823,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.24674122105000817,
+          "advantage_vs_head_selected": 0.16120914659705066,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.1648583300932146,
+            0.1696685265365006,
+            0.1491904520686244
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.16123910289944654,
+            "sd": 0.010708033787211049,
+            "lo": 0.13463887067917268,
+            "hi": 0.1878393351197204,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        }
+      },
+      "advantage_by_head_seed": {
+        "1234": 0.02178949033308808,
+        "2345": 0.02761491793625953,
+        "3456": -0.032795905269252634,
+        "4567": -0.027222342864185733,
+        "5678": 0.033604799537664654,
+        "6789": 0.046151058751453755,
+        "7890": 0.035865400068890274,
+        "8901": 0.060251240103675274
+      },
+      "advantage_mean": 0.02065733232469915,
+      "advantage_sd": 0.033414991367951105,
+      "advantage_t_interval": {
+        "mean": 0.02065733232469915,
+        "sd": 0.033414991367951105,
+        "lo": -0.007278296582671175,
+        "hi": 0.04859296123206948,
+        "excludes_zero": false,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      },
+      "n_positive": 6,
+      "all_share_sign": false,
+      "hit_rate_head_seed_sd": 0.031792100525921886,
+      "tokens_head_seed_sd": 3.28989146733771,
+      "validity_min": 0.994140625,
+      "extrapolated_any": false,
+      "d6_not_resolvable_at_one_seed": true,
+      "c28_margin_over_head_seed_sd": 0.6524017845747151,
+      "c28_margin_minus_head_seed_mean": 0.00114266767530085,
+      "secondary_advantage_vs_head_selected_mean": 0.12505901010007853,
+      "secondary_advantage_vs_head_selected_t": {
+        "mean": 0.12505901010007853,
+        "sd": 0.03247232751170239,
+        "lo": 0.09791146781474491,
+        "hi": 0.15220655238541214,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      }
+    },
+    "C2_k2": {
+      "strand": "C2",
+      "k": 2,
+      "property": "aromatic_rings",
+      "probe_point": 3,
+      "lam": 2.0,
+      "is_deployed_configuration": false,
+      "c28_single_seed_margin": 0.0007,
+      "n_head_seeds": 8,
+      "head_seeds_missing": [],
+      "per_head_seed": {
+        "1234": {
+          "dir": "c30_hs1234_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.467202630461445,
+          "hit_rate_values": [
+            0.44509803921568625,
+            0.4752475247524752,
+            0.4812623274161736
+          ],
+          "validity_mean": 0.9908854166666666,
+          "uniqueness_mean": 0.9967113488237094,
+          "tokens_per_molecule_actual": 150.181640625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.44509803921568625,
+              "tokens_per_molecule_actual": 148.716796875
+            },
+            "202": {
+              "hit_rate": 0.4752475247524752,
+              "tokens_per_molecule_actual": 151.517578125
+            },
+            "303": {
+              "hit_rate": 0.4812623274161736,
+              "tokens_per_molecule_actual": 150.310546875
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed1234.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.46649721160482743,
+          "advantage_vs_oracle_selected": 0.0007054188566175679,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.0055104435485339165,
+            -0.005715840421374019,
+            0.013344100523085323
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.0007059388510591291,
+            "sd": 0.010945450872624985,
+            "lo": -0.02648407014154933,
+            "hi": 0.027895947843667588,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.36660898914504797,
+          "advantage_vs_head_selected": 0.10059364131639703,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.0893635140263187,
+            0.10044295541949205,
+            0.1122370947738765
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.10068118807322908,
+            "sd": 0.011438651150889323,
+            "lo": 0.07226600159298477,
+            "hi": 0.1290963745534734,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "2345": {
+          "dir": "c30_hs2345_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.46797873263480533,
+          "hit_rate_values": [
+            0.48296593186372744,
+            0.45271629778672035,
+            0.46825396825396826
+          ],
+          "validity_mean": 0.9765625,
+          "uniqueness_mean": 0.996011864999841,
+          "tokens_per_molecule_actual": 163.74609375,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.48296593186372744,
+              "tokens_per_molecule_actual": 166.470703125
+            },
+            "202": {
+              "hit_rate": 0.45271629778672035,
+              "tokens_per_molecule_actual": 165.357421875
+            },
+            "303": {
+              "hit_rate": 0.46825396825396826,
+              "tokens_per_molecule_actual": 159.41015625
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed2345.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.495676970384083,
+          "advantage_vs_oracle_selected": -0.027698237749277654,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.006208848618562024,
+            -0.058386535676440976,
+            -0.0188059833754316
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.027800455890144866,
+            "sd": 0.027226883011849456,
+            "lo": -0.09543578700148385,
+            "hi": 0.039834875221194124,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.38206754830706846,
+          "advantage_vs_head_selected": 0.08591118432773687,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.10537452952635307,
+            0.06347933460278932,
+            0.08880972647845392
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.08588786353586543,
+            "sd": 0.021099876817467545,
+            "lo": 0.033472860528110424,
+            "hi": 0.13830286654362045,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "3456": {
+          "dir": "c30_hs3456_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.512653408043351,
+          "hit_rate_values": [
+            0.5060240963855421,
+            0.5269461077844312,
+            0.5049900199600799
+          ],
+          "validity_mean": 0.9765625,
+          "uniqueness_mean": 0.9966653039302921,
+          "tokens_per_molecule_actual": 165.447265625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5060240963855421,
+              "tokens_per_molecule_actual": 169.1953125
+            },
+            "202": {
+              "hit_rate": 0.5269461077844312,
+              "tokens_per_molecule_actual": 162.837890625
+            },
+            "303": {
+              "hit_rate": 0.5049900199600799,
+              "tokens_per_molecule_actual": 164.30859375
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed3456.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.49933651968526827,
+          "advantage_vs_oracle_selected": 0.013316888358082757,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.010930725659390572,
+            0.021330137727029408,
+            0.007625830159684266
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": 0.013295564515368083,
+            "sd": 0.007151668237981548,
+            "lo": -0.00447016537239814,
+            "hi": 0.031061294403134307,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.3840062675338676,
+          "advantage_vs_head_selected": 0.12864714050948345,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.12507842082248355,
+            0.140336549069555,
+            0.11993709071813302
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.1284506868700572,
+            "sd": 0.010609599850115154,
+            "lo": 0.10209497812039789,
+            "hi": 0.1548063956197165,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "4567": {
+          "dir": "c30_hs4567_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.4091618666595728,
+          "hit_rate_values": [
+            0.42209072978303747,
+            0.3801980198019802,
+            0.4251968503937008
+          ],
+          "validity_mean": 0.9895833333333334,
+          "uniqueness_mean": 0.9934162416381414,
+          "tokens_per_molecule_actual": 158.513671875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.42209072978303747,
+              "tokens_per_molecule_actual": 155.77734375
+            },
+            "202": {
+              "hit_rate": 0.3801980198019802,
+              "tokens_per_molecule_actual": 160.79296875
+            },
+            "303": {
+              "hit_rate": 0.4251968503937008,
+              "tokens_per_molecule_actual": 158.970703125
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed4567.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.48442102023726863,
+          "advantage_vs_oracle_selected": -0.0752591535776958,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.043855175010975966,
+            -0.12096465879353757,
+            -0.06093867795480823
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.07525283725310726,
+            "sd": 0.04049863565129193,
+            "lo": -0.17585703166788852,
+            "hi": 0.025351357161673985,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.37610448423290677,
+          "advantage_vs_head_selected": 0.03305738242666606,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.05766394817012266,
+            -0.004279064122895637,
+            0.046255780340653474
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.033213554795960165,
+            "sd": 0.03296678522926132,
+            "lo": -0.04868048477100344,
+            "hi": 0.11510759436292377,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "5678": {
+          "dir": "c30_hs5678_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.4575085675647837,
+          "hit_rate_values": [
+            0.4735812133072407,
+            0.46168958742632615,
+            0.4372549019607843
+          ],
+          "validity_mean": 0.99609375,
+          "uniqueness_mean": 0.9941163579569138,
+          "tokens_per_molecule_actual": 151.44921875,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.4735812133072407,
+              "tokens_per_molecule_actual": 151.1484375
+            },
+            "202": {
+              "hit_rate": 0.46168958742632615,
+              "tokens_per_molecule_actual": 148.880859375
+            },
+            "303": {
+              "hit_rate": 0.4372549019607843,
+              "tokens_per_molecule_actual": 154.318359375
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed5678.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.46922401699687016,
+          "advantage_vs_oracle_selected": -0.011715449432086467,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            0.017690547852261818,
+            -0.013531711392658352,
+            -0.03909406525402781
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.011645076264808115,
+            "sd": 0.028439279447394213,
+            "lo": -0.08229216727244477,
+            "hi": 0.05900201474282855,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.3680535686837307,
+          "advantage_vs_head_selected": 0.08945499888105302,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.11485308943258504,
+            0.0896346274214237,
+            0.06364074320958796
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.08937615335453224,
+            "sd": 0.02560715150204084,
+            "lo": 0.02576445862234457,
+            "hi": 0.1529878480867199,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "6789": {
+          "dir": "c30_hs6789_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.4193520430903823,
+          "hit_rate_values": [
+            0.4226190476190476,
+            0.4437869822485207,
+            0.39165009940357853
+          ],
+          "validity_mean": 0.9856770833333334,
+          "uniqueness_mean": 0.9980171567570252,
+          "tokens_per_molecule_actual": 158.00390625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.4226190476190476,
+              "tokens_per_molecule_actual": 157.658203125
+            },
+            "202": {
+              "hit_rate": 0.4437869822485207,
+              "tokens_per_molecule_actual": 155.4140625
+            },
+            "303": {
+              "hit_rate": 0.39165009940357853,
+              "tokens_per_molecule_actual": 160.939453125
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed6789.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.48332441591165515,
+          "advantage_vs_oracle_selected": -0.06397237282127283,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.04741259366588996,
+            -0.045661880983073055,
+            -0.09862684524332122
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.06390043996409474,
+            "sd": 0.03008668586662978,
+            "lo": -0.13863991564137762,
+            "hi": 0.01083903571318813,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.3755235362212023,
+          "advantage_vs_head_selected": 0.043828506869179995,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.055876735456789506,
+            0.06491910135292944,
+            0.010454820033878931
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.04375021894786596,
+            "sd": 0.029186962618283276,
+            "lo": -0.028754220137677713,
+            "hi": 0.11625465803340963,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "7890": {
+          "dir": "c30_hs7890_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.4832770458420797,
+          "hit_rate_values": [
+            0.5040983606557377,
+            0.4686868686868687,
+            0.47704590818363274
+          ],
+          "validity_mean": 0.9661458333333334,
+          "uniqueness_mean": 0.9952733463359751,
+          "tokens_per_molecule_actual": 170.064453125,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.5040983606557377,
+              "tokens_per_molecule_actual": 176.712890625
+            },
+            "202": {
+              "hit_rate": 0.4686868686868687,
+              "tokens_per_molecule_actual": 167.865234375
+            },
+            "303": {
+              "hit_rate": 0.47704590818363274,
+              "tokens_per_molecule_actual": 165.615234375
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed7890.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.5092689818528939,
+          "advantage_vs_oracle_selected": -0.02599193601081423,
+          "bracketing_n_oracle_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.007325227883048568,
+            -0.04787730788714173,
+            -0.023066900171944738
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.02608981198071168,
+            "sd": 0.020444346284909185,
+            "lo": -0.07687638676905277,
+            "hi": 0.024696762807629415,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.38926818745597214,
+          "advantage_vs_head_selected": 0.09400885838610756,
+          "bracketing_n_head_selected": [
+            3,
+            4
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.11389777638611381,
+            0.07683472151978538,
+            0.09049688168688397
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.09374312653092771,
+            "sd": 0.018743561246378142,
+            "lo": 0.04718153626175449,
+            "hi": 0.14030471680010093,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        },
+        "8901": {
+          "dir": "c30_hs8901_aromatic_rings_L3_lam2_k2",
+          "hit_rate_mean": 0.4465076179706746,
+          "hit_rate_values": [
+            0.4796747967479675,
+            0.4043824701195219,
+            0.45546558704453444
+          ],
+          "validity_mean": 0.96875,
+          "uniqueness_mean": 0.9973089549354451,
+          "tokens_per_molecule_actual": 179.509765625,
+          "per_seed": {
+            "101": {
+              "hit_rate": 0.4796747967479675,
+              "tokens_per_molecule_actual": 182.21484375
+            },
+            "202": {
+              "hit_rate": 0.4043824701195219,
+              "tokens_per_molecule_actual": 169.4296875
+            },
+            "303": {
+              "hit_rate": 0.45546558704453444,
+              "tokens_per_molecule_actual": 186.884765625
+            }
+          },
+          "head_checkpoint": "head_aromatic_rings_last1_L3_seed8901.pt",
+          "cost_identity_max_residual": 0,
+          "oracle_selected_interpolated_hit_rate": 0.5287766350746694,
+          "advantage_vs_oracle_selected": -0.08226901710399481,
+          "bracketing_n_oracle_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_oracle_selected": false,
+          "advantage_vs_oracle_selected_per_seed": [
+            -0.041594973829136184,
+            -0.11558866582504168,
+            -0.08583602098475507
+          ],
+          "advantage_vs_oracle_selected_seed_t_interval": {
+            "mean": -0.08100655354631098,
+            "sd": 0.03723250502720004,
+            "lo": -0.1734972291966711,
+            "hi": 0.011484122104049158,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "head_selected_interpolated_hit_rate": 0.3993068635009632,
+          "advantage_vs_head_selected": 0.04720075446971139,
+          "bracketing_n_head_selected": [
+            4,
+            6
+          ],
+          "extrapolated_beyond_grid_head_selected": false,
+          "advantage_vs_head_selected_per_seed": [
+            0.08475797282256281,
+            0.010898888084444058,
+            0.04871429199772498
+          ],
+          "advantage_vs_head_selected_seed_t_interval": {
+            "mean": 0.048123717634910614,
+            "sd": 0.03693308385643774,
+            "lo": -0.04362315454674399,
+            "hi": 0.13987058981656522,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          }
+        }
+      },
+      "advantage_by_head_seed": {
+        "1234": 0.0007054188566175679,
+        "2345": -0.027698237749277654,
+        "3456": 0.013316888358082757,
+        "4567": -0.0752591535776958,
+        "5678": -0.011715449432086467,
+        "6789": -0.06397237282127283,
+        "7890": -0.02599193601081423,
+        "8901": -0.08226901710399481
+      },
+      "advantage_mean": -0.034110482435055184,
+      "advantage_sd": 0.03580554178966736,
+      "advantage_t_interval": {
+        "mean": -0.034110482435055184,
+        "sd": 0.03580554178966736,
+        "lo": -0.06404466129654804,
+        "hi": -0.004176303573562336,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      },
+      "n_positive": 2,
+      "all_share_sign": false,
+      "hit_rate_head_seed_sd": 0.033426498755415944,
+      "tokens_head_seed_sd": 9.750976118893732,
+      "validity_min": 0.9661458333333334,
+      "extrapolated_any": false,
+      "d6_not_resolvable_at_one_seed": true,
+      "c28_margin_over_head_seed_sd": 0.019550046306016335,
+      "c28_margin_minus_head_seed_mean": 0.03481048243505518,
+      "secondary_advantage_vs_head_selected_mean": 0.07783780839829192,
+      "secondary_advantage_vs_head_selected_t": {
+        "mean": 0.07783780839829192,
+        "sd": 0.03308345669196199,
+        "lo": 0.05017934938680372,
+        "hi": 0.10549626740978013,
+        "excludes_zero": true,
+        "n_seeds": 8,
+        "note": "seed-level t interval, 7 df"
+      }
+    }
+  },
+  "run_but_not_scored": {
+    "cell": "A1_k4",
+    "why_not_scored": "run as part of C30.0.2's 4 strands x 2 k, but not one of C28's eight winning cells, so no pre-registered rule applies to it",
+    "c28_advantage": null,
+    "n_head_seeds": 8,
+    "advantage_mean": -0.008140699831913255,
+    "advantage_t_interval": {
+      "mean": -0.008140699831913255,
+      "sd": 0.023342274538490117,
+      "lo": -0.027655327628185594,
+      "hi": 0.011373927964359085,
+      "excludes_zero": false,
+      "n_seeds": 8,
+      "note": "seed-level t interval, 7 df"
+    },
+    "advantage_by_head_seed": {
+      "1234": -0.03239457352477032,
+      "2345": 0.005181511443458575,
+      "3456": 0.02562807010879864,
+      "4567": -0.004681786009908262,
+      "5678": -0.03850095928577668,
+      "6789": -0.011869272668430408,
+      "7890": 0.01731950972509494,
+      "8901": -0.02580809844377252
+    },
+    "hit_rate_by_head_seed": {
+      "1234": 0.32702761469884756,
+      "2345": 0.35988219870126376,
+      "3456": 0.37729557576455236,
+      "4567": 0.34880645621460765,
+      "5678": 0.32183159722222227,
+      "6789": 0.34095688353108106,
+      "7890": 0.37134983488258316,
+      "8901": 0.33158231329061305
+    },
+    "validity_min": 0.9967447916666666,
+    "n_positive": 3
+  },
+  "cited_not_rerun": {
+    "cell": "A3_k8",
+    "why_not_rerun": "C30.0.2 -- this is C26's D2 arm, already replicated across head seeds by C26 D2b (n=3) and C29 R6 (n=8)",
+    "c29_r6_mean": 0.04900985606284503,
+    "c29_r6_ci": [
+      0.013535352462928842,
+      0.08448435966276122
+    ],
+    "c29_r6_positive_under_c26_corrected_curve": false
+  },
+  "decision_rules": {
+    "D1_crossing_survives": {
+      "rule": "head-seed mean advantage over the oracle curve > 0 on >= 5 of 8 cells",
+      "n_cells_preregistered": 8,
+      "n_cells_rerun": 7,
+      "n_positive_mean": 6,
+      "threshold": 5,
+      "note": "A3_k8 was not re-run (C30.0.2) and is not counted as positive here; the rule is therefore scored conservatively against C30's own claim",
+      "fires": true
+    },
+    "D2_crossing_confirmed": {
+      "rule": ">= 3 of 8 cells additionally have a t interval on 7 df strictly above 0",
+      "n_excluding_zero": 5,
+      "threshold": 3,
+      "fires": true
+    },
+    "D3_deployed_cell_survives": {
+      "rule": "A1 at k=2 -- the only deployed configuration -- has mean > 0 with a t interval strictly above 0",
+      "mean": 0.10443317715804354,
+      "ci": [
+        0.08946717798396417,
+        0.11939917633212291
+      ],
+      "c28_single_seed_margin": 0.0846,
+      "fires": true
+    },
+    "D4_sign_stability": {
+      "rule": ">= 75% of the (cell, head seed) points are positive",
+      "n_points": 56,
+      "n_positive": 48,
+      "fraction": 0.8571428571428571,
+      "threshold": 0.75,
+      "fires": true
+    },
+    "D5_crossing_refuted": {
+      "rule": "fewer than 3 of 8 cells keep a positive head-seed mean",
+      "n_positive_mean": 6,
+      "fires": false
+    },
+    "D6_not_resolvable_at_one_seed": {
+      "rule": "for each cell, is the head-seed sd of the advantage larger than C28's own single-seed margin for that cell?",
+      "per_cell": {
+        "A3_k2": {
+          "c28_margin": 0.2499,
+          "head_seed_sd": 0.04109688172000242,
+          "not_resolvable": false
+        },
+        "A3_k4": {
+          "c28_margin": 0.2093,
+          "head_seed_sd": 0.03658556423061531,
+          "not_resolvable": false
+        },
+        "C2_k4": {
+          "c28_margin": 0.169,
+          "head_seed_sd": 0.05567993552776548,
+          "not_resolvable": false
+        },
+        "A2_k2": {
+          "c28_margin": 0.1325,
+          "head_seed_sd": 0.026513440440339413,
+          "not_resolvable": false
+        },
+        "A1_k2": {
+          "c28_margin": 0.0846,
+          "head_seed_sd": 0.017901466792562028,
+          "not_resolvable": false
+        },
+        "A2_k4": {
+          "c28_margin": 0.0218,
+          "head_seed_sd": 0.033414991367951105,
+          "not_resolvable": true
+        },
+        "C2_k2": {
+          "c28_margin": 0.0007,
+          "head_seed_sd": 0.03580554178966736,
+          "not_resolvable": true
+        }
+      },
+      "n_not_resolvable": 2,
+      "fires": true
+    }
+  },
+  "validity_screen": {
+    "rule": "C30.0.8 -- any cell with validity < 0.90 makes C30 UNINTERPRETABLE and leaves the decision rules unscored",
+    "threshold": 0.9,
+    "n_points_checked": 56,
+    "n_points_failing": 1,
+    "failures": [
+      {
+        "cell": "C2_k4",
+        "head_seed": 8901,
+        "validity": 0.830078125,
+        "hit_rate": 0.8037545579381016,
+        "tokens_per_molecule_actual": 372.55859375,
+        "advantage": 0.013347297813623205
+      }
+    ],
+    "cells_affected": [
+      "C2_k4"
+    ],
+    "passes": false
+  },
+  "verdict": {
+    "verdict": "UNINTERPRETABLE",
+    "gates_pass": true,
+    "all_validity_at_least_0.90": false,
+    "all_cells_have_eight_head_seeds": true,
+    "committed_wording": null
+  },
+  "sensitivity_S1_drop_cells_failing_the_validity_screen": {
+    "status": "POST HOC, NOT PRE-REGISTERED -- reported beside the pre-registered verdict, not in place of it",
+    "cells_dropped": [
+      "C2_k4"
+    ],
+    "why_whole_cell_not_just_the_failing_seed": "dropping only the failing head seed would be selecting on the outcome; the whole cell goes, including its seven passing seeds",
+    "runs_against_c30s_own_headline": [
+      "C2_k4"
+    ],
+    "n_cells_remaining": 6,
+    "n_positive_mean": 5,
+    "n_excluding_zero": 4,
+    "D1_threshold_unchanged": 5,
+    "D2_threshold_unchanged": 3,
+    "D1_fires": true,
+    "D2_fires": true,
+    "D3_fires": true,
+    "D4_fraction_positive": 0.8333333333333334,
+    "verdict": "CONFIRMED",
+    "note": "D1 and D2 are scored against their ORIGINAL thresholds of 5 and 3 out of 8 pre-registered cells, not rescaled to the smaller denominator -- rescaling would make the rule easier to pass after dropping a cell"
+  },
+  "predictions": {
+    "P1_at_least_six_of_eight_positive": {
+      "predicted": ">= 6 of 8 cells keep a positive head-seed mean",
+      "measured": 6,
+      "n_rerun": 7,
+      "holds": true
+    },
+    "P2_largest_margin_survives": {
+      "predicted": "A3 k=2 keeps a t interval excluding zero",
+      "mean": 0.26914318907926543,
+      "excludes_zero": true,
+      "holds": true
+    },
+    "P3_deployed_cell_survives": {
+      "predicted": "A1 k=2 keeps a t interval excluding zero",
+      "mean": 0.10443317715804354,
+      "holds": true
+    },
+    "P4_smallest_margin_does_not_survive": {
+      "predicted": "C2 k=2 does NOT keep a t interval excluding zero, and fires D6",
+      "mean": -0.034110482435055184,
+      "excludes_zero": true,
+      "d6": true,
+      "holds": true
+    },
+    "P5_at_least_one_sign_change": {
+      "predicted": "at least one cell's mean advantage changes sign against C28",
+      "n_negative_means": 1,
+      "holds": true
+    },
+    "P6_advantage_sd_exceeds_hit_rate_sd_somewhere": {
+      "predicted": "the head-seed sd of the ADVANTAGE exceeds that of the hit rate alone for at least one cell, because the budget moves too",
+      "per_cell": {
+        "A3_k2": {
+          "advantage_sd": 0.04109688172000242,
+          "hit_rate_sd": 0.03958855222733938
+        },
+        "A3_k4": {
+          "advantage_sd": 0.03658556423061531,
+          "hit_rate_sd": 0.034024362270953824
+        },
+        "C2_k4": {
+          "advantage_sd": 0.05567993552776548,
+          "hit_rate_sd": 0.018580336983146373
+        },
+        "A2_k2": {
+          "advantage_sd": 0.026513440440339413,
+          "hit_rate_sd": 0.02647793251810675
+        },
+        "A1_k2": {
+          "advantage_sd": 0.017901466792562028,
+          "hit_rate_sd": 0.01701143238959168
+        },
+        "A2_k4": {
+          "advantage_sd": 0.033414991367951105,
+          "hit_rate_sd": 0.031792100525921886
+        },
+        "C2_k2": {
+          "advantage_sd": 0.03580554178966736,
+          "hit_rate_sd": 0.033426498755415944
+        }
+      },
+      "holds": true
+    },
+    "P7_sds_inside_c29_band": {
+      "predicted": "hit-rate head-seed sd inside C29's measured 0.0142-0.0366 band on >= 3 of 4 strands",
+      "band": [
+        0.0142,
+        0.0366
+      ],
+      "per_strand": {
+        "A3": {
+          "mean_hit_rate_head_seed_sd": 0.03680645724914661,
+          "inside_band": false
+        },
+        "C2": {
+          "mean_hit_rate_head_seed_sd": 0.02600341786928116,
+          "inside_band": true
+        },
+        "A2": {
+          "mean_hit_rate_head_seed_sd": 0.02913501652201432,
+          "inside_band": true
+        },
+        "A1": {
+          "mean_hit_rate_head_seed_sd": 0.01701143238959168,
+          "inside_band": true
+        }
+      },
+      "holds": true,
+      "n_inside": 3
+    }
+  },
+  "predictions_summary": {
+    "n_total": 7,
+    "n_holding": 7,
+    "falsified": []
+  }
+}

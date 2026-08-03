@@ -1,0 +1,111 @@
+{
+  "experiment": "C31",
+  "stage": "feasibility",
+  "prereg": "outputs/c31_prereg/C31.0_preregistration.md",
+  "generator": {
+    "repo": "entropy/gpt2_zinc_87m",
+    "revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+    "tokenizer_repo": "entropy/gpt2_zinc_87m",
+    "tokenizer_revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+    "fingerprint": {
+      "n_parameters": 87331584,
+      "parameter_sum": 19996.594887717303,
+      "n_layers": 12,
+      "hidden_size": 768,
+      "n_probe_points": 13,
+      "vocab_size": 2707,
+      "repo": "entropy/gpt2_zinc_87m",
+      "revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+      "all_parameters_frozen": true,
+      "training_mode": false
+    },
+    "n_probe_points": 13,
+    "n_layers": 12,
+    "hidden_size": 768,
+    "max_position_embeddings": 256,
+    "bos_id": 0,
+    "eos_id": 2,
+    "pad_id": 1
+  },
+  "base_policy": {
+    "do_sample": true,
+    "temperature": 1.0,
+    "top_k": null,
+    "top_p": null,
+    "max_length": 256,
+    "batch_size": 256,
+    "seed": 20260729
+  },
+  "n_molecules": 2048,
+  "validity": 0.998046875,
+  "uniqueness": 1.0,
+  "content_length_mean": 34.08203125,
+  "content_length_std": 7.392267218115389,
+  "content_length_max": 60,
+  "n_at_max_length": 0,
+  "compute": {
+    "processed_tokens_actual": 73896,
+    "processed_tokens_full_recompute": 73896,
+    "forward_calls": 2048,
+    "wall_seconds": 3.4198974557220936,
+    "molecules_returned": 2048,
+    "tokens_per_molecule_actual": 36.08203125,
+    "tokens_per_molecule_full_recompute": 36.08203125
+  },
+  "example_smiles": [
+    "CCc1ccc(C(C)(C)C(=O)NC2CN(C[C@H]3CCOC3)C2)cc1",
+    "CSCC[C@H](NC(=O)c1ccco1)C(=O)NC[C@H]1CCCN(Cc2ccccc2)C1",
+    "Cc1cc([N+](=O)[O-])c(C)c(S(=O)(=O)Oc2c(F)c(F)cc(F)c2F)c1",
+    "C[C@H]1CCCCN1Cc1ccc(CNC(=O)C(=O)N2CCCC[C@@H]2CCO)cc1",
+    "C[C@@H](OC(=O)c1c(Cl)nccc1C(F)(F)F)C(=O)N1CCN(c2ccccc2)CC1",
+    "CC[C@@H](C)CNC(=S)N1CCC2(CCC(=O)N2CC2CC2)CC1",
+    "CSc1ncc(I)c(NCC[C@H](C)N(C)Cc2ccccc2)n1",
+    "CCOCC(=O)N1CCN(CCOCCO)CC1",
+    "CCC1(CC)[C@H](OC)C[C@H]1N(C)S(=O)(=O)c1ccc2c(c1)N(C(C)=O)CC[C@@H]2C",
+    "C#C[C@@H](C)N(C)C(=O)c1cc(C)ccc1F",
+    "CCOCc1nnc(N(C)Cc2c(C)noc2C)n1CCc1csc(C(C)(C)C)n1",
+    "COCCCn1c([C@H](C)Oc2ccc(F)cc2)nnc1N1CCC(CN(C)C(=O)OC(C)(C)C)CC1"
+  ],
+  "validity_gates": {
+    "G0": {
+      "rule": "unconditional RDKit validity >= 0.80 (C31.0.3 G0)",
+      "threshold": 0.8,
+      "measured": 0.998046875,
+      "passes": true
+    },
+    "G1": {
+      "gate": "G1",
+      "rule": "cached candidate states equal full-prefix recomputation at every probe point to within 2e-03 absolute (C24's tolerance, reused)",
+      "n_sequences": 128,
+      "positions": [
+        2,
+        5,
+        7,
+        10
+      ],
+      "n_probe_points": 13,
+      "max_abs_difference_by_probe_point": {
+        "0": 0.0,
+        "1": 7.152557373046875e-07,
+        "2": 1.430511474609375e-06,
+        "3": 1.9073486328125e-06,
+        "4": 2.384185791015625e-06,
+        "5": 1.9073486328125e-06,
+        "6": 1.9073486328125e-06,
+        "7": 2.212822437286377e-06,
+        "8": 2.86102294921875e-06,
+        "9": 2.86102294921875e-06,
+        "10": 3.814697265625e-06,
+        "11": 5.7220458984375e-06,
+        "12": 3.814697265625e-06
+      },
+      "max_abs_difference": 5.7220458984375e-06,
+      "hidden_state_max_abs_value": 26.830242156982422,
+      "relative_to_state_scale": 2.1326851487057373e-07,
+      "tolerance": 0.002,
+      "bit_identical": false,
+      "passes": true,
+      "note": "Not bit-identical, and not claimed to be: standard attention reduces in a different order on the cached and the full-recompute paths.  The molecular linear-attention backends are bit-identical; this one is not, and C24 found the same on GPT-2 for text."
+    }
+  }
+}

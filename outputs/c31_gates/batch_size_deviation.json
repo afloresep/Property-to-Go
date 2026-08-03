@@ -1,0 +1,318 @@
+{
+  "what": "the k cells as first run, at the PRE-REGISTERED guidance batch size of 64",
+  "why_kept": "k = 32 at batch 64 exhausts 24 GB: GPT-2 carries a full (key, value) KV cache, so repeating it 32-fold for 64 concurrent sequences is ~9 GB before the copy the repeat itself makes.  GP-MoLFormer's linear-attention cache is a running sum and does not grow this way, which is why configs/guidance.yaml could fix batch_size = 64 for every k and C31 cannot.  The sweep was re-run at batch 16 for EVERY k so that k remains the only thing that varies.  These rows are kept so a reader can check that the deviation moved nothing: the ComputeMeter charges `active` (not-done) sequences only, so the token accounting is batch-size independent by construction, and the sampling distribution per molecule is unchanged -- only the RNG draw differs.",
+  "cells": {
+    "c31_ksweep_aromatic_rings_deployed_L12_lam1_k16": {
+      "top_k": 16,
+      "batch_size": 64,
+      "hit_rate_mean": 0.408731857469015,
+      "hit_rate_values": [
+        0.3972602739726027,
+        0.4140625,
+        0.41487279843444225
+      ],
+      "tokens_per_molecule_actual": 612.3763020833334,
+      "validity_mean": 0.9986979166666666,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_aromatic_rings_deployed_L12_lam1_k2": {
+      "top_k": 2,
+      "batch_size": 64,
+      "hit_rate_mean": 0.20833333333333334,
+      "hit_rate_values": [
+        0.193359375,
+        0.205078125,
+        0.2265625
+      ],
+      "tokens_per_molecule_actual": 130.8984375,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_aromatic_rings_deployed_L12_lam1_k4": {
+      "top_k": 4,
+      "batch_size": 64,
+      "hit_rate_mean": 0.419921875,
+      "hit_rate_values": [
+        0.41015625,
+        0.404296875,
+        0.4453125
+      ],
+      "tokens_per_molecule_actual": 198.69791666666666,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_aromatic_rings_deployed_L12_lam1_k8": {
+      "top_k": 8,
+      "batch_size": 64,
+      "hit_rate_mean": 0.4087254871983039,
+      "hit_rate_values": [
+        0.4187866927592955,
+        0.3835616438356164,
+        0.423828125
+      ],
+      "tokens_per_molecule_actual": 338.63671875,
+      "validity_mean": 0.9986979166666666,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_aromatic_rings_mid_L2_lam2_k16": {
+      "top_k": 16,
+      "batch_size": 64,
+      "hit_rate_mean": 0.741030658838878,
+      "hit_rate_values": [
+        0.735812133072407,
+        0.761252446183953,
+        0.726027397260274
+      ],
+      "tokens_per_molecule_actual": 590.9270833333334,
+      "validity_mean": 0.998046875,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_aromatic_rings_mid_L2_lam2_k2": {
+      "top_k": 2,
+      "batch_size": 64,
+      "hit_rate_mean": 0.5335662304305284,
+      "hit_rate_values": [
+        0.560546875,
+        0.482421875,
+        0.5577299412915852
+      ],
+      "tokens_per_molecule_actual": 126.490234375,
+      "validity_mean": 0.9993489583333334,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_aromatic_rings_mid_L2_lam2_k4": {
+      "top_k": 4,
+      "batch_size": 64,
+      "hit_rate_mean": 0.7286366601435095,
+      "hit_rate_values": [
+        0.7201565557729941,
+        0.7142857142857143,
+        0.7514677103718199
+      ],
+      "tokens_per_molecule_actual": 189.44661458333334,
+      "validity_mean": 0.998046875,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_aromatic_rings_mid_L2_lam2_k8": {
+      "top_k": 8,
+      "batch_size": 64,
+      "hit_rate_mean": 0.7397260273972602,
+      "hit_rate_values": [
+        0.7455968688845401,
+        0.7338551859099804,
+        0.7397260273972602
+      ],
+      "tokens_per_molecule_actual": 323.00390625,
+      "validity_mean": 0.998046875,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_deployed_L12_lam1_k16": {
+      "top_k": 16,
+      "batch_size": 64,
+      "hit_rate_mean": 0.3407177511415525,
+      "hit_rate_values": [
+        0.3203125,
+        0.359375,
+        0.3424657534246575
+      ],
+      "tokens_per_molecule_actual": 619.4375,
+      "validity_mean": 0.9993489583333334,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_deployed_L12_lam1_k2": {
+      "top_k": 2,
+      "batch_size": 64,
+      "hit_rate_mean": 0.3151041666666667,
+      "hit_rate_values": [
+        0.275390625,
+        0.357421875,
+        0.3125
+      ],
+      "tokens_per_molecule_actual": 130.931640625,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_deployed_L12_lam1_k4": {
+      "top_k": 4,
+      "batch_size": 64,
+      "hit_rate_mean": 0.3600260416666667,
+      "hit_rate_values": [
+        0.3671875,
+        0.373046875,
+        0.33984375
+      ],
+      "tokens_per_molecule_actual": 201.953125,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_deployed_L12_lam1_k8": {
+      "top_k": 8,
+      "batch_size": 64,
+      "hit_rate_mean": 0.3365885416666667,
+      "hit_rate_values": [
+        0.33984375,
+        0.318359375,
+        0.3515625
+      ],
+      "tokens_per_molecule_actual": 342.544921875,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_mid_L2_lam2_k16": {
+      "top_k": 16,
+      "batch_size": 64,
+      "hit_rate_mean": 0.5404743668300653,
+      "hit_rate_values": [
+        0.5333333333333333,
+        0.537109375,
+        0.5509803921568628
+      ],
+      "tokens_per_molecule_actual": 584.7291666666666,
+      "validity_mean": 0.9973958333333334,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_mid_L2_lam2_k2": {
+      "top_k": 2,
+      "batch_size": 64,
+      "hit_rate_mean": 0.4547213898401827,
+      "hit_rate_values": [
+        0.478515625,
+        0.43359375,
+        0.4520547945205479
+      ],
+      "tokens_per_molecule_actual": 125.755859375,
+      "validity_mean": 0.9993489583333334,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_mid_L2_lam2_k4": {
+      "top_k": 4,
+      "batch_size": 64,
+      "hit_rate_mean": 0.5609840604335341,
+      "hit_rate_values": [
+        0.5725490196078431,
+        0.583984375,
+        0.5264187866927593
+      ],
+      "tokens_per_molecule_actual": 192.3046875,
+      "validity_mean": 0.998046875,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_hbd_count_mid_L2_lam2_k8": {
+      "top_k": 8,
+      "batch_size": 64,
+      "hit_rate_mean": 0.5642493812593531,
+      "hit_rate_values": [
+        0.6046966731898239,
+        0.5411764705882353,
+        0.546875
+      ],
+      "tokens_per_molecule_actual": 327.10546875,
+      "validity_mean": 0.998046875,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_deployed_L12_lam1_k16": {
+      "top_k": 16,
+      "batch_size": 64,
+      "hit_rate_mean": 0.2358274217221135,
+      "hit_rate_values": [
+        0.255859375,
+        0.220703125,
+        0.2309197651663405
+      ],
+      "tokens_per_molecule_actual": 616.8255208333334,
+      "validity_mean": 0.9993489583333334,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_deployed_L12_lam1_k2": {
+      "top_k": 2,
+      "batch_size": 64,
+      "hit_rate_mean": 0.23307291666666666,
+      "hit_rate_values": [
+        0.251953125,
+        0.20703125,
+        0.240234375
+      ],
+      "tokens_per_molecule_actual": 132.931640625,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_deployed_L12_lam1_k4": {
+      "top_k": 4,
+      "batch_size": 64,
+      "hit_rate_mean": 0.23307291666666666,
+      "hit_rate_values": [
+        0.24609375,
+        0.216796875,
+        0.236328125
+      ],
+      "tokens_per_molecule_actual": 203.15104166666666,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_deployed_L12_lam1_k8": {
+      "top_k": 8,
+      "batch_size": 64,
+      "hit_rate_mean": 0.2085203680740267,
+      "hit_rate_values": [
+        0.23968565815324164,
+        0.2035225048923679,
+        0.18235294117647058
+      ],
+      "tokens_per_molecule_actual": 339.4921875,
+      "validity_mean": 0.99609375,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_mid_L6_lam2_k16": {
+      "top_k": 16,
+      "batch_size": 64,
+      "hit_rate_mean": 0.283761885176445,
+      "hit_rate_values": [
+        0.28431372549019607,
+        0.27734375,
+        0.2896281800391389
+      ],
+      "tokens_per_molecule_actual": 621.4186197916666,
+      "validity_mean": 0.998046875,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_mid_L6_lam2_k2": {
+      "top_k": 2,
+      "batch_size": 64,
+      "hit_rate_mean": 0.29447340794194393,
+      "hit_rate_values": [
+        0.283203125,
+        0.3111545988258317,
+        0.2890625
+      ],
+      "tokens_per_molecule_actual": 129.48828125,
+      "validity_mean": 0.9993489583333334,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_mid_L6_lam2_k4": {
+      "top_k": 4,
+      "batch_size": 64,
+      "hit_rate_mean": 0.32421875,
+      "hit_rate_values": [
+        0.3359375,
+        0.328125,
+        0.30859375
+      ],
+      "tokens_per_molecule_actual": 200.99609375,
+      "validity_mean": 1.0,
+      "cost_identity_max_residual": 0
+    },
+    "c31_ksweep_qed_mid_L6_lam2_k8": {
+      "top_k": 8,
+      "batch_size": 64,
+      "hit_rate_mean": 0.31899634700392926,
+      "hit_rate_values": [
+        0.32612966601178783,
+        0.314453125,
+        0.31640625
+      ],
+      "tokens_per_molecule_actual": 337.34765625,
+      "validity_mean": 0.998046875,
+      "cost_identity_max_residual": 0
+    }
+  }
+}

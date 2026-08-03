@@ -1,0 +1,216 @@
+{
+  "c31_config": {
+    "name": "c31_zinc50k",
+    "model_repo": "entropy/gpt2_zinc_87m",
+    "model_revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+    "tokenizer_repo": "entropy/gpt2_zinc_87m",
+    "tokenizer_revision": "f42a5a10e24c0350aeadb50865bd90a714d0b2bf",
+    "trust_remote_code": false,
+    "dtype": "float32",
+    "device": "cuda",
+    "clean_up_tokenization_spaces": false,
+    "base_policy": {
+      "do_sample": true,
+      "temperature": 1.0,
+      "top_k": null,
+      "top_p": null,
+      "max_length": 256,
+      "batch_size": 256,
+      "seed": 20260729
+    },
+    "n_trajectories": 50000,
+    "min_content_tokens": 8,
+    "prefixes_per_trajectory": 4,
+    "split_fractions": {
+      "train": 0.8,
+      "val": 0.1,
+      "test": 0.1
+    },
+    "split_seed": 11,
+    "prefix_seed": 12,
+    "head": {
+      "hidden_dim": 256,
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.01,
+      "batch_size": 512,
+      "max_epochs": 60,
+      "patience": 8,
+      "seed": 1234
+    },
+    "head_seeds": [
+      1234,
+      2345,
+      3456
+    ],
+    "probe_points": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "mid_probe_point_candidates": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "binning": {
+      "aromatic_rings_max": 5,
+      "hbd_count_max": 6,
+      "qed_n_bins": 20
+    },
+    "target_interval_rule": {
+      "aromatic_rings": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "hbd_count": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "qed": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      }
+    },
+    "eps": 1e-06,
+    "candidate_backend": "cached",
+    "window_quantiles": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "guidance_batch_size": 16,
+    "guidance_batch_size_preregistered": 64,
+    "n_molecules_per_condition": 512,
+    "generation_seeds": [
+      101,
+      202,
+      303
+    ],
+    "k_grid": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "arms": {
+      "deployed": {
+        "probe_point": 12,
+        "lam": 1.0
+      },
+      "mid": {
+        "probe_point": null,
+        "lam": 2.0
+      }
+    },
+    "best_of_n_grid": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      12,
+      16,
+      24,
+      32
+    ],
+    "best_of_n_pool_depth": 32,
+    "best_of_n_molecules": 512
+  },
+  "cli": {
+    "properties": null,
+    "seeds": null,
+    "grid": null,
+    "n_molecules": null,
+    "state_batch_size": 128,
+    "force": false
+  },
+  "head": {
+    "resolved_from": [
+      "c31_ksweep_qed_deployed_L12_lam1_k2",
+      "c31_ksweep_qed_deployed_L12_lam1_k4",
+      "c31_ksweep_qed_deployed_L12_lam1_k8",
+      "c31_ksweep_qed_deployed_L12_lam1_k16",
+      "c31_ksweep_qed_deployed_L12_lam1_k32"
+    ],
+    "n_cells_agreeing": 5,
+    "head_checkpoint_name": "head_qed_L12_seed1234.pt",
+    "head_file": "/home/afloresep/Property-to-Go/outputs/c31_heads/head_qed_L12_seed1234.pt",
+    "head_input": "frozen_state",
+    "head_seed": 1234,
+    "probe_point": 12,
+    "layer": 12,
+    "deployed_lambda": 1.0,
+    "target_interval_in_c31_cell": {
+      "lo": 0.8503003461731068,
+      "hi": 0.8968197023725694,
+      "base_rate": 0.10000801667468334
+    },
+    "head_file_sha256": "290630bf62e84d749cdf9790d01051668f7ed8293d14f9d68b33530eebc57247",
+    "head_parameter_sha256": "871d0c4c056f64a07e1ce2a46cec8163caa87df6310b1b1fac4f1b2b57f82203",
+    "head_file_bytes": 1081576,
+    "checkpoint_property": "qed",
+    "checkpoint_input": "frozen_state",
+    "checkpoint_head_seed": 1234,
+    "in_dim": 768,
+    "hidden_dim": 256,
+    "n_bins": 20,
+    "dropout": 0.1,
+    "binner_kind": "quantile",
+    "interval_mask_n_bins_selected": 2,
+    "target_interval_used": {
+      "lo": 0.8503003461731068,
+      "hi": 0.8968197023725694,
+      "base_rate": 0.10000801667468334
+    },
+    "target_interval_matches_c31_cell": true,
+    "metadata_consistent": true,
+    "c31_depth_test_target_auroc_mean_over_head_seeds": 0.7292294338940278,
+    "c31_depth_test_target_auroc": 0.7283712436614294,
+    "c31_depth_head_input_dim": 768
+  },
+  "frozen_inputs": {
+    "target_intervals_file": "outputs/c31_zinc50k/target_intervals.json",
+    "target_intervals_sha256": "221fda9d26aaf09d567dfeeff7ff98f5c0b761defaa3bae1fd5bc4bbc37dd01d",
+    "windows_file": "outputs/c31_zinc50k/windows.json",
+    "windows_sha256": "c97a8394953ed18a380ebf999055c7ace3e000e0ec43ab9d0a2ad4243a49d769",
+    "windows": {
+      "t33": 12,
+      "t67": 23,
+      "source": "pooled generated-position distribution of the base model",
+      "early": [
+        1,
+        12
+      ],
+      "middle": [
+        12,
+        23
+      ],
+      "late": [
+        23,
+        null
+      ]
+    }
+  }
+}

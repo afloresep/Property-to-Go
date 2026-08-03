@@ -1,0 +1,156 @@
+# C31 -- the second frozen generator.
+#
+# This file is ADDITIVE.  It does not touch configs/model.yaml, configs/base_policy.yaml,
+# configs/guidance.yaml or configs/pilot_50k.yaml, so no molecular number can move.
+# Every value below that has a molecular counterpart is TRANSCRIBED from it, and the
+# transcription source is named on the line, so "the only thing that changed is the
+# generator" is a checkable statement rather than a claim.
+
+name: c31_zinc50k
+
+# ---------------------------------------------------------------- the frozen generator
+#
+# entropy/gpt2_zinc_87m.  GPT-2 architecture (full softmax attention) trained on ~480M
+# ZINC SMILES with its own byte-level BPE tokenizer.  Genuinely different from
+# GP-MoLFormer-Uniq (46.8M params, linear attention, atom-level vocabulary) in
+# architecture, size, training corpus and tokenisation -- which is the point.
+#
+# SMILES.  Not SAFE, not SELFIES.  The project brief forbids alternative molecular
+# serializations without the owner's explicit permission and that permission has not
+# been given, so datamol-io/safe-gpt, nvidia/NV-GenMol-89M-v1 and every SELFIES model
+# are excluded.
+model_repo: entropy/gpt2_zinc_87m
+model_revision: f42a5a10e24c0350aeadb50865bd90a714d0b2bf
+tokenizer_repo: entropy/gpt2_zinc_87m
+tokenizer_revision: f42a5a10e24c0350aeadb50865bd90a714d0b2bf
+
+# The repository ships one revision; the SHA above is the resolved commit of `main` at
+# 2026-08-03 and is pinned exactly as configs/model.yaml pins GP-MoLFormer.
+trust_remote_code: false
+
+# float32, for the same reason configs/model.yaml gives: the cached-vs-full candidate
+# backend agreement is a NUMERICAL claim and the whole compute accounting rests on it,
+# so reduced precision is not a free change.
+dtype: float32
+device: cuda
+
+# The tokenizer is a GPT2TokenizerFast over a 2707-token BPE vocabulary.
+# `clean_up_tokenization_spaces` is pinned to false rather than left to the library
+# default, which transformers 4.44 warns is about to flip: a decode rule that changes
+# under us would silently change every SMILES string.
+clean_up_tokenization_spaces: false
+
+# ------------------------------------------------------------------- the base policy
+#
+# Transcribed from configs/base_policy.yaml, with ONE change, named here:
+#   max_length 202 -> 256, because 202 is GP-MoLFormer's max_position_embeddings and
+#   256 is this model's (config.n_positions).  Keeping 202 would truncate this
+#   generator against its own context rather than at its own natural stopping point,
+#   and a truncation boundary is exactly the degenerate lever section 21 warns about.
+base_policy:
+  do_sample: true
+  temperature: 1.0
+  top_k: null # full-vocabulary sampling, as configs/base_policy.yaml
+  top_p: null
+  max_length: 256 # == config.n_positions of entropy/gpt2_zinc_87m
+  batch_size: 256 # configs/base_policy.yaml
+  seed: 20260729 # configs/base_policy.yaml
+
+# ----------------------------------------------------------------------- the dataset
+#
+# Every field transcribed from configs/pilot_50k.yaml.
+n_trajectories: 50000
+min_content_tokens: 8
+prefixes_per_trajectory: 4
+split_fractions: {train: 0.8, val: 0.1, test: 0.1}
+split_seed: 11
+prefix_seed: 12
+
+# ------------------------------------------------------------------------- the probe
+#
+# Transcribed from configs/pilot_50k.yaml `head`, unchanged.  `seed` is the default;
+# C31 trains at three head seeds and overrides it per head.
+head:
+  hidden_dim: 256
+  dropout: 0.1
+  lr: 0.001
+  weight_decay: 0.01
+  batch_size: 512
+  max_epochs: 60
+  patience: 8
+  seed: 1234
+
+head_seeds: [1234, 2345, 3456]
+
+# Probe points 0..12.  Index 0 is the embedding output, 1..12 the twelve transformer
+# blocks -- structurally the same 13 probe points GP-MoLFormer exposes, which is a
+# convenience worth recording rather than a design choice.
+probe_points: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+# The mid-network probe point is SELECTED BY PREDICTION, in advance, by the rule in
+# C31.0.4 -- never by steering outcome.  Candidates exclude probe point 0 (embedding
+# output, no contextual computation) and probe point 12 (the deployed point).
+mid_probe_point_candidates: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+# ---------------------------------------------------------------------- the binning
+#
+# Transcribed from configs/pilot_50k.yaml `binning`.
+binning:
+  aromatic_rings_max: 5
+  hbd_count_max: 6
+  qed_n_bins: 20
+
+# ---------------------------------------------------------------- target intervals
+#
+# The UNIFORM quantile rule of configs/guidance.yaml, applied by the identical code
+# path (`binning.resolve_target_interval`):
+#   count      -> quantile_value at q = 0.90, i.e. [v, v+1) for v = round(quantile(0.90))
+#   continuous -> quantile_band [0.85, 0.95), base rate 0.10 by construction
+#
+# aromatic_rings differs from configs/guidance.yaml, which freezes `exact_value 3` --
+# a value hand-picked from GP-MoLFormer's distribution and therefore not portable.
+# configs/guidance.yaml itself records that `quantile_value q=0.90` applied to aromatic
+# rings on GP-MoLFormer "would also have returned 3", so the uniform rule agrees with
+# the pilot's frozen value on the molecular model and is the rule that transfers.
+target_interval_rule:
+  aromatic_rings: {kind: quantile_value, q: 0.90}
+  hbd_count: {kind: quantile_value, q: 0.90}
+  qed: {kind: quantile_band, lo: 0.85, hi: 0.95}
+
+# ------------------------------------------------------------------------- guidance
+#
+# Transcribed from configs/guidance.yaml.
+eps: 1.0e-6
+candidate_backend: cached
+window_quantiles: [0.3333333333333333, 0.6666666666666666]
+# DEVIATION from C31.0.2, which transcribed configs/guidance.yaml's batch_size = 64.
+# k = 32 at batch 64 exhausts 24 GB: GPT-2 carries a full (key, value) KV cache, so
+# repeating it 32-fold across 64 concurrent sequences is ~9 GB before the copy the repeat
+# itself makes.  GP-MoLFormer's linear-attention cache is a running sum and does not grow
+# this way, which is why the molecular config could fix one batch size for every k.
+# 16 is used for EVERY cell, so k remains the only thing that varies across the sweep.
+# The deviation is REPORTED, not amended away (C31.0.10), and it is accounting-neutral:
+# `ComputeMeter` charges `active` (not-done) sequences only, so processed tokens do not
+# depend on batch size, and the per-molecule sampling distribution is unchanged -- only
+# the RNG draw differs.  Evidence: outputs/c31_gates/batch_size_deviation.json holds the
+# batch-64 numbers for the 24 cells that completed before the OOM.
+guidance_batch_size: 16
+guidance_batch_size_preregistered: 64
+n_molecules_per_condition: 512
+generation_seeds: [101, 202, 303]
+
+# C28's grid, unchanged.  k = 1 is excluded for C28's reason: one candidate makes the
+# softmax degenerate and the property term cannot act.
+k_grid: [2, 4, 8, 16, 32]
+
+# The two families that produce winners on GP-MoLFormer (C28 strands A1/C1 and A3/C2).
+arms:
+  deployed: {probe_point: 12, lam: 1.0}
+  mid: {probe_point: null, lam: 2.0} # probe point resolved by the C31.0.4 rule
+
+# ------------------------------------------------------------------------ best-of-N
+#
+# C26's grid and C26's estimator (all disjoint consecutive groups of N over one pool).
+best_of_n_grid: [1, 2, 3, 4, 6, 8, 9, 12, 16, 24, 32]
+best_of_n_pool_depth: 32
+best_of_n_molecules: 512

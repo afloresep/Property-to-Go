@@ -1,0 +1,69 @@
+{
+  "gate": "G1",
+  "rule": "C29 seed-1234 checkpoint identical to C28's, tensor by tensor, max abs diff exactly 0.0",
+  "families": {
+    "hbd_count_L12": {
+      "c28_checkpoint": "pilot_50k_heads_p2/head_hbd_count_frozen_state.pt",
+      "c29_checkpoint": "c29_heads/head_hbd_count_last1_L12_seed1234.pt",
+      "checked": true,
+      "n_tensors": 8,
+      "same_keys": true,
+      "max_abs_diff_per_tensor": {
+        "mean": 0.0,
+        "net.0.bias": 0.0,
+        "net.0.weight": 0.0,
+        "net.3.bias": 0.0,
+        "net.3.weight": 0.0,
+        "net.6.bias": 0.0,
+        "net.6.weight": 0.0,
+        "scale": 0.0
+      },
+      "max_abs_diff": 0.0,
+      "binner_edges_identical": true,
+      "passes": true
+    },
+    "hbd_count_L4": {
+      "c28_checkpoint": "c17_probe_layers/head_hbd_count_frozen_state_L4.pt",
+      "c29_checkpoint": "c29_heads/head_hbd_count_last1_L4_seed1234.pt",
+      "checked": true,
+      "n_tensors": 8,
+      "same_keys": true,
+      "max_abs_diff_per_tensor": {
+        "mean": 0.0,
+        "net.0.bias": 0.0,
+        "net.0.weight": 0.0,
+        "net.3.bias": 0.0,
+        "net.3.weight": 0.0,
+        "net.6.bias": 0.0,
+        "net.6.weight": 0.0,
+        "scale": 0.0
+      },
+      "max_abs_diff": 0.0,
+      "binner_edges_identical": true,
+      "passes": true
+    },
+    "aromatic_rings_L3": {
+      "c28_checkpoint": "c17_probe_layers/head_aromatic_rings_frozen_state_L3.pt",
+      "c29_checkpoint": "c29_heads/head_aromatic_rings_last1_L3_seed1234.pt",
+      "checked": true,
+      "n_tensors": 8,
+      "same_keys": true,
+      "max_abs_diff_per_tensor": {
+        "mean": 0.0,
+        "net.0.bias": 0.0,
+        "net.0.weight": 0.0,
+        "net.3.bias": 0.0,
+        "net.3.weight": 0.0,
+        "net.6.bias": 0.0,
+        "net.6.weight": 0.0,
+        "scale": 0.0
+      },
+      "max_abs_diff": 0.0,
+      "binner_edges_identical": true,
+      "passes": true
+    }
+  },
+  "n_families_checked": 3,
+  "max_abs_diff_over_all_families": 0.0,
+  "passes": true
+}

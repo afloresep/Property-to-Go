@@ -1,0 +1,49 @@
+{
+  "gate": "G3",
+  "rule": "one cell decoded under both backends: |delta hit rate| <= 0.05 and |delta tokens per molecule under full-recompute accounting| / value <= 0.02 (C31.0.3 G3).  Reported as a residual; does not block.",
+  "cell": {
+    "property": "hbd_count",
+    "probe_point": 12,
+    "lam": 1.0,
+    "k": 8,
+    "seed": 101,
+    "n_molecules": 512
+  },
+  "cached": {
+    "hit_rate": 0.333984375,
+    "validity": 1.0,
+    "uniqueness": 1.0,
+    "content_length_mean": 37.005859375
+  },
+  "full": {
+    "hit_rate": 0.333984375,
+    "validity": 1.0,
+    "uniqueness": 1.0,
+    "content_length_mean": 37.005859375
+  },
+  "cached_compute": {
+    "processed_tokens_actual": 175131,
+    "processed_tokens_full_recompute": 3301123,
+    "forward_calls": 3332,
+    "wall_seconds": 15.949615338817239,
+    "molecules_returned": 512,
+    "tokens_per_molecule_actual": 342.052734375,
+    "tokens_per_molecule_full_recompute": 6447.505859375
+  },
+  "full_compute": {
+    "processed_tokens_actual": 3301123,
+    "processed_tokens_full_recompute": 3301123,
+    "forward_calls": 3332,
+    "wall_seconds": 81.66748111601919,
+    "molecules_returned": 512,
+    "tokens_per_molecule_actual": 6447.505859375,
+    "tokens_per_molecule_full_recompute": 6447.505859375
+  },
+  "hit_rate_residual": 0.0,
+  "hit_rate_tolerance": 0.05,
+  "token_full_recompute_relative_residual": 0.0,
+  "token_relative_tolerance": 0.02,
+  "binomial_two_se_at_n": 0.04419417382415922,
+  "passes": true,
+  "note": "Exact equality is NOT required and is not claimed: G1 shows the two paths differ at ~1e-3 in the candidate state, so a sampled trajectory can diverge.  The `actual` token counts differ BY DESIGN -- that is what the two accounting rules measure -- so the comparison is made under the full-recompute rule, which both backends should agree on."
+}

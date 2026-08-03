@@ -1,0 +1,66 @@
+{
+  "gate": "G1",
+  "rule": "run_ksweep_cell, imported from C31 and redirected to a fresh C32 directory, reproduces its C31 counterpart exactly: hit-rate residual 0.0 and token residual 0.0 per generation seed, molecules identical",
+  "cells": {
+    "hbd_count_deployed_l1_k2": {
+      "checked": true,
+      "c31_dir": "c31_ksweep_hbd_count_deployed_L12_lam1_k2",
+      "c32_dir": "c32_gate_hbd_count_deployed_l1_L12_lam1_k2",
+      "probe_point": 12,
+      "lam": 1.0,
+      "k": 2,
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    },
+    "aromatic_rings_mid_l2_k2": {
+      "checked": true,
+      "c31_dir": "c31_ksweep_aromatic_rings_mid_L2_lam2_k2",
+      "c32_dir": "c32_gate_aromatic_rings_mid_l2_L2_lam2_k2",
+      "probe_point": 2,
+      "lam": 2.0,
+      "k": 2,
+      "per_seed": {
+        "101": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "202": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        },
+        "303": {
+          "hit_rate_residual": 0.0,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_rate_residual": 0.0,
+      "max_abs_token_residual": 0.0,
+      "molecules_identical": 1536,
+      "molecules_total": 1536,
+      "molecules_all_identical": true,
+      "passes": true
+    }
+  },
+  "n_cells_checked": 2,
+  "max_abs_hit_rate_residual": 0.0,
+  "max_abs_token_residual": 0.0,
+  "passes": true
+}
