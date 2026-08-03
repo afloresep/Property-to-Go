@@ -51,6 +51,35 @@ def test_a_count_one_above_the_target_is_not_a_zero_distance_tie():
     assert bestofn.selection_key(3, 3.0, 4.0) < bestofn.selection_key(2, 3.0, 4.0)
 
 
+def test_every_discrete_property_is_declared_integer_valued():
+    """docs/HANDOFF.md §4: an integer property missing from INTEGER_PROPERTIES silently
+    reintroduces the boundary-selection bug -- best-of-N ranks a value sitting on `hi`
+    as a tie with a real hit, and the only symptom is a hit rate below its own binomial
+    prediction. Derived from DISCRETE_PROPERTIES rather than restated, so adding a
+    count property and forgetting the declaration fails here instead of in a result.
+    """
+    from property_to_go import properties as P
+
+    missing = set(P.DISCRETE_PROPERTIES) - set(bestofn.INTEGER_PROPERTIES)
+    assert not missing, f"integer-valued but not declared in INTEGER_PROPERTIES: {missing}"
+    spurious = set(bestofn.INTEGER_PROPERTIES) - set(P.DISCRETE_PROPERTIES)
+    assert not spurious, f"declared integer-valued but not a count property: {spurious}"
+
+
+def test_the_boundary_bug_is_guarded_for_each_count_property():
+    """The §4 regression, exercised at each count property's own target width."""
+    from property_to_go import properties as P
+
+    for prop in sorted(P.DISCRETE_PROPERTIES):
+        lo, hi = 2.0, 3.0  # any one-unit count target
+        assert bestofn.target_distance(hi, lo, hi) == 0.0, "the underlying subtlety"
+        assert not bestofn.in_target(hi, lo, hi)
+        assert bestofn.selection_key(lo, lo, hi) < bestofn.selection_key(hi, lo, hi)
+        assert bestofn.target_error(
+            hi, lo, hi, integer_valued=prop in bestofn.INTEGER_PROPERTIES
+        ) == pytest.approx(1.0), f"{prop}: one step out must not score as zero error"
+
+
 def test_target_error_measures_to_the_attainable_value_for_counts():
     """Reporting 0 error for a molecule that missed the target is wrong."""
     assert bestofn.target_error(4, 3.0, 4.0, integer_valued=True) == pytest.approx(1.0)

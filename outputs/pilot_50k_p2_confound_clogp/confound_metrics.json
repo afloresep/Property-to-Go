@@ -1,0 +1,188 @@
+{
+  "dataset": "pilot_50k_p2",
+  "property": "clogp",
+  "target_interval": {
+    "lo": 4.172676000000004,
+    "hi": 5.038300000000004,
+    "base_rate": 0.09999397868454328
+  },
+  "length_bin_tokens": 5,
+  "size_bin_heavy_atoms": 3,
+  "note": "Standardised onto the unguided stratum distribution. 'coverage' is the share of unguided mass in strata the condition actually visited.",
+  "conditions": {
+    "unguided": {
+      "n_molecules": 1536,
+      "length_mean": 42.170045781556574,
+      "heavy_atoms_mean": 25.51013734466972,
+      "raw": {
+        "hit_rate": 0.10333551340745585,
+        "coverage": 1.0,
+        "n_strata": 1,
+        "delta_vs_unguided": 0.0
+      },
+      "length": {
+        "hit_rate": 0.10333551340745585,
+        "coverage": 1.0,
+        "n_strata": 21,
+        "delta_vs_unguided": 0.0
+      },
+      "size": {
+        "hit_rate": 0.10333551340745585,
+        "coverage": 1.0,
+        "n_strata": 21,
+        "delta_vs_unguided": 0.0
+      },
+      "joint": {
+        "hit_rate": 0.10333551340745585,
+        "coverage": 1.0,
+        "n_strata": 64,
+        "delta_vs_unguided": 0.0
+      }
+    },
+    "throughout": {
+      "n_molecules": 1536,
+      "length_mean": 43.50261780104712,
+      "heavy_atoms_mean": 26.566099476439792,
+      "raw": {
+        "hit_rate": 0.3030104712041885,
+        "coverage": 1.0,
+        "n_strata": 1,
+        "delta_vs_unguided": 0.19967495779673267
+      },
+      "length": {
+        "hit_rate": 0.2948122898373131,
+        "coverage": 0.9973839110529757,
+        "n_strata": 23,
+        "delta_vs_unguided": 0.19147677642985728
+      },
+      "size": {
+        "hit_rate": 0.2908664475767284,
+        "coverage": 0.9960758665794637,
+        "n_strata": 21,
+        "delta_vs_unguided": 0.18753093416927258
+      },
+      "joint": {
+        "hit_rate": 0.2931864220900948,
+        "coverage": 0.9862655330281229,
+        "n_strata": 62,
+        "delta_vs_unguided": 0.18985090868263899
+      }
+    },
+    "early": {
+      "n_molecules": 1536,
+      "length_mean": 43.49281984334203,
+      "heavy_atoms_mean": 26.25,
+      "raw": {
+        "hit_rate": 0.1475195822454308,
+        "coverage": 1.0,
+        "n_strata": 1,
+        "delta_vs_unguided": 0.044184068837974946
+      },
+      "length": {
+        "hit_rate": 0.14307261753460246,
+        "coverage": 0.999345977763244,
+        "n_strata": 23,
+        "delta_vs_unguided": 0.03973710412714661
+      },
+      "size": {
+        "hit_rate": 0.14125445234241898,
+        "coverage": 0.9973839110529757,
+        "n_strata": 22,
+        "delta_vs_unguided": 0.037918938934963134
+      },
+      "joint": {
+        "hit_rate": 0.1446758216981872,
+        "coverage": 0.9856115107913669,
+        "n_strata": 71,
+        "delta_vs_unguided": 0.04134030829073136
+      }
+    },
+    "middle": {
+      "n_molecules": 1536,
+      "length_mean": 42.9790712884238,
+      "heavy_atoms_mean": 26.08436886854153,
+      "raw": {
+        "hit_rate": 0.15042511445389142,
+        "coverage": 1.0,
+        "n_strata": 1,
+        "delta_vs_unguided": 0.04708960104643557
+      },
+      "length": {
+        "hit_rate": 0.14767494225133762,
+        "coverage": 0.9980379332897319,
+        "n_strata": 20,
+        "delta_vs_unguided": 0.04433942884388177
+      },
+      "size": {
+        "hit_rate": 0.14755125720134982,
+        "coverage": 0.9954218443427076,
+        "n_strata": 20,
+        "delta_vs_unguided": 0.044215743793893966
+      },
+      "joint": {
+        "hit_rate": 0.14578307796704773,
+        "coverage": 0.9843034663178548,
+        "n_strata": 61,
+        "delta_vs_unguided": 0.04244756455959188
+      }
+    },
+    "late": {
+      "n_molecules": 1536,
+      "length_mean": 43.028067885117494,
+      "heavy_atoms_mean": 26.00195822454308,
+      "raw": {
+        "hit_rate": 0.1514360313315927,
+        "coverage": 1.0,
+        "n_strata": 1,
+        "delta_vs_unguided": 0.048100517924136846
+      },
+      "length": {
+        "hit_rate": 0.1472324026363544,
+        "coverage": 0.9960758665794637,
+        "n_strata": 23,
+        "delta_vs_unguided": 0.04389688922889855
+      },
+      "size": {
+        "hit_rate": 0.14333078427354123,
+        "coverage": 0.9986919555264879,
+        "n_strata": 23,
+        "delta_vs_unguided": 0.03999527086608538
+      },
+      "joint": {
+        "hit_rate": 0.14370276839141208,
+        "coverage": 0.9895356442119032,
+        "n_strata": 69,
+        "delta_vs_unguided": 0.04036725498395623
+      }
+    },
+    "truncation_control": {
+      "n_molecules": 1536,
+      "length_mean": 42.726322664924886,
+      "heavy_atoms_mean": 25.784454604833442,
+      "raw": {
+        "hit_rate": 0.1038536903984324,
+        "coverage": 1.0,
+        "n_strata": 1,
+        "delta_vs_unguided": 0.000518176990976546
+      },
+      "length": {
+        "hit_rate": 0.10386104321924847,
+        "coverage": 0.9967298888162197,
+        "n_strata": 21,
+        "delta_vs_unguided": 0.000525529811792616
+      },
+      "size": {
+        "hit_rate": 0.1029510087258692,
+        "coverage": 0.9986919555264879,
+        "n_strata": 23,
+        "delta_vs_unguided": -0.00038450468158665596
+      },
+      "joint": {
+        "hit_rate": 0.1091479981155161,
+        "coverage": 0.9829954218443427,
+        "n_strata": 59,
+        "delta_vs_unguided": 0.005812484708060256
+      }
+    }
+  }
+}

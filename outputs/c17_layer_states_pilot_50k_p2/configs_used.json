@@ -1,0 +1,13 @@
+{
+  "model": {
+    "model_repo": "ibm-research/GP-MoLFormer-Uniq",
+    "model_revision": "6eca879581e2302b4e1ab07bb02908636bddb4a2",
+    "tokenizer_repo": "ibm-research/MoLFormer-XL-both-10pct",
+    "tokenizer_revision": "361063d0ad524ef77cf39b08469f6be770dc550f",
+    "trust_remote_code": true,
+    "deterministic_eval": true,
+    "dtype": "float32",
+    "device": "cuda",
+    "torch_num_threads": 10
+  }
+}

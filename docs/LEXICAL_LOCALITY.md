@@ -1,8 +1,27 @@
 # The lexical-locality hypothesis, and the experiment that tests it head-free
 
-Written 2026-07-30. **Not yet tested.** This document states a hypothesis, an
-operationalisation, and a pre-registered prediction, so that the analysis is fixed before
-the data exists.
+Written 2026-07-30. This document states a hypothesis, an operationalisation, and a
+pre-registered prediction, so that the analysis is fixed before the data exists.
+
+> **STATUS: TESTED 2026-07-30.** Results are in `reports/pilot_report.md` §15–17. This
+> document is **left as written** apart from §3.1, which was added before any headroom
+> number was computed, and this banner. Nothing below has been adjusted to match the
+> outcome — that is the whole point of it existing.
+>
+> Summary of how it did, so a reader is not misled by the confident tone below:
+> **P1 fails in the units this document chose** (Spearman rho = −0.886 against the
+> predicted ordering, because normalising headroom by target-interval width largely
+> measures 1/width — rho = +0.698 against inverse width). **P2 fails, in the opposite
+> direction from the prediction**: the diffuse properties' headroom *rises* with position
+> rather than declining, and §2's account of why cLogP is unsteerable late is contradicted
+> by direct measurement. **§6's discriminating case succeeds**: HBD count, SLIM's hardest
+> property under additive latent steering, is among the most steerable by token choice.
+> **P5 was not testable** without the λ sweep.
+>
+> The measurement this document proposed turned out to be worth more than the hypothesis
+> it was designed to test. Headroom shows there is a large one-step lever at every position
+> for every property, and that the deployed rule captures 5–11% of it — which answers the
+> question the pilot could not answer, independently of whether locality explains anything.
 
 Origin: a reviewer proposed this as the *alternative* explanation for our
 predictability/controllability dissociation. It is a better hypothesis than ours, so we
@@ -90,6 +109,73 @@ relative_headroom = headroom / (hi - lo)
 Prediction: `relative_headroom` for aromatic rings should be near or above 1 at most
 positions (one token = one ring = one interval width), and well below 1 for cLogP,
 declining with position.
+
+### 3.1 Estimator details, fixed before any headroom number was computed
+
+Added 2026-07-30, **before running `scripts/11_steering_headroom.py`**. These are
+estimator choices, not changes to P1–P6. They are recorded here rather than decided
+during analysis because two of them could otherwise be tuned into the predicted answer.
+
+**The finite-sample bias, and the correction.** `mu(a_i)` is a mean over `K` rollouts,
+so `max_i mu - min_i mu` over `k` noisy means is **biased upward**: `k` candidates with
+identical true means still show a positive spread. Worse, the bias grows with rollout
+variance, and rollout variance is larger for exactly the diffuse properties the
+hypothesis says should score *low*. Uncorrected headroom would therefore manufacture
+part of the predicted ordering out of noise — in the wrong direction, but by an amount
+we could not bound.
+
+So a **permutation null** is computed alongside every headroom estimate: pool a
+prefix's `k × K` rollout values, repartition them at random into groups of the observed
+per-candidate sizes, and recompute the spread. That is the spread expected if all `k`
+candidates had the same true mean. Define
+
+```
+headroom_excess = headroom_raw - headroom_null
+```
+
+Both are reported. **`relative_headroom_excess` is the primary locality score.**
+`tests/test_headroom.py::test_the_null_removes_the_finite_sample_bias` constructs two
+synthetic properties with identical (zero) true headroom and very different rollout
+variance, and asserts that the raw statistic ranks them 10× apart while the corrected
+one does not.
+
+**The primary steerability score** is the pilot's own effect size, so phase 2 is
+measured on the axis phase 1 already reported: `throughout` hit rate minus `unguided`
+hit rate, averaged over the three guidance seeds. Reported alongside, because the count
+properties' base rates are set by the `q = 0.90` rule rather than matched to each other:
+
+* `fraction_of_room_captured = lift / (1 - unguided)`, the share of the available room
+  above the base rate that guidance closed;
+* the lift measured against `truncation_control` rather than `unguided`, which is the
+  control that isolates the property term from the top-8 restriction.
+
+**Capture of headroom** (C7) is computed in probability units at a single position, so
+that "achieved" and "ceiling" are the same kind of quantity:
+
+```
+base      = sum_i w_base(a_i)   * p(a_i)      base policy restricted to the top-k
+guided    = sum_i w_guided(a_i) * p(a_i)      the rule the pilot actually ran
+ceiling   = max_i p(a_i)
+captured  = (guided - base) / (ceiling - base)
+```
+
+`w_base` is the renormalised base policy over the top-`k` — **not** the unrestricted
+base policy, because that would fold the top-8 truncation effect into the answer, which
+is the confound `truncation_control` exists to remove. `w_guided` is
+`softmax(log p_base + lambda log(q + eps))` over the same candidates, i.e. literally
+what `guidance.guided_sample` samples from, with `q` from the trained head. Aggregated
+as `sum(achieved) / sum(available)` rather than as a mean of per-prefix ratios, because
+`available` is near zero at many prefixes where the ratio is numerically meaningless
+but would carry equal weight.
+
+Note the asymmetry, which is the point: **`ceiling` is head-free and lambda-free;
+only `achieved` involves the head.** So a small `captured` with a large `available` is
+evidence against our head, while a small `available` is evidence against the method at
+that position, whatever head it used.
+
+**Sample.** The headroom prefixes are drawn with a different seed (7777) from the Phase
+4 rollout bank's (4242), so headroom and the predictability curve are independent
+samples of held-out prefixes rather than two views of the same 800.
 
 ## 4. Pre-registered predictions
 

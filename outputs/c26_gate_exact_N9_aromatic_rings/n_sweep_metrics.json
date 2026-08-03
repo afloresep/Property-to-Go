@@ -1,0 +1,161 @@
+{
+  "dataset": "pilot_50k_p2",
+  "property": "aromatic_rings",
+  "target_interval": {
+    "lo": 3.0,
+    "hi": 4.0,
+    "rule": {
+      "kind": "exact_value",
+      "value": 3
+    },
+    "base_rate": 0.1713867089496819
+  },
+  "mode": "exact_gate",
+  "n_max": 9,
+  "n_molecules_per_seed": 512,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "grid": [
+    9
+  ],
+  "accounting": "actual",
+  "nesting_note": "consecutive groups of N, reproducing scripts/06_best_of_n.py's grouping",
+  "curve": {
+    "9": {
+      "n_candidates": 9,
+      "hit_rate_mean": 0.8294270833333334,
+      "hit_rate_values": [
+        0.80859375,
+        0.830078125,
+        0.849609375
+      ],
+      "hit_rate_sd": 0.020515561532016578,
+      "tokens_per_molecule_actual": 399.916015625,
+      "validity_mean": 1.0,
+      "uniqueness_mean": 1.0
+    }
+  },
+  "per_seed": {
+    "101": {
+      "pool_seed": 101000,
+      "rows": {
+        "9": {
+          "n": 512,
+          "n_valid": 512,
+          "n_scored": 512,
+          "validity": 1.0,
+          "uniqueness": 1.0,
+          "hit_rate": 0.80859375,
+          "hit_rate_over_all_returned": 0.80859375,
+          "abs_target_error_mean": 0.193359375,
+          "abs_target_error_median": 0.0,
+          "aromatic_rings_mean": 2.955078125,
+          "aromatic_rings_std": 0.4418683629164735,
+          "aromatic_rings_quantiles": {
+            "0.05": 2.0,
+            "0.25": 3.0,
+            "0.5": 3.0,
+            "0.75": 3.0,
+            "0.95": 4.0
+          },
+          "compute": {
+            "processed_tokens_actual": 205360,
+            "molecules_returned": 512,
+            "tokens_per_molecule_actual": 401.09375
+          }
+        }
+      },
+      "pool_compute": {
+        "processed_tokens_actual": 205360,
+        "processed_tokens_full_recompute": 205360,
+        "forward_calls": 4608,
+        "wall_seconds": 45.25593436602503,
+        "molecules_returned": 4608,
+        "tokens_per_molecule_actual": 44.56597222222222,
+        "tokens_per_molecule_full_recompute": 44.56597222222222
+      }
+    },
+    "202": {
+      "pool_seed": 202000,
+      "rows": {
+        "9": {
+          "n": 512,
+          "n_valid": 512,
+          "n_scored": 512,
+          "validity": 1.0,
+          "uniqueness": 1.0,
+          "hit_rate": 0.830078125,
+          "hit_rate_over_all_returned": 0.830078125,
+          "abs_target_error_mean": 0.17578125,
+          "abs_target_error_median": 0.0,
+          "aromatic_rings_mean": 2.93359375,
+          "aromatic_rings_std": 0.42789041816911194,
+          "aromatic_rings_quantiles": {
+            "0.05": 2.0,
+            "0.25": 3.0,
+            "0.5": 3.0,
+            "0.75": 3.0,
+            "0.95": 3.4499999999999886
+          },
+          "compute": {
+            "processed_tokens_actual": 204205,
+            "molecules_returned": 512,
+            "tokens_per_molecule_actual": 398.837890625
+          }
+        }
+      },
+      "pool_compute": {
+        "processed_tokens_actual": 204205,
+        "processed_tokens_full_recompute": 204205,
+        "forward_calls": 4608,
+        "wall_seconds": 43.73652868811041,
+        "molecules_returned": 4608,
+        "tokens_per_molecule_actual": 44.31532118055556,
+        "tokens_per_molecule_full_recompute": 44.31532118055556
+      }
+    },
+    "303": {
+      "pool_seed": 303000,
+      "rows": {
+        "9": {
+          "n": 512,
+          "n_valid": 512,
+          "n_scored": 512,
+          "validity": 1.0,
+          "uniqueness": 1.0,
+          "hit_rate": 0.849609375,
+          "hit_rate_over_all_returned": 0.849609375,
+          "abs_target_error_mean": 0.150390625,
+          "abs_target_error_median": 0.0,
+          "aromatic_rings_mean": 2.912109375,
+          "aromatic_rings_std": 0.37771134883282154,
+          "aromatic_rings_quantiles": {
+            "0.05": 2.0,
+            "0.25": 3.0,
+            "0.5": 3.0,
+            "0.75": 3.0,
+            "0.95": 3.0
+          },
+          "compute": {
+            "processed_tokens_actual": 204706,
+            "molecules_returned": 512,
+            "tokens_per_molecule_actual": 399.81640625
+          }
+        }
+      },
+      "pool_compute": {
+        "processed_tokens_actual": 204706,
+        "processed_tokens_full_recompute": 204706,
+        "forward_calls": 4608,
+        "wall_seconds": 72.91344618517905,
+        "molecules_returned": 4608,
+        "tokens_per_molecule_actual": 44.424045138888886,
+        "tokens_per_molecule_full_recompute": 44.424045138888886
+      }
+    }
+  },
+  "wall_seconds_total": 175.5741798877716
+}

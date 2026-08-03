@@ -1,0 +1,759 @@
+{
+  "dataset": "pilot_50k_p2",
+  "n_properties": 6,
+  "primary_locality_score": "relative_headroom_excess_mean",
+  "primary_steerability_score": "hit_rate_lift_throughout",
+  "pre_registered_locality_order": [
+    "aromatic_rings",
+    "hbd_count",
+    "rotatable_bonds",
+    "tpsa",
+    "clogp",
+    "qed"
+  ],
+  "measured_locality_order": [
+    "qed",
+    "clogp",
+    "rotatable_bonds",
+    "tpsa",
+    "aromatic_rings",
+    "hbd_count"
+  ],
+  "measured_locality_order_probability_units": [
+    "aromatic_rings",
+    "tpsa",
+    "clogp",
+    "hbd_count",
+    "qed",
+    "rotatable_bonds"
+  ],
+  "measured_steerability_order": [
+    "aromatic_rings",
+    "hbd_count",
+    "clogp",
+    "tpsa",
+    "rotatable_bonds",
+    "qed"
+  ],
+  "caveat_on_the_interval": "The bootstrap interval propagates measurement noise in each property's two coordinates (guidance seeds; headroom prefixes) with the six properties held fixed. It does NOT cover uncertainty from having chosen six hand-picked properties, which is larger and is not estimable from these data. n = 6.",
+  "properties": {
+    "aromatic_rings": {
+      "predicted_locality_rank": 1,
+      "target_interval": {
+        "lo": 3.0,
+        "hi": 4.0,
+        "rule": {
+          "kind": "exact_value",
+          "value": 3
+        },
+        "base_rate": 0.1713867089496819
+      },
+      "interval_width": 1.0,
+      "base_rate": 0.1713867089496819,
+      "locality_score": 0.6587760770662087,
+      "relative_headroom_raw_mean": 1.2090337732442997,
+      "relative_headroom_excess_median": 0.66859375,
+      "headroom_excess_property_units": 0.6587760770662087,
+      "frac_prefixes_excess_above_one_interval": 0.19736842105263158,
+      "headroom_prob_excess": 0.16386536108263083,
+      "headroom_prob_raw": 0.35760193753614805,
+      "trivial_head_auroc": 0.826879692771489,
+      "trivial_head_nll": 0.9001400272051493,
+      "frozen_head_auroc": 0.7877667810769413,
+      "frozen_minus_trivial_auroc": -0.03911291169454767,
+      "frozen_minus_trivial_nll": 0.1443827350934347,
+      "hit_rate_lift_throughout": 0.2949094693386525,
+      "hit_rate_lift_throughout_sd": 0.02065671495314557,
+      "hit_rate_unguided": 0.17854565532827407,
+      "hit_rate_throughout": 0.4734551246669265,
+      "hit_rate_truncation_control": 0.1828565046884831,
+      "hit_rate_lift_vs_truncation_control": 0.2905986199784434,
+      "fraction_of_room_captured": 0.359008959233767,
+      "hit_rate_lift_by_window": {
+        "early": 0.09169084109677997,
+        "middle": 0.10368084984407575,
+        "late": 0.056737538876285576
+      },
+      "late_share_of_throughout": 0.19238968149623006,
+      "captured_fraction_of_headroom": 0.10862390602923162,
+      "captured_fraction_of_headroom_preregistered_formula": 0.05842868100209377,
+      "n_prefixes_headroom": 380,
+      "n_prefixes_capture": 267,
+      "n_prefixes_sampled": 400,
+      "available_prob_headroom": 0.2508823322620774,
+      "achieved_prob": 0.014658723760802218,
+      "best_of_n_hit_rate": {
+        "actual": 0.8294270833333334,
+        "full_recompute": 1.0
+      },
+      "guidance_advantage": {
+        "actual": -0.35597195866640685,
+        "full_recompute": -0.5265448753330735
+      },
+      "lambda1_ceiling_analysis": {
+        "lambda": 1.0,
+        "n_prefixes": 267,
+        "base_policy_target_prob": 0.14860320093132098,
+        "our_head_gain": 0.014658723760802218,
+        "oracle_head_gain_raw": 0.09560462992742953,
+        "oracle_head_gain_null": 0.025135608855057705,
+        "oracle_head_gain": 0.07046902107237182,
+        "noise_corrected_ceiling_gain": 0.1349493338681582,
+        "fraction_of_ceiling_lambda1_permits": 0.5221887285580685,
+        "our_head_share_of_the_lambda1_optimum": 0.20801656582894323,
+        "base_policy_weight_on_its_own_top_candidate": 0.7382957878072798,
+        "note": "Both ratios use the noise-corrected oracle. Without that correction the oracle appears ~2x more capable than it is, which would understate what lambda = 1 costs and overstate what our head fails to capture."
+      },
+      "survivorship_check": {
+        "n_prefixes": 267,
+        "prefix_set": "the capture set: all top-k candidates scored",
+        "ceiling_valid_only": 0.3994855331933984,
+        "ceiling_invalid_counted_as_miss": 0.39489700374531833,
+        "available_raw_valid_only": 0.2508823322620774,
+        "available_raw_invalid_as_miss": 0.24680764109879377,
+        "validity_of_the_ceiling_setting_candidate": 0.9831460674157303,
+        "base_policy_weighted_validity": 0.9971947406842553,
+        "note": "`available_raw_*` are NOT noise-corrected, unlike `noise_corrected_ceiling_gain` above. They are comparable to each other and must not be read against the corrected figure."
+      },
+      "per_step_versus_end_to_end": {
+        "per_step_our_head_gain": 0.014658723760802218,
+        "end_to_end_lift_throughout": 0.2949094693386525,
+        "amplification": 20.1183591526056,
+        "largest_arithmetically_possible_lift": 0.821454344671726,
+        "implied_lift_if_per_step_share_transferred_linearly": 1.4177210750665081,
+        "implied_lift_if_per_step_ceiling_transferred_linearly": 2.7149591661644883,
+        "linear_transfer_is_impossible": true
+      }
+    },
+    "hbd_count": {
+      "predicted_locality_rank": 2,
+      "target_interval": {
+        "lo": 3.0,
+        "hi": 4.0,
+        "rule": {
+          "kind": "quantile_value",
+          "q": 0.9
+        },
+        "base_rate": 0.08230807827395886
+      },
+      "interval_width": 1.0,
+      "base_rate": 0.08230807827395886,
+      "locality_score": 0.5399370874374164,
+      "relative_headroom_raw_mean": 1.0400772765246449,
+      "relative_headroom_excess_median": 0.5596875,
+      "headroom_excess_property_units": 0.5399370874374164,
+      "frac_prefixes_excess_above_one_interval": 0.12105263157894737,
+      "headroom_prob_excess": 0.09818951826682092,
+      "headroom_prob_raw": 0.22871003630872053,
+      "trivial_head_auroc": 0.7097737701062888,
+      "trivial_head_nll": 1.2571221590042114,
+      "frozen_head_auroc": 0.7799440141644558,
+      "frozen_minus_trivial_auroc": 0.07017024405816696,
+      "frozen_minus_trivial_nll": -0.15005898475646973,
+      "hit_rate_lift_throughout": 0.21504350561106106,
+      "hit_rate_lift_throughout_sd": 0.014390959213648013,
+      "hit_rate_unguided": 0.083707641537296,
+      "hit_rate_throughout": 0.29875114714835704,
+      "hit_rate_truncation_control": 0.08491530514465118,
+      "hit_rate_lift_vs_truncation_control": 0.21383584200370587,
+      "fraction_of_room_captured": 0.23468874712853346,
+      "hit_rate_lift_by_window": {
+        "early": 0.061296489576511695,
+        "middle": 0.10362208487381637,
+        "late": 0.03516504411957566
+      },
+      "late_share_of_throughout": 0.16352525513221963,
+      "captured_fraction_of_headroom": 0.05530962910252458,
+      "captured_fraction_of_headroom_preregistered_formula": 0.02700824040828699,
+      "n_prefixes_headroom": 380,
+      "n_prefixes_capture": 267,
+      "n_prefixes_sampled": 400,
+      "available_prob_headroom": 0.1663765484492991,
+      "achieved_prob": 0.004493537818819678,
+      "best_of_n_hit_rate": {
+        "actual": 0.5234375,
+        "full_recompute": 1.0
+      },
+      "guidance_advantage": {
+        "actual": -0.22468635285164296,
+        "full_recompute": -0.701248852851643
+      },
+      "lambda1_ceiling_analysis": {
+        "lambda": 1.0,
+        "n_prefixes": 267,
+        "base_policy_target_prob": 0.07748026057604925,
+        "our_head_gain": 0.004493537818819678,
+        "oracle_head_gain_raw": 0.06782163999211649,
+        "oracle_head_gain_null": 0.029983761178429286,
+        "oracle_head_gain": 0.03783787881368719,
+        "noise_corrected_ceiling_gain": 0.0812433185999176,
+        "fraction_of_ceiling_lambda1_permits": 0.4657352686443014,
+        "our_head_share_of_the_lambda1_optimum": 0.11875765660505841,
+        "base_policy_weight_on_its_own_top_candidate": 0.7382957878072798,
+        "note": "Both ratios use the noise-corrected oracle. Without that correction the oracle appears ~2x more capable than it is, which would understate what lambda = 1 costs and overstate what our head fails to capture."
+      },
+      "survivorship_check": {
+        "n_prefixes": 267,
+        "prefix_set": "the capture set: all top-k candidates scored",
+        "ceiling_valid_only": 0.24385680902534834,
+        "ceiling_invalid_counted_as_miss": 0.2418071161048689,
+        "available_raw_valid_only": 0.1663765484492991,
+        "available_raw_invalid_as_miss": 0.16459404909304196,
+        "validity_of_the_ceiling_setting_candidate": 0.9873595505617978,
+        "base_policy_weighted_validity": 0.9971947406842553,
+        "note": "`available_raw_*` are NOT noise-corrected, unlike `noise_corrected_ceiling_gain` above. They are comparable to each other and must not be read against the corrected figure."
+      },
+      "per_step_versus_end_to_end": {
+        "per_step_our_head_gain": 0.004493537818819678,
+        "end_to_end_lift_throughout": 0.21504350561106106,
+        "amplification": 47.856169076940525,
+        "largest_arithmetically_possible_lift": 0.916292358462704,
+        "implied_lift_if_per_step_share_transferred_linearly": 1.8107759260206,
+        "implied_lift_if_per_step_ceiling_transferred_linearly": 3.8879939912894033,
+        "linear_transfer_is_impossible": true
+      }
+    },
+    "rotatable_bonds": {
+      "predicted_locality_rank": 3,
+      "target_interval": {
+        "lo": 8.0,
+        "hi": 9.0,
+        "rule": {
+          "kind": "quantile_value",
+          "q": 0.9
+        },
+        "base_rate": 0.08266934269944806
+      },
+      "interval_width": 1.0,
+      "base_rate": 0.08266934269944806,
+      "locality_score": 1.2367765395970989,
+      "relative_headroom_raw_mean": 2.467043081187818,
+      "relative_headroom_excess_median": 1.0351249999999999,
+      "headroom_excess_property_units": 1.2367765395970989,
+      "frac_prefixes_excess_above_one_interval": 0.5210526315789473,
+      "headroom_prob_excess": 0.0674142845458635,
+      "headroom_prob_raw": 0.19267946965315386,
+      "trivial_head_auroc": 0.7431004466878095,
+      "trivial_head_nll": 1.9154396851857503,
+      "frozen_head_auroc": 0.7819675147587044,
+      "frozen_minus_trivial_auroc": 0.038867068070894906,
+      "frozen_minus_trivial_nll": -0.1070256630579629,
+      "hit_rate_lift_throughout": 0.14750247310306458,
+      "hit_rate_lift_throughout_sd": 0.034131962517696283,
+      "hit_rate_unguided": 0.08239916791864092,
+      "hit_rate_throughout": 0.2299016410217055,
+      "hit_rate_truncation_control": 0.08947001361120742,
+      "hit_rate_lift_vs_truncation_control": 0.14043162741049808,
+      "fraction_of_room_captured": 0.16074797226206772,
+      "hit_rate_lift_by_window": {
+        "early": 0.07025458193746591,
+        "middle": 0.0640972302476983,
+        "late": 0.023691488465709967
+      },
+      "late_share_of_throughout": 0.16061756774176922,
+      "captured_fraction_of_headroom": 0.07173193959135855,
+      "captured_fraction_of_headroom_preregistered_formula": 0.0238329363460283,
+      "n_prefixes_headroom": 380,
+      "n_prefixes_capture": 267,
+      "n_prefixes_sampled": 400,
+      "available_prob_headroom": 0.12941451076638882,
+      "achieved_prob": 0.0030843277973477386,
+      "best_of_n_hit_rate": {
+        "actual": 0.556640625,
+        "full_recompute": 1.0
+      },
+      "guidance_advantage": {
+        "actual": -0.3267389839782945,
+        "full_recompute": -0.7700983589782945
+      },
+      "lambda1_ceiling_analysis": {
+        "lambda": 1.0,
+        "n_prefixes": 267,
+        "base_policy_target_prob": 0.09676704799943962,
+        "our_head_gain": 0.0030843277973477386,
+        "oracle_head_gain_raw": 0.05308035333344579,
+        "oracle_head_gain_null": 0.030206418055057718,
+        "oracle_head_gain": 0.022873935278388068,
+        "noise_corrected_ceiling_gain": 0.042997970149956787,
+        "fraction_of_ceiling_lambda1_permits": 0.5319770956306656,
+        "our_head_share_of_the_lambda1_optimum": 0.13484027823851968,
+        "base_policy_weight_on_its_own_top_candidate": 0.7382957878072798,
+        "note": "Both ratios use the noise-corrected oracle. Without that correction the oracle appears ~2x more capable than it is, which would understate what lambda = 1 costs and overstate what our head fails to capture."
+      },
+      "survivorship_check": {
+        "n_prefixes": 267,
+        "prefix_set": "the capture set: all top-k candidates scored",
+        "ceiling_valid_only": 0.22618155876582843,
+        "ceiling_invalid_counted_as_miss": 0.22378277153558052,
+        "available_raw_valid_only": 0.12941451076638882,
+        "available_raw_invalid_as_miss": 0.12714369217845226,
+        "validity_of_the_ceiling_setting_candidate": 0.9859550561797753,
+        "base_policy_weighted_validity": 0.9971947406842553,
+        "note": "`available_raw_*` are NOT noise-corrected, unlike `noise_corrected_ceiling_gain` above. They are comparable to each other and must not be read against the corrected figure."
+      },
+      "per_step_versus_end_to_end": {
+        "per_step_our_head_gain": 0.0030843277973477386,
+        "end_to_end_lift_throughout": 0.14750247310306458,
+        "amplification": 47.82321555766681,
+        "largest_arithmetically_possible_lift": 0.9176008320813591,
+        "implied_lift_if_per_step_share_transferred_linearly": 1.093905137470472,
+        "implied_lift_if_per_step_ceiling_transferred_linearly": 2.0563011950235066,
+        "linear_transfer_is_impossible": true
+      }
+    },
+    "tpsa": {
+      "predicted_locality_rank": 4,
+      "target_interval": {
+        "lo": 100.52,
+        "hi": 119.31,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.1000903161063723
+      },
+      "interval_width": 18.790000000000006,
+      "base_rate": 0.1000903161063723,
+      "locality_score": 1.0149576279095907,
+      "relative_headroom_raw_mean": 1.9449638446271238,
+      "relative_headroom_excess_median": 0.9921341138903667,
+      "headroom_excess_property_units": 19.071053828421213,
+      "frac_prefixes_excess_above_one_interval": 0.4921052631578947,
+      "headroom_prob_excess": 0.11097459110699241,
+      "headroom_prob_raw": 0.2731354829381145,
+      "trivial_head_auroc": 0.7388585830435761,
+      "trivial_head_nll": 2.7014408111572266,
+      "frozen_head_auroc": 0.7369158556106132,
+      "frozen_minus_trivial_auroc": -0.0019427274329628652,
+      "frozen_minus_trivial_nll": 0.0512458483378091,
+      "hit_rate_lift_throughout": 0.14945798442576114,
+      "hit_rate_lift_throughout_sd": 0.018600379007220166,
+      "hit_rate_unguided": 0.10072036673215455,
+      "hit_rate_throughout": 0.2501783511579157,
+      "hit_rate_truncation_control": 0.10974048519620683,
+      "hit_rate_lift_vs_truncation_control": 0.14043786596170887,
+      "fraction_of_room_captured": 0.16619745282416054,
+      "hit_rate_lift_by_window": {
+        "early": 0.03438828860212527,
+        "middle": 0.053057514371243994,
+        "late": 0.0383111860526275
+      },
+      "late_share_of_throughout": 0.25633415437672685,
+      "captured_fraction_of_headroom": 0.0868202477745273,
+      "captured_fraction_of_headroom_preregistered_formula": 0.036876160233374096,
+      "n_prefixes_headroom": 380,
+      "n_prefixes_capture": 267,
+      "n_prefixes_sampled": 400,
+      "available_prob_headroom": 0.17517777315537594,
+      "achieved_prob": 0.006459883632203303,
+      "best_of_n_hit_rate": {
+        "actual": 0.611328125,
+        "full_recompute": 1.0
+      },
+      "guidance_advantage": {
+        "actual": -0.3611497738420843,
+        "full_recompute": -0.7498216488420844
+      },
+      "lambda1_ceiling_analysis": {
+        "lambda": 1.0,
+        "n_prefixes": 267,
+        "base_policy_target_prob": 0.10376029876022407,
+        "our_head_gain": 0.006459883632203303,
+        "oracle_head_gain_raw": 0.06247814129786505,
+        "oracle_head_gain_null": 0.032433456468328105,
+        "oracle_head_gain": 0.030044684829536948,
+        "noise_corrected_ceiling_gain": 0.07440526602710994,
+        "fraction_of_ceiling_lambda1_permits": 0.4037978282154117,
+        "our_head_share_of_the_lambda1_optimum": 0.215009199425936,
+        "base_policy_weight_on_its_own_top_candidate": 0.7382957878072798,
+        "note": "Both ratios use the noise-corrected oracle. Without that correction the oracle appears ~2x more capable than it is, which would understate what lambda = 1 costs and overstate what our head fails to capture."
+      },
+      "survivorship_check": {
+        "n_prefixes": 267,
+        "prefix_set": "the capture set: all top-k candidates scored",
+        "ceiling_valid_only": 0.2789380719156,
+        "ceiling_invalid_counted_as_miss": 0.27504681647940077,
+        "available_raw_valid_only": 0.17517777315537594,
+        "available_raw_invalid_as_miss": 0.17151168993921734,
+        "validity_of_the_ceiling_setting_candidate": 0.9836142322097379,
+        "base_policy_weighted_validity": 0.9971947406842553,
+        "note": "`available_raw_*` are NOT noise-corrected, unlike `noise_corrected_ceiling_gain` above. They are comparable to each other and must not be read against the corrected figure."
+      },
+      "per_step_versus_end_to_end": {
+        "per_step_our_head_gain": 0.006459883632203303,
+        "end_to_end_lift_throughout": 0.14945798442576114,
+        "amplification": 23.136327670160334,
+        "largest_arithmetically_possible_lift": 0.8992796332678454,
+        "implied_lift_if_per_step_share_transferred_linearly": 0.6951236729628621,
+        "implied_lift_if_per_step_ceiling_transferred_linearly": 1.7214646151886643,
+        "linear_transfer_is_impossible": false
+      }
+    },
+    "clogp": {
+      "predicted_locality_rank": 5,
+      "target_interval": {
+        "lo": 4.172676000000004,
+        "hi": 5.038300000000004,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09999397868454328
+      },
+      "interval_width": 0.8656240000000004,
+      "base_rate": 0.09999397868454328,
+      "locality_score": 1.5532386401586191,
+      "relative_headroom_raw_mean": 2.7213253147982375,
+      "relative_headroom_excess_median": 1.3912213005685325,
+      "headroom_excess_property_units": 1.344520644648665,
+      "frac_prefixes_excess_above_one_interval": 0.6736842105263158,
+      "headroom_prob_excess": 0.10230520347707849,
+      "headroom_prob_raw": 0.2569795920453815,
+      "trivial_head_auroc": 0.7516094331167015,
+      "trivial_head_nll": 2.786252578099569,
+      "frozen_head_auroc": 0.791291897293973,
+      "frozen_minus_trivial_auroc": 0.039682464177271504,
+      "frozen_minus_trivial_nll": -0.0709009965260825,
+      "hit_rate_lift_throughout": 0.199656201401944,
+      "hit_rate_lift_throughout_sd": 0.02862007128194607,
+      "hit_rate_unguided": 0.10333089358860768,
+      "hit_rate_throughout": 0.3029870949905517,
+      "hit_rate_truncation_control": 0.10385941633120177,
+      "hit_rate_lift_vs_truncation_control": 0.19912767865934994,
+      "fraction_of_room_captured": 0.2226643027783112,
+      "hit_rate_lift_by_window": {
+        "early": 0.04418966714710214,
+        "middle": 0.0470870732051825,
+        "late": 0.04811202754430709
+      },
+      "late_share_of_throughout": 0.24097437097608043,
+      "captured_fraction_of_headroom": 0.09219436040409566,
+      "captured_fraction_of_headroom_preregistered_formula": 0.040179027985069074,
+      "n_prefixes_headroom": 380,
+      "n_prefixes_capture": 267,
+      "n_prefixes_sampled": 400,
+      "available_prob_headroom": 0.17657403321243675,
+      "achieved_prob": 0.007094573021879013,
+      "best_of_n_hit_rate": {
+        "actual": 0.6106770833333334,
+        "full_recompute": 1.0
+      },
+      "guidance_advantage": {
+        "actual": -0.30768998834278166,
+        "full_recompute": -0.6970129050094482
+      },
+      "lambda1_ceiling_analysis": {
+        "lambda": 1.0,
+        "n_prefixes": 267,
+        "base_policy_target_prob": 0.10746451978679038,
+        "our_head_gain": 0.007094573021879013,
+        "oracle_head_gain_raw": 0.06743833463379338,
+        "oracle_head_gain_null": 0.027780335418642003,
+        "oracle_head_gain": 0.039657999215151375,
+        "noise_corrected_ceiling_gain": 0.07695235360148821,
+        "fraction_of_ceiling_lambda1_permits": 0.5153578462398636,
+        "our_head_share_of_the_lambda1_optimum": 0.17889387165978168,
+        "base_policy_weight_on_its_own_top_candidate": 0.7382957878072798,
+        "note": "Both ratios use the noise-corrected oracle. Without that correction the oracle appears ~2x more capable than it is, which would understate what lambda = 1 costs and overstate what our head fails to capture."
+      },
+      "survivorship_check": {
+        "n_prefixes": 267,
+        "prefix_set": "the capture set: all top-k candidates scored",
+        "ceiling_valid_only": 0.28403855299922715,
+        "ceiling_invalid_counted_as_miss": 0.28019662921348315,
+        "available_raw_valid_only": 0.17657403321243675,
+        "available_raw_invalid_as_miss": 0.17309989790652422,
+        "validity_of_the_ceiling_setting_candidate": 0.9845505617977528,
+        "base_policy_weighted_validity": 0.9971947406842553,
+        "note": "`available_raw_*` are NOT noise-corrected, unlike `noise_corrected_ceiling_gain` above. They are comparable to each other and must not be read against the corrected figure."
+      },
+      "per_step_versus_end_to_end": {
+        "per_step_our_head_gain": 0.007094573021879013,
+        "end_to_end_lift_throughout": 0.199656201401944,
+        "amplification": 28.14210253192441,
+        "largest_arithmetically_possible_lift": 0.8966691064113923,
+        "implied_lift_if_per_step_share_transferred_linearly": 1.116059480123768,
+        "implied_lift_if_per_step_ceiling_transferred_linearly": 2.165601025125984,
+        "linear_transfer_is_impossible": true
+      }
+    },
+    "qed": {
+      "predicted_locality_rank": 6,
+      "target_interval": {
+        "lo": 0.8506277759108453,
+        "hi": 0.8969547791955041,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09998996487706975
+      },
+      "interval_width": 0.046327003284658885,
+      "base_rate": 0.09998996487706975,
+      "locality_score": 3.5094623705348758,
+      "relative_headroom_raw_mean": 5.676613843916123,
+      "relative_headroom_excess_median": 3.4805882883672674,
+      "headroom_excess_property_units": 0.16258287476715594,
+      "frac_prefixes_excess_above_one_interval": 0.9078947368421053,
+      "headroom_prob_excess": 0.08511372662425294,
+      "headroom_prob_raw": 0.19414899428057322,
+      "trivial_head_auroc": 0.71584325269247,
+      "trivial_head_nll": 2.8063785235087075,
+      "frozen_head_auroc": 0.7348159187358366,
+      "frozen_minus_trivial_auroc": 0.01897266604336667,
+      "frozen_minus_trivial_nll": -0.034921884536743164,
+      "hit_rate_lift_throughout": 0.10123803565855961,
+      "hit_rate_lift_throughout_sd": 0.006622721862332406,
+      "hit_rate_unguided": 0.08960026708784365,
+      "hit_rate_throughout": 0.19083830274640326,
+      "hit_rate_truncation_control": 0.08292769066123502,
+      "hit_rate_lift_vs_truncation_control": 0.10791061208516824,
+      "fraction_of_room_captured": 0.11120174138751421,
+      "hit_rate_lift_by_window": {
+        "early": 0.042260879197154363,
+        "middle": 0.047728552909576075,
+        "late": 0.0356478907431151
+      },
+      "late_share_of_throughout": 0.35211954194116263,
+      "captured_fraction_of_headroom": 0.04822160529849642,
+      "captured_fraction_of_headroom_preregistered_formula": 0.021350079953887418,
+      "n_prefixes_headroom": 380,
+      "n_prefixes_capture": 267,
+      "n_prefixes_sampled": 400,
+      "available_prob_headroom": 0.13176034195966177,
+      "achieved_prob": 0.002813093835590326,
+      "best_of_n_hit_rate": {
+        "actual": 0.5436197916666666,
+        "full_recompute": 1.0
+      },
+      "guidance_advantage": {
+        "actual": -0.3527814889202634,
+        "full_recompute": -0.8091616972535968
+      },
+      "lambda1_ceiling_analysis": {
+        "lambda": 1.0,
+        "n_prefixes": 267,
+        "base_policy_target_prob": 0.0899117437573678,
+        "our_head_gain": 0.002813093835590326,
+        "oracle_head_gain_raw": 0.04353473203457643,
+        "oracle_head_gain_null": 0.024512482433670713,
+        "oracle_head_gain": 0.01902224960090572,
+        "noise_corrected_ceiling_gain": 0.05833679360479606,
+        "fraction_of_ceiling_lambda1_permits": 0.3260763649399791,
+        "our_head_share_of_the_lambda1_optimum": 0.14788439299294992,
+        "base_policy_weight_on_its_own_top_candidate": 0.7382957878072798,
+        "note": "Both ratios use the noise-corrected oracle. Without that correction the oracle appears ~2x more capable than it is, which would understate what lambda = 1 costs and overstate what our head fails to capture."
+      },
+      "survivorship_check": {
+        "n_prefixes": 267,
+        "prefix_set": "the capture set: all top-k candidates scored",
+        "ceiling_valid_only": 0.22167208571702954,
+        "ceiling_invalid_counted_as_miss": 0.22027153558052434,
+        "available_raw_valid_only": 0.13176034195966177,
+        "available_raw_invalid_as_miss": 0.13044155464008467,
+        "validity_of_the_ceiling_setting_candidate": 0.9904026217228464,
+        "base_policy_weighted_validity": 0.9971947406842553,
+        "note": "`available_raw_*` are NOT noise-corrected, unlike `noise_corrected_ceiling_gain` above. They are comparable to each other and must not be read against the corrected figure."
+      },
+      "per_step_versus_end_to_end": {
+        "per_step_our_head_gain": 0.002813093835590326,
+        "end_to_end_lift_throughout": 0.10123803565855961,
+        "amplification": 35.98814741894839,
+        "largest_arithmetically_possible_lift": 0.9103997329121564,
+        "implied_lift_if_per_step_share_transferred_linearly": 0.6845755228774272,
+        "implied_lift_if_per_step_ceiling_transferred_linearly": 2.0994331281981657,
+        "linear_transfer_is_impossible": false
+      }
+    }
+  },
+  "P2_position_trend": {
+    "by_property": {
+      "aromatic_rings": {
+        "relative_headroom_excess_by_quartile": [
+          0.6098167073667073,
+          0.73192815879144,
+          0.6600853554720741,
+          0.6307970229883494
+        ],
+        "slope_per_quartile": -0.0008901856454440417,
+        "q4_minus_q1": 0.020980315621642043,
+        "p2_class": "local_count"
+      },
+      "hbd_count": {
+        "relative_headroom_excess_by_quartile": [
+          0.48586263481888486,
+          0.6644731458500991,
+          0.5940228761400635,
+          0.41462079572921406
+        ],
+        "slope_per_quartile": -0.028417578697904827,
+        "q4_minus_q1": -0.0712418390896708,
+        "p2_class": "local_count"
+      },
+      "rotatable_bonds": {
+        "relative_headroom_excess_by_quartile": [
+          1.2698556115181117,
+          1.542604598887802,
+          1.1674612991898148,
+          0.9747117734164927
+        ],
+        "slope_per_quartile": -0.1260574814002846,
+        "q4_minus_q1": -0.2951438381016189,
+        "p2_class": "unassigned_by_p2"
+      },
+      "tpsa": {
+        "relative_headroom_excess_by_quartile": [
+          0.8986949890484613,
+          1.1057850255065849,
+          1.1023343946664381,
+          0.9471620944354359
+        ],
+        "slope_per_quartile": 0.01419506853207766,
+        "q4_minus_q1": 0.04846710538697452,
+        "p2_class": "diffuse"
+      },
+      "clogp": {
+        "relative_headroom_excess_by_quartile": [
+          1.203831981186879,
+          1.8025934199107367,
+          1.4863950794187453,
+          1.6953358063043444
+        ],
+        "slope_per_quartile": 0.11583131348604037,
+        "q4_minus_q1": 0.4915038251174655,
+        "p2_class": "diffuse"
+      },
+      "qed": {
+        "relative_headroom_excess_by_quartile": [
+          3.0647095417391963,
+          3.531188987272121,
+          3.658310929511314,
+          3.7508147962807667
+        ],
+        "slope_per_quartile": 0.2185437705863902,
+        "q4_minus_q1": 0.6861052545415705,
+        "p2_class": "diffuse"
+      }
+    },
+    "classes": {
+      "diffuse": [
+        "tpsa",
+        "clogp",
+        "qed"
+      ],
+      "local_count": [
+        "aromatic_rings",
+        "hbd_count"
+      ],
+      "unassigned_by_p2": [
+        "rotatable_bonds"
+      ]
+    }
+  },
+  "tests": {
+    "P1_locality_vs_steerability": {
+      "rho": -0.7714285714285715,
+      "p_value": 0.07239650145772594,
+      "n": 6,
+      "measurement_noise_ci95": [
+        -0.7714285714285715,
+        -0.48571428571428577
+      ],
+      "measurement_noise_n_boot": 2000,
+      "frac_draws_positive": 0.0
+    },
+    "P1_locality_vs_steerability_base_rate_adjusted": {
+      "rho": -0.7714285714285715,
+      "p_value": 0.07239650145772594,
+      "n": 6
+    },
+    "P1b_prob_headroom_vs_steerability": {
+      "rho": 0.7142857142857143,
+      "p_value": 0.1107871720116617,
+      "n": 6
+    },
+    "P1b_prob_headroom_vs_steerability_base_rate_adjusted": {
+      "rho": 0.7142857142857143,
+      "p_value": 0.1107871720116617,
+      "n": 6
+    },
+    "prob_headroom_vs_relative_headroom": {
+      "rho": -0.4285714285714286,
+      "p_value": 0.3965014577259474,
+      "n": 6
+    },
+    "P3_trivial_head_vs_steerability": {
+      "rho": 0.3714285714285715,
+      "p_value": 0.46847813411078715,
+      "n": 6
+    },
+    "pre_registered_order_vs_measured_locality": {
+      "rho": -0.8857142857142858,
+      "p_value": 0.01884548104956266,
+      "n": 6
+    },
+    "pre_registered_order_vs_steerability": {
+      "rho": 0.7714285714285715,
+      "p_value": 0.07239650145772594,
+      "n": 6
+    },
+    "locality_vs_trivial_head": {
+      "rho": 0.08571428571428573,
+      "p_value": 0.8717434402332361,
+      "n": 6
+    },
+    "steerability_vs_base_rate": {
+      "rho": 0.3142857142857143,
+      "p_value": 0.5440932944606414,
+      "n": 6
+    },
+    "P6_locality_vs_guidance_advantage_actual": {
+      "rho": -0.08571428571428573,
+      "p_value": 0.8717434402332361,
+      "n": 6
+    },
+    "P6b_prob_headroom_vs_guidance_advantage_actual": {
+      "rho": -0.48571428571428577,
+      "p_value": 0.3287230320699709,
+      "n": 6
+    },
+    "P6_locality_vs_guidance_advantage_full_recompute": {
+      "rho": -0.5428571428571429,
+      "p_value": 0.26570262390670557,
+      "n": 6
+    },
+    "P6b_prob_headroom_vs_guidance_advantage_full_recompute": {
+      "rho": 0.7714285714285715,
+      "p_value": 0.07239650145772594,
+      "n": 6
+    },
+    "pre_registered_order_vs_steerability_excluding_phase1_properties": {
+      "rho": 0.7999999999999999,
+      "p_value": 0.20000000000000007,
+      "n": 4,
+      "excluded": [
+        "aromatic_rings",
+        "clogp"
+      ],
+      "note": "Phase 1 measured steerability for aromatic rings and cLogP, so their predicted ranks were not blind. This is the same correlation on the four properties that were."
+    },
+    "P1b_prob_headroom_vs_steerability_excluding_phase1_properties": {
+      "rho": 0.6000000000000001,
+      "p_value": 0.3999999999999999,
+      "n": 4
+    },
+    "P4_locality_vs_captured_fraction": {
+      "rho": -0.2571428571428572,
+      "p_value": 0.6227871720116618,
+      "n": 6
+    },
+    "P4b_prob_headroom_vs_captured_fraction": {
+      "rho": 0.7714285714285715,
+      "p_value": 0.07239650145772594,
+      "n": 6
+    }
+  }
+}

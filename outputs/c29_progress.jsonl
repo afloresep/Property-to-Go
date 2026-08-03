@@ -1,0 +1,101 @@
+{"utc": "2026-08-01T12:28:52.608106+00:00", "event": "start", "stages": ["heads"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T12:35:22.226878+00:00", "event": "start", "stages": ["p2dep"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T12:41:17.411418+00:00", "event": "done", "cell": "c29_dep_hs2345_lam1_qed_guided", "seconds": 355}
+{"utc": "2026-08-01T12:42:55.241173+00:00", "event": "start", "stages": ["p1"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T12:43:17.744283+00:00", "event": "start", "stages": ["p1"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T12:46:18.279891+00:00", "event": "done", "cell": "c29_dep_hs2345_lam1_hbd_count_guided", "seconds": 301}
+{"utc": "2026-08-01T12:49:03.188647+00:00", "event": "done", "cell": "c29_hs4567_L4_lam2_hbd_count_guided", "seconds": 345}
+{"utc": "2026-08-01T12:49:14.597416+00:00", "event": "done", "cell": "c29_hs4567_L4_lam2_hbd_count_quality", "seconds": 11}
+{"utc": "2026-08-01T12:49:51.819604+00:00", "event": "done", "cell": "c29_heads", "seconds": 1259}
+{"utc": "2026-08-01T12:49:51.820264+00:00", "event": "stages complete", "stages": ["heads"]}
+{"utc": "2026-08-01T12:50:19.981097+00:00", "event": "start", "stages": ["gate", "p2mid"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T12:50:30.592781+00:00", "event": "start", "stages": ["p3"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T12:50:30.902278+00:00", "event": "done", "cell": "c29_dep_hs2345_lam1_aromatic_rings_guided", "seconds": 253}
+{"utc": "2026-08-01T12:50:32.433801+00:00", "event": "start", "stages": ["gate", "p2mid"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T12:52:56.683350+00:00", "event": "FAILED", "cell": "c29_deplam1p25_guided_qed", "returncode": 1, "seconds": 146}
+{"utc": "2026-08-01T12:54:56.251829+00:00", "event": "done", "cell": "c29_hs4567_L4_lam2_hbd_count_bestofn", "seconds": 342}
+{"utc": "2026-08-01T12:56:00.962360+00:00", "event": "done", "cell": "c29_gate_L4_lam1_qed_hs1234", "seconds": 341}
+{"utc": "2026-08-01T12:56:13.909915+00:00", "event": "done", "cell": "c29_dep_hs3456_lam1_qed_guided", "seconds": 343}
+{"utc": "2026-08-01T12:56:20.588076+00:00", "event": "done", "cell": "c29_gate_L4_lam1_qed_hs1234", "seconds": 348}
+{"utc": "2026-08-01T13:01:32.298900+00:00", "event": "done", "cell": "c29_hs5678_L4_lam2_hbd_count_guided", "seconds": 396}
+{"utc": "2026-08-01T13:01:38.134494+00:00", "event": "done", "cell": "c29_hs5678_L4_lam2_hbd_count_quality", "seconds": 6}
+{"utc": "2026-08-01T13:02:47.768907+00:00", "event": "done", "cell": "c29_hs4567_L3_lam1_aromatic_rings_guided", "seconds": 407}
+{"utc": "2026-08-01T13:02:52.708004+00:00", "event": "done", "cell": "c29_dep_hs3456_lam1_hbd_count_guided", "seconds": 399}
+{"utc": "2026-08-01T13:02:53.775601+00:00", "event": "done", "cell": "c29_hs4567_L3_lam1_aromatic_rings_quality", "seconds": 6}
+{"utc": "2026-08-01T13:05:42.102209+00:00", "event": "done", "cell": "c29_hs5678_L4_lam2_hbd_count_bestofn", "seconds": 244}
+{"utc": "2026-08-01T13:07:15.169298+00:00", "event": "done", "cell": "c29_hs4567_L3_lam1_aromatic_rings_bestofn", "seconds": 261}
+{"utc": "2026-08-01T13:07:38.893842+00:00", "event": "done", "cell": "c29_dep_hs3456_lam1_aromatic_rings_guided", "seconds": 286}
+{"utc": "2026-08-01T13:11:23.519138+00:00", "event": "done", "cell": "c29_hs6789_L4_lam2_hbd_count_guided", "seconds": 341}
+{"utc": "2026-08-01T13:11:29.402158+00:00", "event": "done", "cell": "c29_hs6789_L4_lam2_hbd_count_quality", "seconds": 6}
+{"utc": "2026-08-01T13:11:55.163532+00:00", "event": "done", "cell": "c29_dep_hs4567_lam1_qed_guided", "seconds": 256}
+{"utc": "2026-08-01T13:12:18.222404+00:00", "event": "done", "cell": "c29_hs4567_L4_lam1_qed_guided", "seconds": 303}
+{"utc": "2026-08-01T13:12:24.931116+00:00", "event": "done", "cell": "c29_hs4567_L4_lam1_qed_quality", "seconds": 7}
+{"utc": "2026-08-01T13:12:34.073640+00:00", "event": "start", "stages": ["p3"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T13:17:02.844584+00:00", "event": "done", "cell": "c29_hs6789_L4_lam2_hbd_count_bestofn", "seconds": 333}
+{"utc": "2026-08-01T13:18:18.270891+00:00", "event": "done", "cell": "c29_dep_hs4567_lam1_hbd_count_guided", "seconds": 383}
+{"utc": "2026-08-01T13:18:25.867660+00:00", "event": "done", "cell": "c29_hs4567_L4_lam1_qed_bestofn", "seconds": 361}
+{"utc": "2026-08-01T13:18:26.058665+00:00", "event": "done", "cell": "c29_deplam1p25_guided_qed", "seconds": 352}
+{"utc": "2026-08-01T13:24:03.850033+00:00", "event": "done", "cell": "c29_hs7890_L4_lam2_hbd_count_guided", "seconds": 421}
+{"utc": "2026-08-01T13:24:09.570452+00:00", "event": "done", "cell": "c29_hs7890_L4_lam2_hbd_count_quality", "seconds": 6}
+{"utc": "2026-08-01T13:24:23.204507+00:00", "event": "done", "cell": "c29_deplam1p25_guided_hbd_count", "seconds": 357}
+{"utc": "2026-08-01T13:24:27.280758+00:00", "event": "done", "cell": "c29_dep_hs4567_lam1_aromatic_rings_guided", "seconds": 369}
+{"utc": "2026-08-01T13:24:29.077637+00:00", "event": "done", "cell": "c29_hs5678_L3_lam1_aromatic_rings_guided", "seconds": 363}
+{"utc": "2026-08-01T13:24:34.913506+00:00", "event": "done", "cell": "c29_hs5678_L3_lam1_aromatic_rings_quality", "seconds": 6}
+{"utc": "2026-08-01T13:29:21.993549+00:00", "event": "done", "cell": "c29_hs7890_L4_lam2_hbd_count_bestofn", "seconds": 312}
+{"utc": "2026-08-01T13:29:32.947711+00:00", "event": "done", "cell": "c29_dep_hs5678_lam1_qed_guided", "seconds": 306}
+{"utc": "2026-08-01T13:29:45.079959+00:00", "event": "done", "cell": "c29_deplam1p25_guided_aromatic_rings", "seconds": 322}
+{"utc": "2026-08-01T13:29:48.413733+00:00", "event": "done", "cell": "c29_hs5678_L3_lam1_aromatic_rings_bestofn", "seconds": 314}
+{"utc": "2026-08-01T13:35:28.700384+00:00", "event": "done", "cell": "c29_deplam1p5_guided_qed", "seconds": 344}
+{"utc": "2026-08-01T13:35:39.266747+00:00", "event": "done", "cell": "c29_hs8901_L4_lam2_hbd_count_guided", "seconds": 377}
+{"utc": "2026-08-01T13:35:44.909780+00:00", "event": "done", "cell": "c29_hs8901_L4_lam2_hbd_count_quality", "seconds": 6}
+{"utc": "2026-08-01T13:35:56.338598+00:00", "event": "done", "cell": "c29_hs5678_L4_lam1_qed_guided", "seconds": 368}
+{"utc": "2026-08-01T13:36:01.991509+00:00", "event": "done", "cell": "c29_hs5678_L4_lam1_qed_quality", "seconds": 6}
+{"utc": "2026-08-01T13:36:52.146089+00:00", "event": "done", "cell": "c29_dep_hs5678_lam1_hbd_count_guided", "seconds": 439}
+{"utc": "2026-08-01T13:41:05.810727+00:00", "event": "done", "cell": "c29_hs8901_L4_lam2_hbd_count_bestofn", "seconds": 321}
+{"utc": "2026-08-01T13:41:05.810907+00:00", "event": "stages complete", "stages": ["p1"]}
+{"utc": "2026-08-01T13:41:26.290108+00:00", "event": "done", "cell": "c29_hs5678_L4_lam1_qed_bestofn", "seconds": 324}
+{"utc": "2026-08-01T13:41:50.650753+00:00", "event": "done", "cell": "c29_deplam1p5_guided_hbd_count", "seconds": 382}
+{"utc": "2026-08-01T13:42:24.095637+00:00", "event": "done", "cell": "c29_dep_hs5678_lam1_aromatic_rings_guided", "seconds": 332}
+{"utc": "2026-08-01T13:44:16.037108+00:00", "event": "start", "stages": ["p4dep2"], "head_seeds": [1234, 2345, 3456, 4567, 5678, 6789, 7890, 8901]}
+{"utc": "2026-08-01T13:46:28.350981+00:00", "event": "done", "cell": "c29_deplam1p5_guided_aromatic_rings", "seconds": 278}
+{"utc": "2026-08-01T13:46:57.353926+00:00", "event": "done", "cell": "c29_dep_hs6789_lam1_qed_guided", "seconds": 273}
+{"utc": "2026-08-01T13:47:32.020445+00:00", "event": "done", "cell": "c29_hs6789_L3_lam1_aromatic_rings_guided", "seconds": 366}
+{"utc": "2026-08-01T13:47:37.797544+00:00", "event": "done", "cell": "c29_hs6789_L3_lam1_aromatic_rings_quality", "seconds": 6}
+{"utc": "2026-08-01T13:51:16.629641+00:00", "event": "done", "cell": "c29_dep_hs2345_lam2_hbd_count_guided", "seconds": 421}
+{"utc": "2026-08-01T13:51:46.058767+00:00", "event": "done", "cell": "c29_deplam2p5_guided_qed", "seconds": 318}
+{"utc": "2026-08-01T13:51:59.926367+00:00", "event": "done", "cell": "c29_dep_hs6789_lam1_hbd_count_guided", "seconds": 303}
+{"utc": "2026-08-01T13:52:29.586663+00:00", "event": "done", "cell": "c29_hs6789_L3_lam1_aromatic_rings_bestofn", "seconds": 292}
+{"utc": "2026-08-01T13:57:17.496657+00:00", "event": "done", "cell": "c29_hs6789_L4_lam1_qed_guided", "seconds": 288}
+{"utc": "2026-08-01T13:57:23.074883+00:00", "event": "done", "cell": "c29_hs6789_L4_lam1_qed_quality", "seconds": 6}
+{"utc": "2026-08-01T13:57:24.590867+00:00", "event": "done", "cell": "c29_dep_hs6789_lam1_aromatic_rings_guided", "seconds": 325}
+{"utc": "2026-08-01T13:57:50.070978+00:00", "event": "done", "cell": "c29_dep_hs3456_lam2_hbd_count_guided", "seconds": 393}
+{"utc": "2026-08-01T13:58:00.589577+00:00", "event": "done", "cell": "c29_deplam2p5_guided_hbd_count", "seconds": 375}
+{"utc": "2026-08-01T14:02:14.778574+00:00", "event": "done", "cell": "c29_hs6789_L4_lam1_qed_bestofn", "seconds": 292}
+{"utc": "2026-08-01T14:02:27.295519+00:00", "event": "done", "cell": "c29_dep_hs7890_lam1_qed_guided", "seconds": 303}
+{"utc": "2026-08-01T14:03:11.272194+00:00", "event": "done", "cell": "c29_deplam2p5_guided_aromatic_rings", "seconds": 311}
+{"utc": "2026-08-01T14:03:11.272444+00:00", "event": "stages complete", "stages": ["p3"]}
+{"utc": "2026-08-01T14:03:48.880160+00:00", "event": "done", "cell": "c29_dep_hs4567_lam2_hbd_count_guided", "seconds": 359}
+{"utc": "2026-08-01T14:07:31.457346+00:00", "event": "done", "cell": "c29_dep_hs7890_lam1_hbd_count_guided", "seconds": 304}
+{"utc": "2026-08-01T14:08:31.131142+00:00", "event": "done", "cell": "c29_hs7890_L3_lam1_aromatic_rings_guided", "seconds": 376}
+{"utc": "2026-08-01T14:08:36.872101+00:00", "event": "done", "cell": "c29_hs7890_L3_lam1_aromatic_rings_quality", "seconds": 6}
+{"utc": "2026-08-01T14:08:50.638171+00:00", "event": "done", "cell": "c29_dep_hs5678_lam2_hbd_count_guided", "seconds": 302}
+{"utc": "2026-08-01T14:11:13.277745+00:00", "event": "done", "cell": "c29_dep_hs7890_lam1_aromatic_rings_guided", "seconds": 222}
+{"utc": "2026-08-01T14:12:27.445382+00:00", "event": "done", "cell": "c29_hs7890_L3_lam1_aromatic_rings_bestofn", "seconds": 231}
+{"utc": "2026-08-01T14:12:53.318066+00:00", "event": "done", "cell": "c29_dep_hs6789_lam2_hbd_count_guided", "seconds": 243}
+{"utc": "2026-08-01T14:14:37.345364+00:00", "event": "done", "cell": "c29_dep_hs8901_lam1_qed_guided", "seconds": 204}
+{"utc": "2026-08-01T14:16:42.599133+00:00", "event": "done", "cell": "c29_hs7890_L4_lam1_qed_guided", "seconds": 255}
+{"utc": "2026-08-01T14:16:48.138556+00:00", "event": "done", "cell": "c29_hs7890_L4_lam1_qed_quality", "seconds": 6}
+{"utc": "2026-08-01T14:17:44.320825+00:00", "event": "done", "cell": "c29_dep_hs7890_lam2_hbd_count_guided", "seconds": 291}
+{"utc": "2026-08-01T14:18:48.624153+00:00", "event": "done", "cell": "c29_dep_hs8901_lam1_hbd_count_guided", "seconds": 251}
+{"utc": "2026-08-01T14:19:38.735317+00:00", "event": "done", "cell": "c29_hs7890_L4_lam1_qed_bestofn", "seconds": 171}
+{"utc": "2026-08-01T14:20:53.814244+00:00", "event": "done", "cell": "c29_dep_hs8901_lam2_hbd_count_guided", "seconds": 189}
+{"utc": "2026-08-01T14:20:53.814519+00:00", "event": "stages complete", "stages": ["p4dep2"]}
+{"utc": "2026-08-01T14:21:24.079022+00:00", "event": "done", "cell": "c29_dep_hs8901_lam1_aromatic_rings_guided", "seconds": 155}
+{"utc": "2026-08-01T14:21:24.079216+00:00", "event": "stages complete", "stages": ["p2dep"]}
+{"utc": "2026-08-01T14:22:19.893777+00:00", "event": "done", "cell": "c29_hs8901_L3_lam1_aromatic_rings_guided", "seconds": 161}
+{"utc": "2026-08-01T14:22:25.302504+00:00", "event": "done", "cell": "c29_hs8901_L3_lam1_aromatic_rings_quality", "seconds": 5}
+{"utc": "2026-08-01T14:23:44.891698+00:00", "event": "done", "cell": "c29_hs8901_L3_lam1_aromatic_rings_bestofn", "seconds": 80}
+{"utc": "2026-08-01T14:25:02.902525+00:00", "event": "done", "cell": "c29_hs8901_L4_lam1_qed_guided", "seconds": 78}
+{"utc": "2026-08-01T14:25:08.139689+00:00", "event": "done", "cell": "c29_hs8901_L4_lam1_qed_quality", "seconds": 5}
+{"utc": "2026-08-01T14:26:30.554573+00:00", "event": "done", "cell": "c29_hs8901_L4_lam1_qed_bestofn", "seconds": 82}
+{"utc": "2026-08-01T14:26:30.554729+00:00", "event": "stages complete", "stages": ["gate", "p2mid"]}

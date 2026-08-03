@@ -1,0 +1,27 @@
+{
+  "property": "aromatic_rings",
+  "alpha_from_platt_slope": 0.40471048623809286,
+  "claim": "a power calibration g(q) = c*q**alpha at lambda = 1 induces exactly the sampling distribution of the raw head at lambda = alpha",
+  "arms": {
+    "eps0": {
+      "eps": 0.0,
+      "power_run": "c18_identity_eps0_power_aromatic_rings",
+      "lambda_run": "c18_identity_eps0_lam0p4047_aromatic_rings",
+      "identical_molecule_fraction": 1.0,
+      "n_molecules": 1536,
+      "hit_rate_a": 0.286936542790004,
+      "hit_rate_b": 0.286936542790004,
+      "hit_rate_difference": 0.0
+    },
+    "epsdeployed": {
+      "eps": 1e-06,
+      "power_run": "c18_identity_epsdeployed_power_aromatic_rings",
+      "lambda_run": "c18_identity_epsdeployed_lam0p4047_aromatic_rings",
+      "identical_molecule_fraction": 0.9993489583333334,
+      "n_molecules": 1536,
+      "hit_rate_a": 0.286936542790004,
+      "hit_rate_b": 0.286936542790004,
+      "hit_rate_difference": 0.0
+    }
+  }
+}

@@ -21,3 +21,12 @@ binning:
   clogp_n_bins: 20
   aromatic_rings_max: 5
   mol_weight_n_bins: 20
+  # Phase 2. 20 quantile bins for the continuous properties keeps the [0.85, 0.95)
+  # target band exactly on bin edges, which is what makes P(y in I) an exact sum of
+  # bin probabilities rather than an approximation (see binning.interval_mask).
+  # The count caps are chosen a priori to sit above the target the q=0.90 rule can
+  # return, so the target value is never absorbed into the "or more" top category.
+  hbd_count_max: 6
+  rotatable_bonds_max: 12
+  tpsa_n_bins: 20
+  qed_n_bins: 20

@@ -1,0 +1,42 @@
+{
+  "dataset": "pilot_50k_p2",
+  "n_trajectories": 49825,
+  "n_prefix_rows": 199300,
+  "hidden_size": 768,
+  "probe_points": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "n_probe_points": 13,
+  "batch_size": 96,
+  "compute": {
+    "processed_tokens_actual": 2205784,
+    "processed_tokens_full_recompute": 2205784,
+    "forward_calls": 520,
+    "wall_seconds": 55.042194346897304,
+    "molecules_returned": 0
+  },
+  "processed_tokens_actual": 2205784,
+  "processed_tokens_if_one_pass_per_layer": 28675192,
+  "token_saving_factor": 13.0,
+  "wall_seconds": 56.64008656423539,
+  "validity_gate": {
+    "checked": true,
+    "reference": "outputs/pilot_50k_p2/hidden.npy",
+    "probe_point": 12,
+    "bit_identical": true,
+    "max_abs_difference": 0.0
+  },
+  "note": "Wall time is recorded but is not the cost unit (pilot_report.md \u00a711.7). The 13 probe points cost the same processed tokens as one, because `output_hidden_states=True` returns every layer from the single pass."
+}

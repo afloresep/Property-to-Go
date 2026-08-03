@@ -1,0 +1,378 @@
+{
+  "unguided": {
+    "random_hits": [
+      {
+        "smiles": "O=C(Cn1nc(C(F)F)cc1C1CC1)Nc1cncnc1-n1cccn1",
+        "value": 3.0,
+        "sa_score": 2.9102793855135562,
+        "qed": 0.7293288734770148,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6153846153846154,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "Cc1ccccc1-n1nc(C(=O)Nc2ccc(CN3C(=O)CCCC3=O)cc2)c2c1CCC2",
+        "value": 3.0,
+        "sa_score": 2.376337725560063,
+        "qed": 0.6064199043028496,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.7878787878787878,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 33
+      },
+      {
+        "smiles": "Cc1ccc2c(CC(=O)Nc3ccc(NC(=O)CCN4CCCCC4)cc3)coc2c1C",
+        "value": 3.0,
+        "sa_score": 2.2322784648039633,
+        "qed": 0.5470660995745945,
+        "longest_chain": 3.0,
+        "carbon_fraction": 0.8125,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 32
+      }
+    ],
+    "worst_sa_hits": [
+      {
+        "smiles": "O=C(Cn1nc(C(F)F)cc1C1CC1)Nc1cncnc1-n1cccn1",
+        "value": 3.0,
+        "sa_score": 2.9102793855135562,
+        "qed": 0.7293288734770148,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6153846153846154,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "Cc1ccccc1-n1nc(C(=O)Nc2ccc(CN3C(=O)CCCC3=O)cc2)c2c1CCC2",
+        "value": 3.0,
+        "sa_score": 2.376337725560063,
+        "qed": 0.6064199043028496,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.7878787878787878,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 33
+      },
+      {
+        "smiles": "Cc1ccc2c(CC(=O)Nc3ccc(NC(=O)CCN4CCCCC4)cc3)coc2c1C",
+        "value": 3.0,
+        "sa_score": 2.2322784648039633,
+        "qed": 0.5470660995745945,
+        "longest_chain": 3.0,
+        "carbon_fraction": 0.8125,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 32
+      }
+    ],
+    "longest_chain_hits": [
+      {
+        "smiles": "Cc1ccc2c(CC(=O)Nc3ccc(NC(=O)CCN4CCCCC4)cc3)coc2c1C",
+        "value": 3.0,
+        "sa_score": 2.2322784648039633,
+        "qed": 0.5470660995745945,
+        "longest_chain": 3.0,
+        "carbon_fraction": 0.8125,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 32
+      },
+      {
+        "smiles": "O=C(Cn1nc(C(F)F)cc1C1CC1)Nc1cncnc1-n1cccn1",
+        "value": 3.0,
+        "sa_score": 2.9102793855135562,
+        "qed": 0.7293288734770148,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6153846153846154,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "Cc1ccccc1-n1nc(C(=O)Nc2ccc(CN3C(=O)CCCC3=O)cc2)c2c1CCC2",
+        "value": 3.0,
+        "sa_score": 2.376337725560063,
+        "qed": 0.6064199043028496,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.7878787878787878,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 33
+      }
+    ]
+  },
+  "throughout": {
+    "random_hits": [
+      {
+        "smiles": "CCc1cnc(NC(=O)Cc2cccc(OCc3cccc(C)c3)c2)o1",
+        "value": 3.0,
+        "sa_score": 2.2612307202328914,
+        "qed": 0.6896650295696305,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.8076923076923077,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "CCOC(=O)c1cc(-c2ccc(Cl)cc2)sc1NC(=O)c1ccc([N+](=O)[O-])c(Cl)c1",
+        "value": 3.0,
+        "sa_score": 2.2597858028957436,
+        "qed": 0.27115495567276526,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6666666666666666,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "Cc1nc(CCNC(=O)c2ccc(Oc3ccc(Br)cc3)c(F)c2)sc1C",
+        "value": 3.0,
+        "sa_score": 2.184105516493892,
+        "qed": 0.5464875875583962,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7407407407407407,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 27
+      },
+      {
+        "smiles": "Cc1ccc2cc(C(=O)N3CCOCC4(CN(C(=O)c5ccncn5)CCO4)C3)sc2c1",
+        "value": 3.0,
+        "sa_score": 3.804971854457979,
+        "qed": 0.5936688551749082,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.71875,
+        "max_ring_size": 7.0,
+        "n_heavy_atoms": 32
+      },
+      {
+        "smiles": "CCc1c(C(=O)Nc2ccc(N(C)C3CCN(C)CC3)cc2)oc2ccccc12",
+        "value": 3.0,
+        "sa_score": 2.3603666824109375,
+        "qed": 0.6800905021756684,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.8275862068965517,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 29
+      },
+      {
+        "smiles": "CCOc1ccc(OCc2noc(C)n2)c2ccccc12",
+        "value": 3.0,
+        "sa_score": 2.058420417405687,
+        "qed": 0.717255640736116,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7619047619047619,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 21
+      },
+      {
+        "smiles": "Cc1nc(C(C)NC(=O)c2ccccc2OCc2ccccc2Br)no1",
+        "value": 3.0,
+        "sa_score": 2.7134641612146204,
+        "qed": 0.6516080272369248,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7307692307692307,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "O=C1SCCN1Cc1ccccc1-c1noc(-c2ccc(Cl)cc2O)n1",
+        "value": 3.0,
+        "sa_score": 2.6046799510021224,
+        "qed": 0.7128408478717829,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.6923076923076923,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "COc1ccc2nc(Nc3cncc(F)c3)c(N(N)CCNCC3CC4CCC(C3)N4OC)nc2n1",
+        "value": 3.0,
+        "sa_score": 4.942334163953254,
+        "qed": 0.21704358017047956,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6666666666666666,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 36
+      }
+    ],
+    "worst_sa_hits": [
+      {
+        "smiles": "COc1ccc2nc(Nc3cncc(F)c3)c(N(N)CCNCC3CC4CCC(C3)N4OC)nc2n1",
+        "value": 3.0,
+        "sa_score": 4.942334163953254,
+        "qed": 0.21704358017047956,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6666666666666666,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 36
+      },
+      {
+        "smiles": "Cc1ccc2cc(C(=O)N3CCOCC4(CN(C(=O)c5ccncn5)CCO4)C3)sc2c1",
+        "value": 3.0,
+        "sa_score": 3.804971854457979,
+        "qed": 0.5936688551749082,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.71875,
+        "max_ring_size": 7.0,
+        "n_heavy_atoms": 32
+      },
+      {
+        "smiles": "Cc1nc(C(C)NC(=O)c2ccccc2OCc2ccccc2Br)no1",
+        "value": 3.0,
+        "sa_score": 2.7134641612146204,
+        "qed": 0.6516080272369248,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7307692307692307,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "O=C1SCCN1Cc1ccccc1-c1noc(-c2ccc(Cl)cc2O)n1",
+        "value": 3.0,
+        "sa_score": 2.6046799510021224,
+        "qed": 0.7128408478717829,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.6923076923076923,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "CCc1c(C(=O)Nc2ccc(N(C)C3CCN(C)CC3)cc2)oc2ccccc12",
+        "value": 3.0,
+        "sa_score": 2.3603666824109375,
+        "qed": 0.6800905021756684,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.8275862068965517,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 29
+      },
+      {
+        "smiles": "CCc1cnc(NC(=O)Cc2cccc(OCc3cccc(C)c3)c2)o1",
+        "value": 3.0,
+        "sa_score": 2.2612307202328914,
+        "qed": 0.6896650295696305,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.8076923076923077,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "CCOC(=O)c1cc(-c2ccc(Cl)cc2)sc1NC(=O)c1ccc([N+](=O)[O-])c(Cl)c1",
+        "value": 3.0,
+        "sa_score": 2.2597858028957436,
+        "qed": 0.27115495567276526,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6666666666666666,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "Cc1nc(CCNC(=O)c2ccc(Oc3ccc(Br)cc3)c(F)c2)sc1C",
+        "value": 3.0,
+        "sa_score": 2.184105516493892,
+        "qed": 0.5464875875583962,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7407407407407407,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 27
+      },
+      {
+        "smiles": "CCOc1ccc(OCc2noc(C)n2)c2ccccc12",
+        "value": 3.0,
+        "sa_score": 2.058420417405687,
+        "qed": 0.717255640736116,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7619047619047619,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 21
+      }
+    ],
+    "longest_chain_hits": [
+      {
+        "smiles": "CCc1cnc(NC(=O)Cc2cccc(OCc3cccc(C)c3)c2)o1",
+        "value": 3.0,
+        "sa_score": 2.2612307202328914,
+        "qed": 0.6896650295696305,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.8076923076923077,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "COc1ccc2nc(Nc3cncc(F)c3)c(N(N)CCNCC3CC4CCC(C3)N4OC)nc2n1",
+        "value": 3.0,
+        "sa_score": 4.942334163953254,
+        "qed": 0.21704358017047956,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6666666666666666,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 36
+      },
+      {
+        "smiles": "CCc1c(C(=O)Nc2ccc(N(C)C3CCN(C)CC3)cc2)oc2ccccc12",
+        "value": 3.0,
+        "sa_score": 2.3603666824109375,
+        "qed": 0.6800905021756684,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.8275862068965517,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 29
+      },
+      {
+        "smiles": "Cc1nc(CCNC(=O)c2ccc(Oc3ccc(Br)cc3)c(F)c2)sc1C",
+        "value": 3.0,
+        "sa_score": 2.184105516493892,
+        "qed": 0.5464875875583962,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7407407407407407,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 27
+      },
+      {
+        "smiles": "Cc1nc(C(C)NC(=O)c2ccccc2OCc2ccccc2Br)no1",
+        "value": 3.0,
+        "sa_score": 2.7134641612146204,
+        "qed": 0.6516080272369248,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7307692307692307,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "CCOc1ccc(OCc2noc(C)n2)c2ccccc12",
+        "value": 3.0,
+        "sa_score": 2.058420417405687,
+        "qed": 0.717255640736116,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.7619047619047619,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 21
+      },
+      {
+        "smiles": "CCOC(=O)c1cc(-c2ccc(Cl)cc2)sc1NC(=O)c1ccc([N+](=O)[O-])c(Cl)c1",
+        "value": 3.0,
+        "sa_score": 2.2597858028957436,
+        "qed": 0.27115495567276526,
+        "longest_chain": 2.0,
+        "carbon_fraction": 0.6666666666666666,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 30
+      },
+      {
+        "smiles": "O=C1SCCN1Cc1ccccc1-c1noc(-c2ccc(Cl)cc2O)n1",
+        "value": 3.0,
+        "sa_score": 2.6046799510021224,
+        "qed": 0.7128408478717829,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.6923076923076923,
+        "max_ring_size": 6.0,
+        "n_heavy_atoms": 26
+      },
+      {
+        "smiles": "Cc1ccc2cc(C(=O)N3CCOCC4(CN(C(=O)c5ccncn5)CCO4)C3)sc2c1",
+        "value": 3.0,
+        "sa_score": 3.804971854457979,
+        "qed": 0.5936688551749082,
+        "longest_chain": 1.0,
+        "carbon_fraction": 0.71875,
+        "max_ring_size": 7.0,
+        "n_heavy_atoms": 32
+      }
+    ]
+  }
+}

@@ -1,0 +1,1009 @@
+{
+  "dataset": "pilot_50k_p2",
+  "headroom_dir": "pilot_50k_p2_headroom",
+  "lambda": 1.0,
+  "eps": 1e-06,
+  "top_k": 8,
+  "n_prefixes_sampled": 400,
+  "prefix_reconstruction": {
+    "candidate_ids_identical": true,
+    "base_logprob_max_abs_difference": 0.0
+  },
+  "variants": [
+    "baseline",
+    "c18_heads_wide",
+    "c18_heads_focused",
+    "c18_heads_wide_focused"
+  ],
+  "calibrators_from": "c18_offpolicy_calibration",
+  "MUST_BE_MEASURED_END_TO_END": "Everything below is a per-DECODING-POSITION gain with the rest of the sequence left to the base policy. docs/TODO.md C22.1: end-to-end lift is 20-48x the per-step gain and the ratios do NOT transfer linearly. No number here may be converted into an end-to-end claim.",
+  "compute": {
+    "candidates": {
+      "processed_tokens_actual": 9103,
+      "processed_tokens_full_recompute": 9103,
+      "forward_calls": 5,
+      "wall_seconds": 0.6056185914203525,
+      "molecules_returned": 0
+    },
+    "candidate_hidden_states": {
+      "processed_tokens_actual": 76024,
+      "processed_tokens_full_recompute": 76024,
+      "forward_calls": 34,
+      "wall_seconds": 1.8996913535520434,
+      "molecules_returned": 0
+    },
+    "processed_tokens_total": 85127
+  },
+  "properties": {
+    "aromatic_rings": {
+      "target_interval": {
+        "lo": 3.0,
+        "hi": 4.0,
+        "rule": {
+          "kind": "exact_value",
+          "value": 3
+        },
+        "base_rate": 0.1713867089496819
+      },
+      "n_prefixes_scored": 267,
+      "published_reference": {
+        "our_head_gain": 0.014658723760802218,
+        "oracle_head_gain": 0.07046902107237182,
+        "noise_corrected_ceiling_gain": 0.1349493338681582,
+        "our_head_share_of_the_lambda1_optimum": 0.20801656582894323,
+        "fraction_of_ceiling_lambda1_permits": 0.5221887285580685,
+        "source": "pilot_50k_p2_locality/locality_metrics.json"
+      },
+      "arms": {
+        "baseline": {
+          "our_head_gain": 0.014658723760802218,
+          "our_head_share_of_the_lambda1_optimum": 0.20801656582894323,
+          "our_head_share_of_the_ceiling": 0.10862390602923162,
+          "mean_head_target_prob": 0.12082430720329285,
+          "picks_the_best_candidate_rate": 0.33707865168539325,
+          "mean_weight_on_the_best_candidate": 0.19337024204059777,
+          "head_dir": "pilot_50k_heads_p2",
+          "n_bins": 6,
+          "n_parameters": 264198
+        },
+        "c18_heads_wide": {
+          "our_head_gain": 0.01266398643181549,
+          "our_head_share_of_the_lambda1_optimum": 0.17970998091217347,
+          "our_head_share_of_the_ceiling": 0.09384252644172263,
+          "mean_head_target_prob": 0.14367778599262238,
+          "picks_the_best_candidate_rate": 0.36704119850187267,
+          "mean_weight_on_the_best_candidate": 0.19283698260694593,
+          "head_dir": "c18_heads_wide",
+          "n_bins": 6,
+          "n_parameters": 1843206
+        },
+        "c18_heads_focused": {
+          "our_head_gain": 0.012352563340333512,
+          "our_head_share_of_the_lambda1_optimum": 0.17529069018352625,
+          "our_head_share_of_the_ceiling": 0.09153482263500187,
+          "mean_head_target_prob": 0.14321494102478027,
+          "picks_the_best_candidate_rate": 0.3595505617977528,
+          "mean_weight_on_the_best_candidate": 0.19746422505313851,
+          "head_dir": "c18_heads_focused",
+          "n_bins": 3,
+          "n_parameters": 263427
+        },
+        "c18_heads_wide_focused": {
+          "our_head_gain": 0.01664745310187785,
+          "our_head_share_of_the_lambda1_optimum": 0.2362378935955543,
+          "our_head_share_of_the_ceiling": 0.12336076529389878,
+          "mean_head_target_prob": 0.14090217649936676,
+          "picks_the_best_candidate_rate": 0.40074906367041196,
+          "mean_weight_on_the_best_candidate": 0.2030472066753409,
+          "head_dir": "c18_heads_wide_focused",
+          "n_bins": 3,
+          "n_parameters": 1840131
+        },
+        "baseline_platt": {
+          "our_head_gain": 0.003685818298622902,
+          "our_head_share_of_the_lambda1_optimum": 0.05230409394842536,
+          "our_head_share_of_the_ceiling": 0.027312608317310003,
+          "mean_head_target_prob": 0.3056299636754075,
+          "picks_the_best_candidate_rate": 0.33707865168539325,
+          "mean_weight_on_the_best_candidate": 0.17729419399481036,
+          "calibrator": {
+            "kind": "platt",
+            "a": 0.40471048623809286,
+            "b": 0.2362470313551243
+          },
+          "equivalent_lambda": 0.40471048623809286
+        },
+        "baseline_isotonic": {
+          "our_head_gain": 0.00870458129755019,
+          "our_head_share_of_the_lambda1_optimum": 0.12352351664727355,
+          "our_head_share_of_the_ceiling": 0.06450258810506118,
+          "mean_head_target_prob": 0.2915067179823918,
+          "picks_the_best_candidate_rate": 0.46441947565543074,
+          "mean_weight_on_the_best_candidate": 0.17573446722083927,
+          "calibrator_kind": "isotonic",
+          "n_knots": 3626
+        },
+        "baseline_bin_temperature": {
+          "our_head_gain": 0.0083598820433138,
+          "our_head_share_of_the_lambda1_optimum": 0.11863201611284176,
+          "our_head_share_of_the_ceiling": 0.061948301660245134,
+          "mean_head_target_prob": 0.14751209318637848,
+          "picks_the_best_candidate_rate": 0.3595505617977528,
+          "mean_weight_on_the_best_candidate": 0.18502750330712914,
+          "bin_logit_temperature": 1.6,
+          "selected_by": "lowest ECE on held-out guided prefixes"
+        }
+      },
+      "bin_temperature_sweep": {
+        "gain_by_temperature": {
+          "0.4": 0.03846777136570732,
+          "0.5": 0.03141313518341732,
+          "0.625": 0.024657399695258767,
+          "0.75": 0.020236510654250285,
+          "0.9": 0.01654420911389458,
+          "1.0": 0.014658723567905088,
+          "1.25": 0.011243735772266256,
+          "1.6": 0.0083598820433138,
+          "2.0": 0.006431766654003724,
+          "3.0": 0.004076801869910874,
+          "4.0": 0.0029969031814352965
+        },
+        "best_temperature_for_the_decoder": 0.4,
+        "best_gain": 0.03846777136570732,
+        "ece_selected_temperature": 1.6,
+        "gain_at_the_ece_selected_temperature": 0.0083598820433138,
+        "note": "The temperature that minimises calibration error and the one that maximises per-position gain are different objectives; where they disagree, that disagreement IS the C18 finding."
+      },
+      "lambda_rescale_at_the_platt_equivalent": {
+        "equivalent_lambda": 0.40471048623809286,
+        "our_head_gain": 0.00498649926860615,
+        "platt_calibrated_gain": 0.003685818298622902,
+        "difference": 0.0013006809699832476
+      },
+      "power_calibration_is_a_lambda_rescale": {
+        "lambda": 1.0,
+        "alpha": 0.40471048623809286,
+        "equivalent_lambda": 0.40471048623809286,
+        "eps": 1e-06,
+        "max_abs_weight_difference": 0.006953439375315784,
+        "mean_abs_weight_difference": 7.150787646695012e-06,
+        "argmax_agreement": 1.0
+      },
+      "lambda_rescale_of_the_baseline_head": {
+        "0.25": {
+          "our_head_gain": 0.0029289687519347537,
+          "share_of_lambda1_optimum": 0.0415639199660046
+        },
+        "0.5": {
+          "our_head_gain": 0.006358183774361065,
+          "share_of_lambda1_optimum": 0.09022665105325073
+        },
+        "1.0": {
+          "our_head_gain": 0.014658723760802218,
+          "share_of_lambda1_optimum": 0.20801656582894323
+        },
+        "2.0": {
+          "our_head_gain": 0.03235315678801426,
+          "share_of_lambda1_optimum": 0.45911176706694284
+        },
+        "4.0": {
+          "our_head_gain": 0.06347607903782626,
+          "share_of_lambda1_optimum": 0.9007657275760396
+        },
+        "8.0": {
+          "our_head_gain": 0.09060049817585701,
+          "share_of_lambda1_optimum": 1.285678398779091
+        }
+      }
+    },
+    "hbd_count": {
+      "target_interval": {
+        "lo": 3.0,
+        "hi": 4.0,
+        "rule": {
+          "kind": "quantile_value",
+          "q": 0.9
+        },
+        "base_rate": 0.08230807827395886
+      },
+      "n_prefixes_scored": 267,
+      "published_reference": {
+        "our_head_gain": 0.004493537818819678,
+        "oracle_head_gain": 0.03783787881368719,
+        "noise_corrected_ceiling_gain": 0.0812433185999176,
+        "our_head_share_of_the_lambda1_optimum": 0.11875765660505841,
+        "fraction_of_ceiling_lambda1_permits": 0.4657352686443014,
+        "source": "pilot_50k_p2_locality/locality_metrics.json"
+      },
+      "arms": {
+        "baseline": {
+          "our_head_gain": 0.004493537818819678,
+          "our_head_share_of_the_lambda1_optimum": 0.11875765660505841,
+          "our_head_share_of_the_ceiling": 0.05530962910252458,
+          "mean_head_target_prob": 0.07334686815738678,
+          "picks_the_best_candidate_rate": 0.23220973782771537,
+          "mean_weight_on_the_best_candidate": 0.26219978392653814,
+          "head_dir": "pilot_50k_heads_p2",
+          "n_bins": 7,
+          "n_parameters": 264455
+        },
+        "c18_heads_wide": {
+          "our_head_gain": 0.00800544148253352,
+          "our_head_share_of_the_lambda1_optimum": 0.21157215291988546,
+          "our_head_share_of_the_ceiling": 0.09853661347779609,
+          "mean_head_target_prob": 0.07533270120620728,
+          "picks_the_best_candidate_rate": 0.250936329588015,
+          "mean_weight_on_the_best_candidate": 0.2646790046614306,
+          "head_dir": "c18_heads_wide",
+          "n_bins": 7,
+          "n_parameters": 1844231
+        },
+        "c18_heads_focused": {
+          "our_head_gain": 0.0048461877467682905,
+          "our_head_share_of_the_lambda1_optimum": 0.12807768032216613,
+          "our_head_share_of_the_ceiling": 0.059650292852183005,
+          "mean_head_target_prob": 0.07524369657039642,
+          "picks_the_best_candidate_rate": 0.2247191011235955,
+          "mean_weight_on_the_best_candidate": 0.2603438804493912,
+          "head_dir": "c18_heads_focused",
+          "n_bins": 3,
+          "n_parameters": 263427
+        },
+        "c18_heads_wide_focused": {
+          "our_head_gain": 0.005463128953516225,
+          "our_head_share_of_the_lambda1_optimum": 0.14438253741486254,
+          "our_head_share_of_the_ceiling": 0.0672440398504569,
+          "mean_head_target_prob": 0.06939055770635605,
+          "picks_the_best_candidate_rate": 0.24344569288389514,
+          "mean_weight_on_the_best_candidate": 0.26461714236063866,
+          "head_dir": "c18_heads_wide_focused",
+          "n_bins": 3,
+          "n_parameters": 1840131
+        },
+        "baseline_platt": {
+          "our_head_gain": 0.0020431821119204574,
+          "our_head_share_of_the_lambda1_optimum": 0.05399832590989144,
+          "our_head_share_of_the_ceiling": 0.025148924823985834,
+          "mean_head_target_prob": 0.19771903104496213,
+          "picks_the_best_candidate_rate": 0.23220973782771537,
+          "mean_weight_on_the_best_candidate": 0.26066444507920955,
+          "calibrator": {
+            "kind": "platt",
+            "a": 0.5375174556448339,
+            "b": 0.18297711767327532
+          },
+          "equivalent_lambda": 0.5375174556448339
+        },
+        "baseline_isotonic": {
+          "our_head_gain": 0.0026832712400826166,
+          "our_head_share_of_the_lambda1_optimum": 0.07091494883460513,
+          "our_head_share_of_the_ceiling": 0.033027592746381715,
+          "mean_head_target_prob": 0.18789798004644748,
+          "picks_the_best_candidate_rate": 0.3857677902621723,
+          "mean_weight_on_the_best_candidate": 0.2500995190408457,
+          "calibrator_kind": "isotonic",
+          "n_knots": 3480
+        },
+        "baseline_bin_temperature": {
+          "our_head_gain": 0.0009964670455508695,
+          "our_head_share_of_the_lambda1_optimum": 0.026335171970327656,
+          "our_head_share_of_the_ceiling": 0.012265218392394429,
+          "mean_head_target_prob": 0.14558883011341095,
+          "picks_the_best_candidate_rate": 0.20973782771535582,
+          "mean_weight_on_the_best_candidate": 0.2602184307035899,
+          "bin_logit_temperature": 4.0,
+          "selected_by": "lowest ECE on held-out guided prefixes"
+        }
+      },
+      "bin_temperature_sweep": {
+        "gain_by_temperature": {
+          "0.4": 0.011389507469568452,
+          "0.5": 0.008944598458096259,
+          "0.625": 0.007152882894131572,
+          "0.75": 0.005981574884685081,
+          "0.9": 0.004994639262813464,
+          "1.0": 0.004493537615622174,
+          "1.25": 0.003575428337010915,
+          "1.6": 0.0027548249332371155,
+          "2.0": 0.0021615106473482026,
+          "3.0": 0.0013752425076034738,
+          "4.0": 0.0009964670455508695
+        },
+        "best_temperature_for_the_decoder": 0.4,
+        "best_gain": 0.011389507469568452,
+        "ece_selected_temperature": 4.0,
+        "gain_at_the_ece_selected_temperature": 0.0009964670455508695,
+        "note": "The temperature that minimises calibration error and the one that maximises per-position gain are different objectives; where they disagree, that disagreement IS the C18 finding."
+      },
+      "lambda_rescale_at_the_platt_equivalent": {
+        "equivalent_lambda": 0.5375174556448339,
+        "our_head_gain": 0.00241019079397659,
+        "platt_calibrated_gain": 0.0020431821119204574,
+        "difference": 0.00036700868205613276
+      },
+      "power_calibration_is_a_lambda_rescale": {
+        "lambda": 1.0,
+        "alpha": 0.5375174556448339,
+        "equivalent_lambda": 0.5375174556448339,
+        "eps": 1e-06,
+        "max_abs_weight_difference": 0.00013368985003264777,
+        "mean_abs_weight_difference": 8.3039535118032e-07,
+        "argmax_agreement": 1.0
+      },
+      "lambda_rescale_of_the_baseline_head": {
+        "0.25": {
+          "our_head_gain": 0.0011111901395548637,
+          "share_of_lambda1_optimum": 0.029367136171304348
+        },
+        "0.5": {
+          "our_head_gain": 0.0022399484221212293,
+          "share_of_lambda1_optimum": 0.05919857276224922
+        },
+        "1.0": {
+          "our_head_gain": 0.004493537818819678,
+          "share_of_lambda1_optimum": 0.11875765660505841
+        },
+        "2.0": {
+          "our_head_gain": 0.008874155157569615,
+          "share_of_lambda1_optimum": 0.23453098946866824
+        },
+        "4.0": {
+          "our_head_gain": 0.019649511275047916,
+          "share_of_lambda1_optimum": 0.5193079498933235
+        },
+        "8.0": {
+          "our_head_gain": 0.032102272262554465,
+          "share_of_lambda1_optimum": 0.8484162767322471
+        }
+      }
+    },
+    "rotatable_bonds": {
+      "target_interval": {
+        "lo": 8.0,
+        "hi": 9.0,
+        "rule": {
+          "kind": "quantile_value",
+          "q": 0.9
+        },
+        "base_rate": 0.08266934269944806
+      },
+      "n_prefixes_scored": 267,
+      "published_reference": {
+        "our_head_gain": 0.0030843277973477386,
+        "oracle_head_gain": 0.022873935278388068,
+        "noise_corrected_ceiling_gain": 0.042997970149956787,
+        "our_head_share_of_the_lambda1_optimum": 0.13484027823851968,
+        "fraction_of_ceiling_lambda1_permits": 0.5319770956306656,
+        "source": "pilot_50k_p2_locality/locality_metrics.json"
+      },
+      "arms": {
+        "baseline": {
+          "our_head_gain": 0.0030843277973477386,
+          "our_head_share_of_the_lambda1_optimum": 0.13484027823851968,
+          "our_head_share_of_the_ceiling": 0.07173193959135855,
+          "mean_head_target_prob": 0.08892718702554703,
+          "picks_the_best_candidate_rate": 0.24719101123595505,
+          "mean_weight_on_the_best_candidate": 0.2803136396803038,
+          "head_dir": "pilot_50k_heads_p2",
+          "n_bins": 13,
+          "n_parameters": 265997
+        },
+        "c18_heads_wide": {
+          "our_head_gain": 0.0038825333449993738,
+          "our_head_share_of_the_lambda1_optimum": 0.16973613406468363,
+          "our_head_share_of_the_ceiling": 0.09029573562330769,
+          "mean_head_target_prob": 0.07155163586139679,
+          "picks_the_best_candidate_rate": 0.24344569288389514,
+          "mean_weight_on_the_best_candidate": 0.28099811567265426,
+          "head_dir": "c18_heads_wide",
+          "n_bins": 13,
+          "n_parameters": 1850381
+        },
+        "c18_heads_focused": {
+          "our_head_gain": 0.0025527853757536063,
+          "our_head_share_of_the_lambda1_optimum": 0.11160236945172915,
+          "our_head_share_of_the_ceiling": 0.059369904366431386,
+          "mean_head_target_prob": 0.07072801887989044,
+          "picks_the_best_candidate_rate": 0.20973782771535582,
+          "mean_weight_on_the_best_candidate": 0.2796268240303833,
+          "head_dir": "c18_heads_focused",
+          "n_bins": 3,
+          "n_parameters": 263427
+        },
+        "c18_heads_wide_focused": {
+          "our_head_gain": 0.003111550624758882,
+          "our_head_share_of_the_lambda1_optimum": 0.13603040259096832,
+          "our_head_share_of_the_ceiling": 0.0723650584878135,
+          "mean_head_target_prob": 0.0882653146982193,
+          "picks_the_best_candidate_rate": 0.1947565543071161,
+          "mean_weight_on_the_best_candidate": 0.2864236295688797,
+          "head_dir": "c18_heads_wide_focused",
+          "n_bins": 3,
+          "n_parameters": 1840131
+        },
+        "baseline_platt": {
+          "our_head_gain": 0.001445184962120813,
+          "our_head_share_of_the_lambda1_optimum": 0.063180425428862,
+          "our_head_share_of_the_ceiling": 0.03361053922035586,
+          "mean_head_target_prob": 0.14789712530128377,
+          "picks_the_best_candidate_rate": 0.24719101123595505,
+          "mean_weight_on_the_best_candidate": 0.28068623550036154,
+          "calibrator": {
+            "kind": "platt",
+            "a": 0.4431277456505685,
+            "b": -0.5142341671031708
+          },
+          "equivalent_lambda": 0.4431277456505685
+        },
+        "baseline_isotonic": {
+          "our_head_gain": 0.0013999615037427263,
+          "our_head_share_of_the_lambda1_optimum": 0.061203351618531895,
+          "our_head_share_of_the_ceiling": 0.032558781236888996,
+          "mean_head_target_prob": 0.1429425940545147,
+          "picks_the_best_candidate_rate": 0.34831460674157305,
+          "mean_weight_on_the_best_candidate": 0.26751030547704396,
+          "calibrator_kind": "isotonic",
+          "n_knots": 3559
+        },
+        "baseline_bin_temperature": {
+          "our_head_gain": 0.002274986829074563,
+          "our_head_share_of_the_lambda1_optimum": 0.09945760540924649,
+          "our_head_share_of_the_ceiling": 0.05290916806399172,
+          "mean_head_target_prob": 0.09072104096412659,
+          "picks_the_best_candidate_rate": 0.26217228464419473,
+          "mean_weight_on_the_best_candidate": 0.28101907070130966,
+          "bin_logit_temperature": 1.4,
+          "selected_by": "lowest ECE on held-out guided prefixes"
+        }
+      },
+      "bin_temperature_sweep": {
+        "gain_by_temperature": {
+          "0.4": 0.006094984863828618,
+          "0.5": 0.0053070822744229525,
+          "0.625": 0.004509281226938581,
+          "0.75": 0.0039147556619998245,
+          "0.9": 0.0033730454010892034,
+          "1.0": 0.0030843278013577904,
+          "1.25": 0.0025297530836928916,
+          "1.6": 0.0019958323630935655,
+          "2.0": 0.0015772831388028024,
+          "3.0": 0.0009674662561066758,
+          "4.0": 0.0006504551951233309
+        },
+        "best_temperature_for_the_decoder": 0.4,
+        "best_gain": 0.006094984863828618,
+        "ece_selected_temperature": 1.4,
+        "gain_at_the_ece_selected_temperature": null,
+        "note": "The temperature that minimises calibration error and the one that maximises per-position gain are different objectives; where they disagree, that disagreement IS the C18 finding."
+      },
+      "lambda_rescale_at_the_platt_equivalent": {
+        "equivalent_lambda": 0.4431277456505685,
+        "our_head_gain": 0.001548533035336562,
+        "platt_calibrated_gain": 0.001445184962120813,
+        "difference": 0.00010334807321574885
+      },
+      "power_calibration_is_a_lambda_rescale": {
+        "lambda": 1.0,
+        "alpha": 0.4431277456505685,
+        "equivalent_lambda": 0.4431277456505685,
+        "eps": 1e-06,
+        "max_abs_weight_difference": 0.006602027492261242,
+        "mean_abs_weight_difference": 1.0095125034742958e-05,
+        "argmax_agreement": 1.0
+      },
+      "lambda_rescale_of_the_baseline_head": {
+        "0.25": {
+          "our_head_gain": 0.0009057086096672828,
+          "share_of_lambda1_optimum": 0.039595661990135186
+        },
+        "0.5": {
+          "our_head_gain": 0.0017239673031057055,
+          "share_of_lambda1_optimum": 0.07536819887457484
+        },
+        "1.0": {
+          "our_head_gain": 0.0030843277973477386,
+          "share_of_lambda1_optimum": 0.13484027823851968
+        },
+        "2.0": {
+          "our_head_gain": 0.005381416506088734,
+          "share_of_lambda1_optimum": 0.2352641310117392
+        },
+        "4.0": {
+          "our_head_gain": 0.010016457854224189,
+          "share_of_lambda1_optimum": 0.4378983210505111
+        },
+        "8.0": {
+          "our_head_gain": 0.015683541008339547,
+          "share_of_lambda1_optimum": 0.6856511928298492
+        }
+      }
+    },
+    "tpsa": {
+      "target_interval": {
+        "lo": 100.52,
+        "hi": 119.31,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.1000903161063723
+      },
+      "n_prefixes_scored": 267,
+      "published_reference": {
+        "our_head_gain": 0.006459883632203303,
+        "oracle_head_gain": 0.030044684829536948,
+        "noise_corrected_ceiling_gain": 0.07440526602710994,
+        "our_head_share_of_the_lambda1_optimum": 0.215009199425936,
+        "fraction_of_ceiling_lambda1_permits": 0.4037978282154117,
+        "source": "pilot_50k_p2_locality/locality_metrics.json"
+      },
+      "arms": {
+        "baseline": {
+          "our_head_gain": 0.006459883632203303,
+          "our_head_share_of_the_lambda1_optimum": 0.215009199425936,
+          "our_head_share_of_the_ceiling": 0.0868202477745273,
+          "mean_head_target_prob": 0.09061665832996368,
+          "picks_the_best_candidate_rate": 0.1797752808988764,
+          "mean_weight_on_the_best_candidate": 0.2276086858101439,
+          "head_dir": "pilot_50k_heads_p2",
+          "n_bins": 22,
+          "n_parameters": 268310
+        },
+        "c18_heads_wide": {
+          "our_head_gain": 0.007140736014377788,
+          "our_head_share_of_the_lambda1_optimum": 0.23767052491619836,
+          "our_head_share_of_the_ceiling": 0.0959708417919778,
+          "mean_head_target_prob": 0.10347660630941391,
+          "picks_the_best_candidate_rate": 0.20973782771535582,
+          "mean_weight_on_the_best_candidate": 0.22728489057333673,
+          "head_dir": "c18_heads_wide",
+          "n_bins": 22,
+          "n_parameters": 1859606
+        },
+        "c18_heads_focused": {
+          "our_head_gain": 0.007081102410538726,
+          "our_head_share_of_the_lambda1_optimum": 0.2356856945151673,
+          "our_head_share_of_the_ceiling": 0.09516937158666552,
+          "mean_head_target_prob": 0.0962730273604393,
+          "picks_the_best_candidate_rate": 0.18352059925093633,
+          "mean_weight_on_the_best_candidate": 0.22589560632767267,
+          "head_dir": "c18_heads_focused",
+          "n_bins": 3,
+          "n_parameters": 263427
+        },
+        "c18_heads_wide_focused": {
+          "our_head_gain": 0.007761588680468262,
+          "our_head_share_of_the_lambda1_optimum": 0.2583348344143001,
+          "our_head_share_of_the_ceiling": 0.1043150450888824,
+          "mean_head_target_prob": 0.10213904827833176,
+          "picks_the_best_candidate_rate": 0.19850187265917604,
+          "mean_weight_on_the_best_candidate": 0.22633027069505524,
+          "head_dir": "c18_heads_wide_focused",
+          "n_bins": 3,
+          "n_parameters": 1840131
+        },
+        "baseline_platt": {
+          "our_head_gain": 0.0035977711034595283,
+          "our_head_share_of_the_lambda1_optimum": 0.11974734046544425,
+          "our_head_share_of_the_ceiling": 0.04835371601451788,
+          "mean_head_target_prob": 0.17926860505070005,
+          "picks_the_best_candidate_rate": 0.1797752808988764,
+          "mean_weight_on_the_best_candidate": 0.22587224485662943,
+          "calibrator": {
+            "kind": "platt",
+            "a": 0.5825537411361663,
+            "b": -0.022554117745436905
+          },
+          "equivalent_lambda": 0.5825537411361663
+        },
+        "baseline_isotonic": {
+          "our_head_gain": 0.005066127148617492,
+          "our_head_share_of_the_lambda1_optimum": 0.16861974679917358,
+          "our_head_share_of_the_ceiling": 0.06808828755173892,
+          "mean_head_target_prob": 0.17320031309372189,
+          "picks_the_best_candidate_rate": 0.2846441947565543,
+          "mean_weight_on_the_best_candidate": 0.21916423066104554,
+          "calibrator_kind": "isotonic",
+          "n_knots": 3575
+        },
+        "baseline_bin_temperature": {
+          "our_head_gain": 0.008463080390836835,
+          "our_head_share_of_the_lambda1_optimum": 0.28168311429636883,
+          "our_head_share_of_the_ceiling": 0.11374302979782733,
+          "mean_head_target_prob": 0.08691854029893875,
+          "picks_the_best_candidate_rate": 0.1947565543071161,
+          "mean_weight_on_the_best_candidate": 0.227405518009588,
+          "bin_logit_temperature": 0.675,
+          "selected_by": "lowest ECE on held-out guided prefixes"
+        }
+      },
+      "bin_temperature_sweep": {
+        "gain_by_temperature": {
+          "0.4": 0.011790796748557262,
+          "0.5": 0.010213607801892515,
+          "0.625": 0.008886398267757408,
+          "0.75": 0.007903040487403524,
+          "0.9": 0.00697516024765073,
+          "1.0": 0.006459883405064025,
+          "1.25": 0.005427058714764395,
+          "1.6": 0.004408563750848129,
+          "2.0": 0.003622661445700457,
+          "3.0": 0.002508314797660497,
+          "4.0": 0.0019215212328925237
+        },
+        "best_temperature_for_the_decoder": 0.4,
+        "best_gain": 0.011790796748557262,
+        "ece_selected_temperature": 0.675,
+        "gain_at_the_ece_selected_temperature": null,
+        "note": "The temperature that minimises calibration error and the one that maximises per-position gain are different objectives; where they disagree, that disagreement IS the C18 finding."
+      },
+      "lambda_rescale_at_the_platt_equivalent": {
+        "equivalent_lambda": 0.5825537411361663,
+        "our_head_gain": 0.003961783919050858,
+        "platt_calibrated_gain": 0.0035977711034595283,
+        "difference": 0.00036401281559132964
+      },
+      "power_calibration_is_a_lambda_rescale": {
+        "lambda": 1.0,
+        "alpha": 0.5825537411361663,
+        "equivalent_lambda": 0.5825537411361663,
+        "eps": 1e-06,
+        "max_abs_weight_difference": 0.0007023430864275815,
+        "mean_abs_weight_difference": 1.3142184430058987e-06,
+        "argmax_agreement": 1.0
+      },
+      "lambda_rescale_of_the_baseline_head": {
+        "0.25": {
+          "our_head_gain": 0.001732421965679125,
+          "share_of_lambda1_optimum": 0.057661512360947784
+        },
+        "0.5": {
+          "our_head_gain": 0.003423284475122937,
+          "share_of_lambda1_optimum": 0.11393976986430239
+        },
+        "1.0": {
+          "our_head_gain": 0.006459883632203303,
+          "share_of_lambda1_optimum": 0.215009199425936
+        },
+        "2.0": {
+          "our_head_gain": 0.011054110714480599,
+          "share_of_lambda1_optimum": 0.3679223389161099
+        },
+        "4.0": {
+          "our_head_gain": 0.018675965902156547,
+          "share_of_lambda1_optimum": 0.6216063176604267
+        },
+        "8.0": {
+          "our_head_gain": 0.022729488445260678,
+          "share_of_lambda1_optimum": 0.7565227784621426
+        }
+      }
+    },
+    "clogp": {
+      "target_interval": {
+        "lo": 4.172676000000004,
+        "hi": 5.038300000000004,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09999397868454328
+      },
+      "n_prefixes_scored": 267,
+      "published_reference": {
+        "our_head_gain": 0.007094573021879013,
+        "oracle_head_gain": 0.039657999215151375,
+        "noise_corrected_ceiling_gain": 0.07695235360148821,
+        "our_head_share_of_the_lambda1_optimum": 0.17889387165978168,
+        "fraction_of_ceiling_lambda1_permits": 0.5153578462398636,
+        "source": "pilot_50k_p2_locality/locality_metrics.json"
+      },
+      "arms": {
+        "baseline": {
+          "our_head_gain": 0.007094573021879013,
+          "our_head_share_of_the_lambda1_optimum": 0.17889387165978168,
+          "our_head_share_of_the_ceiling": 0.09219436040409566,
+          "mean_head_target_prob": 0.09195374697446823,
+          "picks_the_best_candidate_rate": 0.2883895131086142,
+          "mean_weight_on_the_best_candidate": 0.23228438707813714,
+          "head_dir": "pilot_50k_heads_p2",
+          "n_bins": 22,
+          "n_parameters": 268310
+        },
+        "c18_heads_wide": {
+          "our_head_gain": 0.007179012942635468,
+          "our_head_share_of_the_lambda1_optimum": 0.18102307440393312,
+          "our_head_share_of_the_ceiling": 0.09329166174452955,
+          "mean_head_target_prob": 0.0870804637670517,
+          "picks_the_best_candidate_rate": 0.2808988764044944,
+          "mean_weight_on_the_best_candidate": 0.23262308248596436,
+          "head_dir": "c18_heads_wide",
+          "n_bins": 22,
+          "n_parameters": 1859606
+        },
+        "c18_heads_focused": {
+          "our_head_gain": 0.006481670375187331,
+          "our_head_share_of_the_lambda1_optimum": 0.16343916746841336,
+          "our_head_share_of_the_ceiling": 0.08422965733775789,
+          "mean_head_target_prob": 0.10860608518123627,
+          "picks_the_best_candidate_rate": 0.2846441947565543,
+          "mean_weight_on_the_best_candidate": 0.2277109912000738,
+          "head_dir": "c18_heads_focused",
+          "n_bins": 3,
+          "n_parameters": 263427
+        },
+        "c18_heads_wide_focused": {
+          "our_head_gain": 0.005962424290785361,
+          "our_head_share_of_the_lambda1_optimum": 0.15034606911050144,
+          "our_head_share_of_the_ceiling": 0.07748202636741772,
+          "mean_head_target_prob": 0.09979982674121857,
+          "picks_the_best_candidate_rate": 0.2808988764044944,
+          "mean_weight_on_the_best_candidate": 0.22943655245980957,
+          "head_dir": "c18_heads_wide_focused",
+          "n_bins": 3,
+          "n_parameters": 1840131
+        },
+        "baseline_platt": {
+          "our_head_gain": 0.003850529242045389,
+          "our_head_share_of_the_lambda1_optimum": 0.097093381366912,
+          "our_head_share_of_the_ceiling": 0.05003783590539747,
+          "mean_head_target_prob": 0.1909272638151447,
+          "picks_the_best_candidate_rate": 0.2883895131086142,
+          "mean_weight_on_the_best_candidate": 0.22932137051869347,
+          "calibrator": {
+            "kind": "platt",
+            "a": 0.6180214962724399,
+            "b": 0.16114133615368417
+          },
+          "equivalent_lambda": 0.6180214962724399
+        },
+        "baseline_isotonic": {
+          "our_head_gain": 0.0057807107605468465,
+          "our_head_share_of_the_lambda1_optimum": 0.1457640545400566,
+          "our_head_share_of_the_ceiling": 0.07512064920695358,
+          "mean_head_target_prob": 0.18467906113523508,
+          "picks_the_best_candidate_rate": 0.3857677902621723,
+          "mean_weight_on_the_best_candidate": 0.2177239178784349,
+          "calibrator_kind": "isotonic",
+          "n_knots": 3603
+        },
+        "baseline_bin_temperature": {
+          "our_head_gain": 0.010506822344911326,
+          "our_head_share_of_the_lambda1_optimum": 0.264935764608548,
+          "our_head_share_of_the_ceiling": 0.1365367250405728,
+          "mean_head_target_prob": 0.08797517418861389,
+          "picks_the_best_candidate_rate": 0.299625468164794,
+          "mean_weight_on_the_best_candidate": 0.23449808284753443,
+          "bin_logit_temperature": 0.625,
+          "selected_by": "lowest ECE on held-out guided prefixes"
+        }
+      },
+      "bin_temperature_sweep": {
+        "gain_by_temperature": {
+          "0.4": 0.015652930734597698,
+          "0.5": 0.012758462233447175,
+          "0.625": 0.010506822344911326,
+          "0.75": 0.00902073458969956,
+          "0.9": 0.007753779620178959,
+          "1.0": 0.007094573030942948,
+          "1.25": 0.005846644553458283,
+          "1.6": 0.004682392531183344,
+          "2.0": 0.0038094876378975185,
+          "3.0": 0.002594945508597488,
+          "4.0": 0.0019667924612526227
+        },
+        "best_temperature_for_the_decoder": 0.4,
+        "best_gain": 0.015652930734597698,
+        "ece_selected_temperature": 0.625,
+        "gain_at_the_ece_selected_temperature": 0.010506822344911326,
+        "note": "The temperature that minimises calibration error and the one that maximises per-position gain are different objectives; where they disagree, that disagreement IS the C18 finding."
+      },
+      "lambda_rescale_at_the_platt_equivalent": {
+        "equivalent_lambda": 0.6180214962724399,
+        "our_head_gain": 0.004396868251152418,
+        "platt_calibrated_gain": 0.003850529242045389,
+        "difference": 0.0005463390091070292
+      },
+      "power_calibration_is_a_lambda_rescale": {
+        "lambda": 1.0,
+        "alpha": 0.6180214962724399,
+        "equivalent_lambda": 0.6180214962724399,
+        "eps": 1e-06,
+        "max_abs_weight_difference": 0.05459020024388736,
+        "mean_abs_weight_difference": 9.4676757066267e-05,
+        "argmax_agreement": 1.0
+      },
+      "lambda_rescale_of_the_baseline_head": {
+        "0.25": {
+          "our_head_gain": 0.0017504425081202324,
+          "share_of_lambda1_optimum": 0.04413844729341449
+        },
+        "0.5": {
+          "our_head_gain": 0.00354730080713547,
+          "share_of_lambda1_optimum": 0.08944729631696147
+        },
+        "1.0": {
+          "our_head_gain": 0.007094573021879013,
+          "share_of_lambda1_optimum": 0.17889387165978168
+        },
+        "2.0": {
+          "our_head_gain": 0.014515728517846977,
+          "share_of_lambda1_optimum": 0.366022714335554
+        },
+        "4.0": {
+          "our_head_gain": 0.033442321286901444,
+          "share_of_lambda1_optimum": 0.8432679900332636
+        },
+        "8.0": {
+          "our_head_gain": 0.05711137966366992,
+          "share_of_lambda1_optimum": 1.4400973522096008
+        }
+      }
+    },
+    "qed": {
+      "target_interval": {
+        "lo": 0.8506277759108453,
+        "hi": 0.8969547791955041,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09998996487706975
+      },
+      "n_prefixes_scored": 267,
+      "published_reference": {
+        "our_head_gain": 0.002813093835590326,
+        "oracle_head_gain": 0.01902224960090572,
+        "noise_corrected_ceiling_gain": 0.05833679360479606,
+        "our_head_share_of_the_lambda1_optimum": 0.14788439299294992,
+        "fraction_of_ceiling_lambda1_permits": 0.3260763649399791,
+        "source": "pilot_50k_p2_locality/locality_metrics.json"
+      },
+      "arms": {
+        "baseline": {
+          "our_head_gain": 0.002813093835590326,
+          "our_head_share_of_the_lambda1_optimum": 0.14788439299294992,
+          "our_head_share_of_the_ceiling": 0.04822160529849642,
+          "mean_head_target_prob": 0.0690481886267662,
+          "picks_the_best_candidate_rate": 0.2209737827715356,
+          "mean_weight_on_the_best_candidate": 0.38486157630243634,
+          "head_dir": "pilot_50k_heads_p2",
+          "n_bins": 22,
+          "n_parameters": 268310
+        },
+        "c18_heads_wide": {
+          "our_head_gain": 0.00255322648644089,
+          "our_head_share_of_the_lambda1_optimum": 0.13422316182410526,
+          "our_head_share_of_the_ceiling": 0.043767000698354826,
+          "mean_head_target_prob": 0.07521891593933105,
+          "picks_the_best_candidate_rate": 0.2397003745318352,
+          "mean_weight_on_the_best_candidate": 0.38147557944406657,
+          "head_dir": "c18_heads_wide",
+          "n_bins": 22,
+          "n_parameters": 1859606
+        },
+        "c18_heads_focused": {
+          "our_head_gain": 0.00202646719803774,
+          "our_head_share_of_the_lambda1_optimum": 0.10653141665963907,
+          "our_head_share_of_the_ceiling": 0.03473737709628144,
+          "mean_head_target_prob": 0.0741562619805336,
+          "picks_the_best_candidate_rate": 0.24719101123595505,
+          "mean_weight_on_the_best_candidate": 0.40133399655839735,
+          "head_dir": "c18_heads_focused",
+          "n_bins": 3,
+          "n_parameters": 263427
+        },
+        "c18_heads_wide_focused": {
+          "our_head_gain": 0.0013027270187704755,
+          "our_head_share_of_the_lambda1_optimum": 0.06848438255738415,
+          "our_head_share_of_the_ceiling": 0.022331138519470738,
+          "mean_head_target_prob": 0.07019761204719543,
+          "picks_the_best_candidate_rate": 0.29213483146067415,
+          "mean_weight_on_the_best_candidate": 0.39049943653968516,
+          "head_dir": "c18_heads_wide_focused",
+          "n_bins": 3,
+          "n_parameters": 1840131
+        },
+        "baseline_platt": {
+          "our_head_gain": 0.001417728479605432,
+          "our_head_share_of_the_lambda1_optimum": 0.07453001139980461,
+          "our_head_share_of_the_ceiling": 0.024302475196183494,
+          "mean_head_target_prob": 0.11596698705085802,
+          "picks_the_best_candidate_rate": 0.2247191011235955,
+          "mean_weight_on_the_best_candidate": 0.39100813547455265,
+          "calibrator": {
+            "kind": "platt",
+            "a": 0.5452467338909881,
+            "b": -0.43402646832858055
+          },
+          "equivalent_lambda": 0.5452467338909881
+        },
+        "baseline_isotonic": {
+          "our_head_gain": 0.0017196426425657436,
+          "our_head_share_of_the_lambda1_optimum": 0.09040164431886463,
+          "our_head_share_of_the_ceiling": 0.029477839564092296,
+          "mean_head_target_prob": 0.10779894294445842,
+          "picks_the_best_candidate_rate": 0.42696629213483145,
+          "mean_weight_on_the_best_candidate": 0.3670932923451201,
+          "calibrator_kind": "isotonic",
+          "n_knots": 3554
+        },
+        "baseline_bin_temperature": {
+          "our_head_gain": 0.00256825059244039,
+          "our_head_share_of_the_lambda1_optimum": 0.13501297934383671,
+          "our_head_share_of_the_ceiling": 0.04402454152415476,
+          "mean_head_target_prob": 0.07005235552787781,
+          "picks_the_best_candidate_rate": 0.2209737827715356,
+          "mean_weight_on_the_best_candidate": 0.38618021015902354,
+          "bin_logit_temperature": 1.1,
+          "selected_by": "lowest ECE on held-out guided prefixes"
+        }
+      },
+      "bin_temperature_sweep": {
+        "gain_by_temperature": {
+          "0.4": 0.0061574067761332825,
+          "0.5": 0.005166844649741328,
+          "0.625": 0.0042909827031993334,
+          "0.75": 0.003661822948901016,
+          "0.9": 0.003104472877719535,
+          "1.0": 0.002813094049993774,
+          "1.25": 0.0022672711389401445,
+          "1.6": 0.0017712760485075146,
+          "2.0": 0.001410556784383827,
+          "3.0": 0.000926937008656911,
+          "4.0": 0.0006866354288238569
+        },
+        "best_temperature_for_the_decoder": 0.4,
+        "best_gain": 0.0061574067761332825,
+        "ece_selected_temperature": 1.1,
+        "gain_at_the_ece_selected_temperature": null,
+        "note": "The temperature that minimises calibration error and the one that maximises per-position gain are different objectives; where they disagree, that disagreement IS the C18 finding."
+      },
+      "lambda_rescale_at_the_platt_equivalent": {
+        "equivalent_lambda": 0.5452467338909881,
+        "our_head_gain": 0.0015113768799373628,
+        "platt_calibrated_gain": 0.001417728479605432,
+        "difference": 9.36484003319308e-05
+      },
+      "power_calibration_is_a_lambda_rescale": {
+        "lambda": 1.0,
+        "alpha": 0.5452467338909881,
+        "equivalent_lambda": 0.5452467338909881,
+        "eps": 1e-06,
+        "max_abs_weight_difference": 0.08152710142927044,
+        "mean_abs_weight_difference": 6.298315804593137e-05,
+        "argmax_agreement": 1.0
+      },
+      "lambda_rescale_of_the_baseline_head": {
+        "0.25": {
+          "our_head_gain": 0.0006847528085757991,
+          "share_of_lambda1_optimum": 0.035997467331266415
+        },
+        "0.5": {
+          "our_head_gain": 0.0013830832578547818,
+          "share_of_lambda1_optimum": 0.07270871147589862
+        },
+        "1.0": {
+          "our_head_gain": 0.002813093835590326,
+          "share_of_lambda1_optimum": 0.14788439299294992
+        },
+        "2.0": {
+          "our_head_gain": 0.005520424431862311,
+          "share_of_lambda1_optimum": 0.29020881061299203
+        },
+        "4.0": {
+          "our_head_gain": 0.0097216026896965,
+          "share_of_lambda1_optimum": 0.5110648263827648
+        },
+        "8.0": {
+          "our_head_gain": 0.01452327714726173,
+          "share_of_lambda1_optimum": 0.7634889380575799
+        }
+      }
+    }
+  },
+  "wall_seconds_total": 5.683572148904204
+}

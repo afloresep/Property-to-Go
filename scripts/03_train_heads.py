@@ -27,12 +27,16 @@ import torch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from property_to_go import metrics as M  # noqa: E402
-from property_to_go.binning import CategoricalBinner, QuantileBinner, interval_probability  # noqa: E402
+from property_to_go.binning import (  # noqa: E402
+    CategoricalBinner, QuantileBinner, interval_mask_coverage, interval_probability,
+)
 from property_to_go.config import (  # noqa: E402
     OUTPUT_DIR, load_config, read_json, write_json, write_run_context,
 )
 from property_to_go.heads import MarginalHead, MLPHead, train_head  # noqa: E402
-from property_to_go.properties import ALL_PROPERTIES, PRIMARY_PROPERTIES  # noqa: E402
+from property_to_go.properties import (  # noqa: E402
+    ALL_PROPERTIES, DISCRETE_PROPERTIES, PRIMARY_PROPERTIES,
+)
 
 # Kill-gate thresholds, fixed before looking at any result.
 GATE_MIN_NLL_GAIN = 0.05  # nats, frozen_state vs trivial, held-out test
@@ -59,10 +63,48 @@ def paired_bootstrap_diff(fn, a_args, b_args, n_boot=1000, seed=0, alpha=0.05):
     }
 
 
+def _across_seeds(per_seed: list[dict]) -> dict:
+    """Spread of the headline metrics over head-training seeds.
+
+    This is the quantity the pilot could not report (`docs/HANDOFF.md` §8.6: the
+    paired bootstrap captures test-set sampling variance, not initialisation
+    variance), and it is what decides whether a margin under ~0.03 is real.
+    """
+    def col(fn):
+        v = np.array([fn(e) for e in per_seed], dtype=np.float64)
+        return {"mean": float(v.mean()), "std": float(v.std(ddof=1)) if len(v) > 1 else 0.0,
+                "min": float(v.min()), "max": float(v.max()), "values": v.tolist()}
+
+    return {
+        "n_seeds": len(per_seed),
+        "nll": col(lambda e: e["test"]["nll"]),
+        "auroc": col(lambda e: e["test"]["intervals"]["target"]["auroc"]),
+        "expected_value_mae": col(lambda e: e["test"]["expected_value_mae"]),
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", default="pilot_10k")
     ap.add_argument("--config", default=None)
+    ap.add_argument("--head-seeds", type=int, nargs="*", default=None,
+                    help="train one head per seed (phase 2). Omit for the pilot's "
+                         "single-seed behaviour, which stays bit-identical.")
+    ap.add_argument("--legacy-interval-mask", action="store_true",
+                    help="do NOT force the target interval's edges to be bin "
+                         "boundaries, reproducing the pilot's behaviour. Only useful "
+                         "for quantifying what that cost -- see pilot_report.md §11.5.")
+    # C17. Layer selection, additive and defaulting to the existing behaviour: with the
+    # flag omitted this reads `<dataset>/hidden.npy`, i.e. the states script 02 extracted
+    # at `hidden_layer` (-1, the final layer), and nothing about the run changes. Given a
+    # path it reads that array instead, which is what makes a probe-layer sweep possible
+    # without a second copy of the training recipe. The value used is recorded in
+    # head_metrics.json so no checkpoint can be read without knowing which probe point
+    # produced it. See scripts/16_probe_layer_sweep.py and
+    # reports/section_c17_probe_layers.md.
+    ap.add_argument("--hidden-file", default=None,
+                    help="alternative frozen-state array (absolute, or relative to the "
+                         "dataset directory). Default: <dataset>/hidden.npy.")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
@@ -74,7 +116,11 @@ def main() -> int:
     import pandas as pd
 
     meta = pd.read_csv(data_dir / "prefix_meta.csv")
-    hidden = np.load(data_dir / "hidden.npy")
+    hidden_path = data_dir / "hidden.npy"
+    if args.hidden_file:
+        p = Path(args.hidden_file)
+        hidden_path = p if p.is_absolute() else data_dir / p
+    hidden = np.load(hidden_path)
     features = np.load(data_dir / "features.npy")
     intervals_cfg = read_json(data_dir / "target_intervals.json")
     assert len(meta) == len(hidden) == len(features)
@@ -90,89 +136,180 @@ def main() -> int:
         "combined": np.concatenate([hidden, features], axis=1),
     }
 
+    replicated = args.head_seeds is not None
+    head_seeds = list(args.head_seeds) if replicated else [int(cfg["head"]["seed"])]
+
     report: dict = {
         "dataset": args.dataset,
         "n_rows": int(len(meta)),
         "split_sizes": {s: int(m.sum()) for s, m in masks.items()},
         "gate_thresholds": {"nll_gain": GATE_MIN_NLL_GAIN, "auroc_gain": GATE_MIN_AUROC_GAIN},
+        "head_seeds": head_seeds,
+        # Which frozen-state array these heads were trained on. `hidden.npy` is the
+        # default and is the final layer; anything else is a C17 probe point.
+        "hidden_file": str(hidden_path),
+        "hidden_file_is_dataset_default": bool(hidden_path == data_dir / "hidden.npy"),
+        "seeds_initialisation": replicated,
+        "legacy_interval_mask": bool(args.legacy_interval_mask),
         "properties": {},
     }
     t_start = time.perf_counter()
 
     for prop in ALL_PROPERTIES:
         y = meta[prop].to_numpy().astype(np.float64)
+        # A prefix row whose terminal molecule has no value for this property (QED
+        # alone can fail on a molecule RDKit parsed) is dropped for this property
+        # only, rather than being binned from a NaN.  `n_dropped` is reported so a
+        # silently shrinking training set is visible.
+        scored = np.isfinite(y)
+        masks = {s: (split == s) & scored for s in ("train", "val", "test")}
         y_train = y[masks["train"]]
-
-        if prop == "aromatic_rings":
-            binner = CategoricalBinner(max_value=int(cfg["binning"]["aromatic_rings_max"]))
-        else:
-            n_bins = int(cfg["binning"]["clogp_n_bins" if prop == "clogp" else "mol_weight_n_bins"])
-            binner = QuantileBinner.fit(y_train, n_bins)
-        y_bin = binner.transform(y)
 
         iv = intervals_cfg[prop]
         intervals = {"target": (iv["lo"], iv["hi"])}
+
+        # Count properties get one category per observed value; continuous ones get
+        # quantile bins fitted on the TRAIN terminal distribution.  Keyed off
+        # `DISCRETE_PROPERTIES` and `<prop>_max` / `<prop>_n_bins` rather than a
+        # per-property if-chain, so the phase-2 battery uses the identical recipe.
+        # The keys resolve to exactly the pilot's for clogp / aromatic_rings /
+        # mol_weight.
+        #
+        # `extra_edges` forces the target interval's edges to be bin boundaries. Without
+        # it the head silently learns to predict a *subset* of the target, because
+        # `interval_mask` keeps only bins wholly inside [lo, hi) -- which is exactly what
+        # happened to the pilot's cLogP head (pilot_report.md §11.5). The interval comes
+        # from the full base sample and the binner from the train split, so they never
+        # quite agree, and nothing in the pipeline noticed.
+        if prop in DISCRETE_PROPERTIES:
+            binner = CategoricalBinner(max_value=int(cfg["binning"][f"{prop}_max"]))
+        else:
+            binner = QuantileBinner.fit(
+                y_train,
+                int(cfg["binning"][f"{prop}_n_bins"]),
+                extra_edges=() if args.legacy_interval_mask else (iv["lo"], iv["hi"]),
+            )
+        y_bin = binner.transform(y)
+
+        # Verified numerically, not reasoned about: the masked bin sum must equal the
+        # empirical rate of the target event. A mismatch means the head is being
+        # trained to predict something other than the target.
+        coverage = interval_mask_coverage(binner, iv["lo"], iv["hi"], y[masks["test"]])
+        if not coverage["is_exact"] and not args.legacy_interval_mask:
+            raise SystemExit(
+                f"{prop}: target interval [{iv['lo']}, {iv['hi']}) is not a union of "
+                f"bins -- the head would predict a {coverage['masked_rate']:.4f}-mass "
+                f"event for a {coverage['true_rate']:.4f} target. {coverage}"
+            )
+        if not coverage["is_exact"]:
+            print(f"  !! {prop}: interval mask covers {coverage['masked_rate']:.4f} of a "
+                  f"{coverage['true_rate']:.4f} target ({coverage['n_bins_selected']} of "
+                  f"{coverage['n_bins']} bins) -- legacy behaviour, reported not fixed")
 
         prop_report: dict = {
             "binner": binner.to_dict(),
             "n_bins": binner.n_bins,
             "target_interval": iv,
+            "interval_mask_coverage": coverage,
+            "split_sizes": {s: int(m.sum()) for s, m in masks.items()},
+            "n_dropped_unscored": int((~scored).sum()),
             "heads": {},
         }
         preds_store: dict[str, np.ndarray] = {}
 
         for name, x in inputs.items():
-            head = MLPHead(
-                in_dim=x.shape[1],
-                hidden_dim=int(cfg["head"]["hidden_dim"]),
-                n_bins=binner.n_bins,
-                dropout=float(cfg["head"]["dropout"]),
-            )
-            t0 = time.perf_counter()
-            tr = train_head(
-                head,
-                x[masks["train"]],
-                y_bin[masks["train"]],
-                x[masks["val"]],
-                y_bin[masks["val"]],
-                cfg["head"],
-            )
-            train_seconds = time.perf_counter() - t0
+            per_seed: list[dict] = []
+            for rank, hseed in enumerate(head_seeds):
+                if replicated:
+                    # Seed BEFORE constructing the head, not only inside train_head.
+                    # `MLPHead.__init__` draws its Linear initialisation from the
+                    # ambient torch RNG, so `train_head`'s own manual_seed controls
+                    # only the batch shuffling.  The pilot therefore had *one*
+                    # architecture-and-shuffle seed but an initialisation that was
+                    # merely incidental -- which is exactly the gap docs/HANDOFF.md
+                    # §8.6 flags.  Seeding here makes each replicate a genuinely
+                    # independent draw over initialisation as well.
+                    #
+                    # Done only under --head-seeds so the default single-seed path
+                    # stays bit-identical to the executed pilot.
+                    torch.manual_seed(hseed)
+                head = MLPHead(
+                    in_dim=x.shape[1],
+                    hidden_dim=int(cfg["head"]["hidden_dim"]),
+                    n_bins=binner.n_bins,
+                    dropout=float(cfg["head"]["dropout"]),
+                )
+                t0 = time.perf_counter()
+                tr = train_head(
+                    head,
+                    x[masks["train"]],
+                    y_bin[masks["train"]],
+                    x[masks["val"]],
+                    y_bin[masks["val"]],
+                    {**cfg["head"], "seed": hseed},
+                )
+                train_seconds = time.perf_counter() - t0
 
-            probs_test = head.predict_proba(x[masks["test"]])
-            probs_val = head.predict_proba(x[masks["val"]])
-            preds_store[name] = probs_test
+                probs_test = head.predict_proba(x[masks["test"]])
+                probs_val = head.predict_proba(x[masks["val"]])
 
-            prop_report["heads"][name] = {
-                "input_dim": int(x.shape[1]),
-                "n_parameters": int(sum(p.numel() for p in head.parameters())),
-                "best_epoch": tr.best_epoch,
-                "epochs_run": len(tr.history),
-                "train_seconds": train_seconds,
-                "history": tr.history,
-                "val": M.evaluate(probs_val, y[masks["val"]], y_bin[masks["val"]], binner, intervals),
-                "test": M.evaluate(probs_test, y[masks["test"]], y_bin[masks["test"]], binner, intervals),
-                "test_by_quartile": M.evaluate_by_group(
-                    probs_test,
-                    y[masks["test"]],
-                    y_bin[masks["test"]],
-                    quartile[masks["test"]],
-                    binner,
-                    intervals,
-                ),
-            }
-            torch.save(
-                {"state_dict": head.state_dict(), "in_dim": int(x.shape[1]),
-                 "hidden_dim": int(cfg["head"]["hidden_dim"]), "n_bins": binner.n_bins,
-                 "dropout": float(cfg["head"]["dropout"]), "binner": binner.to_dict(),
-                 "property": prop, "input": name},
-                out_dir / f"head_{prop}_{name}.pt",
+                entry = {
+                    "head_seed": int(hseed),
+                    "input_dim": int(x.shape[1]),
+                    "n_parameters": int(sum(p.numel() for p in head.parameters())),
+                    "best_epoch": tr.best_epoch,
+                    "epochs_run": len(tr.history),
+                    "train_seconds": train_seconds,
+                    "history": tr.history,
+                    "val": M.evaluate(
+                        probs_val, y[masks["val"]], y_bin[masks["val"]], binner, intervals
+                    ),
+                    "test": M.evaluate(
+                        probs_test, y[masks["test"]], y_bin[masks["test"]], binner, intervals
+                    ),
+                    "test_by_quartile": M.evaluate_by_group(
+                        probs_test,
+                        y[masks["test"]],
+                        y_bin[masks["test"]],
+                        quartile[masks["test"]],
+                        binner,
+                        intervals,
+                    ),
+                }
+                per_seed.append(entry)
+                ckpt = {
+                    "state_dict": head.state_dict(), "in_dim": int(x.shape[1]),
+                    "hidden_dim": int(cfg["head"]["hidden_dim"]), "n_bins": binner.n_bins,
+                    "dropout": float(cfg["head"]["dropout"]), "binner": binner.to_dict(),
+                    "property": prop, "input": name, "head_seed": int(hseed),
+                }
+                torch.save(ckpt, out_dir / f"head_{prop}_{name}_seed{hseed}.pt")
+                if rank == 0:
+                    # The unsuffixed name is what script 05 loads by default, so the
+                    # first seed in the list is the one guidance steers with unless
+                    # --head-seed says otherwise.
+                    torch.save(ckpt, out_dir / f"head_{prop}_{name}.pt")
+                    preds_store[name] = probs_test
+
+            # The unsuffixed report entry is the first seed's, so every phase-1 key
+            # keeps its meaning; replicates are reported alongside it.
+            prop_report["heads"][name] = dict(per_seed[0])
+            if len(per_seed) > 1:
+                prop_report["heads"][name]["seed_replicates"] = [
+                    {k: v for k, v in e.items() if k != "history"} for e in per_seed
+                ]
+                prop_report["heads"][name]["across_seeds"] = _across_seeds(per_seed)
+            msg = (
+                f"{prop:15s} {name:13s} test nll={per_seed[0]['test']['nll']:.4f} "
+                f"mae={per_seed[0]['test']['expected_value_mae']:.4f} "
+                f"auroc={per_seed[0]['test']['intervals']['target']['auroc']:.4f}"
             )
-            print(
-                f"{prop:15s} {name:13s} test nll={prop_report['heads'][name]['test']['nll']:.4f} "
-                f"mae={prop_report['heads'][name]['test']['expected_value_mae']:.4f} "
-                f"auroc={prop_report['heads'][name]['test']['intervals']['target']['auroc']:.4f}"
-            )
+            if len(per_seed) > 1:
+                a = prop_report["heads"][name]["across_seeds"]
+                msg += (f"  | {len(per_seed)} seeds: nll {a['nll']['mean']:.4f}"
+                        f"+-{a['nll']['std']:.4f} auroc {a['auroc']['mean']:.4f}"
+                        f"+-{a['auroc']['std']:.4f}")
+            print(msg)
 
         # marginal floor
         marg = MarginalHead(y_bin[masks["train"]], binner.n_bins)

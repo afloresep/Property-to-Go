@@ -1,0 +1,60 @@
+{
+  "dataset": "pilot_50k_p2",
+  "n_trajectories": 49825,
+  "n_prefix_rows": 199300,
+  "hidden_size": 768,
+  "probe_points": [
+    3,
+    4,
+    5,
+    12
+  ],
+  "stack_window": 4,
+  "wide_window": 16,
+  "batch_size": 96,
+  "padding_rule": "index clamping: the window at position p is max(0, p-w+1+j) for j=0..w-1, so a prefix shorter than the window repeats its earliest state. counts.npy records how many of the w slots are distinct, and every pooling operator that averages uses only those.",
+  "compute": {
+    "processed_tokens_actual": 2205784,
+    "processed_tokens_full_recompute": 2205784,
+    "forward_calls": 520,
+    "wall_seconds": 83.42320010345429,
+    "molecules_returned": 0
+  },
+  "processed_tokens_actual": 2205784,
+  "processed_tokens_if_one_pass_per_layer": 8823136,
+  "wall_seconds": 92.15422742813826,
+  "validity_gate": {
+    "per_layer": [
+      {
+        "probe_point": 3,
+        "checked": true,
+        "reference": "/home/afloresep/Property-to-Go/outputs/c17_layer_states_pilot_50k_p2/layer3/hidden.npy",
+        "bit_identical": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "probe_point": 4,
+        "checked": true,
+        "reference": "/home/afloresep/Property-to-Go/outputs/c17_layer_states_pilot_50k_p2/layer4/hidden.npy",
+        "bit_identical": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "probe_point": 5,
+        "checked": true,
+        "reference": "/home/afloresep/Property-to-Go/outputs/c17_layer_states_pilot_50k_p2/layer5/hidden.npy",
+        "bit_identical": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "probe_point": 12,
+        "checked": true,
+        "reference": "/home/afloresep/Property-to-Go/outputs/c17_layer_states_pilot_50k_p2/layer12/hidden.npy",
+        "bit_identical": true,
+        "max_abs_difference": 0.0
+      }
+    ],
+    "all_bit_identical": true
+  },
+  "note": "Wall time is recorded but is not the cost unit (pilot_report.md \u00a711.7). Every probe point and every window size comes from one forward pass."
+}

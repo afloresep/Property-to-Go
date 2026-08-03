@@ -1,0 +1,46 @@
+{
+  "inherited_from": "outputs/pilot_50k/target_intervals.json",
+  "inherited_verbatim": [
+    "clogp",
+    "aromatic_rings",
+    "mol_weight"
+  ],
+  "derived_from_this_run": [
+    "hbd_count",
+    "rotatable_bonds",
+    "tpsa",
+    "qed"
+  ],
+  "derived_values_for_comparison": {
+    "clogp": {
+      "lo": 4.138940000000003,
+      "hi": 4.9971840000000025,
+      "rule": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "base_rate": 0.09998996487706975
+    },
+    "aromatic_rings": {
+      "lo": 3.0,
+      "hi": 4.0,
+      "rule": {
+        "kind": "exact_value",
+        "value": 3
+      },
+      "base_rate": 0.16865027596588059
+    },
+    "mol_weight": {
+      "lo": 435.5024000000002,
+      "hi": 486.9832000000001,
+      "rule": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "base_rate": 0.09998996487706975
+    }
+  },
+  "note": "Inherited intervals were frozen before any guided result was inspected and are copied unchanged. `derived_values_for_comparison` records what THIS run's base sample would have produced, so the size of the divergence is on disk rather than only in the report."
+}

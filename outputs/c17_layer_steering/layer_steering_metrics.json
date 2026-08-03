@@ -1,0 +1,837 @@
+{
+  "dataset": "pilot_50k_p2",
+  "headroom_dir": "pilot_50k_p2_headroom",
+  "sweep_dir": "c17_probe_layers",
+  "n_prefixes_sampled": 400,
+  "top_k": 8,
+  "lambda": 1.0,
+  "eps": 1e-06,
+  "probe_points": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "reference_probe_point": 12,
+  "compute": {
+    "processed_tokens_actual": 76024,
+    "processed_tokens_full_recompute": 76024,
+    "forward_calls": 34,
+    "wall_seconds": 1.9577472666278481,
+    "molecules_returned": 0
+  },
+  "properties": {
+    "aromatic_rings": {
+      "n_prefixes_used": 267,
+      "oracle_head_gain_lambda1": 0.07046902107237182,
+      "noise_corrected_ceiling_gain": 0.1349493338681582,
+      "reference_our_head_gain": 0.014658723760802218,
+      "reference_share": 0.20801656582894323,
+      "layers": {
+        "0": {
+          "probe_point": 0,
+          "our_head_gain": 0.005567458717884366,
+          "our_head_share_of_the_lambda1_optimum": 0.07900576215137961,
+          "fraction_of_the_head_free_ceiling": 0.04125591848659009,
+          "mean_head_q": 0.17373383045196533,
+          "mean_head_q_spread_across_candidates": 0.1897743046283722
+        },
+        "1": {
+          "probe_point": 1,
+          "our_head_gain": 0.012093501383643505,
+          "our_head_share_of_the_lambda1_optimum": 0.1716144370903557,
+          "fraction_of_the_head_free_ceiling": 0.0896151247064215,
+          "mean_head_q": 0.1505405306816101,
+          "mean_head_q_spread_across_candidates": 0.2700559198856354
+        },
+        "2": {
+          "probe_point": 2,
+          "our_head_gain": 0.0187674619468661,
+          "our_head_share_of_the_lambda1_optimum": 0.26632216059297714,
+          "fraction_of_the_head_free_ceiling": 0.13907043042688447,
+          "mean_head_q": 0.13734549283981323,
+          "mean_head_q_spread_across_candidates": 0.29199835658073425
+        },
+        "3": {
+          "probe_point": 3,
+          "our_head_gain": 0.013028567175221896,
+          "our_head_share_of_the_lambda1_optimum": 0.18488361235842246,
+          "fraction_of_the_head_free_ceiling": 0.09654413846866743,
+          "mean_head_q": 0.15975360572338104,
+          "mean_head_q_spread_across_candidates": 0.30125945806503296
+        },
+        "4": {
+          "probe_point": 4,
+          "our_head_gain": 0.015163483929810545,
+          "our_head_share_of_the_lambda1_optimum": 0.2151794320264165,
+          "fraction_of_the_head_free_ceiling": 0.11236427402172176,
+          "mean_head_q": 0.16161423921585083,
+          "mean_head_q_spread_across_candidates": 0.29877007007598877
+        },
+        "5": {
+          "probe_point": 5,
+          "our_head_gain": 0.020900373758821422,
+          "our_head_share_of_the_lambda1_optimum": 0.29658952885632817,
+          "fraction_of_the_head_free_ceiling": 0.1548757089771226,
+          "mean_head_q": 0.1647624522447586,
+          "mean_head_q_spread_across_candidates": 0.3108997046947479
+        },
+        "6": {
+          "probe_point": 6,
+          "our_head_gain": 0.021062406587582693,
+          "our_head_share_of_the_lambda1_optimum": 0.2988888772266548,
+          "fraction_of_the_head_free_ceiling": 0.15607640277913554,
+          "mean_head_q": 0.15496698021888733,
+          "mean_head_q_spread_across_candidates": 0.3013074994087219
+        },
+        "7": {
+          "probe_point": 7,
+          "our_head_gain": 0.020399692952792273,
+          "our_head_share_of_the_lambda1_optimum": 0.28948455140084534,
+          "fraction_of_the_head_free_ceiling": 0.15116556983321025,
+          "mean_head_q": 0.15308736264705658,
+          "mean_head_q_spread_across_candidates": 0.27216628193855286
+        },
+        "8": {
+          "probe_point": 8,
+          "our_head_gain": 0.017580622350803602,
+          "our_head_share_of_the_lambda1_optimum": 0.24948015572329674,
+          "fraction_of_the_head_free_ceiling": 0.13027572531761727,
+          "mean_head_q": 0.16084682941436768,
+          "mean_head_q_spread_across_candidates": 0.27881568670272827
+        },
+        "9": {
+          "probe_point": 9,
+          "our_head_gain": 0.015309620575518294,
+          "our_head_share_of_the_lambda1_optimum": 0.2172532035005181,
+          "fraction_of_the_head_free_ceiling": 0.11344717411110287,
+          "mean_head_q": 0.16081073880195618,
+          "mean_head_q_spread_across_candidates": 0.2636163532733917
+        },
+        "10": {
+          "probe_point": 10,
+          "our_head_gain": 0.014536411366382472,
+          "our_head_share_of_the_lambda1_optimum": 0.20628087555599145,
+          "fraction_of_the_head_free_ceiling": 0.10771754813242834,
+          "mean_head_q": 0.1342490315437317,
+          "mean_head_q_spread_across_candidates": 0.21105094254016876
+        },
+        "11": {
+          "probe_point": 11,
+          "our_head_gain": 0.01610234122968928,
+          "our_head_share_of_the_lambda1_optimum": 0.22850241119643402,
+          "fraction_of_the_head_free_ceiling": 0.11932138357511886,
+          "mean_head_q": 0.14138947427272797,
+          "mean_head_q_spread_across_candidates": 0.21637924015522003
+        },
+        "12": {
+          "probe_point": 12,
+          "our_head_gain": 0.014658723760802218,
+          "our_head_share_of_the_lambda1_optimum": 0.20801656582894318,
+          "fraction_of_the_head_free_ceiling": 0.10862390602923161,
+          "mean_head_q": 0.137699693441391,
+          "mean_head_q_spread_across_candidates": 0.19924567639827728
+        }
+      }
+    },
+    "hbd_count": {
+      "n_prefixes_used": 267,
+      "oracle_head_gain_lambda1": 0.03783787881368719,
+      "noise_corrected_ceiling_gain": 0.0812433185999176,
+      "reference_our_head_gain": 0.004493537818819678,
+      "reference_share": 0.11875765660505841,
+      "layers": {
+        "0": {
+          "probe_point": 0,
+          "our_head_gain": 4.5681904509289804e-06,
+          "our_head_share_of_the_lambda1_optimum": 0.00012073061688850584,
+          "fraction_of_the_head_free_ceiling": 5.62285062901605e-05,
+          "mean_head_q": 0.07718534022569656,
+          "mean_head_q_spread_across_candidates": 0.06293404847383499
+        },
+        "1": {
+          "probe_point": 1,
+          "our_head_gain": 0.0038340060128052903,
+          "our_head_share_of_the_lambda1_optimum": 0.10132719203642054,
+          "fraction_of_the_head_free_ceiling": 0.04719164700405504,
+          "mean_head_q": 0.08992117643356323,
+          "mean_head_q_spread_across_candidates": 0.18947641551494598
+        },
+        "2": {
+          "probe_point": 2,
+          "our_head_gain": 0.003435399339028776,
+          "our_head_share_of_the_lambda1_optimum": 0.09079259849487335,
+          "fraction_of_the_head_free_ceiling": 0.042285315250924035,
+          "mean_head_q": 0.08334817737340927,
+          "mean_head_q_spread_across_candidates": 0.1595577895641327
+        },
+        "3": {
+          "probe_point": 3,
+          "our_head_gain": 0.0052106237338362706,
+          "our_head_share_of_the_lambda1_optimum": 0.13770919240725032,
+          "fraction_of_the_head_free_ceiling": 0.06413602772058052,
+          "mean_head_q": 0.08551996201276779,
+          "mean_head_q_spread_across_candidates": 0.17264041304588318
+        },
+        "4": {
+          "probe_point": 4,
+          "our_head_gain": 0.004695377320466575,
+          "our_head_share_of_the_lambda1_optimum": 0.12409198051472442,
+          "fraction_of_the_head_free_ceiling": 0.057794011881628596,
+          "mean_head_q": 0.09030123800039291,
+          "mean_head_q_spread_across_candidates": 0.16804006695747375
+        },
+        "5": {
+          "probe_point": 5,
+          "our_head_gain": 0.004227472369616691,
+          "our_head_share_of_the_lambda1_optimum": 0.11172593449100737,
+          "fraction_of_the_head_free_ceiling": 0.05203470811470494,
+          "mean_head_q": 0.0930764228105545,
+          "mean_head_q_spread_across_candidates": 0.19408218562602997
+        },
+        "6": {
+          "probe_point": 6,
+          "our_head_gain": 0.007569774650216022,
+          "our_head_share_of_the_lambda1_optimum": 0.20005811339185822,
+          "fraction_of_the_head_free_ceiling": 0.0931741191850292,
+          "mean_head_q": 0.08261782675981522,
+          "mean_head_q_spread_across_candidates": 0.16643817722797394
+        },
+        "7": {
+          "probe_point": 7,
+          "our_head_gain": 0.007287048723553278,
+          "our_head_share_of_the_lambda1_optimum": 0.19258607913605652,
+          "fraction_of_the_head_free_ceiling": 0.08969412930358397,
+          "mean_head_q": 0.09370437264442444,
+          "mean_head_q_spread_across_candidates": 0.17130348086357117
+        },
+        "8": {
+          "probe_point": 8,
+          "our_head_gain": 0.0063808326662047965,
+          "our_head_share_of_the_lambda1_optimum": 0.16863610927092038,
+          "fraction_of_the_head_free_ceiling": 0.07853978365442187,
+          "mean_head_q": 0.0929945558309555,
+          "mean_head_q_spread_across_candidates": 0.16742251813411713
+        },
+        "9": {
+          "probe_point": 9,
+          "our_head_gain": 0.005647823548528264,
+          "our_head_share_of_the_lambda1_optimum": 0.14926374642558618,
+          "fraction_of_the_head_free_ceiling": 0.06951739104037526,
+          "mean_head_q": 0.08741851896047592,
+          "mean_head_q_spread_across_candidates": 0.1535404920578003
+        },
+        "10": {
+          "probe_point": 10,
+          "our_head_gain": 0.005405813982215176,
+          "our_head_share_of_the_lambda1_optimum": 0.1428677862422805,
+          "fraction_of_the_head_free_ceiling": 0.06653856680616514,
+          "mean_head_q": 0.07970141619443893,
+          "mean_head_q_spread_across_candidates": 0.13585281372070312
+        },
+        "11": {
+          "probe_point": 11,
+          "our_head_gain": 0.004799087681758006,
+          "our_head_share_of_the_lambda1_optimum": 0.12683289423777158,
+          "fraction_of_the_head_free_ceiling": 0.05907055207076282,
+          "mean_head_q": 0.07982730120420456,
+          "mean_head_q_spread_across_candidates": 0.13520565629005432
+        },
+        "12": {
+          "probe_point": 12,
+          "our_head_gain": 0.004493537818819678,
+          "our_head_share_of_the_lambda1_optimum": 0.11875765660505841,
+          "fraction_of_the_head_free_ceiling": 0.05530962910252458,
+          "mean_head_q": 0.07985914498567581,
+          "mean_head_q_spread_across_candidates": 0.13209988176822662
+        }
+      }
+    },
+    "rotatable_bonds": {
+      "n_prefixes_used": 267,
+      "oracle_head_gain_lambda1": 0.022873935278388068,
+      "noise_corrected_ceiling_gain": 0.042997970149956787,
+      "reference_our_head_gain": 0.0030843277973477386,
+      "reference_share": 0.13484027823851968,
+      "layers": {
+        "0": {
+          "probe_point": 0,
+          "our_head_gain": 0.0003275391218197178,
+          "our_head_share_of_the_lambda1_optimum": 0.014319316629753075,
+          "fraction_of_the_head_free_ceiling": 0.007617548472111932,
+          "mean_head_q": 0.07270870357751846,
+          "mean_head_q_spread_across_candidates": 0.06487314403057098
+        },
+        "1": {
+          "probe_point": 1,
+          "our_head_gain": 0.003696345054229192,
+          "our_head_share_of_the_lambda1_optimum": 0.16159637636649266,
+          "fraction_of_the_head_free_ceiling": 0.0859655709638867,
+          "mean_head_q": 0.08884647488594055,
+          "mean_head_q_spread_across_candidates": 0.13713259994983673
+        },
+        "2": {
+          "probe_point": 2,
+          "our_head_gain": 0.005627010433673338,
+          "our_head_share_of_the_lambda1_optimum": 0.24600097732154966,
+          "fraction_of_the_head_free_ceiling": 0.13086688543782324,
+          "mean_head_q": 0.08913709968328476,
+          "mean_head_q_spread_across_candidates": 0.13808783888816833
+        },
+        "3": {
+          "probe_point": 3,
+          "our_head_gain": 0.00694929345336961,
+          "our_head_share_of_the_lambda1_optimum": 0.3038083901520652,
+          "fraction_of_the_head_free_ceiling": 0.16161910502132376,
+          "mean_head_q": 0.0896899625658989,
+          "mean_head_q_spread_across_candidates": 0.14470548927783966
+        },
+        "4": {
+          "probe_point": 4,
+          "our_head_gain": 0.005358869469022326,
+          "our_head_share_of_the_lambda1_optimum": 0.23427842230914833,
+          "fraction_of_the_head_free_ceiling": 0.12463075466895526,
+          "mean_head_q": 0.08258383721113205,
+          "mean_head_q_spread_across_candidates": 0.13309608399868011
+        },
+        "5": {
+          "probe_point": 5,
+          "our_head_gain": 0.005957419002071623,
+          "our_head_share_of_the_lambda1_optimum": 0.2604457400778063,
+          "fraction_of_the_head_free_ceiling": 0.13855116837597065,
+          "mean_head_q": 0.06891167908906937,
+          "mean_head_q_spread_across_candidates": 0.11584039777517319
+        },
+        "6": {
+          "probe_point": 6,
+          "our_head_gain": 0.005178041208322048,
+          "our_head_share_of_the_lambda1_optimum": 0.2263729937722787,
+          "fraction_of_the_head_free_ceiling": 0.12042524775619559,
+          "mean_head_q": 0.07472570240497589,
+          "mean_head_q_spread_across_candidates": 0.12247715145349503
+        },
+        "7": {
+          "probe_point": 7,
+          "our_head_gain": 0.006283758049079774,
+          "our_head_share_of_the_lambda1_optimum": 0.27471259197873327,
+          "fraction_of_the_head_free_ceiling": 0.14614080681401861,
+          "mean_head_q": 0.07543067634105682,
+          "mean_head_q_spread_across_candidates": 0.11963090300559998
+        },
+        "8": {
+          "probe_point": 8,
+          "our_head_gain": 0.005125024326195505,
+          "our_head_share_of_the_lambda1_optimum": 0.2240552079832879,
+          "fraction_of_the_head_free_ceiling": 0.11919223880387424,
+          "mean_head_q": 0.07668045908212662,
+          "mean_head_q_spread_across_candidates": 0.1236109510064125
+        },
+        "9": {
+          "probe_point": 9,
+          "our_head_gain": 0.003845821148879172,
+          "our_head_share_of_the_lambda1_optimum": 0.16813115461215855,
+          "fraction_of_the_head_free_ceiling": 0.08944192331560649,
+          "mean_head_q": 0.08103793859481812,
+          "mean_head_q_spread_across_candidates": 0.12616173923015594
+        },
+        "10": {
+          "probe_point": 10,
+          "our_head_gain": 0.0024357894554880334,
+          "our_head_share_of_the_lambda1_optimum": 0.1064875556323461,
+          "fraction_of_the_head_free_ceiling": 0.05664894056610441,
+          "mean_head_q": 0.08485324680805206,
+          "mean_head_q_spread_across_candidates": 0.13028891384601593
+        },
+        "11": {
+          "probe_point": 11,
+          "our_head_gain": 0.0032172418873910383,
+          "our_head_share_of_the_lambda1_optimum": 0.14065100072355186,
+          "fraction_of_the_head_free_ceiling": 0.07482311086246177,
+          "mean_head_q": 0.07356762886047363,
+          "mean_head_q_spread_across_candidates": 0.1005982980132103
+        },
+        "12": {
+          "probe_point": 12,
+          "our_head_gain": 0.0030843277973477386,
+          "our_head_share_of_the_lambda1_optimum": 0.1348402782385197,
+          "fraction_of_the_head_free_ceiling": 0.07173193959135855,
+          "mean_head_q": 0.08638772368431091,
+          "mean_head_q_spread_across_candidates": 0.12944553792476654
+        }
+      }
+    },
+    "tpsa": {
+      "n_prefixes_used": 267,
+      "oracle_head_gain_lambda1": 0.030044684829536948,
+      "noise_corrected_ceiling_gain": 0.07440526602710994,
+      "reference_our_head_gain": 0.006459883632203303,
+      "reference_share": 0.215009199425936,
+      "layers": {
+        "0": {
+          "probe_point": 0,
+          "our_head_gain": 0.0023702472104461863,
+          "our_head_share_of_the_lambda1_optimum": 0.07889073304959401,
+          "fraction_of_the_head_free_ceiling": 0.03185590667174787,
+          "mean_head_q": 0.1109139621257782,
+          "mean_head_q_spread_across_candidates": 0.15146929025650024
+        },
+        "1": {
+          "probe_point": 1,
+          "our_head_gain": 0.005466277044362071,
+          "our_head_share_of_the_lambda1_optimum": 0.18193823883910976,
+          "fraction_of_the_head_free_ceiling": 0.0734662657125694,
+          "mean_head_q": 0.10230894386768341,
+          "mean_head_q_spread_across_candidates": 0.15165510773658752
+        },
+        "2": {
+          "probe_point": 2,
+          "our_head_gain": 0.007145539638876299,
+          "our_head_share_of_the_lambda1_optimum": 0.2378304075884835,
+          "fraction_of_the_head_free_ceiling": 0.09603540206781581,
+          "mean_head_q": 0.10380309820175171,
+          "mean_head_q_spread_across_candidates": 0.1705760806798935
+        },
+        "3": {
+          "probe_point": 3,
+          "our_head_gain": 0.006535974888754385,
+          "our_head_share_of_the_lambda1_optimum": 0.2175418023466455,
+          "fraction_of_the_head_free_ceiling": 0.0878429073336418,
+          "mean_head_q": 0.11653202027082443,
+          "mean_head_q_spread_across_candidates": 0.17786625027656555
+        },
+        "4": {
+          "probe_point": 4,
+          "our_head_gain": 0.004573807743265816,
+          "our_head_share_of_the_lambda1_optimum": 0.15223350716494463,
+          "fraction_of_the_head_free_ceiling": 0.06147155957481996,
+          "mean_head_q": 0.1023884043097496,
+          "mean_head_q_spread_across_candidates": 0.15308067202568054
+        },
+        "5": {
+          "probe_point": 5,
+          "our_head_gain": 0.006178233910118501,
+          "our_head_share_of_the_lambda1_optimum": 0.20563483841390395,
+          "fraction_of_the_head_free_ceiling": 0.08303490115696154,
+          "mean_head_q": 0.10188508778810501,
+          "mean_head_q_spread_across_candidates": 0.15339651703834534
+        },
+        "6": {
+          "probe_point": 6,
+          "our_head_gain": 0.006722038562906949,
+          "our_head_share_of_the_lambda1_optimum": 0.2237347005317396,
+          "fraction_of_the_head_free_ceiling": 0.09034358617114198,
+          "mean_head_q": 0.10303138941526413,
+          "mean_head_q_spread_across_candidates": 0.1556890308856964
+        },
+        "7": {
+          "probe_point": 7,
+          "our_head_gain": 0.006902111233564656,
+          "our_head_share_of_the_lambda1_optimum": 0.22972819561013288,
+          "fraction_of_the_head_free_ceiling": 0.09276374646721694,
+          "mean_head_q": 0.10214924812316895,
+          "mean_head_q_spread_across_candidates": 0.1483859270811081
+        },
+        "8": {
+          "probe_point": 8,
+          "our_head_gain": 0.006903807874977744,
+          "our_head_share_of_the_lambda1_optimum": 0.22978466621126298,
+          "fraction_of_the_head_free_ceiling": 0.09278654917331129,
+          "mean_head_q": 0.10246308147907257,
+          "mean_head_q_spread_across_candidates": 0.14532233774662018
+        },
+        "9": {
+          "probe_point": 9,
+          "our_head_gain": 0.006732947095345122,
+          "our_head_share_of_the_lambda1_optimum": 0.22409777747862936,
+          "fraction_of_the_head_free_ceiling": 0.09049019585377113,
+          "mean_head_q": 0.1075165867805481,
+          "mean_head_q_spread_across_candidates": 0.1575123816728592
+        },
+        "10": {
+          "probe_point": 10,
+          "our_head_gain": 0.007313333441791394,
+          "our_head_share_of_the_lambda1_optimum": 0.2434152158122042,
+          "fraction_of_the_head_free_ceiling": 0.09829053549955381,
+          "mean_head_q": 0.11281057447195053,
+          "mean_head_q_spread_across_candidates": 0.16021856665611267
+        },
+        "11": {
+          "probe_point": 11,
+          "our_head_gain": 0.006791352389276432,
+          "our_head_share_of_the_lambda1_optimum": 0.2260417251107207,
+          "fraction_of_the_head_free_ceiling": 0.09127515768577413,
+          "mean_head_q": 0.10465806722640991,
+          "mean_head_q_spread_across_candidates": 0.1496080607175827
+        },
+        "12": {
+          "probe_point": 12,
+          "our_head_gain": 0.006459883632203303,
+          "our_head_share_of_the_lambda1_optimum": 0.215009199425936,
+          "fraction_of_the_head_free_ceiling": 0.08682024777452729,
+          "mean_head_q": 0.10261504352092743,
+          "mean_head_q_spread_across_candidates": 0.1389344334602356
+        }
+      }
+    },
+    "clogp": {
+      "n_prefixes_used": 267,
+      "oracle_head_gain_lambda1": 0.039657999215151375,
+      "noise_corrected_ceiling_gain": 0.07695235360148821,
+      "reference_our_head_gain": 0.007094573021879013,
+      "reference_share": 0.17889387165978168,
+      "layers": {
+        "0": {
+          "probe_point": 0,
+          "our_head_gain": 0.0014259374464804366,
+          "our_head_share_of_the_lambda1_optimum": 0.035955859465942396,
+          "fraction_of_the_head_free_ceiling": 0.018530134294071285,
+          "mean_head_q": 0.09307962656021118,
+          "mean_head_q_spread_across_candidates": 0.08854068070650101
+        },
+        "1": {
+          "probe_point": 1,
+          "our_head_gain": 0.004098098850705404,
+          "our_head_share_of_the_lambda1_optimum": 0.10333599606153912,
+          "fraction_of_the_head_free_ceiling": 0.053255016369325836,
+          "mean_head_q": 0.09432367235422134,
+          "mean_head_q_spread_across_candidates": 0.1350797861814499
+        },
+        "2": {
+          "probe_point": 2,
+          "our_head_gain": 0.006165725734585034,
+          "our_head_share_of_the_lambda1_optimum": 0.1554724357407676,
+          "fraction_of_the_head_free_ceiling": 0.08012393963302758,
+          "mean_head_q": 0.08408502489328384,
+          "mean_head_q_spread_across_candidates": 0.12745456397533417
+        },
+        "3": {
+          "probe_point": 3,
+          "our_head_gain": 0.005133627531352782,
+          "our_head_share_of_the_lambda1_optimum": 0.12944746666371093,
+          "fraction_of_the_head_free_ceiling": 0.06671176762101662,
+          "mean_head_q": 0.09819254279136658,
+          "mean_head_q_spread_across_candidates": 0.144316628575325
+        },
+        "4": {
+          "probe_point": 4,
+          "our_head_gain": 0.005673626883344817,
+          "our_head_share_of_the_lambda1_optimum": 0.14306387098765191,
+          "fraction_of_the_head_free_ceiling": 0.073729088426934,
+          "mean_head_q": 0.09983697533607483,
+          "mean_head_q_spread_across_candidates": 0.15464481711387634
+        },
+        "5": {
+          "probe_point": 5,
+          "our_head_gain": 0.005474861625248369,
+          "our_head_share_of_the_lambda1_optimum": 0.13805188697357917,
+          "fraction_of_the_head_free_ceiling": 0.07114612314005284,
+          "mean_head_q": 0.10150957107543945,
+          "mean_head_q_spread_across_candidates": 0.15109772980213165
+        },
+        "6": {
+          "probe_point": 6,
+          "our_head_gain": 0.0061094425022403705,
+          "our_head_share_of_the_lambda1_optimum": 0.15405322061497878,
+          "fraction_of_the_head_free_ceiling": 0.07939253598245002,
+          "mean_head_q": 0.09960635006427765,
+          "mean_head_q_spread_across_candidates": 0.14789427816867828
+        },
+        "7": {
+          "probe_point": 7,
+          "our_head_gain": 0.0063854638785225265,
+          "our_head_share_of_the_lambda1_optimum": 0.16101326352548198,
+          "fraction_of_the_head_free_ceiling": 0.08297944870654399,
+          "mean_head_q": 0.09661069512367249,
+          "mean_head_q_spread_across_candidates": 0.15201672911643982
+        },
+        "8": {
+          "probe_point": 8,
+          "our_head_gain": 0.005185832540216721,
+          "our_head_share_of_the_lambda1_optimum": 0.1307638469626947,
+          "fraction_of_the_head_free_ceiling": 0.06739017453673347,
+          "mean_head_q": 0.086524598300457,
+          "mean_head_q_spread_across_candidates": 0.13234098255634308
+        },
+        "9": {
+          "probe_point": 9,
+          "our_head_gain": 0.005910693810917966,
+          "our_head_share_of_the_lambda1_optimum": 0.14904165434195127,
+          "fraction_of_the_head_free_ceiling": 0.07680978598169423,
+          "mean_head_q": 0.08665517717599869,
+          "mean_head_q_spread_across_candidates": 0.12750495970249176
+        },
+        "10": {
+          "probe_point": 10,
+          "our_head_gain": 0.004936321465620713,
+          "our_head_share_of_the_lambda1_optimum": 0.12447227705160643,
+          "fraction_of_the_head_free_ceiling": 0.0641477646178875,
+          "mean_head_q": 0.08950217068195343,
+          "mean_head_q_spread_across_candidates": 0.13201776146888733
+        },
+        "11": {
+          "probe_point": 11,
+          "our_head_gain": 0.0050568794639446165,
+          "our_head_share_of_the_lambda1_optimum": 0.1275122185693279,
+          "fraction_of_the_head_free_ceiling": 0.06571442233115557,
+          "mean_head_q": 0.0903383418917656,
+          "mean_head_q_spread_across_candidates": 0.12797404825687408
+        },
+        "12": {
+          "probe_point": 12,
+          "our_head_gain": 0.007094573021879013,
+          "our_head_share_of_the_lambda1_optimum": 0.17889387165978168,
+          "fraction_of_the_head_free_ceiling": 0.09219436040409568,
+          "mean_head_q": 0.09289110451936722,
+          "mean_head_q_spread_across_candidates": 0.13651086390018463
+        }
+      }
+    },
+    "qed": {
+      "n_prefixes_used": 267,
+      "oracle_head_gain_lambda1": 0.01902224960090572,
+      "noise_corrected_ceiling_gain": 0.05833679360479606,
+      "reference_our_head_gain": 0.002813093835590326,
+      "reference_share": 0.14788439299294992,
+      "layers": {
+        "0": {
+          "probe_point": 0,
+          "our_head_gain": -0.00043788734351695683,
+          "our_head_share_of_the_lambda1_optimum": -0.02301974544041875,
+          "fraction_of_the_head_free_ceiling": -0.007506194915055405,
+          "mean_head_q": 0.08208261430263519,
+          "mean_head_q_spread_across_candidates": 0.06765148788690567
+        },
+        "1": {
+          "probe_point": 1,
+          "our_head_gain": -0.0006576347348515146,
+          "our_head_share_of_the_lambda1_optimum": -0.03457186971304394,
+          "fraction_of_the_head_free_ceiling": -0.011273069605207927,
+          "mean_head_q": 0.07606960088014603,
+          "mean_head_q_spread_across_candidates": 0.1263071894645691
+        },
+        "2": {
+          "probe_point": 2,
+          "our_head_gain": -0.000137980173237012,
+          "our_head_share_of_the_lambda1_optimum": -0.007253620162277876,
+          "fraction_of_the_head_free_ceiling": -0.0023652340951709114,
+          "mean_head_q": 0.08309623599052429,
+          "mean_head_q_spread_across_candidates": 0.13492180407047272
+        },
+        "3": {
+          "probe_point": 3,
+          "our_head_gain": 0.0005018748705967635,
+          "our_head_share_of_the_lambda1_optimum": 0.02638357087759312,
+          "fraction_of_the_head_free_ceiling": 0.00860305888590186,
+          "mean_head_q": 0.0728139877319336,
+          "mean_head_q_spread_across_candidates": 0.1233861893415451
+        },
+        "4": {
+          "probe_point": 4,
+          "our_head_gain": -2.9812641951420083e-05,
+          "our_head_share_of_the_lambda1_optimum": -0.0015672511178699176,
+          "fraction_of_the_head_free_ceiling": -0.0005110435474631415,
+          "mean_head_q": 0.07471074908971786,
+          "mean_head_q_spread_across_candidates": 0.12792399525642395
+        },
+        "5": {
+          "probe_point": 5,
+          "our_head_gain": 0.0006580775657814413,
+          "our_head_share_of_the_lambda1_optimum": 0.03459514934290989,
+          "fraction_of_the_head_free_ceiling": 0.011280660542291761,
+          "mean_head_q": 0.07194199413061142,
+          "mean_head_q_spread_across_candidates": 0.12593813240528107
+        },
+        "6": {
+          "probe_point": 6,
+          "our_head_gain": 0.00038714741988309163,
+          "our_head_share_of_the_lambda1_optimum": 0.020352346752124318,
+          "fraction_of_the_head_free_ceiling": 0.006636419246930688,
+          "mean_head_q": 0.07652530074119568,
+          "mean_head_q_spread_across_candidates": 0.12277279049158096
+        },
+        "7": {
+          "probe_point": 7,
+          "our_head_gain": 0.0018913653259950106,
+          "our_head_share_of_the_lambda1_optimum": 0.09942910884236088,
+          "fraction_of_the_head_free_ceiling": 0.032421482380538574,
+          "mean_head_q": 0.07723893970251083,
+          "mean_head_q_spread_across_candidates": 0.11749318242073059
+        },
+        "8": {
+          "probe_point": 8,
+          "our_head_gain": 0.0016859595174754007,
+          "our_head_share_of_the_lambda1_optimum": 0.08863092183351048,
+          "fraction_of_the_head_free_ceiling": 0.028900448812750525,
+          "mean_head_q": 0.07379017025232315,
+          "mean_head_q_spread_across_candidates": 0.11561474204063416
+        },
+        "9": {
+          "probe_point": 9,
+          "our_head_gain": 0.0008907377341984045,
+          "our_head_share_of_the_lambda1_optimum": 0.04682609853652605,
+          "fraction_of_the_head_free_ceiling": 0.01526888399511169,
+          "mean_head_q": 0.0667431652545929,
+          "mean_head_q_spread_across_candidates": 0.10247062891721725
+        },
+        "10": {
+          "probe_point": 10,
+          "our_head_gain": 4.340927389818698e-06,
+          "our_head_share_of_the_lambda1_optimum": 0.0002282026301248834,
+          "fraction_of_the_head_free_ceiling": 7.441148410086454e-05,
+          "mean_head_q": 0.0697907954454422,
+          "mean_head_q_spread_across_candidates": 0.10611473023891449
+        },
+        "11": {
+          "probe_point": 11,
+          "our_head_gain": 0.0011725120237282278,
+          "our_head_share_of_the_lambda1_optimum": 0.06163897795097801,
+          "fraction_of_the_head_free_ceiling": 0.02009901386887043,
+          "mean_head_q": 0.07137645035982132,
+          "mean_head_q_spread_across_candidates": 0.10164561867713928
+        },
+        "12": {
+          "probe_point": 12,
+          "our_head_gain": 0.002813093835590326,
+          "our_head_share_of_the_lambda1_optimum": 0.14788439299294992,
+          "fraction_of_the_head_free_ceiling": 0.04822160529849643,
+          "mean_head_q": 0.07064416259527206,
+          "mean_head_q_spread_across_candidates": 0.10286020487546921
+        }
+      }
+    }
+  },
+  "note": "No generation. p_hit / n_valid / the permutation nulls and the head-free oracle term are phase 2's; only the head's head_q is recomputed per layer.",
+  "consistency_gates": {
+    "head_q_matches_headroom_npz": {
+      "aromatic_rings": {
+        "max_abs_difference": 0.0,
+        "allclose_1e-5": true
+      },
+      "hbd_count": {
+        "max_abs_difference": 0.0,
+        "allclose_1e-5": true
+      },
+      "rotatable_bonds": {
+        "max_abs_difference": 0.0,
+        "allclose_1e-5": true
+      },
+      "tpsa": {
+        "max_abs_difference": 0.0,
+        "allclose_1e-5": true
+      },
+      "clogp": {
+        "max_abs_difference": 0.0,
+        "allclose_1e-5": true
+      },
+      "qed": {
+        "max_abs_difference": 0.0,
+        "allclose_1e-5": true
+      }
+    },
+    "our_head_gain_matches_locality": {
+      "aromatic_rings": {
+        "reference": 0.014658723760802218,
+        "recomputed": 0.014658723760802218,
+        "abs_difference": 0.0
+      },
+      "hbd_count": {
+        "reference": 0.004493537818819678,
+        "recomputed": 0.004493537818819678,
+        "abs_difference": 0.0
+      },
+      "rotatable_bonds": {
+        "reference": 0.0030843277973477386,
+        "recomputed": 0.0030843277973477386,
+        "abs_difference": 0.0
+      },
+      "tpsa": {
+        "reference": 0.006459883632203303,
+        "recomputed": 0.006459883632203303,
+        "abs_difference": 0.0
+      },
+      "clogp": {
+        "reference": 0.007094573021879013,
+        "recomputed": 0.007094573021879013,
+        "abs_difference": 0.0
+      },
+      "qed": {
+        "reference": 0.002813093835590326,
+        "recomputed": 0.002813093835590326,
+        "abs_difference": 0.0
+      }
+    }
+  },
+  "c17_0_5_criterion": {
+    "rule": "material iff our_head_gain at L* (selected by AUROC) exceeds the reference layer's for >= 4 of 6 properties AND the median relative improvement is >= 0.25",
+    "per_property": {
+      "aromatic_rings": {
+        "L_star_selected_by_auroc": 3,
+        "our_head_gain_at_L_star": 0.013028567175221896,
+        "our_head_gain_at_reference": 0.014658723760802218,
+        "absolute_improvement": -0.0016301565855803227,
+        "relative_improvement": -0.11120726552876321,
+        "share_at_L_star": 0.18488361235842246,
+        "share_at_reference": 0.20801656582894318
+      },
+      "hbd_count": {
+        "L_star_selected_by_auroc": 4,
+        "our_head_gain_at_L_star": 0.004695377320466575,
+        "our_head_gain_at_reference": 0.004493537818819678,
+        "absolute_improvement": 0.00020183950164689643,
+        "relative_improvement": 0.04491772625158717,
+        "share_at_L_star": 0.12409198051472442,
+        "share_at_reference": 0.11875765660505841
+      },
+      "rotatable_bonds": {
+        "L_star_selected_by_auroc": 4,
+        "our_head_gain_at_L_star": 0.005358869469022326,
+        "our_head_gain_at_reference": 0.0030843277973477386,
+        "absolute_improvement": 0.002274541671674587,
+        "relative_improvement": 0.7374513414658782,
+        "share_at_L_star": 0.23427842230914833,
+        "share_at_reference": 0.1348402782385197
+      },
+      "tpsa": {
+        "L_star_selected_by_auroc": 5,
+        "our_head_gain_at_L_star": 0.006178233910118501,
+        "our_head_gain_at_reference": 0.006459883632203303,
+        "absolute_improvement": -0.0002816497220848018,
+        "relative_improvement": -0.04359981357570341,
+        "share_at_L_star": 0.20563483841390395,
+        "share_at_reference": 0.215009199425936
+      },
+      "clogp": {
+        "L_star_selected_by_auroc": 5,
+        "our_head_gain_at_L_star": 0.005474861625248369,
+        "our_head_gain_at_reference": 0.007094573021879013,
+        "absolute_improvement": -0.0016197113966306444,
+        "relative_improvement": -0.22830287201718874,
+        "share_at_L_star": 0.13805188697357917,
+        "share_at_reference": 0.17889387165978168
+      },
+      "qed": {
+        "L_star_selected_by_auroc": 4,
+        "our_head_gain_at_L_star": -2.9812641951420083e-05,
+        "our_head_gain_at_reference": 0.002813093835590326,
+        "absolute_improvement": -0.0028429064775417462,
+        "relative_improvement": -1.0105978128330597,
+        "share_at_L_star": -0.0015672511178699176,
+        "share_at_reference": 0.14788439299294992
+      }
+    },
+    "n_properties_improved": 2,
+    "n_properties": 6,
+    "median_relative_improvement": -0.07740353955223331,
+    "material": false
+  },
+  "wall_seconds_total": 2.5611928002908826
+}

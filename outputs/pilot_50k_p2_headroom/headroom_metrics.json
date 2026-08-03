@@ -1,0 +1,1378 @@
+{
+  "dataset": "pilot_50k_p2",
+  "heads_dir": "pilot_50k_heads_p2",
+  "n_prefixes": 400,
+  "top_k": 8,
+  "n_rollouts_per_candidate": 16,
+  "n_continuations": 51200,
+  "rollout_validity": 0.8370703125,
+  "min_rollouts_to_score_a_candidate": 4,
+  "n_perm": 200,
+  "seed": 7777,
+  "lambda": 1.0,
+  "eps": 1e-06,
+  "quartile_counts": [
+    100,
+    100,
+    100,
+    100
+  ],
+  "compute": {
+    "candidates": {
+      "processed_tokens_actual": 9103,
+      "processed_tokens_full_recompute": 9103,
+      "forward_calls": 5,
+      "wall_seconds": 1.180257586762309,
+      "molecules_returned": 0
+    },
+    "rollouts": {
+      "processed_tokens_actual": 2344826,
+      "processed_tokens_full_recompute": 2344826,
+      "forward_calls": 51200,
+      "wall_seconds": 656.5799158224836,
+      "molecules_returned": 51200,
+      "tokens_per_molecule_actual": 45.7973828125,
+      "tokens_per_molecule_full_recompute": 45.7973828125
+    },
+    "candidate_hidden_states": {
+      "processed_tokens_actual": 76024,
+      "processed_tokens_full_recompute": 76024,
+      "forward_calls": 34,
+      "wall_seconds": 1.0011211251839995,
+      "molecules_returned": 0
+    },
+    "processed_tokens_total": 2429953
+  },
+  "properties": {
+    "aromatic_rings": {
+      "target_interval": {
+        "lo": 3.0,
+        "hi": 4.0,
+        "rule": {
+          "kind": "exact_value",
+          "value": 3
+        },
+        "base_rate": 0.1713867089496819
+      },
+      "interval_width": 1.0,
+      "n_prefixes_usable": 380,
+      "n_prefixes_capture_usable": 267,
+      "mean_head_target_prob": 0.137699693441391,
+      "headroom": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 1.2090337732442997,
+          "headroom_raw_median": 1.125,
+          "headroom_null_mean": 0.550257696178091,
+          "headroom_excess_mean": 0.6587760770662087,
+          "headroom_excess_median": 0.66859375,
+          "relative_headroom_raw_mean": 1.2090337732442997,
+          "relative_headroom_excess_mean": 0.6587760770662087,
+          "relative_headroom_excess_median": 0.66859375,
+          "frac_prefixes_excess_above_one_interval": 0.19736842105263158
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 1.3752543752543753,
+            "headroom_raw_median": 1.3125,
+            "headroom_null_mean": 0.7654376678876678,
+            "headroom_excess_mean": 0.6098167073667073,
+            "headroom_excess_median": 0.54640625,
+            "relative_headroom_raw_mean": 1.3752543752543753,
+            "relative_headroom_excess_mean": 0.6098167073667073,
+            "relative_headroom_excess_median": 0.54640625,
+            "frac_prefixes_excess_above_one_interval": 0.15555555555555556
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 1.4000348176129425,
+            "headroom_raw_median": 1.375,
+            "headroom_null_mean": 0.6681066588215026,
+            "headroom_excess_mean": 0.73192815879144,
+            "headroom_excess_median": 0.7446875,
+            "relative_headroom_raw_mean": 1.4000348176129425,
+            "relative_headroom_excess_mean": 0.73192815879144,
+            "relative_headroom_excess_median": 0.7446875,
+            "frac_prefixes_excess_above_one_interval": 0.3020833333333333
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 1.1352206965488214,
+            "headroom_raw_median": 1.0669642857142858,
+            "headroom_null_mean": 0.4751353410767473,
+            "headroom_excess_mean": 0.6600853554720741,
+            "headroom_excess_median": 0.6673258928571428,
+            "relative_headroom_raw_mean": 1.1352206965488214,
+            "relative_headroom_excess_mean": 0.6600853554720741,
+            "relative_headroom_excess_median": 0.6673258928571428,
+            "frac_prefixes_excess_above_one_interval": 0.17708333333333334
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.9415858234735786,
+            "headroom_raw_median": 1.0,
+            "headroom_null_mean": 0.3107888004852291,
+            "headroom_excess_mean": 0.6307970229883494,
+            "headroom_excess_median": 0.7084375,
+            "relative_headroom_raw_mean": 0.9415858234735786,
+            "relative_headroom_excess_mean": 0.6307970229883494,
+            "relative_headroom_excess_median": 0.7084375,
+            "frac_prefixes_excess_above_one_interval": 0.15306122448979592
+          }
+        }
+      },
+      "headroom_probability_units": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 0.35760193753614805,
+          "headroom_raw_median": 0.3125,
+          "headroom_null_mean": 0.19373657645351725,
+          "headroom_excess_mean": 0.16386536108263083,
+          "headroom_excess_median": 0.07656249999999998,
+          "relative_headroom_raw_mean": 0.35760193753614805,
+          "relative_headroom_excess_mean": 0.16386536108263083,
+          "relative_headroom_excess_median": 0.07656249999999998,
+          "frac_prefixes_excess_above_one_interval": 0.0
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 0.28188797313797315,
+            "headroom_raw_median": 0.26875,
+            "headroom_null_mean": 0.23139758852258854,
+            "headroom_excess_mean": 0.05049038461538461,
+            "headroom_excess_median": 0.033794642857142856,
+            "relative_headroom_raw_mean": 0.28188797313797315,
+            "relative_headroom_excess_mean": 0.05049038461538461,
+            "relative_headroom_excess_median": 0.033794642857142856,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.3783119658119658,
+            "headroom_raw_median": 0.375,
+            "headroom_null_mean": 0.22878432056947684,
+            "headroom_excess_mean": 0.149527645242489,
+            "headroom_excess_median": 0.11205208333333332,
+            "relative_headroom_raw_mean": 0.3783119658119658,
+            "relative_headroom_excess_mean": 0.149527645242489,
+            "relative_headroom_excess_median": 0.11205208333333332,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.4489068223443223,
+            "headroom_raw_median": 0.375,
+            "headroom_null_mean": 0.20483584897452087,
+            "headroom_excess_mean": 0.24407097336980152,
+            "headroom_excess_median": 0.13935267857142858,
+            "relative_headroom_raw_mean": 0.4489068223443223,
+            "relative_headroom_excess_mean": 0.24407097336980152,
+            "relative_headroom_excess_median": 0.13935267857142858,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.31740627569709207,
+            "headroom_raw_median": 0.125,
+            "headroom_null_mean": 0.11394469192938582,
+            "headroom_excess_mean": 0.20346158376770623,
+            "headroom_excess_median": 0.025338942307692285,
+            "relative_headroom_raw_mean": 0.31740627569709207,
+            "relative_headroom_excess_mean": 0.20346158376770623,
+            "relative_headroom_excess_median": 0.025338942307692285,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          }
+        }
+      },
+      "capture": {
+        "overall": {
+          "n_prefixes": 267,
+          "base_policy_target_prob": 0.14860320093132098,
+          "guided_target_prob": 0.16326192469212322,
+          "best_candidate_target_prob": 0.3994855331933984,
+          "worst_candidate_target_prob": 0.028367871204949855,
+          "headroom_prob_spread": 0.3711176619884485,
+          "available_mean": 0.2508823322620774,
+          "available_null_mean": 0.1159329983939192,
+          "available_excess_mean": 0.1349493338681582,
+          "achieved_mean": 0.014658723760802218,
+          "captured_fraction_raw": 0.05842868100209377,
+          "captured_fraction": 0.10862390602923162
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 81,
+            "base_policy_target_prob": 0.15808648197583167,
+            "guided_target_prob": 0.16911417639347212,
+            "best_candidate_target_prob": 0.32202889702889703,
+            "worst_candidate_target_prob": 0.02611868584090806,
+            "headroom_prob_spread": 0.295910211187989,
+            "available_mean": 0.16394241505306537,
+            "available_null_mean": 0.1322709719488689,
+            "available_excess_mean": 0.031671443104196464,
+            "achieved_mean": 0.011027694417640435,
+            "captured_fraction_raw": 0.06726565796942152,
+            "captured_fraction": 0.3481904623467968
+          },
+          "2": {
+            "n_prefixes": 73,
+            "base_policy_target_prob": 0.18792714775897285,
+            "guided_target_prob": 0.20022930105636325,
+            "best_candidate_target_prob": 0.4093720206733905,
+            "worst_candidate_target_prob": 0.030430528375733856,
+            "headroom_prob_spread": 0.37894149229765667,
+            "available_mean": 0.22144487291441772,
+            "available_null_mean": 0.12745311994867528,
+            "available_excess_mean": 0.09399175296574241,
+            "achieved_mean": 0.012302153297390428,
+            "captured_fraction_raw": 0.055554021800020933,
+            "captured_fraction": 0.13088545440656105
+          },
+          "3": {
+            "n_prefixes": 66,
+            "base_policy_target_prob": 0.1531679890475723,
+            "guided_target_prob": 0.172077375961138,
+            "best_candidate_target_prob": 0.4641878954378954,
+            "worst_candidate_target_prob": 0.01748251748251748,
+            "headroom_prob_spread": 0.4467053779553779,
+            "available_mean": 0.31101990639032306,
+            "available_null_mean": 0.11202001436744138,
+            "available_excess_mean": 0.19899989202288168,
+            "achieved_mean": 0.01890938691356569,
+            "captured_fraction_raw": 0.06079799564287319,
+            "captured_fraction": 0.09502209635064235
+          },
+          "4": {
+            "n_prefixes": 47,
+            "base_policy_target_prob": 0.06477192649096904,
+            "guided_target_prob": 0.08337957051863884,
+            "best_candidate_target_prob": 0.4267603850050659,
+            "worst_candidate_target_prob": 0.044326241134751775,
+            "headroom_prob_spread": 0.38243414387031405,
+            "available_mean": 0.3619884585140968,
+            "available_null_mean": 0.07537793912369394,
+            "available_excess_mean": 0.2866105193904029,
+            "achieved_mean": 0.018607644027669793,
+            "captured_fraction_raw": 0.05140397045820498,
+            "captured_fraction": 0.06492310215007714
+          }
+        }
+      }
+    },
+    "hbd_count": {
+      "target_interval": {
+        "lo": 3.0,
+        "hi": 4.0,
+        "rule": {
+          "kind": "quantile_value",
+          "q": 0.9
+        },
+        "base_rate": 0.08230807827395886
+      },
+      "interval_width": 1.0,
+      "n_prefixes_usable": 380,
+      "n_prefixes_capture_usable": 267,
+      "mean_head_target_prob": 0.07985914498567581,
+      "headroom": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 1.0400772765246449,
+          "headroom_raw_median": 1.0,
+          "headroom_null_mean": 0.5001401890872286,
+          "headroom_excess_mean": 0.5399370874374164,
+          "headroom_excess_median": 0.5596875,
+          "relative_headroom_raw_mean": 1.0400772765246449,
+          "relative_headroom_excess_mean": 0.5399370874374164,
+          "relative_headroom_excess_median": 0.5596875,
+          "frac_prefixes_excess_above_one_interval": 0.12105263157894737
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 1.1952604802604803,
+            "headroom_raw_median": 1.125,
+            "headroom_null_mean": 0.7093978454415955,
+            "headroom_excess_mean": 0.48586263481888486,
+            "headroom_excess_median": 0.4900426968864469,
+            "relative_headroom_raw_mean": 1.1952604802604803,
+            "relative_headroom_excess_mean": 0.48586263481888486,
+            "relative_headroom_excess_median": 0.4900426968864469,
+            "frac_prefixes_excess_above_one_interval": 0.12222222222222222
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 1.2682854471916973,
+            "headroom_raw_median": 1.28125,
+            "headroom_null_mean": 0.6038123013415982,
+            "headroom_excess_mean": 0.6644731458500991,
+            "headroom_excess_median": 0.6169583333333333,
+            "relative_headroom_raw_mean": 1.2682854471916973,
+            "relative_headroom_excess_mean": 0.6644731458500991,
+            "relative_headroom_excess_median": 0.6169583333333333,
+            "frac_prefixes_excess_above_one_interval": 0.21875
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 1.0443721064814815,
+            "headroom_raw_median": 1.0,
+            "headroom_null_mean": 0.4503492303414178,
+            "headroom_excess_mean": 0.5940228761400635,
+            "headroom_excess_median": 0.6270312499999999,
+            "relative_headroom_raw_mean": 1.0443721064814815,
+            "relative_headroom_excess_mean": 0.5940228761400635,
+            "relative_headroom_excess_median": 0.6270312499999999,
+            "frac_prefixes_excess_above_one_interval": 0.10416666666666667
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.6698040479928234,
+            "headroom_raw_median": 0.8397435897435898,
+            "headroom_null_mean": 0.25518325226360944,
+            "headroom_excess_mean": 0.41462079572921406,
+            "headroom_excess_median": 0.5059375,
+            "relative_headroom_raw_mean": 0.6698040479928234,
+            "relative_headroom_excess_mean": 0.41462079572921406,
+            "relative_headroom_excess_median": 0.5059375,
+            "frac_prefixes_excess_above_one_interval": 0.04081632653061224
+          }
+        }
+      },
+      "headroom_probability_units": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 0.22871003630872053,
+          "headroom_raw_median": 0.125,
+          "headroom_null_mean": 0.13052051804189962,
+          "headroom_excess_mean": 0.09818951826682092,
+          "headroom_excess_median": 0.013586309523809521,
+          "relative_headroom_raw_mean": 0.22871003630872053,
+          "relative_headroom_excess_mean": 0.09818951826682092,
+          "relative_headroom_excess_median": 0.013586309523809521,
+          "frac_prefixes_excess_above_one_interval": 0.0
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 0.18800925925925926,
+            "headroom_raw_median": 0.1875,
+            "headroom_null_mean": 0.15826874999999999,
+            "headroom_excess_mean": 0.029740509259259258,
+            "headroom_excess_median": 0.015418154761904772,
+            "relative_headroom_raw_mean": 0.18800925925925926,
+            "relative_headroom_excess_mean": 0.029740509259259258,
+            "relative_headroom_excess_median": 0.015418154761904772,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.2021012985856736,
+            "headroom_raw_median": 0.1517857142857143,
+            "headroom_null_mean": 0.13792968525976337,
+            "headroom_excess_mean": 0.0641716133259102,
+            "headroom_excess_median": 0.02370833333333333,
+            "relative_headroom_raw_mean": 0.2021012985856736,
+            "relative_headroom_excess_mean": 0.0641716133259102,
+            "relative_headroom_excess_median": 0.02370833333333333,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.25707051917989415,
+            "headroom_raw_median": 0.125,
+            "headroom_null_mean": 0.12299318910256411,
+            "headroom_excess_mean": 0.13407733007733008,
+            "headroom_excess_median": 0.005416666666666667,
+            "relative_headroom_raw_mean": 0.25707051917989415,
+            "relative_headroom_excess_mean": 0.13407733007733008,
+            "relative_headroom_excess_median": 0.005416666666666667,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.2643723056988363,
+            "headroom_raw_median": 0.07291666666666666,
+            "headroom_null_mean": 0.1051531981340655,
+            "headroom_excess_mean": 0.15921910756477084,
+            "headroom_excess_median": 0.0,
+            "relative_headroom_raw_mean": 0.2643723056988363,
+            "relative_headroom_excess_mean": 0.15921910756477084,
+            "relative_headroom_excess_median": 0.0,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          }
+        }
+      },
+      "capture": {
+        "overall": {
+          "n_prefixes": 267,
+          "base_policy_target_prob": 0.07748026057604925,
+          "guided_target_prob": 0.08197379839486892,
+          "best_candidate_target_prob": 0.24385680902534834,
+          "worst_candidate_target_prob": 0.007013554485464597,
+          "headroom_prob_spread": 0.23684325453988372,
+          "available_mean": 0.1663765484492991,
+          "available_null_mean": 0.08513322984938151,
+          "available_excess_mean": 0.0812433185999176,
+          "achieved_mean": 0.004493537818819678,
+          "captured_fraction_raw": 0.02700824040828699,
+          "captured_fraction": 0.05530962910252458
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 81,
+            "base_policy_target_prob": 0.07788971564196012,
+            "guided_target_prob": 0.08307992343447741,
+            "best_candidate_target_prob": 0.2006760728982951,
+            "worst_candidate_target_prob": 0.004681069958847737,
+            "headroom_prob_spread": 0.19599500293944735,
+            "available_mean": 0.12278635725633497,
+            "available_null_mean": 0.10031350687899028,
+            "available_excess_mean": 0.022472850377344727,
+            "achieved_mean": 0.005190207792517283,
+            "captured_fraction_raw": 0.04227023187667295,
+            "captured_fraction": 0.2309545832134237
+          },
+          "2": {
+            "n_prefixes": 73,
+            "base_policy_target_prob": 0.08670173850131811,
+            "guided_target_prob": 0.09139261198316583,
+            "best_candidate_target_prob": 0.23402830046665662,
+            "worst_candidate_target_prob": 0.008904109589041094,
+            "headroom_prob_spread": 0.22512419087761554,
+            "available_mean": 0.14732656196533853,
+            "available_null_mean": 0.09034835815161958,
+            "available_excess_mean": 0.05697820381371894,
+            "achieved_mean": 0.004690873481847719,
+            "captured_fraction_raw": 0.0318399711448594,
+            "captured_fraction": 0.08232750714964225
+          },
+          "3": {
+            "n_prefixes": 66,
+            "base_policy_target_prob": 0.049095365404134506,
+            "guided_target_prob": 0.06038289047707633,
+            "best_candidate_target_prob": 0.2673190235690236,
+            "worst_candidate_target_prob": 0.0038510101010101007,
+            "headroom_prob_spread": 0.2634680134680134,
+            "available_mean": 0.21822365816488906,
+            "available_null_mean": 0.07117478437406298,
+            "available_excess_mean": 0.14704887379082607,
+            "achieved_mean": 0.01128752507294182,
+            "captured_fraction_raw": 0.051724570873122315,
+            "captured_fraction": 0.07676036396577976
+          },
+          "4": {
+            "n_prefixes": 47,
+            "base_policy_target_prob": 0.10231152296887824,
+            "guided_target_prob": 0.09575742397828059,
+            "best_candidate_target_prob": 0.30059328968903437,
+            "worst_candidate_target_prob": 0.012537993920972644,
+            "headroom_prob_spread": 0.2880552957680617,
+            "available_mean": 0.19828176672015616,
+            "available_null_mean": 0.07047260423043125,
+            "available_excess_mean": 0.1278091624897249,
+            "achieved_mean": -0.006554098990597649,
+            "captured_fraction_raw": -0.0330544714171714,
+            "captured_fraction": -0.05128035316814285
+          }
+        }
+      }
+    },
+    "rotatable_bonds": {
+      "target_interval": {
+        "lo": 8.0,
+        "hi": 9.0,
+        "rule": {
+          "kind": "quantile_value",
+          "q": 0.9
+        },
+        "base_rate": 0.08266934269944806
+      },
+      "interval_width": 1.0,
+      "n_prefixes_usable": 380,
+      "n_prefixes_capture_usable": 267,
+      "mean_head_target_prob": 0.08638772368431091,
+      "headroom": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 2.467043081187818,
+          "headroom_raw_median": 2.3125,
+          "headroom_null_mean": 1.2302665415907192,
+          "headroom_excess_mean": 1.2367765395970989,
+          "headroom_excess_median": 1.0351249999999999,
+          "relative_headroom_raw_mean": 2.467043081187818,
+          "relative_headroom_excess_mean": 1.2367765395970989,
+          "relative_headroom_excess_median": 1.0351249999999999,
+          "frac_prefixes_excess_above_one_interval": 0.5210526315789473
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 3.0487016687016686,
+            "headroom_raw_median": 2.6875,
+            "headroom_null_mean": 1.7788460571835571,
+            "headroom_excess_mean": 1.2698556115181117,
+            "headroom_excess_median": 1.1369687499999999,
+            "relative_headroom_raw_mean": 3.0487016687016686,
+            "relative_headroom_excess_mean": 1.2698556115181117,
+            "relative_headroom_excess_median": 1.1369687499999999,
+            "frac_prefixes_excess_above_one_interval": 0.6
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 3.0596236229048728,
+            "headroom_raw_median": 2.84375,
+            "headroom_null_mean": 1.5170190240170711,
+            "headroom_excess_mean": 1.542604598887802,
+            "headroom_excess_median": 1.3845520833333333,
+            "relative_headroom_raw_mean": 3.0596236229048728,
+            "relative_headroom_excess_mean": 1.542604598887802,
+            "relative_headroom_excess_median": 1.3845520833333333,
+            "frac_prefixes_excess_above_one_interval": 0.6875
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 2.1940827546296298,
+            "headroom_raw_median": 1.7520833333333332,
+            "headroom_null_mean": 1.0266214554398148,
+            "headroom_excess_mean": 1.1674612991898148,
+            "headroom_excess_median": 0.8266666666666669,
+            "relative_headroom_raw_mean": 2.1940827546296298,
+            "relative_headroom_excess_mean": 1.1674612991898148,
+            "relative_headroom_excess_median": 0.8266666666666669,
+            "frac_prefixes_excess_above_one_interval": 0.4375
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 1.6197694737235553,
+            "headroom_raw_median": 1.03125,
+            "headroom_null_mean": 0.6450577003070626,
+            "headroom_excess_mean": 0.9747117734164927,
+            "headroom_excess_median": 0.6715625000000001,
+            "relative_headroom_raw_mean": 1.6197694737235553,
+            "relative_headroom_excess_mean": 0.9747117734164927,
+            "relative_headroom_excess_median": 0.6715625000000001,
+            "frac_prefixes_excess_above_one_interval": 0.3673469387755102
+          }
+        }
+      },
+      "headroom_probability_units": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 0.19267946965315386,
+          "headroom_raw_median": 0.125,
+          "headroom_null_mean": 0.12526518510729037,
+          "headroom_excess_mean": 0.0674142845458635,
+          "headroom_excess_median": 0.0037083333333333274,
+          "relative_headroom_raw_mean": 0.19267946965315386,
+          "relative_headroom_excess_mean": 0.0674142845458635,
+          "relative_headroom_excess_median": 0.0037083333333333274,
+          "frac_prefixes_excess_above_one_interval": 0.0
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 0.17221560846560846,
+            "headroom_raw_median": 0.14017857142857143,
+            "headroom_null_mean": 0.14623521316646315,
+            "headroom_excess_mean": 0.0259803952991453,
+            "headroom_excess_median": 0.010677083333333351,
+            "relative_headroom_raw_mean": 0.17221560846560846,
+            "relative_headroom_excess_mean": 0.0259803952991453,
+            "relative_headroom_excess_median": 0.010677083333333351,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.20964781746031746,
+            "headroom_raw_median": 0.1875,
+            "headroom_null_mean": 0.14688256072631073,
+            "headroom_excess_mean": 0.06276525673400674,
+            "headroom_excess_median": 0.016949404761904763,
+            "relative_headroom_raw_mean": 0.20964781746031746,
+            "relative_headroom_excess_mean": 0.06276525673400674,
+            "relative_headroom_excess_median": 0.016949404761904763,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.2187390300671551,
+            "headroom_raw_median": 0.125,
+            "headroom_null_mean": 0.1309101089159683,
+            "headroom_excess_mean": 0.08782892115118678,
+            "headroom_excess_median": 0.024687499999999994,
+            "relative_headroom_raw_mean": 0.2187390300671551,
+            "relative_headroom_excess_mean": 0.08782892115118678,
+            "relative_headroom_excess_median": 0.024687499999999994,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.16932302391486062,
+            "headroom_raw_median": 0.0625,
+            "headroom_null_mean": 0.07930107010336603,
+            "headroom_excess_mean": 0.09002195381149462,
+            "headroom_excess_median": 0.0,
+            "relative_headroom_raw_mean": 0.16932302391486062,
+            "relative_headroom_excess_mean": 0.09002195381149462,
+            "relative_headroom_excess_median": 0.0,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          }
+        }
+      },
+      "capture": {
+        "overall": {
+          "n_prefixes": 267,
+          "base_policy_target_prob": 0.09676704799943962,
+          "guided_target_prob": 0.09985137579678736,
+          "best_candidate_target_prob": 0.22618155876582843,
+          "worst_candidate_target_prob": 0.009396736222578918,
+          "headroom_prob_spread": 0.21678482254324952,
+          "available_mean": 0.12941451076638882,
+          "available_null_mean": 0.086416540616432,
+          "available_excess_mean": 0.042997970149956787,
+          "achieved_mean": 0.0030843277973477386,
+          "captured_fraction_raw": 0.0238329363460283,
+          "captured_fraction": 0.07173193959135855
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 81,
+            "base_policy_target_prob": 0.08643478182422752,
+            "guided_target_prob": 0.09264629750560045,
+            "best_candidate_target_prob": 0.1905790711346267,
+            "worst_candidate_target_prob": 0.006944444444444444,
+            "headroom_prob_spread": 0.18363462669018224,
+            "available_mean": 0.10414428931039917,
+            "available_null_mean": 0.09436344257591607,
+            "available_excess_mean": 0.009780846734483102,
+            "achieved_mean": 0.006211515681372936,
+            "captured_fraction_raw": 0.059643363284756654,
+            "captured_fraction": 0.6350693196606155
+          },
+          "2": {
+            "n_prefixes": 73,
+            "base_policy_target_prob": 0.11899089259948034,
+            "guided_target_prob": 0.11630530749536873,
+            "best_candidate_target_prob": 0.24705642530984998,
+            "worst_candidate_target_prob": 0.007827788649706457,
+            "headroom_prob_spread": 0.23922863666014355,
+            "available_mean": 0.12806553271036963,
+            "available_null_mean": 0.09622666589894494,
+            "available_excess_mean": 0.031838866811424685,
+            "achieved_mean": -0.0026855851041116398,
+            "captured_fraction_raw": -0.02097039732138782,
+            "captured_fraction": -0.08434926783097618
+          },
+          "3": {
+            "n_prefixes": 66,
+            "base_policy_target_prob": 0.12457874062606505,
+            "guided_target_prob": 0.13111760660522762,
+            "best_candidate_target_prob": 0.254491341991342,
+            "worst_candidate_target_prob": 0.019886363636363636,
+            "headroom_prob_spread": 0.23460497835497834,
+            "available_mean": 0.12991260136527696,
+            "available_null_mean": 0.08259596927174097,
+            "available_excess_mean": 0.047316632093535975,
+            "achieved_mean": 0.006538865979162568,
+            "captured_fraction_raw": 0.05033280767565537,
+            "captured_fraction": 0.13819381663167563
+          },
+          "4": {
+            "n_prefixes": 47,
+            "base_policy_target_prob": 0.04100111589373604,
+            "guided_target_prob": 0.04280676078046068,
+            "best_candidate_target_prob": 0.21536220871327252,
+            "worst_candidate_target_prob": 0.0013297872340425532,
+            "headroom_prob_spread": 0.21403242147922996,
+            "available_mean": 0.17436109281953655,
+            "available_null_mean": 0.0628488704974523,
+            "available_excess_mean": 0.1115122223220842,
+            "achieved_mean": 0.001805644886724643,
+            "captured_fraction_raw": 0.010355778674738423,
+            "captured_fraction": 0.016192349583970655
+          }
+        }
+      }
+    },
+    "tpsa": {
+      "target_interval": {
+        "lo": 100.52,
+        "hi": 119.31,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.1000903161063723
+      },
+      "interval_width": 18.790000000000006,
+      "n_prefixes_usable": 380,
+      "n_prefixes_capture_usable": 267,
+      "mean_head_target_prob": 0.10261504352092743,
+      "headroom": {
+        "interval_width": 18.790000000000006,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 36.54587064054367,
+          "headroom_raw_median": 33.949999999999996,
+          "headroom_null_mean": 17.47481681212245,
+          "headroom_excess_mean": 19.071053828421213,
+          "headroom_excess_median": 18.642199999999995,
+          "relative_headroom_raw_mean": 1.9449638446271238,
+          "relative_headroom_excess_mean": 1.0149576279095907,
+          "relative_headroom_excess_median": 0.9921341138903667,
+          "frac_prefixes_excess_above_one_interval": 0.4921052631578947
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 40.66538195461945,
+            "headroom_raw_median": 36.591875,
+            "headroom_null_mean": 23.778903110398858,
+            "headroom_excess_mean": 16.886478844220594,
+            "headroom_excess_median": 15.918303125000005,
+            "relative_headroom_raw_mean": 2.1642034036519124,
+            "relative_headroom_excess_mean": 0.8986949890484613,
+            "relative_headroom_excess_median": 0.8471688730707823,
+            "frac_prefixes_excess_above_one_interval": 0.4111111111111111
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 41.6183325400005,
+            "headroom_raw_median": 38.881875,
+            "headroom_null_mean": 20.840631910731773,
+            "headroom_excess_mean": 20.777700629268736,
+            "headroom_excess_median": 19.654209375000008,
+            "relative_headroom_raw_mean": 2.2149192410857097,
+            "relative_headroom_excess_mean": 1.1057850255065849,
+            "relative_headroom_excess_median": 1.045993048163917,
+            "frac_prefixes_excess_above_one_interval": 0.5729166666666666
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 36.13732033316799,
+            "headroom_raw_median": 32.90874999999999,
+            "headroom_null_mean": 15.424457057385611,
+            "headroom_excess_mean": 20.71286327578238,
+            "headroom_excess_median": 20.63956093750001,
+            "relative_headroom_raw_mean": 1.9232208798918562,
+            "relative_headroom_excess_mean": 1.1023343946664381,
+            "relative_headroom_excess_median": 1.0984332590473658,
+            "frac_prefixes_excess_above_one_interval": 0.5729166666666666
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 28.193916241496602,
+            "headroom_raw_median": 25.8921875,
+            "headroom_null_mean": 10.396740487054753,
+            "headroom_excess_mean": 17.797175754441845,
+            "headroom_excess_median": 16.504881201923073,
+            "relative_headroom_raw_mean": 1.5004745205692704,
+            "relative_headroom_excess_mean": 0.9471620944354359,
+            "relative_headroom_excess_median": 0.8783864396978748,
+            "frac_prefixes_excess_above_one_interval": 0.40816326530612246
+          }
+        }
+      },
+      "headroom_probability_units": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 0.2731354829381145,
+          "headroom_raw_median": 0.1875,
+          "headroom_null_mean": 0.1621608918311221,
+          "headroom_excess_mean": 0.11097459110699241,
+          "headroom_excess_median": 0.025747023809523817,
+          "relative_headroom_raw_mean": 0.2731354829381145,
+          "relative_headroom_excess_mean": 0.11097459110699241,
+          "relative_headroom_excess_median": 0.025747023809523817,
+          "frac_prefixes_excess_above_one_interval": 0.0
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 0.19656084656084655,
+            "headroom_raw_median": 0.1875,
+            "headroom_null_mean": 0.17476025386650387,
+            "headroom_excess_mean": 0.0218005926943427,
+            "headroom_excess_median": 0.013437500000000005,
+            "relative_headroom_raw_mean": 0.19656084656084655,
+            "relative_headroom_excess_mean": 0.0218005926943427,
+            "relative_headroom_excess_median": 0.013437500000000005,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.2235677083333333,
+            "headroom_raw_median": 0.1875,
+            "headroom_null_mean": 0.1702884331380425,
+            "headroom_excess_mean": 0.05327927519529082,
+            "headroom_excess_median": 0.03401041666666667,
+            "relative_headroom_raw_mean": 0.2235677083333333,
+            "relative_headroom_excess_mean": 0.05327927519529082,
+            "relative_headroom_excess_median": 0.03401041666666667,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.28345209478021977,
+            "headroom_raw_median": 0.1875,
+            "headroom_null_mean": 0.1678877883545852,
+            "headroom_excess_mean": 0.11556430642563455,
+            "headroom_excess_median": 0.03640625,
+            "relative_headroom_raw_mean": 0.28345209478021977,
+            "relative_headroom_excess_mean": 0.11556430642563455,
+            "relative_headroom_excess_median": 0.03640625,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.3819092472153697,
+            "headroom_raw_median": 0.17708333333333331,
+            "headroom_null_mean": 0.13701835494437536,
+            "headroom_excess_mean": 0.24489089227099434,
+            "headroom_excess_median": 0.046406249999999996,
+            "relative_headroom_raw_mean": 0.3819092472153697,
+            "relative_headroom_excess_mean": 0.24489089227099434,
+            "relative_headroom_excess_median": 0.046406249999999996,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          }
+        }
+      },
+      "capture": {
+        "overall": {
+          "n_prefixes": 267,
+          "base_policy_target_prob": 0.10376029876022407,
+          "guided_target_prob": 0.11022018239242738,
+          "best_candidate_target_prob": 0.2789380719156,
+          "worst_candidate_target_prob": 0.007130509939498703,
+          "headroom_prob_spread": 0.2718075619761013,
+          "available_mean": 0.17517777315537594,
+          "available_null_mean": 0.10077250712826599,
+          "available_excess_mean": 0.07440526602710994,
+          "achieved_mean": 0.006459883632203303,
+          "captured_fraction_raw": 0.036876160233374096,
+          "captured_fraction": 0.0868202477745273
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 81,
+            "base_policy_target_prob": 0.08419847452052437,
+            "guided_target_prob": 0.08534527612439499,
+            "best_candidate_target_prob": 0.21244855967078188,
+            "worst_candidate_target_prob": 0.004629629629629629,
+            "headroom_prob_spread": 0.20781893004115226,
+            "available_mean": 0.12825008515025751,
+            "available_null_mean": 0.10597503982451814,
+            "available_excess_mean": 0.022275045325739377,
+            "achieved_mean": 0.0011468016038706328,
+            "captured_fraction_raw": 0.00894191690030492,
+            "captured_fraction": 0.05148369339322846
+          },
+          "2": {
+            "n_prefixes": 73,
+            "base_policy_target_prob": 0.1115218124983619,
+            "guided_target_prob": 0.11310824428559305,
+            "best_candidate_target_prob": 0.24327299412915854,
+            "worst_candidate_target_prob": 0.009417808219178082,
+            "headroom_prob_spread": 0.23385518590998045,
+            "available_mean": 0.1317511816307966,
+            "available_null_mean": 0.10369162015819865,
+            "available_excess_mean": 0.028059561472597954,
+            "achieved_mean": 0.0015864317872311517,
+            "captured_fraction_raw": 0.01204111999296351,
+            "captured_fraction": 0.056538010716254736
+          },
+          "3": {
+            "n_prefixes": 66,
+            "base_policy_target_prob": 0.10710348646901369,
+            "guided_target_prob": 0.11689741915716141,
+            "best_candidate_target_prob": 0.30378302253302253,
+            "worst_candidate_target_prob": 0.010416666666666666,
+            "headroom_prob_spread": 0.29336635586635584,
+            "available_mean": 0.19667953606400887,
+            "available_null_mean": 0.0989514924327992,
+            "available_excess_mean": 0.09772804363120965,
+            "achieved_mean": 0.009793932688147704,
+            "captured_fraction_raw": 0.049796399178815905,
+            "captured_fraction": 0.10021619510881102
+          },
+          "4": {
+            "n_prefixes": 47,
+            "base_policy_target_prob": 0.12072342369110706,
+            "guided_target_prob": 0.13922744330811,
+            "best_candidate_target_prob": 0.41403242147923,
+            "worst_candidate_target_prob": 0.0032733224222585926,
+            "headroom_prob_spread": 0.4107590990569714,
+            "available_mean": 0.2933089977881229,
+            "available_null_mean": 0.08982966819888936,
+            "available_excess_mean": 0.20347932958923357,
+            "achieved_mean": 0.01850401961700294,
+            "captured_fraction_raw": 0.06308711889694449,
+            "captured_fraction": 0.09093808031684227
+          }
+        }
+      }
+    },
+    "clogp": {
+      "target_interval": {
+        "lo": 4.172676000000004,
+        "hi": 5.038300000000004,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09999397868454328
+      },
+      "interval_width": 0.8656240000000004,
+      "n_prefixes_usable": 380,
+      "n_prefixes_capture_usable": 267,
+      "mean_head_target_prob": 0.09289110451936722,
+      "headroom": {
+        "interval_width": 0.8656240000000004,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 2.3556445042969107,
+          "headroom_raw_median": 2.035983804945055,
+          "headroom_null_mean": 1.0111238596482455,
+          "headroom_excess_mean": 1.344520644648665,
+          "headroom_excess_median": 1.204274547083336,
+          "relative_headroom_raw_mean": 2.7213253147982375,
+          "relative_headroom_excess_mean": 1.5532386401586191,
+          "relative_headroom_excess_median": 1.3912213005685325,
+          "frac_prefixes_excess_above_one_interval": 0.6736842105263158
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 2.336503895680709,
+            "headroom_raw_median": 1.9056068750000013,
+            "headroom_null_mean": 1.2944380407977973,
+            "headroom_excess_mean": 1.0420658548829114,
+            "headroom_excess_median": 0.676674911934525,
+            "relative_headroom_raw_mean": 2.6992133948235124,
+            "relative_headroom_excess_mean": 1.203831981186879,
+            "relative_headroom_excess_median": 0.7817192128851842,
+            "frac_prefixes_excess_above_one_interval": 0.4
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 2.7811147819272755,
+            "headroom_raw_median": 2.5311984375000014,
+            "headroom_null_mean": 1.2207466554104633,
+            "headroom_excess_mean": 1.5603681265168123,
+            "headroom_excess_median": 1.3787713005357163,
+            "relative_headroom_raw_mean": 3.2128438928764385,
+            "relative_headroom_excess_mean": 1.8025934199107367,
+            "relative_headroom_excess_median": 1.5928062305755335,
+            "frac_prefixes_excess_above_one_interval": 0.7708333333333334
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 2.1843657482082453,
+            "headroom_raw_median": 1.9111131250000022,
+            "headroom_null_mean": 0.8977064939814725,
+            "headroom_excess_mean": 1.2866592542267725,
+            "headroom_excess_median": 1.201892640625002,
+            "relative_headroom_raw_mean": 2.5234579311667007,
+            "relative_headroom_excess_mean": 1.4863950794187453,
+            "relative_headroom_excess_median": 1.3884696364992206,
+            "frac_prefixes_excess_above_one_interval": 0.71875
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 2.1242186747811447,
+            "headroom_raw_median": 1.849265208333336,
+            "headroom_null_mean": 0.6566953127847518,
+            "headroom_excess_mean": 1.4675233619963926,
+            "headroom_excess_median": 1.2777960578125003,
+            "relative_headroom_raw_mean": 2.453973867153803,
+            "relative_headroom_excess_mean": 1.6953358063043444,
+            "relative_headroom_excess_median": 1.4761559959202837,
+            "frac_prefixes_excess_above_one_interval": 0.7857142857142857
+          }
+        }
+      },
+      "headroom_probability_units": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 0.2569795920453815,
+          "headroom_raw_median": 0.19375,
+          "headroom_null_mean": 0.15467438856830304,
+          "headroom_excess_mean": 0.10230520347707849,
+          "headroom_excess_median": 0.04214583333333334,
+          "relative_headroom_raw_mean": 0.2569795920453815,
+          "relative_headroom_excess_mean": 0.10230520347707849,
+          "relative_headroom_excess_median": 0.04214583333333334,
+          "frac_prefixes_excess_above_one_interval": 0.0
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 0.22196428571428567,
+            "headroom_raw_median": 0.1875,
+            "headroom_null_mean": 0.17331837098087097,
+            "headroom_excess_mean": 0.04864591473341475,
+            "headroom_excess_median": 0.035385416666666676,
+            "relative_headroom_raw_mean": 0.22196428571428567,
+            "relative_headroom_excess_mean": 0.04864591473341475,
+            "relative_headroom_excess_median": 0.035385416666666676,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.22820816336441338,
+            "headroom_raw_median": 0.25,
+            "headroom_null_mean": 0.17031429732015668,
+            "headroom_excess_mean": 0.05789386604425667,
+            "headroom_excess_median": 0.047794642857142855,
+            "relative_headroom_raw_mean": 0.22820816336441338,
+            "relative_headroom_excess_mean": 0.05789386604425667,
+            "relative_headroom_excess_median": 0.047794642857142855,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.2566137566137566,
+            "headroom_raw_median": 0.2,
+            "headroom_null_mean": 0.15094612382698322,
+            "headroom_excess_mean": 0.10566763278677342,
+            "headroom_excess_median": 0.046802083333333334,
+            "relative_headroom_raw_mean": 0.2566137566137566,
+            "relative_headroom_excess_mean": 0.10566763278677342,
+            "relative_headroom_excess_median": 0.046802083333333334,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.31767913209239745,
+            "headroom_raw_median": 0.125,
+            "headroom_null_mean": 0.1258838146688912,
+            "headroom_excess_mean": 0.19179531742350617,
+            "headroom_excess_median": 0.04702976190476191,
+            "relative_headroom_raw_mean": 0.31767913209239745,
+            "relative_headroom_excess_mean": 0.19179531742350617,
+            "relative_headroom_excess_median": 0.04702976190476191,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          }
+        }
+      },
+      "capture": {
+        "overall": {
+          "n_prefixes": 267,
+          "base_policy_target_prob": 0.10746451978679038,
+          "guided_target_prob": 0.11455909280866942,
+          "best_candidate_target_prob": 0.28403855299922715,
+          "worst_candidate_target_prob": 0.008208489388264668,
+          "headroom_prob_spread": 0.27583006361096246,
+          "available_mean": 0.17657403321243675,
+          "available_null_mean": 0.09962167961094855,
+          "available_excess_mean": 0.07695235360148821,
+          "achieved_mean": 0.007094573021879013,
+          "captured_fraction_raw": 0.040179027985069074,
+          "captured_fraction": 0.09219436040409566
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 81,
+            "base_policy_target_prob": 0.08889991733815442,
+            "guided_target_prob": 0.09335791635297241,
+            "best_candidate_target_prob": 0.2326499118165785,
+            "worst_candidate_target_prob": 0.0030864197530864196,
+            "headroom_prob_spread": 0.22956349206349208,
+            "available_mean": 0.14374999447842404,
+            "available_null_mean": 0.106936640342122,
+            "available_excess_mean": 0.03681335413630207,
+            "achieved_mean": 0.0044579990148179965,
+            "captured_fraction_raw": 0.031012168250810705,
+            "captured_fraction": 0.12109733327509846
+          },
+          "2": {
+            "n_prefixes": 73,
+            "base_policy_target_prob": 0.09700501900094319,
+            "guided_target_prob": 0.10563961353211163,
+            "best_candidate_target_prob": 0.2690883887801696,
+            "worst_candidate_target_prob": 0.012899543378995433,
+            "headroom_prob_spread": 0.2561888454011742,
+            "available_mean": 0.17208336977922642,
+            "available_null_mean": 0.10610544283615266,
+            "available_excess_mean": 0.06597792694307374,
+            "achieved_mean": 0.008634594531168438,
+            "captured_fraction_raw": 0.050176809893054466,
+            "captured_fraction": 0.13087095838307305
+          },
+          "3": {
+            "n_prefixes": 66,
+            "base_policy_target_prob": 0.11453601960354488,
+            "guided_target_prob": 0.12034513821916398,
+            "best_candidate_target_prob": 0.27727573352573354,
+            "worst_candidate_target_prob": 0.011363636363636364,
+            "headroom_prob_spread": 0.2659120971620972,
+            "available_mean": 0.16273971392218867,
+            "available_null_mean": 0.08795048319193355,
+            "available_excess_mean": 0.07478923073025509,
+            "achieved_mean": 0.005809118615619101,
+            "captured_fraction_raw": 0.035695765192242115,
+            "captured_fraction": 0.07767319651369395
+          },
+          "4": {
+            "n_prefixes": 47,
+            "base_policy_target_prob": 0.14577425101658964,
+            "guided_target_prob": 0.1568258647875531,
+            "best_candidate_target_prob": 0.4053191489361703,
+            "worst_candidate_target_prob": 0.005319148936170213,
+            "headroom_prob_spread": 0.4000000000000001,
+            "available_mean": 0.2595448979195806,
+            "available_null_mean": 0.09333385895116214,
+            "available_excess_mean": 0.1662110389684185,
+            "achieved_mean": 0.011051613770963451,
+            "captured_fraction_raw": 0.04258073982401214,
+            "captured_fraction": 0.06649145471657482
+          }
+        }
+      }
+    },
+    "qed": {
+      "target_interval": {
+        "lo": 0.8506277759108453,
+        "hi": 0.8969547791955041,
+        "rule": {
+          "kind": "quantile_band",
+          "lo": 0.85,
+          "hi": 0.95
+        },
+        "base_rate": 0.09998996487706975
+      },
+      "interval_width": 0.046327003284658885,
+      "n_prefixes_usable": 380,
+      "n_prefixes_capture_usable": 267,
+      "mean_head_target_prob": 0.07064416259527206,
+      "headroom": {
+        "interval_width": 0.046327003284658885,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 0.26298050819284235,
+          "headroom_raw_median": 0.2550155107887744,
+          "headroom_null_mean": 0.10039763342568646,
+          "headroom_excess_mean": 0.16258287476715594,
+          "headroom_excess_median": 0.16124522506773564,
+          "relative_headroom_raw_mean": 5.676613843916123,
+          "relative_headroom_excess_mean": 3.5094623705348758,
+          "relative_headroom_excess_median": 3.4805882883672674,
+          "frac_prefixes_excess_above_one_interval": 0.9078947368421053
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 0.2672845995604244,
+            "headroom_raw_median": 0.26359836885217247,
+            "headroom_null_mean": 0.12530579055374721,
+            "headroom_excess_mean": 0.14197880900667717,
+            "headroom_excess_median": 0.13542132541866586,
+            "relative_headroom_raw_mean": 5.769520595106899,
+            "relative_headroom_excess_mean": 3.0647095417391963,
+            "relative_headroom_excess_median": 2.923161780755856,
+            "frac_prefixes_excess_above_one_interval": 0.8111111111111111
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.27712776583746584,
+            "headroom_raw_median": 0.2717232213741879,
+            "headroom_null_mean": 0.11353836202535905,
+            "headroom_excess_mean": 0.16358940381210685,
+            "headroom_excess_median": 0.16051649156757217,
+            "relative_headroom_raw_mean": 5.981992060540559,
+            "relative_headroom_excess_mean": 3.531188987272121,
+            "relative_headroom_excess_median": 3.464858078155186,
+            "frac_prefixes_excess_above_one_interval": 0.90625
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.26325465171117973,
+            "headroom_raw_median": 0.2590116658381293,
+            "headroom_null_mean": 0.09377606926340559,
+            "headroom_excess_mean": 0.16947858244777414,
+            "headroom_excess_median": 0.16932267131550297,
+            "relative_headroom_raw_mean": 5.6825314189566,
+            "relative_headroom_excess_mean": 3.658310929511314,
+            "relative_headroom_excess_median": 3.654945481258312,
+            "frac_prefixes_excess_above_one_interval": 0.9791666666666666
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.2449006843691013,
+            "headroom_raw_median": 0.2320888191048111,
+            "headroom_null_mean": 0.07113667498165503,
+            "headroom_excess_mean": 0.17376400938744624,
+            "headroom_excess_median": 0.16572577040655243,
+            "relative_headroom_raw_mean": 5.28634850098754,
+            "relative_headroom_excess_mean": 3.7508147962807667,
+            "relative_headroom_excess_median": 3.577303919017621,
+            "frac_prefixes_excess_above_one_interval": 0.9285714285714286
+          }
+        }
+      },
+      "headroom_probability_units": {
+        "interval_width": 1.0,
+        "n_prefixes_undefined": 20,
+        "overall": {
+          "n_prefixes": 380,
+          "headroom_raw_mean": 0.19414899428057322,
+          "headroom_raw_median": 0.125,
+          "headroom_null_mean": 0.1090352676563203,
+          "headroom_excess_mean": 0.08511372662425294,
+          "headroom_excess_median": 0.0,
+          "relative_headroom_raw_mean": 0.19414899428057322,
+          "relative_headroom_excess_mean": 0.08511372662425294,
+          "relative_headroom_excess_median": 0.0,
+          "frac_prefixes_excess_above_one_interval": 0.0
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 90,
+            "headroom_raw_mean": 0.1981349206349206,
+            "headroom_raw_median": 0.1875,
+            "headroom_null_mean": 0.1651204822954823,
+            "headroom_excess_mean": 0.03301443833943834,
+            "headroom_excess_median": 0.019770833333333376,
+            "relative_headroom_raw_mean": 0.1981349206349206,
+            "relative_headroom_excess_mean": 0.03301443833943834,
+            "relative_headroom_excess_median": 0.019770833333333376,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "2": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.1595509958791209,
+            "headroom_raw_median": 0.125,
+            "headroom_null_mean": 0.1127485174692206,
+            "headroom_excess_mean": 0.04680247840990029,
+            "headroom_excess_median": 0.021708333333333336,
+            "relative_headroom_raw_mean": 0.1595509958791209,
+            "relative_headroom_excess_mean": 0.04680247840990029,
+            "relative_headroom_excess_median": 0.021708333333333336,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "3": {
+            "n_prefixes": 96,
+            "headroom_raw_mean": 0.24542617394179891,
+            "headroom_raw_median": 0.0,
+            "headroom_null_mean": 0.10620763300646113,
+            "headroom_excess_mean": 0.1392185409353378,
+            "headroom_excess_median": 0.0,
+            "relative_headroom_raw_mean": 0.24542617394179891,
+            "relative_headroom_excess_mean": 0.1392185409353378,
+            "relative_headroom_excess_median": 0.0,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          },
+          "4": {
+            "n_prefixes": 98,
+            "headroom_raw_mean": 0.17414965986394557,
+            "headroom_raw_median": 0.0,
+            "headroom_null_mean": 0.056660896501457725,
+            "headroom_excess_mean": 0.11748876336248784,
+            "headroom_excess_median": 0.0,
+            "relative_headroom_raw_mean": 0.17414965986394557,
+            "relative_headroom_excess_mean": 0.11748876336248784,
+            "relative_headroom_excess_median": 0.0,
+            "frac_prefixes_excess_above_one_interval": 0.0
+          }
+        }
+      },
+      "capture": {
+        "overall": {
+          "n_prefixes": 267,
+          "base_policy_target_prob": 0.0899117437573678,
+          "guided_target_prob": 0.0927248375929581,
+          "best_candidate_target_prob": 0.22167208571702954,
+          "worst_candidate_target_prob": 0.0014044943820224719,
+          "headroom_prob_spread": 0.22026759133500706,
+          "available_mean": 0.13176034195966177,
+          "available_null_mean": 0.07342354835486571,
+          "available_excess_mean": 0.05833679360479606,
+          "achieved_mean": 0.002813093835590326,
+          "captured_fraction_raw": 0.021350079953887418,
+          "captured_fraction": 0.04822160529849642
+        },
+        "by_quartile": {
+          "1": {
+            "n_prefixes": 81,
+            "base_policy_target_prob": 0.10142493448950982,
+            "guided_target_prob": 0.10481651924366199,
+            "best_candidate_target_prob": 0.2079732510288066,
+            "worst_candidate_target_prob": 0.004629629629629629,
+            "headroom_prob_spread": 0.20334362139917697,
+            "available_mean": 0.10654831653929676,
+            "available_null_mean": 0.09982833997301657,
+            "available_excess_mean": 0.006719976566280201,
+            "achieved_mean": 0.003391584754152188,
+            "captured_fraction_raw": 0.03183142506903257,
+            "captured_fraction": 0.5047018722015542
+          },
+          "2": {
+            "n_prefixes": 73,
+            "base_policy_target_prob": 0.07803566835944586,
+            "guided_target_prob": 0.08089695596066414,
+            "best_candidate_target_prob": 0.16241218826835263,
+            "worst_candidate_target_prob": 0.0,
+            "headroom_prob_spread": 0.16241218826835263,
+            "available_mean": 0.08437651990890678,
+            "available_null_mean": 0.07081659421176806,
+            "available_excess_mean": 0.013559925697138727,
+            "achieved_mean": 0.0028612876012182806,
+            "captured_fraction_raw": 0.03391094589238022,
+            "captured_fraction": 0.21101056636483187
+          },
+          "3": {
+            "n_prefixes": 66,
+            "base_policy_target_prob": 0.08926822755048348,
+            "guided_target_prob": 0.09214185239809346,
+            "best_candidate_target_prob": 0.28379329004329,
+            "worst_candidate_target_prob": 0.0,
+            "headroom_prob_spread": 0.28379329004329,
+            "available_mean": 0.19452506249280654,
+            "available_null_mean": 0.06486482618337895,
+            "available_excess_mean": 0.1296602363094276,
+            "achieved_mean": 0.002873624847609959,
+            "captured_fraction_raw": 0.014772517282785731,
+            "captured_fraction": 0.022162730297299465
+          },
+          "4": {
+            "n_prefixes": 47,
+            "base_policy_target_prob": 0.08941934214883926,
+            "guided_target_prob": 0.09107560713150091,
+            "best_candidate_target_prob": 0.2500886524822695,
+            "worst_candidate_target_prob": 0.0,
+            "headroom_prob_spread": 0.2500886524822695,
+            "available_mean": 0.16066931033343027,
+            "available_null_mean": 0.04398514824197274,
+            "available_excess_mean": 0.11668416209145747,
+            "achieved_mean": 0.00165626498266166,
+            "captured_fraction_raw": 0.010308533591290601,
+            "captured_fraction": 0.014194428386634626
+          }
+        }
+      }
+    }
+  },
+  "wall_seconds_total": 748.6641256511211
+}

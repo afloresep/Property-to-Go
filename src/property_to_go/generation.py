@@ -178,6 +178,58 @@ def hidden_states_for_positions(
 
 
 @torch.no_grad()
+def top_k_next_tokens(
+    gen: FrozenGenerator,
+    sequences: list[list[int]],
+    k: int,
+    temperature: float = 1.0,
+    batch_size: int = 96,
+    meter: ComputeMeter | None = None,
+) -> tuple[np.ndarray, np.ndarray]:
+    """The base policy's top-`k` next tokens after each sequence, and their logprobs.
+
+    Returns `(ids, logprobs)`, both `(len(sequences), k)`.  `logprobs` are
+    `log_softmax` over the **full** vocabulary, exactly as `guided_sample` computes
+    them, so the renormalised base weights over the top-k are recoverable and the
+    headroom measurement scores the same candidate set the decoder would see.
+
+    Right-padded with an explicit attention mask and batched by sorted length, the
+    same contract `hidden_states_for_positions` uses and
+    `test_right_padding_does_not_change_hidden_states` asserts is exact here.
+    """
+    order = sorted(range(len(sequences)), key=lambda i: len(sequences[i]))
+    ids_out = np.zeros((len(sequences), k), dtype=np.int64)
+    lp_out = np.zeros((len(sequences), k), dtype=np.float64)
+
+    for start in range(0, len(order), batch_size):
+        chunk = order[start : start + batch_size]
+        lens = [len(sequences[i]) for i in chunk]
+        maxlen = max(lens)
+        ids = torch.full((len(chunk), maxlen), gen.pad_id, dtype=torch.long)
+        mask = torch.zeros((len(chunk), maxlen), dtype=torch.long)
+        for r, i in enumerate(chunk):
+            ids[r, : lens[r]] = torch.tensor(sequences[i], dtype=torch.long)
+            mask[r, : lens[r]] = 1
+        res = gen.model(
+            input_ids=ids.to(gen.device),
+            attention_mask=mask.to(gen.device),
+            use_cache=False,
+            return_dict=True,
+        )
+        logits = res.logits.float() / float(temperature)
+        lp = torch.log_softmax(logits, dim=-1)
+        for r, i in enumerate(chunk):
+            # the last *real* position, not the last padded one
+            top = torch.topk(lp[r, lens[r] - 1, :], k)
+            ids_out[i] = top.indices.cpu().numpy()
+            lp_out[i] = top.values.cpu().numpy()
+        if meter is not None:
+            meter.add_forward(int(sum(lens)))
+
+    return ids_out, lp_out
+
+
+@torch.no_grad()
 def base_logprobs_and_states(
     gen: FrozenGenerator,
     sequences: list[list[int]],

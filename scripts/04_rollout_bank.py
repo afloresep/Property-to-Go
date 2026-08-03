@@ -35,7 +35,7 @@ from property_to_go.config import (  # noqa: E402
 from property_to_go.heads import MLPHead  # noqa: E402
 from property_to_go.model_io import load_generator  # noqa: E402
 from property_to_go.prefixes import balanced_position_sample  # noqa: E402
-from property_to_go.properties import ALL_PROPERTIES, compute_properties  # noqa: E402
+from property_to_go.properties import ALL_PROPERTIES, compute_all_properties  # noqa: E402
 
 
 def load_head(path: Path) -> tuple[MLPHead, dict]:
@@ -100,7 +100,7 @@ def main() -> int:
     bank: list[dict] = []
     for local_i, (idx, rows) in enumerate(zip(chosen, conts)):
         smiles = gen.decode(rows)
-        props = [compute_properties(s) for s in smiles]
+        props = [compute_all_properties(s) for s in smiles]
         ok = [p for p in props if p is not None]
         entry = {
             "prefix_row": int(idx),
@@ -115,7 +115,10 @@ def main() -> int:
             ],
         }
         for prop in ALL_PROPERTIES:
-            entry[prop] = [float(p[prop]) for p in ok]
+            # A parseable molecule can still lack one descriptor (QED alone), so the
+            # per-property lists can be shorter than `n_valid`. Length is what every
+            # consumer below uses as the denominator, so this stays correct.
+            entry[prop] = [float(p[prop]) for p in ok if p.get(prop) is not None]
         bank.append(entry)
 
     write_json(out_dir / "rollout_bank.json", bank)

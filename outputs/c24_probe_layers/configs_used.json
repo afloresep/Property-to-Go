@@ -1,0 +1,19 @@
+{
+  "head": {
+    "hidden_dim": 256,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 512,
+    "max_epochs": 60,
+    "patience": 8
+  },
+  "head_seeds": [
+    1234,
+    2345,
+    3456
+  ],
+  "dataset": "c24_dataset",
+  "n_boot": 2000,
+  "bonferroni_family": 13
+}

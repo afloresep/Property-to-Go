@@ -57,18 +57,59 @@ def test_validity_and_uniqueness():
 
 
 class TestStagedCandidateProperties:
-    """The four phase-2 properties (docs/LEXICAL_LOCALITY.md).
+    """The four phase-2 properties (docs/LEXICAL_LOCALITY.md), wired in 2026-07-30.
 
-    These are staged, not wired in. The first test is the important one: adding them
-    must not change anything already executed.
+    Until phase 2 the first test here asserted the opposite -- that the four were
+    *absent* from `ALL_PROPERTIES` -- because while they were staged, leaking them in
+    would have silently changed scripts 02/04. They are now deliberately in, so that
+    guard is replaced by the one that still matters: wiring them in must not have moved
+    what the pilot already measured, and the way it could have is validity.
     """
 
-    def test_candidates_are_not_in_all_properties(self):
-        """Guards every executed result. If this fails, phase-1 numbers may have moved."""
-        for prop in P.CANDIDATE_PROPERTIES:
-            assert prop not in P.ALL_PROPERTIES, (
-                f"{prop} leaked into ALL_PROPERTIES; scripts 02/04 would change behaviour"
-            )
+    def test_phase_two_battery_is_wired_in(self):
+        for prop in P.PHASE2_PROPERTIES:
+            assert prop in P.ALL_PROPERTIES
+        for prop in P.PREDICTED_LOCALITY_ORDER:
+            assert prop in P.ALL_PROPERTIES, f"{prop} is on the scatter but not computed"
+
+    def test_adding_them_cannot_change_any_pilot_validity_number(self):
+        """The one route by which phase 2 could have moved an executed result.
+
+        Every validity, uniqueness and hit rate in the pilot is computed over the
+        molecules `compute_properties` accepts. `compute_all_properties` must accept
+        exactly the same set -- in particular a QED failure must not demote a
+        parseable molecule to invalid, which is what reusing
+        `compute_candidate_properties` would have done.
+        """
+        for smi in ["c1ccccc1", "CCO", "CC(=O)Oc1ccccc1C(=O)O", "[CH2-]C[CH2-]",
+                    "C.C.C.C=CC=c1[n-]c(CC(CC)CCC)c(CC(C)C)c1=CC.[CH2-]C[CH2-]",
+                    "", "c1ccccc", "XYZ"]:
+            base = P.compute_properties(smi)
+            full = P.compute_all_properties(smi)
+            assert (base is None) == (full is None), smi
+            if base is None:
+                continue
+            for key, value in base.items():
+                assert full[key] == value, f"{smi}: {key} moved"
+
+    def test_a_qed_failure_yields_none_for_qed_alone(self, monkeypatch):
+        from rdkit.Chem import QED
+
+        def boom(_mol):
+            raise ValueError("simulated RDKit QED failure")
+
+        monkeypatch.setattr(QED, "qed", boom)
+        full = P.compute_all_properties("c1ccccc1")
+        assert full is not None, "a parseable molecule must stay valid"
+        assert full["qed"] is None, "QED must report unavailable, not 0.0"
+        assert full["aromatic_rings"] == 1, "the other properties are unaffected"
+        assert full["tpsa"] == pytest.approx(0.0)
+
+    def test_extras_restricts_which_fields_are_computed_without_changing_values(self):
+        full = P.compute_all_properties("CC(=O)Oc1ccccc1C(=O)O")
+        one = P.compute_all_properties("CC(=O)Oc1ccccc1C(=O)O", extras={"hbd_count"})
+        assert set(one) == set(P.compute_properties("CCO")) | {"hbd_count"}
+        assert one["hbd_count"] == full["hbd_count"]
 
     def test_known_values(self):
         # aspirin: one phenol-free carboxylic acid O-H -> 1 donor; TPSA 63.6
@@ -101,3 +142,21 @@ class TestStagedCandidateProperties:
         battery = set(P.PRIMARY_PROPERTIES) | set(P.CANDIDATE_PROPERTIES)
         assert set(P.PREDICTED_LOCALITY_ORDER) == battery
         assert len(P.PREDICTED_LOCALITY_ORDER) == len(battery), "no duplicates"
+
+    def test_the_pre_registration_is_pinned_literally(self):
+        """PREDICTED_LOCALITY_ORDER *is* the pre-registration (docs/LEXICAL_LOCALITY.md §5).
+
+        Pinned as a literal here, not derived, so that editing the predicted ordering
+        to match observed data breaks a test instead of passing quietly. If the
+        measured ordering disagrees, prediction P1 is falsified and that is the
+        finding -- the tuple does not move.
+        """
+        assert P.PREDICTED_LOCALITY_ORDER == (
+            "aromatic_rings",
+            "hbd_count",
+            "rotatable_bonds",
+            "tpsa",
+            "clogp",
+            "qed",
+        )
+        assert "mol_weight" not in P.PREDICTED_LOCALITY_ORDER, "diagnostic, not a target"

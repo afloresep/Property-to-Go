@@ -1,0 +1,2375 @@
+{
+  "dataset": "pilot_50k_p2",
+  "seeds": [
+    "101",
+    "202",
+    "303"
+  ],
+  "prereg_lock": {
+    "file": "reports/section_c23_layer_end_to_end.md",
+    "file_sha256": "5dd8286923b498d18998a7c59aecd399013a8ac7b401ee40ba9fce300344ad20",
+    "prereg_block_sha256": "f39daf1baa7d1afdf2dbc61ae63f18ea023e433411e6c1fb994e54218f6a323d",
+    "prereg_block_chars": 16326,
+    "file_mtime_utc": "2026-07-31T08:42:30.511770Z",
+    "frozen_at_utc": "2026-07-31T08:42:40.798061Z",
+    "note": "Frozen before any C23 guided output directory existed. The block is a verbatim substring of the section file; tests/test_layer_end_to_end.py asserts that."
+  },
+  "n_arms_planned": 15,
+  "n_arms_run": 15,
+  "arms_not_run": [],
+  "multiplicity": {
+    "n_experimental_arms": 15,
+    "alpha_family": 0.05,
+    "alpha_per_arm": 0.0033333333333333335,
+    "n_boot": 10000,
+    "bootstrap_seed": 20260731,
+    "note": "two-sided Bonferroni-corrected interval; the resampling is seed-stratified, not molecule-paired, because the two arms generate different molecules"
+  },
+  "validity_gate": {
+    "run": true,
+    "reference_run": "pilot_50k_p2_guided_aromatic_rings",
+    "replay_run": "c23_gate_L12_lam1_aromatic_rings",
+    "replay_layer": 12,
+    "replay_head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_aromatic_rings_frozen_state_L12.pt",
+    "reference_head_file": "head_aromatic_rings_frozen_state.pt",
+    "per_seed": {
+      "unguided:101": {
+        "reference_hit_rate": 0.17485265225933203,
+        "replay_hit_rate": 0.17485265225933203,
+        "residual": 0.0
+      },
+      "unguided:202": {
+        "reference_hit_rate": 0.18235294117647058,
+        "replay_hit_rate": 0.18235294117647058,
+        "residual": 0.0
+      },
+      "unguided:303": {
+        "reference_hit_rate": 0.1784313725490196,
+        "replay_hit_rate": 0.1784313725490196,
+        "residual": 0.0
+      },
+      "throughout:101": {
+        "reference_hit_rate": 0.4892367906066536,
+        "replay_hit_rate": 0.4892367906066536,
+        "residual": 0.0
+      },
+      "throughout:202": {
+        "reference_hit_rate": 0.4794520547945205,
+        "replay_hit_rate": 0.4794520547945205,
+        "residual": 0.0
+      },
+      "throughout:303": {
+        "reference_hit_rate": 0.4516765285996055,
+        "replay_hit_rate": 0.4516765285996055,
+        "residual": 0.0
+      }
+    },
+    "reference_throughout_mean": 0.4734551246669265,
+    "replay_throughout_mean": 0.4734551246669265,
+    "reference_unguided_mean": 0.17854565532827407,
+    "replay_unguided_mean": 0.17854565532827407,
+    "max_abs_hit_rate_residual": 0.0,
+    "molecules_identical": true,
+    "n_molecules_compared": 3072,
+    "passes": true
+  },
+  "arms": {
+    "aromatic_rings_L3_lam1": {
+      "property": "aromatic_rings",
+      "layer": 3,
+      "layer_reason": "auroc_best",
+      "lam": 1.0,
+      "guided_run": "c23_guided_L3_lam1_aromatic_rings",
+      "deployed_run": "pilot_50k_p2_guided_aromatic_rings",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_aromatic_rings_frozen_state_L3.pt",
+      "recorded_layer": 3,
+      "throughout_mean": 0.5698096157332536,
+      "throughout_values": [
+        0.591715976331361,
+        0.5756385068762279,
+        0.5420743639921722
+      ],
+      "deployed_throughout_mean": 0.4734551246669265,
+      "deployed_throughout_values": [
+        0.4892367906066536,
+        0.4794520547945205,
+        0.4516765285996055
+      ],
+      "lift": 0.39126396040497957,
+      "deployed_lift": 0.2949094693386525,
+      "unguided_mean": 0.17854565532827407,
+      "unguided_values": [
+        0.17485265225933203,
+        0.18235294117647058,
+        0.1784313725490196
+      ],
+      "unguided_reference": 0.1785,
+      "diff_vs_deployed": 0.0963544910663271,
+      "diff_ci_lo": 0.04439146238048407,
+      "diff_ci_hi": 0.14862885395691083,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.09635449106632715,
+        "sd": 0.006042427847086196,
+        "lo": 0.08134426723805467,
+        "hi": 0.11136471489459963,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.10247918572470738,
+        "202": 0.09618645208170734,
+        "303": 0.09039783539256674
+      },
+      "diff_sem": 0.0034885973440741064,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 412.5,
+      "tokens_per_molecule_full_recompute": 9493.760416666666,
+      "deployed_tokens_per_molecule_actual": 419.326171875,
+      "token_ratio_vs_deployed": 0.9837210927129183,
+      "validity_mean": 0.994140625,
+      "deployed_validity_mean": 0.9954427083333334,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 44.52548018439112,
+      "deployed_content_length_mean": 45.405452175736684,
+      "validity_delta": -0.0013020833333333703,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L3_lam1_aromatic_rings",
+      "best_of_n_hit_rate": 0.8294270833333334,
+      "best_of_n_values": [
+        0.80859375,
+        0.830078125,
+        0.849609375
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 1.0314665676875516,
+      "advantage_vs_best_of_n": -0.25961746760007975,
+      "advantage_ci_lo": -0.306220517701056,
+      "advantage_ci_hi": -0.21097583428630184,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.25961746760007964,
+        "sd": 0.045549876667154356,
+        "lo": -0.372769641101646,
+        "hi": -0.14646529409851328,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.29036103876297636,
+      "advantage_ci95_uncorrected_hi": -0.2283147445367479,
+      "advantage_per_seed": {
+        "101": -0.21687777366863903,
+        "202": -0.25443961812377214,
+        "303": -0.30753501100782776
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c23_bestofn_L3_lam2_aromatic_rings",
+        "n_candidates": 10,
+        "hit_rate": 0.8567708333333334,
+        "values": [
+          0.841796875,
+          0.85546875,
+          0.873046875
+        ],
+        "tokens_per_molecule_actual": 443.9993489583333,
+        "realised_token_ratio_guided_over_best_of_n": 0.9290554163373574,
+        "advantage": -0.28696121760007975,
+        "ci_lo": -0.3320565918216709,
+        "ci_hi": -0.23926221764867522,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.28696121760007964,
+          "sd": 0.040914561398659885,
+          "lo": -0.38859862891408214,
+          "hi": -0.18532380628607714,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.3176640276800302,
+        "ci95_uncorrected_hi": -0.25685813006965835,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.25008089866863903,
+          "202": -0.27983024312377214,
+          "303": -0.33097251100782776
+        }
+      },
+      "quality_run": "c23_quality_L3_lam1_aromatic_rings",
+      "degeneracy_any_guided_hits": 0.034482758620689655,
+      "degeneracy_any_base_hits": 0.03296703296703297,
+      "quality_significant": {
+        "n_fragments": {
+          "difference": 0.04669698117973975,
+          "lo": 0.023493747631678774,
+          "hi": 0.07198970569660229,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        }
+      }
+    },
+    "aromatic_rings_L3_lam2": {
+      "property": "aromatic_rings",
+      "layer": 3,
+      "layer_reason": "auroc_best",
+      "lam": 2.0,
+      "guided_run": "c23_guided_L3_lam2_aromatic_rings",
+      "deployed_run": "pilot_50k_p2_lam2_guided_aromatic_rings",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_aromatic_rings_frozen_state_L3.pt",
+      "recorded_layer": 3,
+      "throughout_mean": 0.8158744959471287,
+      "throughout_values": [
+        0.8232931726907631,
+        0.845213849287169,
+        0.7791164658634538
+      ],
+      "deployed_throughout_mean": 0.5579287361930816,
+      "deployed_throughout_values": [
+        0.5413385826771654,
+        0.6039603960396039,
+        0.5284872298624754
+      ],
+      "lift": 0.6373288406188546,
+      "deployed_lift": 0.37938308086480754,
+      "unguided_mean": 0.17854565532827407,
+      "unguided_values": [
+        0.17485265225933203,
+        0.18235294117647058,
+        0.1784313725490196
+      ],
+      "unguided_reference": 0.1785,
+      "diff_vs_deployed": 0.2579457597540471,
+      "diff_ci_lo": 0.21002195018361455,
+      "diff_ci_hi": 0.306301618102244,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.25794575975404704,
+        "sd": 0.02131418010113774,
+        "lo": 0.2049983978441374,
+        "hi": 0.31089312166395666,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.2819545900135977,
+        "202": 0.2412534532475651,
+        "303": 0.2506292360009784
+      },
+      "diff_sem": 0.01230574761894804,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 447.462890625,
+      "tokens_per_molecule_full_recompute": 12315.707682291666,
+      "deployed_tokens_per_molecule_actual": 420.345703125,
+      "token_ratio_vs_deployed": 1.0645116324453923,
+      "validity_mean": 0.9680989583333334,
+      "deployed_validity_mean": 0.9908854166666666,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 46.47680879662574,
+      "deployed_content_length_mean": 45.571216014598384,
+      "validity_delta": -0.02278645833333326,
+      "uniqueness_delta": 0.0,
+      "disqualified": true,
+      "disqualification_reasons": [
+        "validity -0.0228 vs deployed",
+        "token ratio 1.0645"
+      ],
+      "bestofn_run": "c23_bestofn_L3_lam2_aromatic_rings",
+      "best_of_n_hit_rate": 0.8567708333333334,
+      "best_of_n_values": [
+        0.841796875,
+        0.85546875,
+        0.873046875
+      ],
+      "best_of_n_n_candidates": 10,
+      "best_of_n_tokens_per_molecule_actual": 443.9993489583333,
+      "realised_token_ratio_guided_over_best_of_n": 1.007800780957883,
+      "advantage_vs_best_of_n": -0.040896337386204684,
+      "advantage_ci_lo": -0.07987567856711972,
+      "advantage_ci_hi": 8.899097748754689e-05,
+      "advantage_excludes_zero": false,
+      "advantage_seed_level_t": {
+        "mean": -0.040896337386204684,
+        "sd": 0.04611366670261098,
+        "lo": -0.1554490430643256,
+        "hi": 0.07365636829191624,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.06682314372902341,
+      "advantage_ci95_uncorrected_hi": -0.014167682483157291,
+      "advantage_per_seed": {
+        "101": -0.018503702309236925,
+        "202": -0.010254900712830972,
+        "303": -0.09393040913654616
+      },
+      "conservative_best_of_n": null,
+      "quality_run": "c23_quality_L3_lam2_aromatic_rings",
+      "degeneracy_any_guided_hits": 0.1731244847485573,
+      "degeneracy_any_base_hits": 0.03296703296703297,
+      "quality_significant": {
+        "carbon_fraction": {
+          "difference": -0.019251587100025613,
+          "lo": -0.028016224012569365,
+          "hi": -0.010804396256783883,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "lipinski_violations": {
+          "difference": 0.08220468731598163,
+          "lo": 0.027796399807941418,
+          "hi": 0.13193388776653409,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "n_fragments": {
+          "difference": 0.3150152952296399,
+          "lo": 0.2617900854298217,
+          "hi": 0.37427864798021426,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "any_degeneracy": {
+          "difference": 0.14015745178152433,
+          "lo": 0.1101889179795198,
+          "hi": 0.1705711779289685,
+          "excludes_zero": true
+        }
+      }
+    },
+    "aromatic_rings_L3_lam0p5": {
+      "property": "aromatic_rings",
+      "layer": 3,
+      "layer_reason": "auroc_best",
+      "lam": 0.5,
+      "guided_run": "c23_guided_L3_lam0p5_aromatic_rings",
+      "deployed_run": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_aromatic_rings_frozen_state_L3.pt",
+      "recorded_layer": 3,
+      "throughout_mean": 0.3616131384060473,
+      "throughout_values": [
+        0.37377690802348335,
+        0.35294117647058826,
+        0.35812133072407043
+      ],
+      "deployed_throughout_mean": 0.3010951113213786,
+      "deployed_throughout_values": [
+        0.307843137254902,
+        0.2888015717092338,
+        0.306640625
+      ],
+      "lift": 0.18306748307777324,
+      "deployed_lift": 0.12254945599310454,
+      "unguided_mean": 0.17854565532827407,
+      "unguided_values": [
+        0.17485265225933203,
+        0.18235294117647058,
+        0.1784313725490196
+      ],
+      "unguided_reference": 0.1785,
+      "diff_vs_deployed": 0.06051802708466869,
+      "diff_ci_lo": 0.010925568232358412,
+      "diff_ci_hi": 0.11231005742432047,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.060518027084668746,
+        "sd": 0.007877794167558398,
+        "lo": 0.04094850027846404,
+        "hi": 0.08008755389087345,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.06593377076858137,
+        "202": 0.06413960476135444,
+        "303": 0.05148070572407043
+      },
+      "diff_sem": 0.004548246583260305,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 405.837890625,
+      "tokens_per_molecule_full_recompute": 9277.369140625,
+      "deployed_tokens_per_molecule_actual": 408.31640625,
+      "token_ratio_vs_deployed": 0.9939299141864937,
+      "validity_mean": 0.9973958333333334,
+      "deployed_validity_mean": 0.9967447916666666,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 43.924576954069295,
+      "deployed_content_length_mean": 44.250175602432364,
+      "validity_delta": 0.0006510416666667407,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L3_lam0p5_aromatic_rings",
+      "best_of_n_hit_rate": 0.8294270833333334,
+      "best_of_n_values": [
+        0.80859375,
+        0.830078125,
+        0.849609375
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 1.0148077965588478,
+      "advantage_vs_best_of_n": -0.46781394492728606,
+      "advantage_ci_lo": -0.5134485689823874,
+      "advantage_ci_hi": -0.4209040673703843,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.467813944927286,
+        "sd": 0.02946345345744764,
+        "lo": -0.5410052253764921,
+        "hi": -0.39462266447808,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.49843351383432943,
+      "advantage_ci95_uncorrected_hi": -0.4371792571195145,
+      "advantage_per_seed": {
+        "101": -0.43481684197651665,
+        "202": -0.47713694852941174,
+        "303": -0.49148804427592957
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c23_bestofn_L3_lam2_aromatic_rings",
+        "n_candidates": 10,
+        "hit_rate": 0.8567708333333334,
+        "values": [
+          0.841796875,
+          0.85546875,
+          0.873046875
+        ],
+        "tokens_per_molecule_actual": 443.9993489583333,
+        "realised_token_ratio_guided_over_best_of_n": 0.9140506434911134,
+        "advantage": -0.49515769492728606,
+        "ci_lo": -0.5386535552256005,
+        "ci_hi": -0.4501775506863705,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.49515769492728595,
+          "sd": 0.024305752989885993,
+          "lo": -0.5555365363343578,
+          "hi": -0.4347788535202141,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.5244992438863387,
+        "ci95_uncorrected_hi": -0.4651383609058634,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.46801996697651665,
+          "202": -0.5025275735294117,
+          "303": -0.5149255442759295
+        }
+      },
+      "quality_run": "c23_quality_L3_lam0p5_aromatic_rings",
+      "degeneracy_any_guided_hits": 0.021660649819494584,
+      "degeneracy_any_base_hits": 0.03296703296703297,
+      "quality_significant": {
+        "max_ring_size": {
+          "difference": -0.05494505494505475,
+          "lo": -0.1353750942198593,
+          "hi": -0.00010446833551514711,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        }
+      }
+    },
+    "hbd_count_L4_lam1": {
+      "property": "hbd_count",
+      "layer": 4,
+      "layer_reason": "auroc_best",
+      "lam": 1.0,
+      "guided_run": "c23_guided_L4_lam1_hbd_count",
+      "deployed_run": "pilot_50k_p2_guided_hbd_count",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_hbd_count_frozen_state_L4.pt",
+      "recorded_layer": 4,
+      "throughout_mean": 0.368888749905456,
+      "throughout_values": [
+        0.3607843137254902,
+        0.3639921722113503,
+        0.38188976377952755
+      ],
+      "deployed_throughout_mean": 0.29875114714835704,
+      "deployed_throughout_values": [
+        0.3013698630136986,
+        0.2901960784313726,
+        0.3046875
+      ],
+      "lift": 0.28518110836816,
+      "deployed_lift": 0.21504350561106106,
+      "unguided_mean": 0.083707641537296,
+      "unguided_values": [
+        0.07269155206286837,
+        0.09019607843137255,
+        0.08823529411764706
+      ],
+      "unguided_reference": 0.0837,
+      "diff_vs_deployed": 0.07013760275709896,
+      "diff_ci_lo": 0.02220319146896049,
+      "diff_ci_hi": 0.12046040554846409,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.07013760275709895,
+        "sd": 0.009441397717316169,
+        "lo": 0.04668386916274644,
+        "hi": 0.09359133635145145,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.05941445071179158,
+        "202": 0.0737960937799777,
+        "303": 0.07720226377952755
+      },
+      "diff_sem": 0.005450993513618808,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 394.271484375,
+      "tokens_per_molecule_full_recompute": 8882.141276041666,
+      "deployed_tokens_per_molecule_actual": 401.619140625,
+      "token_ratio_vs_deployed": 0.9817049151627446,
+      "validity_mean": 0.9954427083333334,
+      "deployed_validity_mean": 0.998046875,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 42.57779270338991,
+      "deployed_content_length_mean": 43.43525903868968,
+      "validity_delta": -0.0026041666666666297,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L4_lam1_hbd_count",
+      "best_of_n_hit_rate": 0.5234375,
+      "best_of_n_values": [
+        0.54296875,
+        0.52734375,
+        0.5
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 0.9858857084251088,
+      "advantage_vs_best_of_n": -0.154548750094544,
+      "advantage_ci_lo": -0.2060603932518451,
+      "advantage_ci_hi": -0.10109294455209841,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.154548750094544,
+        "sd": 0.03293164298513341,
+        "lo": -0.2363554914821107,
+        "hi": -0.07274200870697728,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.18973079770420967,
+      "advantage_ci95_uncorrected_hi": -0.11932199760685061,
+      "advantage_per_seed": {
+        "101": -0.1821844362745098,
+        "202": -0.16335157778864973,
+        "303": -0.11811023622047245
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c18_bestofn_N9_hbd_count",
+        "n_candidates": 9,
+        "hit_rate": 0.5234375,
+        "values": [
+          0.54296875,
+          0.52734375,
+          0.5
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9858857084251088,
+        "advantage": -0.154548750094544,
+        "ci_lo": -0.20472501557756906,
+        "ci_hi": -0.10295018864038648,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.154548750094544,
+          "sd": 0.03293164298513341,
+          "lo": -0.2363554914821107,
+          "hi": -0.07274200870697728,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.18913331718811477,
+        "ci95_uncorrected_hi": -0.11930166269168065,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.1821844362745098,
+          "202": -0.16335157778864973,
+          "303": -0.11811023622047245
+        }
+      },
+      "quality_run": "c23_quality_L4_lam1_hbd_count",
+      "degeneracy_any_guided_hits": 0.026595744680851064,
+      "degeneracy_any_base_hits": 0.0703125,
+      "quality_significant": {
+        "sa_score": {
+          "difference": -0.14691430103966896,
+          "lo": -0.2606130826086049,
+          "hi": -0.03381096676506971,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "any_degeneracy": {
+          "difference": -0.04371675531914894,
+          "lo": -0.09485815602836879,
+          "hi": -0.002854886968085251,
+          "excludes_zero": true
+        }
+      }
+    },
+    "hbd_count_L4_lam2": {
+      "property": "hbd_count",
+      "layer": 4,
+      "layer_reason": "auroc_best",
+      "lam": 2.0,
+      "guided_run": "c23_guided_L4_lam2_hbd_count",
+      "deployed_run": "pilot_50k_p2_lam2_guided_hbd_count",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_hbd_count_frozen_state_L4.pt",
+      "recorded_layer": 4,
+      "throughout_mean": 0.5603420596566593,
+      "throughout_values": [
+        0.5976331360946746,
+        0.5304518664047151,
+        0.5529411764705883
+      ],
+      "deployed_throughout_mean": 0.4303223626700486,
+      "deployed_throughout_values": [
+        0.45098039215686275,
+        0.44664031620553357,
+        0.3933463796477495
+      ],
+      "lift": 0.4766344181193633,
+      "deployed_lift": 0.3466147211327526,
+      "unguided_mean": 0.083707641537296,
+      "unguided_values": [
+        0.07269155206286837,
+        0.09019607843137255,
+        0.08823529411764706
+      ],
+      "unguided_reference": 0.0837,
+      "diff_vs_deployed": 0.1300196969866107,
+      "diff_ci_lo": 0.07733991264973424,
+      "diff_ci_hi": 0.18308702848419667,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.13001969698661073,
+        "sd": 0.04053725206974643,
+        "lo": 0.029319574064428644,
+        "hi": 0.2307198199087928,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.14665274393781186,
+        "202": 0.08381155019918152,
+        "303": 0.15959479682283878
+      },
+      "diff_sem": 0.023404193394675817,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 387.791015625,
+      "tokens_per_molecule_full_recompute": 8537.546223958334,
+      "deployed_tokens_per_molecule_actual": 393.181640625,
+      "token_ratio_vs_deployed": 0.9862897336929795,
+      "validity_mean": 0.9934895833333334,
+      "deployed_validity_mean": 0.994140625,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 41.852130187392305,
+      "deployed_content_length_mean": 42.38788354008198,
+      "validity_delta": -0.0006510416666666297,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L4_lam2_hbd_count",
+      "best_of_n_hit_rate": 0.484375,
+      "best_of_n_values": [
+        0.5,
+        0.48046875,
+        0.47265625
+      ],
+      "best_of_n_n_candidates": 8,
+      "best_of_n_tokens_per_molecule_actual": 355.8704427083333,
+      "realised_token_ratio_guided_over_best_of_n": 1.0896971737066357,
+      "advantage_vs_best_of_n": 0.07596705965665929,
+      "advantage_ci_lo": 0.023405145714971848,
+      "advantage_ci_hi": 0.12979645613425758,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": 0.07596705965665933,
+        "sd": 0.024116676273493915,
+        "lo": 0.016057910880692458,
+        "hi": 0.1358762084326262,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": 0.040824411940037546,
+      "advantage_ci95_uncorrected_hi": 0.11124929542463856,
+      "advantage_per_seed": {
+        "101": 0.09763313609467461,
+        "202": 0.04998311640471509,
+        "303": 0.08028492647058827
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c18_bestofn_N9_hbd_count",
+        "n_candidates": 9,
+        "hit_rate": 0.5234375,
+        "values": [
+          0.54296875,
+          0.52734375,
+          0.5
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9696811342225174,
+        "advantage": 0.036904559656659286,
+        "ci_lo": -0.017258490375813427,
+        "ci_hi": 0.08851847470676007,
+        "excludes_zero": false,
+        "seed_level_t_interval": {
+          "mean": 0.03690455965665932,
+          "sd": 0.02928125757568399,
+          "lo": -0.03583412110330413,
+          "hi": 0.10964324041662277,
+          "excludes_zero": false,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": 0.0010228518195140785,
+        "ci95_uncorrected_hi": 0.07216595596267891,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": 0.05466438609467461,
+          "202": 0.003108116404715089,
+          "303": 0.05294117647058827
+        }
+      },
+      "quality_run": "c23_quality_L4_lam2_hbd_count",
+      "degeneracy_any_guided_hits": 0.019883040935672516,
+      "degeneracy_any_base_hits": 0.0703125,
+      "quality_significant": {
+        "sa_score": {
+          "difference": -0.11110639348563511,
+          "lo": -0.21583929828416967,
+          "hi": -0.001304417293413182,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "any_degeneracy": {
+          "difference": -0.050429459064327484,
+          "lo": -0.10081323099415204,
+          "hi": -0.009027777777777777,
+          "excludes_zero": true
+        }
+      }
+    },
+    "hbd_count_L4_lam0p5": {
+      "property": "hbd_count",
+      "layer": 4,
+      "layer_reason": "auroc_best",
+      "lam": 0.5,
+      "guided_run": "c23_guided_L4_lam0p5_hbd_count",
+      "deployed_run": "pilot_50k_p2_lam0p5_guided_hbd_count",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_hbd_count_frozen_state_L4.pt",
+      "recorded_layer": 4,
+      "throughout_mean": 0.23187709295306788,
+      "throughout_values": [
+        0.23874755381604695,
+        0.22309197651663404,
+        0.2337917485265226
+      ],
+      "deployed_throughout_mean": 0.18128505995574082,
+      "deployed_throughout_values": [
+        0.1830708661417323,
+        0.1980392156862745,
+        0.1627450980392157
+      ],
+      "lift": 0.14816945141577187,
+      "deployed_lift": 0.09757741841844482,
+      "unguided_mean": 0.083707641537296,
+      "unguided_values": [
+        0.07269155206286837,
+        0.09019607843137255,
+        0.08823529411764706
+      ],
+      "unguided_reference": 0.0837,
+      "diff_vs_deployed": 0.05059203299732706,
+      "diff_ci_lo": 0.007476526249535058,
+      "diff_ci_hi": 0.09353257801806011,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.050592032997327036,
+        "sd": 0.02341473374463228,
+        "lo": -0.007573393761689702,
+        "hi": 0.10875745975634377,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.05567668767431466,
+        "202": 0.02505276083035954,
+        "303": 0.0710466504873069
+      },
+      "diff_sem": 0.013518502830466862,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 396.966796875,
+      "tokens_per_molecule_full_recompute": 8886.195963541666,
+      "deployed_tokens_per_molecule_actual": 395.853515625,
+      "token_ratio_vs_deployed": 1.0028123566068177,
+      "validity_mean": 0.9967447916666666,
+      "deployed_validity_mean": 0.9947916666666666,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 42.936497256813745,
+      "deployed_content_length_mean": 42.581930935103706,
+      "validity_delta": 0.001953125,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L4_lam0p5_hbd_count",
+      "best_of_n_hit_rate": 0.5234375,
+      "best_of_n_values": [
+        0.54296875,
+        0.52734375,
+        0.5
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 0.9926254047480673,
+      "advantage_vs_best_of_n": -0.2915604070469321,
+      "advantage_ci_lo": -0.34045840601949884,
+      "advantage_ci_hi": -0.2420348842456983,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.29156040704693215,
+        "sd": 0.021955616090383333,
+        "lo": -0.3461011843874834,
+        "hi": -0.23701962970638088,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.32346839856630716,
+      "advantage_ci95_uncorrected_hi": -0.25893791232296803,
+      "advantage_per_seed": {
+        "101": -0.30422119618395305,
+        "202": -0.30425177348336596,
+        "303": -0.2662082514734774
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c18_bestofn_N9_hbd_count",
+        "n_candidates": 9,
+        "hit_rate": 0.5234375,
+        "values": [
+          0.54296875,
+          0.52734375,
+          0.5
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9926254047480673,
+        "advantage": -0.2915604070469321,
+        "ci_lo": -0.34106167084356176,
+        "ci_hi": -0.24308344727482425,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.29156040704693215,
+          "sd": 0.021955616090383333,
+          "lo": -0.3461011843874834,
+          "hi": -0.23701962970638088,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.3241431880765433,
+        "ci95_uncorrected_hi": -0.2595453815882768,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.30422119618395305,
+          "202": -0.30425177348336596,
+          "303": -0.2662082514734774
+        }
+      },
+      "quality_run": "c23_quality_L4_lam0p5_hbd_count",
+      "degeneracy_any_guided_hits": 0.028169014084507043,
+      "degeneracy_any_base_hits": 0.0703125,
+      "quality_significant": {}
+    },
+    "qed_L4_lam1": {
+      "property": "qed",
+      "layer": 4,
+      "layer_reason": "auroc_best",
+      "lam": 1.0,
+      "guided_run": "c23_guided_L4_lam1_qed",
+      "deployed_run": "pilot_50k_p2_guided_qed",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_qed_frozen_state_L4.pt",
+      "recorded_layer": 4,
+      "throughout_mean": 0.22881375366927592,
+      "throughout_values": [
+        0.23874755381604695,
+        0.228515625,
+        0.2191780821917808
+      ],
+      "deployed_throughout_mean": 0.19083830274640326,
+      "deployed_throughout_values": [
+        0.18786692759295498,
+        0.18503937007874016,
+        0.19960861056751467
+      ],
+      "lift": 0.1392134865814323,
+      "deployed_lift": 0.10123803565855961,
+      "unguided_mean": 0.08960026708784365,
+      "unguided_values": [
+        0.08840864440078586,
+        0.07647058823529412,
+        0.10392156862745099
+      ],
+      "unguided_reference": 0.0896,
+      "diff_vs_deployed": 0.03797545092287266,
+      "diff_ci_lo": -0.005144706918992789,
+      "diff_ci_hi": 0.08169292060880924,
+      "diff_excludes_zero": false,
+      "diff_seed_level_t": {
+        "mean": 0.037975450922872654,
+        "sd": 0.01636432809648466,
+        "lo": -0.002675796182373756,
+        "hi": 0.07862669802811906,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.050880626223091974,
+        "202": 0.04347625492125984,
+        "303": 0.019569471624266144
+      },
+      "diff_sem": 0.009447949231612776,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 367.81640625,
+      "tokens_per_molecule_full_recompute": 7508.80078125,
+      "deployed_tokens_per_molecule_actual": 367.271484375,
+      "token_ratio_vs_deployed": 1.0014837031955457,
+      "validity_mean": 0.9986979166666666,
+      "deployed_validity_mean": 0.99609375,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 39.732465192840834,
+      "deployed_content_length_mean": 39.61278384722458,
+      "validity_delta": 0.0026041666666666297,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L4_lam1_qed",
+      "best_of_n_hit_rate": 0.5436197916666666,
+      "best_of_n_values": [
+        0.572265625,
+        0.515625,
+        0.54296875
+      ],
+      "best_of_n_n_candidates": 8,
+      "best_of_n_tokens_per_molecule_actual": 355.8704427083333,
+      "realised_token_ratio_guided_over_best_of_n": 1.033568293704733,
+      "advantage_vs_best_of_n": -0.3148060379973907,
+      "advantage_ci_lo": -0.3619194644895629,
+      "advantage_ci_hi": -0.2663807689171564,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.31480603799739076,
+        "sd": 0.024474158821128765,
+        "lo": -0.3756032227070077,
+        "hi": -0.25400885328777384,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.34735175106001304,
+      "advantage_ci95_uncorrected_hi": -0.2816041233488258,
+      "advantage_per_seed": {
+        "101": -0.33351807118395305,
+        "202": -0.287109375,
+        "303": -0.3237906678082192
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "pilot_50k_p2_lam8_bestofn_qed",
+        "n_candidates": 9,
+        "hit_rate": 0.5963541666666666,
+        "values": [
+          0.61328125,
+          0.5859375,
+          0.58984375
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9197341238638972,
+        "advantage": -0.3675404129973907,
+        "ci_lo": -0.41336195495963796,
+        "ci_hi": -0.3178037472480436,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.36754041299739076,
+          "sd": 0.0089737962581257,
+          "lo": -0.3898325600999393,
+          "hi": -0.34524826589484225,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.40009377038486627,
+        "ci95_uncorrected_hi": -0.3343206934421885,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.37453369618395305,
+          "202": -0.357421875,
+          "303": -0.3706656678082192
+        }
+      },
+      "quality_run": "c23_quality_L4_lam1_qed",
+      "degeneracy_any_guided_hits": 0.011396011396011397,
+      "degeneracy_any_base_hits": 0.014598540145985401,
+      "quality_significant": {
+        "max_ring_size": {
+          "difference": -0.0883190883190883,
+          "lo": -0.17395553891904303,
+          "hi": -0.004982115748538644,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        }
+      }
+    },
+    "qed_L4_lam4": {
+      "property": "qed",
+      "layer": 4,
+      "layer_reason": "auroc_best",
+      "lam": 4.0,
+      "guided_run": "c23_guided_L4_lam4_qed",
+      "deployed_run": "pilot_50k_p2_lam4_guided_qed",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_qed_frozen_state_L4.pt",
+      "recorded_layer": 4,
+      "throughout_mean": 0.30916762238863027,
+      "throughout_values": [
+        0.3114754098360656,
+        0.305327868852459,
+        0.31069958847736623
+      ],
+      "deployed_throughout_mean": 0.2606845023461389,
+      "deployed_throughout_values": [
+        0.25250501002004005,
+        0.29116465863453816,
+        0.2383838383838384
+      ],
+      "lift": 0.21956735530078664,
+      "deployed_lift": 0.17108423525829525,
+      "unguided_mean": 0.08960026708784365,
+      "unguided_values": [
+        0.08840864440078586,
+        0.07647058823529412,
+        0.10392156862745099
+      ],
+      "unguided_reference": 0.0896,
+      "diff_vs_deployed": 0.04848312004249139,
+      "diff_ci_lo": 0.0007120768391258085,
+      "diff_ci_hi": 0.09655139835568981,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.0484831200424914,
+        "sd": 0.030461726006290244,
+        "lo": -0.027188007047659342,
+        "hi": 0.12415424713264214,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.05897039981602553,
+        "202": 0.01416321021792083,
+        "303": 0.07231575009352784
+      },
+      "diff_sem": 0.017587085709712298,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 375.3046875,
+      "tokens_per_molecule_full_recompute": 8848.669270833334,
+      "deployed_tokens_per_molecule_actual": 371.70703125,
+      "token_ratio_vs_deployed": 1.0096787414483432,
+      "validity_mean": 0.9518229166666666,
+      "deployed_validity_mean": 0.9713541666666666,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 38.094118936787424,
+      "deployed_content_length_mean": 37.8740183706019,
+      "validity_delta": -0.01953125,
+      "uniqueness_delta": 0.0,
+      "disqualified": true,
+      "disqualification_reasons": [
+        "validity -0.0195 vs deployed"
+      ],
+      "bestofn_run": "c23_bestofn_L4_lam4_qed",
+      "best_of_n_hit_rate": 0.5436197916666666,
+      "best_of_n_values": [
+        0.572265625,
+        0.515625,
+        0.54296875
+      ],
+      "best_of_n_n_candidates": 8,
+      "best_of_n_tokens_per_molecule_actual": 355.8704427083333,
+      "realised_token_ratio_guided_over_best_of_n": 1.0546104493639972,
+      "advantage_vs_best_of_n": -0.23445216927803636,
+      "advantage_ci_lo": -0.28587592291294217,
+      "advantage_ci_hi": -0.18263303992317767,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.2344521692780364,
+        "sd": 0.025317227840282036,
+        "lo": -0.2973436536632837,
+        "hi": -0.17156068489278908,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.26890934555533064,
+      "advantage_ci95_uncorrected_hi": -0.19906472547940704,
+      "advantage_per_seed": {
+        "101": -0.2607902151639344,
+        "202": -0.210297131147541,
+        "303": -0.23226916152263377
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "pilot_50k_p2_lam8_bestofn_qed",
+        "n_candidates": 9,
+        "hit_rate": 0.5963541666666666,
+        "values": [
+          0.61328125,
+          0.5859375,
+          0.58984375
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9384587584307252,
+        "advantage": -0.28718654427803636,
+        "ci_lo": -0.33978115614072446,
+        "ci_hi": -0.23625351851500515,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.2871865442780364,
+          "sd": 0.012681867348894541,
+          "lo": -0.3186900511935824,
+          "hi": -0.25568303736249043,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.3214888209078937,
+        "ci95_uncorrected_hi": -0.25297453857427366,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.3018058401639344,
+          "202": -0.280609631147541,
+          "303": -0.27914416152263377
+        }
+      },
+      "quality_run": "c23_quality_L4_lam4_qed",
+      "degeneracy_any_guided_hits": 0.01991150442477876,
+      "degeneracy_any_base_hits": 0.014598540145985401,
+      "quality_significant": {
+        "sa_score": {
+          "difference": 0.13375566964430075,
+          "lo": 0.01599318914801401,
+          "hi": 0.24942264622359997,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "longest_chain": {
+          "difference": -0.2260835863316324,
+          "lo": -0.426081971448873,
+          "hi": -0.031215280020670536,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "max_ring_size": {
+          "difference": -0.14601769911504459,
+          "lo": -0.2205606872941024,
+          "hi": -0.07255103029520032,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "n_fragments": {
+          "difference": 0.02433628318584069,
+          "lo": 0.008849557522123908,
+          "hi": 0.042035398230088505,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        }
+      }
+    },
+    "qed_L4_lam2": {
+      "property": "qed",
+      "layer": 4,
+      "layer_reason": "auroc_best",
+      "lam": 2.0,
+      "guided_run": "c23_guided_L4_lam2_qed",
+      "deployed_run": "pilot_50k_p2_lam2_guided_qed",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_qed_frozen_state_L4.pt",
+      "recorded_layer": 4,
+      "throughout_mean": 0.2795719386129279,
+      "throughout_values": [
+        0.28180039138943247,
+        0.29051383399209485,
+        0.2664015904572565
+      ],
+      "deployed_throughout_mean": 0.23609533603470859,
+      "deployed_throughout_values": [
+        0.271484375,
+        0.22265625,
+        0.21414538310412573
+      ],
+      "lift": 0.18997167152508426,
+      "deployed_lift": 0.14649506894686493,
+      "unguided_mean": 0.08960026708784365,
+      "unguided_values": [
+        0.08840864440078586,
+        0.07647058823529412,
+        0.10392156862745099
+      ],
+      "unguided_reference": 0.0896,
+      "diff_vs_deployed": 0.04347660257821931,
+      "diff_ci_lo": -0.0010588028254510347,
+      "diff_ci_hi": 0.08937068295364155,
+      "diff_excludes_zero": false,
+      "diff_seed_level_t": {
+        "mean": 0.04347660257821936,
+        "sd": 0.02975851299285091,
+        "lo": -0.030447646436131383,
+        "hi": 0.1174008515925701,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.01031601638943247,
+        "202": 0.06785758399209485,
+        "303": 0.052256207353130746
+      },
+      "diff_sem": 0.01718108548710545,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 366.140625,
+      "tokens_per_molecule_full_recompute": 7559.953125,
+      "deployed_tokens_per_molecule_actual": 361.916015625,
+      "token_ratio_vs_deployed": 1.0116728997684847,
+      "validity_mean": 0.9895833333333334,
+      "deployed_validity_mean": 0.998046875,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 39.11302305978797,
+      "deployed_content_length_mean": 39.013765246398165,
+      "validity_delta": -0.00846354166666663,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L4_lam2_qed",
+      "best_of_n_hit_rate": 0.5436197916666666,
+      "best_of_n_values": [
+        0.572265625,
+        0.515625,
+        0.54296875
+      ],
+      "best_of_n_n_candidates": 8,
+      "best_of_n_tokens_per_molecule_actual": 355.8704427083333,
+      "realised_token_ratio_guided_over_best_of_n": 1.0288593292927224,
+      "advantage_vs_best_of_n": -0.26404785305373873,
+      "advantage_ci_lo": -0.31113282997072733,
+      "advantage_ci_hi": -0.2158792731126984,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.26404785305373873,
+        "sd": 0.034428742560215136,
+        "lo": -0.34957359618760264,
+        "hi": -0.17852210991987483,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.2980298481535089,
+      "advantage_ci95_uncorrected_hi": -0.2308032153578752,
+      "advantage_per_seed": {
+        "101": -0.29046523361056753,
+        "202": -0.22511116600790515,
+        "303": -0.2765671595427435
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "pilot_50k_p2_lam8_bestofn_qed",
+        "n_candidates": 9,
+        "hit_rate": 0.5963541666666666,
+        "values": [
+          0.61328125,
+          0.5859375,
+          0.58984375
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9155437909326666,
+        "advantage": -0.31678222805373873,
+        "ci_lo": -0.36842896462184893,
+        "ci_hi": -0.2668009653441214,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.31678222805373873,
+          "sd": 0.01892871628439316,
+          "lo": -0.36380376896425526,
+          "hi": -0.2697606871432222,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.3494128370324435,
+        "ci95_uncorrected_hi": -0.28412001341282717,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.33148085861056753,
+          "202": -0.29542366600790515,
+          "303": -0.3234421595427435
+        }
+      },
+      "quality_run": "c23_quality_L4_lam2_qed",
+      "degeneracy_any_guided_hits": 0.009411764705882352,
+      "degeneracy_any_base_hits": 0.014598540145985401,
+      "quality_significant": {
+        "max_ring_size": {
+          "difference": -0.10352941176470587,
+          "lo": -0.1784229282954058,
+          "hi": -0.02913353370545315,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        }
+      }
+    },
+    "aromatic_rings_L6_lam1": {
+      "property": "aromatic_rings",
+      "layer": 6,
+      "layer_reason": "per_position_steering_best",
+      "lam": 1.0,
+      "guided_run": "c23_guided_L6_lam1_aromatic_rings",
+      "deployed_run": "pilot_50k_p2_guided_aromatic_rings",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_aromatic_rings_frozen_state_L6.pt",
+      "recorded_layer": 6,
+      "throughout_mean": 0.5830783725998746,
+      "throughout_values": [
+        0.611439842209073,
+        0.5492125984251969,
+        0.5885826771653543
+      ],
+      "deployed_throughout_mean": 0.4734551246669265,
+      "deployed_throughout_values": [
+        0.4892367906066536,
+        0.4794520547945205,
+        0.4516765285996055
+      ],
+      "lift": 0.40453271727160056,
+      "deployed_lift": 0.2949094693386525,
+      "unguided_mean": 0.17854565532827407,
+      "unguided_values": [
+        0.17485265225933203,
+        0.18235294117647058,
+        0.1784313725490196
+      ],
+      "unguided_reference": 0.1785,
+      "diff_vs_deployed": 0.10962324793294809,
+      "diff_ci_lo": 0.05776807259451652,
+      "diff_ci_hi": 0.1635403686316784,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.10962324793294818,
+        "sd": 0.03529619895677206,
+        "lo": 0.021942623515749618,
+        "hi": 0.19730387235014674,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.1222030516024194,
+        "202": 0.06976054363067635,
+        "303": 0.1369061485657488
+      },
+      "diff_sem": 0.02037826996906294,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 422.75390625,
+      "tokens_per_molecule_full_recompute": 10183.95703125,
+      "deployed_tokens_per_molecule_actual": 419.326171875,
+      "token_ratio_vs_deployed": 1.008174386920981,
+      "validity_mean": 0.9915364583333334,
+      "deployed_validity_mean": 0.9954427083333334,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 45.36692991038842,
+      "deployed_content_length_mean": 45.405452175736684,
+      "validity_delta": -0.00390625,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L6_lam1_aromatic_rings",
+      "best_of_n_hit_rate": 0.8294270833333334,
+      "best_of_n_values": [
+        0.80859375,
+        0.830078125,
+        0.849609375
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 1.0571067167422847,
+      "advantage_vs_best_of_n": -0.24634871073345876,
+      "advantage_ci_lo": -0.2928442517416115,
+      "advantage_ci_hi": -0.20158337329228124,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.24634871073345863,
+        "sd": 0.04374347104267346,
+        "lo": -0.355013523618682,
+        "hi": -0.13768389784823523,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.27770654478621476,
+      "advantage_ci95_uncorrected_hi": -0.21491769756099974,
+      "advantage_per_seed": {
+        "101": -0.197153907790927,
+        "202": -0.2808655265748031,
+        "303": -0.2610266978346457
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c23_bestofn_L3_lam2_aromatic_rings",
+        "n_candidates": 10,
+        "hit_rate": 0.8567708333333334,
+        "values": [
+          0.841796875,
+          0.85546875,
+          0.873046875
+        ],
+        "tokens_per_molecule_actual": 443.9993489583333,
+        "realised_token_ratio_guided_over_best_of_n": 0.9521498336468798,
+        "advantage": -0.27369246073345876,
+        "ci_lo": -0.3196302540050352,
+        "ci_hi": -0.2301380018447449,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.2736924607334586,
+          "sd": 0.03907930140336508,
+          "lo": -0.37077083319592835,
+          "hi": -0.17661408827098884,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.3043941718014724,
+        "ci95_uncorrected_hi": -0.24353766349195258,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.230357032790927,
+          "202": -0.3062561515748031,
+          "303": -0.2844641978346457
+        }
+      },
+      "quality_run": "c23_quality_L6_lam1_aromatic_rings",
+      "degeneracy_any_guided_hits": 0.02364864864864865,
+      "degeneracy_any_base_hits": 0.03296703296703297,
+      "quality_significant": {
+        "sa_score": {
+          "difference": -0.0968499827526692,
+          "lo": -0.16814756765831032,
+          "hi": -0.025215024739401258,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "carbon_fraction": {
+          "difference": -0.009131209726963907,
+          "lo": -0.01803218990801154,
+          "hi": -3.600788696270392e-05,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "n_fragments": {
+          "difference": 0.02420552420552413,
+          "lo": 0.005902880902880936,
+          "hi": 0.04279279279279269,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        }
+      }
+    },
+    "aromatic_rings_L6_lam2": {
+      "property": "aromatic_rings",
+      "layer": 6,
+      "layer_reason": "per_position_steering_best",
+      "lam": 2.0,
+      "guided_run": "c23_guided_L6_lam2_aromatic_rings",
+      "deployed_run": "pilot_50k_p2_lam2_guided_aromatic_rings",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_aromatic_rings_frozen_state_L6.pt",
+      "recorded_layer": 6,
+      "throughout_mean": 0.6841525913850868,
+      "throughout_values": [
+        0.6895161290322581,
+        0.6862348178137652,
+        0.6767068273092369
+      ],
+      "deployed_throughout_mean": 0.5579287361930816,
+      "deployed_throughout_values": [
+        0.5413385826771654,
+        0.6039603960396039,
+        0.5284872298624754
+      ],
+      "lift": 0.5056069360568127,
+      "deployed_lift": 0.37938308086480754,
+      "unguided_mean": 0.17854565532827407,
+      "unguided_values": [
+        0.17485265225933203,
+        0.18235294117647058,
+        0.1784313725490196
+      ],
+      "unguided_reference": 0.1785,
+      "diff_vs_deployed": 0.12622385519200519,
+      "diff_ci_lo": 0.07495593356790631,
+      "diff_ci_hi": 0.1774160443131509,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.12622385519200516,
+        "sd": 0.038061331629170574,
+        "lo": 0.03167425999386697,
+        "hi": 0.22077345039014334,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.14817754635509273,
+        "202": 0.08227442177416122,
+        "303": 0.1482195974467615
+      },
+      "diff_sem": 0.02197472006181725,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 462.796875,
+      "tokens_per_molecule_full_recompute": 13782.791666666666,
+      "deployed_tokens_per_molecule_actual": 420.345703125,
+      "token_ratio_vs_deployed": 1.1009910927110778,
+      "validity_mean": 0.96875,
+      "deployed_validity_mean": 0.9908854166666666,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 47.42981902141673,
+      "deployed_content_length_mean": 45.571216014598384,
+      "validity_delta": -0.02213541666666663,
+      "uniqueness_delta": 0.0,
+      "disqualified": true,
+      "disqualification_reasons": [
+        "validity -0.0221 vs deployed",
+        "token ratio 1.1010"
+      ],
+      "bestofn_run": "c23_bestofn_L6_lam2_aromatic_rings",
+      "best_of_n_hit_rate": 0.8567708333333334,
+      "best_of_n_values": [
+        0.841796875,
+        0.85546875,
+        0.873046875
+      ],
+      "best_of_n_n_candidates": 10,
+      "best_of_n_tokens_per_molecule_actual": 443.9993489583333,
+      "realised_token_ratio_guided_over_best_of_n": 1.0423368324430375,
+      "advantage_vs_best_of_n": -0.1726182419482466,
+      "advantage_ci_lo": -0.21574668658970747,
+      "advantage_ci_hi": -0.12824054688673295,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.1726182419482466,
+        "sd": 0.02222376389147416,
+        "lo": -0.2278251353956494,
+        "hi": -0.11741134850084381,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.2019067932154399,
+      "advantage_ci95_uncorrected_hi": -0.14314535333227021,
+      "advantage_per_seed": {
+        "101": -0.15228074596774188,
+        "202": -0.16923393218623484,
+        "303": -0.19634004769076308
+      },
+      "conservative_best_of_n": null,
+      "quality_run": "c23_quality_L6_lam2_aromatic_rings",
+      "degeneracy_any_guided_hits": 0.11100196463654224,
+      "degeneracy_any_base_hits": 0.03296703296703297,
+      "quality_significant": {
+        "longest_chain": {
+          "difference": -0.2705045445713421,
+          "lo": -0.4101646552530639,
+          "hi": -0.13257239649675803,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "carbon_fraction": {
+          "difference": -0.019253468660421102,
+          "lo": -0.028011885462267183,
+          "hi": -0.010009844590387907,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "n_fragments": {
+          "difference": 0.13216318717301045,
+          "lo": 0.10197759018977104,
+          "hi": 0.16359737184884526,
+          "excludes_zero": true,
+          "direction": "higher is worse"
+        },
+        "qed": {
+          "difference": 0.02046248892883551,
+          "lo": 0.0028728244651985814,
+          "hi": 0.03778913586425229,
+          "excludes_zero": true,
+          "direction": "higher is better"
+        },
+        "any_degeneracy": {
+          "difference": 0.07803493166950928,
+          "lo": 0.0491806817936484,
+          "hi": 0.10670567153867744,
+          "excludes_zero": true
+        }
+      }
+    },
+    "aromatic_rings_L6_lam0p5": {
+      "property": "aromatic_rings",
+      "layer": 6,
+      "layer_reason": "per_position_steering_best",
+      "lam": 0.5,
+      "guided_run": "c23_guided_L6_lam0p5_aromatic_rings",
+      "deployed_run": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_aromatic_rings_frozen_state_L6.pt",
+      "recorded_layer": 6,
+      "throughout_mean": 0.3881135145268153,
+      "throughout_values": [
+        0.3972602739726027,
+        0.37254901960784315,
+        0.39453125
+      ],
+      "deployed_throughout_mean": 0.3010951113213786,
+      "deployed_throughout_values": [
+        0.307843137254902,
+        0.2888015717092338,
+        0.306640625
+      ],
+      "lift": 0.20956785919854123,
+      "deployed_lift": 0.12254945599310454,
+      "unguided_mean": 0.17854565532827407,
+      "unguided_values": [
+        0.17485265225933203,
+        0.18235294117647058,
+        0.1784313725490196
+      ],
+      "unguided_reference": 0.1785,
+      "diff_vs_deployed": 0.08701840320543669,
+      "diff_ci_lo": 0.0365147722116464,
+      "diff_ci_hi": 0.13726529987521346,
+      "diff_excludes_zero": true,
+      "diff_seed_level_t": {
+        "mean": 0.08701840320543669,
+        "sd": 0.0029337554380888626,
+        "lo": 0.07973055022687596,
+        "hi": 0.09430625618399742,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.08941713671770074,
+        "202": 0.08374744789860933,
+        "303": 0.087890625
+      },
+      "diff_sem": 0.0016938044919171335,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 409.3359375,
+      "tokens_per_molecule_full_recompute": 9346.9921875,
+      "deployed_tokens_per_molecule_actual": 408.31640625,
+      "token_ratio_vs_deployed": 1.002496914731797,
+      "validity_mean": 0.998046875,
+      "deployed_validity_mean": 0.9967447916666666,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 44.371605754887575,
+      "deployed_content_length_mean": 44.250175602432364,
+      "validity_delta": 0.0013020833333333703,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L6_lam0p5_aromatic_rings",
+      "best_of_n_hit_rate": 0.8294270833333334,
+      "best_of_n_values": [
+        0.80859375,
+        0.830078125,
+        0.849609375
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 1.0235547502649482,
+      "advantage_vs_best_of_n": -0.44131356880651806,
+      "advantage_ci_lo": -0.48693457242343285,
+      "advantage_ci_hi": -0.39635088108088556,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.441313568806518,
+        "sd": 0.025992427714705703,
+        "lo": -0.5058823427681411,
+        "hi": -0.37674479484489487,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.47193298757502433,
+      "advantage_ci95_uncorrected_hi": -0.41065408515717927,
+      "advantage_per_seed": {
+        "101": -0.4113334760273973,
+        "202": -0.45752910539215685,
+        "303": -0.455078125
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c23_bestofn_L3_lam2_aromatic_rings",
+        "n_candidates": 10,
+        "hit_rate": 0.8567708333333334,
+        "values": [
+          0.841796875,
+          0.85546875,
+          0.873046875
+        ],
+        "tokens_per_molecule_actual": 443.9993489583333,
+        "realised_token_ratio_guided_over_best_of_n": 0.9219291389961334,
+        "advantage": -0.46865731880651806,
+        "ci_lo": -0.5136417701248592,
+        "ci_hi": -0.42501750223134344,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.468657318806518,
+          "sd": 0.02100489956441831,
+          "lo": -0.5208363852233957,
+          "hi": -0.4164782523896403,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.49929584976113733,
+        "ci95_uncorrected_hi": -0.4392593271255423,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.4445366010273973,
+          "202": -0.48291973039215685,
+          "303": -0.478515625
+        }
+      },
+      "quality_run": "c23_quality_L6_lam0p5_aromatic_rings",
+      "degeneracy_any_guided_hits": 0.008403361344537815,
+      "degeneracy_any_base_hits": 0.03296703296703297,
+      "quality_significant": {
+        "any_degeneracy": {
+          "difference": -0.024563671622495155,
+          "lo": -0.04990303813833225,
+          "hi": -0.002887308769661711,
+          "excludes_zero": true
+        }
+      }
+    },
+    "hbd_count_L6_lam1": {
+      "property": "hbd_count",
+      "layer": 6,
+      "layer_reason": "per_position_steering_best",
+      "lam": 1.0,
+      "guided_run": "c23_guided_L6_lam1_hbd_count",
+      "deployed_run": "pilot_50k_p2_guided_hbd_count",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_hbd_count_frozen_state_L6.pt",
+      "recorded_layer": 6,
+      "throughout_mean": 0.33945624846853856,
+      "throughout_values": [
+        0.324853228962818,
+        0.34705882352941175,
+        0.3464566929133858
+      ],
+      "deployed_throughout_mean": 0.29875114714835704,
+      "deployed_throughout_values": [
+        0.3013698630136986,
+        0.2901960784313726,
+        0.3046875
+      ],
+      "lift": 0.2557486069312426,
+      "deployed_lift": 0.21504350561106106,
+      "unguided_mean": 0.083707641537296,
+      "unguided_values": [
+        0.07269155206286837,
+        0.09019607843137255,
+        0.08823529411764706
+      ],
+      "unguided_reference": 0.0837,
+      "diff_vs_deployed": 0.040705101320181514,
+      "diff_ci_lo": -0.00831115382007326,
+      "diff_ci_hi": 0.08838241758432709,
+      "diff_excludes_zero": false,
+      "diff_seed_level_t": {
+        "mean": 0.04070510132018146,
+        "sd": 0.016715111614371045,
+        "lo": -0.0008175404052394447,
+        "hi": 0.08222774304560236,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.023483365949119372,
+        "202": 0.05686274509803918,
+        "303": 0.04176919291338582
+      },
+      "diff_sem": 0.009650474190091763,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 398.6015625,
+      "tokens_per_molecule_full_recompute": 9162.565104166666,
+      "deployed_tokens_per_molecule_actual": 401.619140625,
+      "token_ratio_vs_deployed": 0.9924864683483361,
+      "validity_mean": 0.9954427083333334,
+      "deployed_validity_mean": 0.998046875,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 42.952678482675566,
+      "deployed_content_length_mean": 43.43525903868968,
+      "validity_delta": -0.0026041666666666297,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L6_lam1_hbd_count",
+      "best_of_n_hit_rate": 0.5234375,
+      "best_of_n_values": [
+        0.54296875,
+        0.52734375,
+        0.5
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 0.9967131770830789,
+      "advantage_vs_best_of_n": -0.18398125153146144,
+      "advantage_ci_lo": -0.2358179557284074,
+      "advantage_ci_hi": -0.131771012221393,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.18398125153146147,
+        "sd": 0.032444411195708366,
+        "lo": -0.26457764198053146,
+        "hi": -0.10338486108239149,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.21792116850265317,
+      "advantage_ci95_uncorrected_hi": -0.149462325850391,
+      "advantage_per_seed": {
+        "101": -0.21811552103718201,
+        "202": -0.18028492647058825,
+        "303": -0.15354330708661418
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c18_bestofn_N9_hbd_count",
+        "n_candidates": 9,
+        "hit_rate": 0.5234375,
+        "values": [
+          0.54296875,
+          0.52734375,
+          0.5
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9967131770830789,
+        "advantage": -0.18398125153146144,
+        "ci_lo": -0.23318260307622427,
+        "ci_hi": -0.13294669778042664,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.18398125153146147,
+          "sd": 0.032444411195708366,
+          "lo": -0.26457764198053146,
+          "hi": -0.10338486108239149,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.21853899790091116,
+        "ci95_uncorrected_hi": -0.14990253464174674,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.21811552103718201,
+          "202": -0.18028492647058825,
+          "303": -0.15354330708661418
+        }
+      },
+      "quality_run": "c23_quality_L6_lam1_hbd_count",
+      "degeneracy_any_guided_hits": 0.028901734104046242,
+      "degeneracy_any_base_hits": 0.0703125,
+      "quality_significant": {}
+    },
+    "hbd_count_L6_lam2": {
+      "property": "hbd_count",
+      "layer": 6,
+      "layer_reason": "per_position_steering_best",
+      "lam": 2.0,
+      "guided_run": "c23_guided_L6_lam2_hbd_count",
+      "deployed_run": "pilot_50k_p2_lam2_guided_hbd_count",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_hbd_count_frozen_state_L6.pt",
+      "recorded_layer": 6,
+      "throughout_mean": 0.46838068679520384,
+      "throughout_values": [
+        0.4772277227722772,
+        0.47534516765285995,
+        0.4525691699604743
+      ],
+      "deployed_throughout_mean": 0.4303223626700486,
+      "deployed_throughout_values": [
+        0.45098039215686275,
+        0.44664031620553357,
+        0.3933463796477495
+      ],
+      "lift": 0.38467304525790785,
+      "deployed_lift": 0.3466147211327526,
+      "unguided_mean": 0.083707641537296,
+      "unguided_values": [
+        0.07269155206286837,
+        0.09019607843137255,
+        0.08823529411764706
+      ],
+      "unguided_reference": 0.0837,
+      "diff_vs_deployed": 0.03805832412515525,
+      "diff_ci_lo": -0.015719395686937008,
+      "diff_ci_hi": 0.09194972739672927,
+      "diff_excludes_zero": false,
+      "diff_seed_level_t": {
+        "mean": 0.03805832412515522,
+        "sd": 0.01837010680190518,
+        "lo": -0.007575553816612138,
+        "hi": 0.08369220206692257,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": 0.026247330615414455,
+        "202": 0.028704851447326374,
+        "303": 0.059222790312724816
+      },
+      "diff_sem": 0.01060598610712213,
+      "diff_exceeds_seed_noise": true,
+      "tokens_per_molecule_actual": 399.123046875,
+      "tokens_per_molecule_full_recompute": 9419.185546875,
+      "deployed_tokens_per_molecule_actual": 393.181640625,
+      "token_ratio_vs_deployed": 1.015111097864477,
+      "validity_mean": 0.98828125,
+      "deployed_validity_mean": 0.994140625,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 42.68824747923725,
+      "deployed_content_length_mean": 42.38788354008198,
+      "validity_delta": -0.005859375,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L6_lam2_hbd_count",
+      "best_of_n_hit_rate": 0.5234375,
+      "best_of_n_values": [
+        0.54296875,
+        0.52734375,
+        0.5
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 0.998017161806434,
+      "advantage_vs_best_of_n": -0.05505681320479616,
+      "advantage_ci_lo": -0.10635927767685727,
+      "advantage_ci_hi": -0.000718192234530051,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.05505681320479618,
+        "sd": 0.009530499055752815,
+        "lo": -0.078731886808029,
+        "hi": -0.03138173960156336,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.09042714909540266,
+      "advantage_ci95_uncorrected_hi": -0.019704600787833947,
+      "advantage_per_seed": {
+        "101": -0.06574102722772279,
+        "202": -0.051998582347140054,
+        "303": -0.047430830039525695
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c18_bestofn_N9_hbd_count",
+        "n_candidates": 9,
+        "hit_rate": 0.5234375,
+        "values": [
+          0.54296875,
+          0.52734375,
+          0.5
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.998017161806434,
+        "advantage": -0.05505681320479616,
+        "ci_lo": -0.10835806536017636,
+        "ci_hi": -0.0030986449368308744,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.05505681320479618,
+          "sd": 0.009530499055752815,
+          "lo": -0.078731886808029,
+          "hi": -0.03138173960156336,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.09047367169762026,
+        "ci95_uncorrected_hi": -0.01851740668367748,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.06574102722772279,
+          "202": -0.051998582347140054,
+          "303": -0.047430830039525695
+        }
+      },
+      "quality_run": "c23_quality_L6_lam2_hbd_count",
+      "degeneracy_any_guided_hits": 0.01969057665260197,
+      "degeneracy_any_base_hits": 0.0703125,
+      "quality_significant": {
+        "any_degeneracy": {
+          "difference": -0.050621923347398026,
+          "lo": -0.09753208509142053,
+          "hi": -0.008116319444444464,
+          "excludes_zero": true
+        }
+      }
+    },
+    "hbd_count_L6_lam0p5": {
+      "property": "hbd_count",
+      "layer": 6,
+      "layer_reason": "per_position_steering_best",
+      "lam": 0.5,
+      "guided_run": "c23_guided_L6_lam0p5_hbd_count",
+      "deployed_run": "pilot_50k_p2_lam0p5_guided_hbd_count",
+      "head_file": "/home/afloresep/Property-to-Go/outputs/c17_probe_layers/head_hbd_count_frozen_state_L6.pt",
+      "recorded_layer": 6,
+      "throughout_mean": 0.202732514092736,
+      "throughout_values": [
+        0.1807465618860511,
+        0.20980392156862746,
+        0.21764705882352942
+      ],
+      "deployed_throughout_mean": 0.18128505995574082,
+      "deployed_throughout_values": [
+        0.1830708661417323,
+        0.1980392156862745,
+        0.1627450980392157
+      ],
+      "lift": 0.11902487255543999,
+      "deployed_lift": 0.09757741841844482,
+      "unguided_mean": 0.083707641537296,
+      "unguided_values": [
+        0.07269155206286837,
+        0.09019607843137255,
+        0.08823529411764706
+      ],
+      "unguided_reference": 0.0837,
+      "diff_vs_deployed": 0.02144745413699517,
+      "diff_ci_lo": -0.02041697097755304,
+      "diff_ci_hi": 0.06267323180941803,
+      "diff_excludes_zero": false,
+      "diff_seed_level_t": {
+        "mean": 0.02144745413699516,
+        "sd": 0.029816573628252775,
+        "lo": -0.052621025500384694,
+        "hi": 0.095515933774375,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "diff_per_seed": {
+        "101": -0.0023243042556811977,
+        "202": 0.011764705882352955,
+        "303": 0.054901960784313725
+      },
+      "diff_sem": 0.017214606810584038,
+      "diff_exceeds_seed_noise": false,
+      "tokens_per_molecule_actual": 394.435546875,
+      "tokens_per_molecule_full_recompute": 8782.820963541666,
+      "deployed_tokens_per_molecule_actual": 395.853515625,
+      "token_ratio_vs_deployed": 0.9964179457955269,
+      "validity_mean": 0.9954427083333334,
+      "deployed_validity_mean": 0.9947916666666666,
+      "uniqueness_mean": 1.0,
+      "deployed_uniqueness_mean": 1.0,
+      "content_length_mean": 42.5780101955648,
+      "deployed_content_length_mean": 42.581930935103706,
+      "validity_delta": 0.0006510416666667407,
+      "uniqueness_delta": 0.0,
+      "disqualified": false,
+      "disqualification_reasons": [],
+      "bestofn_run": "c23_bestofn_L6_lam0p5_hbd_count",
+      "best_of_n_hit_rate": 0.5234375,
+      "best_of_n_values": [
+        0.54296875,
+        0.52734375,
+        0.5
+      ],
+      "best_of_n_n_candidates": 9,
+      "best_of_n_tokens_per_molecule_actual": 399.916015625,
+      "realised_token_ratio_guided_over_best_of_n": 0.9862959508099846,
+      "advantage_vs_best_of_n": -0.32070498590726404,
+      "advantage_ci_lo": -0.3696085476486559,
+      "advantage_ci_hi": -0.27115173840338774,
+      "advantage_excludes_zero": true,
+      "advantage_seed_level_t": {
+        "mean": -0.320704985907264,
+        "sd": 0.040028587509121104,
+        "lo": -0.42014151593239923,
+        "hi": -0.2212684558821287,
+        "excludes_zero": true,
+        "n_seeds": 3,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+      },
+      "advantage_ci95_uncorrected_lo": -0.3526482075951902,
+      "advantage_ci95_uncorrected_hi": -0.28806813047337465,
+      "advantage_per_seed": {
+        "101": -0.3622221881139489,
+        "202": -0.3175398284313725,
+        "303": -0.2823529411764706
+      },
+      "conservative_best_of_n": {
+        "note": "post-hoc robustness check, added after the arms were run; best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack",
+        "run": "c18_bestofn_N9_hbd_count",
+        "n_candidates": 9,
+        "hit_rate": 0.5234375,
+        "values": [
+          0.54296875,
+          0.52734375,
+          0.5
+        ],
+        "tokens_per_molecule_actual": 399.916015625,
+        "realised_token_ratio_guided_over_best_of_n": 0.9862959508099846,
+        "advantage": -0.32070498590726404,
+        "ci_lo": -0.36724614446097686,
+        "ci_hi": -0.2722241842504853,
+        "excludes_zero": true,
+        "seed_level_t_interval": {
+          "mean": -0.320704985907264,
+          "sd": 0.040028587509121104,
+          "lo": -0.42014151593239923,
+          "hi": -0.2212684558821287,
+          "excludes_zero": true,
+          "n_seeds": 3,
+          "interval": "Student t, 2 df, t_crit=4.302653",
+          "note": "the interval to quote for a claim about runs rather than about these molecules; no three-seed percentile bootstrap is reported anywhere, because at n=3 it is identically [min, max]"
+        },
+        "ci95_uncorrected_lo": -0.3526802926961346,
+        "ci95_uncorrected_hi": -0.288649099075104,
+        "excludes_zero_uncorrected": true,
+        "per_seed_difference": {
+          "101": -0.3622221881139489,
+          "202": -0.3175398284313725,
+          "303": -0.2823529411764706
+        }
+      },
+      "quality_run": "c23_quality_L6_lam0p5_hbd_count",
+      "degeneracy_any_guided_hits": 0.035483870967741936,
+      "degeneracy_any_base_hits": 0.0703125,
+      "quality_significant": {}
+    }
+  },
+  "decision_rules": {
+    "layer_improves_guidance": {
+      "rule": "best mid-layer arm beats the deployed-layer arm at matched lambda for >= 2 of 3 properties, each beyond seed noise with a corrected CI excluding 0 and not disqualified on quality or tokens",
+      "properties_firing": 2,
+      "required": 2,
+      "per_property": {
+        "aromatic_rings": {
+          "best_arm": "L3_lam2",
+          "best_diff_vs_deployed": 0.2579457597540471,
+          "best_diff_ci": [
+            0.21002195018361455,
+            0.306301618102244
+          ],
+          "best_diff_excludes_zero": true,
+          "best_diff_exceeds_seed_noise": true,
+          "best_arm_disqualified": true,
+          "fires": true,
+          "qualifying_arms": [
+            "L3_lam1",
+            "L3_lam0p5",
+            "L6_lam1",
+            "L6_lam0p5"
+          ]
+        },
+        "hbd_count": {
+          "best_arm": "L4_lam2",
+          "best_diff_vs_deployed": 0.1300196969866107,
+          "best_diff_ci": [
+            0.07733991264973424,
+            0.18308702848419667
+          ],
+          "best_diff_excludes_zero": true,
+          "best_diff_exceeds_seed_noise": true,
+          "best_arm_disqualified": false,
+          "fires": true,
+          "qualifying_arms": [
+            "L4_lam1",
+            "L4_lam2",
+            "L4_lam0p5"
+          ]
+        },
+        "qed": {
+          "best_arm": "L4_lam4",
+          "best_diff_vs_deployed": 0.04848312004249139,
+          "best_diff_ci": [
+            0.0007120768391258085,
+            0.09655139835568981
+          ],
+          "best_diff_excludes_zero": true,
+          "best_diff_exceeds_seed_noise": true,
+          "best_arm_disqualified": true,
+          "fires": false,
+          "qualifying_arms": []
+        }
+      },
+      "fires": true
+    },
+    "headline_falsification": {
+      "rule": "some arm beats its own compute-matched best-of-N",
+      "fires": true,
+      "survives_token_conservative_check": [],
+      "arms_beating_best_of_n": [
+        "hbd_count_L4_lam2"
+      ],
+      "best_advantage": 0.07596705965665929,
+      "best_advantage_arm": "hbd_count_L4_lam2",
+      "deployed_best_advantage": {
+        "aromatic_rings": -0.2715,
+        "hbd_count": -0.0931,
+        "qed": -0.2829
+      }
+    },
+    "null": {
+      "rule": "neither A nor B fires",
+      "fires": false
+    }
+  },
+  "predictions": {
+    "P_A_within_0.05_at_lambda1": {
+      "prediction": "every lambda=1 mid-layer arm within +-0.05 of its deployed arm",
+      "n_arms": 5,
+      "max_abs_difference": 0.10962324793294809,
+      "max_abs_difference_arm": "aromatic_rings_L6",
+      "holds": false
+    },
+    "P_B_steering_best_layer_transfers": {
+      "prediction": "probe point 6 beats the AUROC-best probe point end to end at lambda=1, for both count properties",
+      "per_property": {
+        "aromatic_rings": {
+          "steering_best_layer_6": 0.5830783725998746,
+          "auroc_best_layer": 0.5698096157332536,
+          "auroc_best_layer_index": 3,
+          "steering_best_wins": true
+        },
+        "hbd_count": {
+          "steering_best_layer_6": 0.33945624846853856,
+          "auroc_best_layer": 0.368888749905456,
+          "auroc_best_layer_index": 4,
+          "steering_best_wins": false
+        }
+      },
+      "holds": false
+    },
+    "P_C_lambda_curve_shifts_left": {
+      "prediction": ">=2 combinations lose >0.005 validity at the section-19 optimal lambda, and >=1 count arm has a larger advantage at lambda=0.5 than at lambda=2",
+      "arms_with_validity_drop": [
+        "aromatic_rings_L3",
+        "qed_L4",
+        "aromatic_rings_L6",
+        "hbd_count_L6"
+      ],
+      "validity_deltas_at_optimum": {
+        "aromatic_rings_L3": -0.02278645833333326,
+        "hbd_count_L4": -0.0006510416666666297,
+        "qed_L4": -0.01953125,
+        "aromatic_rings_L6": -0.02213541666666663,
+        "hbd_count_L6": -0.005859375
+      },
+      "count_arms_with_advantage_shrinking_in_lambda": [],
+      "holds": false
+    },
+    "P_D_gap_stays_below_minus_0.05": {
+      "prediction": "best advantage over compute-matched best-of-N stays below -0.05, with hbd_count at lambda=2 the closest arm",
+      "best_advantage": 0.07596705965665929,
+      "best_advantage_arm": "hbd_count_L4_lam2",
+      "closest_is_hbd_lambda2": true,
+      "holds": false
+    }
+  }
+}

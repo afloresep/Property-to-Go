@@ -202,6 +202,30 @@ two different degrees of freedom, and our account predicts exactly this pattern.
 under latent-vector editing, and lexical locality predicts it should be *easy* under token
 choice. That is a genuine discriminating test rather than a citation skirmish.
 
+### 5.1 The discriminating test was run, and it came out as predicted — 2026-07-30
+
+`reports/pilot_report.md` §16. HBD count is the **second most steerable of six properties**
+by top-8 token choice: hit rate +0.2150 over unguided, against +0.2949 for aromatic ring
+count and less for everything else. Its head-free one-step ceiling is also large (best
+candidate 0.2439 against a base-policy 0.0775).
+
+So the prediction in §6 of `LEXICAL_LOCALITY.md` holds on the case it was designed for: the
+property SLIM reports as hardest under a single additive residual-stream direction is among
+the easiest under discrete next-token choice. The two methods exploit different degrees of
+freedom, exactly as argued, and this is now a measurement rather than an expectation.
+
+**Two cautions on how far to push this in the paper.**
+
+1. It is one property, and it is the one property we chose *because* the prediction was
+   sharp there. That is legitimate pre-registration, not cherry-picking — but it is a single
+   confirming instance, and the *general* locality ordering it was meant to exemplify
+   **failed** (§15.4: rank correlation −0.886 in the pre-registered units). The honest
+   framing is "the mechanism hypothesis makes a correct sharp prediction about SLIM's hard
+   case, and does not order six properties correctly", not "locality is confirmed".
+2. We still have not run SLIM's method, and must not imply a head-to-head comparison. The
+   claim is about what different intervention classes can reach, on different tasks — free
+   generation here, similarity-constrained editing there.
+
 ---
 
 ## 6. Closest prior art, and honest scoop risk
@@ -221,6 +245,34 @@ The ingredients all exist separately. The combination and the negative headline 
 appear to.
 
 ---
+
+## 6.1 What phase 2 changes about the positioning — 2026-07-30
+
+§3 argued our headline negative result is "novel *in this domain* and anticipated *in
+general*", and that our contribution on that axis is the token-matched accounting rather
+than the direction of the result. That still stands. But phase 2 adds a second axis where
+the position is stronger, and it should lead.
+
+**Mudgal et al. (ICML 2024) report that blockwise controlled decoding fails to match
+best-of-K on the harder attributes. They do not measure why.** Neither, as far as either
+scan found, does any of the molecular steering work: no paper in the set (GP-MoLFormer-Sim,
+Q-Steer, Steering Vector Fields, SLIM, PILOT, the discrete-diffusion classifier-guidance
+line) reports a **head-free upper bound** on what its own intervention class could achieve.
+Reporting "our method gains X" without "the most any method of this class could gain here is
+Y" leaves the reader unable to tell a signal-poor task from a weak estimator — which is
+precisely the ambiguity our own phase 1 could not resolve about itself.
+
+That measurement is cheap, it needs no head and no guidance strength, and it is
+method-agnostic within a class. It is a better claim to methodological contribution than the
+token accounting, because it is constructive rather than corrective.
+
+**Search to run before claiming priority on it** (add to A5/A6): "ceiling", "upper bound",
+"oracle rerank", "best-of-k oracle" in the controlled-decoding literature, and the
+inference-time-scaling-for-diffusion line (Feynman–Kac steering, arXiv:2501.06848) where an
+analogous per-step oracle bound would be natural. **[LEAD — not yet searched.]** The
+adjacent idea that certainly exists is *oracle reranking* as a skyline in retrieval and MT;
+the specific thing to check is whether anyone reports a per-position candidate-set ceiling
+estimated by policy rollouts.
 
 ## 7. What no one appears to have shown, and we can
 

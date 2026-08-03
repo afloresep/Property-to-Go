@@ -31,9 +31,33 @@ seeds: [101, 202, 303]
 # Target intervals are read from outputs/<dataset>/target_intervals.json, which is
 # written by scripts/02_generate_trajectories.py from the base generator's own
 # empirical distribution, before any guided result exists.
+#
+# PHASE 2 (2026-07-30). Four properties were added for the lexical-locality test
+# (docs/LEXICAL_LOCALITY.md). The point of a *rule* rather than a hand-picked value is
+# that the rule can be committed without anyone having seen the four new base
+# distributions, so the target value is a consequence of the pre-registration rather
+# than a choice made after looking:
+#
+#   continuous  -> quantile_band [0.85, 0.95) of the base distribution.  Base rate is
+#                  0.10 by construction, so all four continuous properties are
+#                  base-rate matched to each other and to the pilot's cLogP.
+#   count       -> quantile_value at q = 0.90: the interval is [v, v+1) for
+#                  v = round(quantile(0.90)).  One count unit wide, which is the
+#                  lever size the locality hypothesis is about.
+#
+# The two frozen pilot entries are LEFT EXACTLY AS THEY WERE and are still resolved by
+# the same code path, so re-deriving them cannot move them.  Worth recording: applying
+# the new `quantile_value q=0.90` rule to aromatic rings would also have returned 3
+# (the base cumulative distribution reaches 0.780 at 2 rings and 0.952 at 3), so the
+# uniform rule agrees with the pilot's hand-picked value rather than contradicting it.
 target_interval_rule:
   clogp: {kind: quantile_band, lo: 0.85, hi: 0.95} # base rate 0.10 by construction
   aromatic_rings: {kind: exact_value, value: 3}
+  mol_weight: {kind: quantile_band, lo: 0.85, hi: 0.95} # diagnostic control only
+  hbd_count: {kind: quantile_value, q: 0.90}
+  rotatable_bonds: {kind: quantile_value, q: 0.90}
+  tpsa: {kind: quantile_band, lo: 0.85, hi: 0.95}
+  qed: {kind: quantile_band, lo: 0.85, hi: 0.95}
 
 best_of_n:
   # N is solved at run time so that best-of-N processes the same number of

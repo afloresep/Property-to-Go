@@ -1,0 +1,18 @@
+{
+  "c24_endtoend": {
+    "n_per_condition": 512,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "lam": 1.0,
+    "eps": 1e-06,
+    "top_k": 8,
+    "n_content": 40,
+    "batch_size": 32,
+    "head_seed": 1234,
+    "bestofn_seed": 5150
+  },
+  "dataset": "c24_dataset"
+}

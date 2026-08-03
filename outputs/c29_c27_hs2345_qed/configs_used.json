@@ -1,0 +1,118 @@
+{
+  "model": {
+    "model_repo": "ibm-research/GP-MoLFormer-Uniq",
+    "model_revision": "6eca879581e2302b4e1ab07bb02908636bddb4a2",
+    "tokenizer_repo": "ibm-research/MoLFormer-XL-both-10pct",
+    "tokenizer_revision": "361063d0ad524ef77cf39b08469f6be770dc550f",
+    "trust_remote_code": true,
+    "deterministic_eval": true,
+    "dtype": "float32",
+    "device": "cuda",
+    "torch_num_threads": 10
+  },
+  "base_policy": {
+    "do_sample": true,
+    "temperature": 1.0,
+    "top_k": null,
+    "top_p": null,
+    "max_length": 202,
+    "batch_size": 256,
+    "seed": 20260729
+  },
+  "guidance": {
+    "top_k_candidates": 8,
+    "lam": 1.0,
+    "eps": 1e-06,
+    "candidate_backend": "cached",
+    "window_quantiles": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "conditions": [
+      "unguided",
+      "throughout",
+      "early",
+      "middle",
+      "late",
+      "truncation_control"
+    ],
+    "n_molecules_per_condition": 512,
+    "batch_size": 64,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "target_interval_rule": {
+      "clogp": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "aromatic_rings": {
+        "kind": "exact_value",
+        "value": 3
+      },
+      "mol_weight": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "hbd_count": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "rotatable_bonds": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "tpsa": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "qed": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      }
+    },
+    "best_of_n": {
+      "match_on": "processed_tokens_actual",
+      "also_report": "processed_tokens_full_recompute"
+    }
+  },
+  "cli": {
+    "dataset": "pilot_50k_p2",
+    "heads": "c29_c27heads_hs2345",
+    "property": "qed",
+    "n_max": 32,
+    "n_molecules": 512,
+    "seeds": null,
+    "grid": null,
+    "state_batch_size": 96,
+    "out": "c29_c27_hs2345_qed"
+  },
+  "head": {
+    "deployed_run": "/home/afloresep/Property-to-Go/outputs/pilot_50k_p2_guided_qed",
+    "head_checkpoint_name": "head_qed_frozen_state.pt",
+    "head_file": "/home/afloresep/Property-to-Go/outputs/c29_c27heads_hs2345/head_qed_frozen_state.pt",
+    "head_input": "frozen_state",
+    "layer": -1,
+    "layer_source": "05_guided_generation.py default (-1); the deployed artefact predates the C23 --layer flag and records no layer key",
+    "deployed_lambda": 1.0,
+    "deployed_hit_rate": 0.19083830274640326,
+    "deployed_tokens_per_molecule_actual": 367.271484375,
+    "head_sha256": "c3dd5ad1995df8dc55107501ff55e096b9aac1ee9f15b71de0b8bc5805eaf517",
+    "head_seed_twin": "/home/afloresep/Property-to-Go/outputs/c29_c27heads_hs2345/head_qed_frozen_state_seed2345.pt",
+    "head_seed_twin_sha256": "c3dd5ad1995df8dc55107501ff55e096b9aac1ee9f15b71de0b8bc5805eaf517",
+    "head_seed": 2345,
+    "head_input_in_checkpoint": "frozen_state",
+    "n_bins": 22,
+    "in_dim": 768,
+    "hidden_dim": 256,
+    "binner_kind": "quantile",
+    "interval_mask_n_bins_selected": 3,
+    "sha256_matches_seed_twin": true
+  }
+}

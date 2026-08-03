@@ -1,0 +1,19 @@
+{
+  "cli": {
+    "out": "c27_summary"
+  },
+  "reads": {
+    "c27_sweeps": [
+      "c27_headsel_aromatic_rings",
+      "c27_headsel_hbd_count",
+      "c27_headsel_qed"
+    ],
+    "c26_curves": [
+      "c26_nsweep_aromatic_rings",
+      "c26_nsweep_hbd_count",
+      "c26_nsweep_qed"
+    ],
+    "frontier_machinery": "scripts/21_summarise_c26.py (guidance_points, interp, t_interval)"
+  },
+  "generates": "nothing -- no molecule is sampled and no head is trained"
+}

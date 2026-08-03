@@ -1,0 +1,1038 @@
+{
+  "prereg": {
+    "prereg_file": "outputs/c24_prereg/prereg.md",
+    "sha256": "b0624eae4d6e1b92674191d0331cbece9216c4a58f87773ccf60e269a930c0dd",
+    "mtime": 1785491512.4120574,
+    "mtime_iso": "2026-07-31T11:51:52",
+    "note": "Immutable. Copied verbatim into reports/section_c24_generality.md C24.0. Its mtime must strictly precede every C24 measurement artefact.",
+    "provenance": {
+      "python": "3.12.3 (main, Jan 17 2025, 18:03:48) [GCC 13.3.0]",
+      "python_executable": "/home/afloresep/Property-to-Go/.venv/bin/python",
+      "platform": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "cpu_count": 16,
+      "torch": "2.4.1+cu121",
+      "torch_num_threads": 8,
+      "mps_available": false,
+      "cuda_available": true,
+      "transformers": "4.44.2",
+      "rdkit": "2024.03.5",
+      "numpy": "1.26.4",
+      "git_sha": "fd8abb0700abe32b5c4932df8fa8925cc4d7121a"
+    }
+  },
+  "n_attributes": 3,
+  "attributes": {
+    "digit_count": {
+      "target": {
+        "lo": 7.0,
+        "hi": 13.0,
+        "q_lo": 0.85,
+        "q_hi": 0.95,
+        "base_rate": 0.0958
+      },
+      "platt_slope": 0.8879658197037807,
+      "slope_below_one": true,
+      "auroc_delta_platt": 0.0,
+      "auroc_unchanged_platt": true,
+      "auroc_delta_isotonic": 0.0007493491367498439,
+      "ece_uncalibrated": 0.019131493763981978,
+      "ece_platt": 0.012910618161451788,
+      "ece_isotonic": 0.01004733183360169,
+      "ece_factor_platt": 1.4818418084042118,
+      "ece_factor_isotonic": 1.9041367480269502,
+      "off_policy_factor": 0.9767594108519098,
+      "on_policy_factor": 0.9743213962880652,
+      "identity": {
+        "eps0": {
+          "n": 1536,
+          "identical": 1536,
+          "identical_fraction": 1.0,
+          "hit_rate_power": 0.08658854166666667,
+          "hit_rate_lamalpha": 0.08658854166666667,
+          "hit_rate_difference": 0.0,
+          "alpha": 0.8879658197037807
+        },
+        "epsdep": {
+          "n": 1536,
+          "identical": 1535,
+          "identical_fraction": 0.9993489583333334,
+          "hit_rate_power": 0.08658854166666667,
+          "hit_rate_lamalpha": 0.08658854166666667,
+          "hit_rate_difference": 0.0,
+          "alpha": 0.8879658197037807
+        }
+      },
+      "identity_numeric": {
+        "eps_0": {
+          "lambda": 1.0,
+          "alpha": 0.8879658197037807,
+          "equivalent_lambda": 0.8879658197037807,
+          "eps": 0.0,
+          "max_abs_weight_difference": 2.220446049250313e-16,
+          "mean_abs_weight_difference": 3.1034948374218663e-18,
+          "argmax_agreement": 1.0
+        },
+        "eps_deployed": {
+          "lambda": 1.0,
+          "alpha": 0.8879658197037807,
+          "equivalent_lambda": 0.8879658197037807,
+          "eps": 1e-06,
+          "max_abs_weight_difference": 3.646457990558183e-05,
+          "mean_abs_weight_difference": 4.913830822597211e-07,
+          "argmax_agreement": 1.0
+        },
+        "min_q_candidate": 0.0004911001306027174,
+        "n_candidate_rows": 1600
+      },
+      "lift_uncalibrated": 0.07747395833333333,
+      "lift_platt": 0.06705729166666666,
+      "lift_isotonic": 0.06315104166666666,
+      "ratio_platt": 0.8655462184873949,
+      "ratio_isotonic": 0.815126050420168,
+      "best_probe_point": 2,
+      "auroc_best": 0.7979497107041894,
+      "auroc_final": 0.7693363558998737,
+      "auroc_trivial": 0.872981134636265,
+      "gain_over_final": 0.028613354804315705,
+      "peak_in_first_half": true,
+      "final_is_min_over_peak_to_end": true,
+      "bonferroni_ci_excludes_zero": true,
+      "no_isolated_spike": false,
+      "per_position_gain_final": 0.003270305009096419,
+      "per_position_gain_best": 0.0018015684129544796,
+      "per_position_relative": -0.44911303137065783,
+      "per_position_improves": false,
+      "endtoend_hit_final": 0.095703125,
+      "endtoend_hit_best": 0.06510416666666667,
+      "endtoend_lift_final": 0.07747395833333333,
+      "endtoend_lift_best": 0.046875,
+      "endtoend_depth_ratio": 0.6050420168067228,
+      "endtoend_depth_seed_interval": {
+        "mean_difference": -0.030598958333333332,
+        "sd": 0.01814760399058119,
+        "lo": -0.07568010861580336,
+        "hi": 0.014482191949136702,
+        "excludes_zero": false,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "n_seeds": 3,
+        "all_seeds_share_sign": true,
+        "sign_test_p_two_sided": 0.25,
+        "per_seed_difference": [
+          -0.015625,
+          -0.025390625,
+          -0.05078125
+        ],
+        "note": "the three-seed percentile bootstrap this replaced returned exactly [min, max] of per_seed_difference and conveyed only a sign test at p_null = 0.25; see the docstring"
+      },
+      "endtoend_depth_improves": false,
+      "unguided_hit": 0.09440104166666667,
+      "truncation_control_hit": 0.018229166666666668,
+      "truncation_effect": -0.076171875,
+      "lift_uncalibrated_vs_unguided": 0.0013020833333333287,
+      "guided_beats_truncation_control": true,
+      "guided_beats_unguided": true,
+      "best_of_n": {
+        "truncation_control": {
+          "n_candidates": 1,
+          "hit_rate": 0.107421875,
+          "advantage_guided_minus_bestofn": -0.08919270833333333,
+          "guided_tokens_per_sequence": 40.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 40.0,
+          "realised_token_ratio": 1.0
+        },
+        "throughout_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.49739583333333337,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "throughout_L2": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.5279947916666667,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "platt_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.5078125,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "isotonic_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.51171875,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_power_eps0": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.5065104166666667,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_lamalpha_eps0": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.5065104166666667,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_power_epsdep": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.5065104166666667,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_lamalpha_epsdep": {
+          "n_candidates": 9,
+          "hit_rate": 0.5930989583333334,
+          "advantage_guided_minus_bestofn": -0.5065104166666667,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        }
+      },
+      "per_seed_hit_rates": {
+        "unguided": [
+          0.08203125,
+          0.107421875,
+          0.09375
+        ],
+        "truncation_control": [
+          0.013671875,
+          0.025390625,
+          0.015625
+        ],
+        "throughout_L12": [
+          0.080078125,
+          0.103515625,
+          0.103515625
+        ],
+        "throughout_L2": [
+          0.064453125,
+          0.078125,
+          0.052734375
+        ],
+        "platt_L12": [
+          0.06640625,
+          0.09375,
+          0.095703125
+        ],
+        "isotonic_L12": [
+          0.056640625,
+          0.09375,
+          0.09375
+        ],
+        "identity_power_eps0": [
+          0.068359375,
+          0.095703125,
+          0.095703125
+        ],
+        "identity_lamalpha_eps0": [
+          0.068359375,
+          0.095703125,
+          0.095703125
+        ],
+        "identity_power_epsdep": [
+          0.068359375,
+          0.095703125,
+          0.095703125
+        ],
+        "identity_lamalpha_epsdep": [
+          0.068359375,
+          0.095703125,
+          0.095703125
+        ]
+      }
+    },
+    "upper_count": {
+      "target": {
+        "lo": 14.0,
+        "hi": 18.0,
+        "q_lo": 0.8,
+        "q_hi": 0.9,
+        "base_rate": 0.0973
+      },
+      "platt_slope": 0.7790641820585512,
+      "slope_below_one": true,
+      "auroc_delta_platt": 0.0,
+      "auroc_unchanged_platt": true,
+      "auroc_delta_isotonic": -0.0042430447732817456,
+      "ece_uncalibrated": 0.042334881003231524,
+      "ece_platt": 0.01564635242711829,
+      "ece_isotonic": 0.015144411927819837,
+      "ece_factor_platt": 2.7057348478138983,
+      "ece_factor_isotonic": 2.7954126713539535,
+      "off_policy_factor": 1.308957797379072,
+      "on_policy_factor": 1.0303504717787044,
+      "identity": {
+        "eps0": {
+          "n": 1536,
+          "identical": 1536,
+          "identical_fraction": 1.0,
+          "hit_rate_power": 0.11263020833333333,
+          "hit_rate_lamalpha": 0.11263020833333333,
+          "hit_rate_difference": 0.0,
+          "alpha": 0.7790641820585512
+        },
+        "epsdep": {
+          "n": 1536,
+          "identical": 1536,
+          "identical_fraction": 1.0,
+          "hit_rate_power": 0.11263020833333333,
+          "hit_rate_lamalpha": 0.11263020833333333,
+          "hit_rate_difference": 0.0,
+          "alpha": 0.7790641820585512
+        }
+      },
+      "identity_numeric": {
+        "eps_0": {
+          "lambda": 1.0,
+          "alpha": 0.7790641820585512,
+          "equivalent_lambda": 0.7790641820585512,
+          "eps": 0.0,
+          "max_abs_weight_difference": 2.220446049250313e-16,
+          "mean_abs_weight_difference": 3.621823943999927e-18,
+          "argmax_agreement": 1.0
+        },
+        "eps_deployed": {
+          "lambda": 1.0,
+          "alpha": 0.7790641820585512,
+          "equivalent_lambda": 0.7790641820585512,
+          "eps": 1e-06,
+          "max_abs_weight_difference": 2.2871180221484266e-05,
+          "mean_abs_weight_difference": 3.8034854838170085e-07,
+          "argmax_agreement": 1.0
+        },
+        "min_q_candidate": 0.0010525891557335854,
+        "n_candidate_rows": 1600
+      },
+      "lift_uncalibrated": 0.09440104166666666,
+      "lift_platt": 0.07291666666666667,
+      "lift_isotonic": 0.08463541666666666,
+      "ratio_platt": 0.7724137931034484,
+      "ratio_isotonic": 0.896551724137931,
+      "best_probe_point": 2,
+      "auroc_best": 0.7686409903063417,
+      "auroc_final": 0.7335759183690929,
+      "auroc_trivial": 0.8747291243674123,
+      "gain_over_final": 0.03506507193724884,
+      "peak_in_first_half": true,
+      "final_is_min_over_peak_to_end": true,
+      "bonferroni_ci_excludes_zero": true,
+      "no_isolated_spike": true,
+      "per_position_gain_final": 0.0011336836330911731,
+      "per_position_gain_best": 0.0013996376462806909,
+      "per_position_relative": 0.23459279593227503,
+      "per_position_improves": true,
+      "endtoend_hit_final": 0.13541666666666666,
+      "endtoend_hit_best": 0.12239583333333333,
+      "endtoend_lift_final": 0.09440104166666666,
+      "endtoend_lift_best": 0.08138020833333333,
+      "endtoend_depth_ratio": 0.8620689655172414,
+      "endtoend_depth_seed_interval": {
+        "mean_difference": -0.013020833333333334,
+        "sd": 0.004915256793796061,
+        "lo": -0.025231008864662834,
+        "hi": -0.0008106578020038342,
+        "excludes_zero": true,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "n_seeds": 3,
+        "all_seeds_share_sign": true,
+        "sign_test_p_two_sided": 0.25,
+        "per_seed_difference": [
+          -0.013671875,
+          -0.017578125,
+          -0.0078125
+        ],
+        "note": "the three-seed percentile bootstrap this replaced returned exactly [min, max] of per_seed_difference and conveyed only a sign test at p_null = 0.25; see the docstring"
+      },
+      "endtoend_depth_improves": false,
+      "unguided_hit": 0.078125,
+      "truncation_control_hit": 0.041015625,
+      "truncation_effect": -0.037109375,
+      "lift_uncalibrated_vs_unguided": 0.05729166666666666,
+      "guided_beats_truncation_control": true,
+      "guided_beats_unguided": true,
+      "best_of_n": {
+        "truncation_control": {
+          "n_candidates": 1,
+          "hit_rate": 0.09830729166666667,
+          "advantage_guided_minus_bestofn": -0.05729166666666667,
+          "guided_tokens_per_sequence": 40.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 40.0,
+          "realised_token_ratio": 1.0
+        },
+        "throughout_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.48697916666666674,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "throughout_L2": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.5,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "platt_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.5084635416666667,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "isotonic_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.49674479166666674,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_power_eps0": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.509765625,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_lamalpha_eps0": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.509765625,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_power_epsdep": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.509765625,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_lamalpha_epsdep": {
+          "n_candidates": 9,
+          "hit_rate": 0.6223958333333334,
+          "advantage_guided_minus_bestofn": -0.509765625,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        }
+      },
+      "per_seed_hit_rates": {
+        "unguided": [
+          0.05078125,
+          0.099609375,
+          0.083984375
+        ],
+        "truncation_control": [
+          0.03515625,
+          0.029296875,
+          0.05859375
+        ],
+        "throughout_L12": [
+          0.130859375,
+          0.154296875,
+          0.12109375
+        ],
+        "throughout_L2": [
+          0.1171875,
+          0.13671875,
+          0.11328125
+        ],
+        "platt_L12": [
+          0.11328125,
+          0.109375,
+          0.119140625
+        ],
+        "isotonic_L12": [
+          0.125,
+          0.1171875,
+          0.134765625
+        ],
+        "identity_power_eps0": [
+          0.10546875,
+          0.119140625,
+          0.11328125
+        ],
+        "identity_lamalpha_eps0": [
+          0.10546875,
+          0.119140625,
+          0.11328125
+        ],
+        "identity_power_epsdep": [
+          0.10546875,
+          0.119140625,
+          0.11328125
+        ],
+        "identity_lamalpha_epsdep": [
+          0.10546875,
+          0.119140625,
+          0.11328125
+        ]
+      }
+    },
+    "mean_word_length": {
+      "target": {
+        "lo": 5.592592592592593,
+        "hi": 5.928571428571429,
+        "q_lo": 0.75,
+        "q_hi": 0.85,
+        "base_rate": 0.1
+      },
+      "platt_slope": 1.6154004974961085,
+      "slope_below_one": false,
+      "auroc_delta_platt": 0.0,
+      "auroc_unchanged_platt": true,
+      "auroc_delta_isotonic": -0.00025072638425727156,
+      "ece_uncalibrated": 0.08432006803542166,
+      "ece_platt": 0.019305691720100285,
+      "ece_isotonic": 0.018758414619990532,
+      "ece_factor_platt": 4.367627394963067,
+      "ece_factor_isotonic": 4.495053006535167,
+      "off_policy_factor": 0.353666096304707,
+      "on_policy_factor": 1.010694973817008,
+      "identity": {
+        "eps0": {
+          "n": 1536,
+          "identical": 1536,
+          "identical_fraction": 1.0,
+          "hit_rate_power": 0.050130208333333336,
+          "hit_rate_lamalpha": 0.050130208333333336,
+          "hit_rate_difference": 0.0,
+          "alpha": 1.6154004974961085
+        },
+        "epsdep": {
+          "n": 1536,
+          "identical": 1536,
+          "identical_fraction": 1.0,
+          "hit_rate_power": 0.050130208333333336,
+          "hit_rate_lamalpha": 0.050130208333333336,
+          "hit_rate_difference": 0.0,
+          "alpha": 1.6154004974961085
+        }
+      },
+      "identity_numeric": {
+        "eps_0": {
+          "lambda": 1.0,
+          "alpha": 1.6154004974961085,
+          "equivalent_lambda": 1.6154004974961085,
+          "eps": 0.0,
+          "max_abs_weight_difference": 2.220446049250313e-16,
+          "mean_abs_weight_difference": 2.037154472211587e-18,
+          "argmax_agreement": 1.0
+        },
+        "eps_deployed": {
+          "lambda": 1.0,
+          "alpha": 1.6154004974961085,
+          "equivalent_lambda": 1.6154004974961085,
+          "eps": 1e-06,
+          "max_abs_weight_difference": 0.00020274534385733567,
+          "mean_abs_weight_difference": 2.6880132049858574e-06,
+          "argmax_agreement": 1.0
+        },
+        "min_q_candidate": 0.0024757906794548035,
+        "n_candidate_rows": 1600
+      },
+      "lift_uncalibrated": 0.02018229166666667,
+      "lift_platt": 0.040364583333333336,
+      "lift_isotonic": 0.0390625,
+      "ratio_platt": 1.9999999999999996,
+      "ratio_isotonic": 1.9354838709677415,
+      "best_probe_point": 2,
+      "auroc_best": 0.6857316251462021,
+      "auroc_final": 0.6477714533386822,
+      "auroc_trivial": 0.7941105495316823,
+      "gain_over_final": 0.03796017180751987,
+      "peak_in_first_half": true,
+      "final_is_min_over_peak_to_end": true,
+      "bonferroni_ci_excludes_zero": true,
+      "no_isolated_spike": true,
+      "per_position_gain_final": 0.0005810546842416192,
+      "per_position_gain_best": 0.0012932044857465463,
+      "per_position_relative": 1.2256157997149797,
+      "per_position_improves": true,
+      "endtoend_hit_final": 0.034505208333333336,
+      "endtoend_hit_best": 0.052083333333333336,
+      "endtoend_lift_final": 0.02018229166666667,
+      "endtoend_lift_best": 0.03776041666666667,
+      "endtoend_depth_ratio": 1.8709677419354838,
+      "endtoend_depth_seed_interval": {
+        "mean_difference": 0.017578125,
+        "sd": 0.01014873520059889,
+        "lo": -0.007632732421875003,
+        "hi": 0.042788982421875,
+        "excludes_zero": false,
+        "interval": "Student t, 2 df, t_crit=4.302653",
+        "n_seeds": 3,
+        "all_seeds_share_sign": true,
+        "sign_test_p_two_sided": 0.25,
+        "per_seed_difference": [
+          0.005859375,
+          0.0234375,
+          0.0234375
+        ],
+        "note": "the three-seed percentile bootstrap this replaced returned exactly [min, max] of per_seed_difference and conveyed only a sign test at p_null = 0.25; see the docstring"
+      },
+      "endtoend_depth_improves": false,
+      "unguided_hit": 0.10026041666666667,
+      "truncation_control_hit": 0.014322916666666666,
+      "truncation_effect": -0.0859375,
+      "lift_uncalibrated_vs_unguided": -0.06575520833333334,
+      "guided_beats_truncation_control": true,
+      "guided_beats_unguided": false,
+      "best_of_n": {
+        "truncation_control": {
+          "n_candidates": 1,
+          "hit_rate": 0.099609375,
+          "advantage_guided_minus_bestofn": -0.08528645833333333,
+          "guided_tokens_per_sequence": 40.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 40.0,
+          "realised_token_ratio": 1.0
+        },
+        "throughout_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5813802083333333,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "throughout_L2": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5638020833333333,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "platt_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5611979166666666,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "isotonic_L12": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5625,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_power_eps0": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5657552083333333,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_lamalpha_eps0": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5657552083333333,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_power_epsdep": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5657552083333333,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        },
+        "identity_lamalpha_epsdep": {
+          "n_candidates": 9,
+          "hit_rate": 0.6158854166666666,
+          "advantage_guided_minus_bestofn": -0.5657552083333333,
+          "guided_tokens_per_sequence": 360.0,
+          "base_tokens_per_sequence": 40.0,
+          "bestofn_tokens_per_sequence": 360.0,
+          "realised_token_ratio": 1.0
+        }
+      },
+      "per_seed_hit_rates": {
+        "unguided": [
+          0.107421875,
+          0.103515625,
+          0.08984375
+        ],
+        "truncation_control": [
+          0.015625,
+          0.013671875,
+          0.013671875
+        ],
+        "throughout_L12": [
+          0.044921875,
+          0.02734375,
+          0.03125
+        ],
+        "throughout_L2": [
+          0.05078125,
+          0.05078125,
+          0.0546875
+        ],
+        "platt_L12": [
+          0.06640625,
+          0.0546875,
+          0.04296875
+        ],
+        "isotonic_L12": [
+          0.056640625,
+          0.060546875,
+          0.04296875
+        ],
+        "identity_power_eps0": [
+          0.056640625,
+          0.05078125,
+          0.04296875
+        ],
+        "identity_lamalpha_eps0": [
+          0.056640625,
+          0.05078125,
+          0.04296875
+        ],
+        "identity_power_epsdep": [
+          0.056640625,
+          0.05078125,
+          0.04296875
+        ],
+        "identity_lamalpha_epsdep": [
+          0.056640625,
+          0.05078125,
+          0.04296875
+        ]
+      }
+    }
+  },
+  "claim_1_calibration": {
+    "1a_all_platt_slopes_below_one": false,
+    "1a_slopes": {
+      "digit_count": 0.8879658197037807,
+      "upper_count": 0.7790641820585512,
+      "mean_word_length": 1.6154004974961085
+    },
+    "1b_auroc_unchanged_platt": true,
+    "1b_deltas": {
+      "digit_count": 0.0,
+      "upper_count": 0.0,
+      "mean_word_length": 0.0
+    },
+    "1c_ece_halved_by_both": false,
+    "1c_factors": {
+      "digit_count": [
+        1.4818418084042118,
+        1.9041367480269502
+      ],
+      "upper_count": [
+        2.7057348478138983,
+        2.7954126713539535
+      ],
+      "mean_word_length": [
+        4.367627394963067,
+        4.495053006535167
+      ]
+    },
+    "1d_identity_exact_at_eps0": true,
+    "1d_identical_fractions": {
+      "digit_count": 1.0,
+      "upper_count": 1.0,
+      "mean_word_length": 1.0
+    },
+    "1d_hit_rate_differences": {
+      "digit_count": 0.0,
+      "upper_count": 0.0,
+      "mean_word_length": 0.0
+    },
+    "1e_platt_below_one_count": 2,
+    "1e_isotonic_below_one_count": 2,
+    "1e_ratios_platt": {
+      "digit_count": 0.8655462184873949,
+      "upper_count": 0.7724137931034484,
+      "mean_word_length": 1.9999999999999996
+    },
+    "1e_ratios_isotonic": {
+      "digit_count": 0.815126050420168,
+      "upper_count": 0.896551724137931,
+      "mean_word_length": 1.9354838709677415
+    },
+    "1e_holds": true,
+    "VERDICT": "FAILS TO REPLICATE"
+  },
+  "claim_2_depth": {
+    "2a_peak_in_first_half_count": 3,
+    "2a_no_attribute_peaks_at_final": true,
+    "2a_holds": true,
+    "2a_best_probe_points": {
+      "digit_count": 2,
+      "upper_count": 2,
+      "mean_word_length": 2
+    },
+    "2b_final_is_min_after_peak_all": true,
+    "2c_per_position_improves_count": 2,
+    "2c_median_relative": 0.23459279593227503,
+    "2c_verdict": "NOT MATERIAL",
+    "2c_matches_prediction_not_material": true,
+    "2d_endtoend_improves_count": 0,
+    "2d_verdict": "NOT POSITIVE",
+    "2d_ratios": {
+      "digit_count": 0.6050420168067228,
+      "upper_count": 0.8620689655172414,
+      "mean_word_length": 1.8709677419354838
+    },
+    "2e_cell": [
+      "NOT MATERIAL",
+      "NOT POSITIVE"
+    ],
+    "2e_VERDICT": "NO DIVERGENCE - both say the layer does not help; Claim 2's methodological half FAILS TO REPLICATE"
+  },
+  "sanity_C24_0_10": {
+    "attributes_surviving_base_rate_gate": 3,
+    "max_auroc_any_layer": {
+      "digit_count": 0.7979497107041894,
+      "upper_count": 0.7686409903063417,
+      "mean_word_length": 0.6857316251462021
+    },
+    "guided_beats_truncation_control_all": true,
+    "guided_beats_unguided_any": true,
+    "guided_beats_unguided_all": false,
+    "truncation_effect": {
+      "digit_count": -0.076171875,
+      "upper_count": -0.037109375,
+      "mean_word_length": -0.0859375
+    }
+  },
+  "best_of_n": {
+    "digit_count": {
+      "truncation_control": {
+        "n_candidates": 1,
+        "hit_rate": 0.107421875,
+        "advantage": -0.08919270833333333,
+        "realised_token_ratio": 1.0
+      },
+      "throughout_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.49739583333333337,
+        "realised_token_ratio": 1.0
+      },
+      "throughout_L2": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.5279947916666667,
+        "realised_token_ratio": 1.0
+      },
+      "platt_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.5078125,
+        "realised_token_ratio": 1.0
+      },
+      "isotonic_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.51171875,
+        "realised_token_ratio": 1.0
+      },
+      "identity_power_eps0": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.5065104166666667,
+        "realised_token_ratio": 1.0
+      },
+      "identity_lamalpha_eps0": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.5065104166666667,
+        "realised_token_ratio": 1.0
+      },
+      "identity_power_epsdep": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.5065104166666667,
+        "realised_token_ratio": 1.0
+      },
+      "identity_lamalpha_epsdep": {
+        "n_candidates": 9,
+        "hit_rate": 0.5930989583333334,
+        "advantage": -0.5065104166666667,
+        "realised_token_ratio": 1.0
+      }
+    },
+    "upper_count": {
+      "truncation_control": {
+        "n_candidates": 1,
+        "hit_rate": 0.09830729166666667,
+        "advantage": -0.05729166666666667,
+        "realised_token_ratio": 1.0
+      },
+      "throughout_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.48697916666666674,
+        "realised_token_ratio": 1.0
+      },
+      "throughout_L2": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.5,
+        "realised_token_ratio": 1.0
+      },
+      "platt_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.5084635416666667,
+        "realised_token_ratio": 1.0
+      },
+      "isotonic_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.49674479166666674,
+        "realised_token_ratio": 1.0
+      },
+      "identity_power_eps0": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.509765625,
+        "realised_token_ratio": 1.0
+      },
+      "identity_lamalpha_eps0": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.509765625,
+        "realised_token_ratio": 1.0
+      },
+      "identity_power_epsdep": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.509765625,
+        "realised_token_ratio": 1.0
+      },
+      "identity_lamalpha_epsdep": {
+        "n_candidates": 9,
+        "hit_rate": 0.6223958333333334,
+        "advantage": -0.509765625,
+        "realised_token_ratio": 1.0
+      }
+    },
+    "mean_word_length": {
+      "truncation_control": {
+        "n_candidates": 1,
+        "hit_rate": 0.099609375,
+        "advantage": -0.08528645833333333,
+        "realised_token_ratio": 1.0
+      },
+      "throughout_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5813802083333333,
+        "realised_token_ratio": 1.0
+      },
+      "throughout_L2": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5638020833333333,
+        "realised_token_ratio": 1.0
+      },
+      "platt_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5611979166666666,
+        "realised_token_ratio": 1.0
+      },
+      "isotonic_L12": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5625,
+        "realised_token_ratio": 1.0
+      },
+      "identity_power_eps0": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5657552083333333,
+        "realised_token_ratio": 1.0
+      },
+      "identity_lamalpha_eps0": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5657552083333333,
+        "realised_token_ratio": 1.0
+      },
+      "identity_power_epsdep": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5657552083333333,
+        "realised_token_ratio": 1.0
+      },
+      "identity_lamalpha_epsdep": {
+        "n_candidates": 9,
+        "hit_rate": 0.6158854166666666,
+        "advantage": -0.5657552083333333,
+        "realised_token_ratio": 1.0
+      }
+    }
+  },
+  "any_arm_anywhere_beats_compute_matched_best_of_n": false,
+  "processed_tokens": {
+    "dataset": 1620000,
+    "steering": 3082172,
+    "calibration": 2420748,
+    "endtoend": 13639680,
+    "total": 20762600
+  }
+}

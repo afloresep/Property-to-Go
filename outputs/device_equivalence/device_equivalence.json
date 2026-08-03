@@ -1,0 +1,84 @@
+{
+  "primary_device": "cuda",
+  "secondary_device": "cpu",
+  "dtype": "float32",
+  "model_revision": "6eca879581e2302b4e1ab07bb02908636bddb4a2",
+  "weights_identical": true,
+  "n_parameters": 46781184,
+  "deterministic_eval": true,
+  "top_k": 8,
+  "forward_pass": {
+    "per_prefix": [
+      {
+        "prefix": "CCOc1ccccc1",
+        "max_abs_logit_difference": 7.152557373046875e-06,
+        "max_abs_logprob_difference": 8.58306884765625e-06,
+        "top_k_candidate_sets_identical": true,
+        "top_k_logprob_max_difference": 2.86102294921875e-06
+      },
+      {
+        "prefix": "CC(=O)Nc1ccc(O)cc1",
+        "max_abs_logit_difference": 1.1444091796875e-05,
+        "max_abs_logprob_difference": 1.239776611328125e-05,
+        "top_k_candidate_sets_identical": true,
+        "top_k_logprob_max_difference": 2.384185791015625e-06
+      },
+      {
+        "prefix": "c1ccc2[nH]ccc2c1",
+        "max_abs_logit_difference": 1.3589859008789062e-05,
+        "max_abs_logprob_difference": 1.4781951904296875e-05,
+        "top_k_candidate_sets_identical": true,
+        "top_k_logprob_max_difference": 1.4781951904296875e-05
+      },
+      {
+        "prefix": "CN1CCN(CC1)c1ncnc2[nH]ccc12",
+        "max_abs_logit_difference": 1.33514404296875e-05,
+        "max_abs_logprob_difference": 1.52587890625e-05,
+        "top_k_candidate_sets_identical": true,
+        "top_k_logprob_max_difference": 7.152557373046875e-06
+      }
+    ],
+    "max_abs_logit_difference": 1.3589859008789062e-05,
+    "all_top_k_candidate_sets_identical": true
+  },
+  "sampling": {
+    "seed": 20260729,
+    "n_molecules": 64,
+    "n_identical_token_sequences": 0,
+    "fraction_identical": 0.0,
+    "primary": {
+      "n": 64,
+      "validity": 1.0,
+      "clogp_mean": 2.6990409375000013,
+      "aromatic_rings_mean": 1.6875,
+      "content_length_mean": 41.546875
+    },
+    "secondary": {
+      "n": 64,
+      "validity": 1.0,
+      "clogp_mean": 2.742479062500001,
+      "aromatic_rings_mean": 1.796875,
+      "content_length_mean": 41.1875
+    },
+    "same_device_same_seed_identical": true
+  },
+  "timing_reproducibility": {
+    "workload": "64 unconditional molecules at seed 20260729",
+    "repeats": 3,
+    "wall_seconds": [
+      0.792594482190907,
+      0.8100451249629259,
+      0.8370166346430779
+    ],
+    "wall_seconds_mean": 0.8132187472656369,
+    "wall_seconds_relative_spread": 0.05462509638585644,
+    "processed_tokens": [
+      2787,
+      2787,
+      2787
+    ],
+    "processed_tokens_identical": true
+  },
+  "verdict": "numerics agree to float32 tolerance and the top-k candidate set guided decoding consumes is identical on both devices; the same seed nonetheless draws different molecules, because torch.multinomial on a CUDA tensor uses the CUDA Philox generator rather than the CPU Mersenne Twister. The base policy is unchanged, the sample is not.",
+  "wall_seconds_total": 15.482727353461087
+}

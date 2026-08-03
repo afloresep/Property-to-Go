@@ -1,0 +1,25 @@
+{
+  "c24_dataset": {
+    "n_sequences": 20000,
+    "n_content": 40,
+    "temperature": 1.0,
+    "prefixes_per_sequence": 4,
+    "generation_seed": 20240001,
+    "prefix_seed": 12,
+    "split_seed": 11,
+    "split_fractions": {
+      "train": 0.8,
+      "val": 0.1,
+      "test": 0.1
+    },
+    "batch_size": 256,
+    "state_batch_size": 128,
+    "target_rate": 0.1,
+    "base_rate_gate": [
+      0.05,
+      0.2
+    ],
+    "continuous_n_bins": 20,
+    "count_cap_quantile": 0.995
+  }
+}

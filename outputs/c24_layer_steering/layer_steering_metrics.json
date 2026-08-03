@@ -1,0 +1,387 @@
+{
+  "config": {
+    "n_prefixes": 300,
+    "top_k": 8,
+    "n_rollouts": 32,
+    "rollout_seed": 7777,
+    "prefix_sample_seed": 7778,
+    "lam": 1.0,
+    "eps": 1e-06,
+    "head_seed": 1234
+  },
+  "n_prefixes": 300,
+  "attributes": {
+    "digit_count": {
+      "target": {
+        "lo": 7.0,
+        "hi": 13.0,
+        "q_lo": 0.85,
+        "q_hi": 0.95,
+        "base_rate": 0.0958
+      },
+      "base_value": 0.11047313285208832,
+      "oracle_head_value": 0.13416637170196885,
+      "oracle_head_gain": 0.023693238849880532,
+      "hard_ceiling_value": 0.1728125,
+      "hard_ceiling_gain": 0.06233936714791169,
+      "mean_p_hit": 0.11014322916666666,
+      "per_probe_point": {
+        "0": {
+          "our_head_value": 0.11208353325803048,
+          "our_head_gain": 0.0016104004059421667,
+          "share_of_oracle_gain": 0.06796877438941983,
+          "mean_q": 0.09003669768571854,
+          "q_spread_mean": 0.07852116972208023,
+          "picks_the_best_candidate_rate": 0.17666666666666667
+        },
+        "1": {
+          "our_head_value": 0.11219149190211387,
+          "our_head_gain": 0.0017183590500255558,
+          "share_of_oracle_gain": 0.07252529132521787,
+          "mean_q": 0.09079111367464066,
+          "q_spread_mean": 0.1095556989312172,
+          "picks_the_best_candidate_rate": 0.13333333333333333
+        },
+        "2": {
+          "our_head_value": 0.1122747012650428,
+          "our_head_gain": 0.0018015684129544796,
+          "share_of_oracle_gain": 0.0760372367986137,
+          "mean_q": 0.0881321057677269,
+          "q_spread_mean": 0.10080870240926743,
+          "picks_the_best_candidate_rate": 0.15
+        },
+        "3": {
+          "our_head_value": 0.11284388385749151,
+          "our_head_gain": 0.002370751005403196,
+          "share_of_oracle_gain": 0.10006023323464491,
+          "mean_q": 0.08684377372264862,
+          "q_spread_mean": 0.0919918641448021,
+          "picks_the_best_candidate_rate": 0.15333333333333332
+        },
+        "4": {
+          "our_head_value": 0.11257997044177273,
+          "our_head_gain": 0.0021068375896844127,
+          "share_of_oracle_gain": 0.08892146840004679,
+          "mean_q": 0.08630809932947159,
+          "q_spread_mean": 0.09068085998296738,
+          "picks_the_best_candidate_rate": 0.15
+        },
+        "5": {
+          "our_head_value": 0.11284618366587724,
+          "our_head_gain": 0.0023730508137889267,
+          "share_of_oracle_gain": 0.10015729925420865,
+          "mean_q": 0.0867038443684578,
+          "q_spread_mean": 0.08807767182588577,
+          "picks_the_best_candidate_rate": 0.18666666666666668
+        },
+        "6": {
+          "our_head_value": 0.11309357684364833,
+          "our_head_gain": 0.0026204439915600147,
+          "share_of_oracle_gain": 0.11059880872189104,
+          "mean_q": 0.08943475782871246,
+          "q_spread_mean": 0.08864627778530121,
+          "picks_the_best_candidate_rate": 0.17
+        },
+        "7": {
+          "our_head_value": 0.11346707304489935,
+          "our_head_gain": 0.0029939401928110315,
+          "share_of_oracle_gain": 0.12636263922296667,
+          "mean_q": 0.08905086666345596,
+          "q_spread_mean": 0.08961202949285507,
+          "picks_the_best_candidate_rate": 0.20333333333333334
+        },
+        "8": {
+          "our_head_value": 0.11404202388396226,
+          "our_head_gain": 0.0035688910318739386,
+          "share_of_oracle_gain": 0.1506290910451837,
+          "mean_q": 0.08765610307455063,
+          "q_spread_mean": 0.09124168008565903,
+          "picks_the_best_candidate_rate": 0.16666666666666666
+        },
+        "9": {
+          "our_head_value": 0.11382444629649467,
+          "our_head_gain": 0.0033513134444063536,
+          "share_of_oracle_gain": 0.14144598235978412,
+          "mean_q": 0.08719430863857269,
+          "q_spread_mean": 0.0893804281949997,
+          "picks_the_best_candidate_rate": 0.20666666666666667
+        },
+        "10": {
+          "our_head_value": 0.11386900875850647,
+          "our_head_gain": 0.0033958759064181554,
+          "share_of_oracle_gain": 0.14332679157688388,
+          "mean_q": 0.08943742513656616,
+          "q_spread_mean": 0.09315765649080276,
+          "picks_the_best_candidate_rate": 0.19
+        },
+        "11": {
+          "our_head_value": 0.11398741316136948,
+          "our_head_gain": 0.0035142803092811647,
+          "share_of_oracle_gain": 0.14832418360138572,
+          "mean_q": 0.08979257196187973,
+          "q_spread_mean": 0.09741369634866714,
+          "picks_the_best_candidate_rate": 0.16666666666666666
+        },
+        "12": {
+          "our_head_value": 0.11374343786118474,
+          "our_head_gain": 0.003270305009096419,
+          "share_of_oracle_gain": 0.1380269295311185,
+          "mean_q": 0.09075456112623215,
+          "q_spread_mean": 0.1011112853884697,
+          "picks_the_best_candidate_rate": 0.18666666666666668
+        }
+      }
+    },
+    "upper_count": {
+      "target": {
+        "lo": 14.0,
+        "hi": 18.0,
+        "q_lo": 0.8,
+        "q_hi": 0.9,
+        "base_rate": 0.0973
+      },
+      "base_value": 0.09995152787544657,
+      "oracle_head_value": 0.12529770945425828,
+      "oracle_head_gain": 0.025346181578811702,
+      "hard_ceiling_value": 0.16541666666666666,
+      "hard_ceiling_gain": 0.06546513879122008,
+      "mean_p_hit": 0.09727864583333333,
+      "per_probe_point": {
+        "0": {
+          "our_head_value": 0.10137028486168444,
+          "our_head_gain": 0.0014187569862378624,
+          "share_of_oracle_gain": 0.055975176451189046,
+          "mean_q": 0.10196007043123245,
+          "q_spread_mean": 0.07482075691223145,
+          "picks_the_best_candidate_rate": 0.15666666666666668
+        },
+        "1": {
+          "our_head_value": 0.10170346045818635,
+          "our_head_gain": 0.0017519325827397708,
+          "share_of_oracle_gain": 0.06912017801546524,
+          "mean_q": 0.08506058901548386,
+          "q_spread_mean": 0.08851942420005798,
+          "picks_the_best_candidate_rate": 0.16
+        },
+        "2": {
+          "our_head_value": 0.10135116552172727,
+          "our_head_gain": 0.0013996376462806909,
+          "share_of_oracle_gain": 0.05522084823422581,
+          "mean_q": 0.08511897921562195,
+          "q_spread_mean": 0.08230747282505035,
+          "picks_the_best_candidate_rate": 0.18
+        },
+        "3": {
+          "our_head_value": 0.1017577470330444,
+          "our_head_gain": 0.0018062191575978215,
+          "share_of_oracle_gain": 0.07126198287428595,
+          "mean_q": 0.08714056760072708,
+          "q_spread_mean": 0.0829131156206131,
+          "picks_the_best_candidate_rate": 0.15333333333333332
+        },
+        "4": {
+          "our_head_value": 0.10214150848489437,
+          "our_head_gain": 0.002189980609447792,
+          "share_of_oracle_gain": 0.08640278231410288,
+          "mean_q": 0.08818725496530533,
+          "q_spread_mean": 0.08185624331235886,
+          "picks_the_best_candidate_rate": 0.17
+        },
+        "5": {
+          "our_head_value": 0.1024060922260106,
+          "our_head_gain": 0.0024545643505640286,
+          "share_of_oracle_gain": 0.09684158313676475,
+          "mean_q": 0.09091968834400177,
+          "q_spread_mean": 0.08242078125476837,
+          "picks_the_best_candidate_rate": 0.18
+        },
+        "6": {
+          "our_head_value": 0.10220526830421889,
+          "our_head_gain": 0.0022537404287723134,
+          "share_of_oracle_gain": 0.08891834147737432,
+          "mean_q": 0.0895940363407135,
+          "q_spread_mean": 0.08153197169303894,
+          "picks_the_best_candidate_rate": 0.19666666666666666
+        },
+        "7": {
+          "our_head_value": 0.1020375867313843,
+          "our_head_gain": 0.0020860588559377252,
+          "share_of_oracle_gain": 0.08230268726874343,
+          "mean_q": 0.08606727421283722,
+          "q_spread_mean": 0.0793430358171463,
+          "picks_the_best_candidate_rate": 0.2
+        },
+        "8": {
+          "our_head_value": 0.10194462782216811,
+          "our_head_gain": 0.0019930999467215327,
+          "share_of_oracle_gain": 0.07863511671468798,
+          "mean_q": 0.08592914789915085,
+          "q_spread_mean": 0.07934459298849106,
+          "picks_the_best_candidate_rate": 0.17333333333333334
+        },
+        "9": {
+          "our_head_value": 0.10129996388914116,
+          "our_head_gain": 0.0013484360136945817,
+          "share_of_oracle_gain": 0.05320075568391789,
+          "mean_q": 0.08856841921806335,
+          "q_spread_mean": 0.0845787525177002,
+          "picks_the_best_candidate_rate": 0.18
+        },
+        "10": {
+          "our_head_value": 0.10112784122234277,
+          "our_head_gain": 0.0011763133468961906,
+          "share_of_oracle_gain": 0.0464098839992347,
+          "mean_q": 0.08793811500072479,
+          "q_spread_mean": 0.08383125066757202,
+          "picks_the_best_candidate_rate": 0.17333333333333334
+        },
+        "11": {
+          "our_head_value": 0.10114908965159099,
+          "our_head_gain": 0.0011975617761444124,
+          "share_of_oracle_gain": 0.047248212612250894,
+          "mean_q": 0.08753351867198944,
+          "q_spread_mean": 0.08777408301830292,
+          "picks_the_best_candidate_rate": 0.17666666666666667
+        },
+        "12": {
+          "our_head_value": 0.10108521150853775,
+          "our_head_gain": 0.0011336836330911731,
+          "share_of_oracle_gain": 0.04472798514309086,
+          "mean_q": 0.08920171111822128,
+          "q_spread_mean": 0.09221954643726349,
+          "picks_the_best_candidate_rate": 0.18666666666666668
+        }
+      }
+    },
+    "mean_word_length": {
+      "target": {
+        "lo": 5.592592592592593,
+        "hi": 5.928571428571429,
+        "q_lo": 0.75,
+        "q_hi": 0.85,
+        "base_rate": 0.1
+      },
+      "base_value": 0.09755490647521348,
+      "oracle_head_value": 0.11923163732315235,
+      "oracle_head_gain": 0.021676730847938877,
+      "hard_ceiling_value": 0.17197916666666666,
+      "hard_ceiling_gain": 0.07442426019145318,
+      "mean_p_hit": 0.09723958333333334,
+      "per_probe_point": {
+        "0": {
+          "our_head_value": 0.09828352542921598,
+          "our_head_gain": 0.0007286189540025023,
+          "share_of_oracle_gain": 0.03361295386807752,
+          "mean_q": 0.09466098994016647,
+          "q_spread_mean": 0.05540553480386734,
+          "picks_the_best_candidate_rate": 0.15666666666666668
+        },
+        "1": {
+          "our_head_value": 0.0989088317142766,
+          "our_head_gain": 0.0013539252390631223,
+          "share_of_oracle_gain": 0.062459844547632044,
+          "mean_q": 0.09915068000555038,
+          "q_spread_mean": 0.09096205979585648,
+          "picks_the_best_candidate_rate": 0.15
+        },
+        "2": {
+          "our_head_value": 0.09884811096096002,
+          "our_head_gain": 0.0012932044857465463,
+          "share_of_oracle_gain": 0.059658649397748564,
+          "mean_q": 0.10211461037397385,
+          "q_spread_mean": 0.08439523726701736,
+          "picks_the_best_candidate_rate": 0.16
+        },
+        "3": {
+          "our_head_value": 0.09874113567786846,
+          "our_head_gain": 0.001186229202654987,
+          "share_of_oracle_gain": 0.05472362096371092,
+          "mean_q": 0.09613530337810516,
+          "q_spread_mean": 0.06123582273721695,
+          "picks_the_best_candidate_rate": 0.15333333333333332
+        },
+        "4": {
+          "our_head_value": 0.09868087935838334,
+          "our_head_gain": 0.0011259728831698596,
+          "share_of_oracle_gain": 0.051943851269294246,
+          "mean_q": 0.09703356772661209,
+          "q_spread_mean": 0.062242597341537476,
+          "picks_the_best_candidate_rate": 0.16
+        },
+        "5": {
+          "our_head_value": 0.09870968180079816,
+          "our_head_gain": 0.001154775325584681,
+          "share_of_oracle_gain": 0.053272577571100044,
+          "mean_q": 0.09849923104047775,
+          "q_spread_mean": 0.06172620877623558,
+          "picks_the_best_candidate_rate": 0.18
+        },
+        "6": {
+          "our_head_value": 0.09869394359834352,
+          "our_head_gain": 0.0011390371231300433,
+          "share_of_oracle_gain": 0.05254653624295696,
+          "mean_q": 0.09771797060966492,
+          "q_spread_mean": 0.05933500453829765,
+          "picks_the_best_candidate_rate": 0.18
+        },
+        "7": {
+          "our_head_value": 0.09873404058572938,
+          "our_head_gain": 0.0011791341105159003,
+          "share_of_oracle_gain": 0.054396307210135324,
+          "mean_q": 0.09680142998695374,
+          "q_spread_mean": 0.05693564563989639,
+          "picks_the_best_candidate_rate": 0.16666666666666666
+        },
+        "8": {
+          "our_head_value": 0.09848805496292125,
+          "our_head_gain": 0.0009331484877077717,
+          "share_of_oracle_gain": 0.043048395731522394,
+          "mean_q": 0.0972662940621376,
+          "q_spread_mean": 0.05914454162120819,
+          "picks_the_best_candidate_rate": 0.14666666666666667
+        },
+        "9": {
+          "our_head_value": 0.09821543525686095,
+          "our_head_gain": 0.0006605287816474764,
+          "share_of_oracle_gain": 0.030471789601534058,
+          "mean_q": 0.09695325046777725,
+          "q_spread_mean": 0.06119696423411369,
+          "picks_the_best_candidate_rate": 0.16666666666666666
+        },
+        "10": {
+          "our_head_value": 0.09827575404346366,
+          "our_head_gain": 0.0007208475682501797,
+          "share_of_oracle_gain": 0.03325444105510593,
+          "mean_q": 0.0965752899646759,
+          "q_spread_mean": 0.06309723109006882,
+          "picks_the_best_candidate_rate": 0.15333333333333332
+        },
+        "11": {
+          "our_head_value": 0.09818122024322247,
+          "our_head_gain": 0.0006263137680089931,
+          "share_of_oracle_gain": 0.028893368303668624,
+          "mean_q": 0.09763001650571823,
+          "q_spread_mean": 0.06516407430171967,
+          "picks_the_best_candidate_rate": 0.17666666666666667
+        },
+        "12": {
+          "our_head_value": 0.0981359611594551,
+          "our_head_gain": 0.0005810546842416192,
+          "share_of_oracle_gain": 0.02680545735045045,
+          "mean_q": 0.09621123969554901,
+          "q_spread_mean": 0.062243301421403885,
+          "picks_the_best_candidate_rate": 0.14333333333333334
+        }
+      }
+    }
+  },
+  "compute": {
+    "processed_tokens_actual": 3082172,
+    "processed_tokens_full_recompute": 3132060,
+    "forward_calls": 3131,
+    "wall_seconds": 134.273313799873,
+    "molecules_returned": 76800,
+    "tokens_per_molecule_actual": 40.13244791666666,
+    "tokens_per_molecule_full_recompute": 40.78203125
+  }
+}

@@ -31,8 +31,9 @@ def fig_dir(dataset: str) -> Path:
     return d
 
 
-def predictability_from_heads(dataset: str, out: Path) -> list[str]:
-    path = OUTPUT_DIR / f"{dataset}_heads" / "head_metrics.json"
+def predictability_from_heads(dataset: str, out: Path,
+                             heads: str | None = None) -> list[str]:
+    path = OUTPUT_DIR / (heads or f"{dataset}_heads") / "head_metrics.json"
     if not path.exists():
         return [f"skip: {path} missing"]
     r = read_json(path)
@@ -61,8 +62,9 @@ def predictability_from_heads(dataset: str, out: Path) -> list[str]:
     return made
 
 
-def predictability_from_rollouts(dataset: str, out: Path) -> list[str]:
-    path = OUTPUT_DIR / f"{dataset}_rollouts" / "rollout_metrics.json"
+def predictability_from_rollouts(dataset: str, out: Path,
+                                rollouts: str | None = None) -> list[str]:
+    path = OUTPUT_DIR / (rollouts or f"{dataset}_rollouts") / "rollout_metrics.json"
     if not path.exists():
         return [f"skip: {path} missing"]
     r = read_json(path)
@@ -107,10 +109,11 @@ def predictability_from_rollouts(dataset: str, out: Path) -> list[str]:
     return made
 
 
-def intervention(dataset: str, out: Path) -> list[str]:
+def intervention(dataset: str, out: Path, guided: str = "guided",
+                 heads: str | None = None) -> list[str]:
     made = []
     for prop in ALL_PROPERTIES:
-        path = OUTPUT_DIR / f"{dataset}_guided_{prop}" / "guidance_metrics.json"
+        path = OUTPUT_DIR / f"{dataset}_{guided}_{prop}" / "guidance_metrics.json"
         if not path.exists():
             made.append(f"skip: {path.name} for {prop} missing")
             continue
@@ -151,7 +154,7 @@ def intervention(dataset: str, out: Path) -> list[str]:
         )
         made.append(f"length_matched_{prop}.png")
 
-        mol = read_json(OUTPUT_DIR / f"{dataset}_guided_{prop}" / "molecules.json")
+        mol = read_json(OUTPUT_DIR / f"{dataset}_{guided}_{prop}" / "molecules.json")
         series = {}
         for c in ("unguided", "throughout"):
             if c in mol:
@@ -177,11 +180,12 @@ def intervention(dataset: str, out: Path) -> list[str]:
     return made
 
 
-def bestofn_fig(dataset: str, out: Path) -> list[str]:
+def bestofn_fig(dataset: str, out: Path, guided: str = "guided",
+                bestofn: str = "bestofn") -> list[str]:
     made = []
     for prop in ALL_PROPERTIES:
-        path = OUTPUT_DIR / f"{dataset}_bestofn_{prop}" / "bestofn_metrics.json"
-        gpath = OUTPUT_DIR / f"{dataset}_guided_{prop}" / "guidance_metrics.json"
+        path = OUTPUT_DIR / f"{dataset}_{bestofn}_{prop}" / "bestofn_metrics.json"
+        gpath = OUTPUT_DIR / f"{dataset}_{guided}_{prop}" / "guidance_metrics.json"
         if not (path.exists() and gpath.exists()):
             continue
         r, g = read_json(path), read_json(gpath)
@@ -208,13 +212,20 @@ def bestofn_fig(dataset: str, out: Path) -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", default="pilot_50k")
+    # Phase-2 runs live under different directory names so the pilot's artefacts stay
+    # untouched; these let the same figure code plot either set.
+    ap.add_argument("--heads", default=None)
+    ap.add_argument("--rollouts", default=None)
+    ap.add_argument("--guided-suffix", default="guided")
+    ap.add_argument("--bestofn-suffix", default="bestofn")
+    ap.add_argument("--out", default=None)
     args = ap.parse_args()
-    out = fig_dir(args.dataset)
+    out = fig_dir(args.out or args.dataset)
     made: list[str] = []
-    made += predictability_from_heads(args.dataset, out)
-    made += predictability_from_rollouts(args.dataset, out)
-    made += intervention(args.dataset, out)
-    made += bestofn_fig(args.dataset, out)
+    made += predictability_from_heads(args.dataset, out, args.heads)
+    made += predictability_from_rollouts(args.dataset, out, args.rollouts)
+    made += intervention(args.dataset, out, args.guided_suffix)
+    made += bestofn_fig(args.dataset, out, args.guided_suffix, args.bestofn_suffix)
     for m in made:
         print(("  " if m.startswith("skip") else "  wrote ") + m)
     write_run_context(out)

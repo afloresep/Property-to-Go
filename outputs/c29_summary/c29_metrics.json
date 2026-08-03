@@ -1,0 +1,5700 @@
+{
+  "dataset": "pilot_50k_p2",
+  "generation_seeds": [
+    "101",
+    "202",
+    "303"
+  ],
+  "head_seeds_preregistered": [
+    1234,
+    2345,
+    3456,
+    4567,
+    5678,
+    6789,
+    7890,
+    8901
+  ],
+  "preregistered_minimum_head_seeds": 6,
+  "prereg_lock": {
+    "file": "outputs/c29_prereg/C29.0_preregistration.md",
+    "file_sha256": "c43022a2d72872bb9990ad093f4685ac92bb8a29546d5fb2792884f8cc4fc9e4",
+    "file_bytes": 22243,
+    "prereg_block_sha256": "4f344fa8d88c3fbc8725b512ef9857add8db51a412153fe3430b0cb198d993e0",
+    "prereg_block_chars": 21406,
+    "file_mtime_utc": "2026-08-01T12:27:29.237049Z",
+    "frozen_at_utc": "2026-08-01T12:27:42.853312Z",
+    "note": "Frozen before any C29 measurement artefact existed. The block from '## C29.0.1 Why' onward is copied verbatim into reports/section_c29_head_seeds.md; tests/test_head_seeds.py asserts the copy is byte-identical and that this file's mtime strictly precedes every C29 artefact."
+  },
+  "heads_dir": "c29_heads",
+  "spread_table": {
+    "aromatic_rings": {
+      "source": "c17_layer_steering/layer_steering_metrics.json :: mean_head_q_spread_across_candidates",
+      "spread": {
+        "0": 0.1897743046283722,
+        "1": 0.2700559198856354,
+        "2": 0.29199835658073425,
+        "3": 0.30125945806503296,
+        "4": 0.29877007007598877,
+        "5": 0.3108997046947479,
+        "6": 0.3013074994087219,
+        "7": 0.27216628193855286,
+        "8": 0.27881568670272827,
+        "9": 0.2636163532733917,
+        "10": 0.21105094254016876,
+        "11": 0.21637924015522003,
+        "12": 0.19924567639827728
+      },
+      "ratio": {
+        "0": 0.9524638529622469,
+        "1": 1.3553916188666182,
+        "2": 1.4655191613646423,
+        "3": 1.5119999766661822,
+        "4": 1.4995059138887894,
+        "5": 1.5603836947170815,
+        "6": 1.5122410927825136,
+        "7": 1.3659833771976697,
+        "8": 1.399356270825152,
+        "9": 1.3230718881269083,
+        "10": 1.059249798315792,
+        "11": 1.0859921483199164,
+        "12": 1.0
+      },
+      "deployed_probe_point": 12
+    },
+    "hbd_count": {
+      "source": "c17_layer_steering/layer_steering_metrics.json :: mean_head_q_spread_across_candidates",
+      "spread": {
+        "0": 0.06293404847383499,
+        "1": 0.18947641551494598,
+        "2": 0.1595577895641327,
+        "3": 0.17264041304588318,
+        "4": 0.16804006695747375,
+        "5": 0.19408218562602997,
+        "6": 0.16643817722797394,
+        "7": 0.17130348086357117,
+        "8": 0.16742251813411713,
+        "9": 0.1535404920578003,
+        "10": 0.13585281372070312,
+        "11": 0.13520565629005432,
+        "12": 0.13209988176822662
+      },
+      "ratio": {
+        "0": 0.4764126025809376,
+        "1": 1.4343420522312675,
+        "2": 1.2078571716217115,
+        "3": 1.3068930171246194,
+        "4": 1.2720682615924312,
+        "5": 1.4692078677750313,
+        "6": 1.2599419091077986,
+        "7": 1.296772401084571,
+        "8": 1.2673933987909631,
+        "9": 1.162306052076503,
+        "10": 1.0284098055368522,
+        "11": 1.0235108047051615,
+        "12": 1.0
+      },
+      "deployed_probe_point": 12
+    },
+    "qed": {
+      "source": "c17_layer_steering/layer_steering_metrics.json :: mean_head_q_spread_across_candidates",
+      "spread": {
+        "0": 0.06765148788690567,
+        "1": 0.1263071894645691,
+        "2": 0.13492180407047272,
+        "3": 0.1233861893415451,
+        "4": 0.12792399525642395,
+        "5": 0.12593813240528107,
+        "6": 0.12277279049158096,
+        "7": 0.11749318242073059,
+        "8": 0.11561474204063416,
+        "9": 0.10247062891721725,
+        "10": 0.10611473023891449,
+        "11": 0.10164561867713928,
+        "12": 0.10286020487546921
+      },
+      "ratio": {
+        "0": 0.6577032193238384,
+        "1": 1.2279500086305164,
+        "2": 1.3117007129610507,
+        "3": 1.1995522417141429,
+        "4": 1.243668485895969,
+        "5": 1.2243620606992942,
+        "6": 1.1935888193127704,
+        "7": 1.142260824416763,
+        "8": 1.1239987532652362,
+        "9": 0.9962125687118395,
+        "10": 1.031640276892171,
+        "11": 0.9881918745952295,
+        "12": 1.0
+      },
+      "deployed_probe_point": 12
+    }
+  },
+  "families": {
+    "A1": {
+      "name": "A1",
+      "property": "hbd_count",
+      "probe_point": 4,
+      "lam": 2.0,
+      "head_seeds_present": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "head_seeds_missing": [],
+      "n_head_seeds": 8,
+      "meets_preregistered_minimum": true,
+      "hit_rate_by_head_seed": {
+        "1234": 0.5603420596566593,
+        "2345": 0.5600814321286762,
+        "3456": 0.46873245281306125,
+        "4567": 0.5184939773683882,
+        "5678": 0.5746621103928473,
+        "6789": 0.570938761113359,
+        "7890": 0.560524370060724,
+        "8901": 0.570491184969045
+      },
+      "dirs": {
+        "1234": "c23_guided_L4_lam2_hbd_count",
+        "2345": "c25_hs2345_L4_lam2_hbd_count_guided",
+        "3456": "c25_hs3456_L4_lam2_hbd_count_guided",
+        "4567": "c29_hs4567_L4_lam2_hbd_count_guided",
+        "5678": "c29_hs5678_L4_lam2_hbd_count_guided",
+        "6789": "c29_hs6789_L4_lam2_hbd_count_guided",
+        "7890": "c29_hs7890_L4_lam2_hbd_count_guided",
+        "8901": "c29_hs8901_L4_lam2_hbd_count_guided"
+      },
+      "mean_hit_rate": 0.548033293562845,
+      "head_seed_sd": {
+        "n": 8,
+        "sd": 0.036551326179720726,
+        "lo": 0.024166791975533553,
+        "hi": 0.07439189405458808,
+        "df": 7,
+        "interval": "chi-square, 7 df, alpha=0.05"
+      },
+      "head_seed_span": {
+        "n": 8,
+        "span": 0.10592965757978606,
+        "d2_n": 2.8472,
+        "sigma_from_span": 0.03720485304150958,
+        "note": "a raw span is not comparable across different n; sigma_from_span = span / d2(n) is"
+      },
+      "hit_rate_by_generation_seed": {
+        "1234": [
+          0.5976331360946746,
+          0.5304518664047151,
+          0.5529411764705883
+        ],
+        "2345": [
+          0.5787401574803149,
+          0.5641025641025641,
+          0.5374015748031497
+        ],
+        "3456": [
+          0.4675834970530452,
+          0.46732673267326735,
+          0.47128712871287126
+        ],
+        "4567": [
+          0.5225933202357563,
+          0.5230460921843687,
+          0.5098425196850394
+        ],
+        "5678": [
+          0.5617529880478087,
+          0.5854616895874263,
+          0.5767716535433071
+        ],
+        "6789": [
+          0.6122047244094488,
+          0.5452755905511811,
+          0.5553359683794467
+        ],
+        "7890": [
+          0.5674603174603174,
+          0.5779092702169625,
+          0.5362035225048923
+        ],
+        "8901": [
+          0.5638506876227898,
+          0.5776031434184676,
+          0.5700197238658777
+        ]
+      },
+      "validity_by_head_seed": {
+        "1234": 0.9934895833333334,
+        "2345": 0.9915364583333334,
+        "3456": 0.9889322916666666,
+        "4567": 0.9869791666666666,
+        "5678": 0.9889322916666666,
+        "6789": 0.9908854166666666,
+        "7890": 0.9908854166666666,
+        "8901": 0.9928385416666666
+      },
+      "unguided_by_head_seed": {
+        "1234": 0.083707641537296,
+        "2345": 0.083707641537296,
+        "3456": 0.083707641537296,
+        "4567": 0.083707641537296,
+        "5678": 0.083707641537296,
+        "6789": 0.083707641537296,
+        "7890": 0.083707641537296,
+        "8901": 0.083707641537296
+      },
+      "tokens_by_head_seed": {
+        "1234": 387.791015625,
+        "2345": 393.796875,
+        "3456": 387.78515625,
+        "4567": 392.291015625,
+        "5678": 378.9609375,
+        "6789": 387.123046875,
+        "7890": 393.380859375,
+        "8901": 370.634765625
+      },
+      "generation_seed_sd_pooled": {
+        "sd": 0.02131476463144693,
+        "df": 16,
+        "n_cells": 8,
+        "per_cell_sd": {
+          "1234": 0.03419664535066518,
+          "2345": 0.020960599495309644,
+          "3456": 0.0022161359844294687,
+          "4567": 0.007495801534488723,
+          "5678": 0.01199430120521428,
+          "6789": 0.036089646653542445,
+          "7890": 0.02170075742464201,
+          "8901": 0.006888339188938663
+        },
+        "per_cell_span": {
+          "1234": 0.06718126968995952,
+          "2345": 0.04133858267716528,
+          "3456": 0.003960396039603908,
+          "4567": 0.013203572499329352,
+          "5678": 0.02370870153961757,
+          "6789": 0.06692913385826771,
+          "7890": 0.04170574771207014,
+          "8901": 0.013752455795677854
+        },
+        "note": "pooled within-head-seed sd over generation seeds 101/202/303"
+      },
+      "variance_ratio": {
+        "ratio": 1.7148360214963105,
+        "lo": 0.9557251515813403,
+        "hi": 3.6549821089247287,
+        "df1": 7,
+        "df2": 16,
+        "interval": "F, (7, 16) df, alpha=0.05",
+        "c25_reported_span_ratio": 24.75935320097244,
+        "c25_span_ratio_inside_interval": false
+      },
+      "best_of_n_by_head_seed": {
+        "1234": {
+          "N": 8,
+          "hit_rate": 0.484375,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "2345": {
+          "N": 9,
+          "hit_rate": 0.5234375,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "3456": {
+          "N": 8,
+          "hit_rate": 0.484375,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "4567": {
+          "N": 9,
+          "hit_rate": 0.5234375,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "5678": {
+          "N": 8,
+          "hit_rate": 0.484375,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "6789": {
+          "N": 8,
+          "hit_rate": 0.484375,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "7890": {
+          "N": 9,
+          "hit_rate": 0.5234375,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "8901": {
+          "N": 8,
+          "hit_rate": 0.484375,
+          "tokens_per_molecule_actual": 355.8704427083333
+        }
+      },
+      "advantage_over_best_of_n_by_head_seed": {
+        "1234": 0.07596705965665929,
+        "2345": 0.036643932128676227,
+        "3456": -0.01564254718693875,
+        "4567": -0.004943522631611796,
+        "5678": 0.09028711039284731,
+        "6789": 0.08656376111335895,
+        "7890": 0.037086870060723975,
+        "8901": 0.08611618496904505
+      },
+      "advantage_over_best_of_n": {
+        "n": 8,
+        "mean": 0.04900985606284503,
+        "sd": 0.0424325548345888,
+        "t_crit": 2.3646242515927844,
+        "lo": 0.013535352462928842,
+        "hi": 0.08448435966276122,
+        "excludes_zero": true,
+        "interval": "Student t, 7 df"
+      },
+      "advantage_over_best_of_n_bootstrap": {
+        "n": 8,
+        "computed": true,
+        "n_boot": 10000,
+        "rng_seed": 20260801,
+        "mean": 0.04900985606284503,
+        "lo": 0.019931430450239866,
+        "hi": 0.07495811439248785,
+        "excludes_zero": true,
+        "p_constant_resample": 5.960464477539063e-08
+      },
+      "n_head_seeds_with_positive_advantage": 6,
+      "robustness": {
+        "token_conservative": {
+          "note": "best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack; imported from C23",
+          "per_head_seed": {
+            "1234": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": 0.036904559656659286,
+              "realised_token_ratio_guided_over_best_of_n": 0.9696811342225174
+            },
+            "2345": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": 0.036643932128676227,
+              "realised_token_ratio_guided_over_best_of_n": 0.9846989358117183
+            },
+            "3456": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": -0.05470504718693875,
+              "realised_token_ratio_guided_over_best_of_n": 0.9696664827087719
+            },
+            "4567": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": -0.004943522631611796,
+              "realised_token_ratio_guided_over_best_of_n": 0.9809334967791089
+            },
+            "5678": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": 0.051224610392847314,
+              "realised_token_ratio_guided_over_best_of_n": 0.9476013030079558
+            },
+            "6789": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": 0.04750126111335895,
+              "realised_token_ratio_guided_over_best_of_n": 0.9680108616555234
+            },
+            "7890": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": 0.037086870060723975,
+              "realised_token_ratio_guided_over_best_of_n": 0.9836586783357834
+            },
+            "8901": {
+              "run": "c18_bestofn_N9_hbd_count",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5234375,
+              "advantage": 0.04705368496904505,
+              "realised_token_ratio_guided_over_best_of_n": 0.9267815019755125
+            }
+          },
+          "t": {
+            "n": 8,
+            "mean": 0.024595793562845032,
+            "sd": 0.03655132617972072,
+            "t_crit": 2.3646242515927844,
+            "lo": -0.005961879836713278,
+            "hi": 0.05515346696240334,
+            "excludes_zero": false,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": 0.024595793562845032,
+            "lo": -0.0008998364941901552,
+            "hi": 0.04431329762777237,
+            "excludes_zero": false,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "n_positive": 6
+        },
+        "c26_corrected_curve": {
+          "note": "priced against C26's corrected best-of-N estimator, interpolated linearly in tokens at each cell's own realised budget",
+          "sweep_run": "c26_nsweep_hbd_count",
+          "per_head_seed": {
+            "1234": {
+              "budget_tokens_per_molecule": 387.791015625,
+              "curve_hit_rate_at_budget": 0.5336363313784186,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": 0.026705728278240692
+            },
+            "2345": {
+              "budget_tokens_per_molecule": 393.796875,
+              "curve_hit_rate_at_budget": 0.5391046175770944,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": 0.020976814551581846
+            },
+            "3456": {
+              "budget_tokens_per_molecule": 387.78515625,
+              "curve_hit_rate_at_budget": 0.533630996465054,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.06489854365199271
+            },
+            "4567": {
+              "budget_tokens_per_molecule": 392.291015625,
+              "curve_hit_rate_at_budget": 0.537733544842402,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.019239567474013786
+            },
+            "5678": {
+              "budget_tokens_per_molecule": 378.9609375,
+              "curve_hit_rate_at_budget": 0.5255966169380241,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": 0.04906549345482325
+            },
+            "6789": {
+              "budget_tokens_per_molecule": 387.123046875,
+              "curve_hit_rate_at_budget": 0.5330281512548585,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": 0.03791060985850048
+            },
+            "7890": {
+              "budget_tokens_per_molecule": 393.380859375,
+              "curve_hit_rate_at_budget": 0.5387258387282104,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": 0.021798531332513527
+            },
+            "8901": {
+              "budget_tokens_per_molecule": 370.634765625,
+              "curve_hit_rate_at_budget": 0.5180157050469818,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": 0.05247547992206325
+            }
+          },
+          "t": {
+            "n": 8,
+            "mean": 0.015599318283964568,
+            "sd": 0.039391775243893846,
+            "t_crit": 2.3646242515927844,
+            "lo": -0.017333029960066013,
+            "hi": 0.04853166652799515,
+            "excludes_zero": false,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": 0.015599318283964568,
+            "lo": -0.011636929407579802,
+            "hi": 0.03802824301550174,
+            "excludes_zero": false,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "n_positive": 6
+        }
+      }
+    },
+    "A2": {
+      "name": "A2",
+      "property": "aromatic_rings",
+      "probe_point": 3,
+      "lam": 1.0,
+      "head_seeds_present": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "head_seeds_missing": [],
+      "n_head_seeds": 8,
+      "meets_preregistered_minimum": true,
+      "hit_rate_by_head_seed": {
+        "1234": 0.5698096157332536,
+        "2345": 0.6101244770146306,
+        "3456": 0.6471567061185737,
+        "4567": 0.581206991936387,
+        "5678": 0.5948601467506638,
+        "6789": 0.5542534507948745,
+        "7890": 0.6088739191824747,
+        "8901": 0.5982659231712281
+      },
+      "dirs": {
+        "1234": "c23_guided_L3_lam1_aromatic_rings",
+        "2345": "c25_hs2345_L3_lam1_aromatic_rings_guided",
+        "3456": "c25_hs3456_L3_lam1_aromatic_rings_guided",
+        "4567": "c29_hs4567_L3_lam1_aromatic_rings_guided",
+        "5678": "c29_hs5678_L3_lam1_aromatic_rings_guided",
+        "6789": "c29_hs6789_L3_lam1_aromatic_rings_guided",
+        "7890": "c29_hs7890_L3_lam1_aromatic_rings_guided",
+        "8901": "c29_hs8901_L3_lam1_aromatic_rings_guided"
+      },
+      "mean_hit_rate": 0.5955689038377607,
+      "head_seed_sd": {
+        "n": 8,
+        "sd": 0.028371861903605678,
+        "lo": 0.018758741644876828,
+        "hi": 0.05774445869587772,
+        "df": 7,
+        "interval": "chi-square, 7 df, alpha=0.05"
+      },
+      "head_seed_span": {
+        "n": 8,
+        "span": 0.09290325532369914,
+        "d2_n": 2.8472,
+        "sigma_from_span": 0.03262969068688506,
+        "note": "a raw span is not comparable across different n; sigma_from_span = span / d2(n) is"
+      },
+      "hit_rate_by_generation_seed": {
+        "1234": [
+          0.591715976331361,
+          0.5756385068762279,
+          0.5420743639921722
+        ],
+        "2345": [
+          0.6003937007874016,
+          0.6099009900990099,
+          0.6200787401574803
+        ],
+        "3456": [
+          0.6372745490981964,
+          0.654690618762475,
+          0.6495049504950495
+        ],
+        "4567": [
+          0.5429141716566867,
+          0.6208251473477406,
+          0.5798816568047337
+        ],
+        "5678": [
+          0.5846456692913385,
+          0.6110019646365422,
+          0.5889328063241107
+        ],
+        "6789": [
+          0.5450980392156862,
+          0.5389221556886228,
+          0.5787401574803149
+        ],
+        "7890": [
+          0.6048387096774194,
+          0.6111111111111112,
+          0.6106719367588933
+        ],
+        "8901": [
+          0.5776892430278885,
+          0.6027944111776448,
+          0.614314115308151
+        ]
+      },
+      "validity_by_head_seed": {
+        "1234": 0.994140625,
+        "2345": 0.990234375,
+        "3456": 0.9798177083333334,
+        "4567": 0.9876302083333334,
+        "5678": 0.9915364583333334,
+        "6789": 0.9889322916666666,
+        "7890": 0.98046875,
+        "8901": 0.98046875
+      },
+      "unguided_by_head_seed": {
+        "1234": 0.17854565532827407,
+        "2345": 0.17854565532827407,
+        "3456": 0.17854565532827407,
+        "4567": 0.17854565532827407,
+        "5678": 0.17854565532827407,
+        "6789": 0.17854565532827407,
+        "7890": 0.17854565532827407,
+        "8901": 0.17854565532827407
+      },
+      "tokens_by_head_seed": {
+        "1234": 412.5,
+        "2345": 427.541015625,
+        "3456": 434.853515625,
+        "4567": 420.158203125,
+        "5678": 415.06640625,
+        "6789": 431.35546875,
+        "7890": 445.048828125,
+        "8901": 448.40625
+      },
+      "generation_seed_sd_pooled": {
+        "sd": 0.020492420066573765,
+        "df": 16,
+        "n_cells": 8,
+        "per_cell_sd": {
+          "1234": 0.025328924135779154,
+          "2345": 0.009844422459010859,
+          "3456": 0.00894234641335762,
+          "4567": 0.038972393026235855,
+          "5678": 0.014142616429787288,
+          "6789": 0.021429757057863555,
+          "7890": 0.0035014861616430265,
+          "8901": 0.018727672575752197
+        },
+        "per_cell_span": {
+          "1234": 0.049641612339188734,
+          "2345": 0.019685039370078705,
+          "3456": 0.017416069664278666,
+          "4567": 0.07791097569105399,
+          "5678": 0.026356295345203673,
+          "6789": 0.03981800179169215,
+          "7890": 0.006272401433691788,
+          "8901": 0.036624872280262566
+        },
+        "note": "pooled within-head-seed sd over generation seeds 101/202/303"
+      },
+      "variance_ratio": {
+        "ratio": 1.3845051883298292,
+        "lo": 0.7716227175045524,
+        "hi": 2.950918705710122,
+        "df1": 7,
+        "df2": 16,
+        "interval": "F, (7, 16) df, alpha=0.05",
+        "c25_reported_span_ratio": 24.75935320097244,
+        "c25_span_ratio_inside_interval": false
+      },
+      "best_of_n_by_head_seed": {
+        "1234": {
+          "N": 9,
+          "hit_rate": 0.8294270833333334,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "2345": {
+          "N": 9,
+          "hit_rate": 0.8294270833333334,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "3456": {
+          "N": 10,
+          "hit_rate": 0.8567708333333334,
+          "tokens_per_molecule_actual": 443.9993489583333
+        },
+        "4567": {
+          "N": 9,
+          "hit_rate": 0.8294270833333334,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "5678": {
+          "N": 9,
+          "hit_rate": 0.8294270833333334,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "6789": {
+          "N": 9,
+          "hit_rate": 0.8294270833333334,
+          "tokens_per_molecule_actual": 399.916015625
+        },
+        "7890": {
+          "N": 10,
+          "hit_rate": 0.8567708333333334,
+          "tokens_per_molecule_actual": 443.9993489583333
+        },
+        "8901": {
+          "N": 10,
+          "hit_rate": 0.8567708333333334,
+          "tokens_per_molecule_actual": 443.9993489583333
+        }
+      },
+      "advantage_over_best_of_n_by_head_seed": {
+        "1234": -0.25961746760007975,
+        "2345": -0.2193026063187028,
+        "3456": -0.2096141272147597,
+        "4567": -0.24822009139694634,
+        "5678": -0.23456693658266958,
+        "6789": -0.27517363253845883,
+        "7890": -0.24789691415085868,
+        "8901": -0.2585049101621053
+      },
+      "advantage_over_best_of_n": {
+        "n": 8,
+        "mean": -0.2441120857455726,
+        "sd": 0.021844645867590565,
+        "t_crit": 2.3646242515927844,
+        "lo": -0.26237466671647036,
+        "hi": -0.2258495047746749,
+        "excludes_zero": true,
+        "interval": "Student t, 7 df"
+      },
+      "advantage_over_best_of_n_bootstrap": {
+        "n": 8,
+        "computed": true,
+        "n_boot": 10000,
+        "rng_seed": 20260801,
+        "mean": -0.2441120857455726,
+        "lo": -0.25763687019866843,
+        "hi": -0.2296007038753616,
+        "excludes_zero": true,
+        "p_constant_resample": 5.960464477539063e-08
+      },
+      "n_head_seeds_with_positive_advantage": 0,
+      "robustness": {
+        "token_conservative": {
+          "note": "best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack; imported from C23",
+          "per_head_seed": {
+            "1234": {
+              "run": "c23_bestofn_L3_lam2_aromatic_rings",
+              "n_candidates": 10,
+              "tokens_per_molecule_actual": 443.9993489583333,
+              "hit_rate": 0.8567708333333334,
+              "advantage": -0.28696121760007975,
+              "realised_token_ratio_guided_over_best_of_n": 0.9290554163373574
+            },
+            "2345": {
+              "run": "c23_bestofn_L3_lam2_aromatic_rings",
+              "n_candidates": 10,
+              "tokens_per_molecule_actual": 443.9993489583333,
+              "hit_rate": 0.8567708333333334,
+              "advantage": -0.2466463563187028,
+              "realised_token_ratio_guided_over_best_of_n": 0.962931627327954
+            },
+            "3456": {
+              "run": "c23_bestofn_L3_lam2_aromatic_rings",
+              "n_candidates": 10,
+              "tokens_per_molecule_actual": 443.9993489583333,
+              "hit_rate": 0.8567708333333334,
+              "advantage": -0.2096141272147597,
+              "realised_token_ratio_guided_over_best_of_n": 0.9794012460721162
+            },
+            "4567": {
+              "run": "c23_bestofn_L3_lam2_aromatic_rings",
+              "n_candidates": 10,
+              "tokens_per_molecule_actual": 443.9993489583333,
+              "hit_rate": 0.8567708333333334,
+              "advantage": -0.27556384139694634,
+              "realised_token_ratio_guided_over_best_of_n": 0.9463036468650978
+            },
+            "5678": {
+              "run": "c23_bestofn_L3_lam2_aromatic_rings",
+              "n_candidates": 10,
+              "tokens_per_molecule_actual": 443.9993489583333,
+              "hit_rate": 0.8567708333333334,
+              "advantage": -0.2619106865826696,
+              "realised_token_ratio_guided_over_best_of_n": 0.9348356190696836
+            },
+            "6789": {
+              "run": "c23_bestofn_L3_lam2_aromatic_rings",
+              "n_candidates": 10,
+              "tokens_per_molecule_actual": 443.9993489583333,
+              "hit_rate": 0.8567708333333334,
+              "advantage": -0.30251738253845883,
+              "realised_token_ratio_guided_over_best_of_n": 0.9715227505670962
+            }
+          },
+          "t": {
+            "n": 6,
+            "mean": -0.2638689352752695,
+            "sd": 0.03288696693086521,
+            "t_crit": 2.570581835636314,
+            "lo": -0.2983816904606001,
+            "hi": -0.2293561800899389,
+            "excludes_zero": true,
+            "interval": "Student t, 5 df"
+          },
+          "bootstrap": {
+            "n": 6,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": -0.2638689352752695,
+            "lo": -0.28607195470944885,
+            "hi": -0.23939039003871074,
+            "excludes_zero": true,
+            "p_constant_resample": 2.143347050754458e-05
+          },
+          "n_positive": 0
+        },
+        "c26_corrected_curve": {
+          "note": "priced against C26's corrected best-of-N estimator, interpolated linearly in tokens at each cell's own realised budget",
+          "sweep_run": "c26_nsweep_aromatic_rings",
+          "per_head_seed": {
+            "1234": {
+              "budget_tokens_per_molecule": 412.5,
+              "curve_hit_rate_at_budget": 0.8225824494464096,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.25277283371315595
+            },
+            "2345": {
+              "budget_tokens_per_molecule": 427.541015625,
+              "curve_hit_rate_at_budget": 0.8316334389428506,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.22150896192822
+            },
+            "3456": {
+              "budget_tokens_per_molecule": 434.853515625,
+              "curve_hit_rate_at_budget": 0.836033764183037,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.1888770580644633
+            },
+            "4567": {
+              "budget_tokens_per_molecule": 420.158203125,
+              "curve_hit_rate_at_budget": 0.827190802883047,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.24598381094666
+            },
+            "5678": {
+              "budget_tokens_per_molecule": 415.06640625,
+              "curve_hit_rate_at_budget": 0.8241267943624365,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.22926664761177273
+            },
+            "6789": {
+              "budget_tokens_per_molecule": 431.35546875,
+              "curve_hit_rate_at_budget": 0.8339288009070824,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.2796753501122079
+            },
+            "7890": {
+              "budget_tokens_per_molecule": 445.048828125,
+              "curve_hit_rate_at_budget": 0.8421688330275275,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.23329491384505285
+            },
+            "8901": {
+              "budget_tokens_per_molecule": 448.40625,
+              "curve_hit_rate_at_budget": 0.8441891746642477,
+              "bracket_n": [
+                9,
+                12
+              ],
+              "extrapolated": false,
+              "advantage": -0.24592325149301963
+            }
+          },
+          "t": {
+            "n": 8,
+            "mean": -0.23716285346431903,
+            "sd": 0.026347705512779682,
+            "t_crit": 2.3646242515927844,
+            "lo": -0.25919008650994135,
+            "hi": -0.21513562041869674,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": -0.23716285346431903,
+            "lo": -0.25369398232471735,
+            "hi": -0.21953092062559343,
+            "excludes_zero": true,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "n_positive": 0
+        }
+      }
+    },
+    "A3": {
+      "name": "A3",
+      "property": "qed",
+      "probe_point": 4,
+      "lam": 1.0,
+      "head_seeds_present": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "head_seeds_missing": [],
+      "n_head_seeds": 8,
+      "meets_preregistered_minimum": true,
+      "hit_rate_by_head_seed": {
+        "1234": 0.22881375366927592,
+        "2345": 0.2422025041029027,
+        "3456": 0.21474673202614378,
+        "4567": 0.2163846046749068,
+        "5678": 0.21754152585489883,
+        "6789": 0.23272000366927592,
+        "7890": 0.22533599385874867,
+        "8901": 0.24454723334106818
+      },
+      "dirs": {
+        "1234": "c23_guided_L4_lam1_qed",
+        "2345": "c25_hs2345_L4_lam1_qed_guided",
+        "3456": "c25_hs3456_L4_lam1_qed_guided",
+        "4567": "c29_hs4567_L4_lam1_qed_guided",
+        "5678": "c29_hs5678_L4_lam1_qed_guided",
+        "6789": "c29_hs6789_L4_lam1_qed_guided",
+        "7890": "c29_hs7890_L4_lam1_qed_guided",
+        "8901": "c29_hs8901_L4_lam1_qed_guided"
+      },
+      "mean_hit_rate": 0.22778654389965258,
+      "head_seed_sd": {
+        "n": 8,
+        "sd": 0.011496218672516222,
+        "lo": 0.007601002595579879,
+        "hi": 0.023397933013678096,
+        "df": 7,
+        "interval": "chi-square, 7 df, alpha=0.05"
+      },
+      "head_seed_span": {
+        "n": 8,
+        "span": 0.0298005013149244,
+        "d2_n": 2.8472,
+        "sigma_from_span": 0.010466599225528379,
+        "note": "a raw span is not comparable across different n; sigma_from_span = span / d2(n) is"
+      },
+      "hit_rate_by_generation_seed": {
+        "1234": [
+          0.23874755381604695,
+          0.228515625,
+          0.2191780821917808
+        ],
+        "2345": [
+          0.2504930966469428,
+          0.25889328063241107,
+          0.2172211350293542
+        ],
+        "3456": [
+          0.21875,
+          0.1980392156862745,
+          0.22745098039215686
+        ],
+        "4567": [
+          0.22986247544204322,
+          0.20078740157480315,
+          0.21850393700787402
+        ],
+        "5678": [
+          0.21135029354207435,
+          0.2455795677799607,
+          0.19569471624266144
+        ],
+        "6789": [
+          0.24266144814090018,
+          0.21526418786692758,
+          0.240234375
+        ],
+        "7890": [
+          0.22309197651663404,
+          0.2328767123287671,
+          0.2200392927308448
+        ],
+        "8901": [
+          0.22549019607843138,
+          0.2734375,
+          0.23471400394477318
+        ]
+      },
+      "validity_by_head_seed": {
+        "1234": 0.9986979166666666,
+        "2345": 0.9921875,
+        "3456": 0.9973958333333334,
+        "4567": 0.9928385416666666,
+        "5678": 0.9967447916666666,
+        "6789": 0.9986979166666666,
+        "7890": 0.9967447916666666,
+        "8901": 0.9954427083333334
+      },
+      "unguided_by_head_seed": {
+        "1234": 0.08960026708784365,
+        "2345": 0.08960026708784365,
+        "3456": 0.08960026708784365,
+        "4567": 0.08960026708784365,
+        "5678": 0.08960026708784365,
+        "6789": 0.08960026708784365,
+        "7890": 0.08960026708784365,
+        "8901": 0.08960026708784365
+      },
+      "tokens_by_head_seed": {
+        "1234": 367.81640625,
+        "2345": 370.283203125,
+        "3456": 373.27734375,
+        "4567": 373.423828125,
+        "5678": 377.8828125,
+        "6789": 368.009765625,
+        "7890": 374.923828125,
+        "8901": 365.115234375
+      },
+      "generation_seed_sd_pooled": {
+        "sd": 0.018019427340772103,
+        "df": 16,
+        "n_cells": 8,
+        "per_cell_sd": {
+          "1234": 0.009788141572373307,
+          "2345": 0.022038429466254242,
+          "3456": 0.015109023516806899,
+          "4567": 0.014652940225413353,
+          "5678": 0.025512215140754024,
+          "6789": 0.015165810232294063,
+          "7890": 0.00670645553605355,
+          "8901": 0.025441212404422427
+        },
+        "per_cell_span": {
+          "1234": 0.019569471624266144,
+          "2345": 0.041672145603056876,
+          "3456": 0.02941176470588236,
+          "4567": 0.029075073867240064,
+          "5678": 0.04988485153729927,
+          "6789": 0.0273972602739726,
+          "7890": 0.012837419597922312,
+          "8901": 0.047947303921568624
+        },
+        "note": "pooled within-head-seed sd over generation seeds 101/202/303"
+      },
+      "variance_ratio": {
+        "ratio": 0.6379902343790925,
+        "lo": 0.3555694572635177,
+        "hi": 1.3598051726774358,
+        "df1": 7,
+        "df2": 16,
+        "interval": "F, (7, 16) df, alpha=0.05",
+        "c25_reported_span_ratio": 24.75935320097244,
+        "c25_span_ratio_inside_interval": false
+      },
+      "best_of_n_by_head_seed": {
+        "1234": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "2345": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "3456": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "4567": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "5678": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "6789": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "7890": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        },
+        "8901": {
+          "N": 8,
+          "hit_rate": 0.5436197916666666,
+          "tokens_per_molecule_actual": 355.8704427083333
+        }
+      },
+      "advantage_over_best_of_n_by_head_seed": {
+        "1234": -0.3148060379973907,
+        "2345": -0.30141728756376396,
+        "3456": -0.3288730596405228,
+        "4567": -0.3272351869917598,
+        "5678": -0.3260782658117678,
+        "6789": -0.3108997879973907,
+        "7890": -0.31828379780791793,
+        "8901": -0.2990725583255984
+      },
+      "advantage_over_best_of_n": {
+        "n": 8,
+        "mean": -0.31583324776701405,
+        "sd": 0.011496218672516214,
+        "t_crit": 2.3646242515927844,
+        "lo": -0.32544432709686777,
+        "hi": -0.3062221684371603,
+        "excludes_zero": true,
+        "interval": "Student t, 7 df"
+      },
+      "advantage_over_best_of_n_bootstrap": {
+        "n": 8,
+        "computed": true,
+        "n_boot": 10000,
+        "rng_seed": 20260801,
+        "mean": -0.31583324776701405,
+        "lo": -0.32299028194097446,
+        "hi": -0.308392666424149,
+        "excludes_zero": true,
+        "p_constant_resample": 5.960464477539063e-08
+      },
+      "n_head_seeds_with_positive_advantage": 0,
+      "robustness": {
+        "token_conservative": {
+          "note": "best-of-N is given at least as many tokens per returned molecule as guidance, removing the flooring slack; imported from C23",
+          "per_head_seed": {
+            "1234": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.3675404129973907,
+              "realised_token_ratio_guided_over_best_of_n": 0.9197341238638972
+            },
+            "2345": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.35415166256376396,
+              "realised_token_ratio_guided_over_best_of_n": 0.9259024111507788
+            },
+            "3456": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.3816074346405228,
+              "realised_token_ratio_guided_over_best_of_n": 0.9333893346747608
+            },
+            "4567": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.3799695619917598,
+              "realised_token_ratio_guided_over_best_of_n": 0.9337556225183998
+            },
+            "5678": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.3788126408117678,
+              "realised_token_ratio_guided_over_best_of_n": 0.9449054244787723
+            },
+            "6789": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.3636341629973907,
+              "realised_token_ratio_guided_over_best_of_n": 0.9202176238175007
+            },
+            "7890": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.37101817280791793,
+              "realised_token_ratio_guided_over_best_of_n": 0.9375064100372636
+            },
+            "8901": {
+              "run": "pilot_50k_p2_lam8_bestofn_qed",
+              "n_candidates": 9,
+              "tokens_per_molecule_actual": 399.916015625,
+              "hit_rate": 0.5963541666666666,
+              "advantage": -0.3518069333255984,
+              "realised_token_ratio_guided_over_best_of_n": 0.9129797760271932
+            }
+          },
+          "t": {
+            "n": 8,
+            "mean": -0.36856762276701405,
+            "sd": 0.011496218672516214,
+            "t_crit": 2.3646242515927844,
+            "lo": -0.37817870209686777,
+            "hi": -0.3589565434371603,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": -0.36856762276701405,
+            "lo": -0.37572465694097446,
+            "hi": -0.361127041424149,
+            "excludes_zero": true,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "n_positive": 0
+        },
+        "c26_corrected_curve": {
+          "note": "priced against C26's corrected best-of-N estimator, interpolated linearly in tokens at each cell's own realised budget",
+          "sweep_run": "c26_nsweep_qed",
+          "per_head_seed": {
+            "1234": {
+              "budget_tokens_per_molecule": 367.81640625,
+              "curve_hit_rate_at_budget": 0.5628755328958114,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.33406177922653546
+            },
+            "2345": {
+              "budget_tokens_per_molecule": 370.283203125,
+              "curve_hit_rate_at_budget": 0.5654599464330768,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.32325744233017417
+            },
+            "3456": {
+              "budget_tokens_per_molecule": 373.27734375,
+              "curve_hit_rate_at_budget": 0.5685968474248645,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.3538501153987207
+            },
+            "4567": {
+              "budget_tokens_per_molecule": 373.423828125,
+              "curve_hit_rate_at_budget": 0.5687503161622318,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.352365711487325
+            },
+            "5678": {
+              "budget_tokens_per_molecule": 377.8828125,
+              "curve_hit_rate_at_budget": 0.5734219045276926,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.35588037867279376
+            },
+            "6789": {
+              "budget_tokens_per_molecule": 368.009765625,
+              "curve_hit_rate_at_budget": 0.5630781116291362,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.3303581079598603
+            },
+            "7890": {
+              "budget_tokens_per_molecule": 374.923828125,
+              "curve_hit_rate_at_budget": 0.570321836032873,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.3449858421741243
+            },
+            "8901": {
+              "budget_tokens_per_molecule": 365.115234375,
+              "curve_hit_rate_at_budget": 0.5600455693787583,
+              "bracket_n": [
+                8,
+                9
+              ],
+              "extrapolated": false,
+              "advantage": -0.31549833603769006
+            }
+          },
+          "t": {
+            "n": 8,
+            "mean": -0.338782214160903,
+            "sd": 0.01520709829389136,
+            "t_crit": 2.3646242515927844,
+            "lo": -0.35149566649187564,
+            "hi": -0.32606876182993033,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": -0.338782214160903,
+            "lo": -0.3483708877116056,
+            "hi": -0.3290453227366098,
+            "excludes_zero": true,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "n_positive": 0
+        }
+      }
+    },
+    "D_aromatic_rings": {
+      "name": "D_aromatic_rings",
+      "property": "aromatic_rings",
+      "probe_point": 12,
+      "lam": 1.0,
+      "head_seeds_present": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "head_seeds_missing": [],
+      "n_head_seeds": 8,
+      "meets_preregistered_minimum": true,
+      "hit_rate_by_head_seed": {
+        "1234": 0.4734551246669265,
+        "2345": 0.48136924854257357,
+        "3456": 0.4588502914689572,
+        "4567": 0.4349536138162777,
+        "5678": 0.47410265799772605,
+        "6789": 0.4944182563128394,
+        "7890": 0.4696388985462862,
+        "8901": 0.46145068141097706
+      },
+      "dirs": {
+        "1234": "pilot_50k_p2_guided_aromatic_rings",
+        "2345": "c29_dep_hs2345_lam1_aromatic_rings_guided",
+        "3456": "c29_dep_hs3456_lam1_aromatic_rings_guided",
+        "4567": "c29_dep_hs4567_lam1_aromatic_rings_guided",
+        "5678": "c29_dep_hs5678_lam1_aromatic_rings_guided",
+        "6789": "c29_dep_hs6789_lam1_aromatic_rings_guided",
+        "7890": "c29_dep_hs7890_lam1_aromatic_rings_guided",
+        "8901": "c29_dep_hs8901_lam1_aromatic_rings_guided"
+      },
+      "mean_hit_rate": 0.4685298465953205,
+      "head_seed_sd": {
+        "n": 8,
+        "sd": 0.017577487070879756,
+        "lo": 0.01162178005268282,
+        "hi": 0.03577496886141081,
+        "df": 7,
+        "interval": "chi-square, 7 df, alpha=0.05"
+      },
+      "head_seed_span": {
+        "n": 8,
+        "span": 0.05946464249656175,
+        "d2_n": 2.8472,
+        "sigma_from_span": 0.02088530573776403,
+        "note": "a raw span is not comparable across different n; sigma_from_span = span / d2(n) is"
+      },
+      "hit_rate_by_generation_seed": {
+        "1234": [
+          0.4892367906066536,
+          0.4794520547945205,
+          0.4516765285996055
+        ],
+        "2345": [
+          0.48828125,
+          0.4715127701375246,
+          0.4843137254901961
+        ],
+        "3456": [
+          0.46168958742632615,
+          0.4207436399217221,
+          0.49411764705882355
+        ],
+        "4567": [
+          0.41291585127201563,
+          0.4675834970530452,
+          0.4243614931237721
+        ],
+        "5678": [
+          0.4588235294117647,
+          0.5166340508806262,
+          0.4468503937007874
+        ],
+        "6789": [
+          0.4950884086444008,
+          0.517578125,
+          0.47058823529411764
+        ],
+        "7890": [
+          0.466796875,
+          0.4744094488188976,
+          0.46771037181996084
+        ],
+        "8901": [
+          0.4735812133072407,
+          0.4931237721021611,
+          0.4176470588235294
+        ]
+      },
+      "validity_by_head_seed": {
+        "1234": 0.9954427083333334,
+        "2345": 0.9967447916666666,
+        "3456": 0.99609375,
+        "4567": 0.9954427083333334,
+        "5678": 0.9954427083333334,
+        "6789": 0.9967447916666666,
+        "7890": 0.9967447916666666,
+        "8901": 0.99609375
+      },
+      "unguided_by_head_seed": {
+        "1234": 0.17854565532827407,
+        "2345": 0.17854565532827407,
+        "3456": 0.17854565532827407,
+        "4567": 0.17854565532827407,
+        "5678": 0.17854565532827407,
+        "6789": 0.17854565532827407,
+        "7890": 0.17854565532827407,
+        "8901": 0.17854565532827407
+      },
+      "tokens_by_head_seed": {
+        "1234": 419.326171875,
+        "2345": 408.146484375,
+        "3456": 417.521484375,
+        "4567": 418.435546875,
+        "5678": 412.20703125,
+        "6789": 411.275390625,
+        "7890": 410.35546875,
+        "8901": 414.66796875
+      },
+      "generation_seed_sd_pooled": {
+        "sd": 0.02769573443238667,
+        "df": 16,
+        "n_cells": 8,
+        "per_cell_sd": {
+          "1234": 0.019485012156166555,
+          "2345": 0.008763443249994339,
+          "3456": 0.036769313727468486,
+          "4567": 0.028831972519817006,
+          "5678": 0.0373165985870641,
+          "6789": 0.023502111857306995,
+          "7890": 0.004156588930560093,
+          "8901": 0.03917328062469232
+        },
+        "per_cell_span": {
+          "1234": 0.037560262007048095,
+          "2345": 0.016768479862475427,
+          "3456": 0.07337400713710146,
+          "4567": 0.05466764578102956,
+          "5678": 0.06978365717983881,
+          "6789": 0.04698988970588236,
+          "7890": 0.007612573818897628,
+          "8901": 0.07547671327863165
+        },
+        "note": "pooled within-head-seed sd over generation seeds 101/202/303"
+      },
+      "variance_ratio": {
+        "ratio": 0.6346640531881004,
+        "lo": 0.3537156852508595,
+        "hi": 1.3527157876915115,
+        "df1": 7,
+        "df2": 16,
+        "interval": "F, (7, 16) df, alpha=0.05",
+        "c25_reported_span_ratio": 24.75935320097244,
+        "c25_span_ratio_inside_interval": false
+      }
+    },
+    "D_hbd_count": {
+      "name": "D_hbd_count",
+      "property": "hbd_count",
+      "probe_point": 12,
+      "lam": 1.0,
+      "head_seeds_present": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "head_seeds_missing": [],
+      "n_head_seeds": 8,
+      "meets_preregistered_minimum": true,
+      "hit_rate_by_head_seed": {
+        "1234": 0.29875114714835704,
+        "2345": 0.34620966496834954,
+        "3456": 0.3686360650960782,
+        "4567": 0.32520279374847516,
+        "5678": 0.3207040296433534,
+        "6789": 0.3091193224134654,
+        "7890": 0.3500536101801559,
+        "8901": 0.3100381615178751
+      },
+      "dirs": {
+        "1234": "pilot_50k_p2_guided_hbd_count",
+        "2345": "c29_dep_hs2345_lam1_hbd_count_guided",
+        "3456": "c29_dep_hs3456_lam1_hbd_count_guided",
+        "4567": "c29_dep_hs4567_lam1_hbd_count_guided",
+        "5678": "c29_dep_hs5678_lam1_hbd_count_guided",
+        "6789": "c29_dep_hs6789_lam1_hbd_count_guided",
+        "7890": "c29_dep_hs7890_lam1_hbd_count_guided",
+        "8901": "c29_dep_hs8901_lam1_hbd_count_guided"
+      },
+      "mean_hit_rate": 0.3285893493395137,
+      "head_seed_sd": {
+        "n": 8,
+        "sd": 0.024089485888954442,
+        "lo": 0.01592734532841405,
+        "hi": 0.049028658311031655,
+        "df": 7,
+        "interval": "chi-square, 7 df, alpha=0.05"
+      },
+      "head_seed_span": {
+        "n": 8,
+        "span": 0.06988491794772117,
+        "d2_n": 2.8472,
+        "sigma_from_span": 0.02454513836320637,
+        "note": "a raw span is not comparable across different n; sigma_from_span = span / d2(n) is"
+      },
+      "hit_rate_by_generation_seed": {
+        "1234": [
+          0.3013698630136986,
+          0.2901960784313726,
+          0.3046875
+        ],
+        "2345": [
+          0.35039370078740156,
+          0.3254901960784314,
+          0.3627450980392157
+        ],
+        "3456": [
+          0.3542074363992172,
+          0.3843137254901961,
+          0.36738703339882123
+        ],
+        "4567": [
+          0.36328125,
+          0.2868369351669941,
+          0.3254901960784314
+        ],
+        "5678": [
+          0.3,
+          0.3235294117647059,
+          0.33858267716535434
+        ],
+        "6789": [
+          0.32289628180039137,
+          0.3111545988258317,
+          0.2933070866141732
+        ],
+        "7890": [
+          0.3431372549019608,
+          0.375,
+          0.3320235756385069
+        ],
+        "8901": [
+          0.296875,
+          0.3188976377952756,
+          0.3143418467583497
+        ]
+      },
+      "validity_by_head_seed": {
+        "1234": 0.998046875,
+        "2345": 0.9947916666666666,
+        "3456": 0.99609375,
+        "4567": 0.9967447916666666,
+        "5678": 0.9947916666666666,
+        "6789": 0.99609375,
+        "7890": 0.9967447916666666,
+        "8901": 0.9954427083333334
+      },
+      "unguided_by_head_seed": {
+        "1234": 0.083707641537296,
+        "2345": 0.083707641537296,
+        "3456": 0.083707641537296,
+        "4567": 0.083707641537296,
+        "5678": 0.083707641537296,
+        "6789": 0.083707641537296,
+        "7890": 0.083707641537296,
+        "8901": 0.083707641537296
+      },
+      "tokens_by_head_seed": {
+        "1234": 401.619140625,
+        "2345": 401.25,
+        "3456": 392.0625,
+        "4567": 393.66796875,
+        "5678": 404.54296875,
+        "6789": 389.390625,
+        "7890": 398.015625,
+        "8901": 399.31640625
+      },
+      "generation_seed_sd_pooled": {
+        "sd": 0.020431005824209612,
+        "df": 16,
+        "n_cells": 8,
+        "per_cell_sd": {
+          "1234": 0.007592336883823301,
+          "2345": 0.018976605250366704,
+          "3456": 0.015091958813983135,
+          "4567": 0.03822296780270182,
+          "5678": 0.01944589500152237,
+          "6789": 0.014899224157588875,
+          "7890": 0.022307403266078458,
+          "8901": 0.011624991348482128
+        },
+        "per_cell_span": {
+          "1234": 0.014491421568627427,
+          "2345": 0.03725490196078429,
+          "3456": 0.0301062890909789,
+          "4567": 0.0764443148330059,
+          "5678": 0.03858267716535435,
+          "6789": 0.029589195186218165,
+          "7890": 0.042976424361493126,
+          "8901": 0.02202263779527558
+        },
+        "note": "pooled within-head-seed sd over generation seeds 101/202/303"
+      },
+      "variance_ratio": {
+        "ratio": 1.1790650982248625,
+        "lo": 0.6571253202052294,
+        "hi": 2.5130460202889564,
+        "df1": 7,
+        "df2": 16,
+        "interval": "F, (7, 16) df, alpha=0.05",
+        "c25_reported_span_ratio": 24.75935320097244,
+        "c25_span_ratio_inside_interval": false
+      }
+    },
+    "D_qed": {
+      "name": "D_qed",
+      "property": "qed",
+      "probe_point": 12,
+      "lam": 1.0,
+      "head_seeds_present": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "head_seeds_missing": [],
+      "n_head_seeds": 8,
+      "meets_preregistered_minimum": true,
+      "hit_rate_by_head_seed": {
+        "1234": 0.19083830274640326,
+        "2345": 0.19982927273217563,
+        "3456": 0.18372242946836267,
+        "4567": 0.2008971839306499,
+        "5678": 0.21281352723737898,
+        "6789": 0.2276581865622961,
+        "7890": 0.2049729480833429,
+        "8901": 0.1889256665851272
+      },
+      "dirs": {
+        "1234": "pilot_50k_p2_guided_qed",
+        "2345": "c29_dep_hs2345_lam1_qed_guided",
+        "3456": "c29_dep_hs3456_lam1_qed_guided",
+        "4567": "c29_dep_hs4567_lam1_qed_guided",
+        "5678": "c29_dep_hs5678_lam1_qed_guided",
+        "6789": "c29_dep_hs6789_lam1_qed_guided",
+        "7890": "c29_dep_hs7890_lam1_qed_guided",
+        "8901": "c29_dep_hs8901_lam1_qed_guided"
+      },
+      "mean_hit_rate": 0.20120718966821707,
+      "head_seed_sd": {
+        "n": 8,
+        "sd": 0.014215707951946311,
+        "lo": 0.009399058605163024,
+        "hi": 0.028932833645278027,
+        "df": 7,
+        "interval": "chi-square, 7 df, alpha=0.05"
+      },
+      "head_seed_span": {
+        "n": 8,
+        "span": 0.043935757093933436,
+        "d2_n": 2.8472,
+        "sigma_from_span": 0.015431215613210677,
+        "note": "a raw span is not comparable across different n; sigma_from_span = span / d2(n) is"
+      },
+      "hit_rate_by_generation_seed": {
+        "1234": [
+          0.18786692759295498,
+          0.18503937007874016,
+          0.19960861056751467
+        ],
+        "2345": [
+          0.2054794520547945,
+          0.2109375,
+          0.1830708661417323
+        ],
+        "3456": [
+          0.16796875,
+          0.185546875,
+          0.19765166340508805
+        ],
+        "4567": [
+          0.18199608610567514,
+          0.22265625,
+          0.1980392156862745
+        ],
+        "5678": [
+          0.21526418786692758,
+          0.18003913894324852,
+          0.24313725490196078
+        ],
+        "6789": [
+          0.2328767123287671,
+          0.22504892367906065,
+          0.22504892367906065
+        ],
+        "7890": [
+          0.18199608610567514,
+          0.20939334637964774,
+          0.2235294117647059
+        ],
+        "8901": [
+          0.193359375,
+          0.1898238747553816,
+          0.18359375
+        ]
+      },
+      "validity_by_head_seed": {
+        "1234": 0.99609375,
+        "2345": 0.9967447916666666,
+        "3456": 0.9993489583333334,
+        "4567": 0.998046875,
+        "5678": 0.9973958333333334,
+        "6789": 0.998046875,
+        "7890": 0.9973958333333334,
+        "8901": 0.9993489583333334
+      },
+      "unguided_by_head_seed": {
+        "1234": 0.08960026708784365,
+        "2345": 0.08960026708784365,
+        "3456": 0.08960026708784365,
+        "4567": 0.08960026708784365,
+        "5678": 0.08960026708784365,
+        "6789": 0.08960026708784365,
+        "7890": 0.08960026708784365,
+        "8901": 0.08960026708784365
+      },
+      "tokens_by_head_seed": {
+        "1234": 367.271484375,
+        "2345": 373.423828125,
+        "3456": 369.8671875,
+        "4567": 364.06640625,
+        "5678": 366.931640625,
+        "6789": 364.552734375,
+        "7890": 374.109375,
+        "8901": 359.71875
+      },
+      "generation_seed_sd_pooled": {
+        "sd": 0.017358715409830583,
+        "df": 16,
+        "n_cells": 8,
+        "per_cell_sd": {
+          "1234": 0.007725768235705364,
+          "2345": 0.014767556176666497,
+          "3456": 0.014925323721009288,
+          "4567": 0.020480190888825557,
+          "5678": 0.03162036309920696,
+          "6789": 0.0045193758840675205,
+          "7890": 0.021116562833431406,
+          "8901": 0.004944384830086556
+        },
+        "per_cell_span": {
+          "1234": 0.014569240488774504,
+          "2345": 0.02786663385826771,
+          "3456": 0.02968291340508805,
+          "4567": 0.04066016389432486,
+          "5678": 0.06309811595871226,
+          "6789": 0.007827788649706457,
+          "7890": 0.041533325659030756,
+          "8901": 0.009765625
+        },
+        "note": "pooled within-head-seed sd over generation seeds 101/202/303"
+      },
+      "variance_ratio": {
+        "ratio": 0.8189377852174289,
+        "lo": 0.45641649061562956,
+        "hi": 1.745474736809163,
+        "df1": 7,
+        "df2": 16,
+        "interval": "F, (7, 16) df, alpha=0.05",
+        "c25_reported_span_ratio": 24.75935320097244,
+        "c25_span_ratio_inside_interval": false
+      }
+    },
+    "D2_hbd_count": {
+      "name": "D2_hbd_count",
+      "property": "hbd_count",
+      "probe_point": 12,
+      "lam": 2.0,
+      "head_seeds_present": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "head_seeds_missing": [],
+      "n_head_seeds": 8,
+      "meets_preregistered_minimum": true,
+      "hit_rate_by_head_seed": {
+        "1234": 0.4303223626700486,
+        "2345": 0.46651001548530463,
+        "3456": 0.46294133419962974,
+        "4567": 0.4826457105435494,
+        "5678": 0.425318909907951,
+        "6789": 0.4600389059349526,
+        "7890": 0.45208673902199226,
+        "8901": 0.4512866831096547
+      },
+      "dirs": {
+        "1234": "pilot_50k_p2_lam2_guided_hbd_count",
+        "2345": "c29_dep_hs2345_lam2_hbd_count_guided",
+        "3456": "c29_dep_hs3456_lam2_hbd_count_guided",
+        "4567": "c29_dep_hs4567_lam2_hbd_count_guided",
+        "5678": "c29_dep_hs5678_lam2_hbd_count_guided",
+        "6789": "c29_dep_hs6789_lam2_hbd_count_guided",
+        "7890": "c29_dep_hs7890_lam2_hbd_count_guided",
+        "8901": "c29_dep_hs8901_lam2_hbd_count_guided"
+      },
+      "mean_hit_rate": 0.45389383260913535,
+      "head_seed_sd": {
+        "n": 8,
+        "sd": 0.01885152886768197,
+        "lo": 0.012464143553259076,
+        "hi": 0.03836799057292977,
+        "df": 7,
+        "interval": "chi-square, 7 df, alpha=0.05"
+      },
+      "head_seed_span": {
+        "n": 8,
+        "span": 0.05732680063559836,
+        "d2_n": 2.8472,
+        "sigma_from_span": 0.02013444810185388,
+        "note": "a raw span is not comparable across different n; sigma_from_span = span / d2(n) is"
+      },
+      "hit_rate_by_generation_seed": {
+        "1234": [
+          0.45098039215686275,
+          0.44664031620553357,
+          0.3933463796477495
+        ],
+        "2345": [
+          0.47128712871287126,
+          0.47514910536779326,
+          0.4530938123752495
+        ],
+        "3456": [
+          0.4774066797642436,
+          0.46062992125984253,
+          0.4507874015748031
+        ],
+        "4567": [
+          0.4911591355599214,
+          0.47347740667976423,
+          0.48330058939096265
+        ],
+        "5678": [
+          0.44047619047619047,
+          0.41865079365079366,
+          0.41682974559686886
+        ],
+        "6789": [
+          0.470703125,
+          0.4457593688362919,
+          0.4636542239685658
+        ],
+        "7890": [
+          0.44422700587084146,
+          0.4744094488188976,
+          0.4376237623762376
+        ],
+        "8901": [
+          0.44227005870841485,
+          0.45596868884540115,
+          0.4556213017751479
+        ]
+      },
+      "validity_by_head_seed": {
+        "1234": 0.994140625,
+        "2345": 0.982421875,
+        "3456": 0.9928385416666666,
+        "4567": 0.994140625,
+        "5678": 0.9889322916666666,
+        "6789": 0.9947916666666666,
+        "7890": 0.9921875,
+        "8901": 0.9954427083333334
+      },
+      "unguided_by_head_seed": {
+        "1234": 0.083707641537296,
+        "2345": 0.083707641537296,
+        "3456": 0.083707641537296,
+        "4567": 0.083707641537296,
+        "5678": 0.083707641537296,
+        "6789": 0.083707641537296,
+        "7890": 0.083707641537296,
+        "8901": 0.083707641537296
+      },
+      "tokens_by_head_seed": {
+        "1234": 393.181640625,
+        "2345": 402.708984375,
+        "3456": 395.912109375,
+        "4567": 386.314453125,
+        "5678": 413.49609375,
+        "6789": 387.568359375,
+        "7890": 394.775390625,
+        "8901": 397.3125
+      },
+      "generation_seed_sd_pooled": {
+        "sd": 0.01663057142425369,
+        "df": 16,
+        "n_cells": 8,
+        "per_cell_sd": {
+          "1234": 0.03209558466775206,
+          "2345": 0.011778140572199053,
+          "3456": 0.013459326326579922,
+          "4567": 0.00885903684248113,
+          "5678": 0.013158131313827325,
+          "6789": 0.012858873832951239,
+          "7890": 0.019611941149970315,
+          "8901": 0.007810557351362283
+        },
+        "per_cell_span": {
+          "1234": 0.057634012509113264,
+          "2345": 0.022055292992543774,
+          "3456": 0.026619278189440487,
+          "4567": 0.017681728880157177,
+          "5678": 0.023646444879321604,
+          "6789": 0.024943756163708086,
+          "7890": 0.036785686442660004,
+          "8901": 0.0136986301369863
+        },
+        "note": "pooled within-head-seed sd over generation seeds 101/202/303"
+      },
+      "variance_ratio": {
+        "ratio": 1.1335466705725625,
+        "lo": 0.6317566519346741,
+        "hi": 2.4160285582051046,
+        "df1": 7,
+        "df2": 16,
+        "interval": "F, (7, 16) df, alpha=0.05",
+        "c25_reported_span_ratio": 24.75935320097244,
+        "c25_span_ratio_inside_interval": false
+      },
+      "post_hoc": "added after scoring exposed the C29.0.2 / R4 lambda mismatch; the defect is reported in the section rather than amended out of the pre-registration"
+    }
+  },
+  "paired_mid_minus_deployed": {
+    "A1": {
+      "head_seeds_paired": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "n_pairs": 8,
+      "per_head_seed": {
+        "1234": 0.1300196969866107,
+        "2345": 0.0935714166433716,
+        "3456": 0.005791118613431512,
+        "4567": 0.035848266824838826,
+        "5678": 0.1493432004848963,
+        "6789": 0.11089985517840634,
+        "7890": 0.10843763103873172,
+        "8901": 0.11920450185939035
+      },
+      "lambda_matched": true,
+      "mid_lambda": 2.0,
+      "deployed_lambda": 2.0,
+      "t": {
+        "n": 8,
+        "mean": 0.09413946095370967,
+        "sd": 0.04877362363224307,
+        "t_crit": 2.3646242515927844,
+        "lo": 0.05336369117346115,
+        "hi": 0.1349152307339582,
+        "excludes_zero": true,
+        "interval": "Student t, 7 df"
+      },
+      "bootstrap": {
+        "n": 8,
+        "computed": true,
+        "n_boot": 10000,
+        "rng_seed": 20260801,
+        "mean": 0.09413946095370967,
+        "lo": 0.06096523913746895,
+        "hi": 0.12300952898893718,
+        "excludes_zero": true,
+        "p_constant_resample": 5.960464477539063e-08
+      },
+      "unpaired_difference_of_means": 0.09413946095370967,
+      "deployed_family": "D2_hbd_count",
+      "post_hoc_comparator": true
+    },
+    "A2": {
+      "head_seeds_paired": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "n_pairs": 8,
+      "per_head_seed": {
+        "1234": 0.0963544910663271,
+        "2345": 0.128755228472057,
+        "3456": 0.18830641464961645,
+        "4567": 0.14625337812010936,
+        "5678": 0.12075748875293774,
+        "6789": 0.059835194482035114,
+        "7890": 0.13923502063618848,
+        "8901": 0.136815241760251
+      },
+      "lambda_matched": true,
+      "mid_lambda": 1.0,
+      "deployed_lambda": 1.0,
+      "t": {
+        "n": 8,
+        "mean": 0.12703905724244027,
+        "sd": 0.03754521014721536,
+        "t_crit": 2.3646242515927844,
+        "lo": 0.0956504760523841,
+        "hi": 0.15842763843249646,
+        "excludes_zero": true,
+        "interval": "Student t, 7 df"
+      },
+      "bootstrap": {
+        "n": 8,
+        "computed": true,
+        "n_boot": 10000,
+        "rng_seed": 20260801,
+        "mean": 0.12703905724244027,
+        "lo": 0.10205339385639639,
+        "hi": 0.15041165106004872,
+        "excludes_zero": true,
+        "p_constant_resample": 5.960464477539063e-08
+      },
+      "unpaired_difference_of_means": 0.12703905724244025,
+      "deployed_family": "D_aromatic_rings",
+      "post_hoc_comparator": false
+    },
+    "A3": {
+      "head_seeds_paired": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "n_pairs": 8,
+      "per_head_seed": {
+        "1234": 0.03797545092287266,
+        "2345": 0.04237323137072707,
+        "3456": 0.031024302557781103,
+        "4567": 0.015487420744256908,
+        "5678": 0.004727998617519852,
+        "6789": 0.00506181710697981,
+        "7890": 0.020363045775405764,
+        "8901": 0.05562156675594099
+      },
+      "lambda_matched": true,
+      "mid_lambda": 1.0,
+      "deployed_lambda": 1.0,
+      "t": {
+        "n": 8,
+        "mean": 0.02657935423143552,
+        "sd": 0.018301775379168158,
+        "t_crit": 2.3646242515927844,
+        "lo": 0.011278687111483396,
+        "hi": 0.041880021351387645,
+        "excludes_zero": true,
+        "interval": "Student t, 7 df"
+      },
+      "bootstrap": {
+        "n": 8,
+        "computed": true,
+        "n_boot": 10000,
+        "rng_seed": 20260801,
+        "mean": 0.02657935423143552,
+        "lo": 0.014739654449900483,
+        "hi": 0.0384659098199141,
+        "excludes_zero": true,
+        "p_constant_resample": 5.960464477539063e-08
+      },
+      "unpaired_difference_of_means": 0.02657935423143551,
+      "deployed_family": "D_qed",
+      "post_hoc_comparator": false
+    },
+    "A1_as_preregistered": {
+      "head_seeds_paired": [
+        1234,
+        2345,
+        3456,
+        4567,
+        5678,
+        6789,
+        7890,
+        8901
+      ],
+      "n_pairs": 8,
+      "per_head_seed": {
+        "1234": 0.26159091250830224,
+        "2345": 0.2138717671603267,
+        "3456": 0.10009638771698304,
+        "4567": 0.19329118361991304,
+        "5678": 0.2539580807494939,
+        "6789": 0.26181943869989355,
+        "7890": 0.21047075988056807,
+        "8901": 0.26045302345116994
+      },
+      "lambda_matched": false,
+      "mid_lambda": 2.0,
+      "deployed_lambda": 1.0,
+      "t": {
+        "n": 8,
+        "mean": 0.2194439442233313,
+        "sd": 0.05540035197502375,
+        "t_crit": 2.3646242515927844,
+        "lo": 0.17312809090656156,
+        "hi": 0.26575979754010104,
+        "excludes_zero": true,
+        "interval": "Student t, 7 df"
+      },
+      "bootstrap": {
+        "n": 8,
+        "computed": true,
+        "n_boot": 10000,
+        "rng_seed": 20260801,
+        "mean": 0.2194439442233313,
+        "lo": 0.18037496269562403,
+        "hi": 0.2509467461560875,
+        "excludes_zero": true,
+        "p_constant_resample": 5.960464477539063e-08
+      },
+      "unpaired_difference_of_means": 0.2194439442233313,
+      "deployed_family": "D_hbd_count"
+    }
+  },
+  "effective_lambda": {
+    "definition": "lambda_eff = lambda * spread(prop, L) / spread(prop, 12); the deployed comparator is interpolated linearly in log2(lambda) between bracketing measured points",
+    "caveat": "the lambda-rescale identity is pointwise; the spread ratio is a scalar moment ratio, so this is a first-order control, not an identity",
+    "envelope_coarse": {
+      "aromatic_rings": {
+        "0.25": {
+          "lam": 0.25,
+          "hit_rate": 0.23588607605115539,
+          "dir": "pilot_50k_p2_lam0p25_guided_aromatic_rings",
+          "validity": 0.99609375
+        },
+        "0.5": {
+          "lam": 0.5,
+          "hit_rate": 0.3010951113213786,
+          "dir": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+          "validity": 0.9967447916666666
+        },
+        "1": {
+          "lam": 1.0,
+          "hit_rate": 0.4734551246669265,
+          "dir": "pilot_50k_p2_guided_aromatic_rings",
+          "validity": 0.9954427083333334
+        },
+        "2": {
+          "lam": 2.0,
+          "hit_rate": 0.5579287361930816,
+          "dir": "pilot_50k_p2_lam2_guided_aromatic_rings",
+          "validity": 0.9908854166666666
+        },
+        "4": {
+          "lam": 4.0,
+          "hit_rate": 0.49892386579281495,
+          "dir": "pilot_50k_p2_lam4_guided_aromatic_rings",
+          "validity": 0.970703125
+        },
+        "8": {
+          "lam": 8.0,
+          "hit_rate": 0.3992927949319125,
+          "dir": "pilot_50k_p2_lam8_guided_aromatic_rings",
+          "validity": 0.806640625
+        }
+      },
+      "hbd_count": {
+        "0.25": {
+          "lam": 0.25,
+          "hit_rate": 0.13243446065640868,
+          "dir": "pilot_50k_p2_lam0p25_guided_hbd_count",
+          "validity": 0.998046875
+        },
+        "0.5": {
+          "lam": 0.5,
+          "hit_rate": 0.18128505995574082,
+          "dir": "pilot_50k_p2_lam0p5_guided_hbd_count",
+          "validity": 0.9947916666666666
+        },
+        "1": {
+          "lam": 1.0,
+          "hit_rate": 0.29875114714835704,
+          "dir": "pilot_50k_p2_guided_hbd_count",
+          "validity": 0.998046875
+        },
+        "2": {
+          "lam": 2.0,
+          "hit_rate": 0.4303223626700486,
+          "dir": "pilot_50k_p2_lam2_guided_hbd_count",
+          "validity": 0.994140625
+        },
+        "4": {
+          "lam": 4.0,
+          "hit_rate": 0.3729855553214292,
+          "dir": "pilot_50k_p2_lam4_guided_hbd_count",
+          "validity": 0.984375
+        },
+        "8": {
+          "lam": 8.0,
+          "hit_rate": 0.31043581012657234,
+          "dir": "pilot_50k_p2_lam8_guided_hbd_count",
+          "validity": 0.90234375
+        }
+      },
+      "qed": {
+        "0.25": {
+          "lam": 0.25,
+          "hit_rate": 0.1332260058085633,
+          "dir": "pilot_50k_p2_lam0p25_guided_qed",
+          "validity": 0.9967447916666666
+        },
+        "0.5": {
+          "lam": 0.5,
+          "hit_rate": 0.16918000076743026,
+          "dir": "pilot_50k_p2_lam0p5_guided_qed",
+          "validity": 0.9967447916666666
+        },
+        "1": {
+          "lam": 1.0,
+          "hit_rate": 0.19083830274640326,
+          "dir": "pilot_50k_p2_guided_qed",
+          "validity": 0.99609375
+        },
+        "2": {
+          "lam": 2.0,
+          "hit_rate": 0.23609533603470859,
+          "dir": "pilot_50k_p2_lam2_guided_qed",
+          "validity": 0.998046875
+        },
+        "4": {
+          "lam": 4.0,
+          "hit_rate": 0.2606845023461389,
+          "dir": "pilot_50k_p2_lam4_guided_qed",
+          "validity": 0.9713541666666666
+        },
+        "8": {
+          "lam": 8.0,
+          "hit_rate": 0.2438314400874245,
+          "dir": "pilot_50k_p2_lam8_guided_qed",
+          "validity": 0.8997395833333334
+        }
+      }
+    },
+    "envelope_fine": {
+      "aromatic_rings": {
+        "0.25": {
+          "lam": 0.25,
+          "hit_rate": 0.23588607605115539,
+          "dir": "pilot_50k_p2_lam0p25_guided_aromatic_rings",
+          "validity": 0.99609375
+        },
+        "0.5": {
+          "lam": 0.5,
+          "hit_rate": 0.3010951113213786,
+          "dir": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+          "validity": 0.9967447916666666
+        },
+        "1": {
+          "lam": 1.0,
+          "hit_rate": 0.4734551246669265,
+          "dir": "pilot_50k_p2_guided_aromatic_rings",
+          "validity": 0.9954427083333334
+        },
+        "1.25": {
+          "lam": 1.25,
+          "hit_rate": 0.5134237098283746,
+          "dir": "c29_deplam1p25_guided_aromatic_rings",
+          "validity": 0.9954427083333334
+        },
+        "1.5": {
+          "lam": 1.5,
+          "hit_rate": 0.5316156535388128,
+          "dir": "c29_deplam1p5_guided_aromatic_rings",
+          "validity": 0.9993489583333334
+        },
+        "2": {
+          "lam": 2.0,
+          "hit_rate": 0.5579287361930816,
+          "dir": "pilot_50k_p2_lam2_guided_aromatic_rings",
+          "validity": 0.9908854166666666
+        },
+        "2.5": {
+          "lam": 2.5,
+          "hit_rate": 0.5601062800845352,
+          "dir": "c29_deplam2p5_guided_aromatic_rings",
+          "validity": 0.9915364583333334
+        },
+        "4": {
+          "lam": 4.0,
+          "hit_rate": 0.49892386579281495,
+          "dir": "pilot_50k_p2_lam4_guided_aromatic_rings",
+          "validity": 0.970703125
+        },
+        "8": {
+          "lam": 8.0,
+          "hit_rate": 0.3992927949319125,
+          "dir": "pilot_50k_p2_lam8_guided_aromatic_rings",
+          "validity": 0.806640625
+        }
+      },
+      "hbd_count": {
+        "0.25": {
+          "lam": 0.25,
+          "hit_rate": 0.13243446065640868,
+          "dir": "pilot_50k_p2_lam0p25_guided_hbd_count",
+          "validity": 0.998046875
+        },
+        "0.5": {
+          "lam": 0.5,
+          "hit_rate": 0.18128505995574082,
+          "dir": "pilot_50k_p2_lam0p5_guided_hbd_count",
+          "validity": 0.9947916666666666
+        },
+        "1": {
+          "lam": 1.0,
+          "hit_rate": 0.29875114714835704,
+          "dir": "pilot_50k_p2_guided_hbd_count",
+          "validity": 0.998046875
+        },
+        "1.25": {
+          "lam": 1.25,
+          "hit_rate": 0.3437036123909169,
+          "dir": "c29_deplam1p25_guided_hbd_count",
+          "validity": 0.99609375
+        },
+        "1.5": {
+          "lam": 1.5,
+          "hit_rate": 0.38024448810303424,
+          "dir": "c29_deplam1p5_guided_hbd_count",
+          "validity": 0.9947916666666666
+        },
+        "2": {
+          "lam": 2.0,
+          "hit_rate": 0.4303223626700486,
+          "dir": "pilot_50k_p2_lam2_guided_hbd_count",
+          "validity": 0.994140625
+        },
+        "2.5": {
+          "lam": 2.5,
+          "hit_rate": 0.44345543763551293,
+          "dir": "c29_deplam2p5_guided_hbd_count",
+          "validity": 0.9895833333333334
+        },
+        "4": {
+          "lam": 4.0,
+          "hit_rate": 0.3729855553214292,
+          "dir": "pilot_50k_p2_lam4_guided_hbd_count",
+          "validity": 0.984375
+        },
+        "8": {
+          "lam": 8.0,
+          "hit_rate": 0.31043581012657234,
+          "dir": "pilot_50k_p2_lam8_guided_hbd_count",
+          "validity": 0.90234375
+        }
+      },
+      "qed": {
+        "0.25": {
+          "lam": 0.25,
+          "hit_rate": 0.1332260058085633,
+          "dir": "pilot_50k_p2_lam0p25_guided_qed",
+          "validity": 0.9967447916666666
+        },
+        "0.5": {
+          "lam": 0.5,
+          "hit_rate": 0.16918000076743026,
+          "dir": "pilot_50k_p2_lam0p5_guided_qed",
+          "validity": 0.9967447916666666
+        },
+        "1": {
+          "lam": 1.0,
+          "hit_rate": 0.19083830274640326,
+          "dir": "pilot_50k_p2_guided_qed",
+          "validity": 0.99609375
+        },
+        "1.25": {
+          "lam": 1.25,
+          "hit_rate": 0.18680066692554242,
+          "dir": "c29_deplam1p25_guided_qed",
+          "validity": 0.9967447916666666
+        },
+        "1.5": {
+          "lam": 1.5,
+          "hit_rate": 0.20392337538042013,
+          "dir": "c29_deplam1p5_guided_qed",
+          "validity": 0.99609375
+        },
+        "2": {
+          "lam": 2.0,
+          "hit_rate": 0.23609533603470859,
+          "dir": "pilot_50k_p2_lam2_guided_qed",
+          "validity": 0.998046875
+        },
+        "2.5": {
+          "lam": 2.5,
+          "hit_rate": 0.2843036212699797,
+          "dir": "c29_deplam2p5_guided_qed",
+          "validity": 0.9915364583333334
+        },
+        "4": {
+          "lam": 4.0,
+          "hit_rate": 0.2606845023461389,
+          "dir": "pilot_50k_p2_lam4_guided_qed",
+          "validity": 0.9713541666666666
+        },
+        "8": {
+          "lam": 8.0,
+          "hit_rate": 0.2438314400874245,
+          "dir": "pilot_50k_p2_lam8_guided_qed",
+          "validity": 0.8997395833333334
+        }
+      }
+    },
+    "seed_1234_table": [
+      {
+        "property": "aromatic_rings",
+        "probe_point": 3,
+        "lam": 0.5,
+        "spread_mid": 0.30125945806503296,
+        "spread_deployed": 0.19924567639827728,
+        "spread_ratio": 1.5119999766661822,
+        "lambda_effective": 0.7559999883330911,
+        "mid_hit_rate": 0.3616131384060473,
+        "mid_dir": "c23_guided_L3_lam0p5_aromatic_rings",
+        "deployed_hit_rate_at_lam": 0.3010951113213786,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+        "advantage_raw": 0.06051802708466869,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.4039006403783553,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.3010951113213786,
+            0.4734551246669265
+          ],
+          "weight_in_log2": 0.5964581172947108,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": -0.04228750197230802,
+        "confound_share_coarse": 1.6987587667579618,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.4039006403783553,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.3010951113213786,
+            0.4734551246669265
+          ],
+          "weight_in_log2": 0.5964581172947108,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_fine": -0.04228750197230802,
+        "confound_share_fine": 1.6987587667579618
+      },
+      {
+        "property": "aromatic_rings",
+        "probe_point": 3,
+        "lam": 1.0,
+        "spread_mid": 0.30125945806503296,
+        "spread_deployed": 0.19924567639827728,
+        "spread_ratio": 1.5119999766661822,
+        "lambda_effective": 1.5119999766661822,
+        "mid_hit_rate": 0.5698096157332536,
+        "mid_dir": "c23_guided_L3_lam1_aromatic_rings",
+        "deployed_hit_rate_at_lam": 0.4734551246669265,
+        "deployed_dir_at_lam": "pilot_50k_p2_guided_aromatic_rings",
+        "advantage_raw": 0.0963544910663271,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.5238400959589018,
+          "bracket": [
+            1.0,
+            2.0
+          ],
+          "bracket_hit_rates": [
+            0.4734551246669265,
+            0.5579287361930816
+          ],
+          "weight_in_log2": 0.5964581172947108,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.04596951977435182,
+        "confound_share_coarse": 0.5229125361400332,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.5323444674642709,
+          "bracket": [
+            1.5,
+            2.0
+          ],
+          "bracket_hit_rates": [
+            0.5316156535388128,
+            0.5579287361930816
+          ],
+          "weight_in_log2": 0.02769777813698522,
+          "bracket_width_octaves": 0.4150374992788438
+        },
+        "advantage_effective_fine": 0.03746514826898273,
+        "confound_share_fine": 0.6111738243400298
+      },
+      {
+        "property": "aromatic_rings",
+        "probe_point": 3,
+        "lam": 2.0,
+        "spread_mid": 0.30125945806503296,
+        "spread_deployed": 0.19924567639827728,
+        "spread_ratio": 1.5119999766661822,
+        "lambda_effective": 3.0239999533323645,
+        "mid_hit_rate": 0.8158744959471287,
+        "mid_dir": "c23_guided_L3_lam2_aromatic_rings",
+        "deployed_hit_rate_at_lam": 0.5579287361930816,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_aromatic_rings",
+        "advantage_raw": 0.2579457597540471,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.5227348022829201,
+          "bracket": [
+            2.0,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.5579287361930816,
+            0.49892386579281495
+          ],
+          "weight_in_log2": 0.5964581172947108,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.29313969366420856,
+        "confound_share_coarse": -0.13643928066008565,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.5353354417120892,
+          "bracket": [
+            2.5,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.5601062800845352,
+            0.49892386579281495
+          ],
+          "weight_in_log2": 0.4048685992405849,
+          "bracket_width_octaves": 0.6780719051126376
+        },
+        "advantage_effective_fine": 0.28053905423503944,
+        "confound_share_fine": -0.08758932305200594
+      },
+      {
+        "property": "aromatic_rings",
+        "probe_point": 6,
+        "lam": 0.5,
+        "spread_mid": 0.3013074994087219,
+        "spread_deployed": 0.19924567639827728,
+        "spread_ratio": 1.5122410927825136,
+        "lambda_effective": 0.7561205463912568,
+        "mid_hit_rate": 0.3881135145268153,
+        "mid_dir": "c23_guided_L6_lam0p5_aromatic_rings",
+        "deployed_hit_rate_at_lam": 0.3010951113213786,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+        "advantage_raw": 0.08701840320543669,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.4039402910809779,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.3010951113213786,
+            0.4734551246669265
+          ],
+          "weight_in_log2": 0.5966881631264145,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": -0.01582677655416259,
+        "confound_share_coarse": 1.181878498928532,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.4039402910809779,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.3010951113213786,
+            0.4734551246669265
+          ],
+          "weight_in_log2": 0.5966881631264145,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_fine": -0.01582677655416259,
+        "confound_share_fine": 1.181878498928532
+      },
+      {
+        "property": "aromatic_rings",
+        "probe_point": 6,
+        "lam": 1.0,
+        "spread_mid": 0.3013074994087219,
+        "spread_deployed": 0.19924567639827728,
+        "spread_ratio": 1.5122410927825136,
+        "lambda_effective": 1.5122410927825136,
+        "mid_hit_rate": 0.5830783725998746,
+        "mid_dir": "c23_guided_L6_lam1_aromatic_rings",
+        "deployed_hit_rate_at_lam": 0.4734551246669265,
+        "deployed_dir_at_lam": "pilot_50k_p2_guided_aromatic_rings",
+        "advantage_raw": 0.10962324793294809,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.5238595287611223,
+          "bracket": [
+            1.0,
+            2.0
+          ],
+          "bracket_hit_rates": [
+            0.4734551246669265,
+            0.5579287361930816
+          ],
+          "weight_in_log2": 0.5966881631264145,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.05921884383875231,
+        "confound_share_coarse": 0.4597966676286222,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.5323590522066,
+          "bracket": [
+            1.5,
+            2.0
+          ],
+          "bracket_hit_rates": [
+            0.5316156535388128,
+            0.5579287361930816
+          ],
+          "weight_in_log2": 0.02825205535796751,
+          "bracket_width_octaves": 0.4150374992788438
+        },
+        "advantage_effective_fine": 0.05071932039327465,
+        "confound_share_fine": 0.5373306178238989
+      },
+      {
+        "property": "aromatic_rings",
+        "probe_point": 6,
+        "lam": 2.0,
+        "spread_mid": 0.3013074994087219,
+        "spread_deployed": 0.19924567639827728,
+        "spread_ratio": 1.5122410927825136,
+        "lambda_effective": 3.0244821855650272,
+        "mid_hit_rate": 0.6841525913850868,
+        "mid_dir": "c23_guided_L6_lam2_aromatic_rings",
+        "deployed_hit_rate_at_lam": 0.5579287361930816,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_aromatic_rings",
+        "advantage_raw": 0.12622385519200519,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.5227212284584344,
+          "bracket": [
+            2.0,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.5579287361930816,
+            0.49892386579281495
+          ],
+          "weight_in_log2": 0.5966881631264145,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.1614313629266524,
+        "confound_share_coarse": -0.2789291111501179,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.5353146846813448,
+          "bracket": [
+            2.5,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.5601062800845352,
+            0.49892386579281495
+          ],
+          "weight_in_log2": 0.40520786389669167,
+          "bracket_width_octaves": 0.6780719051126376
+        },
+        "advantage_effective_fine": 0.14883790670374197,
+        "confound_share_fine": -0.17915830155351747
+      },
+      {
+        "property": "hbd_count",
+        "probe_point": 4,
+        "lam": 0.5,
+        "spread_mid": 0.16804006695747375,
+        "spread_deployed": 0.13209988176822662,
+        "spread_ratio": 1.2720682615924312,
+        "lambda_effective": 0.6360341307962156,
+        "mid_hit_rate": 0.23187709295306788,
+        "mid_dir": "c23_guided_L4_lam0p5_hbd_count",
+        "deployed_hit_rate_at_lam": 0.18128505995574082,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_hbd_count",
+        "advantage_raw": 0.05059203299732706,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.2220664768675135,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.18128505995574082,
+            0.29875114714835704
+          ],
+          "weight_in_log2": 0.3471760904481387,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.009810616085554391,
+        "confound_share_coarse": 0.8060837743746586,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.2220664768675135,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.18128505995574082,
+            0.29875114714835704
+          ],
+          "weight_in_log2": 0.3471760904481387,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_fine": 0.009810616085554391,
+        "confound_share_fine": 0.8060837743746586
+      },
+      {
+        "property": "hbd_count",
+        "probe_point": 4,
+        "lam": 1.0,
+        "spread_mid": 0.16804006695747375,
+        "spread_deployed": 0.13209988176822662,
+        "spread_ratio": 1.2720682615924312,
+        "lambda_effective": 1.2720682615924312,
+        "mid_hit_rate": 0.368888749905456,
+        "mid_dir": "c23_guided_L4_lam1_hbd_count",
+        "deployed_hit_rate_at_lam": 0.29875114714835704,
+        "deployed_dir_at_lam": "pilot_50k_p2_guided_hbd_count",
+        "advantage_raw": 0.07013760275709896,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.34442952736868737,
+          "bracket": [
+            1.0,
+            2.0
+          ],
+          "bracket_hit_rates": [
+            0.29875114714835704,
+            0.4303223626700486
+          ],
+          "weight_in_log2": 0.3471760904481387,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.024459222536768632,
+        "confound_share_coarse": 0.6512680562882084,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.34721107699366316,
+          "bracket": [
+            1.25,
+            1.5
+          ],
+          "bracket_hit_rates": [
+            0.3437036123909169,
+            0.38024448810303424
+          ],
+          "weight_in_log2": 0.09598742598232582,
+          "bracket_width_octaves": 0.26303440583379384
+        },
+        "advantage_effective_fine": 0.021677672911792845,
+        "confound_share_fine": 0.6909265207300125
+      },
+      {
+        "property": "hbd_count",
+        "probe_point": 4,
+        "lam": 2.0,
+        "spread_mid": 0.16804006695747375,
+        "spread_deployed": 0.13209988176822662,
+        "spread_ratio": 1.2720682615924312,
+        "lambda_effective": 2.5441365231848625,
+        "mid_hit_rate": 0.5603420596566593,
+        "mid_dir": "c23_guided_L4_lam2_hbd_count",
+        "deployed_hit_rate_at_lam": 0.4303223626700486,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_hbd_count",
+        "advantage_raw": 0.1300196969866107,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.4104163940559768,
+          "bracket": [
+            2.0,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.4303223626700486,
+            0.3729855553214292
+          ],
+          "weight_in_log2": 0.3471760904481387,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.1499256656006825,
+        "confound_share_coarse": -0.15309963855800776,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.44083149279659667,
+          "bracket": [
+            2.5,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.44345543763551293,
+            0.3729855553214292
+          ],
+          "weight_in_log2": 0.03723498255923496,
+          "bracket_width_octaves": 0.6780719051126376
+        },
+        "advantage_effective_fine": 0.11951056686006262,
+        "confound_share_fine": 0.0808272159535205
+      },
+      {
+        "property": "hbd_count",
+        "probe_point": 6,
+        "lam": 0.5,
+        "spread_mid": 0.16643817722797394,
+        "spread_deployed": 0.13209988176822662,
+        "spread_ratio": 1.2599419091077986,
+        "lambda_effective": 0.6299709545538993,
+        "mid_hit_rate": 0.202732514092736,
+        "mid_dir": "c23_guided_L6_lam0p5_hbd_count",
+        "deployed_hit_rate_at_lam": 0.18128505995574082,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_hbd_count",
+        "advantage_raw": 0.02144745413699517,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.22044322803260483,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.18128505995574082,
+            0.29875114714835704
+          ],
+          "weight_in_log2": 0.33335721834893506,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": -0.01771071393986884,
+        "confound_share_coarse": 1.8257723190240678,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.22044322803260483,
+          "bracket": [
+            0.5,
+            1.0
+          ],
+          "bracket_hit_rates": [
+            0.18128505995574082,
+            0.29875114714835704
+          ],
+          "weight_in_log2": 0.33335721834893506,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_fine": -0.01771071393986884,
+        "confound_share_fine": 1.8257723190240678
+      },
+      {
+        "property": "hbd_count",
+        "probe_point": 6,
+        "lam": 1.0,
+        "spread_mid": 0.16643817722797394,
+        "spread_deployed": 0.13209988176822662,
+        "spread_ratio": 1.2599419091077986,
+        "lambda_effective": 1.2599419091077986,
+        "mid_hit_rate": 0.33945624846853856,
+        "mid_dir": "c23_guided_L6_lam1_hbd_count",
+        "deployed_hit_rate_at_lam": 0.29875114714835704,
+        "deployed_dir_at_lam": "pilot_50k_p2_guided_hbd_count",
+        "advantage_raw": 0.040705101320181514,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.3426113615694564,
+          "bracket": [
+            1.0,
+            2.0
+          ],
+          "bracket_hit_rates": [
+            0.29875114714835704,
+            0.4303223626700486
+          ],
+          "weight_in_log2": 0.33335721834893506,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": -0.003155113100917817,
+        "confound_share_coarse": 1.0775114911543904,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.34529135213387535,
+          "bracket": [
+            1.25,
+            1.5
+          ],
+          "bracket_hit_rates": [
+            0.3437036123909169,
+            0.38024448810303424
+          ],
+          "weight_in_log2": 0.043451058903657434,
+          "bracket_width_octaves": 0.26303440583379384
+        },
+        "advantage_effective_fine": -0.005835103665336794,
+        "confound_share_fine": 1.1433506729153813
+      },
+      {
+        "property": "hbd_count",
+        "probe_point": 6,
+        "lam": 2.0,
+        "spread_mid": 0.16643817722797394,
+        "spread_deployed": 0.13209988176822662,
+        "spread_ratio": 1.2599419091077986,
+        "lambda_effective": 2.519883818215597,
+        "mid_hit_rate": 0.46838068679520384,
+        "mid_dir": "c23_guided_L6_lam2_hbd_count",
+        "deployed_hit_rate_at_lam": 0.4303223626700486,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_hbd_count",
+        "advantage_raw": 0.03805832412515525,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.41120872406330405,
+          "bracket": [
+            2.0,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.4303223626700486,
+            0.3729855553214292
+          ],
+          "weight_in_log2": 0.33335721834893506,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.057171962731899784,
+        "confound_share_coarse": -0.5022196601166437,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.44226764474921665,
+          "bracket": [
+            2.5,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.44345543763551293,
+            0.3729855553214292
+          ],
+          "weight_in_log2": 0.016855326662847225,
+          "bracket_width_octaves": 0.6780719051126376
+        },
+        "advantage_effective_fine": 0.02611304204598719,
+        "confound_share_fine": 0.3138677898660451
+      },
+      {
+        "property": "qed",
+        "probe_point": 4,
+        "lam": 1.0,
+        "spread_mid": 0.12792399525642395,
+        "spread_deployed": 0.10286020487546921,
+        "spread_ratio": 1.243668485895969,
+        "lambda_effective": 1.243668485895969,
+        "mid_hit_rate": 0.22881375366927592,
+        "mid_dir": "c23_guided_L4_lam1_qed",
+        "deployed_hit_rate_at_lam": 0.19083830274640326,
+        "deployed_dir_at_lam": "pilot_50k_p2_guided_qed",
+        "advantage_raw": 0.03797545092287266,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.20507625456616274,
+          "bracket": [
+            1.0,
+            2.0
+          ],
+          "bracket_hit_rates": [
+            0.19083830274640326,
+            0.23609533603470859
+          ],
+          "weight_in_log2": 0.3146019697989935,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.02373749910311318,
+        "confound_share_coarse": 0.37492515490274125,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.18689255149714298,
+          "bracket": [
+            1.0,
+            1.25
+          ],
+          "bracket_hit_rates": [
+            0.19083830274640326,
+            0.18680066692554242
+          ],
+          "weight_in_log2": 0.97724297691094,
+          "bracket_width_octaves": 0.32192809488736235
+        },
+        "advantage_effective_fine": 0.04192120217213294,
+        "confound_share_fine": -0.10390268326962104
+      },
+      {
+        "property": "qed",
+        "probe_point": 4,
+        "lam": 2.0,
+        "spread_mid": 0.12792399525642395,
+        "spread_deployed": 0.10286020487546921,
+        "spread_ratio": 1.243668485895969,
+        "lambda_effective": 2.487336971791938,
+        "mid_hit_rate": 0.2795719386129279,
+        "mid_dir": "c23_guided_L4_lam2_qed",
+        "deployed_hit_rate_at_lam": 0.23609533603470859,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_qed",
+        "advantage_raw": 0.04347660257821931,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.24383113619199961,
+          "bracket": [
+            2.0,
+            4.0
+          ],
+          "bracket_hit_rates": [
+            0.23609533603470859,
+            0.2606845023461389
+          ],
+          "weight_in_log2": 0.31460196979899346,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.03574080242092828,
+        "confound_share_coarse": 0.17793018999986146,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.28320654420979663,
+          "bracket": [
+            2.0,
+            2.5
+          ],
+          "bracket_hit_rates": [
+            0.23609533603470859,
+            0.2843036212699797
+          ],
+          "weight_in_log2": 0.9772429769109395,
+          "bracket_width_octaves": 0.3219280948873624
+        },
+        "advantage_effective_fine": -0.003634605596868734,
+        "confound_share_fine": 1.0835991172569124
+      },
+      {
+        "property": "qed",
+        "probe_point": 4,
+        "lam": 4.0,
+        "spread_mid": 0.12792399525642395,
+        "spread_deployed": 0.10286020487546921,
+        "spread_ratio": 1.243668485895969,
+        "lambda_effective": 4.974673943583876,
+        "mid_hit_rate": 0.30916762238863027,
+        "mid_dir": "c23_guided_L4_lam4_qed",
+        "deployed_hit_rate_at_lam": 0.2606845023461389,
+        "deployed_dir_at_lam": "pilot_50k_p2_lam4_guided_qed",
+        "advantage_raw": 0.04848312004249139,
+        "envelope_coarse": {
+          "ok": true,
+          "hit_rate": 0.25538249576240224,
+          "bracket": [
+            4.0,
+            8.0
+          ],
+          "bracket_hit_rates": [
+            0.2606845023461389,
+            0.2438314400874245
+          ],
+          "weight_in_log2": 0.3146019697989937,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_coarse": 0.05378512662622803,
+        "confound_share_coarse": -0.10935778429873895,
+        "envelope_fine": {
+          "ok": true,
+          "hit_rate": 0.25538249576240224,
+          "bracket": [
+            4.0,
+            8.0
+          ],
+          "bracket_hit_rates": [
+            0.2606845023461389,
+            0.2438314400874245
+          ],
+          "weight_in_log2": 0.3146019697989937,
+          "bracket_width_octaves": 1.0
+        },
+        "advantage_effective_fine": 0.05378512662622803,
+        "confound_share_fine": -0.10935778429873895
+      }
+    ],
+    "per_head_seed": {
+      "A1": {
+        "property": "hbd_count",
+        "ok": true,
+        "probe_point": 4,
+        "lam": 2.0,
+        "spread_ratio": 1.2720682615924312,
+        "lambda_effective": 2.5441365231848625,
+        "envelope_used": "fine",
+        "deployed_at_lambda_effective": 0.44083149279659667,
+        "envelope_bracket": [
+          2.5,
+          4.0
+        ],
+        "deployed_at_lambda": 0.4303223626700486,
+        "n_head_seeds": 8,
+        "per_head_seed_effective": {
+          "1234": 0.11951056686006262,
+          "2345": 0.11924993933207956,
+          "3456": 0.027900960016464582,
+          "4567": 0.07766248457179153,
+          "5678": 0.13383061759625065,
+          "6789": 0.13010726831676228,
+          "7890": 0.1196928772641273,
+          "8901": 0.12965969217244838
+        },
+        "t": {
+          "n": 8,
+          "mean": 0.10720180076624836,
+          "sd": 0.036551326179720726,
+          "t_crit": 2.3646242515927844,
+          "lo": 0.07664412736669005,
+          "hi": 0.13775947416580667,
+          "excludes_zero": true,
+          "interval": "Student t, 7 df"
+        },
+        "bootstrap": {
+          "n": 8,
+          "computed": true,
+          "n_boot": 10000,
+          "rng_seed": 20260801,
+          "mean": 0.10720180076624836,
+          "lo": 0.08170617070921318,
+          "hi": 0.1269193048311757,
+          "excludes_zero": true,
+          "p_constant_resample": 5.960464477539063e-08
+        },
+        "raw_t": {
+          "n": 8,
+          "mean": 0.11771093089279644,
+          "sd": 0.036551326179720726,
+          "t_crit": 2.3646242515927844,
+          "lo": 0.08715325749323813,
+          "hi": 0.14826860429235475,
+          "excludes_zero": true,
+          "interval": "Student t, 7 df"
+        },
+        "note": "the deployed envelope is head seed 1234 only, so this interval carries the mid arm's head-seed variance and not the deployed arm's"
+      },
+      "A2": {
+        "property": "aromatic_rings",
+        "ok": true,
+        "probe_point": 3,
+        "lam": 1.0,
+        "spread_ratio": 1.5119999766661822,
+        "lambda_effective": 1.5119999766661822,
+        "envelope_used": "fine",
+        "deployed_at_lambda_effective": 0.5323444674642709,
+        "envelope_bracket": [
+          1.5,
+          2.0
+        ],
+        "deployed_at_lambda": 0.4734551246669265,
+        "n_head_seeds": 8,
+        "per_head_seed_effective": {
+          "1234": 0.03746514826898273,
+          "2345": 0.07778000955035969,
+          "3456": 0.11481223865430279,
+          "4567": 0.04886252447211614,
+          "5678": 0.0625156792863929,
+          "6789": 0.02190898333060365,
+          "7890": 0.0765294517182038,
+          "8901": 0.06592145570695718
+        },
+        "t": {
+          "n": 8,
+          "mean": 0.06322443637348986,
+          "sd": 0.028371861903605678,
+          "t_crit": 2.3646242515927844,
+          "lo": 0.03950496623648654,
+          "hi": 0.08694390651049318,
+          "excludes_zero": true,
+          "interval": "Student t, 7 df"
+        },
+        "bootstrap": {
+          "n": 8,
+          "computed": true,
+          "n_boot": 10000,
+          "rng_seed": 20260801,
+          "mean": 0.06322443637348986,
+          "lo": 0.04520813813240587,
+          "hi": 0.08178474223212022,
+          "excludes_zero": true,
+          "p_constant_resample": 5.960464477539063e-08
+        },
+        "raw_t": {
+          "n": 8,
+          "mean": 0.12211377917083423,
+          "sd": 0.028371861903605678,
+          "t_crit": 2.3646242515927844,
+          "lo": 0.09839430903383091,
+          "hi": 0.14583324930783753,
+          "excludes_zero": true,
+          "interval": "Student t, 7 df"
+        },
+        "note": "the deployed envelope is head seed 1234 only, so this interval carries the mid arm's head-seed variance and not the deployed arm's"
+      },
+      "A3": {
+        "property": "qed",
+        "ok": true,
+        "probe_point": 4,
+        "lam": 1.0,
+        "spread_ratio": 1.243668485895969,
+        "lambda_effective": 1.243668485895969,
+        "envelope_used": "fine",
+        "deployed_at_lambda_effective": 0.18689255149714298,
+        "envelope_bracket": [
+          1.0,
+          1.25
+        ],
+        "deployed_at_lambda": 0.19083830274640326,
+        "n_head_seeds": 8,
+        "per_head_seed_effective": {
+          "1234": 0.04192120217213294,
+          "2345": 0.055309952605759716,
+          "3456": 0.027854180529000794,
+          "4567": 0.029492053177763822,
+          "5678": 0.030648974357755848,
+          "6789": 0.04582745217213294,
+          "7890": 0.038443442361605684,
+          "8901": 0.05765468184392519
+        },
+        "t": {
+          "n": 8,
+          "mean": 0.04089399240250961,
+          "sd": 0.011496218672516224,
+          "t_crit": 2.3646242515927844,
+          "lo": 0.031282913072655905,
+          "hi": 0.05050507173236332,
+          "excludes_zero": true,
+          "interval": "Student t, 7 df"
+        },
+        "bootstrap": {
+          "n": 8,
+          "computed": true,
+          "n_boot": 10000,
+          "rng_seed": 20260801,
+          "mean": 0.04089399240250961,
+          "lo": 0.033736958228549205,
+          "hi": 0.04833457374537466,
+          "excludes_zero": true,
+          "p_constant_resample": 5.960464477539063e-08
+        },
+        "raw_t": {
+          "n": 8,
+          "mean": 0.03694824115324934,
+          "sd": 0.011496218672516224,
+          "t_crit": 2.3646242515927844,
+          "lo": 0.027337161823395628,
+          "hi": 0.046559320483103045,
+          "excludes_zero": true,
+          "interval": "Student t, 7 df"
+        },
+        "note": "the deployed envelope is head seed 1234 only, so this interval carries the mid arm's head-seed variance and not the deployed arm's"
+      }
+    }
+  },
+  "c25_reference": {
+    "hbd_L4_lam2_span_n3": 0.09160960684359803,
+    "generation_seed_span": 0.0037,
+    "reported_ratio": 24.75935320097244,
+    "sigma_from_span_n3": 0.054124560191660044,
+    "note": "C25's 25x is a ratio of a 3-point span to a 3-point span; C29 restates it as a ratio of sds"
+  },
+  "validity_gates": {
+    "G1_G3_checkpoint_identity": {
+      "rule": "the C29 head at a shared seed must equal the published one, tensor by tensor; file SHA-256 is deliberately not used (C27 gate 4)",
+      "rows": [
+        {
+          "role": "G1 mid vs C17",
+          "property": "hbd_count",
+          "probe_point": 4,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L4_seed1234.pt",
+          "b": "head_hbd_count_frozen_state_L4.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 mid vs C17",
+          "property": "aromatic_rings",
+          "probe_point": 3,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L3_seed1234.pt",
+          "b": "head_aromatic_rings_frozen_state_L3.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 mid vs C17",
+          "property": "qed",
+          "probe_point": 4,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_qed_last1_L4_seed1234.pt",
+          "b": "head_qed_frozen_state_L4.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs C17",
+          "property": "aromatic_rings",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L12_seed1234.pt",
+          "b": "head_aromatic_rings_frozen_state_L12.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs C17",
+          "property": "hbd_count",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L12_seed1234.pt",
+          "b": "head_hbd_count_frozen_state_L12.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs C17",
+          "property": "qed",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_qed_last1_L12_seed1234.pt",
+          "b": "head_qed_frozen_state_L12.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "aromatic_rings",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L12_seed1234.pt",
+          "b": "head_aromatic_rings_frozen_state_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "hbd_count",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L12_seed1234.pt",
+          "b": "head_hbd_count_frozen_state_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "qed",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_qed_last1_L12_seed1234.pt",
+          "b": "head_qed_frozen_state_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "hbd_count",
+          "probe_point": 4,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L4_seed1234.pt",
+          "b": "head_hbd_count_last1_L4_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "aromatic_rings",
+          "probe_point": 3,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L3_seed1234.pt",
+          "b": "head_aromatic_rings_last1_L3_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "qed",
+          "probe_point": 4,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_qed_last1_L4_seed1234.pt",
+          "b": "head_qed_last1_L4_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "aromatic_rings",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L12_seed1234.pt",
+          "b": "head_aromatic_rings_last1_L12_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "hbd_count",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L12_seed1234.pt",
+          "b": "head_hbd_count_last1_L12_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "qed",
+          "probe_point": 12,
+          "head_seed": 1234,
+          "comparable": true,
+          "a": "head_qed_last1_L12_seed1234.pt",
+          "b": "head_qed_last1_L12_seed1234.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "aromatic_rings",
+          "probe_point": 12,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L12_seed2345.pt",
+          "b": "head_aromatic_rings_frozen_state_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "hbd_count",
+          "probe_point": 12,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L12_seed2345.pt",
+          "b": "head_hbd_count_frozen_state_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "qed",
+          "probe_point": 12,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_qed_last1_L12_seed2345.pt",
+          "b": "head_qed_frozen_state_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "hbd_count",
+          "probe_point": 4,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L4_seed2345.pt",
+          "b": "head_hbd_count_last1_L4_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "aromatic_rings",
+          "probe_point": 3,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L3_seed2345.pt",
+          "b": "head_aromatic_rings_last1_L3_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "qed",
+          "probe_point": 4,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_qed_last1_L4_seed2345.pt",
+          "b": "head_qed_last1_L4_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "aromatic_rings",
+          "probe_point": 12,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L12_seed2345.pt",
+          "b": "head_aromatic_rings_last1_L12_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "hbd_count",
+          "probe_point": 12,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L12_seed2345.pt",
+          "b": "head_hbd_count_last1_L12_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "qed",
+          "probe_point": 12,
+          "head_seed": 2345,
+          "comparable": true,
+          "a": "head_qed_last1_L12_seed2345.pt",
+          "b": "head_qed_last1_L12_seed2345.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "aromatic_rings",
+          "probe_point": 12,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L12_seed3456.pt",
+          "b": "head_aromatic_rings_frozen_state_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "hbd_count",
+          "probe_point": 12,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L12_seed3456.pt",
+          "b": "head_hbd_count_frozen_state_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G1 deployed vs pilot_50k_heads_p2",
+          "property": "qed",
+          "probe_point": 12,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_qed_last1_L12_seed3456.pt",
+          "b": "head_qed_frozen_state_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "hbd_count",
+          "probe_point": 4,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L4_seed3456.pt",
+          "b": "head_hbd_count_last1_L4_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "aromatic_rings",
+          "probe_point": 3,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L3_seed3456.pt",
+          "b": "head_aromatic_rings_last1_L3_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 vs C25 pooled",
+          "property": "qed",
+          "probe_point": 4,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_qed_last1_L4_seed3456.pt",
+          "b": "head_qed_last1_L4_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "aromatic_rings",
+          "probe_point": 12,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_aromatic_rings_last1_L12_seed3456.pt",
+          "b": "head_aromatic_rings_last1_L12_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "hbd_count",
+          "probe_point": 12,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_hbd_count_last1_L12_seed3456.pt",
+          "b": "head_hbd_count_last1_L12_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        },
+        {
+          "role": "G3 deployed vs C25 pooled",
+          "property": "qed",
+          "probe_point": 12,
+          "head_seed": 3456,
+          "comparable": true,
+          "a": "head_qed_last1_L12_seed3456.pt",
+          "b": "head_qed_last1_L12_seed3456.pt",
+          "max_abs_parameter_residual": 0.0,
+          "identical": true,
+          "n_tensors": 8,
+          "binner_identical": true,
+          "n_bins_identical": true
+        }
+      ],
+      "n_comparable": 33,
+      "n_not_comparable": 0,
+      "max_abs_parameter_residual": 0.0,
+      "passes": true
+    },
+    "G2_end_to_end_identity": {
+      "rule": "the C29 pipeline at head seed 1234 must reproduce the published run molecule by molecule",
+      "rows": [
+        {
+          "replay": "c29_gate_L4_lam1_qed_hs1234",
+          "reference": "c23_guided_L4_lam1_qed",
+          "why": "C23 mid arm, probe point 4, lambda = 1",
+          "run": true,
+          "per_seed": {
+            "unguided:101": {
+              "reference_hit_rate": 0.08840864440078586,
+              "replay_hit_rate": 0.08840864440078586,
+              "residual": 0.0
+            },
+            "unguided:202": {
+              "reference_hit_rate": 0.07647058823529412,
+              "replay_hit_rate": 0.07647058823529412,
+              "residual": 0.0
+            },
+            "unguided:303": {
+              "reference_hit_rate": 0.10392156862745099,
+              "replay_hit_rate": 0.10392156862745099,
+              "residual": 0.0
+            },
+            "throughout:101": {
+              "reference_hit_rate": 0.23874755381604695,
+              "replay_hit_rate": 0.23874755381604695,
+              "residual": 0.0
+            },
+            "throughout:202": {
+              "reference_hit_rate": 0.228515625,
+              "replay_hit_rate": 0.228515625,
+              "residual": 0.0
+            },
+            "throughout:303": {
+              "reference_hit_rate": 0.2191780821917808,
+              "replay_hit_rate": 0.2191780821917808,
+              "residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "molecules_identical": true,
+          "n_molecules_compared": 3072,
+          "replay_head_file": "/home/afloresep/Property-to-Go/outputs/c29_heads/head_qed_last1_L4_seed1234.pt",
+          "reference_head_checkpoint": "head_qed_frozen_state_L4.pt",
+          "passes": true
+        },
+        {
+          "replay": "c29_gate_L12_lam1_qed_hs1234",
+          "reference": "pilot_50k_p2_guided_qed",
+          "why": "the deployed arm, probe point 12, lambda = 1",
+          "run": true,
+          "per_seed": {
+            "unguided:101": {
+              "reference_hit_rate": 0.08840864440078586,
+              "replay_hit_rate": 0.08840864440078586,
+              "residual": 0.0
+            },
+            "unguided:202": {
+              "reference_hit_rate": 0.07647058823529412,
+              "replay_hit_rate": 0.07647058823529412,
+              "residual": 0.0
+            },
+            "unguided:303": {
+              "reference_hit_rate": 0.10392156862745099,
+              "replay_hit_rate": 0.10392156862745099,
+              "residual": 0.0
+            },
+            "throughout:101": {
+              "reference_hit_rate": 0.18786692759295498,
+              "replay_hit_rate": 0.18786692759295498,
+              "residual": 0.0
+            },
+            "throughout:202": {
+              "reference_hit_rate": 0.18503937007874016,
+              "replay_hit_rate": 0.18503937007874016,
+              "residual": 0.0
+            },
+            "throughout:303": {
+              "reference_hit_rate": 0.19960861056751467,
+              "replay_hit_rate": 0.19960861056751467,
+              "residual": 0.0
+            }
+          },
+          "max_abs_hit_rate_residual": 0.0,
+          "molecules_identical": true,
+          "n_molecules_compared": 3072,
+          "replay_head_file": "/home/afloresep/Property-to-Go/outputs/c29_heads/head_qed_last1_L12_seed1234.pt",
+          "reference_head_checkpoint": "head_qed_frozen_state.pt",
+          "passes": true
+        }
+      ],
+      "n_run": 2,
+      "max_abs_hit_rate_residual": 0.0,
+      "all_molecules_identical": true,
+      "passes": true
+    },
+    "G4_seed_list_independence": {
+      "rule": "per-head-seed AUROC and NLL must not depend on which other seeds were in the --head-seeds list",
+      "rows": [
+        {
+          "cell": "cell_mid_L4_hbd_count_last1.json",
+          "head_seed": 1234,
+          "comparable": true,
+          "auroc_c29": 0.824288490888791,
+          "auroc_c25": 0.824288490888791,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L4_hbd_count_last1.json",
+          "head_seed": 2345,
+          "comparable": true,
+          "auroc_c29": 0.8211551203816567,
+          "auroc_c25": 0.8211551203816567,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L4_hbd_count_last1.json",
+          "head_seed": 3456,
+          "comparable": true,
+          "auroc_c29": 0.8224287018447766,
+          "auroc_c25": 0.8224287018447766,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L3_aromatic_rings_last1.json",
+          "head_seed": 1234,
+          "comparable": true,
+          "auroc_c29": 0.847818788584795,
+          "auroc_c25": 0.847818788584795,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L3_aromatic_rings_last1.json",
+          "head_seed": 2345,
+          "comparable": true,
+          "auroc_c29": 0.8477644101923382,
+          "auroc_c25": 0.8477644101923382,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L3_aromatic_rings_last1.json",
+          "head_seed": 3456,
+          "comparable": true,
+          "auroc_c29": 0.8465122916762242,
+          "auroc_c25": 0.8465122916762242,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L4_qed_last1.json",
+          "head_seed": 1234,
+          "comparable": true,
+          "auroc_c29": 0.7531063618290258,
+          "auroc_c25": 0.7531063618290258,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L4_qed_last1.json",
+          "head_seed": 2345,
+          "comparable": true,
+          "auroc_c29": 0.7526191192008787,
+          "auroc_c25": 0.7526191192008787,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_mid_L4_qed_last1.json",
+          "head_seed": 3456,
+          "comparable": true,
+          "auroc_c29": 0.753937571576659,
+          "auroc_c25": 0.753937571576659,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_aromatic_rings_last1.json",
+          "head_seed": 1234,
+          "comparable": true,
+          "auroc_c29": 0.7903794905863408,
+          "auroc_c25": 0.7903794905863408,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_aromatic_rings_last1.json",
+          "head_seed": 2345,
+          "comparable": true,
+          "auroc_c29": 0.7865965764605385,
+          "auroc_c25": 0.7865965764605385,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_aromatic_rings_last1.json",
+          "head_seed": 3456,
+          "comparable": true,
+          "auroc_c29": 0.7863242761839445,
+          "auroc_c25": 0.7863242761839445,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_hbd_count_last1.json",
+          "head_seed": 1234,
+          "comparable": true,
+          "auroc_c29": 0.7780693673369048,
+          "auroc_c25": 0.7780693673369048,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_hbd_count_last1.json",
+          "head_seed": 2345,
+          "comparable": true,
+          "auroc_c29": 0.7846442806549417,
+          "auroc_c25": 0.7846442806549417,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_hbd_count_last1.json",
+          "head_seed": 3456,
+          "comparable": true,
+          "auroc_c29": 0.7771183945015211,
+          "auroc_c25": 0.7771183945015211,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_qed_last1.json",
+          "head_seed": 1234,
+          "comparable": true,
+          "auroc_c29": 0.7355025360294527,
+          "auroc_c25": 0.7355025360294527,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_qed_last1.json",
+          "head_seed": 2345,
+          "comparable": true,
+          "auroc_c29": 0.7359091055719876,
+          "auroc_c25": 0.7359091055719876,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        },
+        {
+          "cell": "cell_final_L12_qed_last1.json",
+          "head_seed": 3456,
+          "comparable": true,
+          "auroc_c29": 0.7330361146060699,
+          "auroc_c25": 0.7330361146060699,
+          "auroc_residual": 0.0,
+          "nll_residual": 0.0
+        }
+      ],
+      "n_comparable": 18,
+      "max_residual": 0.0,
+      "passes": true
+    },
+    "G5_envelope_provenance": {
+      "rule": "each new deployed lambda run must be the published deployed code path with only lambda changed",
+      "rows": [
+        {
+          "dir": "c29_deplam1p25_guided_aromatic_rings",
+          "run": true,
+          "property": "aromatic_rings",
+          "lambda": 1.25,
+          "lambda_requested": 1.25,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_aromatic_rings_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam1p25_guided_hbd_count",
+          "run": true,
+          "property": "hbd_count",
+          "lambda": 1.25,
+          "lambda_requested": 1.25,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_hbd_count_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam1p25_guided_qed",
+          "run": true,
+          "property": "qed",
+          "lambda": 1.25,
+          "lambda_requested": 1.25,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_qed_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam1p5_guided_aromatic_rings",
+          "run": true,
+          "property": "aromatic_rings",
+          "lambda": 1.5,
+          "lambda_requested": 1.5,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_aromatic_rings_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam1p5_guided_hbd_count",
+          "run": true,
+          "property": "hbd_count",
+          "lambda": 1.5,
+          "lambda_requested": 1.5,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_hbd_count_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam1p5_guided_qed",
+          "run": true,
+          "property": "qed",
+          "lambda": 1.5,
+          "lambda_requested": 1.5,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_qed_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam2p5_guided_aromatic_rings",
+          "run": true,
+          "property": "aromatic_rings",
+          "lambda": 2.5,
+          "lambda_requested": 2.5,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_aromatic_rings_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam2p5_guided_hbd_count",
+          "run": true,
+          "property": "hbd_count",
+          "lambda": 2.5,
+          "lambda_requested": 2.5,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_hbd_count_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        },
+        {
+          "dir": "c29_deplam2p5_guided_qed",
+          "run": true,
+          "property": "qed",
+          "lambda": 2.5,
+          "lambda_requested": 2.5,
+          "lambda_residual": 0.0,
+          "head_checkpoint": "head_qed_frozen_state.pt",
+          "layer": -1,
+          "layer_source": "default (-1)",
+          "lambda_source": "cli --lam",
+          "head_file_source": "default",
+          "on_deployed_code_path": true
+        }
+      ],
+      "n_run": 9,
+      "max_lambda_residual": 0.0,
+      "passes": true
+    },
+    "G6_unguided_invariance": {
+      "rule": "the unguided condition is a bug alarm, not a finding: its spread across every C29 run of an anchor must be 0.0",
+      "per_property": {
+        "hbd_count": {
+          "n_runs": 24,
+          "mean": 0.083707641537296,
+          "span": 0.0,
+          "sd": 0.0
+        },
+        "aromatic_rings": {
+          "n_runs": 16,
+          "mean": 0.17854565532827407,
+          "span": 0.0,
+          "sd": 0.0
+        },
+        "qed": {
+          "n_runs": 16,
+          "mean": 0.08960026708784365,
+          "span": 0.0,
+          "sd": 0.0
+        }
+      },
+      "max_span": 0.0,
+      "passes": true
+    }
+  },
+  "decision_rules": {
+    "R1": {
+      "rule": "on A1 the lower bound of the 95% chi-square CI on the head-seed sd exceeds the pooled generation-seed sd",
+      "head_seed_sd": 0.036551326179720726,
+      "head_seed_sd_ci": [
+        0.024166791975533553,
+        0.07439189405458808
+      ],
+      "generation_seed_sd_pooled": 0.02131476463144693,
+      "n_head_seeds": 8,
+      "fires": true
+    },
+    "R2": {
+      "rule": "on A1 the 95% F-based CI on sd_head / sd_gen excludes 1",
+      "ratio": 1.7148360214963105,
+      "ci": [
+        0.9557251515813403,
+        3.6549821089247287
+      ],
+      "c25_reported_span_ratio": 24.75935320097244,
+      "c25_span_ratio_inside_interval": false,
+      "fires": false
+    },
+    "R3": {
+      "rule": "q = sd_head(mid) / sd_head(deployed) in [0.5, 2] on >= 2 of 3 anchors means the finding is about learned probes in general",
+      "band": [
+        0.5,
+        2.0
+      ],
+      "per_anchor": {
+        "hbd_count": {
+          "mid_arm": "A1",
+          "mid_head_seed_sd": 0.036551326179720726,
+          "mid_n": 8,
+          "deployed_head_seed_sd": 0.024089485888954442,
+          "deployed_n": 8,
+          "q": 1.5173144976282085,
+          "in_band": true,
+          "ratio_ci": {
+            "ratio": 1.5173144976282085,
+            "lo": 0.6789093778984656,
+            "hi": 3.3910907105735335,
+            "df1": 7,
+            "df2": 7,
+            "interval": "F, (7, 7) df, alpha=0.05"
+          }
+        },
+        "aromatic_rings": {
+          "mid_arm": "A2",
+          "mid_head_seed_sd": 0.028371861903605678,
+          "mid_n": 8,
+          "deployed_head_seed_sd": 0.017577487070879756,
+          "deployed_n": 8,
+          "q": 1.6141022769181113,
+          "in_band": true,
+          "ratio_ci": {
+            "ratio": 1.6141022769181113,
+            "lo": 0.7222162408649743,
+            "hi": 3.607404559653656,
+            "df1": 7,
+            "df2": 7,
+            "interval": "F, (7, 7) df, alpha=0.05"
+          }
+        },
+        "qed": {
+          "mid_arm": "A3",
+          "mid_head_seed_sd": 0.011496218672516222,
+          "mid_n": 8,
+          "deployed_head_seed_sd": 0.014215707951946311,
+          "deployed_n": 8,
+          "q": 0.8086982872310797,
+          "in_band": true,
+          "ratio_ci": {
+            "ratio": 0.8086982872310797,
+            "lo": 0.36184512304458183,
+            "hi": 1.8073835409684533,
+            "df1": 7,
+            "df2": 7,
+            "interval": "F, (7, 7) df, alpha=0.05"
+          }
+        }
+      },
+      "n_in_band": 3,
+      "n_above_band": 0,
+      "conclusion": "probes in general",
+      "fires": true
+    },
+    "R4": {
+      "rule": "head-seed-paired mid minus deployed at matched lambda is strictly positive on >= 2 of 3 anchors",
+      "per_arm": {
+        "A1": {
+          "property": "hbd_count",
+          "n_pairs": 8,
+          "lambda_matched": true,
+          "mean": 0.09413946095370967,
+          "ci": [
+            0.05336369117346115,
+            0.1349152307339582
+          ],
+          "bootstrap_ci": [
+            0.06096523913746895,
+            0.12300952898893718
+          ],
+          "survives": true
+        },
+        "A2": {
+          "property": "aromatic_rings",
+          "n_pairs": 8,
+          "lambda_matched": true,
+          "mean": 0.12703905724244027,
+          "ci": [
+            0.0956504760523841,
+            0.15842763843249646
+          ],
+          "bootstrap_ci": [
+            0.10205339385639639,
+            0.15041165106004872
+          ],
+          "survives": true
+        },
+        "A3": {
+          "property": "qed",
+          "n_pairs": 8,
+          "lambda_matched": true,
+          "mean": 0.02657935423143552,
+          "ci": [
+            0.011278687111483396,
+            0.041880021351387645
+          ],
+          "bootstrap_ci": [
+            0.014739654449900483,
+            0.0384659098199141
+          ],
+          "survives": true
+        }
+      },
+      "n_surviving": 3,
+      "required": 2,
+      "fires": true,
+      "preregistration_defect": "A1 sits at lambda = 2 but the deployed family was fixed at lambda = 1 in C29.0.2, so R4 as written is not scoreable at matched lambda on A1. This is a defect in the pre-registration, discovered when scoring it, and is reported rather than amended.",
+      "arms_not_scoreable_at_matched_lambda": []
+    },
+    "R5": {
+      "rule": "head-seed mean of the effective-lambda-corrected advantage is positive with a t interval excluding 0, on >= 2 of 3 anchors",
+      "per_arm": {
+        "A1": {
+          "property": "hbd_count",
+          "ok": true,
+          "probe_point": 4,
+          "lam": 2.0,
+          "spread_ratio": 1.2720682615924312,
+          "lambda_effective": 2.5441365231848625,
+          "envelope_used": "fine",
+          "deployed_at_lambda_effective": 0.44083149279659667,
+          "envelope_bracket": [
+            2.5,
+            4.0
+          ],
+          "deployed_at_lambda": 0.4303223626700486,
+          "n_head_seeds": 8,
+          "per_head_seed_effective": {
+            "1234": 0.11951056686006262,
+            "2345": 0.11924993933207956,
+            "3456": 0.027900960016464582,
+            "4567": 0.07766248457179153,
+            "5678": 0.13383061759625065,
+            "6789": 0.13010726831676228,
+            "7890": 0.1196928772641273,
+            "8901": 0.12965969217244838
+          },
+          "t": {
+            "n": 8,
+            "mean": 0.10720180076624836,
+            "sd": 0.036551326179720726,
+            "t_crit": 2.3646242515927844,
+            "lo": 0.07664412736669005,
+            "hi": 0.13775947416580667,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": 0.10720180076624836,
+            "lo": 0.08170617070921318,
+            "hi": 0.1269193048311757,
+            "excludes_zero": true,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "raw_t": {
+            "n": 8,
+            "mean": 0.11771093089279644,
+            "sd": 0.036551326179720726,
+            "t_crit": 2.3646242515927844,
+            "lo": 0.08715325749323813,
+            "hi": 0.14826860429235475,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "note": "the deployed envelope is head seed 1234 only, so this interval carries the mid arm's head-seed variance and not the deployed arm's"
+        },
+        "A2": {
+          "property": "aromatic_rings",
+          "ok": true,
+          "probe_point": 3,
+          "lam": 1.0,
+          "spread_ratio": 1.5119999766661822,
+          "lambda_effective": 1.5119999766661822,
+          "envelope_used": "fine",
+          "deployed_at_lambda_effective": 0.5323444674642709,
+          "envelope_bracket": [
+            1.5,
+            2.0
+          ],
+          "deployed_at_lambda": 0.4734551246669265,
+          "n_head_seeds": 8,
+          "per_head_seed_effective": {
+            "1234": 0.03746514826898273,
+            "2345": 0.07778000955035969,
+            "3456": 0.11481223865430279,
+            "4567": 0.04886252447211614,
+            "5678": 0.0625156792863929,
+            "6789": 0.02190898333060365,
+            "7890": 0.0765294517182038,
+            "8901": 0.06592145570695718
+          },
+          "t": {
+            "n": 8,
+            "mean": 0.06322443637348986,
+            "sd": 0.028371861903605678,
+            "t_crit": 2.3646242515927844,
+            "lo": 0.03950496623648654,
+            "hi": 0.08694390651049318,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": 0.06322443637348986,
+            "lo": 0.04520813813240587,
+            "hi": 0.08178474223212022,
+            "excludes_zero": true,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "raw_t": {
+            "n": 8,
+            "mean": 0.12211377917083423,
+            "sd": 0.028371861903605678,
+            "t_crit": 2.3646242515927844,
+            "lo": 0.09839430903383091,
+            "hi": 0.14583324930783753,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "note": "the deployed envelope is head seed 1234 only, so this interval carries the mid arm's head-seed variance and not the deployed arm's"
+        },
+        "A3": {
+          "property": "qed",
+          "ok": true,
+          "probe_point": 4,
+          "lam": 1.0,
+          "spread_ratio": 1.243668485895969,
+          "lambda_effective": 1.243668485895969,
+          "envelope_used": "fine",
+          "deployed_at_lambda_effective": 0.18689255149714298,
+          "envelope_bracket": [
+            1.0,
+            1.25
+          ],
+          "deployed_at_lambda": 0.19083830274640326,
+          "n_head_seeds": 8,
+          "per_head_seed_effective": {
+            "1234": 0.04192120217213294,
+            "2345": 0.055309952605759716,
+            "3456": 0.027854180529000794,
+            "4567": 0.029492053177763822,
+            "5678": 0.030648974357755848,
+            "6789": 0.04582745217213294,
+            "7890": 0.038443442361605684,
+            "8901": 0.05765468184392519
+          },
+          "t": {
+            "n": 8,
+            "mean": 0.04089399240250961,
+            "sd": 0.011496218672516224,
+            "t_crit": 2.3646242515927844,
+            "lo": 0.031282913072655905,
+            "hi": 0.05050507173236332,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "bootstrap": {
+            "n": 8,
+            "computed": true,
+            "n_boot": 10000,
+            "rng_seed": 20260801,
+            "mean": 0.04089399240250961,
+            "lo": 0.033736958228549205,
+            "hi": 0.04833457374537466,
+            "excludes_zero": true,
+            "p_constant_resample": 5.960464477539063e-08
+          },
+          "raw_t": {
+            "n": 8,
+            "mean": 0.03694824115324934,
+            "sd": 0.011496218672516224,
+            "t_crit": 2.3646242515927844,
+            "lo": 0.027337161823395628,
+            "hi": 0.046559320483103045,
+            "excludes_zero": true,
+            "interval": "Student t, 7 df"
+          },
+          "note": "the deployed envelope is head seed 1234 only, so this interval carries the mid arm's head-seed variance and not the deployed arm's"
+        }
+      },
+      "n_surviving": 3,
+      "required": 2,
+      "fires": true,
+      "seed_1234_table": [
+        {
+          "property": "aromatic_rings",
+          "probe_point": 3,
+          "lam": 0.5,
+          "spread_mid": 0.30125945806503296,
+          "spread_deployed": 0.19924567639827728,
+          "spread_ratio": 1.5119999766661822,
+          "lambda_effective": 0.7559999883330911,
+          "mid_hit_rate": 0.3616131384060473,
+          "mid_dir": "c23_guided_L3_lam0p5_aromatic_rings",
+          "deployed_hit_rate_at_lam": 0.3010951113213786,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+          "advantage_raw": 0.06051802708466869,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.4039006403783553,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.3010951113213786,
+              0.4734551246669265
+            ],
+            "weight_in_log2": 0.5964581172947108,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": -0.04228750197230802,
+          "confound_share_coarse": 1.6987587667579618,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.4039006403783553,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.3010951113213786,
+              0.4734551246669265
+            ],
+            "weight_in_log2": 0.5964581172947108,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_fine": -0.04228750197230802,
+          "confound_share_fine": 1.6987587667579618
+        },
+        {
+          "property": "aromatic_rings",
+          "probe_point": 3,
+          "lam": 1.0,
+          "spread_mid": 0.30125945806503296,
+          "spread_deployed": 0.19924567639827728,
+          "spread_ratio": 1.5119999766661822,
+          "lambda_effective": 1.5119999766661822,
+          "mid_hit_rate": 0.5698096157332536,
+          "mid_dir": "c23_guided_L3_lam1_aromatic_rings",
+          "deployed_hit_rate_at_lam": 0.4734551246669265,
+          "deployed_dir_at_lam": "pilot_50k_p2_guided_aromatic_rings",
+          "advantage_raw": 0.0963544910663271,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.5238400959589018,
+            "bracket": [
+              1.0,
+              2.0
+            ],
+            "bracket_hit_rates": [
+              0.4734551246669265,
+              0.5579287361930816
+            ],
+            "weight_in_log2": 0.5964581172947108,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.04596951977435182,
+          "confound_share_coarse": 0.5229125361400332,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.5323444674642709,
+            "bracket": [
+              1.5,
+              2.0
+            ],
+            "bracket_hit_rates": [
+              0.5316156535388128,
+              0.5579287361930816
+            ],
+            "weight_in_log2": 0.02769777813698522,
+            "bracket_width_octaves": 0.4150374992788438
+          },
+          "advantage_effective_fine": 0.03746514826898273,
+          "confound_share_fine": 0.6111738243400298
+        },
+        {
+          "property": "aromatic_rings",
+          "probe_point": 3,
+          "lam": 2.0,
+          "spread_mid": 0.30125945806503296,
+          "spread_deployed": 0.19924567639827728,
+          "spread_ratio": 1.5119999766661822,
+          "lambda_effective": 3.0239999533323645,
+          "mid_hit_rate": 0.8158744959471287,
+          "mid_dir": "c23_guided_L3_lam2_aromatic_rings",
+          "deployed_hit_rate_at_lam": 0.5579287361930816,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_aromatic_rings",
+          "advantage_raw": 0.2579457597540471,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.5227348022829201,
+            "bracket": [
+              2.0,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.5579287361930816,
+              0.49892386579281495
+            ],
+            "weight_in_log2": 0.5964581172947108,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.29313969366420856,
+          "confound_share_coarse": -0.13643928066008565,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.5353354417120892,
+            "bracket": [
+              2.5,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.5601062800845352,
+              0.49892386579281495
+            ],
+            "weight_in_log2": 0.4048685992405849,
+            "bracket_width_octaves": 0.6780719051126376
+          },
+          "advantage_effective_fine": 0.28053905423503944,
+          "confound_share_fine": -0.08758932305200594
+        },
+        {
+          "property": "aromatic_rings",
+          "probe_point": 6,
+          "lam": 0.5,
+          "spread_mid": 0.3013074994087219,
+          "spread_deployed": 0.19924567639827728,
+          "spread_ratio": 1.5122410927825136,
+          "lambda_effective": 0.7561205463912568,
+          "mid_hit_rate": 0.3881135145268153,
+          "mid_dir": "c23_guided_L6_lam0p5_aromatic_rings",
+          "deployed_hit_rate_at_lam": 0.3010951113213786,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+          "advantage_raw": 0.08701840320543669,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.4039402910809779,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.3010951113213786,
+              0.4734551246669265
+            ],
+            "weight_in_log2": 0.5966881631264145,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": -0.01582677655416259,
+          "confound_share_coarse": 1.181878498928532,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.4039402910809779,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.3010951113213786,
+              0.4734551246669265
+            ],
+            "weight_in_log2": 0.5966881631264145,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_fine": -0.01582677655416259,
+          "confound_share_fine": 1.181878498928532
+        },
+        {
+          "property": "aromatic_rings",
+          "probe_point": 6,
+          "lam": 1.0,
+          "spread_mid": 0.3013074994087219,
+          "spread_deployed": 0.19924567639827728,
+          "spread_ratio": 1.5122410927825136,
+          "lambda_effective": 1.5122410927825136,
+          "mid_hit_rate": 0.5830783725998746,
+          "mid_dir": "c23_guided_L6_lam1_aromatic_rings",
+          "deployed_hit_rate_at_lam": 0.4734551246669265,
+          "deployed_dir_at_lam": "pilot_50k_p2_guided_aromatic_rings",
+          "advantage_raw": 0.10962324793294809,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.5238595287611223,
+            "bracket": [
+              1.0,
+              2.0
+            ],
+            "bracket_hit_rates": [
+              0.4734551246669265,
+              0.5579287361930816
+            ],
+            "weight_in_log2": 0.5966881631264145,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.05921884383875231,
+          "confound_share_coarse": 0.4597966676286222,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.5323590522066,
+            "bracket": [
+              1.5,
+              2.0
+            ],
+            "bracket_hit_rates": [
+              0.5316156535388128,
+              0.5579287361930816
+            ],
+            "weight_in_log2": 0.02825205535796751,
+            "bracket_width_octaves": 0.4150374992788438
+          },
+          "advantage_effective_fine": 0.05071932039327465,
+          "confound_share_fine": 0.5373306178238989
+        },
+        {
+          "property": "aromatic_rings",
+          "probe_point": 6,
+          "lam": 2.0,
+          "spread_mid": 0.3013074994087219,
+          "spread_deployed": 0.19924567639827728,
+          "spread_ratio": 1.5122410927825136,
+          "lambda_effective": 3.0244821855650272,
+          "mid_hit_rate": 0.6841525913850868,
+          "mid_dir": "c23_guided_L6_lam2_aromatic_rings",
+          "deployed_hit_rate_at_lam": 0.5579287361930816,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_aromatic_rings",
+          "advantage_raw": 0.12622385519200519,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.5227212284584344,
+            "bracket": [
+              2.0,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.5579287361930816,
+              0.49892386579281495
+            ],
+            "weight_in_log2": 0.5966881631264145,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.1614313629266524,
+          "confound_share_coarse": -0.2789291111501179,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.5353146846813448,
+            "bracket": [
+              2.5,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.5601062800845352,
+              0.49892386579281495
+            ],
+            "weight_in_log2": 0.40520786389669167,
+            "bracket_width_octaves": 0.6780719051126376
+          },
+          "advantage_effective_fine": 0.14883790670374197,
+          "confound_share_fine": -0.17915830155351747
+        },
+        {
+          "property": "hbd_count",
+          "probe_point": 4,
+          "lam": 0.5,
+          "spread_mid": 0.16804006695747375,
+          "spread_deployed": 0.13209988176822662,
+          "spread_ratio": 1.2720682615924312,
+          "lambda_effective": 0.6360341307962156,
+          "mid_hit_rate": 0.23187709295306788,
+          "mid_dir": "c23_guided_L4_lam0p5_hbd_count",
+          "deployed_hit_rate_at_lam": 0.18128505995574082,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_hbd_count",
+          "advantage_raw": 0.05059203299732706,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.2220664768675135,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.18128505995574082,
+              0.29875114714835704
+            ],
+            "weight_in_log2": 0.3471760904481387,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.009810616085554391,
+          "confound_share_coarse": 0.8060837743746586,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.2220664768675135,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.18128505995574082,
+              0.29875114714835704
+            ],
+            "weight_in_log2": 0.3471760904481387,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_fine": 0.009810616085554391,
+          "confound_share_fine": 0.8060837743746586
+        },
+        {
+          "property": "hbd_count",
+          "probe_point": 4,
+          "lam": 1.0,
+          "spread_mid": 0.16804006695747375,
+          "spread_deployed": 0.13209988176822662,
+          "spread_ratio": 1.2720682615924312,
+          "lambda_effective": 1.2720682615924312,
+          "mid_hit_rate": 0.368888749905456,
+          "mid_dir": "c23_guided_L4_lam1_hbd_count",
+          "deployed_hit_rate_at_lam": 0.29875114714835704,
+          "deployed_dir_at_lam": "pilot_50k_p2_guided_hbd_count",
+          "advantage_raw": 0.07013760275709896,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.34442952736868737,
+            "bracket": [
+              1.0,
+              2.0
+            ],
+            "bracket_hit_rates": [
+              0.29875114714835704,
+              0.4303223626700486
+            ],
+            "weight_in_log2": 0.3471760904481387,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.024459222536768632,
+          "confound_share_coarse": 0.6512680562882084,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.34721107699366316,
+            "bracket": [
+              1.25,
+              1.5
+            ],
+            "bracket_hit_rates": [
+              0.3437036123909169,
+              0.38024448810303424
+            ],
+            "weight_in_log2": 0.09598742598232582,
+            "bracket_width_octaves": 0.26303440583379384
+          },
+          "advantage_effective_fine": 0.021677672911792845,
+          "confound_share_fine": 0.6909265207300125
+        },
+        {
+          "property": "hbd_count",
+          "probe_point": 4,
+          "lam": 2.0,
+          "spread_mid": 0.16804006695747375,
+          "spread_deployed": 0.13209988176822662,
+          "spread_ratio": 1.2720682615924312,
+          "lambda_effective": 2.5441365231848625,
+          "mid_hit_rate": 0.5603420596566593,
+          "mid_dir": "c23_guided_L4_lam2_hbd_count",
+          "deployed_hit_rate_at_lam": 0.4303223626700486,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_hbd_count",
+          "advantage_raw": 0.1300196969866107,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.4104163940559768,
+            "bracket": [
+              2.0,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.4303223626700486,
+              0.3729855553214292
+            ],
+            "weight_in_log2": 0.3471760904481387,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.1499256656006825,
+          "confound_share_coarse": -0.15309963855800776,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.44083149279659667,
+            "bracket": [
+              2.5,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.44345543763551293,
+              0.3729855553214292
+            ],
+            "weight_in_log2": 0.03723498255923496,
+            "bracket_width_octaves": 0.6780719051126376
+          },
+          "advantage_effective_fine": 0.11951056686006262,
+          "confound_share_fine": 0.0808272159535205
+        },
+        {
+          "property": "hbd_count",
+          "probe_point": 6,
+          "lam": 0.5,
+          "spread_mid": 0.16643817722797394,
+          "spread_deployed": 0.13209988176822662,
+          "spread_ratio": 1.2599419091077986,
+          "lambda_effective": 0.6299709545538993,
+          "mid_hit_rate": 0.202732514092736,
+          "mid_dir": "c23_guided_L6_lam0p5_hbd_count",
+          "deployed_hit_rate_at_lam": 0.18128505995574082,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam0p5_guided_hbd_count",
+          "advantage_raw": 0.02144745413699517,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.22044322803260483,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.18128505995574082,
+              0.29875114714835704
+            ],
+            "weight_in_log2": 0.33335721834893506,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": -0.01771071393986884,
+          "confound_share_coarse": 1.8257723190240678,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.22044322803260483,
+            "bracket": [
+              0.5,
+              1.0
+            ],
+            "bracket_hit_rates": [
+              0.18128505995574082,
+              0.29875114714835704
+            ],
+            "weight_in_log2": 0.33335721834893506,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_fine": -0.01771071393986884,
+          "confound_share_fine": 1.8257723190240678
+        },
+        {
+          "property": "hbd_count",
+          "probe_point": 6,
+          "lam": 1.0,
+          "spread_mid": 0.16643817722797394,
+          "spread_deployed": 0.13209988176822662,
+          "spread_ratio": 1.2599419091077986,
+          "lambda_effective": 1.2599419091077986,
+          "mid_hit_rate": 0.33945624846853856,
+          "mid_dir": "c23_guided_L6_lam1_hbd_count",
+          "deployed_hit_rate_at_lam": 0.29875114714835704,
+          "deployed_dir_at_lam": "pilot_50k_p2_guided_hbd_count",
+          "advantage_raw": 0.040705101320181514,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.3426113615694564,
+            "bracket": [
+              1.0,
+              2.0
+            ],
+            "bracket_hit_rates": [
+              0.29875114714835704,
+              0.4303223626700486
+            ],
+            "weight_in_log2": 0.33335721834893506,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": -0.003155113100917817,
+          "confound_share_coarse": 1.0775114911543904,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.34529135213387535,
+            "bracket": [
+              1.25,
+              1.5
+            ],
+            "bracket_hit_rates": [
+              0.3437036123909169,
+              0.38024448810303424
+            ],
+            "weight_in_log2": 0.043451058903657434,
+            "bracket_width_octaves": 0.26303440583379384
+          },
+          "advantage_effective_fine": -0.005835103665336794,
+          "confound_share_fine": 1.1433506729153813
+        },
+        {
+          "property": "hbd_count",
+          "probe_point": 6,
+          "lam": 2.0,
+          "spread_mid": 0.16643817722797394,
+          "spread_deployed": 0.13209988176822662,
+          "spread_ratio": 1.2599419091077986,
+          "lambda_effective": 2.519883818215597,
+          "mid_hit_rate": 0.46838068679520384,
+          "mid_dir": "c23_guided_L6_lam2_hbd_count",
+          "deployed_hit_rate_at_lam": 0.4303223626700486,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_hbd_count",
+          "advantage_raw": 0.03805832412515525,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.41120872406330405,
+            "bracket": [
+              2.0,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.4303223626700486,
+              0.3729855553214292
+            ],
+            "weight_in_log2": 0.33335721834893506,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.057171962731899784,
+          "confound_share_coarse": -0.5022196601166437,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.44226764474921665,
+            "bracket": [
+              2.5,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.44345543763551293,
+              0.3729855553214292
+            ],
+            "weight_in_log2": 0.016855326662847225,
+            "bracket_width_octaves": 0.6780719051126376
+          },
+          "advantage_effective_fine": 0.02611304204598719,
+          "confound_share_fine": 0.3138677898660451
+        },
+        {
+          "property": "qed",
+          "probe_point": 4,
+          "lam": 1.0,
+          "spread_mid": 0.12792399525642395,
+          "spread_deployed": 0.10286020487546921,
+          "spread_ratio": 1.243668485895969,
+          "lambda_effective": 1.243668485895969,
+          "mid_hit_rate": 0.22881375366927592,
+          "mid_dir": "c23_guided_L4_lam1_qed",
+          "deployed_hit_rate_at_lam": 0.19083830274640326,
+          "deployed_dir_at_lam": "pilot_50k_p2_guided_qed",
+          "advantage_raw": 0.03797545092287266,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.20507625456616274,
+            "bracket": [
+              1.0,
+              2.0
+            ],
+            "bracket_hit_rates": [
+              0.19083830274640326,
+              0.23609533603470859
+            ],
+            "weight_in_log2": 0.3146019697989935,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.02373749910311318,
+          "confound_share_coarse": 0.37492515490274125,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.18689255149714298,
+            "bracket": [
+              1.0,
+              1.25
+            ],
+            "bracket_hit_rates": [
+              0.19083830274640326,
+              0.18680066692554242
+            ],
+            "weight_in_log2": 0.97724297691094,
+            "bracket_width_octaves": 0.32192809488736235
+          },
+          "advantage_effective_fine": 0.04192120217213294,
+          "confound_share_fine": -0.10390268326962104
+        },
+        {
+          "property": "qed",
+          "probe_point": 4,
+          "lam": 2.0,
+          "spread_mid": 0.12792399525642395,
+          "spread_deployed": 0.10286020487546921,
+          "spread_ratio": 1.243668485895969,
+          "lambda_effective": 2.487336971791938,
+          "mid_hit_rate": 0.2795719386129279,
+          "mid_dir": "c23_guided_L4_lam2_qed",
+          "deployed_hit_rate_at_lam": 0.23609533603470859,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam2_guided_qed",
+          "advantage_raw": 0.04347660257821931,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.24383113619199961,
+            "bracket": [
+              2.0,
+              4.0
+            ],
+            "bracket_hit_rates": [
+              0.23609533603470859,
+              0.2606845023461389
+            ],
+            "weight_in_log2": 0.31460196979899346,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.03574080242092828,
+          "confound_share_coarse": 0.17793018999986146,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.28320654420979663,
+            "bracket": [
+              2.0,
+              2.5
+            ],
+            "bracket_hit_rates": [
+              0.23609533603470859,
+              0.2843036212699797
+            ],
+            "weight_in_log2": 0.9772429769109395,
+            "bracket_width_octaves": 0.3219280948873624
+          },
+          "advantage_effective_fine": -0.003634605596868734,
+          "confound_share_fine": 1.0835991172569124
+        },
+        {
+          "property": "qed",
+          "probe_point": 4,
+          "lam": 4.0,
+          "spread_mid": 0.12792399525642395,
+          "spread_deployed": 0.10286020487546921,
+          "spread_ratio": 1.243668485895969,
+          "lambda_effective": 4.974673943583876,
+          "mid_hit_rate": 0.30916762238863027,
+          "mid_dir": "c23_guided_L4_lam4_qed",
+          "deployed_hit_rate_at_lam": 0.2606845023461389,
+          "deployed_dir_at_lam": "pilot_50k_p2_lam4_guided_qed",
+          "advantage_raw": 0.04848312004249139,
+          "envelope_coarse": {
+            "ok": true,
+            "hit_rate": 0.25538249576240224,
+            "bracket": [
+              4.0,
+              8.0
+            ],
+            "bracket_hit_rates": [
+              0.2606845023461389,
+              0.2438314400874245
+            ],
+            "weight_in_log2": 0.3146019697989937,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_coarse": 0.05378512662622803,
+          "confound_share_coarse": -0.10935778429873895,
+          "envelope_fine": {
+            "ok": true,
+            "hit_rate": 0.25538249576240224,
+            "bracket": [
+              4.0,
+              8.0
+            ],
+            "bracket_hit_rates": [
+              0.2606845023461389,
+              0.2438314400874245
+            ],
+            "weight_in_log2": 0.3146019697989937,
+            "bracket_width_octaves": 1.0
+          },
+          "advantage_effective_fine": 0.05378512662622803,
+          "confound_share_fine": -0.10935778429873895
+        }
+      ]
+    },
+    "R6": {
+      "rule": "on A1 the head-seed mean advantage over its own compute-matched best-of-N has a t interval strictly above 0",
+      "n_head_seeds": 8,
+      "mean": 0.04900985606284503,
+      "sd": 0.0424325548345888,
+      "ci": [
+        0.013535352462928842,
+        0.08448435966276122
+      ],
+      "bootstrap_ci": [
+        0.019931430450239866,
+        0.07495811439248785
+      ],
+      "n_positive": 6,
+      "meets_preregistered_minimum": true,
+      "fires": true,
+      "also_token_conservative": {
+        "mean": 0.024595793562845032,
+        "ci": [
+          -0.005961879836713278,
+          0.05515346696240334
+        ],
+        "n_positive": 6,
+        "fires": false
+      },
+      "also_c26_corrected_curve": {
+        "mean": 0.015599318283964568,
+        "ci": [
+          -0.017333029960066013,
+          0.04853166652799515
+        ],
+        "n_positive": 6,
+        "fires": false
+      },
+      "survives_every_comparator": false
+    },
+    "R7": {
+      "rule": "null: none of R1, R2, R4, R5, R6 fires",
+      "rules_firing": [
+        "R1",
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "fires": false
+    }
+  },
+  "predictions": {
+    "P1_sd_head_A1_in_0.030_0.080": {
+      "prediction": "sd_head on A1 lands in [0.030, 0.080]",
+      "value": 0.036551326179720726,
+      "holds": true
+    },
+    "P2_sd_gen_A1_below_0.010": {
+      "prediction": "pooled generation-seed sd on A1 is below 0.010",
+      "value": 0.02131476463144693,
+      "holds": false
+    },
+    "P3_ratio_above_5_and_25_not_pinned": {
+      "prediction": "the sd ratio on A1 is above 5 and its 95% CI contains values below 25",
+      "ratio": 1.7148360214963105,
+      "ci": [
+        0.9557251515813403,
+        3.6549821089247287
+      ],
+      "above_5": false,
+      "ci_contains_values_below_25": true,
+      "holds": false
+    },
+    "P4_probes_in_general": {
+      "prediction": "R3 concludes 'probes in general'",
+      "conclusion": "probes in general",
+      "n_in_band": 3,
+      "holds": true
+    },
+    "P5_rule_a_survives_in_sign_not_significance": {
+      "prediction": "the paired advantage is positive on all 3 anchors but its t interval excludes 0 on at most 1, so R4 does not fire",
+      "n_arms": 3,
+      "n_positive_mean": 3,
+      "n_excluding_zero": 3,
+      "holds": false
+    },
+    "P6_effective_lambda_removes_about_half": {
+      "prediction": "the effective-lambda-corrected advantage lands within +-0.02 of the reviewer's coarse arithmetic on three named arms, and the sign survives on all three",
+      "per_arm": [
+        {
+          "arm": "aromatic_rings_L3_lam1",
+          "reviewer_value": 0.0459,
+          "measured": 0.03746514826898273,
+          "abs_difference": 0.008434851731017275,
+          "within_0.02": true,
+          "sign_survives": true
+        },
+        {
+          "arm": "aromatic_rings_L6_lam1",
+          "reviewer_value": 0.0592,
+          "measured": 0.05071932039327465,
+          "abs_difference": 0.008480679606725355,
+          "within_0.02": true,
+          "sign_survives": true
+        },
+        {
+          "arm": "hbd_count_L4_lam1",
+          "reviewer_value": 0.0245,
+          "measured": 0.021677672911792845,
+          "abs_difference": 0.0028223270882071563,
+          "within_0.02": true,
+          "sign_survives": true
+        }
+      ],
+      "n_within_0.02": 3,
+      "n_sign_survives": 3,
+      "holds": true
+    },
+    "P7_rule_b_does_not_fire": {
+      "prediction": "the head-seed mean advantage over best-of-N on A1 is positive but its t interval contains 0",
+      "mean": 0.04900985606284503,
+      "ci": [
+        0.013535352462928842,
+        0.08448435966276122
+      ],
+      "holds": false
+    },
+    "P8_qed_smallest_hbd_largest": {
+      "prediction": "qed has the smallest head-seed sd of the three mid anchors and hbd_count the largest",
+      "sd_by_arm": {
+        "A1": 0.036551326179720726,
+        "A2": 0.028371861903605678,
+        "A3": 0.011496218672516222
+      },
+      "smallest": "A3",
+      "largest": "A1",
+      "holds": true
+    }
+  },
+  "priority_4_c27_across_head_seeds": {
+    "published_e4": {
+      "aromatic_rings": -0.0439,
+      "hbd_count": -0.0292,
+      "qed": -0.0522
+    },
+    "per_property": {
+      "aromatic_rings": {
+        "per_head_seed": {
+          "1234": {
+            "sweep_run": "c27_headsel_aromatic_rings",
+            "guided_run": "pilot_50k_p2_guided_aromatic_rings",
+            "guided_hit_rate": 0.4734551246669265,
+            "guided_tokens_per_molecule_actual": 419.326171875,
+            "head_checkpoint": "head_aromatic_rings_frozen_state.pt",
+            "head_seed_in_checkpoint": 1234,
+            "head_selected_at_budget": 0.5173970824841845,
+            "oracle_selected_at_budget": 0.8266901248509105,
+            "bracket_n": [
+              9,
+              12
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": -0.04394195781725796,
+            "advantage_vs_oracle_selected": -0.353235000183984
+          },
+          "2345": {
+            "sweep_run": "c29_c27_hs2345_aromatic_rings",
+            "guided_run": "c29_dep_hs2345_lam1_aromatic_rings_guided",
+            "guided_hit_rate": 0.48136924854257357,
+            "guided_tokens_per_molecule_actual": 408.146484375,
+            "head_checkpoint": "head_aromatic_rings_frozen_state.pt",
+            "head_seed_in_checkpoint": 2345,
+            "head_selected_at_budget": 0.511456705571863,
+            "oracle_selected_at_budget": 0.8199627045317794,
+            "bracket_n": [
+              9,
+              12
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": -0.03008745702928939,
+            "advantage_vs_oracle_selected": -0.33859345598920587
+          },
+          "3456": {
+            "sweep_run": "c29_c27_hs3456_aromatic_rings",
+            "guided_run": "c29_dep_hs3456_lam1_aromatic_rings_guided",
+            "guided_hit_rate": 0.4588502914689572,
+            "guided_tokens_per_molecule_actual": 417.521484375,
+            "head_checkpoint": "head_aromatic_rings_frozen_state.pt",
+            "head_seed_in_checkpoint": 3456,
+            "head_selected_at_budget": 0.49968888623298463,
+            "oracle_selected_at_budget": 0.8256041471474029,
+            "bracket_n": [
+              9,
+              12
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": -0.0408385947640274,
+            "advantage_vs_oracle_selected": -0.3667538556784457
+          }
+        },
+        "n_head_seeds": 3,
+        "mean": -0.03828933653685825,
+        "span": 0.013854500787968571,
+        "n_negative": 3,
+        "sign_stable": true,
+        "published_e4": -0.0439,
+        "note": "no interval is quoted: n = 3 head seeds, and C29.0.4.6 forbids a three-point bootstrap; the per-head-seed values and their span are the whole evidence"
+      },
+      "hbd_count": {
+        "per_head_seed": {
+          "1234": {
+            "sweep_run": "c27_headsel_hbd_count",
+            "guided_run": "pilot_50k_p2_guided_hbd_count",
+            "guided_hit_rate": 0.29875114714835704,
+            "guided_tokens_per_molecule_actual": 401.619140625,
+            "head_checkpoint": "head_hbd_count_frozen_state.pt",
+            "head_seed_in_checkpoint": 1234,
+            "head_selected_at_budget": 0.3279485244928003,
+            "oracle_selected_at_budget": 0.5459898714963386,
+            "bracket_n": [
+              9,
+              12
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": -0.029197377344443276,
+            "advantage_vs_oracle_selected": -0.24723872434798155
+          },
+          "2345": {
+            "sweep_run": "c29_c27_hs2345_hbd_count",
+            "guided_run": "c29_dep_hs2345_lam1_hbd_count_guided",
+            "guided_hit_rate": 0.34620966496834954,
+            "guided_tokens_per_molecule_actual": 401.25,
+            "head_checkpoint": "head_hbd_count_frozen_state.pt",
+            "head_seed_in_checkpoint": 2345,
+            "head_selected_at_budget": 0.3224308093256804,
+            "oracle_selected_at_budget": 0.545705529264505,
+            "bracket_n": [
+              9,
+              12
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": 0.023778855642669128,
+            "advantage_vs_oracle_selected": -0.19949586429615546
+          },
+          "3456": {
+            "sweep_run": "c29_c27_hs3456_hbd_count",
+            "guided_run": "c29_dep_hs3456_lam1_hbd_count_guided",
+            "guided_hit_rate": 0.3686360650960782,
+            "guided_tokens_per_molecule_actual": 392.0625,
+            "head_checkpoint": "head_hbd_count_frozen_state.pt",
+            "head_seed_in_checkpoint": 3456,
+            "head_selected_at_budget": 0.32859623865829185,
+            "oracle_selected_at_budget": 0.5375254832211841,
+            "bracket_n": [
+              8,
+              9
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": 0.04003982643778636,
+            "advantage_vs_oracle_selected": -0.16888941812510588
+          }
+        },
+        "n_head_seeds": 3,
+        "mean": 0.011540434912004072,
+        "span": 0.06923720378222964,
+        "n_negative": 1,
+        "sign_stable": false,
+        "published_e4": -0.0292,
+        "note": "no interval is quoted: n = 3 head seeds, and C29.0.4.6 forbids a three-point bootstrap; the per-head-seed values and their span are the whole evidence"
+      },
+      "qed": {
+        "per_head_seed": {
+          "1234": {
+            "sweep_run": "c27_headsel_qed",
+            "guided_run": "pilot_50k_p2_guided_qed",
+            "guided_hit_rate": 0.19083830274640326,
+            "guided_tokens_per_molecule_actual": 367.271484375,
+            "head_checkpoint": "head_qed_frozen_state.pt",
+            "head_seed_in_checkpoint": 1234,
+            "head_selected_at_budget": 0.24308354129658724,
+            "oracle_selected_at_budget": 0.562304629192805,
+            "bracket_n": [
+              8,
+              9
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": -0.05224523855018398,
+            "advantage_vs_oracle_selected": -0.37146632644640176
+          },
+          "2345": {
+            "sweep_run": "c29_c27_hs2345_qed",
+            "guided_run": "c29_dep_hs2345_lam1_qed_guided",
+            "guided_hit_rate": 0.19982927273217563,
+            "guided_tokens_per_molecule_actual": 373.423828125,
+            "head_checkpoint": "head_qed_frozen_state.pt",
+            "head_seed_in_checkpoint": 2345,
+            "head_selected_at_budget": 0.24282287254077134,
+            "oracle_selected_at_budget": 0.5687503161622318,
+            "bracket_n": [
+              8,
+              9
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": -0.04299359980859571,
+            "advantage_vs_oracle_selected": -0.36892104343005616
+          },
+          "3456": {
+            "sweep_run": "c29_c27_hs3456_qed",
+            "guided_run": "c29_dep_hs3456_lam1_qed_guided",
+            "guided_hit_rate": 0.18372242946836267,
+            "guided_tokens_per_molecule_actual": 369.8671875,
+            "head_checkpoint": "head_qed_frozen_state.pt",
+            "head_seed_in_checkpoint": 3456,
+            "head_selected_at_budget": 0.24393481875357542,
+            "oracle_selected_at_budget": 0.5650240952189537,
+            "bracket_n": [
+              8,
+              9
+            ],
+            "extrapolated": false,
+            "advantage_vs_head_selected": -0.06021238928521275,
+            "advantage_vs_oracle_selected": -0.381301665750591
+          }
+        },
+        "n_head_seeds": 3,
+        "mean": -0.05181707588133081,
+        "span": 0.017218789476617036,
+        "n_negative": 3,
+        "sign_stable": true,
+        "published_e4": -0.0522,
+        "note": "no interval is quoted: n = 3 head seeds, and C29.0.4.6 forbids a three-point bootstrap; the per-head-seed values and their span are the whole evidence"
+      }
+    },
+    "all_signs_stable": false,
+    "n_properties": 3
+  }
+}

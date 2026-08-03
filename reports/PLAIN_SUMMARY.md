@@ -2,6 +2,21 @@
 
 A plain-language summary followed by the technical detail. Written 2026-07-30.
 
+> **Phase 2 has since been executed** (lexical-locality test, six properties, RTX 4090).
+> It changes three things in this document, all flagged inline below:
+> the cLogP "predictor is under-confident" finding was largely a **bug in our own code**;
+> the claim that cLogP is hardest to steer *late* is **withdrawn** because it did not
+> replicate; and the pre-registered hypothesis phase 2 set out to test was **falsified** in
+> the form it committed to. Everything else here stands, and the aromatic-ring results
+> replicated on fresh data. Part 5 at the end summarises phase 2 in the same plain language.
+> Full detail in [`pilot_report.md`](pilot_report.md) sections 11–18.
+>
+> **Two follow-ups have since been run** (sections 19–21), and they change one more thing in
+> this document: the aromatic-ring result. We reported that the model does not represent how
+> many rings a molecule will end up with, because counting characters beat our predictor. That
+> is true of the model's **final** layer only — the middle of the model predicts it better
+> than counting does. See the end of Part 5. The steering conclusions are unchanged.
+
 For the artifact-bound version of every number below, see [`pilot_report.md`](pilot_report.md).
 To re-run anything, see [`../docs/REPRODUCE.md`](../docs/REPRODUCE.md).
 To continue the work on other hardware, see [`../docs/HANDOFF.md`](../docs/HANDOFF.md).
@@ -86,6 +101,26 @@ steerable are different things.**
 So "the model knows X" and "you can control X" are separate claims. Work in this area
 often treats them as one.
 
+> **Phase-2 correction — the first bullet is withdrawn, not just re-explained.**
+>
+> Two things went wrong with it. First the explanation: "by the time it is obvious, it is
+> already decided" is a good story and it is not what happens. Measured directly — asking at
+> each point what the *best possible* next character would do to the expected finished
+> molecule — one character late in the string can move expected final oiliness by **more than
+> the entire target range**. The lever is *bigger* late, not smaller.
+>
+> Second, and worse, **the measurement itself did not replicate.** On a fresh set of 50,000
+> molecules, steering oiliness late buys +0.048 rather than +0.015, which is 24% of the full
+> effect rather than 10% — and slightly *more* than ring count retains late (19%), so the
+> comparison that made this interesting has reversed. We ran a control to check whether our
+> own bug caused the change: it did not; the change is the fresh sample. The original number
+> came from three runs whose spread (±0.022) was already as large as the effect.
+>
+> So the specific claim "oiliness is hardest to steer late" is **withdrawn**. The broader
+> dissociation in the second bullet — ring count is predicted worse than character counting
+> yet is the most steerable property of six — stands and replicated. See `pilot_report.md`
+> §16.3 and §17.4.
+
 ### What failed
 
 **The big one: steering loses to the lazy method.** Give the same compute budget to
@@ -103,6 +138,14 @@ molecules it normally would not, and the predictor has never seen those. It beca
 badly miscalibrated: it predicted a 7.6% success rate where the true rate was 26.7%.
 We were permitted one round of retraining on steered data; it helped by +0.03, which
 changes nothing.
+
+> **Phase-2 correction.** About half of that miscalibration was **our bug, not the
+> predictor's fault**. We had asked the predictor to estimate the chance of landing in a
+> target range, but through a boundary error it was actually estimating the chance of
+> landing in *half* that range — so of course it looked pessimistic by a factor of two.
+> Fixed, the predictor is essentially perfectly calibrated on ordinary molecules. The
+> remaining gap on steered molecules is real but smaller than reported here. Details in
+> `pilot_report.md` §11.5–11.6.
 
 **Late steering for oiliness did essentially nothing** (+0.015, smaller than run-to-run
 noise), and **late steering for rings is where quality degrades** (synthetic
@@ -450,7 +493,7 @@ Ranked by how much each would change the conclusions.
 
 | # | Experiment | Why it matters | Cost |
 |---|---|---|---|
-| 1 | **λ sweep**, 0.5 → 10, both properties, all conditions | The single most exploitable weakness. Every negative claim is currently λ=1-specific. Also the experiment most likely to *reproduce the garbage-molecule failure mode* — quality should be re-scored at every λ. | ~6 guided runs per λ |
+| ~~1~~ | ~~**λ sweep**, 0.5 → 10~~ **DONE** — see "What the λ sweep found" below | It was the single most exploitable weakness, and it has been closed. | done |
 | 2 | **Calibrate the head on-policy** before concluding | The head is under-confident by 3.5× on guided prefixes. Concluding "steering fails" from a miscalibrated signal is premature. | cheap |
 | 3 | **Probe-layer sweep**, all 12 layers | Decides whether the aromatic-ring crossover is about the readout or the representation. | 12 head trainings, no generation |
 | 4 | **Head-seed replication**, 5 seeds | Tells us which small differences are real. | cheap |
@@ -511,3 +554,227 @@ measurement and the missing-baseline observation are the parts worth publishing;
 is what makes them testable. If the work were rebuilt from scratch, the framing would lead
 with "what does a half-written molecule already determine?" and treat guided decoding as
 the instrument rather than the subject.
+
+---
+
+## Part 5 — Phase 2, in plain English
+
+Executed 2026-07-30 on a desktop graphics card, after everything above. Two things came out
+of it: an answer to the question the pilot could not answer, and two bugs in our own code.
+
+### The question the pilot could not answer
+
+The pilot found that steering shifts molecules toward the target, but far less than simply
+generating a pile of molecules and keeping the best. It could not say **why**. There were two
+possibilities and no way to tell them apart:
+
+1. **There is nothing to steer.** At most points in writing a molecule, no available choice
+   of next character meaningfully changes how the finished molecule turns out. If so,
+   steering is hopeless and no amount of tuning helps.
+2. **Our steering is bad.** The lever exists and our little predictor is not pulling it.
+
+So we measured the lever directly, without using the predictor at all. At 400 points inside
+partly-written molecules, we took the eight characters the AI itself considered most likely
+next, and for each one we finished the molecule 16 different ways and measured what came
+out. 51,200 finished molecules in total. The spread between the best and worst of those
+eight choices is, by construction, the most that *any* steering method could achieve at that
+point.
+
+**The lever is large, and it is large everywhere.** For all six properties, picking the best
+of the eight characters the AI already proposes would roughly **double or triple** the chance
+of landing in the target range at that step. And our steering method captures between
+**5% and 11%** of that.
+
+So possibility 1 is dead: there is plenty to steer. The pilot's negative result is about our
+method, not about the task.
+
+### But there is a third possibility the pilot did not consider
+
+The eight candidate characters are not equally likely. The AI typically puts about **90%** of
+its confidence on just one of them. The big levers tend to sit on the characters the AI
+thinks are unlikely. Our method was deliberately set up to respect the AI's own preferences
+(the setting called λ=1 keeps the AI's opinion at full weight), so it *structurally cannot*
+reach for those levers however good its predictor is.
+
+That is a different diagnosis from "bad predictor", and it points at a specific, cheap
+follow-up: turn the steering strength up. That experiment is not done, and it is now the
+obvious next one.
+
+### The hypothesis we set out to test, and how it did
+
+We were testing whether how *easy a property is to steer* is explained by how *directly it is
+written into the molecule's text*. Ring count is written as specific characters, so it should
+be easy; oiliness is spread thinly across the whole molecule, so it should be hard. We wrote
+the predicted ranking of six properties down in code, before measuring anything, so we could
+not quietly adjust it afterwards.
+
+**In the units we committed to in advance, the prediction came out almost exactly backwards.**
+The reason is mundane and we had flagged the risk before looking: the measure divides by the
+width of each property's target range, and one property's range is 400 times narrower than
+another's, so the division mostly measured range width rather than anything about text. In a
+version of the measure that does not divide by range width, ring count does come out top as
+predicted, but the rest of the ranking does not follow, and with only six properties nothing
+here is statistically meaningful either way.
+
+Also predicted, and also wrong: we expected the lever to shrink toward the end of a molecule
+for the diffuse properties. It **grows**, for every property, by a factor of three to ten.
+That directly contradicts the story Part 2 tells about why oiliness is hard to steer late.
+
+### Two bugs in our own code, both found and both fixed
+
+**One made the predictor look worse than it was.** We asked it for the probability of
+landing in a target range. Through a boundary error it was computing the probability of
+landing in *half* that range. So the pilot's finding that "the predictor is systematically
+under-confident by a factor of two" was arithmetic, not a property of the predictor. Fixed,
+it is essentially perfectly calibrated. This affected all four of our continuous properties
+and none of the counting ones, and it was structural rather than bad luck — it would have hit
+any continuous property. The pilot's discrimination numbers are unaffected, which we checked
+rather than assumed.
+
+**One is about reproducibility, and it is a caveat we had asserted the opposite of.** We had
+documented that the large data files, which are too big to store, can always be regenerated
+exactly from the recorded settings. On a graphics card they cannot: the random number
+generator is a different one, so the same seed produces a *different* set of 50,000
+molecules. The AI itself is unchanged — its numerical outputs match to five decimal places
+and it proposes exactly the same eight candidate characters — but the sample is a fresh draw.
+Consequence: the target ranges the pilot froze before looking at any result **cannot be
+recreated on new hardware**, so phase 2 copies them across verbatim rather than
+re-deriving them.
+
+### What replicated
+
+The pilot's most-defended finding — that plain character counting predicts ring count better
+than reading the AI's internal state — **replicated to three decimal places on a completely
+fresh set of 50,000 molecules**, with a different random initialisation, and it is immune to
+the bug above by construction. So is the size of the steering effect for ring count
+(+0.295 in phase 2 against +0.300 in phase 1).
+
+We also finally checked whether the single random seed used for training the predictor
+mattered. It does not: across three seeds the variation is about ten times smaller than the
+differences being compared.
+
+### How the hypothesis did, in the end
+
+Six properties, ranked in advance by chemistry, then measured.
+
+**The advance ranking was largely right.** The order we wrote down before measuring —
+ring count, H-bond donors, rotatable bonds, TPSA, oiliness, drug-likeness, from
+"most directly written into the text" to "least" — matches the measured order of how
+steerable each property turned out to be, with one swap (oiliness steers better than
+predicted, rotatable bonds worse). On a six-item ranking that is a correlation of 0.77,
+which is suggestive rather than proven.
+
+**Our attempt to measure the underlying quantity was wrong.** The number we designed to
+capture "how directly is this written into the text" ranks the six properties almost exactly
+backwards. The reason is arithmetic: it divides by the width of each property's target range,
+and those widths differ by a factor of 400, so the division mostly measures range width. We
+had flagged that risk in writing before looking at the data, which is the only reason we can
+be confident that is what happened rather than guessing.
+
+So the idea survives and the instrument does not. We report both, and we do not pretend the
+version that worked was the version we committed to.
+
+**One prediction is worth singling out because it was sharp and it held.** A different
+research group's method finds H-bond donor count the *hardest* property to steer. Our
+reasoning said it should be one of the *easiest* for us, because the two methods pull on
+different things. It came out second-easiest of six.
+
+**And one of our own earlier findings did not survive.** Part 2 above reports that oiliness
+is hardest to steer near the end of a molecule, and builds an argument on it. Re-measured on
+fresh data it is no longer true — oiliness is now steerable at the end about as well as
+anywhere else, and slightly better than ring count is. We ran a control to check whether our
+own bug caused the change; it did not. The original number came from three runs whose spread
+was already as large as the effect, so it should not have been leaned on. We have withdrawn
+that specific claim.
+
+### What the λ sweep found
+
+The obvious objection to everything above was that we only ever tried one setting of the
+steering strength λ. So we tried six, from a quarter of the original to eight times it, on
+three properties. Three things came out of it.
+
+**Turning the steering up helps, then hurts.** The best setting is about twice what we used,
+and it improves the hit rate by roughly a third to two thirds. Past that it gets *worse*, and
+the reason is visible: at the highest setting, between 10% and 20% of what the model writes
+is no longer a valid molecule at all. We are not overriding the model's chemistry knowledge
+at that point, we are destroying it.
+
+**It still loses to the simple baseline, at every setting.** The closest it ever comes is a
+gap of 0.09 on H-bond donor count, against 0.22 at the original setting. That is real
+improvement, and it is still a loss. So the negative result was not an artefact of a badly
+chosen dial.
+
+**The "garbage molecules" the literature warns about do show up — just not where we expected.**
+At the highest settings, the molecules that hit the target are markedly worse: harder to
+synthesise, and increasingly split into disconnected fragments. Interestingly, they are not the
+long greasy tails that steering papers usually report. That is a consequence of aiming at a
+*band* rather than a maximum: if you are told to hit a range, breaking the molecule into pieces
+is a cheaper way to land in it than growing it. For one of the three properties (QED) the
+setting that maximises the hit rate is *already* in the damaging regime, so the trade-off is not
+hypothetical.
+
+### Then we tried to fix the predictor, three ways, and none of them worked
+
+The λ sweep measured the *steering strength* half of the diagnosis. The other half was our
+predictor. There were three obvious cheap things to try, and we tried all three.
+
+**1. Make the predictor's probabilities honest.** Our predictor was systematically
+under-confident: it would say "10% chance of hitting the target" when the real answer was
+closer to 27%. Fixing that is standard practice, it took about ten lines of code, and it made
+the predictor demonstrably better — the calibration error dropped by a factor of three to six.
+**It also made the steering worse, every single time, on every property.** Once we worked out
+why, the result stopped being surprising and started being interesting.
+
+The steering rule picks a token by weighing the model's own preference against the
+predictor's. What it actually responds to is the *gaps* between the predictor's scores for
+the eight candidates — not their absolute size. Under-confidence is an error in absolute
+size. Squashing all the numbers toward the truth also squashes the gaps between them, and
+squashing the gaps is mathematically the same thing as turning the steering strength *down* —
+which the λ sweep had already shown makes things worse. We proved this rather than argued it:
+a calibrated predictor at strength 1 and the raw predictor at strength 0.40 produce **the
+identical 1,536 molecules**, not similar ones, the same ones. So the most obvious fix in the
+book is not a fix at all; it is the dial we had already swept, wearing a different label.
+
+**2. Make the predictor bigger.** Seven times the parameters. It changed the predictor's
+accuracy by less than the noise between two random initialisations.
+
+**3. Read from a different place inside the model.** The model has twelve layers, and every
+number in this report until now came from the last one. We tried all thirteen possible
+reading points. **This one found something real, and it went against us.** Every property is
+predicted *best* from the middle of the model — around layer 3 to 5 — and the accuracy then
+declines steadily to the final layer. Which means one of our own headline claims was too
+strong: we had reported that the model does not really represent how many benzene-like rings
+a molecule will have, because simply counting characters in the half-written string beat our
+predictor. That is true of the model's **last** layer and false of its middle. The
+information is in there; the top of the model discards it. We have rewritten that claim.
+
+And yet: **the layer that predicts best is not the layer that steers best — for any of the
+six properties.** Reading from the better layer did not improve steering. We had committed in
+writing, before running it, to choosing the layer by prediction accuracy and only then
+measuring steering, precisely because choosing the other way round would have let us report a
+win that was really just picking the best of thirteen numbers after the fact.
+
+### The one thing to take away
+
+Not the hypothesis. Two things, and they fit together.
+
+The ceiling measurement: **for every property, at every point in a molecule, there is a much
+better choice available than the one our steering makes**. That turns "our method loses to the
+simple baseline" from a dead end into a specific diagnosis.
+
+And then the diagnosis narrows: **a better predictor is not a better steerer.** We made the
+predictor better-calibrated, bigger, and read it from a better place in the model. All three
+made it a better predictor by the usual measures. None of the three made the generation
+better, and the first actively made it worse. The reason is that the number a predictor is
+scored on — can it tell good prefixes from bad ones — is not the number the generator
+consumes. That is a lesson about this whole style of method, not just about molecules.
+
+One caution about how we first stated it. That measurement is made *one token at a time*,
+and steering runs over a whole molecule — roughly forty decisions. An earlier version of this
+write-up converted the one-token accounting ("about half the gap is the strength setting,
+most of the rest is our predictor") into advice about which whole-molecule experiment to run
+next. That conversion does not hold: the whole-molecule effect is twenty to fifty times the
+one-token effect, and doing the arithmetic naively predicts hit rates above 100%. We have
+withdrawn the inference and **measured** the strength-setting half instead, which is what the
+λ sweep above is. The predictor half is still only measured one token at a time, and saying
+so is more honest than the confident version we wrote first.

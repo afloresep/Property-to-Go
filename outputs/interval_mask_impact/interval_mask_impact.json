@@ -1,0 +1,538 @@
+{
+  "fixed_run": "pilot_50k_heads_p2",
+  "legacy_run": "pilot_50k_heads_p2_legacymask",
+  "head_input": "frozen_state",
+  "note": "Identical dataset, identical head-initialisation seed, identical training recipe. The only difference is whether the target interval's edges are forced to be bin boundaries. `legacy` reproduces the pilot's behaviour.",
+  "properties": {
+    "clogp": {
+      "affected": true,
+      "n_bins": {
+        "fixed": 22,
+        "legacy": 20
+      },
+      "n_bins_selected": {
+        "fixed": 3,
+        "legacy": 1
+      },
+      "masked_rate": {
+        "fixed": 0.09293167946446151,
+        "legacy": 0.04646583973223076
+      },
+      "true_rate": {
+        "fixed": 0.09293167946446151,
+        "legacy": 0.09293167946446151
+      },
+      "masked_rate_ratio_legacy_over_true": 0.5,
+      "target_auroc": {
+        "fixed": 0.7900508432037835,
+        "legacy": 0.7896161320006769,
+        "difference": 0.00043471120310656364
+      },
+      "target_brier": {
+        "fixed": 0.07485263307084121,
+        "legacy": 0.07817041663689872,
+        "difference": -0.003317783566057511
+      },
+      "mean_predicted_target_prob": {
+        "fixed": 0.09425824880599976,
+        "legacy": 0.04937778413295746,
+        "base_rate": 0.09293167946446151,
+        "legacy_ratio_to_base_rate": 0.5313342491764638,
+        "fixed_ratio_to_base_rate": 1.014274673062866
+      },
+      "target_ece": {
+        "fixed": 0.004464496222683521,
+        "legacy": 0.043673695408894826,
+        "difference": -0.0392091991862113
+      },
+      "control_nll": {
+        "fixed": 2.7140750885009766,
+        "legacy": 2.6833901405334473,
+        "difference": 0.030684947967529297
+      },
+      "control_expected_value_mae": {
+        "fixed": 0.9144095846983388,
+        "legacy": 0.9144069443763921,
+        "difference": 2.6403219466342165e-06
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "fixed": 0.6233614654192404,
+          "legacy": 0.6260174734100282,
+          "difference": -0.002656007990787801
+        },
+        "2": {
+          "fixed": 0.7405217465684129,
+          "legacy": 0.7377870999547483,
+          "difference": 0.0027346466136645153
+        },
+        "3": {
+          "fixed": 0.8267591138025039,
+          "legacy": 0.824432146365332,
+          "difference": 0.0023269674371718674
+        },
+        "4": {
+          "fixed": 0.8969558115321931,
+          "legacy": 0.8960139875576223,
+          "difference": 0.0009418239745707657
+        }
+      }
+    },
+    "aromatic_rings": {
+      "affected": false,
+      "n_bins": {
+        "fixed": 6,
+        "legacy": 6
+      },
+      "n_bins_selected": {
+        "fixed": 1,
+        "legacy": 1
+      },
+      "masked_rate": {
+        "fixed": 0.1586926560346525,
+        "legacy": 0.1586926560346525
+      },
+      "true_rate": {
+        "fixed": 0.1586926560346525,
+        "legacy": 0.1586926560346525
+      },
+      "masked_rate_ratio_legacy_over_true": 1.0,
+      "target_auroc": {
+        "fixed": 0.7903794905863408,
+        "legacy": 0.7903794905863408,
+        "difference": 0.0
+      },
+      "target_brier": {
+        "fixed": 0.11235982752815205,
+        "legacy": 0.11235982752815205,
+        "difference": 0.0
+      },
+      "mean_predicted_target_prob": {
+        "fixed": 0.1505766212940216,
+        "legacy": 0.1505766212940216,
+        "base_rate": 0.1586926560346525,
+        "legacy_ratio_to_base_rate": 0.9488568977076126,
+        "fixed_ratio_to_base_rate": 0.9488568977076126
+      },
+      "target_ece": {
+        "fixed": 0.014330659790738732,
+        "legacy": 0.014330659790738732,
+        "difference": 0.0
+      },
+      "control_nll": {
+        "fixed": 1.0410698652267456,
+        "legacy": 1.0410698652267456,
+        "difference": 0.0
+      },
+      "control_expected_value_mae": {
+        "fixed": 0.5818220732821833,
+        "legacy": 0.5818220732821833,
+        "difference": 0.0
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "fixed": 0.6508669474610908,
+          "legacy": 0.6508669474610908,
+          "difference": 0.0
+        },
+        "2": {
+          "fixed": 0.7587966509080329,
+          "legacy": 0.7587966509080329,
+          "difference": 0.0
+        },
+        "3": {
+          "fixed": 0.8335520688215403,
+          "legacy": 0.8335520688215403,
+          "difference": 0.0
+        },
+        "4": {
+          "fixed": 0.8684692213035977,
+          "legacy": 0.8684692213035977,
+          "difference": 0.0
+        }
+      }
+    },
+    "mol_weight": {
+      "affected": true,
+      "n_bins": {
+        "fixed": 22,
+        "legacy": 20
+      },
+      "n_bins_selected": {
+        "fixed": 3,
+        "legacy": 1
+      },
+      "masked_rate": {
+        "fixed": 0.10061035636936405,
+        "legacy": 0.04685961803504627
+      },
+      "true_rate": {
+        "fixed": 0.10061035636936405,
+        "legacy": 0.10061035636936405
+      },
+      "masked_rate_ratio_legacy_over_true": 0.4657534246575342,
+      "target_auroc": {
+        "fixed": 0.8299225141244632,
+        "legacy": 0.8222558587390886,
+        "difference": 0.007666655385374588
+      },
+      "target_brier": {
+        "fixed": 0.07258945034033482,
+        "legacy": 0.08070542649064735,
+        "difference": -0.008115976150312537
+      },
+      "mean_predicted_target_prob": {
+        "fixed": 0.09569867700338364,
+        "legacy": 0.046939704567193985,
+        "base_rate": 0.10061035636936405,
+        "legacy_ratio_to_base_rate": 0.4665494315005445,
+        "fixed_ratio_to_base_rate": 0.951181175147134
+      },
+      "target_ece": {
+        "fixed": 0.005816686951096345,
+        "legacy": 0.05367065293611352,
+        "difference": -0.04785396598501718
+      },
+      "control_nll": {
+        "fixed": 2.575044870376587,
+        "legacy": 2.5743563175201416,
+        "difference": 0.0006885528564453125
+      },
+      "control_expected_value_mae": {
+        "fixed": 40.47822427318004,
+        "legacy": 40.47207134050313,
+        "difference": 0.00615293267691186
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "fixed": 0.6225829474845861,
+          "legacy": 0.6167335261720263,
+          "difference": 0.005849421312559833
+        },
+        "2": {
+          "fixed": 0.7854461051267903,
+          "legacy": 0.782089992151648,
+          "difference": 0.003356112975142267
+        },
+        "3": {
+          "fixed": 0.8732880996363711,
+          "legacy": 0.8571638489140828,
+          "difference": 0.01612425072228829
+        },
+        "4": {
+          "fixed": 0.9420207278746732,
+          "legacy": 0.9331707684873244,
+          "difference": 0.008849959387348783
+        }
+      }
+    },
+    "hbd_count": {
+      "affected": false,
+      "n_bins": {
+        "fixed": 7,
+        "legacy": 7
+      },
+      "n_bins_selected": {
+        "fixed": 1,
+        "legacy": 1
+      },
+      "masked_rate": {
+        "fixed": 0.08249655443985036,
+        "legacy": 0.08249655443985036
+      },
+      "true_rate": {
+        "fixed": 0.08249655443985036,
+        "legacy": 0.08249655443985036
+      },
+      "masked_rate_ratio_legacy_over_true": 1.0,
+      "target_auroc": {
+        "fixed": 0.7780693673369048,
+        "legacy": 0.7780693673369048,
+        "difference": 0.0
+      },
+      "target_brier": {
+        "fixed": 0.06824608587683988,
+        "legacy": 0.06824608587683988,
+        "difference": 0.0
+      },
+      "mean_predicted_target_prob": {
+        "fixed": 0.0746341273188591,
+        "legacy": 0.0746341273188591,
+        "base_rate": 0.08249655443985036,
+        "legacy_ratio_to_base_rate": 0.9046938726789627,
+        "fixed_ratio_to_base_rate": 0.9046938726789627
+      },
+      "target_ece": {
+        "fixed": 0.00868536120228914,
+        "legacy": 0.00868536120228914,
+        "difference": 0.0
+      },
+      "control_nll": {
+        "fixed": 1.1055618524551392,
+        "legacy": 1.1055618524551392,
+        "difference": 0.0
+      },
+      "control_expected_value_mae": {
+        "fixed": 0.6307756048310394,
+        "legacy": 0.6307756048310394,
+        "difference": 0.0
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "fixed": 0.6057660790559989,
+          "legacy": 0.6057660790559989,
+          "difference": 0.0
+        },
+        "2": {
+          "fixed": 0.7671151423274299,
+          "legacy": 0.7671151423274299,
+          "difference": 0.0
+        },
+        "3": {
+          "fixed": 0.8229675192313601,
+          "legacy": 0.8229675192313601,
+          "difference": 0.0
+        },
+        "4": {
+          "fixed": 0.8550667335880443,
+          "legacy": 0.8550667335880443,
+          "difference": 0.0
+        }
+      }
+    },
+    "rotatable_bonds": {
+      "affected": false,
+      "n_bins": {
+        "fixed": 13,
+        "legacy": 13
+      },
+      "n_bins_selected": {
+        "fixed": 1,
+        "legacy": 1
+      },
+      "masked_rate": {
+        "fixed": 0.08033077377436504,
+        "legacy": 0.08033077377436504
+      },
+      "true_rate": {
+        "fixed": 0.08033077377436504,
+        "legacy": 0.08033077377436504
+      },
+      "masked_rate_ratio_legacy_over_true": 1.0,
+      "target_auroc": {
+        "fixed": 0.7805724024382821,
+        "legacy": 0.7805724024382821,
+        "difference": 0.0
+      },
+      "target_brier": {
+        "fixed": 0.06860335260484225,
+        "legacy": 0.06860335260484225,
+        "difference": 0.0
+      },
+      "mean_predicted_target_prob": {
+        "fixed": 0.0940321534872055,
+        "legacy": 0.0940321534872055,
+        "base_rate": 0.08033077377436504,
+        "legacy_ratio_to_base_rate": 1.1705620283370508,
+        "fixed_ratio_to_base_rate": 1.1705620283370508
+      },
+      "target_ece": {
+        "fixed": 0.013701377192640146,
+        "legacy": 0.013701377192640146,
+        "difference": 0.0
+      },
+      "control_nll": {
+        "fixed": 1.805012583732605,
+        "legacy": 1.805012583732605,
+        "difference": 0.0
+      },
+      "control_expected_value_mae": {
+        "fixed": 1.3335054353148044,
+        "legacy": 1.3335054353148044,
+        "difference": 0.0
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "fixed": 0.6806463326071169,
+          "legacy": 0.6806463326071169,
+          "difference": 0.0
+        },
+        "2": {
+          "fixed": 0.7571824062530171,
+          "legacy": 0.7571824062530171,
+          "difference": 0.0
+        },
+        "3": {
+          "fixed": 0.8271841063550233,
+          "legacy": 0.8271841063550233,
+          "difference": 0.0
+        },
+        "4": {
+          "fixed": 0.8300427963949442,
+          "legacy": 0.8300427963949442,
+          "difference": 0.0
+        }
+      }
+    },
+    "tpsa": {
+      "affected": true,
+      "n_bins": {
+        "fixed": 22,
+        "legacy": 20
+      },
+      "n_bins_selected": {
+        "fixed": 3,
+        "legacy": 1
+      },
+      "masked_rate": {
+        "fixed": 0.09765701909824769,
+        "legacy": 0.04882850954912384
+      },
+      "true_rate": {
+        "fixed": 0.09765701909824769,
+        "legacy": 0.09765701909824769
+      },
+      "masked_rate_ratio_legacy_over_true": 0.5,
+      "target_auroc": {
+        "fixed": 0.7391222431646055,
+        "legacy": 0.7349704657772764,
+        "difference": 0.004151777387329081
+      },
+      "target_brier": {
+        "fixed": 0.0820520713745173,
+        "legacy": 0.08559628641811565,
+        "difference": -0.0035442150435983505
+      },
+      "mean_predicted_target_prob": {
+        "fixed": 0.09547007828950882,
+        "legacy": 0.05090011656284332,
+        "base_rate": 0.09765701909824769,
+        "legacy_ratio_to_base_rate": 0.5212130887554057,
+        "fixed_ratio_to_base_rate": 0.9776059024847082
+      },
+      "target_ece": {
+        "fixed": 0.007410434329397074,
+        "legacy": 0.04677568807087502,
+        "difference": -0.039365253741477944
+      },
+      "control_nll": {
+        "fixed": 2.7479300498962402,
+        "legacy": 2.7443947792053223,
+        "difference": 0.0035352706909179688
+      },
+      "control_expected_value_mae": {
+        "fixed": 17.006597753374198,
+        "legacy": 17.046946070373394,
+        "difference": -0.0403483169991965
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "fixed": 0.6040539018673499,
+          "legacy": 0.5997438376749981,
+          "difference": 0.0043100641923518035
+        },
+        "2": {
+          "fixed": 0.7072750452232303,
+          "legacy": 0.7048044843144018,
+          "difference": 0.0024705609088284675
+        },
+        "3": {
+          "fixed": 0.7568125189163317,
+          "legacy": 0.7558143524807669,
+          "difference": 0.000998166435564829
+        },
+        "4": {
+          "fixed": 0.8341424830896792,
+          "legacy": 0.8277637200594061,
+          "difference": 0.006378763030273071
+        }
+      }
+    },
+    "qed": {
+      "affected": true,
+      "n_bins": {
+        "fixed": 22,
+        "legacy": 20
+      },
+      "n_bins_selected": {
+        "fixed": 3,
+        "legacy": 1
+      },
+      "masked_rate": {
+        "fixed": 0.09903524315810198,
+        "legacy": 0.05000984445757039
+      },
+      "true_rate": {
+        "fixed": 0.09903524315810198,
+        "legacy": 0.09903524315810198
+      },
+      "masked_rate_ratio_legacy_over_true": 0.5049701789264414,
+      "target_auroc": {
+        "fixed": 0.7355025360294527,
+        "legacy": 0.7328023907472995,
+        "difference": 0.0027001452821532324
+      },
+      "target_brier": {
+        "fixed": 0.0837592867144906,
+        "legacy": 0.08775394602466323,
+        "difference": -0.003994659310172635
+      },
+      "mean_predicted_target_prob": {
+        "fixed": 0.09065547585487366,
+        "legacy": 0.0482994019985199,
+        "base_rate": 0.09903524315810198,
+        "legacy_ratio_to_base_rate": 0.48769913071666515,
+        "fixed_ratio_to_base_rate": 0.9153860076876805
+      },
+      "target_ece": {
+        "fixed": 0.008520806549682845,
+        "legacy": 0.05073584103140834,
+        "difference": -0.04221503448172549
+      },
+      "control_nll": {
+        "fixed": 2.774679183959961,
+        "legacy": 2.754789113998413,
+        "difference": 0.01989006996154785
+      },
+      "control_expected_value_mae": {
+        "fixed": 0.1000164291076974,
+        "legacy": 0.09963709269888228,
+        "difference": 0.00037933640881511466
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "fixed": 0.6289791843345521,
+          "legacy": 0.6214224704222219,
+          "difference": 0.00755671391233026
+        },
+        "2": {
+          "fixed": 0.7122859434303271,
+          "legacy": 0.7110438331549167,
+          "difference": 0.0012421102754104352
+        },
+        "3": {
+          "fixed": 0.775436541589623,
+          "legacy": 0.7725921568491151,
+          "difference": 0.002844384740507966
+        },
+        "4": {
+          "fixed": 0.7928021903543773,
+          "legacy": 0.7890715149661471,
+          "difference": 0.0037306753882301313
+        }
+      }
+    }
+  },
+  "affected_properties": [
+    "clogp",
+    "mol_weight",
+    "tpsa",
+    "qed"
+  ],
+  "unaffected_properties": [
+    "aromatic_rings",
+    "hbd_count",
+    "rotatable_bonds"
+  ],
+  "max_control_nll_shift": 0.030684947967529297
+}

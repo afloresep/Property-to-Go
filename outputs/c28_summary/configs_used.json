@@ -1,0 +1,54 @@
+{
+  "cli": {
+    "out": "c28_summary",
+    "no_figure": false
+  },
+  "reads": {
+    "k_cells": [
+      "c28_ksweep_hbd_count_L12_lam1_k2",
+      "c28_ksweep_hbd_count_L12_lam1_k4",
+      "c28_ksweep_hbd_count_L12_lam1_k8",
+      "c28_ksweep_hbd_count_L12_lam1_k16",
+      "c28_ksweep_hbd_count_L12_lam1_k32",
+      "c28_ksweep_hbd_count_L4_lam1_k2",
+      "c28_ksweep_hbd_count_L4_lam1_k4",
+      "c28_ksweep_hbd_count_L4_lam1_k8",
+      "c28_ksweep_hbd_count_L4_lam1_k16",
+      "c28_ksweep_hbd_count_L4_lam1_k32",
+      "c28_ksweep_hbd_count_L4_lam2_k2",
+      "c28_ksweep_hbd_count_L4_lam2_k4",
+      "c28_ksweep_hbd_count_L4_lam2_k8",
+      "c28_ksweep_hbd_count_L4_lam2_k16",
+      "c28_ksweep_hbd_count_L4_lam2_k32",
+      "c28_ksweep_aromatic_rings_L12_lam1_k2",
+      "c28_ksweep_aromatic_rings_L12_lam1_k4",
+      "c28_ksweep_aromatic_rings_L12_lam1_k8",
+      "c28_ksweep_aromatic_rings_L12_lam1_k16",
+      "c28_ksweep_aromatic_rings_L12_lam1_k32",
+      "c28_ksweep_aromatic_rings_L3_lam2_k2",
+      "c28_ksweep_aromatic_rings_L3_lam2_k4",
+      "c28_ksweep_aromatic_rings_L3_lam2_k8",
+      "c28_ksweep_aromatic_rings_L3_lam2_k16",
+      "c28_ksweep_aromatic_rings_L3_lam2_k32",
+      "c28_ksweep_qed_L12_lam1_k2",
+      "c28_ksweep_qed_L12_lam1_k4",
+      "c28_ksweep_qed_L12_lam1_k8",
+      "c28_ksweep_qed_L12_lam1_k16",
+      "c28_ksweep_qed_L12_lam1_k32"
+    ],
+    "composition": "guided_drafts_metrics.json",
+    "c26_curves": [
+      "c26_nsweep_aromatic_rings",
+      "c26_nsweep_hbd_count",
+      "c26_nsweep_qed"
+    ],
+    "c27_curves": [
+      "c27_headsel_aromatic_rings",
+      "c27_headsel_hbd_count",
+      "c27_headsel_qed"
+    ],
+    "frontier_machinery": "scripts/21_summarise_c26.py (interp, t_interval)",
+    "strand_definitions": "scripts/23_k_sweep.py (STRANDS, K_GRID, check_gate)"
+  },
+  "generates": "nothing -- no molecule is sampled and no head is trained"
+}

@@ -89,6 +89,15 @@ def main() -> int:
         "guided_tokens_per_molecule_actual": guided_actual,
         "guided_tokens_per_molecule_full_recompute": guided_full,
         "base_tokens_per_molecule": base_per_mol,
+        # Recorded whether or not that accounting is actually run, so a run restricted to
+        # `actual` still lets a reader check the saturation argument: at N draws against
+        # base rate p, best-of-N misses with probability (1-p)^N.
+        "n_candidates_solved": {
+            "actual": solve_best_of_n(guided_actual, base_per_mol),
+            "full_recompute": solve_best_of_n(guided_full, base_per_mol),
+        },
+        "base_rate": float(iv["base_rate"]),
+        "accounting_run": args.accounting,
         "matches": {},
     }
     t_start = time.perf_counter()

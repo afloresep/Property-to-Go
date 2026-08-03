@@ -23,9 +23,10 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from property_to_go import generation, properties  # noqa: E402
+from property_to_go import generation, probe_layers, properties  # noqa: E402
+from property_to_go.binning import in_interval, resolve_target_interval  # noqa: E402
 from property_to_go.compute import ComputeMeter  # noqa: E402
-from property_to_go.config import RunDir, load_config, write_json  # noqa: E402
+from property_to_go.config import RunDir, load_config, read_json, write_json  # noqa: E402
 from property_to_go.guidance import Windows  # noqa: E402
 from property_to_go.model_io import load_generator  # noqa: E402
 from property_to_go.prefixes import relative_position, select_quartile_prefixes  # noqa: E402
@@ -36,6 +37,23 @@ from property_to_go.tokens import FEATURE_NAMES, prefix_features  # noqa: E402
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="pilot_10k")
+    ap.add_argument(
+        "--inherit-intervals", default=None,
+        help="path to an existing target_intervals.json. Any property present there is "
+             "copied VERBATIM instead of being re-derived; the rest are derived from "
+             "this run's base distribution. Use this whenever a frozen interval must "
+             "survive a regeneration -- see docs/HANDOFF.md and pilot_report.md §11.2.",
+    )
+    # C17. Additive probe-layer selection. Omitted, this script behaves exactly as before:
+    # `hidden.npy` holds the states at `cfg["hidden_layer"]` (-1, the final layer) and no
+    # other array is written. Given probe points, the SAME forward passes additionally
+    # write `hidden_layer<L>.npy` for each -- `output_hidden_states=True` already returns
+    # every layer, so the extra probe points cost zero additional processed tokens. The
+    # default array is still written unchanged, so no downstream consumer sees a
+    # difference. See reports/section_c17_probe_layers.md.
+    ap.add_argument("--layers", type=int, nargs="*", default=None,
+                    help="extra probe points to store as hidden_layer<L>.npy, at no "
+                         "extra token cost. Default: none, i.e. the existing behaviour.")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
@@ -65,12 +83,18 @@ def main() -> int:
     # ---- terminal properties --------------------------------------------------
     traj: list[dict] = []
     n_invalid = n_short = 0
+    n_property_unavailable = 0
     for ids, smi in zip(seqs, smiles):
-        props = properties.compute_properties(smi)
+        # `compute_all_properties` extends `compute_properties` with the four phase-2
+        # descriptors and, critically, keeps validity decided by RDKit parsing alone,
+        # so the kept-trajectory set is identical to the pilot's.
+        props = properties.compute_all_properties(smi)
         content = generation.sequence_content(ids, gen.bos_id, gen.eos_id, gen.pad_id)
         if props is None:
             n_invalid += 1
             continue
+        if any(props.get(p) is None for p in properties.ALL_PROPERTIES):
+            n_property_unavailable += 1
         if len(content) < int(cfg["min_content_tokens"]):
             n_short += 1
             continue
@@ -102,9 +126,9 @@ def main() -> int:
                     "relative_position": relative_position(k, t["n_content"]),
                     "n_content": t["n_content"],
                     "canonical_smiles": t["canonical_smiles"],
-                    "clogp": t["clogp"],
-                    "aromatic_rings": t["aromatic_rings"],
-                    "mol_weight": t["mol_weight"],
+                    # Every property in ALL_PROPERTIES, so heads for the phase-2
+                    # battery train from the same prefix table as the pilot's three.
+                    **{p: t[p] for p in properties.ALL_PROPERTIES},
                     "n_heavy_atoms": t["n_heavy_atoms"],
                     "prefix_token_ids": t["token_ids"][: k + 1],
                     "_features": prefix_features(toks),
@@ -113,13 +137,25 @@ def main() -> int:
 
     # ---- frozen hidden states -------------------------------------------------
     hs_meter = ComputeMeter().start()
-    states = generation.hidden_states_for_positions(
-        gen,
-        [t["token_ids"] for t in traj],
-        positions,
-        layer=int(cfg["hidden_layer"]),
-        meter=hs_meter,
-    )
+    sequences = [t["token_ids"] for t in traj]
+    default_layer = int(cfg["hidden_layer"])
+    extra_layers: list[int] = []
+    if args.layers:
+        # One pass, every requested probe point. `default_layer` is normalised against
+        # the returned tuple so that -1 and 12 are recognised as the same probe point and
+        # `hidden.npy` is never written twice from two different code paths.
+        n_probe = int(gen.model.config.num_hidden_layers) + 1
+        canonical_default = default_layer % n_probe
+        extra_layers = sorted({int(L) % n_probe for L in args.layers} - {canonical_default})
+        multi = probe_layers.hidden_states_all_layers(
+            gen, sequences, positions, [canonical_default] + extra_layers, meter=hs_meter,
+        )
+        states = multi[canonical_default]
+    else:
+        states = generation.hidden_states_for_positions(
+            gen, sequences, positions, layer=default_layer, meter=hs_meter,
+        )
+        multi = None
     hs_meter.stop()
     print(f"hidden states in {hs_meter.wall_seconds:.1f}s ({hs_meter.processed_tokens_actual} tokens)")
 
@@ -133,47 +169,72 @@ def main() -> int:
     group_counts = check_no_group_leakage(np.array(groups), splits)
 
     # ---- base distributions, target intervals, windows ------------------------
-    clogp = np.array([t["clogp"] for t in traj])
-    rings = np.array([t["aromatic_rings"] for t in traj])
-    mw = np.array([t["mol_weight"] for t in traj])
     lengths = np.array([t["n_content"] for t in traj])
+    # A property value can be missing only for QED, and only on a molecule RDKit
+    # parsed; those rows are excluded from that property's base distribution rather
+    # than coerced, and the count is reported.
+    base_values = {
+        p: np.array([t[p] for t in traj if t.get(p) is not None], dtype=np.float64)
+        for p in properties.ALL_PROPERTIES
+    }
 
     rule = guide_cfg["target_interval_rule"]
-    lo_c, hi_c = (
-        float(np.quantile(clogp, rule["clogp"]["lo"])),
-        float(np.quantile(clogp, rule["clogp"]["hi"])),
-    )
-    ring_v = int(rule["aromatic_rings"]["value"])
-    lo_m, hi_m = float(np.quantile(mw, 0.85)), float(np.quantile(mw, 0.95))
+    # One code path for all properties, so a newly added interval is derived by exactly
+    # the code that derived the existing ones.
+    derived = {
+        p: resolve_target_interval(rule[p], base_values[p]) for p in properties.ALL_PROPERTIES
+    }
 
-    intervals = {
-        "clogp": {
-            "lo": lo_c,
-            "hi": hi_c,
-            "rule": rule["clogp"],
-            "base_rate": float(((clogp >= lo_c) & (clogp < hi_c)).mean()),
+    # An interval derived from a *sample* is a property of that sample, not of the base
+    # policy alone: the target band is an empirical quantile of ~50k draws, so an
+    # independent 50k draw moves it by a couple of standard errors. That is fine when a
+    # dataset is built once, and fatal when a frozen interval has to survive a
+    # regeneration on hardware whose RNG stream differs. `--inherit-intervals` is how a
+    # freeze is made to mean frozen: copy verbatim, do not re-derive.
+    intervals = dict(derived)
+    inherited: list[str] = []
+    if args.inherit_intervals:
+        source = read_json(Path(args.inherit_intervals))
+        for p in properties.ALL_PROPERTIES:
+            if p in source:
+                intervals[p] = source[p]
+                inherited.append(p)
+    interval_provenance = {
+        "inherited_from": args.inherit_intervals,
+        "inherited_verbatim": inherited,
+        "derived_from_this_run": [p for p in properties.ALL_PROPERTIES if p not in inherited],
+        "derived_values_for_comparison": {p: derived[p] for p in inherited},
+        # An inherited interval carries the base rate of the sample it was cut from, not
+        # of this one. Both are needed: the recorded rate is what the freeze fixed, the
+        # empirical rate is what a hit actually costs on this dataset. Reporting only one
+        # would make some later comparison quietly wrong.
+        "empirical_base_rate_on_this_sample": {
+            p: float(in_interval(base_values[p], intervals[p]["lo"], intervals[p]["hi"]).mean())
+            for p in properties.ALL_PROPERTIES
         },
-        "aromatic_rings": {
-            "lo": float(ring_v),
-            "hi": float(ring_v + 1),
-            "rule": rule["aromatic_rings"],
-            "base_rate": float((rings == ring_v).mean()),
-        },
-        "mol_weight": {
-            "lo": lo_m,
-            "hi": hi_m,
-            "rule": {"kind": "quantile_band", "lo": 0.85, "hi": 0.95},
-            "base_rate": float(((mw >= lo_m) & (mw < hi_m)).mean()),
-        },
+        "note": (
+            "Inherited intervals were frozen before any guided result was inspected and "
+            "are copied unchanged. `derived_values_for_comparison` records what THIS "
+            "run's base sample would have produced, so the size of the divergence is on "
+            "disk rather than only in the report. `empirical_base_rate_on_this_sample` "
+            "is the inherited interval's actual rate here, which differs from the "
+            "`base_rate` field carried along with the interval."
+        ),
     }
     windows = Windows.from_lengths(lengths, tuple(guide_cfg["window_quantiles"]))
 
     write_json(run / "target_intervals.json", intervals)
+    write_json(run / "target_intervals_provenance.json", interval_provenance)
     write_json(run / "windows.json", windows.to_dict())
 
     # ---- persist --------------------------------------------------------------
     np.save(run / "hidden.npy", hidden)
     np.save(run / "features.npy", features)
+    for L in extra_layers:
+        np.save(
+            run / f"hidden_layer{L}.npy",
+            np.concatenate(multi[L], axis=0).astype(np.float32),
+        )
 
     import pandas as pd
 
@@ -193,9 +254,7 @@ def main() -> int:
                 "smiles": t["smiles"],
                 "canonical_smiles": t["canonical_smiles"],
                 "n_content": t["n_content"],
-                "clogp": t["clogp"],
-                "aromatic_rings": t["aromatic_rings"],
-                "mol_weight": t["mol_weight"],
+                **{p: t[p] for p in properties.ALL_PROPERTIES},
                 "n_heavy_atoms": t["n_heavy_atoms"],
             }
             for t in traj
@@ -217,24 +276,37 @@ def main() -> int:
         "n_valid_kept": len(traj),
         "n_invalid": n_invalid,
         "n_too_short": n_short,
+        # Parseable molecules for which some descriptor (QED only) could not be
+        # computed. They are kept -- validity means "RDKit accepted it" throughout
+        # this project -- and excluded from that one property's statistics.
+        "n_property_unavailable": n_property_unavailable,
         "validity": properties.validity(smiles),
         "uniqueness": properties.uniqueness(smiles),
         "n_prefix_examples": len(rows),
         "n_unique_canonical": int(len(set(groups))),
         "feature_names": list(FEATURE_NAMES),
         "hidden_dim": int(hidden.shape[1]),
+        "hidden_layer": default_layer,
+        # C17: extra probe points stored alongside, at zero extra token cost.
+        "extra_probe_layers": extra_layers,
         "split_row_counts": {s: int((splits == s).sum()) for s in ("train", "val", "test")},
         "split_group_counts": group_counts,
         "base_distribution": {
-            "clogp": stats(clogp),
-            "aromatic_rings": stats(rings),
-            "mol_weight": stats(mw),
+            **{p: stats(base_values[p]) for p in properties.ALL_PROPERTIES},
             "content_length": stats(lengths),
-            "aromatic_rings_histogram": {
-                str(int(v)): int(c) for v, c in zip(*np.unique(rings, return_counts=True))
+            # Histograms for the count properties: the target-interval base rate of a
+            # count is set by one bar of these, so the shape is worth carrying.
+            **{
+                f"{p}_histogram": {
+                    str(int(v)): int(c)
+                    for v, c in zip(*np.unique(base_values[p], return_counts=True))
+                }
+                for p in properties.DISCRETE_PROPERTIES
             },
+            "n_scored": {p: int(len(base_values[p])) for p in properties.ALL_PROPERTIES},
         },
         "target_intervals": intervals,
+        "target_interval_provenance": interval_provenance,
         "windows": windows.to_dict(),
         "compute_generation": meter.as_dict(),
         "compute_hidden_states": hs_meter.as_dict(),
@@ -243,8 +315,17 @@ def main() -> int:
     write_json(run / "dataset_summary.json", summary)
 
     print(f"prefix examples: {len(rows)}  splits: {summary['split_row_counts']}")
-    print(f"targets: clogp[{lo_c:.3f},{hi_c:.3f}) base={intervals['clogp']['base_rate']:.3f}  "
-          f"rings=={ring_v} base={intervals['aromatic_rings']['base_rate']:.3f}")
+    print("target intervals, frozen here before any guided molecule exists:")
+    for p in properties.ALL_PROPERTIES:
+        iv = intervals[p]
+        tag = "INHERITED" if p in inherited else "derived  "
+        print(f"  {p:16s} {tag} [{iv['lo']:.4f}, {iv['hi']:.4f})  "
+              f"width={iv['hi'] - iv['lo']:.4f}  base_rate={iv['base_rate']:.4f}  "
+              f"rule={iv['rule']}")
+        if p in inherited:
+            d = derived[p]
+            print(f"  {'':16s}           this run would have derived "
+                  f"[{d['lo']:.4f}, {d['hi']:.4f}) base_rate={d['base_rate']:.4f}")
     print(f"windows: early<{windows.t33}  middle[{windows.t33},{windows.t67})  late>={windows.t67}")
     print(f"-> {run.path}")
     return 0

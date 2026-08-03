@@ -20,5 +20,10 @@ trust_remote_code: true
 deterministic_eval: true
 
 dtype: float32
-device: cpu # benchmarked faster than mps for this 46.8M linear-attention model
+# The pilot ran `device: cpu`, which benchmarked faster than mps on the original
+# laptop.  Phase 2 runs on an RTX 4090.  `dtype` stays float32 deliberately: the
+# cached-vs-full candidate backend agreement is a *numerical equality* claim and the
+# whole compute accounting rests on it, so reduced precision is not a free change.
+# See docs/HANDOFF.md §1.2.
+device: cuda
 torch_num_threads: 10

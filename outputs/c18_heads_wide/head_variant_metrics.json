@@ -1,0 +1,266 @@
+{
+  "variant": "wide",
+  "hidden_dim": 1024,
+  "readout": "full",
+  "properties": {
+    "aromatic_rings": {
+      "n_bins": 6,
+      "n_parameters": 1843206,
+      "interval_mask_coverage": {
+        "n_bins": 6,
+        "n_bins_selected": 1,
+        "masked_rate": 0.1586926560346525,
+        "true_rate": 0.1586926560346525,
+        "abs_difference": 0.0,
+        "is_exact": true
+      },
+      "best_epoch": 1,
+      "epochs_run": 10,
+      "train_seconds": 67.33853764366359,
+      "test": {
+        "nll": 1.0461968183517456,
+        "expected_value_mae": 0.5841839331628574,
+        "target_auroc": 0.7886130775125013,
+        "target_brier": 0.11308275003991969,
+        "target_ece": 0.017480358479940228,
+        "mean_predicted": 0.175865039229393,
+        "observed": 0.1586926560346525
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "auroc": 0.6503686951189273,
+          "n": 5079
+        },
+        "2": {
+          "auroc": 0.7500120498089742,
+          "n": 5079
+        },
+        "3": {
+          "auroc": 0.8351774864272694,
+          "n": 5079
+        },
+        "4": {
+          "auroc": 0.8692087601820886,
+          "n": 5079
+        }
+      },
+      "note_nll_not_comparable_across_readouts": "NLL and E[y] MAE are computed over a different partition for the focused readout (3 bins) than for the full one, so they are NOT comparable across variants -- pilot_report.md 11.6 finding 4. target_auroc / target_brier / target_ece are on the same event and are the comparable columns."
+    },
+    "hbd_count": {
+      "n_bins": 7,
+      "n_parameters": 1844231,
+      "interval_mask_coverage": {
+        "n_bins": 7,
+        "n_bins_selected": 1,
+        "masked_rate": 0.08249655443985036,
+        "true_rate": 0.08249655443985036,
+        "abs_difference": 0.0,
+        "is_exact": true
+      },
+      "best_epoch": 2,
+      "epochs_run": 11,
+      "train_seconds": 116.51523414254189,
+      "test": {
+        "nll": 1.1136326789855957,
+        "expected_value_mae": 0.6254529725902366,
+        "target_auroc": 0.7779528364335686,
+        "target_brier": 0.06860648036795401,
+        "target_ece": 0.007870568653455302,
+        "mean_predicted": 0.07839760929346085,
+        "observed": 0.08249655443985036
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "auroc": 0.6043179653169718,
+          "n": 5079
+        },
+        "2": {
+          "auroc": 0.7702528501336721,
+          "n": 5079
+        },
+        "3": {
+          "auroc": 0.8244025730586826,
+          "n": 5079
+        },
+        "4": {
+          "auroc": 0.856214469357862,
+          "n": 5079
+        }
+      },
+      "note_nll_not_comparable_across_readouts": "NLL and E[y] MAE are computed over a different partition for the focused readout (3 bins) than for the full one, so they are NOT comparable across variants -- pilot_report.md 11.6 finding 4. target_auroc / target_brier / target_ece are on the same event and are the comparable columns."
+    },
+    "rotatable_bonds": {
+      "n_bins": 13,
+      "n_parameters": 1850381,
+      "interval_mask_coverage": {
+        "n_bins": 13,
+        "n_bins_selected": 1,
+        "masked_rate": 0.08033077377436504,
+        "true_rate": 0.08033077377436504,
+        "abs_difference": 0.0,
+        "is_exact": true
+      },
+      "best_epoch": 1,
+      "epochs_run": 10,
+      "train_seconds": 119.76699530985206,
+      "test": {
+        "nll": 1.823002576828003,
+        "expected_value_mae": 1.3420850006882092,
+        "target_auroc": 0.7793789531307064,
+        "target_brier": 0.06787165649463915,
+        "target_ece": 0.009450413971379482,
+        "mean_predicted": 0.07174082100391388,
+        "observed": 0.08033077377436504
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "auroc": 0.6796682492307563,
+          "n": 5079
+        },
+        "2": {
+          "auroc": 0.7550672484793532,
+          "n": 5079
+        },
+        "3": {
+          "auroc": 0.8247105628806864,
+          "n": 5079
+        },
+        "4": {
+          "auroc": 0.8312066316571587,
+          "n": 5079
+        }
+      },
+      "note_nll_not_comparable_across_readouts": "NLL and E[y] MAE are computed over a different partition for the focused readout (3 bins) than for the full one, so they are NOT comparable across variants -- pilot_report.md 11.6 finding 4. target_auroc / target_brier / target_ece are on the same event and are the comparable columns."
+    },
+    "tpsa": {
+      "n_bins": 22,
+      "n_parameters": 1859606,
+      "interval_mask_coverage": {
+        "n_bins": 22,
+        "n_bins_selected": 3,
+        "masked_rate": 0.09765701909824769,
+        "true_rate": 0.09765701909824769,
+        "abs_difference": 0.0,
+        "is_exact": true
+      },
+      "best_epoch": 0,
+      "epochs_run": 9,
+      "train_seconds": 113.66716017853469,
+      "test": {
+        "nll": 2.7631707191467285,
+        "expected_value_mae": 17.279928305346928,
+        "target_auroc": 0.7252726288818072,
+        "target_brier": 0.08304254032664586,
+        "target_ece": 0.010565878295668421,
+        "mean_predicted": 0.10149936378002167,
+        "observed": 0.09765701909824769
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "auroc": 0.58986819276006,
+          "n": 5079
+        },
+        "2": {
+          "auroc": 0.694690185679193,
+          "n": 5079
+        },
+        "3": {
+          "auroc": 0.747917003934597,
+          "n": 5079
+        },
+        "4": {
+          "auroc": 0.8189632266510878,
+          "n": 5079
+        }
+      },
+      "note_nll_not_comparable_across_readouts": "NLL and E[y] MAE are computed over a different partition for the focused readout (3 bins) than for the full one, so they are NOT comparable across variants -- pilot_report.md 11.6 finding 4. target_auroc / target_brier / target_ece are on the same event and are the comparable columns."
+    },
+    "clogp": {
+      "n_bins": 22,
+      "n_parameters": 1859606,
+      "interval_mask_coverage": {
+        "n_bins": 22,
+        "n_bins_selected": 3,
+        "masked_rate": 0.09293167946446151,
+        "true_rate": 0.09293167946446151,
+        "abs_difference": 0.0,
+        "is_exact": true
+      },
+      "best_epoch": 1,
+      "epochs_run": 10,
+      "train_seconds": 104.0434499848634,
+      "test": {
+        "nll": 2.7181708812713623,
+        "expected_value_mae": 0.9137429586229145,
+        "target_auroc": 0.7919929240185348,
+        "target_brier": 0.07475895888338259,
+        "target_ece": 0.002967957748666036,
+        "mean_predicted": 0.09070200473070145,
+        "observed": 0.09293167946446151
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "auroc": 0.6218822775216785,
+          "n": 5079
+        },
+        "2": {
+          "auroc": 0.7427769735075217,
+          "n": 5079
+        },
+        "3": {
+          "auroc": 0.8328021010768433,
+          "n": 5079
+        },
+        "4": {
+          "auroc": 0.8952993418269177,
+          "n": 5079
+        }
+      },
+      "note_nll_not_comparable_across_readouts": "NLL and E[y] MAE are computed over a different partition for the focused readout (3 bins) than for the full one, so they are NOT comparable across variants -- pilot_report.md 11.6 finding 4. target_auroc / target_brier / target_ece are on the same event and are the comparable columns."
+    },
+    "qed": {
+      "n_bins": 22,
+      "n_parameters": 1859606,
+      "interval_mask_coverage": {
+        "n_bins": 22,
+        "n_bins_selected": 3,
+        "masked_rate": 0.09903524315810198,
+        "true_rate": 0.09903524315810198,
+        "abs_difference": 0.0,
+        "is_exact": true
+      },
+      "best_epoch": 1,
+      "epochs_run": 10,
+      "train_seconds": 145.37463593576103,
+      "test": {
+        "nll": 2.7770636081695557,
+        "expected_value_mae": 0.09913300187841752,
+        "target_auroc": 0.7366561394308971,
+        "target_brier": 0.0837902631358141,
+        "target_ece": 0.006148809618069959,
+        "mean_predicted": 0.09770169109106064,
+        "observed": 0.09903524315810198
+      },
+      "target_auroc_by_quartile": {
+        "1": {
+          "auroc": 0.6139215841315742,
+          "n": 5079
+        },
+        "2": {
+          "auroc": 0.7125118606542563,
+          "n": 5079
+        },
+        "3": {
+          "auroc": 0.7765808992200642,
+          "n": 5079
+        },
+        "4": {
+          "auroc": 0.7973644149091466,
+          "n": 5079
+        }
+      },
+      "note_nll_not_comparable_across_readouts": "NLL and E[y] MAE are computed over a different partition for the focused readout (3 bins) than for the full one, so they are NOT comparable across variants -- pilot_report.md 11.6 finding 4. target_auroc / target_brier / target_ece are on the same event and are the comparable columns."
+    }
+  },
+  "dataset": "pilot_50k_p2"
+}

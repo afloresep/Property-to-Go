@@ -1,0 +1,14 @@
+{
+  "c24_steering": {
+    "n_prefixes": 300,
+    "top_k": 8,
+    "n_rollouts": 32,
+    "rollout_seed": 7777,
+    "prefix_sample_seed": 7778,
+    "lam": 1.0,
+    "eps": 1e-06,
+    "head_seed": 1234
+  },
+  "dataset": "c24_dataset",
+  "heads": "c24_probe_layers"
+}

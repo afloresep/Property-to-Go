@@ -1,0 +1,10 @@
+{
+  "file": "outputs/c28_prereg/C28.0_preregistration.md",
+  "file_sha256": "9e8c2c13f6bf7a1744417aa79faf6ce8a54cf74ad56b92488dbe812697b8c984",
+  "file_bytes": 17111,
+  "prereg_block_sha256": "b31fe2433753f652b7e3a41e69dd94c9989a1bda8d432131a31034b975730044",
+  "prereg_block_chars": 16813,
+  "file_mtime_utc": "2026-08-01T12:27:17.061425Z",
+  "frozen_at_utc": "2026-08-01T12:27:26.558697Z",
+  "note": "Frozen before any C28 measurement artefact existed. The block from '## C28.0.1 Why' onward is copied verbatim into reports/section_c28_k_sweep.md; tests/test_k_sweep.py asserts the copy is byte-identical and that this file's mtime strictly precedes every C28 artefact."
+}

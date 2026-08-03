@@ -1,0 +1,1159 @@
+{
+  "dataset": "pilot_50k_p2",
+  "anchor_properties": [
+    "aromatic_rings",
+    "hbd_count",
+    "qed"
+  ],
+  "anchor_selection_rule": "most steerable at lambda=1 (aromatic_rings, +0.2949); least steerable (qed, +0.1012); the pre-registered discriminating case (hbd_count).",
+  "lambdas": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "note": "lambda = 1 is the central test's own run, not a re-run: same script, seeds, n, head and backend. Only `unguided` and `throughout` are generated at the other lambdas, and `unguided` is regenerated at each one as a bug alarm -- it cannot depend on lambda and must reproduce exactly.",
+  "properties": {
+    "aromatic_rings": {
+      "by_lambda": {
+        "0.25": {
+          "lambda_recorded_in_the_run": 0.25,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam0p25_guided_aromatic_rings",
+          "hit_rate_unguided": 0.17854565532827407,
+          "hit_rate_throughout": 0.23588607605115539,
+          "lift": 0.05734042072288131,
+          "lift_sd_over_seeds": 0.01648385086418836,
+          "validity": 0.99609375,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 1.0681335157094332,
+          "content_length_mean": 43.79287305883639,
+          "tokens_per_molecule_actual": 405.609375,
+          "length_matched_lift": 0.04275892850222962,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.8294270833333334,
+            "guidance_advantage": -0.593541007282178,
+            "guidance_beats_best_of_n": false
+          },
+          "quality": {
+            "n_guided_hits": 361,
+            "n_base_hits": 273,
+            "degeneracy_rate_guided_hits": 0.013850415512465374,
+            "degeneracy_rate_base_hits": 0.03296703296703297,
+            "degeneracy_difference": -0.019116617454567594,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.7190854546955303,
+                "difference_vs_base_hits": -0.06747907006138965,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.0304709141274238,
+                "difference_vs_base_hits": 0.008492892149401854,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7208287124766788,
+                "difference_vs_base_hits": -0.008369942436620481,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.6014333584078243,
+                "difference_vs_base_hits": -0.0032750328429161923,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.002770083102493,
+                "difference_vs_base_hits": -0.004555924223514252,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "0.5": {
+          "lambda_recorded_in_the_run": 0.5,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+          "hit_rate_unguided": 0.17854565532827407,
+          "hit_rate_throughout": 0.3010951113213786,
+          "lift": 0.12254945599310454,
+          "lift_sd_over_seeds": 0.011551117739267812,
+          "validity": 0.9967447916666666,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.8654905030528911,
+          "content_length_mean": 44.250175602432364,
+          "tokens_per_molecule_actual": 408.31640625,
+          "length_matched_lift": 0.10862026207231709,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.8294270833333334,
+            "guidance_advantage": -0.5283319720119548,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 215,
+            "base_rate": 0.1713867089496819,
+            "probability_all_n_draws_miss": 2.7903421364474465e-18
+          },
+          "quality": {
+            "n_guided_hits": 461,
+            "n_base_hits": 273,
+            "degeneracy_rate_guided_hits": 0.013015184381778741,
+            "degeneracy_rate_base_hits": 0.03296703296703297,
+            "degeneracy_difference": -0.019951848585254228,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.763781039763474,
+                "difference_vs_base_hits": -0.022783484993445846,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.0412147505422995,
+                "difference_vs_base_hits": 0.019236728564277605,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7261811291612342,
+                "difference_vs_base_hits": -0.0030175257520650423,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.6162035879931606,
+                "difference_vs_base_hits": 0.011495196742420055,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0,
+                "difference_vs_base_hits": -0.0073260073260073,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "1": {
+          "lambda_recorded_in_the_run": 1.0,
+          "lambda_source": null,
+          "guided_dir": "pilot_50k_p2_guided_aromatic_rings",
+          "hit_rate_unguided": 0.17854565532827407,
+          "hit_rate_throughout": 0.4734551246669265,
+          "lift": 0.2949094693386525,
+          "lift_sd_over_seeds": 0.016866137132441988,
+          "validity": 0.9954427083333334,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.5991217540216487,
+          "content_length_mean": 45.405452175736684,
+          "tokens_per_molecule_actual": 419.326171875,
+          "length_matched_lift": 0.2667576588326621,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.8294270833333334,
+            "guidance_advantage": -0.35597195866640685,
+            "guidance_beats_best_of_n": false
+          },
+          "quality": {
+            "n_guided_hits": 724,
+            "n_base_hits": 273,
+            "degeneracy_rate_guided_hits": 0.013812154696132596,
+            "degeneracy_rate_base_hits": 0.03296703296703297,
+            "degeneracy_difference": -0.019154878270900372,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.745811350963851,
+                "difference_vs_base_hits": -0.040753173793068864,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 1.9834254143646408,
+                "difference_vs_base_hits": -0.038552607613381085,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7232309088190194,
+                "difference_vs_base_hits": -0.005967746094279858,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.613343722366783,
+                "difference_vs_base_hits": 0.008635331116042533,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0124309392265194,
+                "difference_vs_base_hits": 0.0051049319005120886,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "2": {
+          "lambda_recorded_in_the_run": 2.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam2_guided_aromatic_rings",
+          "hit_rate_unguided": 0.17854565532827407,
+          "hit_rate_throughout": 0.5579287361930816,
+          "lift": 0.37938308086480754,
+          "lift_sd_over_seeds": 0.030601308743436327,
+          "validity": 0.9908854166666666,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.47885715446844407,
+          "content_length_mean": 45.571216014598384,
+          "tokens_per_molecule_actual": 420.345703125,
+          "length_matched_lift": 0.3931819273340129,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.8294270833333334,
+            "guidance_advantage": -0.2714983471402518,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 224,
+            "base_rate": 0.1713867089496819,
+            "probability_all_n_draws_miss": 5.138359828240104e-19
+          },
+          "quality": {
+            "n_guided_hits": 849,
+            "n_base_hits": 273,
+            "degeneracy_rate_guided_hits": 0.014134275618374558,
+            "degeneracy_rate_base_hits": 0.03296703296703297,
+            "degeneracy_difference": -0.01883275734865841,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.685527721444941,
+                "difference_vs_base_hits": -0.10103680331197884,
+                "excludes_zero": true
+              },
+              "longest_chain": {
+                "guided_hits_mean": 1.8904593639575973,
+                "difference_vs_base_hits": -0.13151865802042462,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7225099177951045,
+                "difference_vs_base_hits": -0.006688737118194732,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.6323244502386711,
+                "difference_vs_base_hits": 0.027616058987930625,
+                "excludes_zero": true
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0070671378091873,
+                "difference_vs_base_hits": -0.0002588695168199706,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "4": {
+          "lambda_recorded_in_the_run": 4.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam4_guided_aromatic_rings",
+          "hit_rate_unguided": 0.17854565532827407,
+          "hit_rate_throughout": 0.49892386579281495,
+          "lift": 0.32037821046454085,
+          "lift_sd_over_seeds": 0.02157452062790182,
+          "validity": 0.970703125,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.5487361338669589,
+          "content_length_mean": 44.66922982399569,
+          "tokens_per_molecule_actual": 415.34765625,
+          "length_matched_lift": 0.34560318559844516,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.8294270833333334,
+            "guidance_advantage": -0.3305032175405184,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 221,
+            "base_rate": 0.1713867089496819,
+            "probability_all_n_draws_miss": 9.031685957633843e-19
+          },
+          "quality": {
+            "n_guided_hits": 744,
+            "n_base_hits": 273,
+            "degeneracy_rate_guided_hits": 0.033602150537634407,
+            "degeneracy_rate_base_hits": 0.03296703296703297,
+            "degeneracy_difference": 0.0006351175706014386,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.7286221988299335,
+                "difference_vs_base_hits": -0.05794232592698645,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 1.6720430107526882,
+                "difference_vs_base_hits": -0.34993501122533366,
+                "excludes_zero": true
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7143064556591872,
+                "difference_vs_base_hits": -0.014892199254112115,
+                "excludes_zero": true
+              },
+              "qed": {
+                "guided_hits_mean": 0.6389489241303726,
+                "difference_vs_base_hits": 0.034240532879632135,
+                "excludes_zero": true
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0255376344086022,
+                "difference_vs_base_hits": 0.01821162708259494,
+                "excludes_zero": true
+              }
+            }
+          }
+        },
+        "8": {
+          "lambda_recorded_in_the_run": 8.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam8_guided_aromatic_rings",
+          "hit_rate_unguided": 0.17854565532827407,
+          "hit_rate_throughout": 0.3992927949319125,
+          "lift": 0.22074713960363843,
+          "lift_sd_over_seeds": 0.008352039915134049,
+          "validity": 0.806640625,
+          "uniqueness": 0.9967702260751293,
+          "abs_target_error_mean": 0.6871819122847583,
+          "content_length_mean": 44.0055311940914,
+          "tokens_per_molecule_actual": 455.7890625,
+          "length_matched_lift": 0.24277163601143972,
+          "best_of_n": {
+            "n_candidates": 10,
+            "hit_rate": 0.8567708333333334,
+            "guidance_advantage": -0.4574780384014209,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 308,
+            "base_rate": 0.1713867089496819,
+            "probability_all_n_draws_miss": 7.11842160190896e-26
+          },
+          "quality": {
+            "n_guided_hits": 495,
+            "n_base_hits": 273,
+            "degeneracy_rate_guided_hits": 0.06060606060606061,
+            "degeneracy_rate_base_hits": 0.03296703296703297,
+            "degeneracy_difference": 0.02763902763902764,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.8962512318631903,
+                "difference_vs_base_hits": 0.10968670710627038,
+                "excludes_zero": true
+              },
+              "longest_chain": {
+                "guided_hits_mean": 1.3151515151515152,
+                "difference_vs_base_hits": -0.7068265068265067,
+                "excludes_zero": true
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.6944150985146096,
+                "difference_vs_base_hits": -0.034783556398689686,
+                "excludes_zero": true
+              },
+              "qed": {
+                "guided_hits_mean": 0.6294997882523657,
+                "difference_vs_base_hits": 0.02479139700162525,
+                "excludes_zero": true
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0444444444444445,
+                "difference_vs_base_hits": 0.03711843711843721,
+                "excludes_zero": true
+              }
+            }
+          }
+        }
+      },
+      "best_lambda": 2.0,
+      "best_lift": 0.37938308086480754,
+      "lift_at_lambda_1": 0.2949094693386525,
+      "gain_from_tuning_lambda": 1.2864391289828396,
+      "lift_is_non_monotonic_in_lambda": true,
+      "any_lambda_beats_best_of_n": false,
+      "best_guidance_advantage": -0.2714983471402518,
+      "validity_at_the_largest_lambda": 0.806640625,
+      "degeneracy_rate_by_lambda": {
+        "0.25": 0.013850415512465374,
+        "0.5": 0.013015184381778741,
+        "1": 0.013812154696132596,
+        "2": 0.014134275618374558,
+        "4": 0.033602150537634407,
+        "8": 0.06060606060606061
+      }
+    },
+    "hbd_count": {
+      "by_lambda": {
+        "0.25": {
+          "lambda_recorded_in_the_run": 0.25,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam0p25_guided_hbd_count",
+          "hit_rate_unguided": 0.083707641537296,
+          "hit_rate_throughout": 0.13243446065640868,
+          "lift": 0.04872681911911268,
+          "lift_sd_over_seeds": 0.015402266728389527,
+          "validity": 0.998046875,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 1.4918384141613268,
+          "content_length_mean": 42.52189392594938,
+          "tokens_per_molecule_actual": 393.474609375,
+          "length_matched_lift": 0.04845418540850753,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.5234375,
+            "guidance_advantage": -0.3910030393435913,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 201,
+            "base_rate": 0.08230807827395886,
+            "probability_all_n_draws_miss": 3.177449449142385e-08
+          },
+          "quality": {
+            "n_guided_hits": 203,
+            "n_base_hits": 128,
+            "degeneracy_rate_guided_hits": 0.029556650246305417,
+            "degeneracy_rate_base_hits": 0.0703125,
+            "degeneracy_difference": -0.04075584975369458,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.021712113017951,
+                "difference_vs_base_hits": -0.03373390096175077,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.6157635467980294,
+                "difference_vs_base_hits": -0.26704895320197064,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.6934676006765055,
+                "difference_vs_base_hits": 0.0017129778039632892,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.614959915215354,
+                "difference_vs_base_hits": 0.011591458548616762,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0246305418719213,
+                "difference_vs_base_hits": -0.03786945812807874,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "0.5": {
+          "lambda_recorded_in_the_run": 0.5,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam0p5_guided_hbd_count",
+          "hit_rate_unguided": 0.083707641537296,
+          "hit_rate_throughout": 0.18128505995574082,
+          "lift": 0.09757741841844482,
+          "lift_sd_over_seeds": 0.01634409530794879,
+          "validity": 0.9947916666666666,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 1.282111059646956,
+          "content_length_mean": 42.581930935103706,
+          "tokens_per_molecule_actual": 395.853515625,
+          "length_matched_lift": 0.0980225393300206,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.5234375,
+            "guidance_advantage": -0.34215244004425915,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 204,
+            "base_rate": 0.08230807827395886,
+            "probability_all_n_draws_miss": 2.4556664459346402e-08
+          },
+          "quality": {
+            "n_guided_hits": 277,
+            "n_base_hits": 128,
+            "degeneracy_rate_guided_hits": 0.02527075812274368,
+            "degeneracy_rate_base_hits": 0.0703125,
+            "degeneracy_difference": -0.04504174187725632,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.924846984839101,
+                "difference_vs_base_hits": -0.13059902914060073,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.779783393501805,
+                "difference_vs_base_hits": -0.10302910649819497,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7003108125360237,
+                "difference_vs_base_hits": 0.008556189663481484,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.5893524111075542,
+                "difference_vs_base_hits": -0.01401604555918301,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0216606498194947,
+                "difference_vs_base_hits": -0.04083935018050533,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "1": {
+          "lambda_recorded_in_the_run": 1.0,
+          "lambda_source": null,
+          "guided_dir": "pilot_50k_p2_guided_hbd_count",
+          "hit_rate_unguided": 0.083707641537296,
+          "hit_rate_throughout": 0.29875114714835704,
+          "lift": 0.21504350561106106,
+          "lift_sd_over_seeds": 0.01175016899421396,
+          "validity": 0.998046875,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.9452270684244017,
+          "content_length_mean": 43.43525903868968,
+          "tokens_per_molecule_actual": 401.619140625,
+          "length_matched_lift": 0.21682923803927612,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.5234375,
+            "guidance_advantage": -0.22468635285164296,
+            "guidance_beats_best_of_n": false
+          },
+          "quality": {
+            "n_guided_hits": 458,
+            "n_base_hits": 128,
+            "degeneracy_rate_guided_hits": 0.019650655021834062,
+            "degeneracy_rate_base_hits": 0.0703125,
+            "degeneracy_difference": -0.050661844978165935,
+            "degeneracy_excludes_zero": true,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.899026741559107,
+                "difference_vs_base_hits": -0.1564192724205946,
+                "excludes_zero": true
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.703056768558952,
+                "difference_vs_base_hits": -0.17975573144104784,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.6977688858261205,
+                "difference_vs_base_hits": 0.00601426295357832,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.607415858419099,
+                "difference_vs_base_hits": 0.0040474017523617345,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0131004366812226,
+                "difference_vs_base_hits": -0.04939956331877737,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "2": {
+          "lambda_recorded_in_the_run": 2.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam2_guided_hbd_count",
+          "hit_rate_unguided": 0.083707641537296,
+          "hit_rate_throughout": 0.4303223626700486,
+          "lift": 0.3466147211327526,
+          "lift_sd_over_seeds": 0.03067257720729378,
+          "validity": 0.994140625,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.692199010742962,
+          "content_length_mean": 42.38788354008198,
+          "tokens_per_molecule_actual": 393.181640625,
+          "length_matched_lift": 0.34644896194354,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.5234375,
+            "guidance_advantage": -0.09311513732995141,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 206,
+            "base_rate": 0.08230807827395886,
+            "probability_all_n_draws_miss": 2.0680602802431535e-08
+          },
+          "quality": {
+            "n_guided_hits": 657,
+            "n_base_hits": 128,
+            "degeneracy_rate_guided_hits": 0.045662100456621,
+            "degeneracy_rate_base_hits": 0.0703125,
+            "degeneracy_difference": -0.024650399543378998,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.867843080259933,
+                "difference_vs_base_hits": -0.18760293371976866,
+                "excludes_zero": true
+              },
+              "longest_chain": {
+                "guided_hits_mean": 3.060882800608828,
+                "difference_vs_base_hits": 0.178070300608828,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.702225849958126,
+                "difference_vs_base_hits": 0.01047122708558379,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.6030825841450721,
+                "difference_vs_base_hits": -0.00028587252166512034,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0410958904109588,
+                "difference_vs_base_hits": -0.021404109589041154,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "4": {
+          "lambda_recorded_in_the_run": 4.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam4_guided_hbd_count",
+          "hit_rate_unguided": 0.083707641537296,
+          "hit_rate_throughout": 0.3729855553214292,
+          "lift": 0.2892779137841332,
+          "lift_sd_over_seeds": 0.012450665735169146,
+          "validity": 0.984375,
+          "uniqueness": 0.9986772278475033,
+          "abs_target_error_mean": 0.8233638943192035,
+          "content_length_mean": 41.99558993671673,
+          "tokens_per_molecule_actual": 393.697265625,
+          "length_matched_lift": 0.29030537811257656,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.5234375,
+            "guidance_advantage": -0.15045194467857081,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 217,
+            "base_rate": 0.08230807827395886,
+            "probability_all_n_draws_miss": 8.039502771845071e-09
+          },
+          "quality": {
+            "n_guided_hits": 564,
+            "n_base_hits": 128,
+            "degeneracy_rate_guided_hits": 0.047872340425531915,
+            "degeneracy_rate_base_hits": 0.0703125,
+            "degeneracy_difference": -0.022440159574468085,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 2.834066408505677,
+                "difference_vs_base_hits": -0.2213796054740249,
+                "excludes_zero": true
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.8067375886524824,
+                "difference_vs_base_hits": -0.07607491134751765,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.6863083548552953,
+                "difference_vs_base_hits": -0.0054462680172469025,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.5976920300618439,
+                "difference_vs_base_hits": -0.005676426604893314,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.047872340425532,
+                "difference_vs_base_hits": -0.0146276595744681,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "8": {
+          "lambda_recorded_in_the_run": 8.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam8_guided_hbd_count",
+          "hit_rate_unguided": 0.083707641537296,
+          "hit_rate_throughout": 0.31043581012657234,
+          "lift": 0.22672816858927636,
+          "lift_sd_over_seeds": 0.028310466686154657,
+          "validity": 0.90234375,
+          "uniqueness": 0.9004026108436026,
+          "abs_target_error_mean": 1.0761582231867293,
+          "content_length_mean": 39.81851219105938,
+          "tokens_per_molecule_actual": 406.119140625,
+          "length_matched_lift": 0.17175576130867692,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.5234375,
+            "guidance_advantage": -0.21300168987342766,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 272,
+            "base_rate": 0.08230807827395886,
+            "probability_all_n_draws_miss": 7.137714424738012e-11
+          },
+          "quality": {
+            "n_guided_hits": 430,
+            "n_base_hits": 128,
+            "degeneracy_rate_guided_hits": 0.10697674418604651,
+            "degeneracy_rate_base_hits": 0.0703125,
+            "degeneracy_difference": 0.03666424418604651,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.001703611611636,
+                "difference_vs_base_hits": -0.05374240236806571,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.2744186046511627,
+                "difference_vs_base_hits": -0.6083938953488373,
+                "excludes_zero": true
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.6124728967855646,
+                "difference_vs_base_hits": -0.07928172608697759,
+                "excludes_zero": true
+              },
+              "qed": {
+                "guided_hits_mean": 0.5420599443037054,
+                "difference_vs_base_hits": -0.06130851236303181,
+                "excludes_zero": true
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.127906976744186,
+                "difference_vs_base_hits": 0.06540697674418605,
+                "excludes_zero": false
+              }
+            }
+          }
+        }
+      },
+      "best_lambda": 2.0,
+      "best_lift": 0.3466147211327526,
+      "lift_at_lambda_1": 0.21504350561106106,
+      "gain_from_tuning_lambda": 1.6118353360536175,
+      "lift_is_non_monotonic_in_lambda": true,
+      "any_lambda_beats_best_of_n": false,
+      "best_guidance_advantage": -0.09311513732995141,
+      "validity_at_the_largest_lambda": 0.90234375,
+      "degeneracy_rate_by_lambda": {
+        "0.25": 0.029556650246305417,
+        "0.5": 0.02527075812274368,
+        "1": 0.019650655021834062,
+        "2": 0.045662100456621,
+        "4": 0.047872340425531915,
+        "8": 0.10697674418604651
+      }
+    },
+    "qed": {
+      "by_lambda": {
+        "0.25": {
+          "lambda_recorded_in_the_run": 0.25,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam0p25_guided_qed",
+          "hit_rate_unguided": 0.08960026708784365,
+          "hit_rate_throughout": 0.1332260058085633,
+          "lift": 0.04362573872071966,
+          "lift_sd_over_seeds": 0.023250452891029446,
+          "validity": 0.9967447916666666,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.12514859921999028,
+          "content_length_mean": 41.26546367665622,
+          "tokens_per_molecule_actual": 381.57421875,
+          "length_matched_lift": 0.03755037623908866,
+          "best_of_n": {
+            "n_candidates": 8,
+            "hit_rate": 0.5436197916666666,
+            "guidance_advantage": -0.4103937858581033,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 187,
+            "base_rate": 0.09998996487706975,
+            "probability_all_n_draws_miss": 2.781344580568392e-09
+          },
+          "quality": {
+            "n_guided_hits": 204,
+            "n_base_hits": 137,
+            "degeneracy_rate_guided_hits": 0.004901960784313725,
+            "degeneracy_rate_base_hits": 0.014598540145985401,
+            "degeneracy_difference": -0.009696579361671676,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.1123874668113336,
+                "difference_vs_base_hits": 0.030962337775356286,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.1470588235294117,
+                "difference_vs_base_hits": 0.04486904250751378,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.730550776722597,
+                "difference_vs_base_hits": -0.003061521998126593,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.8733863563832327,
+                "difference_vs_base_hits": 0.0007466477095966484,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0049019607843137,
+                "difference_vs_base_hits": 0.004901960784313708,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "0.5": {
+          "lambda_recorded_in_the_run": 0.5,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam0p5_guided_qed",
+          "hit_rate_unguided": 0.08960026708784365,
+          "hit_rate_throughout": 0.16918000076743026,
+          "lift": 0.07957973367958661,
+          "lift_sd_over_seeds": 0.02286496852074186,
+          "validity": 0.9967447916666666,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.10699618486250224,
+          "content_length_mean": 40.723785221851294,
+          "tokens_per_molecule_actual": 376.177734375,
+          "length_matched_lift": 0.06561364468390368,
+          "best_of_n": {
+            "n_candidates": 8,
+            "hit_rate": 0.5436197916666666,
+            "guidance_advantage": -0.3744397908992364,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 180,
+            "base_rate": 0.09998996487706975,
+            "probability_all_n_draws_miss": 5.8146467260114506e-09
+          },
+          "quality": {
+            "n_guided_hits": 259,
+            "n_base_hits": 137,
+            "degeneracy_rate_guided_hits": 0.015444015444015444,
+            "degeneracy_rate_base_hits": 0.014598540145985401,
+            "degeneracy_difference": 0.0008454752980300434,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.08224187014141,
+                "difference_vs_base_hits": 0.0008167411054325058,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.0694980694980694,
+                "difference_vs_base_hits": -0.03269171152382855,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7365507075937243,
+                "difference_vs_base_hits": 0.002938408873000675,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.872880597743914,
+                "difference_vs_base_hits": 0.00024088907027797202,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0077220077220077,
+                "difference_vs_base_hits": 0.007722007722007707,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "1": {
+          "lambda_recorded_in_the_run": 1.0,
+          "lambda_source": null,
+          "guided_dir": "pilot_50k_p2_guided_qed",
+          "hit_rate_unguided": 0.08960026708784365,
+          "hit_rate_throughout": 0.19083830274640326,
+          "lift": 0.10123803565855961,
+          "lift_sd_over_seeds": 0.0054074297570297115,
+          "validity": 0.99609375,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.08146241024367706,
+          "content_length_mean": 39.61278384722458,
+          "tokens_per_molecule_actual": 367.271484375,
+          "length_matched_lift": 0.07489732566886467,
+          "best_of_n": {
+            "n_candidates": 8,
+            "hit_rate": 0.5436197916666666,
+            "guidance_advantage": -0.3527814889202634,
+            "guidance_beats_best_of_n": false
+          },
+          "quality": {
+            "n_guided_hits": 292,
+            "n_base_hits": 137,
+            "degeneracy_rate_guided_hits": 0.010273972602739725,
+            "degeneracy_rate_base_hits": 0.014598540145985401,
+            "degeneracy_difference": -0.0043245675432456755,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.077380368113049,
+                "difference_vs_base_hits": -0.004044760922928159,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.065068493150685,
+                "difference_vs_base_hits": -0.03712128787121305,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7382952007691803,
+                "difference_vs_base_hits": 0.004682902048456672,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.8722200266757366,
+                "difference_vs_base_hits": -0.00041968199789943483,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0068493150684932,
+                "difference_vs_base_hits": 0.006849315068493178,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "2": {
+          "lambda_recorded_in_the_run": 2.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam2_guided_qed",
+          "hit_rate_unguided": 0.08960026708784365,
+          "hit_rate_throughout": 0.23609533603470859,
+          "lift": 0.14649506894686493,
+          "lift_sd_over_seeds": 0.029742474905816177,
+          "validity": 0.998046875,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.054397222641497454,
+          "content_length_mean": 39.013765246398165,
+          "tokens_per_molecule_actual": 361.916015625,
+          "length_matched_lift": 0.1088318824064814,
+          "best_of_n": {
+            "n_candidates": 8,
+            "hit_rate": 0.5436197916666666,
+            "guidance_advantage": -0.30752445563195807,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 167,
+            "base_rate": 0.09998996487706975,
+            "probability_all_n_draws_miss": 2.2872190513087368e-08
+          },
+          "quality": {
+            "n_guided_hits": 362,
+            "n_base_hits": 137,
+            "degeneracy_rate_guided_hits": 0.016574585635359115,
+            "degeneracy_rate_base_hits": 0.014598540145985401,
+            "degeneracy_difference": 0.0019760454893737144,
+            "degeneracy_excludes_zero": false,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.171711333384758,
+                "difference_vs_base_hits": 0.09028620434878087,
+                "excludes_zero": false
+              },
+              "longest_chain": {
+                "guided_hits_mean": 2.0662983425414363,
+                "difference_vs_base_hits": -0.03589143848046161,
+                "excludes_zero": false
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7383011419237016,
+                "difference_vs_base_hits": 0.00468884320297791,
+                "excludes_zero": false
+              },
+              "qed": {
+                "guided_hits_mean": 0.8722506608729972,
+                "difference_vs_base_hits": -0.00038904780063886424,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.011049723756906,
+                "difference_vs_base_hits": 0.011049723756906049,
+                "excludes_zero": false
+              }
+            }
+          }
+        },
+        "4": {
+          "lambda_recorded_in_the_run": 4.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam4_guided_qed",
+          "hit_rate_unguided": 0.08960026708784365,
+          "hit_rate_throughout": 0.2606845023461389,
+          "lift": 0.17108423525829525,
+          "lift_sd_over_seeds": 0.033125098240538046,
+          "validity": 0.9713541666666666,
+          "uniqueness": 1.0,
+          "abs_target_error_mean": 0.044410370908679386,
+          "content_length_mean": 37.8740183706019,
+          "tokens_per_molecule_actual": 371.70703125,
+          "length_matched_lift": 0.13553752116330248,
+          "best_of_n": {
+            "n_candidates": 8,
+            "hit_rate": 0.5436197916666666,
+            "guidance_advantage": -0.28293528932052775,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 200,
+            "base_rate": 0.09998996487706975,
+            "probability_all_n_draws_miss": 7.070829595467841e-10
+          },
+          "quality": {
+            "n_guided_hits": 389,
+            "n_base_hits": 137,
+            "degeneracy_rate_guided_hits": 0.056555269922879174,
+            "degeneracy_rate_base_hits": 0.014598540145985401,
+            "degeneracy_difference": 0.04195672977689377,
+            "degeneracy_excludes_zero": true,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.308577295929872,
+                "difference_vs_base_hits": 0.2271521668938945,
+                "excludes_zero": true
+              },
+              "longest_chain": {
+                "guided_hits_mean": 1.8123393316195373,
+                "difference_vs_base_hits": -0.2898504494023606,
+                "excludes_zero": true
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7548032273136527,
+                "difference_vs_base_hits": 0.021190928592929037,
+                "excludes_zero": true
+              },
+              "qed": {
+                "guided_hits_mean": 0.8719831445294859,
+                "difference_vs_base_hits": -0.0006565641441501624,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.0437017994858613,
+                "difference_vs_base_hits": 0.04370179948586128,
+                "excludes_zero": true
+              }
+            }
+          }
+        },
+        "8": {
+          "lambda_recorded_in_the_run": 8.0,
+          "lambda_source": "cli --lam",
+          "guided_dir": "pilot_50k_p2_lam8_guided_qed",
+          "hit_rate_unguided": 0.08960026708784365,
+          "hit_rate_throughout": 0.2438314400874245,
+          "lift": 0.15423117299958083,
+          "lift_sd_over_seeds": 0.034898480849555526,
+          "validity": 0.8997395833333334,
+          "uniqueness": 0.9963892774621965,
+          "abs_target_error_mean": 0.04222820480273296,
+          "content_length_mean": 36.42428894187712,
+          "tokens_per_molecule_actual": 423.509765625,
+          "length_matched_lift": 0.12982122785509348,
+          "best_of_n": {
+            "n_candidates": 9,
+            "hit_rate": 0.5963541666666666,
+            "guidance_advantage": -0.3525227265792421,
+            "guidance_beats_best_of_n": false
+          },
+          "best_of_n_full_recompute_saturation": {
+            "n_candidates": 340,
+            "base_rate": 0.09998996487706975,
+            "probability_all_n_draws_miss": 2.780351030093262e-16
+          },
+          "quality": {
+            "n_guided_hits": 337,
+            "n_base_hits": 137,
+            "degeneracy_rate_guided_hits": 0.12166172106824925,
+            "degeneracy_rate_base_hits": 0.014598540145985401,
+            "degeneracy_difference": 0.10706318092226386,
+            "degeneracy_excludes_zero": true,
+            "descriptors": {
+              "sa_score": {
+                "guided_hits_mean": 3.470165119813853,
+                "difference_vs_base_hits": 0.38873999077787547,
+                "excludes_zero": true
+              },
+              "longest_chain": {
+                "guided_hits_mean": 1.6498516320474776,
+                "difference_vs_base_hits": -0.45233814897442026,
+                "excludes_zero": true
+              },
+              "carbon_fraction": {
+                "guided_hits_mean": 0.7499342337531747,
+                "difference_vs_base_hits": 0.01632193503245105,
+                "excludes_zero": true
+              },
+              "qed": {
+                "guided_hits_mean": 0.8731479346803429,
+                "difference_vs_base_hits": 0.0005082260067068578,
+                "excludes_zero": false
+              },
+              "n_fragments": {
+                "guided_hits_mean": 1.1364985163204748,
+                "difference_vs_base_hits": 0.13649851632047483,
+                "excludes_zero": true
+              }
+            }
+          }
+        }
+      },
+      "best_lambda": 4.0,
+      "best_lift": 0.17108423525829525,
+      "lift_at_lambda_1": 0.10123803565855961,
+      "gain_from_tuning_lambda": 1.6899205337735155,
+      "lift_is_non_monotonic_in_lambda": true,
+      "any_lambda_beats_best_of_n": false,
+      "best_guidance_advantage": -0.28293528932052775,
+      "validity_at_the_largest_lambda": 0.8997395833333334,
+      "degeneracy_rate_by_lambda": {
+        "0.25": 0.004901960784313725,
+        "0.5": 0.015444015444015444,
+        "1": 0.010273972602739725,
+        "2": 0.016574585635359115,
+        "4": 0.056555269922879174,
+        "8": 0.12166172106824925
+      }
+    }
+  },
+  "missing": []
+}

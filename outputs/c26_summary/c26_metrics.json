@@ -1,0 +1,2715 @@
+{
+  "prereg": "outputs/c26_prereg/C26.0_preregistration.md",
+  "accounting": "actual",
+  "seeds": [
+    "101",
+    "202",
+    "303"
+  ],
+  "bootstrap": {
+    "n_boot": 10000,
+    "seed": 20260731,
+    "unit": "seeds resampled with replacement"
+  },
+  "properties": {
+    "aromatic_rings": {
+      "n_sweep_run": "nested",
+      "grid": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        16,
+        24,
+        32
+      ],
+      "curve": {
+        "1": {
+          "n_candidates": 1,
+          "hit_rate_mean": 0.17041771075037207,
+          "hit_rate_values": [
+            0.16514492309577794,
+            0.17595146166574738,
+            0.17015674748959098
+          ],
+          "hit_rate_sd": 0.005407993651407831,
+          "tokens_per_molecule_actual": 44.436971028645836,
+          "validity_mean": 0.9962565104166666,
+          "uniqueness_mean": 0.9999183256611953
+        },
+        "2": {
+          "n_candidates": 2,
+          "hit_rate_mean": 0.310546875,
+          "hit_rate_values": [
+            0.3013916015625,
+            0.3206787109375,
+            0.3095703125
+          ],
+          "hit_rate_sd": 0.009680568307083418,
+          "tokens_per_molecule_actual": 88.87394205729167,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9999593098958334
+        },
+        "3": {
+          "n_candidates": 3,
+          "hit_rate_mean": 0.4302020386986511,
+          "hit_rate_values": [
+            0.41713971800036626,
+            0.4413111151803699,
+            0.432155282915217
+          ],
+          "hit_rate_sd": 0.012203502883825343,
+          "tokens_per_molecule_actual": 133.30952816944395,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9999389611182323
+        },
+        "4": {
+          "n_candidates": 4,
+          "hit_rate_mean": 0.5257975260416666,
+          "hit_rate_values": [
+            0.513671875,
+            0.5380859375,
+            0.525634765625
+          ],
+          "hit_rate_sd": 0.012207845024958405,
+          "tokens_per_molecule_actual": 177.74788411458334,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "6": {
+          "n_candidates": 6,
+          "hit_rate_mean": 0.676068376068376,
+          "hit_rate_values": [
+            0.6648351648351648,
+            0.6853479853479854,
+            0.6780219780219781
+          ],
+          "hit_rate_sd": 0.01039501668072909,
+          "tokens_per_molecule_actual": 266.61990231990234,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "8": {
+          "n_candidates": 8,
+          "hit_rate_mean": 0.7750651041666666,
+          "hit_rate_values": [
+            0.76025390625,
+            0.7861328125,
+            0.77880859375
+          ],
+          "hit_rate_sd": 0.013339405266707589,
+          "tokens_per_molecule_actual": 355.4957682291667,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "9": {
+          "n_candidates": 9,
+          "hit_rate_mean": 0.8150183150183151,
+          "hit_rate_values": [
+            0.7983516483516484,
+            0.8247252747252747,
+            0.8219780219780219
+          ],
+          "hit_rate_sd": 0.01449897178242836,
+          "tokens_per_molecule_actual": 399.92985347985353,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "12": {
+          "n_candidates": 12,
+          "hit_rate_mean": 0.8952380952380952,
+          "hit_rate_values": [
+            0.8732600732600733,
+            0.9076923076923077,
+            0.9047619047619048
+          ],
+          "hit_rate_sd": 0.019089837686147075,
+          "tokens_per_molecule_actual": 533.2398046398047,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "16": {
+          "n_candidates": 16,
+          "hit_rate_mean": 0.9534505208333334,
+          "hit_rate_values": [
+            0.9384765625,
+            0.96484375,
+            0.95703125
+          ],
+          "hit_rate_sd": 0.01354338806166323,
+          "tokens_per_molecule_actual": 710.9915364583334,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "24": {
+          "n_candidates": 24,
+          "hit_rate_mean": 0.9887585532746823,
+          "hit_rate_values": [
+            0.9794721407624634,
+            0.9941348973607038,
+            0.9926686217008798
+          ],
+          "hit_rate_sd": 0.008075616638249409,
+          "tokens_per_molecule_actual": 1066.4623655913977,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "32": {
+          "n_candidates": 32,
+          "hit_rate_mean": 0.99609375,
+          "hit_rate_values": [
+            0.994140625,
+            0.99609375,
+            0.998046875
+          ],
+          "hit_rate_sd": 0.001953125,
+          "tokens_per_molecule_actual": 1421.9830729166667,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        }
+      },
+      "curve_is_concave_in_n": true,
+      "curve_secant_slopes_in_n": [
+        0.14012916424962793,
+        0.11965516369865109,
+        0.09559548734301554,
+        0.07513542501335468,
+        0.049498364049145316,
+        0.03995321085164849,
+        0.026739926739926683,
+        0.014553106398809551,
+        0.004413504055168618,
+        0.0009168995906647104
+      ],
+      "curve_second_differences_uniform_grid_invalid": [
+        -0.02047400055097684,
+        -0.02405967635563555,
+        0.05467536268369383,
+        -0.05127412192841874,
+        -0.05904351724664214,
+        0.040266569368131555,
+        -0.02200735462454184,
+        -0.022904393153889258,
+        -0.027972835716031264
+      ],
+      "guidance_points": [
+        {
+          "run": "c18_guided_platt_aromatic_rings",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.2465233294266903,
+          "tokens_per_molecule_actual": 404.783203125,
+          "best_of_n_interpolated_hit_rate": 0.8179388369934245,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.5714155075667342,
+          "advantage_per_seed": [
+            -0.5794906024969093,
+            -0.5614501829713976,
+            -0.573211431438171
+          ],
+          "validity": 0.9954427083333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.5713840723021594,
+            "sd": 0.009157980957781588,
+            "lo": -0.5941337595917886,
+            "hi": -0.5486343850125301,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.5794906024969093,
+            "degenerate_bootstrap_hi": -0.5614501829713976,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam0p25_guided_aromatic_rings",
+          "family": "section19_lambda_sweep",
+          "lam": 0.25,
+          "layer": -1,
+          "guided_hit_rate": 0.23588607605115539,
+          "tokens_per_molecule_actual": 405.609375,
+          "best_of_n_interpolated_hit_rate": 0.8184359891239263,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.5825499130727709,
+          "advantage_per_seed": [
+            -0.5927872859091305,
+            -0.5638208403033403,
+            -0.5903225787945954
+          ],
+          "validity": 0.99609375,
+          "advantage_seed_t_interval": {
+            "mean": -0.5823102350023555,
+            "sd": 0.016059638306701842,
+            "lo": -0.6222045906628766,
+            "hi": -0.5424158793418343,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.5927872859091305,
+            "degenerate_bootstrap_hi": -0.5638208403033403,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L3_lam0p5_aromatic_rings",
+          "family": "c23_mid_layer",
+          "lam": 0.5,
+          "layer": 3,
+          "guided_hit_rate": 0.3616131384060473,
+          "tokens_per_molecule_actual": 405.837890625,
+          "best_of_n_interpolated_hit_rate": 0.8185734992876822,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.4569603608816349,
+          "advantage_per_seed": [
+            -0.42781880929960997,
+            -0.47917332683117403,
+            -0.46390510287161096
+          ],
+          "validity": 0.9973958333333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.4569657463341317,
+            "sd": 0.02637115127541122,
+            "lo": -0.5224753218343237,
+            "hi": -0.39145617083393963,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.47917332683117403,
+            "degenerate_bootstrap_hi": -0.42781880929960997,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam0p5_guided_aromatic_rings",
+          "family": "section19_lambda_sweep",
+          "lam": 0.5,
+          "layer": -1,
+          "guided_hit_rate": 0.3010951113213786,
+          "tokens_per_molecule_actual": 408.31640625,
+          "best_of_n_interpolated_hit_rate": 0.8200649556791876,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.518969844357809,
+          "advantage_per_seed": [
+            -0.4953527115100834,
+            -0.541890737433136,
+            -0.5196538883745528
+          ],
+          "validity": 0.9967447916666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.518965779105924,
+            "sd": 0.02327664247647967,
+            "lo": -0.5767881681165131,
+            "hi": -0.4611433900953349,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.541890737433136,
+            "degenerate_bootstrap_hi": -0.4953527115100835,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_head_wide_aromatic_rings",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.45321702837105066,
+          "tokens_per_molecule_actual": 408.99609375,
+          "best_of_n_interpolated_hit_rate": 0.8204739602688204,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.3672569318977697,
+          "advantage_per_seed": [
+            -0.3596237314021656,
+            -0.36133000410649935,
+            -0.3804738643755228
+          ],
+          "validity": 0.9954427083333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.3671425332947293,
+            "sd": 0.011576749670122764,
+            "lo": -0.39590077553608566,
+            "hi": -0.3383842910533729,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3804738643755228,
+            "degenerate_bootstrap_hi": -0.3596237314021656,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L6_lam0p5_aromatic_rings",
+          "family": "c23_mid_layer",
+          "lam": 0.5,
+          "layer": 6,
+          "guided_hit_rate": 0.3881135145268153,
+          "tokens_per_molecule_actual": 409.3359375,
+          "best_of_n_interpolated_hit_rate": 0.8206784625636366,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.43256494803682133,
+          "advantage_per_seed": [
+            -0.403574887047863,
+            -0.45955454373884685,
+            -0.43486335201189175
+          ],
+          "validity": 0.998046875,
+          "advantage_seed_t_interval": {
+            "mean": -0.43266426093286725,
+            "sd": 0.02805454494356463,
+            "lo": -0.5023556183904995,
+            "hi": -0.36297290347523503,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.45955454373884685,
+            "degenerate_bootstrap_hi": -0.403574887047863,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_isotonic_aromatic_rings",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.30085261138164093,
+          "tokens_per_molecule_actual": 409.447265625,
+          "best_of_n_interpolated_hit_rate": 0.8207454546946972,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.5198928433130563,
+          "advantage_per_seed": [
+            -0.541522573127333,
+            -0.5009176558822839,
+            -0.5173883207991078
+          ],
+          "validity": 0.9934895833333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.5199428499362416,
+            "sd": 0.020422635492356775,
+            "lo": -0.5706754921226638,
+            "hi": -0.4692102077498195,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.541522573127333,
+            "degenerate_bootstrap_hi": -0.5009176558822839,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_bin_temperature_aromatic_rings",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.3435657367970019,
+          "tokens_per_molecule_actual": 412.40625,
+          "best_of_n_interpolated_hit_rate": 0.8225260350202533,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.4789602982232514,
+          "advantage_per_seed": [
+            -0.4621413260895383,
+            -0.4648461391061219,
+            -0.5097649272645147
+          ],
+          "validity": 0.9967447916666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.4789174641533916,
+            "sd": 0.026748896961514976,
+            "lo": -0.5453654120168243,
+            "hi": -0.41246951628995887,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.5097649272645147,
+            "degenerate_bootstrap_hi": -0.46214132608953823,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L3_lam1_aromatic_rings",
+          "family": "c23_mid_layer",
+          "lam": 1.0,
+          "layer": 3,
+          "guided_hit_rate": 0.5698096157332536,
+          "tokens_per_molecule_actual": 412.5,
+          "best_of_n_interpolated_hit_rate": 0.8225824494464096,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.25277283371315595,
+          "advantage_per_seed": [
+            -0.21571725754826454,
+            -0.2545177444676018,
+            -0.2878660282727721
+          ],
+          "validity": 0.994140625,
+          "advantage_seed_t_interval": {
+            "mean": -0.2527003434295461,
+            "sd": 0.03610870378681895,
+            "lo": -0.34239934186281795,
+            "hi": -0.16300134499627428,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.2878660282727721,
+            "degenerate_bootstrap_hi": -0.21571725754826454,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_head_wide_focused_aromatic_rings",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.5006535947712418,
+          "tokens_per_molecule_actual": 413.26171875,
+          "best_of_n_interpolated_hit_rate": 0.823040816658929,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.3223872218876872,
+          "advantage_per_seed": [
+            -0.3210799640984247,
+            -0.30466099055381257,
+            -0.34167641132937804
+          ],
+          "validity": 0.99609375,
+          "advantage_seed_t_interval": {
+            "mean": -0.3224724553272051,
+            "sd": 0.018546957099877966,
+            "lo": -0.3685456537910947,
+            "hi": -0.27639925686331546,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.34167641132937804,
+            "degenerate_bootstrap_hi": -0.30466099055381257,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam4_guided_aromatic_rings",
+          "family": "section19_lambda_sweep",
+          "lam": 4.0,
+          "layer": -1,
+          "guided_hit_rate": 0.49892386579281495,
+          "tokens_per_molecule_actual": 415.34765625,
+          "best_of_n_interpolated_hit_rate": 0.8242960376409053,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.32537217184809036,
+          "advantage_per_seed": [
+            -0.3249605758207124,
+            -0.30110508259081614,
+            -0.34996191264150356
+          ],
+          "validity": 0.970703125,
+          "advantage_seed_t_interval": {
+            "mean": -0.325342523684344,
+            "sd": 0.02443065438702651,
+            "lo": -0.3860316373817912,
+            "hi": -0.26465340998689685,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3499619126415035,
+            "degenerate_bootstrap_hi": -0.30110508259081614,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_uncalibrated_aromatic_rings",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.4734551246669265,
+          "tokens_per_molecule_actual": 419.326171875,
+          "best_of_n_interpolated_hit_rate": 0.8266901248509105,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.353235000183984,
+          "advantage_per_seed": [
+            -0.318147056500074,
+            -0.3543800214535849,
+            -0.38736764508625654
+          ],
+          "validity": 0.9954427083333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.35329824101330515,
+            "sd": 0.03462297153256944,
+            "lo": -0.4393064756924143,
+            "hi": -0.267290006334196,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3873676450862565,
+            "degenerate_bootstrap_hi": -0.318147056500074,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_guided_aromatic_rings",
+          "family": "deployed_lambda1",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.4734551246669265,
+          "tokens_per_molecule_actual": 419.326171875,
+          "best_of_n_interpolated_hit_rate": 0.8266901248509105,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.353235000183984,
+          "advantage_per_seed": [
+            -0.318147056500074,
+            -0.3543800214535849,
+            -0.38736764508625654
+          ],
+          "validity": 0.9954427083333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.35329824101330515,
+            "sd": 0.03462297153256944,
+            "lo": -0.4393064756924143,
+            "hi": -0.267290006334196,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3873676450862565,
+            "degenerate_bootstrap_hi": -0.318147056500074,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam2_guided_aromatic_rings",
+          "family": "section19_lambda_sweep",
+          "lam": 2.0,
+          "layer": -1,
+          "guided_hit_rate": 0.5579287361930816,
+          "tokens_per_molecule_actual": 420.345703125,
+          "best_of_n_interpolated_hit_rate": 0.8273036317353596,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.269374895542278,
+          "advantage_per_seed": [
+            -0.2692455273133463,
+            -0.2309437958055819,
+            -0.3078498241682456
+          ],
+          "validity": 0.9908854166666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.2693463824290579,
+            "sd": 0.03845311337779403,
+            "lo": -0.3648692175048565,
+            "hi": -0.17382354735325928,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3078498241682456,
+            "degenerate_bootstrap_hi": -0.2309437958055819,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L6_lam1_aromatic_rings",
+          "family": "c23_mid_layer",
+          "lam": 1.0,
+          "layer": 6,
+          "guided_hit_rate": 0.5830783725998746,
+          "tokens_per_molecule_actual": 422.75390625,
+          "best_of_n_interpolated_hit_rate": 0.8287527773072478,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.24567440470737323,
+          "advantage_per_seed": [
+            -0.20132716314352594,
+            -0.2861182516678067,
+            -0.2494026634295856
+          ],
+          "validity": 0.9915364583333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.24561602608030608,
+            "sd": 0.042522184093650724,
+            "lo": -0.35124699380803714,
+            "hi": -0.13998505835257502,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.2861182516678067,
+            "degenerate_bootstrap_hi": -0.20132716314352594,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_binT0p4_aromatic_rings",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.5495376918644246,
+          "tokens_per_molecule_actual": 426.251953125,
+          "best_of_n_interpolated_hit_rate": 0.8308577405832024,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.2813200487187778,
+          "advantage_per_seed": [
+            -0.26748635277205124,
+            -0.284726202582156,
+            -0.292071708102401
+          ],
+          "validity": 0.9856770833333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.2814280878188694,
+            "sd": 0.012620146390741518,
+            "lo": -0.31277827136503183,
+            "hi": -0.250077904272707,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.292071708102401,
+            "degenerate_bootstrap_hi": -0.26748635277205124,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L3_lam2_aromatic_rings",
+          "family": "c23_mid_layer",
+          "lam": 2.0,
+          "layer": 3,
+          "guided_hit_rate": 0.8158744959471287,
+          "tokens_per_molecule_actual": 447.462890625,
+          "best_of_n_interpolated_hit_rate": 0.8436215045010506,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.02774700855392187,
+          "advantage_per_seed": [
+            0.003137906112637867,
+            -0.011603072567732409,
+            -0.07529716134836995
+          ],
+          "validity": 0.9680989583333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.027920775934488162,
+            "sd": 0.04168591529854281,
+            "lo": -0.13147433668064928,
+            "hi": 0.07563278481167296,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.07529716134836995,
+            "degenerate_bootstrap_hi": 0.003137906112637867,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": false,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam8_guided_aromatic_rings",
+          "family": "section19_lambda_sweep",
+          "lam": 8.0,
+          "layer": -1,
+          "guided_hit_rate": 0.3992927949319125,
+          "tokens_per_molecule_actual": 455.7890625,
+          "best_of_n_interpolated_hit_rate": 0.8486318107240512,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.44933901579213875,
+          "advantage_per_seed": [
+            -0.44349375019969534,
+            -0.45235653131326914,
+            -0.45239790562061827
+          ],
+          "validity": 0.806640625,
+          "advantage_seed_t_interval": {
+            "mean": -0.4494160623778609,
+            "sd": 0.005128914515768751,
+            "lo": -0.4621569931470863,
+            "hi": -0.4366751316086355,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.45239790562061827,
+            "degenerate_bootstrap_hi": -0.44349375019969534,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L6_lam2_aromatic_rings",
+          "family": "c23_mid_layer",
+          "lam": 2.0,
+          "layer": 6,
+          "guided_hit_rate": 0.6841525913850868,
+          "tokens_per_molecule_actual": 462.796875,
+          "best_of_n_interpolated_hit_rate": 0.8528487890792298,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.168696197694143,
+          "advantage_per_seed": [
+            -0.13624947494706885,
+            -0.18584334136692415,
+            -0.18484573641251512
+          ],
+          "validity": 0.96875,
+          "advantage_seed_t_interval": {
+            "mean": -0.1689795175755027,
+            "sd": 0.02834943688604041,
+            "lo": -0.23940342727434208,
+            "hi": -0.09855560787666331,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.18584334136692415,
+            "degenerate_bootstrap_hi": -0.13624947494706885,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        }
+      ]
+    },
+    "hbd_count": {
+      "n_sweep_run": "nested",
+      "grid": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        16,
+        24,
+        32
+      ],
+      "curve": {
+        "1": {
+          "n_candidates": 1,
+          "hit_rate_mean": 0.08470877945948534,
+          "hit_rate_values": [
+            0.08480911820577242,
+            0.08592265735122878,
+            0.08339456282145481
+          ],
+          "hit_rate_sd": 0.0012670305386505542,
+          "tokens_per_molecule_actual": 44.436971028645836,
+          "validity_mean": 0.9962565104166666,
+          "uniqueness_mean": 0.9999183256611953
+        },
+        "2": {
+          "n_candidates": 2,
+          "hit_rate_mean": 0.16170247395833334,
+          "hit_rate_values": [
+            0.1622314453125,
+            0.16357421875,
+            0.1593017578125
+          ],
+          "hit_rate_sd": 0.002184797161240039,
+          "tokens_per_molecule_actual": 88.87394205729167,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9999593098958334
+        },
+        "3": {
+          "n_candidates": 3,
+          "hit_rate_mean": 0.2327412561801868,
+          "hit_rate_values": [
+            0.23347372276139902,
+            0.23475553927852041,
+            0.2299945065006409
+          ],
+          "hit_rate_sd": 0.0024635825026686907,
+          "tokens_per_molecule_actual": 133.30952816944395,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9999389611182323
+        },
+        "4": {
+          "n_candidates": 4,
+          "hit_rate_mean": 0.2975260416666667,
+          "hit_rate_values": [
+            0.298828125,
+            0.299560546875,
+            0.294189453125
+          ],
+          "hit_rate_sd": 0.0029126839466427864,
+          "tokens_per_molecule_actual": 177.74788411458334,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "6": {
+          "n_candidates": 6,
+          "hit_rate_mean": 0.41050061050061054,
+          "hit_rate_values": [
+            0.41501831501831504,
+            0.41098901098901097,
+            0.4054945054945055
+          ],
+          "hit_rate_sd": 0.004780652490952853,
+          "tokens_per_molecule_actual": 266.61990231990234,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9998778998778999
+        },
+        "8": {
+          "n_candidates": 8,
+          "hit_rate_mean": 0.5042317708333334,
+          "hit_rate_values": [
+            0.509765625,
+            0.50390625,
+            0.4990234375
+          ],
+          "hit_rate_sd": 0.005378486862584084,
+          "tokens_per_molecule_actual": 355.4957682291667,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "9": {
+          "n_candidates": 9,
+          "hit_rate_mean": 0.5446886446886446,
+          "hit_rate_values": [
+            0.5478021978021979,
+            0.5445054945054945,
+            0.5417582417582417
+          ],
+          "hit_rate_sd": 0.0030261376633440584,
+          "tokens_per_molecule_actual": 399.92985347985353,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "12": {
+          "n_candidates": 12,
+          "hit_rate_mean": 0.6473748473748474,
+          "hit_rate_values": [
+            0.6483516483516484,
+            0.6505494505494506,
+            0.6432234432234433
+          ],
+          "hit_rate_sd": 0.003759414973953748,
+          "tokens_per_molecule_actual": 533.2398046398047,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "16": {
+          "n_candidates": 16,
+          "hit_rate_mean": 0.751953125,
+          "hit_rate_values": [
+            0.751953125,
+            0.7568359375,
+            0.7470703125
+          ],
+          "hit_rate_sd": 0.0048828125,
+          "tokens_per_molecule_actual": 710.9915364583334,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "24": {
+          "n_candidates": 24,
+          "hit_rate_mean": 0.8743890518084066,
+          "hit_rate_values": [
+            0.8724340175953079,
+            0.8812316715542522,
+            0.8695014662756598
+          ],
+          "hit_rate_sd": 0.006104592373800971,
+          "tokens_per_molecule_actual": 1066.4623655913977,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "32": {
+          "n_candidates": 32,
+          "hit_rate_mean": 0.9270833333333334,
+          "hit_rate_values": [
+            0.93359375,
+            0.9296875,
+            0.91796875
+          ],
+          "hit_rate_sd": 0.008131507810414582,
+          "tokens_per_molecule_actual": 1421.9830729166667,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        }
+      },
+      "curve_is_concave_in_n": true,
+      "curve_secant_slopes_in_n": [
+        0.076993694498848,
+        0.07103878222185345,
+        0.0647847854864799,
+        0.05648728441697193,
+        0.046865580166361415,
+        0.04045687385531127,
+        0.03422873422873426,
+        0.02614456940628815,
+        0.015304490851050831,
+        0.00658678519061584
+      ],
+      "curve_second_differences_uniform_grid_invalid": [
+        -0.005954912276994559,
+        -0.0062539967353735515,
+        0.04818978334746396,
+        -0.019243408501221027,
+        -0.05327428647741156,
+        0.062229328830891495,
+        0.0018920749389498281,
+        0.017857649183254054,
+        -0.06974164528347992
+      ],
+      "guidance_points": [
+        {
+          "run": "c23_guided_L4_lam2_hbd_count",
+          "family": "c23_mid_layer",
+          "lam": 2.0,
+          "layer": 4,
+          "guided_hit_rate": 0.5603420596566593,
+          "tokens_per_molecule_actual": 387.791015625,
+          "best_of_n_interpolated_hit_rate": 0.5336363313784186,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": 0.026705728278240692,
+          "advantage_per_seed": [
+            0.06074870995714299,
+            -0.0006335669255155274,
+            0.01981449010248315
+          ],
+          "validity": 0.9934895833333334,
+          "advantage_seed_t_interval": {
+            "mean": 0.026643211044703536,
+            "sd": 0.031255712295592916,
+            "lo": -0.05100028745320176,
+            "hi": 0.10428670954260882,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.0006335669255155274,
+            "degenerate_bootstrap_hi": 0.06074870995714299,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": false,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_bin_temperature_hbd_count",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.12801023200140457,
+          "tokens_per_molecule_actual": 392.958984375,
+          "best_of_n_interpolated_hit_rate": 0.538341724965962,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.4103314929645574,
+          "advantage_per_seed": [
+            -0.4201146289567599,
+            -0.42177866087686944,
+            -0.38944942694739476
+          ],
+          "validity": 0.9967447916666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.41044757226034134,
+            "sd": 0.018203950958390922,
+            "lo": -0.4556686961792821,
+            "hi": -0.3652264483414006,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.42177866087686944,
+            "degenerate_bootstrap_hi": -0.38944942694739476,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam2_guided_hbd_count",
+          "family": "section19_lambda_sweep",
+          "lam": 2.0,
+          "layer": -1,
+          "guided_hit_rate": 0.4303223626700486,
+          "tokens_per_molecule_actual": 393.181640625,
+          "best_of_n_interpolated_hit_rate": 0.5385444516738154,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.10822208900376679,
+          "advantage_per_seed": [
+            -0.08441435435467609,
+            -0.09840260941734291,
+            -0.14223166068421583
+          ],
+          "validity": 0.994140625,
+          "advantage_seed_t_interval": {
+            "mean": -0.10834954148541161,
+            "sd": 0.030164819259794,
+            "lo": -0.1832831112833918,
+            "hi": -0.03341597168743139,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.14223166068421583,
+            "degenerate_bootstrap_hi": -0.08441435435467609,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam0p25_guided_hbd_count",
+          "family": "section19_lambda_sweep",
+          "lam": 0.25,
+          "layer": -1,
+          "guided_hit_rate": 0.13243446065640868,
+          "tokens_per_molecule_actual": 393.474609375,
+          "best_of_n_interpolated_hit_rate": 0.5388111973420434,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.40637673668563473,
+          "advantage_per_seed": [
+            -0.4069378575358658,
+            -0.3940238314357568,
+            -0.4178833636497874
+          ],
+          "validity": 0.998046875,
+          "advantage_seed_t_interval": {
+            "mean": -0.4062816842071367,
+            "sd": 0.011943292759791684,
+            "lo": -0.43595047001771253,
+            "hi": -0.3766128983965608,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.4178833636497874,
+            "degenerate_bootstrap_hi": -0.39402383143575676,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam4_guided_hbd_count",
+          "family": "section19_lambda_sweep",
+          "lam": 4.0,
+          "layer": -1,
+          "guided_hit_rate": 0.3729855553214292,
+          "tokens_per_molecule_actual": 393.697265625,
+          "best_of_n_interpolated_hit_rate": 0.5390139240498968,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.1660283687284676,
+          "advantage_per_seed": [
+            -0.19653400673033505,
+            -0.16744519985327172,
+            -0.13341652037792656
+          ],
+          "validity": 0.984375,
+          "advantage_seed_t_interval": {
+            "mean": -0.16579857565384445,
+            "sd": 0.03159094489410253,
+            "lo": -0.24427483814422163,
+            "hi": -0.0873223131634673,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.19653400673033505,
+            "degenerate_bootstrap_hi": -0.13341652037792656,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L4_lam1_hbd_count",
+          "family": "c23_mid_layer",
+          "lam": 1.0,
+          "layer": 4,
+          "guided_hit_rate": 0.368888749905456,
+          "tokens_per_molecule_actual": 394.271484375,
+          "best_of_n_interpolated_hit_rate": 0.5395367455596238,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.17064799565416783,
+          "advantage_per_seed": [
+            -0.17551326892301394,
+            -0.17835206552879657,
+            -0.15874313748481172
+          ],
+          "validity": 0.9954427083333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.17086949064554072,
+            "sd": 0.010597217666741245,
+            "lo": -0.1971944403445951,
+            "hi": -0.14454454094648633,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.17835206552879657,
+            "degenerate_bootstrap_hi": -0.15874313748481172,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L6_lam0p5_hbd_count",
+          "family": "c23_mid_layer",
+          "lam": 0.5,
+          "layer": 6,
+          "guided_hit_rate": 0.202732514092736,
+          "tokens_per_molecule_actual": 394.435546875,
+          "best_of_n_interpolated_hit_rate": 0.5396861231338316,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.3369536090410956,
+          "advantage_per_seed": [
+            -0.36224705544494584,
+            -0.3307414772358408,
+            -0.3178295461720003
+          ],
+          "validity": 0.9954427083333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.33693935961759564,
+            "sd": 0.022848174807117542,
+            "lo": -0.39369737586560305,
+            "hi": -0.2801813433695882,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3622470554449458,
+            "degenerate_bootstrap_hi": -0.3178295461720003,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_platt_hbd_count",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.15665849673202614,
+          "tokens_per_molecule_actual": 395.291015625,
+          "best_of_n_interpolated_hit_rate": 0.5404650204850576,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.3838065237530315,
+          "advantage_per_seed": [
+            -0.3856609455975639,
+            -0.3800392173941576,
+            -0.3847325964329873
+          ],
+          "validity": 0.9973958333333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.38347758647490293,
+            "sd": 0.0030136762424672887,
+            "lo": -0.3909639737500435,
+            "hi": -0.37599119919976237,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3856609455975639,
+            "degenerate_bootstrap_hi": -0.3800392173941576,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam0p5_guided_hbd_count",
+          "family": "section19_lambda_sweep",
+          "lam": 0.5,
+          "layer": -1,
+          "guided_hit_rate": 0.18128505995574082,
+          "tokens_per_molecule_actual": 395.853515625,
+          "best_of_n_interpolated_hit_rate": 0.5409771721680555,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.3596921122123147,
+          "advantage_per_seed": [
+            -0.3634739066613283,
+            -0.3429558928521135,
+            -0.3723595773893835
+          ],
+          "validity": 0.9947916666666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.35959645896760845,
+            "sd": 0.015080454786079016,
+            "lo": -0.3970583877650447,
+            "hi": -0.3221345301701722,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3723595773893835,
+            "degenerate_bootstrap_hi": -0.3429558928521135,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L4_lam0p5_hbd_count",
+          "family": "c23_mid_layer",
+          "lam": 0.5,
+          "layer": 4,
+          "guided_hit_rate": 0.23187709295306788,
+          "tokens_per_molecule_actual": 396.966796875,
+          "best_of_n_interpolated_hit_rate": 0.5419908057073223,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.31011371275425437,
+          "advantage_per_seed": [
+            -0.30314761288164216,
+            -0.3217551891154794,
+            -0.30564083458999536
+          ],
+          "validity": 0.9967447916666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.31018121219570566,
+            "sd": 0.010100581415262327,
+            "lo": -0.33527244897594916,
+            "hi": -0.28508997541546216,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3217551891154794,
+            "degenerate_bootstrap_hi": -0.30314761288164216,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L6_lam1_hbd_count",
+          "family": "c23_mid_layer",
+          "lam": 1.0,
+          "layer": 6,
+          "guided_hit_rate": 0.33945624846853856,
+          "tokens_per_molecule_actual": 398.6015625,
+          "best_of_n_interpolated_hit_rate": 0.543479246536035,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.2040229980674964,
+          "advantage_per_seed": [
+            -0.220171769676351,
+            -0.1981938449407108,
+            -0.19368593755818136
+          ],
+          "validity": 0.9954427083333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.2040171840584144,
+            "sd": 0.014170683985178664,
+            "lo": -0.23921911675833396,
+            "hi": -0.16881525135849484,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.220171769676351,
+            "degenerate_bootstrap_hi": -0.19368593755818134,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L6_lam2_hbd_count",
+          "family": "c23_mid_layer",
+          "lam": 2.0,
+          "layer": 6,
+          "guided_hit_rate": 0.46838068679520384,
+          "tokens_per_molecule_actual": 399.123046875,
+          "best_of_n_interpolated_hit_rate": 0.5439540538254809,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.07557336703027706,
+          "advantage_per_seed": [
+            -0.06454706577381653,
+            -0.07340321493803104,
+            -0.0885032844284192
+          ],
+          "validity": 0.98828125,
+          "advantage_seed_t_interval": {
+            "mean": -0.07548452171342225,
+            "sd": 0.012112967492598598,
+            "lo": -0.10557480295296914,
+            "hi": -0.04539424047387536,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.0885032844284192,
+            "degenerate_bootstrap_hi": -0.06454706577381653,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_head_wide_focused_hbd_count",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.2846618321255205,
+          "tokens_per_molecule_actual": 400.412109375,
+          "best_of_n_interpolated_hit_rate": 0.5450601175319301,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.2603982854064096,
+          "advantage_per_seed": [
+            -0.25599870935800695,
+            -0.23930071642708844,
+            -0.2856962252860601
+          ],
+          "validity": 0.9947916666666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.2603318836903852,
+            "sd": 0.023499321488434834,
+            "lo": -0.31870743806693186,
+            "hi": -0.20195632931383847,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.2856962252860601,
+            "degenerate_bootstrap_hi": -0.23930071642708847,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_head_wide_hbd_count",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.29967856477435967,
+          "tokens_per_molecule_actual": 401.19140625,
+          "best_of_n_interpolated_hit_rate": 0.5456603955769123,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.2459818308025526,
+          "advantage_per_seed": [
+            -0.2366957094275849,
+            -0.24249418620136964,
+            -0.2587395925461805
+          ],
+          "validity": 0.9928385416666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.24597649605837835,
+            "sd": 0.011427075618536058,
+            "lo": -0.2743629273203642,
+            "hi": -0.21759006479639248,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.2587395925461805,
+            "degenerate_bootstrap_hi": -0.2366957094275849,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_uncalibrated_hbd_count",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.29875114714835704,
+          "tokens_per_molecule_actual": 401.619140625,
+          "best_of_n_interpolated_hit_rate": 0.5459898714963386,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.24723872434798155,
+          "advantage_per_seed": [
+            -0.24879808959459904,
+            -0.25691630995099884,
+            -0.2357763423702799
+          ],
+          "validity": 0.998046875,
+          "advantage_seed_t_interval": {
+            "mean": -0.24716358063862595,
+            "sd": 0.010664345829624495,
+            "lo": -0.2736552859490931,
+            "hi": -0.22067187532815882,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.25691630995099884,
+            "degenerate_bootstrap_hi": -0.2357763423702799,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_guided_hbd_count",
+          "family": "deployed_lambda1",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.29875114714835704,
+          "tokens_per_molecule_actual": 401.619140625,
+          "best_of_n_interpolated_hit_rate": 0.5459898714963386,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.24723872434798155,
+          "advantage_per_seed": [
+            -0.24879808959459904,
+            -0.25691630995099884,
+            -0.2357763423702799
+          ],
+          "validity": 0.998046875,
+          "advantage_seed_t_interval": {
+            "mean": -0.24716358063862595,
+            "sd": 0.010664345829624495,
+            "lo": -0.2736552859490931,
+            "hi": -0.22067187532815882,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.25691630995099884,
+            "degenerate_bootstrap_hi": -0.2357763423702799,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam8_guided_hbd_count",
+          "family": "section19_lambda_sweep",
+          "lam": 8.0,
+          "layer": -1,
+          "guided_hit_rate": 0.31043581012657234,
+          "tokens_per_molecule_actual": 406.119140625,
+          "best_of_n_interpolated_hit_rate": 0.5494561387034542,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.23902032857688188,
+          "advantage_per_seed": [
+            -0.24177449346951158,
+            -0.273386002481979,
+            -0.20205726360184229
+          ],
+          "validity": 0.90234375,
+          "advantage_seed_t_interval": {
+            "mean": -0.23907258651777763,
+            "sd": 0.035741047458623144,
+            "lo": -0.3278582759438495,
+            "hi": -0.15028689709170578,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.273386002481979,
+            "degenerate_bootstrap_hi": -0.20205726360184229,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c18_guided_isotonic_hbd_count",
+          "family": "c18_calibration_or_readout",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.2128464793917402,
+          "tokens_per_molecule_actual": 407.4609375,
+          "best_of_n_interpolated_hit_rate": 0.5504897001493259,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.3376432207575857,
+          "advantage_per_seed": [
+            -0.3237502247839507,
+            -0.34597133304571126,
+            -0.3431450729138711
+          ],
+          "validity": 0.994140625,
+          "advantage_seed_t_interval": {
+            "mean": -0.3376222102478444,
+            "sd": 0.012096318535656401,
+            "lo": -0.36767113318299216,
+            "hi": -0.3075732873126966,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.34597133304571126,
+            "degenerate_bootstrap_hi": -0.3237502247839507,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        }
+      ]
+    },
+    "qed": {
+      "n_sweep_run": "nested",
+      "grid": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        16,
+        24,
+        32
+      ],
+      "curve": {
+        "1": {
+          "n_candidates": 1,
+          "hit_rate_mean": 0.09547043667236144,
+          "hit_rate_values": [
+            0.09694221459648263,
+            0.09395109395109395,
+            0.09551800146950772
+          ],
+          "hit_rate_sd": 0.0014961274966603826,
+          "tokens_per_molecule_actual": 44.436971028645836,
+          "validity_mean": 0.9962565104166666,
+          "uniqueness_mean": 0.9999183256611953
+        },
+        "2": {
+          "n_candidates": 2,
+          "hit_rate_mean": 0.1810302734375,
+          "hit_rate_values": [
+            0.1834716796875,
+            0.177734375,
+            0.181884765625
+          ],
+          "hit_rate_sd": 0.0029625637449979484,
+          "tokens_per_molecule_actual": 88.87394205729167,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9999186197916666
+        },
+        "3": {
+          "n_candidates": 3,
+          "hit_rate_mean": 0.2588048586949887,
+          "hit_rate_values": [
+            0.26423731917231275,
+            0.25306720380882625,
+            0.2591100531038271
+          ],
+          "hit_rate_sd": 0.005591308167932524,
+          "tokens_per_molecule_actual": 133.30952816944395,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 0.9999389611182323
+        },
+        "4": {
+          "n_candidates": 4,
+          "hit_rate_mean": 0.3279622395833333,
+          "hit_rate_values": [
+            0.333251953125,
+            0.322509765625,
+            0.328125
+          ],
+          "hit_rate_sd": 0.005372942981850282,
+          "tokens_per_molecule_actual": 177.74788411458334,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "6": {
+          "n_candidates": 6,
+          "hit_rate_mean": 0.4521367521367521,
+          "hit_rate_values": [
+            0.4597069597069597,
+            0.4413919413919414,
+            0.4553113553113553
+          ],
+          "hit_rate_sd": 0.009561304981905683,
+          "tokens_per_molecule_actual": 266.61990231990234,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "8": {
+          "n_candidates": 8,
+          "hit_rate_mean": 0.5499674479166666,
+          "hit_rate_values": [
+            0.55908203125,
+            0.54541015625,
+            0.54541015625
+          ],
+          "hit_rate_sd": 0.007893460711576915,
+          "tokens_per_molecule_actual": 355.4957682291667,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "9": {
+          "n_candidates": 9,
+          "hit_rate_mean": 0.5965201465201465,
+          "hit_rate_values": [
+            0.6076923076923076,
+            0.5906593406593407,
+            0.5912087912087912
+          ],
+          "hit_rate_sd": 0.009679274917013746,
+          "tokens_per_molecule_actual": 399.92985347985353,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "12": {
+          "n_candidates": 12,
+          "hit_rate_mean": 0.6993894993894995,
+          "hit_rate_values": [
+            0.7025641025641025,
+            0.6886446886446886,
+            0.706959706959707
+          ],
+          "hit_rate_sd": 0.009561304981905697,
+          "tokens_per_molecule_actual": 533.2398046398047,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "16": {
+          "n_candidates": 16,
+          "hit_rate_mean": 0.7923177083333334,
+          "hit_rate_values": [
+            0.7822265625,
+            0.8037109375,
+            0.791015625
+          ],
+          "hit_rate_sd": 0.010801210952498086,
+          "tokens_per_molecule_actual": 710.9915364583334,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "24": {
+          "n_candidates": 24,
+          "hit_rate_mean": 0.9032258064516129,
+          "hit_rate_values": [
+            0.8973607038123167,
+            0.906158357771261,
+            0.906158357771261
+          ],
+          "hit_rate_sd": 0.005079327881433653,
+          "tokens_per_molecule_actual": 1066.4623655913977,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        },
+        "32": {
+          "n_candidates": 32,
+          "hit_rate_mean": 0.9602864583333334,
+          "hit_rate_values": [
+            0.962890625,
+            0.9609375,
+            0.95703125
+          ],
+          "hit_rate_sd": 0.002983447718070208,
+          "tokens_per_molecule_actual": 1421.9830729166667,
+          "validity_mean": 1.0,
+          "uniqueness_mean": 1.0
+        }
+      },
+      "curve_is_concave_in_n": true,
+      "curve_secant_slopes_in_n": [
+        0.08555983676513856,
+        0.0777745852574887,
+        0.06915738088834461,
+        0.062087256276709385,
+        0.04891534788995727,
+        0.04655269860347988,
+        0.03428978428978432,
+        0.023232052235958478,
+        0.013863512264784938,
+        0.0071325814852150615
+      ],
+      "curve_second_differences_uniform_grid_invalid": [
+        -0.00778525150764986,
+        -0.008617204369144094,
+        0.05501713166507416,
+        -0.026343816773504225,
+        -0.051277997176434664,
+        0.05631665426587307,
+        -0.009941143925519036,
+        0.017979889174445596,
+        -0.053847446236559016
+      ],
+      "guidance_points": [
+        {
+          "run": "pilot_50k_p2_lam2_guided_qed",
+          "family": "section19_lambda_sweep",
+          "lam": 2.0,
+          "layer": -1,
+          "guided_hit_rate": 0.23609533603470859,
+          "tokens_per_molecule_actual": 361.916015625,
+          "best_of_n_interpolated_hit_rate": 0.5566938121546563,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.32059847611994774,
+          "advantage_per_seed": [
+            -0.2920444680283001,
+            -0.32467357752048953,
+            -0.3449844161271686
+          ],
+          "validity": 0.998046875,
+          "advantage_seed_t_interval": {
+            "mean": -0.3205674872253194,
+            "sd": 0.02670776121863814,
+            "lo": -0.38691324823215256,
+            "hi": -0.25422172621848627,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.3449844161271686,
+            "degenerate_bootstrap_hi": -0.2920444680283001,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L4_lam2_qed",
+          "family": "c23_mid_layer",
+          "lam": 2.0,
+          "layer": 4,
+          "guided_hit_rate": 0.2795719386129279,
+          "tokens_per_molecule_actual": 366.140625,
+          "best_of_n_interpolated_hit_rate": 0.5611198505403294,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.28154791192740153,
+          "advantage_per_seed": [
+            -0.28609371301296893,
+            -0.2670014225487819,
+            -0.2913693632071835
+          ],
+          "validity": 0.9895833333333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.2814881662563114,
+            "sd": 0.01282019612481276,
+            "lo": -0.3133353009223194,
+            "hi": -0.24964103159030337,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.2913693632071835,
+            "degenerate_bootstrap_hi": -0.2670014225487819,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_guided_qed",
+          "family": "deployed_lambda1",
+          "lam": 1.0,
+          "layer": -1,
+          "guided_hit_rate": 0.19083830274640326,
+          "tokens_per_molecule_actual": 367.271484375,
+          "best_of_n_interpolated_hit_rate": 0.562304629192805,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.37146632644640176,
+          "advantage_per_seed": [
+            -0.38091176722005726,
+            -0.3742480437082145,
+            -0.35903200425971216
+          ],
+          "validity": 0.99609375,
+          "advantage_seed_t_interval": {
+            "mean": -0.37139727172932796,
+            "sd": 0.011214998103295688,
+            "lo": -0.39925687320480063,
+            "hi": -0.3435376702538553,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.38091176722005726,
+            "degenerate_bootstrap_hi": -0.35903200425971216,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L4_lam1_qed",
+          "family": "c23_mid_layer",
+          "lam": 1.0,
+          "layer": 4,
+          "guided_hit_rate": 0.22881375366927592,
+          "tokens_per_molecule_actual": 367.81640625,
+          "best_of_n_interpolated_hit_rate": 0.5628755328958114,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.33406177922653546,
+          "advantage_per_seed": [
+            -0.33597328092911205,
+            -0.33184582348154734,
+            -0.3344619809494219
+          ],
+          "validity": 0.9986979166666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.33409369512002707,
+            "sd": 0.00208822941375322,
+            "lo": -0.33928114488334254,
+            "hi": -0.3289062453567116,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.33597328092911205,
+            "degenerate_bootstrap_hi": -0.33184582348154734,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam4_guided_qed",
+          "family": "section19_lambda_sweep",
+          "lam": 4.0,
+          "layer": -1,
+          "guided_hit_rate": 0.2606845023461389,
+          "tokens_per_molecule_actual": 371.70703125,
+          "best_of_n_interpolated_hit_rate": 0.5669516625602871,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.3062671602141482,
+          "advantage_per_seed": [
+            -0.3169659729404068,
+            -0.2674425331791745,
+            -0.33400829357995465
+          ],
+          "validity": 0.9713541666666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.30613893323317865,
+            "sd": 0.034578442793884445,
+            "lo": -0.39203655238631596,
+            "hi": -0.22024131408004136,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.33400829357995465,
+            "degenerate_bootstrap_hi": -0.2674425331791745,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "c23_guided_L4_lam4_qed",
+          "family": "c23_mid_layer",
+          "lam": 4.0,
+          "layer": 4,
+          "guided_hit_rate": 0.30916762238863027,
+          "tokens_per_molecule_actual": 375.3046875,
+          "best_of_n_interpolated_hit_rate": 0.570720854750028,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.2615532323613977,
+          "advantage_per_seed": [
+            -0.26668763541994867,
+            -0.2608691681363753,
+            -0.25694564297288225
+          ],
+          "validity": 0.9518229166666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.2615008155097354,
+            "sd": 0.004901615857335143,
+            "lo": -0.27367710507425036,
+            "hi": -0.24932452594522045,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.26668763541994867,
+            "degenerate_bootstrap_hi": -0.25694564297288225,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam0p5_guided_qed",
+          "family": "section19_lambda_sweep",
+          "lam": 0.5,
+          "layer": -1,
+          "guided_hit_rate": 0.16918000076743026,
+          "tokens_per_molecule_actual": 376.177734375,
+          "best_of_n_interpolated_hit_rate": 0.5716355284247372,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.40245552765730697,
+          "advantage_per_seed": [
+            -0.4261987604298266,
+            -0.37219775667687316,
+            -0.4089907413550321
+          ],
+          "validity": 0.9967447916666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.4024624194872439,
+            "sd": 0.027586071510613885,
+            "lo": -0.4709900243500345,
+            "hi": -0.33393481462445335,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.4261987604298266,
+            "degenerate_bootstrap_hi": -0.3721977566768732,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam0p25_guided_qed",
+          "family": "section19_lambda_sweep",
+          "lam": 0.25,
+          "layer": -1,
+          "guided_hit_rate": 0.1332260058085633,
+          "tokens_per_molecule_actual": 381.57421875,
+          "best_of_n_interpolated_hit_rate": 0.5772893167093487,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.4440633109007854,
+          "advantage_per_seed": [
+            -0.4283083525353861,
+            -0.4419323598711694,
+            -0.46166103195327596
+          ],
+          "validity": 0.9967447916666666,
+          "advantage_seed_t_interval": {
+            "mean": -0.44396724811994387,
+            "sd": 0.01676919448652448,
+            "lo": -0.4856242391560794,
+            "hi": -0.40231025708380835,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.46166103195327596,
+            "degenerate_bootstrap_hi": -0.4283083525353861,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        },
+        {
+          "run": "pilot_50k_p2_lam8_guided_qed",
+          "family": "section19_lambda_sweep",
+          "lam": 8.0,
+          "layer": -1,
+          "guided_hit_rate": 0.2438314400874245,
+          "tokens_per_molecule_actual": 423.509765625,
+          "best_of_n_interpolated_hit_rate": 0.6147157146827739,
+          "bracketing_n": [
+            9,
+            12
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": -0.37088427459534934,
+          "advantage_per_seed": [
+            -0.4058746521252702,
+            -0.3212962362550031,
+            -0.38381012673064996
+          ],
+          "validity": 0.8997395833333334,
+          "advantage_seed_t_interval": {
+            "mean": -0.3703270050369744,
+            "sd": 0.04387166552270167,
+            "lo": -0.4793102706844762,
+            "hi": -0.26134373938947264,
+            "excludes_zero": true,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.40587465212527024,
+            "degenerate_bootstrap_hi": -0.3212962362550031,
+            "degenerate_equals_min_max": false,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": true,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        }
+      ]
+    }
+  },
+  "decision_rules": {
+    "D1_best_of_n_dominates_everywhere": {
+      "rule": "upheld iff no measured guidance arm sits above the interpolated best-of-N curve at its own budget, for all three anchors",
+      "upheld": false,
+      "violations": [
+        {
+          "property": "hbd_count",
+          "run": "c23_guided_L4_lam2_hbd_count",
+          "family": "c23_mid_layer",
+          "lam": 2.0,
+          "layer": 4,
+          "guided_hit_rate": 0.5603420596566593,
+          "tokens_per_molecule_actual": 387.791015625,
+          "best_of_n_interpolated_hit_rate": 0.5336363313784186,
+          "bracketing_n": [
+            8,
+            9
+          ],
+          "extrapolated_beyond_grid": false,
+          "advantage": 0.026705728278240692,
+          "advantage_per_seed": [
+            0.06074870995714299,
+            -0.0006335669255155274,
+            0.01981449010248315
+          ],
+          "validity": 0.9934895833333334,
+          "advantage_seed_t_interval": {
+            "mean": 0.026643211044703536,
+            "sd": 0.031255712295592916,
+            "lo": -0.05100028745320176,
+            "hi": 0.10428670954260882,
+            "excludes_zero": false,
+            "n_seeds": 3,
+            "note": "seed-level t interval, 2 df"
+          },
+          "advantage_seed_sign_test": {
+            "degenerate_bootstrap_lo": -0.0006335669255155274,
+            "degenerate_bootstrap_hi": 0.06074870995714299,
+            "degenerate_equals_min_max": true,
+            "n_seeds": 3,
+            "sign_test_p_two_sided": 0.25,
+            "all_seeds_share_sign": false,
+            "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+          }
+        }
+      ]
+    },
+    "D2_c23_arm_priced_on_the_curve": {
+      "property": "hbd_count",
+      "run": "c23_guided_L4_lam2_hbd_count",
+      "family": "c23_mid_layer",
+      "lam": 2.0,
+      "layer": 4,
+      "guided_hit_rate": 0.5603420596566593,
+      "tokens_per_molecule_actual": 387.791015625,
+      "best_of_n_interpolated_hit_rate": 0.5336363313784186,
+      "bracketing_n": [
+        8,
+        9
+      ],
+      "extrapolated_beyond_grid": false,
+      "advantage": 0.026705728278240692,
+      "advantage_per_seed": [
+        0.06074870995714299,
+        -0.0006335669255155274,
+        0.01981449010248315
+      ],
+      "validity": 0.9934895833333334,
+      "advantage_seed_t_interval": {
+        "mean": 0.026643211044703536,
+        "sd": 0.031255712295592916,
+        "lo": -0.05100028745320176,
+        "hi": 0.10428670954260882,
+        "excludes_zero": false,
+        "n_seeds": 3,
+        "note": "seed-level t interval, 2 df"
+      },
+      "advantage_seed_sign_test": {
+        "degenerate_bootstrap_lo": -0.0006335669255155274,
+        "degenerate_bootstrap_hi": 0.06074870995714299,
+        "degenerate_equals_min_max": true,
+        "n_seeds": 3,
+        "sign_test_p_two_sided": 0.25,
+        "all_seeds_share_sign": false,
+        "note": "at n=3 the percentile bootstrap of a mean is exactly [min, max]; this interval conveys nothing beyond a three-way sign test (p_null = 0.25) and must not be read as a confidence interval"
+      },
+      "note": "C23's Rule B arm, priced against the interpolated best-of-N curve at its own exact budget; this removes the integer-flooring artefact in both directions"
+    },
+    "D2b_c23_arm_across_c25_head_seeds": {
+      "1234": {
+        "run": "c23_guided_L4_lam2_hbd_count",
+        "guided_hit_rate": 0.5603420596566593,
+        "tokens_per_molecule_actual": 387.791015625,
+        "best_of_n_interpolated_hit_rate": 0.5336363313784186,
+        "bracketing_n": [
+          8,
+          9
+        ],
+        "extrapolated_beyond_grid": false,
+        "advantage": 0.026705728278240692,
+        "advantage_per_seed": [
+          0.060222055543913244,
+          -0.00296242090474208,
+          0.022857550195551135
+        ]
+      },
+      "2345": {
+        "run": "c25_hs2345_L4_lam2_hbd_count_guided",
+        "guided_hit_rate": 0.5600814321286762,
+        "tokens_per_molecule_actual": 393.796875,
+        "best_of_n_interpolated_hit_rate": 0.5391046175770944,
+        "bracketing_n": [
+          8,
+          9
+        ],
+        "extrapolated_beyond_grid": false,
+        "advantage": 0.020976814551581846,
+        "advantage_per_seed": [
+          0.03618792670516768,
+          0.025200747301825865,
+          0.0015417696477521003
+        ]
+      },
+      "3456": {
+        "run": "c25_hs3456_L4_lam2_hbd_count_guided",
+        "guided_hit_rate": 0.46873245281306125,
+        "tokens_per_molecule_actual": 387.78515625,
+        "best_of_n_interpolated_hit_rate": 0.533630996465054,
+        "bracketing_n": [
+          8,
+          9
+        ],
+        "extrapolated_beyond_grid": false,
+        "advantage": -0.06489854365199271,
+        "advantage_per_seed": [
+          -0.06982256774139967,
+          -0.06608220094888134,
+          -0.058790862265697186
+        ]
+      },
+      "_across_head_seeds": {
+        "advantages": [
+          0.026705728278240692,
+          0.020976814551581846,
+          -0.06489854365199271
+        ],
+        "mean": -0.0057386669407233915,
+        "sd": 0.05131396859034892,
+        "min": -0.06489854365199271,
+        "max": 0.026705728278240692,
+        "sign_flips": true,
+        "guided_hit_rate_span": 0.09160960684359803
+      }
+    },
+    "D3_best_of_n_saturates": {
+      "aromatic_rings": {
+        "hit_rate_at_max_n": 0.99609375,
+        "last_doubling_gain": 0.04264322916666663
+      },
+      "hbd_count": {
+        "hit_rate_at_max_n": 0.9270833333333334,
+        "last_doubling_gain": 0.17513020833333337
+      },
+      "qed": {
+        "hit_rate_at_max_n": 0.9602864583333334,
+        "last_doubling_gain": 0.16796875
+      }
+    }
+  },
+  "predictions": {
+    "aromatic_rings": {
+      "concave": true,
+      "secant_slopes_in_n": [
+        0.14012916424962793,
+        0.11965516369865109,
+        0.09559548734301554,
+        0.07513542501335468,
+        0.049498364049145316,
+        0.03995321085164849,
+        0.026739926739926683,
+        0.014553106398809551,
+        0.004413504055168618,
+        0.0009168995906647104
+      ]
+    },
+    "hbd_count": {
+      "concave": true,
+      "secant_slopes_in_n": [
+        0.076993694498848,
+        0.07103878222185345,
+        0.0647847854864799,
+        0.05648728441697193,
+        0.046865580166361415,
+        0.04045687385531127,
+        0.03422873422873426,
+        0.02614456940628815,
+        0.015304490851050831,
+        0.00658678519061584
+      ]
+    },
+    "qed": {
+      "concave": true,
+      "secant_slopes_in_n": [
+        0.08555983676513856,
+        0.0777745852574887,
+        0.06915738088834461,
+        0.062087256276709385,
+        0.04891534788995727,
+        0.04655269860347988,
+        0.03428978428978432,
+        0.023232052235958478,
+        0.013863512264784938,
+        0.0071325814852150615
+      ]
+    }
+  },
+  "validity_gates": {
+    "exact_N9_aromatic_rings": {
+      "per_seed": {
+        "101": {
+          "gate_hit_rate": 0.80859375,
+          "published_hit_rate": 0.80859375,
+          "hit_rate_residual": 0.0,
+          "gate_tokens_per_molecule": 401.09375,
+          "published_tokens_per_molecule": 401.09375,
+          "token_residual": 0.0
+        },
+        "202": {
+          "gate_hit_rate": 0.830078125,
+          "published_hit_rate": 0.830078125,
+          "hit_rate_residual": 0.0,
+          "gate_tokens_per_molecule": 398.837890625,
+          "published_tokens_per_molecule": 398.837890625,
+          "token_residual": 0.0
+        },
+        "303": {
+          "gate_hit_rate": 0.849609375,
+          "published_hit_rate": 0.849609375,
+          "hit_rate_residual": 0.0,
+          "gate_tokens_per_molecule": 399.81640625,
+          "published_tokens_per_molecule": 399.81640625,
+          "token_residual": 0.0
+        }
+      },
+      "max_abs_hit_residual": 0.0
+    },
+    "first_512_groups_identity": {
+      "rule": "the sweep's first `n_molecules` groups at the published N must reproduce scripts/06_best_of_n.py's per-seed hit rate exactly",
+      "per_property": {
+        "aromatic_rings": {
+          "published_n": 9,
+          "per_seed": {
+            "101": {
+              "published_n": 9,
+              "first_512_groups_hit_rate": 0.80859375,
+              "published_hit_rate": 0.80859375,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.7983516483516484,
+              "n_groups": 1820
+            },
+            "202": {
+              "published_n": 9,
+              "first_512_groups_hit_rate": 0.830078125,
+              "published_hit_rate": 0.830078125,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.8247252747252747,
+              "n_groups": 1820
+            },
+            "303": {
+              "published_n": 9,
+              "first_512_groups_hit_rate": 0.849609375,
+              "published_hit_rate": 0.849609375,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.8219780219780219,
+              "n_groups": 1820
+            }
+          },
+          "max_abs_residual": 0.0
+        },
+        "hbd_count": {
+          "published_n": 9,
+          "per_seed": {
+            "101": {
+              "published_n": 9,
+              "first_512_groups_hit_rate": 0.54296875,
+              "published_hit_rate": 0.54296875,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.5478021978021979,
+              "n_groups": 1820
+            },
+            "202": {
+              "published_n": 9,
+              "first_512_groups_hit_rate": 0.52734375,
+              "published_hit_rate": 0.52734375,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.5445054945054945,
+              "n_groups": 1820
+            },
+            "303": {
+              "published_n": 9,
+              "first_512_groups_hit_rate": 0.5,
+              "published_hit_rate": 0.5,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.5417582417582417,
+              "n_groups": 1820
+            }
+          },
+          "max_abs_residual": 0.0
+        },
+        "qed": {
+          "published_n": 8,
+          "per_seed": {
+            "101": {
+              "published_n": 8,
+              "first_512_groups_hit_rate": 0.572265625,
+              "published_hit_rate": 0.572265625,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.55908203125,
+              "n_groups": 2048
+            },
+            "202": {
+              "published_n": 8,
+              "first_512_groups_hit_rate": 0.515625,
+              "published_hit_rate": 0.515625,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.54541015625,
+              "n_groups": 2048
+            },
+            "303": {
+              "published_n": 8,
+              "first_512_groups_hit_rate": 0.54296875,
+              "published_hit_rate": 0.54296875,
+              "residual": 0.0,
+              "all_groups_hit_rate": 0.54541015625,
+              "n_groups": 2048
+            }
+          },
+          "max_abs_residual": 0.0
+        }
+      },
+      "max_abs_residual": 0.0,
+      "passes": true
+    }
+  }
+}

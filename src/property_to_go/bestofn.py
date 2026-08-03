@@ -12,7 +12,7 @@ import numpy as np
 from .compute import ComputeMeter, solve_best_of_n
 from .generation import sample_unconditional
 from .model_io import FrozenGenerator
-from .properties import compute_properties
+from .properties import PHASE2_PROPERTIES, compute_all_properties
 
 
 def in_target(value: float, lo: float, hi: float) -> bool:
@@ -39,7 +39,15 @@ def target_distance(value: float, lo: float, hi: float) -> float:
 #: Properties whose values are counts.  For these the target interval [v, v+1)
 #: contains exactly one attainable value, so "distance to the interval" must be
 #: measured to that value and not to the open upper edge.
-INTEGER_PROPERTIES = frozenset({"aromatic_rings"})
+#:
+#: `hbd_count` and `rotatable_bonds` were added when the phase-2 battery was wired in
+#: (2026-07-30).  Omitting them would have reintroduced the docs/HANDOFF.md §4 bug on
+#: two new properties at once, and it would have done so silently: the symptom is a
+#: best-of-N hit rate below its own binomial prediction, not an exception.
+#: `tests/test_bestofn.py::test_every_discrete_property_is_declared_integer_valued`
+#: now derives this set from `properties.DISCRETE_PROPERTIES` rather than trusting a
+#: future author to remember.
+INTEGER_PROPERTIES = frozenset({"aromatic_rings", "hbd_count", "rotatable_bonds"})
 
 
 def target_error(value: float, lo: float, hi: float, integer_valued: bool = False) -> float:
@@ -89,6 +97,10 @@ def best_of_n(
     selected: list[dict] = []
     local = meter if meter is not None else ComputeMeter()
 
+    # Only the phase-2 field being targeted is computed, because best-of-N under
+    # full-recompute accounting scores ~160 k candidates and QED costs ~1 ms each.
+    extras = frozenset({prop}) if prop in PHASE2_PROPERTIES else frozenset()
+
     # Draw the whole candidate pool with the generator's own batching, then split it
     # into per-slot groups.  Drawing N at a time would batch at N, which is far
     # slower for small N and gives the baseline an unfair wall-clock handicap.
@@ -101,10 +113,20 @@ def best_of_n(
         best = None
         best_key = None
         for s, ids in zip(smiles[lo_i : lo_i + n_candidates], seqs[lo_i : lo_i + n_candidates]):
-            props = compute_properties(s)
+            props = compute_all_properties(s, extras=extras)
             if props is None:
                 key = (1, 1, float("inf"))
                 cand = {"smiles": s, "token_ids": ids, "valid": False}
+            elif props.get(prop) is None:
+                # Parseable, so it counts as valid -- validity must keep meaning
+                # "RDKit accepted it" -- but this one descriptor could not be
+                # computed (QED only).  Ranked with the unusable candidates rather
+                # than given a guessed value, and flagged so it is countable.
+                key = (1, 1, float("inf"))
+                cand = {
+                    "smiles": s, "token_ids": ids, "valid": True,
+                    "property_unavailable": True, **props,
+                }
             else:
                 key = (0, *selection_key(props[prop], lo, hi))
                 cand = {"smiles": s, "token_ids": ids, "valid": True, **props}
@@ -126,18 +148,25 @@ def match_n_to_guided(
 
 
 def summarise(records: list[dict], prop: str, lo: float, hi: float) -> dict:
-    vals = np.array([r[prop] for r in records if r.get("valid")], dtype=np.float64)
+    # `valid` means RDKit parsed it.  A valid molecule can still lack this one
+    # property (QED alone can raise); those are excluded from the property
+    # statistics and counted separately rather than silently coerced to a number.
+    valid = [r for r in records if r.get("valid")]
+    scored = [r for r in valid if r.get(prop) is not None]
+    vals = np.array([r[prop] for r in scored], dtype=np.float64)
     n = len(records)
     if len(vals) == 0:
-        return {"n": n, "validity": 0.0}
+        return {"n": n, "validity": float(len(valid) / n) if n else 0.0, "n_valid": len(valid),
+                "n_scored": 0}
     hit = (vals >= lo) & (vals < hi)
     integer_valued = prop in INTEGER_PROPERTIES
     dists = np.array([target_error(v, lo, hi, integer_valued) for v in vals])
-    canon = [r["canonical_smiles"] for r in records if r.get("valid")]
+    canon = [r["canonical_smiles"] for r in scored]
     return {
         "n": n,
-        "n_valid": int(len(vals)),
-        "validity": float(len(vals) / n),
+        "n_valid": int(len(valid)),
+        "n_scored": int(len(vals)),
+        "validity": float(len(valid) / n),
         "uniqueness": float(len(set(canon)) / len(canon)),
         "hit_rate": float(hit.mean()),
         "hit_rate_over_all_returned": float(hit.sum() / n),

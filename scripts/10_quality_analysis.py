@@ -38,6 +38,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from property_to_go.config import (  # noqa: E402
     OUTPUT_DIR, load_config, read_json, write_json, write_run_context,
 )
+from property_to_go.properties import ALL_PROPERTIES  # noqa: E402
 from property_to_go.quality import (  # noqa: E402
     HIGHER_IS_BETTER, HIGHER_IS_WORSE, bootstrap_difference, degeneracy_flags,
     molecule_quality, quality_panel,
@@ -50,8 +51,7 @@ HEADLINE = ("sa_score", "qed", "longest_chain", "carbon_fraction", "max_ring_siz
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", default="pilot_50k")
-    ap.add_argument("--property", default="clogp",
-                    choices=["clogp", "aromatic_rings", "mol_weight"])
+    ap.add_argument("--property", default="clogp", choices=list(ALL_PROPERTIES))
     ap.add_argument("--guided", default=None, help="override guided run directory name")
     ap.add_argument("--n-examples", type=int, default=15)
     ap.add_argument("--bootstrap", type=int, default=2000)
@@ -67,6 +67,12 @@ def main() -> int:
     iv = intervals[args.property]
     lo, hi = float(iv["lo"]), float(iv["hi"])
     mols = read_json(guided_dir / "molecules.json")
+    # The guidance strength can be overridden per run (scripts/05 --lam), so the value
+    # that actually produced these molecules lives in the guided run's own metrics, not
+    # in configs/guidance.yaml. Carry it through or a lambda sweep's quality artefacts
+    # all claim lambda=1.
+    guided_metrics = read_json(guided_dir / "guidance_metrics.json")
+    lam = float(guided_metrics["lambda"])
 
     t_start = time.perf_counter()
     print(f"property={args.property} target=[{lo:.4f},{hi:.4f})")
@@ -78,7 +84,7 @@ def main() -> int:
         rows = []
         for seed, records in by_seed.items():
             for r in records:
-                if not r.get("valid"):
+                if not r.get("valid") or r.get(args.property) is None:
                     continue
                 q = molecule_quality(r["smiles"])
                 if q is None:
@@ -101,6 +107,7 @@ def main() -> int:
         "property": args.property,
         "target_interval": iv,
         "guided_run": guided_dir.name,
+        "lambda": lam,
         "note": (
             "The 'hits' panels are the comparison that matters: they hold the achieved "
             "property roughly fixed and ask only how the molecule got there. The "
@@ -160,7 +167,7 @@ def main() -> int:
     report["wall_seconds_total"] = time.perf_counter() - t_start
     write_json(out_dir / "quality_metrics.json", report)
     write_json(out_dir / "examples.json", examples)
-    write_run_context(out_dir, {"guidance": load_config("guidance")})
+    write_run_context(out_dir, {"guidance": {**load_config("guidance"), "lam": lam}})
 
     # ---- terminal table ------------------------------------------------------
     print(f"\nquality of molecules that HIT [{lo:.3f},{hi:.3f}) "

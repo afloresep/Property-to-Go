@@ -23,3 +23,8 @@ binning:
   clogp_n_bins: 20 # quantile bins fitted on the TRAIN terminal distribution
   aromatic_rings_max: 5 # categories 0,1,2,3,4,5+ -> 6 classes
   mol_weight_n_bins: 20
+  # Phase 2, kept identical to pilot_50k so the two scales stay comparable.
+  hbd_count_max: 6
+  rotatable_bonds_max: 12
+  tpsa_n_bins: 20
+  qed_n_bins: 20

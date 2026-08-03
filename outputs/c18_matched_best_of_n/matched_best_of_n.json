@@ -1,0 +1,241 @@
+{
+  "dataset": "pilot_50k_p2",
+  "rule": "N is solved from each arm's own tokens per returned molecule under `actual` accounting, exactly as scripts/06 does. Arms solving to the same N share one best-of-N run because that run is deterministic in (property, N, seeds).",
+  "properties": {
+    "aromatic_rings": {
+      "arms": {
+        "uncalibrated": {
+          "dir": "c18_guided_uncalibrated_aromatic_rings",
+          "guided_tokens_per_molecule_actual": 419.326171875,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_aromatic_rings",
+          "best_of_n_hit_rate": 0.8294270833333334,
+          "realised_token_ratio": 0.9537110785067189
+        },
+        "platt": {
+          "dir": "c18_guided_platt_aromatic_rings",
+          "guided_tokens_per_molecule_actual": 404.783203125,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_aromatic_rings",
+          "best_of_n_hit_rate": 0.8294270833333334,
+          "realised_token_ratio": 0.9879758165298747
+        },
+        "isotonic": {
+          "dir": "c18_guided_isotonic_aromatic_rings",
+          "guided_tokens_per_molecule_actual": 409.447265625,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_aromatic_rings",
+          "best_of_n_hit_rate": 0.8294270833333334,
+          "realised_token_ratio": 0.9767216664997114
+        },
+        "bin_temperature": {
+          "dir": "c18_guided_bin_temperature_aromatic_rings",
+          "guided_tokens_per_molecule_actual": 412.40625,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_aromatic_rings",
+          "best_of_n_hit_rate": 0.8294270833333334,
+          "realised_token_ratio": 0.9697137607031902
+        },
+        "binT0p4": {
+          "dir": "c18_guided_binT0p4_aromatic_rings",
+          "guided_tokens_per_molecule_actual": 426.251953125,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_aromatic_rings",
+          "best_of_n_hit_rate": 0.8294270833333334,
+          "realised_token_ratio": 0.9382150924894955
+        },
+        "head_wide": {
+          "dir": "c18_guided_head_wide_aromatic_rings",
+          "guided_tokens_per_molecule_actual": 408.99609375,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_aromatic_rings",
+          "best_of_n_hit_rate": 0.8294270833333334,
+          "realised_token_ratio": 0.9777991079529718
+        },
+        "head_wide_focused": {
+          "dir": "c18_guided_head_wide_focused_aromatic_rings",
+          "guided_tokens_per_molecule_actual": 413.26171875,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_aromatic_rings",
+          "best_of_n_hit_rate": 0.8294270833333334,
+          "realised_token_ratio": 0.9677064133465665
+        }
+      },
+      "runs": {
+        "9": {
+          "dir": "c18_bestofn_N9_aromatic_rings",
+          "matched_to_arm": "uncalibrated",
+          "arms_sharing_this_run": [
+            "uncalibrated",
+            "platt",
+            "isotonic",
+            "bin_temperature",
+            "binT0p4",
+            "head_wide",
+            "head_wide_focused"
+          ],
+          "n_candidates": 9,
+          "hit_rate": 0.8294270833333334,
+          "tokens_per_molecule_actual": 399.916015625
+        }
+      }
+    },
+    "hbd_count": {
+      "arms": {
+        "uncalibrated": {
+          "dir": "c18_guided_uncalibrated_hbd_count",
+          "guided_tokens_per_molecule_actual": 401.619140625,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_hbd_count",
+          "best_of_n_hit_rate": 0.5234375,
+          "realised_token_ratio": 0.9957593530095463
+        },
+        "platt": {
+          "dir": "c18_guided_platt_hbd_count",
+          "guided_tokens_per_molecule_actual": 395.291015625,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_hbd_count",
+          "best_of_n_hit_rate": 0.5234375,
+          "realised_token_ratio": 1.0117002406257256
+        },
+        "isotonic": {
+          "dir": "c18_guided_isotonic_hbd_count",
+          "guided_tokens_per_molecule_actual": 407.4609375,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_hbd_count",
+          "best_of_n_hit_rate": 0.5234375,
+          "realised_token_ratio": 0.9814830792829067
+        },
+        "bin_temperature": {
+          "dir": "c18_guided_bin_temperature_hbd_count",
+          "guided_tokens_per_molecule_actual": 392.958984375,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_hbd_count",
+          "best_of_n_hit_rate": 0.5234375,
+          "realised_token_ratio": 1.0177042173016229
+        },
+        "head_wide": {
+          "dir": "c18_guided_head_wide_hbd_count",
+          "guided_tokens_per_molecule_actual": 401.19140625,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_hbd_count",
+          "best_of_n_hit_rate": 0.5234375,
+          "realised_token_ratio": 0.9968209921620175
+        },
+        "head_wide_focused": {
+          "dir": "c18_guided_head_wide_focused_hbd_count",
+          "guided_tokens_per_molecule_actual": 400.412109375,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_hbd_count",
+          "best_of_n_hit_rate": 0.5234375,
+          "realised_token_ratio": 0.9987610420904244
+        }
+      },
+      "runs": {
+        "9": {
+          "dir": "c18_bestofn_N9_hbd_count",
+          "matched_to_arm": "uncalibrated",
+          "arms_sharing_this_run": [
+            "uncalibrated",
+            "platt",
+            "isotonic",
+            "bin_temperature",
+            "head_wide",
+            "head_wide_focused"
+          ],
+          "n_candidates": 9,
+          "hit_rate": 0.5234375,
+          "tokens_per_molecule_actual": 399.916015625
+        }
+      }
+    },
+    "clogp": {
+      "arms": {
+        "uncalibrated": {
+          "dir": "c18_guided_uncalibrated_clogp",
+          "guided_tokens_per_molecule_actual": 403.060546875,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_clogp",
+          "best_of_n_hit_rate": 0.6106770833333334,
+          "realised_token_ratio": 0.9921983650486754
+        },
+        "platt": {
+          "dir": "c18_guided_platt_clogp",
+          "guided_tokens_per_molecule_actual": 399.29296875,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_clogp",
+          "best_of_n_hit_rate": 0.6106770833333334,
+          "realised_token_ratio": 1.001560375272699
+        },
+        "isotonic": {
+          "dir": "c18_guided_isotonic_clogp",
+          "guided_tokens_per_molecule_actual": 409.037109375,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_clogp",
+          "best_of_n_hit_rate": 0.6106770833333334,
+          "realised_token_ratio": 0.9777010605127323
+        },
+        "bin_temperature": {
+          "dir": "c18_guided_bin_temperature_clogp",
+          "guided_tokens_per_molecule_actual": 397.93359375,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_clogp",
+          "best_of_n_hit_rate": 0.6106770833333334,
+          "realised_token_ratio": 1.0049817906960765
+        },
+        "head_wide": {
+          "dir": "c18_guided_head_wide_clogp",
+          "guided_tokens_per_molecule_actual": 404.44921875,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_clogp",
+          "best_of_n_hit_rate": 0.6106770833333334,
+          "realised_token_ratio": 0.988791663044843
+        },
+        "head_wide_focused": {
+          "dir": "c18_guided_head_wide_focused_clogp",
+          "guided_tokens_per_molecule_actual": 405.697265625,
+          "base_tokens_per_molecule_actual": 43.448567708333336,
+          "n_candidates_solved": 9,
+          "best_of_n_dir": "c18_bestofn_N9_clogp",
+          "best_of_n_hit_rate": 0.6106770833333334,
+          "realised_token_ratio": 0.9857498423335596
+        }
+      },
+      "runs": {
+        "9": {
+          "dir": "c18_bestofn_N9_clogp",
+          "matched_to_arm": "uncalibrated",
+          "arms_sharing_this_run": [
+            "uncalibrated",
+            "platt",
+            "isotonic",
+            "bin_temperature",
+            "head_wide",
+            "head_wide_focused"
+          ],
+          "n_candidates": 9,
+          "hit_rate": 0.6106770833333334,
+          "tokens_per_molecule_actual": 399.916015625
+        }
+      }
+    }
+  }
+}

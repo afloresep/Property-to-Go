@@ -1,0 +1,18 @@
+{
+  "c24_calibration": {
+    "n_guided_sequences": 2000,
+    "guided_seed": 91234,
+    "lam": 1.0,
+    "eps": 1e-06,
+    "top_k": 8,
+    "probe_point": 12,
+    "head_seed": 1234,
+    "prefixes_per_sequence": 4,
+    "prefix_seed": 913,
+    "calibration_split_seed": 55,
+    "identity_prefixes": 200,
+    "n_content": 40,
+    "batch_size": 64
+  },
+  "dataset": "c24_dataset"
+}

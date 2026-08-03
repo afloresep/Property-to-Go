@@ -1,0 +1,546 @@
+{
+  "dataset": "pilot_50k_p2",
+  "property": "aromatic_rings",
+  "target_interval": {
+    "lo": 3.0,
+    "hi": 4.0,
+    "rule": {
+      "kind": "exact_value",
+      "value": 3
+    },
+    "base_rate": 0.1713867089496819
+  },
+  "guided_run": "c25_smoke_guided",
+  "lambda": 1.0,
+  "note": "The 'hits' panels are the comparison that matters: they hold the achieved property roughly fixed and ask only how the molecule got there. The unguided hits panel also describes compute-matched best-of-N's output, since best-of-N returns base-policy samples selected for target proximity.",
+  "panels": {
+    "unguided": {
+      "all": {
+        "n": 16,
+        "descriptors": {
+          "sa_score": {
+            "mean": 2.861433774040545,
+            "std": 0.4006954940467241,
+            "sem": 0.10345913168955438,
+            "median": 2.8622535107111515,
+            "p90": 3.4867487642250046
+          },
+          "longest_chain": {
+            "mean": 2.5,
+            "std": 1.0606601717798212,
+            "sem": 0.27386127875258304,
+            "median": 3.0,
+            "p90": 4.0
+          },
+          "carbon_fraction": {
+            "mean": 0.7125598369889399,
+            "std": 0.10318311681216152,
+            "sem": 0.02664176620155174,
+            "median": 0.7141666666666666,
+            "p90": 0.85625
+          },
+          "max_ring_size": {
+            "mean": 6.0625,
+            "std": 0.24206145913796356,
+            "sem": 0.0625,
+            "median": 6.0,
+            "p90": 6.0
+          },
+          "n_macrocycles": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "lipinski_violations": {
+            "mean": 0.0625,
+            "std": 0.24206145913796356,
+            "sem": 0.0625,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "n_fragments": {
+            "mean": 1.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 1.0,
+            "p90": 1.0
+          },
+          "abs_formal_charge": {
+            "mean": 0.0625,
+            "std": 0.24206145913796356,
+            "sem": 0.0625,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "qed": {
+            "mean": 0.6612670086909134,
+            "std": 0.18001162127189535,
+            "sem": 0.04647880075398983,
+            "median": 0.6667550296517326,
+            "p90": 0.8689361622662837
+          },
+          "fraction_csp3": {
+            "mean": 0.4373010634983352,
+            "std": 0.1629962944197625,
+            "sem": 0.042085462252084066,
+            "median": 0.4444444444444444,
+            "p90": 0.6691919191919192
+          },
+          "n_spiro": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "n_bridgehead": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "n_rotatable": {
+            "mean": 5.125,
+            "std": 1.899835519196333,
+            "sem": 0.4905354217587146,
+            "median": 5.0,
+            "p90": 7.5
+          },
+          "n_rings": {
+            "mean": 3.1875,
+            "std": 1.0734727523323542,
+            "sem": 0.27716947282604315,
+            "median": 3.0,
+            "p90": 4.5
+          }
+        },
+        "degeneracy_rate": {
+          "hard_to_synthesise": 0.0,
+          "long_alkyl_tail": 0.0,
+          "mostly_carbon": 0.0625,
+          "macrocyclic": 0.0,
+          "multi_fragment": 0.0,
+          "net_charged": 0.0625,
+          "any": 0.125
+        }
+      },
+      "hits": {
+        "n": 3,
+        "descriptors": {
+          "sa_score": {
+            "mean": 2.5062985252925274,
+            "std": 0.29164895476250235,
+            "sem": 0.2062269536385341,
+            "median": 2.376337725560063,
+            "p90": 2.8034910535228574
+          },
+          "longest_chain": {
+            "mean": 2.0,
+            "std": 0.816496580927726,
+            "sem": 0.5773502691896258,
+            "median": 2.0,
+            "p90": 2.8
+          },
+          "carbon_fraction": {
+            "mean": 0.738587801087801,
+            "std": 0.08769576100412788,
+            "sem": 0.062010267287333616,
+            "median": 0.7878787878787878,
+            "p90": 0.8075757575757576
+          },
+          "max_ring_size": {
+            "mean": 6.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 6.0,
+            "p90": 6.0
+          },
+          "n_macrocycles": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "lipinski_violations": {
+            "mean": 0.3333333333333333,
+            "std": 0.4714045207910317,
+            "sem": 0.33333333333333337,
+            "median": 0.0,
+            "p90": 0.8
+          },
+          "n_fragments": {
+            "mean": 1.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 1.0,
+            "p90": 1.0
+          },
+          "abs_formal_charge": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "qed": {
+            "mean": 0.6276049591181531,
+            "std": 0.0759014035807716,
+            "sem": 0.0536703971735405,
+            "median": 0.6064199043028496,
+            "p90": 0.7047470796421818
+          },
+          "fraction_csp3": {
+            "mean": 0.3349358974358974,
+            "std": 0.035183491025801525,
+            "sem": 0.024878485090160298,
+            "median": 0.3125,
+            "p90": 0.3701923076923077
+          },
+          "n_spiro": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "n_bridgehead": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "n_rotatable": {
+            "mean": 6.0,
+            "std": 0.816496580927726,
+            "sem": 0.5773502691896258,
+            "median": 6.0,
+            "p90": 6.8
+          },
+          "n_rings": {
+            "mean": 4.333333333333333,
+            "std": 0.4714045207910317,
+            "sem": 0.33333333333333337,
+            "median": 4.0,
+            "p90": 4.8
+          }
+        },
+        "degeneracy_rate": {
+          "hard_to_synthesise": 0.0,
+          "long_alkyl_tail": 0.0,
+          "mostly_carbon": 0.0,
+          "macrocyclic": 0.0,
+          "multi_fragment": 0.0,
+          "net_charged": 0.0,
+          "any": 0.0
+        }
+      }
+    },
+    "throughout": {
+      "all": {
+        "n": 16,
+        "descriptors": {
+          "sa_score": {
+            "mean": 2.7473122771675405,
+            "std": 0.718552737424141,
+            "sem": 0.1855295190276966,
+            "median": 2.618095486461802,
+            "p90": 3.436634298062289
+          },
+          "longest_chain": {
+            "mean": 1.875,
+            "std": 0.7806247497997998,
+            "sem": 0.20155644370746376,
+            "median": 2.0,
+            "p90": 2.5
+          },
+          "carbon_fraction": {
+            "mean": 0.7352833334649067,
+            "std": 0.050542692967240364,
+            "sem": 0.013050067208973112,
+            "median": 0.7307692307692307,
+            "p90": 0.8176392572944298
+          },
+          "max_ring_size": {
+            "mean": 6.0625,
+            "std": 0.24206145913796356,
+            "sem": 0.0625,
+            "median": 6.0,
+            "p90": 6.0
+          },
+          "n_macrocycles": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "lipinski_violations": {
+            "mean": 0.25,
+            "std": 0.4330127018922193,
+            "sem": 0.11180339887498948,
+            "median": 0.0,
+            "p90": 1.0
+          },
+          "n_fragments": {
+            "mean": 1.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 1.0,
+            "p90": 1.0
+          },
+          "abs_formal_charge": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "qed": {
+            "mean": 0.5531474927482326,
+            "std": 0.1560523189175028,
+            "sem": 0.04029253548696913,
+            "median": 0.5633835734370041,
+            "p90": 0.7150482443039494
+          },
+          "fraction_csp3": {
+            "mean": 0.2745149063369887,
+            "std": 0.10797392211546021,
+            "sem": 0.027878746811858274,
+            "median": 0.256578947368421,
+            "p90": 0.40019762845849804
+          },
+          "n_spiro": {
+            "mean": 0.0625,
+            "std": 0.24206145913796356,
+            "sem": 0.0625,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "n_bridgehead": {
+            "mean": 0.125,
+            "std": 0.4841229182759271,
+            "sem": 0.125,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "n_rotatable": {
+            "mean": 5.625,
+            "std": 2.368411915187052,
+            "sem": 0.6115213269652444,
+            "median": 5.5,
+            "p90": 9.5
+          },
+          "n_rings": {
+            "mean": 3.5,
+            "std": 0.9354143466934853,
+            "sem": 0.24152294576982397,
+            "median": 3.0,
+            "p90": 5.0
+          }
+        },
+        "degeneracy_rate": {
+          "hard_to_synthesise": 0.0,
+          "long_alkyl_tail": 0.0,
+          "mostly_carbon": 0.0,
+          "macrocyclic": 0.0,
+          "multi_fragment": 0.0,
+          "net_charged": 0.0,
+          "any": 0.0
+        }
+      },
+      "hits": {
+        "n": 9,
+        "descriptors": {
+          "sa_score": {
+            "mean": 2.7988176966741256,
+            "std": 0.9036861151417918,
+            "sem": 0.3195012900404441,
+            "median": 2.3603666824109375,
+            "p90": 4.032444316357035
+          },
+          "longest_chain": {
+            "mean": 1.7777777777777777,
+            "std": 0.41573970964154905,
+            "sem": 0.14698618394803278,
+            "median": 2.0,
+            "p90": 2.0
+          },
+          "carbon_fraction": {
+            "mean": 0.7347871415160688,
+            "std": 0.05380652147296781,
+            "sem": 0.01902347810279756,
+            "median": 0.7307692307692307,
+            "p90": 0.8116710875331565
+          },
+          "max_ring_size": {
+            "mean": 6.111111111111111,
+            "std": 0.3142696805273545,
+            "sem": 0.11111111111111112,
+            "median": 6.0,
+            "p90": 6.2
+          },
+          "n_macrocycles": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "lipinski_violations": {
+            "mean": 0.3333333333333333,
+            "std": 0.4714045207910317,
+            "sem": 0.16666666666666666,
+            "median": 0.0,
+            "p90": 1.0
+          },
+          "n_fragments": {
+            "mean": 1.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 1.0,
+            "p90": 1.0
+          },
+          "abs_formal_charge": {
+            "mean": 0.0,
+            "std": 0.0,
+            "sem": 0.0,
+            "median": 0.0,
+            "p90": 0.0
+          },
+          "qed": {
+            "mean": 0.5644238917962968,
+            "std": 0.17947672267755002,
+            "sem": 0.06345460383521652,
+            "median": 0.6516080272369248,
+            "p90": 0.7137238064446495
+          },
+          "fraction_csp3": {
+            "mean": 0.27017695204194064,
+            "std": 0.11929062257865904,
+            "sem": 0.04217560407866744,
+            "median": 0.23809523809523808,
+            "p90": 0.4130434782608696
+          },
+          "n_spiro": {
+            "mean": 0.1111111111111111,
+            "std": 0.31426968052735443,
+            "sem": 0.1111111111111111,
+            "median": 0.0,
+            "p90": 0.20000000000000018
+          },
+          "n_bridgehead": {
+            "mean": 0.2222222222222222,
+            "std": 0.6285393610547089,
+            "sem": 0.2222222222222222,
+            "median": 0.0,
+            "p90": 0.40000000000000036
+          },
+          "n_rotatable": {
+            "mean": 5.666666666666667,
+            "std": 2.0548046676563256,
+            "sem": 0.726483157256779,
+            "median": 6.0,
+            "p90": 7.6000000000000005
+          },
+          "n_rings": {
+            "mean": 3.6666666666666665,
+            "std": 0.816496580927726,
+            "sem": 0.28867513459481287,
+            "median": 3.0,
+            "p90": 5.0
+          }
+        },
+        "degeneracy_rate": {
+          "hard_to_synthesise": 0.0,
+          "long_alkyl_tail": 0.0,
+          "mostly_carbon": 0.0,
+          "macrocyclic": 0.0,
+          "multi_fragment": 0.0,
+          "net_charged": 0.0,
+          "any": 0.0
+        }
+      }
+    }
+  },
+  "vs_unguided_hits": {
+    "throughout": {
+      "n_cond_hits": 9,
+      "n_base_hits": 3,
+      "sa_score": {
+        "difference": 0.2925191713815982,
+        "lo": -0.33863250076656265,
+        "hi": 1.006277830960064,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "longest_chain": {
+        "difference": -0.22222222222222232,
+        "lo": -1.1111111111111112,
+        "hi": 0.6666666666666667,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "carbon_fraction": {
+        "difference": -0.0038006595717321456,
+        "lo": -0.09277465231129046,
+        "hi": 0.10884403185947701,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "max_ring_size": {
+        "difference": 0.11111111111111072,
+        "lo": 0.0,
+        "hi": 0.33333333333333304,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "n_macrocycles": {
+        "difference": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "lipinski_violations": {
+        "difference": 0.0,
+        "lo": -0.6666666666666666,
+        "hi": 0.5555555555555556,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "n_fragments": {
+        "difference": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "abs_formal_charge": {
+        "difference": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "excludes_zero": false,
+        "direction": "higher is worse"
+      },
+      "qed": {
+        "difference": -0.06318106732185624,
+        "lo": -0.21721656573516804,
+        "hi": 0.07394927110039431,
+        "excludes_zero": false,
+        "direction": "higher is better"
+      },
+      "any_degeneracy": {
+        "difference": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "excludes_zero": false
+      }
+    }
+  },
+  "wall_seconds_total": 1.163608368486166
+}

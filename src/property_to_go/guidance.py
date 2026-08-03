@@ -98,7 +98,14 @@ class Windows:
 
 
 class TargetScorer:
-    """Wraps a trained head as h_t -> P(y_final in I)."""
+    """Wraps a trained head as h_t -> P(y_final in I).
+
+    Heads are checkpointed and loaded with `map_location="cpu"` while the frozen
+    generator may live on a GPU, so the head is migrated to whatever device the
+    candidate hidden states arrive on.  Done lazily, and once: on CPU this is a
+    no-op, and the alternative -- every caller remembering to `.to(device)` -- is
+    the kind of thing that works until one script forgets.
+    """
 
     def __init__(self, head, binner, lo: float, hi: float):
         self.head = head
@@ -106,9 +113,19 @@ class TargetScorer:
         self.lo = lo
         self.hi = hi
         self.mask = torch.as_tensor(binner.interval_mask(lo, hi))
+        self._device: torch.device | None = None
+
+    def to(self, device) -> "TargetScorer":
+        device = torch.device(device)
+        if self._device != device:
+            self.head = self.head.to(device)
+            self.mask = self.mask.to(device)
+            self._device = device
+        return self
 
     @torch.no_grad()
     def __call__(self, hidden: torch.Tensor) -> torch.Tensor:
+        self.to(hidden.device)
         self.head.eval()
         probs = torch.softmax(self.head(hidden.float()), dim=-1)
         return probs[:, self.mask].sum(dim=-1)
@@ -121,9 +138,20 @@ def _candidate_states_cached(
     candidate_tokens: torch.Tensor,  # (B, K)
     layer: int,
 ) -> torch.Tensor:
-    """Hidden states after appending each candidate, via the model's cache API."""
+    """Hidden states after appending each candidate, via the model's cache API.
+
+    The cache *layout* is the one thing here that is architecture-specific.
+    `generation.repeat_cache` is written for GP-MoLFormer's linear-attention
+    running-sum cache; a standard-attention generator carries `(key, value)` per layer
+    and needs `generality.repeat_cache_gpt2`.  A generator may therefore supply its own
+    repeat via `repeat_cache_fn` (C31's `second_generator.ZincGPT2Generator` does).
+    `FrozenGenerator` has no such attribute, so every molecular call site takes the
+    `repeat_cache` default and no molecular number can move -- which is why this is a
+    lookup with a default rather than a branch on model type.
+    """
     b, k = candidate_tokens.shape
-    cand_cache = repeat_cache(past_key_values, k)
+    repeat = getattr(gen, "repeat_cache_fn", None) or repeat_cache
+    cand_cache = repeat(past_key_values, k)
     flat = candidate_tokens.reshape(b * k, 1)
     out = gen.model(
         input_ids=flat,

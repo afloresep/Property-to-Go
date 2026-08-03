@@ -39,7 +39,9 @@ from property_to_go.config import (  # noqa: E402
 from property_to_go.guidance import TargetScorer, Windows, guided_sample  # noqa: E402
 from property_to_go.heads import MLPHead  # noqa: E402
 from property_to_go.model_io import load_generator  # noqa: E402
-from property_to_go.properties import compute_properties, uniqueness, validity  # noqa: E402
+from property_to_go.properties import (  # noqa: E402
+    ALL_PROPERTIES, compute_all_properties, uniqueness, validity,
+)
 
 LENGTH_BIN = 5
 
@@ -55,17 +57,23 @@ def load_head(path: Path):
 def summarise(records: list[dict], prop: str, lo: float, hi: float) -> dict:
     n = len(records)
     valid = [r for r in records if r["valid"]]
-    if not valid:
-        return {"n": n, "validity": 0.0, "n_valid": 0}
-    vals = np.array([r[prop] for r in valid])
-    lens = np.array([r["n_content_tokens"] for r in valid])
-    atoms = np.array([r["n_heavy_atoms"] for r in valid])
+    # A parseable molecule can still lack one descriptor (QED alone can raise), so
+    # `validity` keeps meaning "RDKit accepted it" and the property statistics are
+    # computed over the subset that actually has a value.
+    scored = [r for r in valid if r.get(prop) is not None]
+    if not scored:
+        return {"n": n, "validity": len(valid) / n if n else 0.0,
+                "n_valid": len(valid), "n_scored": 0}
+    vals = np.array([r[prop] for r in scored])
+    lens = np.array([r["n_content_tokens"] for r in scored])
+    atoms = np.array([r["n_heavy_atoms"] for r in scored])
     hit = (vals >= lo) & (vals < hi)
     dist = np.array([target_error(v, lo, hi, prop in INTEGER_PROPERTIES) for v in vals])
     canon = [r["canonical_smiles"] for r in valid]
     return {
         "n": n,
         "n_valid": len(valid),
+        "n_scored": len(scored),
         "validity": len(valid) / n,
         "uniqueness": len(set(canon)) / len(canon),
         "hit_rate": float(hit.mean()),
@@ -95,7 +103,7 @@ def length_matched_hit_rate(records: list[dict], reference: list[dict], prop: st
     def binned(rs):
         out: dict[int, list[float]] = {}
         for r in rs:
-            if r["valid"]:
+            if r["valid"] and r.get(prop) is not None:
                 out.setdefault(r["n_content_tokens"] // LENGTH_BIN, []).append(r[prop])
         return out
 
@@ -123,10 +131,32 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", default="pilot_50k")
     ap.add_argument("--heads", default=None)
-    ap.add_argument("--property", default="clogp", choices=["clogp", "aromatic_rings", "mol_weight"])
+    ap.add_argument("--property", default="clogp", choices=list(ALL_PROPERTIES))
     ap.add_argument("--n", type=int, default=None)
     ap.add_argument("--seeds", type=int, nargs="*", default=None)
     ap.add_argument("--conditions", nargs="*", default=None)
+    ap.add_argument("--head-seed", type=int, default=None,
+                    help="head training seed to steer with; default is the config's")
+    ap.add_argument("--lam", type=float, default=None,
+                    help="guidance strength; overrides configs/guidance.yaml lam. "
+                         "The override is written into configs_used.json so the "
+                         "artefact records the value actually used.")
+    # C23 (additive, defaults reproduce the pre-edit code path exactly).
+    #   --layer      probe point of `res.hidden_states` the scorer reads.  Omitted ->
+    #                -1, which is what `guided_sample` already defaulted to.
+    #   --head-file  head checkpoint to steer with.  Omitted -> the same
+    #                `heads_dir/head_<prop>_frozen_state[_seed<s>].pt` as before.
+    # `guided_sample` and both candidate backends already honoured `layer`; nothing
+    # below this pair of arguments changes.
+    ap.add_argument("--layer", type=int, default=None,
+                    help="hidden-state probe point for the head; default -1 (final). "
+                         "GP-MoLFormer's hidden_states has 13 entries: 0 is the "
+                         "embedding output and 1..12 the transformer layers, so "
+                         "--layer 12 is identical to the default -1.")
+    ap.add_argument("--head-file", default=None,
+                    help="explicit head checkpoint path (absolute, or relative to "
+                         "outputs/). Default: heads_dir/head_<prop>_frozen_state"
+                         "[_seed<head-seed>].pt, i.e. the pre-edit behaviour.")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
@@ -138,6 +168,14 @@ def main() -> int:
     model_cfg = load_config("model")
     policy = load_config("base_policy")
     gcfg = load_config("guidance")
+    # A lambda override is folded into the config dict itself rather than kept beside
+    # it, so `configs_used.json` -- the artefact a reader trusts -- cannot disagree
+    # with the value the run actually used.
+    lam_from_config = float(gcfg["lam"])
+    if args.lam is not None:
+        gcfg = {**gcfg, "lam": float(args.lam), "lam_source": "cli --lam",
+                "lam_in_configs_guidance_yaml": lam_from_config}
+    lam = float(gcfg["lam"])
     intervals = read_json(data_dir / "target_intervals.json")
     win_d = read_json(data_dir / "windows.json")
     windows = Windows(t33=win_d["t33"], t67=win_d["t67"], source=win_d["source"])
@@ -152,19 +190,32 @@ def main() -> int:
     # Guidance scores a *candidate hidden state*, so the decoder can only use the
     # frozen-state head.  That is the method under test; that the trivial features
     # are the better predictor for some properties is a finding, not a knob.
-    head, binner = load_head(heads_dir / f"head_{args.property}_frozen_state.pt")
+    head_path = heads_dir / f"head_{args.property}_frozen_state.pt"
+    if args.head_seed is not None:
+        head_path = heads_dir / f"head_{args.property}_frozen_state_seed{args.head_seed}.pt"
+    if args.head_file is not None:
+        p = Path(args.head_file)
+        head_path = p if p.is_absolute() else (OUTPUT_DIR / p)
+    layer = -1 if args.layer is None else int(args.layer)
+    head, binner = load_head(head_path)
     scorer = TargetScorer(head, binner, lo, hi)
 
-    print(f"property={args.property} target=[{lo:.4f},{hi:.4f}) base_rate={iv['base_rate']:.4f}")
+    print(f"property={args.property} target=[{lo:.4f},{hi:.4f}) base_rate={iv['base_rate']:.4f} lam={lam}")
     print(f"windows: early<{windows.t33} middle[{windows.t33},{windows.t67}) late>={windows.t67}")
 
     report: dict = {
         "dataset": args.dataset,
         "property": args.property,
         "head_input": "frozen_state",
+        "head_checkpoint": head_path.name,
+        "head_file": str(head_path),
+        "head_file_source": "cli --head-file" if args.head_file is not None else "default",
+        "layer": layer,
+        "layer_source": "cli --layer" if args.layer is not None else "default (-1)",
         "target_interval": iv,
         "windows": windows.to_dict(),
-        "lambda": float(gcfg["lam"]),
+        "lambda": lam,
+        "lambda_source": gcfg.get("lam_source", "configs/guidance.yaml"),
         "top_k": int(gcfg["top_k_candidates"]),
         "eps": float(gcfg["eps"]),
         "backend": gcfg["candidate_backend"],
@@ -188,17 +239,18 @@ def main() -> int:
                 n_molecules=n_mol,
                 seed=seed,
                 top_k=int(gcfg["top_k_candidates"]),
-                lam=0.0 if cond == "truncation_control" else float(gcfg["lam"]),
+                lam=0.0 if cond == "truncation_control" else lam,
                 eps=float(gcfg["eps"]),
                 backend=gcfg["candidate_backend"],
                 batch_size=int(gcfg["batch_size"]),
+                layer=layer,
                 meter=meter,
             )
             meter.stop()
             smiles = gen.decode(seqs)
             records = []
             for ids, smi in zip(seqs, smiles):
-                props = compute_properties(smi)
+                props = compute_all_properties(smi)
                 content = generation.sequence_content(ids, gen.bos_id, gen.eos_id, gen.pad_id)
                 records.append(
                     {
@@ -270,7 +322,11 @@ def main() -> int:
     )
     write_run_context(out_dir)
     write_json(out_dir / "configs_used.json",
-               {"model": model_cfg, "base_policy": policy, "guidance": gcfg})
+               {"model": model_cfg, "base_policy": policy, "guidance": gcfg,
+                "cli": {"layer": layer, "layer_source": report["layer_source"],
+                        "head_file": str(head_path),
+                        "head_file_source": report["head_file_source"],
+                        "head_seed": args.head_seed, "lam": lam}})
 
     print("\nlength-confound summary (hit rate):")
     for cond in conditions:

@@ -1,0 +1,95 @@
+{
+  "model": {
+    "model_repo": "ibm-research/GP-MoLFormer-Uniq",
+    "model_revision": "6eca879581e2302b4e1ab07bb02908636bddb4a2",
+    "tokenizer_repo": "ibm-research/MoLFormer-XL-both-10pct",
+    "tokenizer_revision": "361063d0ad524ef77cf39b08469f6be770dc550f",
+    "trust_remote_code": true,
+    "deterministic_eval": true,
+    "dtype": "float32",
+    "device": "cuda",
+    "torch_num_threads": 10
+  },
+  "base_policy": {
+    "do_sample": true,
+    "temperature": 1.0,
+    "top_k": null,
+    "top_p": null,
+    "max_length": 202,
+    "batch_size": 256,
+    "seed": 20260729
+  },
+  "guidance": {
+    "top_k_candidates": 8,
+    "lam": 2.0,
+    "eps": 1e-06,
+    "candidate_backend": "cached",
+    "window_quantiles": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "conditions": [
+      "unguided",
+      "throughout",
+      "early",
+      "middle",
+      "late",
+      "truncation_control"
+    ],
+    "n_molecules_per_condition": 512,
+    "batch_size": 64,
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "target_interval_rule": {
+      "clogp": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "aromatic_rings": {
+        "kind": "exact_value",
+        "value": 3
+      },
+      "mol_weight": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "hbd_count": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "rotatable_bonds": {
+        "kind": "quantile_value",
+        "q": 0.9
+      },
+      "tpsa": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      },
+      "qed": {
+        "kind": "quantile_band",
+        "lo": 0.85,
+        "hi": 0.95
+      }
+    },
+    "best_of_n": {
+      "match_on": "processed_tokens_actual",
+      "also_report": "processed_tokens_full_recompute"
+    },
+    "lam_source": "cli --lam",
+    "lam_in_configs_guidance_yaml": 1.0
+  },
+  "cli": {
+    "layer": 12,
+    "layer_source": "cli --layer",
+    "head_file": "/home/afloresep/Property-to-Go/outputs/c29_heads/head_hbd_count_last1_L12_seed8901.pt",
+    "head_file_source": "cli --head-file",
+    "head_seed": null,
+    "lam": 2.0
+  }
+}

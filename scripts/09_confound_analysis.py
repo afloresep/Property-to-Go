@@ -39,11 +39,20 @@ LENGTH_BIN = 5
 SIZE_BIN = 3
 
 
+def _scorable(records: list[dict], prop: str) -> list[dict]:
+    """Valid molecules that also have a value for this property.
+
+    `valid` means RDKit parsed the SMILES; one descriptor (QED) can still fail on a
+    parseable molecule. Applied in one place so the stratum list and the value list
+    below cannot drift out of alignment -- they are zipped, so a filter applied to one
+    and not the other would silently pair a molecule with another's stratum.
+    """
+    return [r for r in records if r.get("valid") and r.get(prop) is not None]
+
+
 def _strata(records: list[dict], kind: str) -> list[tuple]:
     out = []
     for r in records:
-        if not r.get("valid"):
-            continue
         L = r["n_content_tokens"] // LENGTH_BIN
         S = r["n_heavy_atoms"] // SIZE_BIN
         out.append({"raw": (), "length": (L,), "size": (S,), "joint": (L, S)}[kind])
@@ -54,9 +63,10 @@ def standardised_hit_rate(
     records: list[dict], reference: list[dict], prop: str, lo: float, hi: float, kind: str
 ) -> dict:
     """Condition hit rate reweighted onto the reference's stratum distribution."""
-    cond_keys = _strata(records, kind)
-    ref_keys = _strata(reference, kind)
-    cond_vals = [r[prop] for r in records if r.get("valid")]
+    cond_rows = _scorable(records, prop)
+    cond_keys = _strata(cond_rows, kind)
+    ref_keys = _strata(_scorable(reference, prop), kind)
+    cond_vals = [r[prop] for r in cond_rows]
 
     by_cell: dict[tuple, list[float]] = {}
     for k, v in zip(cond_keys, cond_vals):

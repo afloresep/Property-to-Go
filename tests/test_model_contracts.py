@@ -84,7 +84,7 @@ def test_candidate_state_equals_extending_the_prefix_by_that_token(generator):
         direct = generation.hidden_states_for_positions(
             generator, [extended], [[len(extended) - 1]]
         )[0][0]
-        assert np.abs(direct - h_cached[j].numpy()).max() < 1e-3
+        assert np.abs(direct - h_cached[j].cpu().numpy()).max() < 1e-3
 
 
 def test_continuations_preserve_the_prefix_and_are_seed_reproducible(generator):
@@ -104,7 +104,65 @@ def test_top8_candidates_are_the_true_argmax(generator):
     with torch.no_grad():
         lp = torch.log_softmax(generator.model(ids).logits[:, -1, :].float(), -1)[0]
     top = torch.topk(lp, 8).indices.tolist()
-    assert top == list(np.argsort(-lp.numpy())[:8])
+    assert top == list(np.argsort(-lp.cpu().numpy())[:8])
+
+
+def test_top_k_next_tokens_matches_an_unpadded_single_pass(generator):
+    """The headroom measurement's candidate set must be the decoder's candidate set.
+
+    `top_k_next_tokens` batches prefixes of *different* lengths with right padding and
+    an attention mask, then reads the last real position. If that read were off by one,
+    or if padding leaked, headroom would be measured over the wrong eight tokens and
+    nothing downstream would complain -- so it is checked against the same quantity
+    computed one sequence at a time with no padding at all.
+    """
+    seqs = [_ids(generator, s) for s in PREFIXES]
+    assert len({len(s) for s in seqs}) > 1, "the test needs ragged lengths to be a test"
+
+    ids_b, lp_b = generation.top_k_next_tokens(generator, seqs, 8, batch_size=4)
+    for i, s in enumerate(seqs):
+        with torch.no_grad():
+            out = generator.model(torch.tensor([s], device=generator.device))
+        lp = torch.log_softmax(out.logits[0, -1, :].float(), -1)
+        top = torch.topk(lp, 8)
+        assert list(ids_b[i]) == top.indices.cpu().tolist(), PREFIXES[i]
+        assert np.abs(lp_b[i] - top.values.cpu().numpy()).max() < 1e-4, PREFIXES[i]
+
+
+def test_top_k_next_tokens_agrees_with_the_decoder_s_own_truncation(generator):
+    """Same candidates `guided_sample` would take from its cached forward pass."""
+    smi = PREFIXES[3]
+    ids = torch.tensor([_ids(generator, smi)], device=generator.device)
+    with torch.no_grad():
+        out = generator.model(ids, use_cache=True, return_dict=True)
+        decoder_cand = torch.topk(
+            torch.log_softmax(out.logits[:, -1, :].float(), -1), 8, dim=-1
+        ).indices[0]
+    ids_b, _ = generation.top_k_next_tokens(generator, [_ids(generator, smi)], 8)
+    assert list(ids_b[0]) == decoder_cand.cpu().tolist()
+
+
+def test_a_candidate_extended_prefix_is_a_valid_continuation_prompt(generator):
+    """Headroom rolls out from `prefix + a_i` via `continue_from_prefixes`.
+
+    Two things must hold for that to mean what it says: the prefix is preserved, and a
+    candidate that happens to be <eos> yields a sequence that stops there rather than
+    running on. The second is the case that would silently corrupt the measurement,
+    because a molecule generated *past* an eos is not a molecule the base policy would
+    have produced.
+    """
+    policy = load_config("base_policy")
+    prefix = _ids(generator, PREFIXES[0])
+    extended = [prefix + [generator.eos_id], prefix + [_ids(generator, "CC")[-1]]]
+    outs = generation.continue_from_prefixes(generator, extended, 3, policy, seed=5)
+
+    for ext, rows in zip(extended, outs):
+        for row in rows:
+            assert row[: len(prefix)] == prefix, "the prefix must survive"
+    for row in outs[0]:
+        assert row == prefix + [generator.eos_id], (
+            "a candidate of <eos> must terminate the molecule, not be generated past"
+        )
 
 
 def test_sequence_content_strips_specials(generator):
